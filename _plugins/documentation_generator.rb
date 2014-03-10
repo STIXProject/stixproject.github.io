@@ -1,0 +1,70 @@
+require 'stix_schema_spy'
+require 'json'
+
+module Jekyll
+
+  module Links
+    def type_link(type)
+      "#{@site.config['root']}/documentation/#{type.schema.prefix}/#{type.name}"
+    end
+  end
+
+  class DocumentationPage < Page
+
+    include Links
+
+    def initialize(site, base, schema, type)
+      @site = site
+      @base = base
+      @dir = "#{schema.prefix}/#{type.name}/"
+      @name = 'index.html'
+      @url = "/documentation/#{type.schema.prefix}/#{type.name}/index.html"
+
+      read_yaml(File.join(base, '_layouts'), 'documentation.html')
+      self.data['title'] = type.name
+      self.data['subtitle'] = schema.title
+
+      self.data['documentation'] = type.documentation.split("\n")
+
+      self.data['test_type'] = type.fields.first.name if type.fields.length > 0
+
+      self.data['type_fields'] = type.fields.map do |field|
+        {
+          'name' => field.name,
+          'link' => (field.type.kind_of?(StixSchemaSpy::ComplexType) && field.type.schema && !field.type.schema.blacklisted?) ? type_link(field.type) : false,
+          'type' => field.type.name,
+          'documentation' => field.documentation.split("\n")
+        }
+      end
+    end
+  end
+
+  class DocumentationGenerator < Generator
+
+    include Links
+
+    safe false
+
+    def generate(site)
+      @site = site
+      # Parse the schemas and generate documentation for each type
+
+      StixSchemaSpy::Schema.preload! # Load all default schemas
+
+      StixSchemaSpy::Schema.all.each do |schema|
+        schema.preload! # Load types and elements from schemas
+      end
+
+      # Generate autocomplete data
+      json = StixSchemaSpy::Schema.all.map {|schema| schema.complex_types}.flatten.map {|type| {:name => type.name, :schema => type.schema.title, :link => type_link(type)}}
+      File.open("#{site.config['source']}/js/autocomplete.js", "w") {|f| f.write("window.typeSuggestions = " + JSON.dump(json))}
+
+      # Generate a page for each type
+      StixSchemaSpy::Schema.all.each do |schema|
+        schema.complex_types.each do |type|
+          site.pages << DocumentationPage.new(site, site.source, schema, type)
+        end
+      end
+    end
+  end
+end

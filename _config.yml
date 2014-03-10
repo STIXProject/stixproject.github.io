@@ -1,0 +1,6 @@
+name: STIX Documentation
+markdown: redcarpet
+pygments: true
+
+copyright: The MITRE Corporation
+root: 
