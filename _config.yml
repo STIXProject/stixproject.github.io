@@ -4,3 +4,6 @@ pygments: true
 
 copyright: The MITRE Corporation
 root: 
+generate_documentation: false
+
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock']

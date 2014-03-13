@@ -1,4 +1,3 @@
-require 'stix_schema_spy'
 require 'json'
 
 module Jekyll
@@ -18,9 +17,14 @@ module Jekyll
       @base = base
       @dir = "#{schema.prefix}/#{type.name}/"
       @name = 'index.html'
+
+      # This is really what determines where the file goes. We put it in index.html to avoid having ugly .html extensions in our paths.
       @url = "/documentation/#{type.schema.prefix}/#{type.name}/index.html"
 
+      # This loads the layout file
       read_yaml(File.join(base, '_layouts'), 'documentation.html')
+
+      # Set the data for the page
       self.data['title'] = type.name
       self.data['subtitle'] = schema.title
 
@@ -49,20 +53,25 @@ module Jekyll
       @site = site
       # Parse the schemas and generate documentation for each type
 
-      StixSchemaSpy::Schema.preload! # Load all default schemas
+      if @site.config['generate_documentation'] && @site.config['generate_documentation'] != 'false'
 
-      StixSchemaSpy::Schema.all.each do |schema|
-        schema.preload! # Load types and elements from schemas
-      end
+        require 'stix_schema_spy'
 
-      # Generate autocomplete data
-      json = StixSchemaSpy::Schema.all.map {|schema| schema.complex_types}.flatten.map {|type| {:name => type.name, :schema => type.schema.title, :link => type_link(type)}}
-      File.open("#{site.config['source']}/js/autocomplete.js", "w") {|f| f.write("window.typeSuggestions = " + JSON.dump(json))}
+        StixSchemaSpy::Schema.preload! # Load all default schemas
 
-      # Generate a page for each type
-      StixSchemaSpy::Schema.all.each do |schema|
-        schema.complex_types.each do |type|
-          site.pages << DocumentationPage.new(site, site.source, schema, type)
+        StixSchemaSpy::Schema.all.each do |schema|
+          schema.preload! # Load types and elements from schemas
+        end
+
+        # Generate autocomplete data and write it to the site config
+        json = StixSchemaSpy::Schema.all.map {|schema| schema.complex_types}.flatten.map {|type| {:name => type.name, :schema => type.schema.title, :link => type_link(type)}}
+        File.open("#{site.config['source']}/js/autocomplete.js", "w") {|f| f.write("window.typeSuggestions = " + JSON.dump(json))}
+
+        # Generate a page for each type
+        StixSchemaSpy::Schema.all.each do |schema|
+          schema.complex_types.each do |type|
+            site.pages << DocumentationPage.new(site, site.source, schema, type)
+          end
         end
       end
     end
