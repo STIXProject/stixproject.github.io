@@ -8,7 +8,7 @@ tagline: User and developer documentation for STIX
 <div class="jumbotron">
   <h1>STIX Project Documentation</h1>
   <p>Welcome to the STIX Project! Continue reading below for the full documentation or click the button for a tutorial on getting started with STIX.</p>
-  <p><a class="btn btn-primary btn-lg" role="button" href="https://github.com/STIXProject/schemas/wiki/Getting-Started-%281.1%29">Getting Started</a></p>
+  <p><a class="btn btn-primary btn-lg" role="button" href="getting-started">Getting Started</a></p>
 </div>
 
 # Idioms and Common Patterns

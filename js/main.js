@@ -28,3 +28,5 @@ $('.doc-types').typeahead({
 $('.doc-types').on('typeahead:selected', function(evt, suggestion) {
   document.location.href = window.location.protocol + "//" + window.location.host + suggestion.link;
 })
+
+$('table').addClass('table'); // Makes all tables bootstrap tables
