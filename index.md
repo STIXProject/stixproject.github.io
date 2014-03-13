@@ -28,12 +28,12 @@ The idioms documentation is meant to give you a place to look for guidance on ho
 * [Indicator](idioms/indicator)
 * [TTP](idioms/ttp)
 
-# Complete Documentation
+# Field Documentation
 
-The STIX Project provides complete documentation. Simply search below for specific elements and types (try 'Indicator') and explore from there.
+The STIX Project provides complete documentation for all fields in STIX and CybOX. Simply search below for specific elements and types (try 'Indicator') and explore from there.
 
 <div class="full-width">
-  <input type="text" class="doc-types form-control input-lg" placeholder="Search STIX Documentation..." />
+  <input type="text" class="doc-types form-control input-lg" placeholder="Search STIX Fields..." />
 </div>
 
 # Further Reading

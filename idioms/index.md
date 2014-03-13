@@ -1,9 +1,7 @@
 ---
 layout: idiom
-title: Idioms
+title: STIX Idioms
 ---
-
-# STIX Idioms
 
 STIX idioms can help you understand how to create idiomatic STIX content that other STIX users can understand.
 

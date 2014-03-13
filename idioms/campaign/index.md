@@ -5,7 +5,7 @@ title: Campaign Idioms
 
 ## Background and usage
 
-TTPs convey...
+Campaigns convey...
 
 ## Idioms
 

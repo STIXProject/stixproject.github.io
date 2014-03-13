@@ -1,0 +1,41 @@
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{{ site.root }}/">{{ site.name }}</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        {% if include.active == 'getting-started' %}
+        <li class="active"><a href="/getting-started">Getting Started</a></li>
+        {% else %}
+        <li><a href="/getting-started">Getting Started</a></li>
+        {% endif %}
+
+        {% if include.active == 'idioms' %}
+        <li class="active"><a href="/idioms">Idioms</a></li>
+        {% else %}
+        <li><a href="/idioms">Idioms</a></li>
+        {% endif %}
+
+        {% if include.active == 'documentation' %}
+        <li class="active"><a href="/documentation">Field Documentation</a></li>
+        {% else %}
+        <li><a href="/documentation">Field Documentation</a></li>
+        {% endif %}
+      </ul>
+
+      <div class="col-sm-4 col-md-4 pull-right header-search">
+        <form class="navbar-form full-width" role="search">
+          <input type="text" class="form-control doc-types" placeholder="Search STIX Fields..." name="header-search" id="header-search">
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

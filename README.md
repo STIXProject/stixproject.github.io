@@ -11,7 +11,19 @@ This is the STIX documentation source code repository. Note: this is not the STI
 1. Install the dependencies via bundler: `bundle install`
 1. Run the server with `jekyll server` or a static build with `jekyll build`
 
-Note: Jekyll has some "issues" on Windows. See: [Jekyll on Windows](http://jekyllrb.com/docs/windows/#installation).
+Note: Jekyll has some "issues" on Windows. See: [Jekyll on Windows](http://jekyllrb.com/docs/windows/#installation) for instructions. The issues I encountered (other than those covered in those instructions) were:
+* You'll need to install jekyll version 1.4.2:
+
+```
+gem uninstall jekyll # If you already installed it
+gem install jekyll --version "=1.4.2"
+```
+
+* You'll need to install pygments version 0.5.0:
+
+```
+gem uninstall pygments.rb
+gem install pygments.rb --version "=0.5.0"
 
 If you run into any problems on other platforms, see the [Jekyll Installation Docs](http://jekyllrb.com/docs/installation/). In particular, you'll need to be able to compile native code so on OS X you'll need the Xcode Command Line tools and on Linux you'll need the appropriate build packages (build-essential on Ubuntu, etc). As with most other STIX projects, you'll also need the libxml development libraries installed.
 

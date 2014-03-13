@@ -20,6 +20,10 @@ body {
   text-align: center;
 }
 
+#footer .text-muted {
+  color: #ccc;
+}
+
 .full-width span, .full-width span input {
   width: 100%;
 }
