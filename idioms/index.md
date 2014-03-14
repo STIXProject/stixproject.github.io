@@ -3,8 +3,29 @@ layout: idiom
 title: STIX Idioms
 ---
 
-STIX idioms can help you understand how to create idiomatic STIX content that other STIX users can understand.
+The idioms documentation is meant to give you a place to look for guidance on how to implement common STIX patterns, whether they're cross-cutting concerns like confidence and data markings or specific use case patterns, like representing indicators for malware C2.
 
-Idioms are divided into cross-cutting features and specific use case idioms. The cross-cutting feature idioms, as you might expect, describe features that occur throughout STIX. These idioms will help you understand how STIX works but will not be grounded in specific use cases so might not make as much sense to a beginner.
+### Cross-cutting Features
 
-Specific use case idioms, on the other hand, are grounded in an actual use case and describe one way of expressing that use case in STIX. As such, they might be better to get started.
+{% comment %}
+* [IDs](idioms/features/ids) - Describes the basic usage of STIX IDs
+* [Confidence](idioms/features/confidence) - Describes how to use the confidence structure to mark STIX constructs with confidence
+* [Structured Text](idioms/features/structured-text) - Describes how to use STIX structured text fields for both plain text and markup
+{% endcomment %}
+* [Versioning](idioms/features/versioning) - Describes a few different versioning scenarios and how those are handled in STIX
+* [Data Markings](idioms/features/data-markings) - Describes how to use data markings to mark STIX content
+* [Relationships](idioms/features/relationships) - Describes how to use STIX relationships
+* [xsi:type](idioms/features/xsitype) - Describes the STIX usage of xsi:type for core components, extension points, and controlled vocabularies
+
+### Use Cases
+
+* [Indicator](idioms/indicator)
+* [TTP](idioms/ttp)
+* [Incident](idioms/incident)
+* [Course of Action](idioms/course-of-action)
+* [Exploit Target](idioms/exploit-target)
+* [Campaign](idioms/campaign)
+* [Threat Actor](idioms/threat-actor)
+{% comment %}
+* [Packages and Reports](idioms/packages-and-reports)
+{% endcomment %}

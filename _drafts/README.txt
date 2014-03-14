@@ -1,0 +1,1 @@
+The drafts folder is not published with the site. I'm using it to keep templates (not really drafts, but close) for our common patterns: idioms, flat pages, etc. Just copy the correct folder out of drafts and paste it in to the appropriate place on the site and you'll have a template ready to fill in.

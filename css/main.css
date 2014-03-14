@@ -96,3 +96,14 @@ h1 span.subdued {
 .well.well-sm {
   background-color: #fcf8e3;
 }
+
+.component-img {
+  float: left;
+  max-width: 100px;
+  margin-right: 25px;
+  margin-bottom: 20px;
+}
+
+hr.separator {
+  clear: both;
+}
