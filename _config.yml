@@ -3,7 +3,7 @@ markdown: redcarpet
 pygments: true
 
 copyright: HS SEDI
-generate_documentation: false
+generate_documentation: true
 
 exclude: ['README.md', 'Gemfile', 'Gemfile.lock']
 

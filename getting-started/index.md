@@ -1,6 +1,7 @@
 ---
 layout: getting_started
 title: Getting Started
+active: getting-started
 ---
 
 ## Understand the Concept
