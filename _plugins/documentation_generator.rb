@@ -32,6 +32,10 @@ module Jekyll
 
       self.data['test_type'] = type.fields.first.name if type.fields.length > 0
 
+      if type.vocab? # If the type is a default vocabulary, show values from that vocab
+        self.data['vocab_items'] = type.vocab_values
+      end
+
       self.data['type_fields'] = type.fields.map do |field|
         {
           'name' => field.name,
