@@ -27,6 +27,4 @@ The idioms documentation is meant to give you a place to look for guidance on ho
 * [Exploit Target](/idioms/exploit-target)
 * [Campaign](/idioms/campaign)
 * [Threat Actor](/idioms/threat-actor)
-{% comment %}
 * [Packages and Reports](/idioms/packages-and-reports)
-{% endcomment %}
