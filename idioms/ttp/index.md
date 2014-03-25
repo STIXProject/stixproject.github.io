@@ -15,7 +15,7 @@ One of the most common uses of TTPs is to represent malware by name. This idiom 
 
 [View this idiom »](simple-malware)
 
-### Malware Characterization via MAEC
+### Malware Characterization using MAEC
 
 In addition to just naming a malware variety, it's often more useful to describe that malware's behavior in a structured format. [MAEC](http://maec.mitre.org) is a structured language for representing malware behavior and can be used within the STIX TTP construct to describe malware in the context of the indicators that indicate that malware is present, campaigns or threat actors that use that malware, or the incidents in which that malware was used. This idiom describes the use of the TTP structure to carry a MAEC malware characterization and can serve as a building block to creating related TTPs in the use cases mentioned previously.
 
@@ -31,7 +31,7 @@ TTP can also be used to describe the types of victims that an adversary targets.
 
 Adversary infrastructure is also represented in STIX using the TTP structure. This idiom describes using the TTP structure to represent an adversary's command and control infrastructure by characterizing its IP range.
 
-[View this idiom »](c2-ip)
+[View this idiom »](c2-ip-range)
 
 ### Kill Chains
 

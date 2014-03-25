@@ -7,6 +7,10 @@ A key usage of the [TTP](/documentation/ttp/TTPType) component is to characteriz
 
 TTP Victim Targeting, including by industry sector, is commonly used within a larger STIX document by relating it to a threat actor or a campaign via a Related TTP. For example, the [Campaign Victim Targeting](/idioms/campaign/victim-targeting) idiom describes linking a campaign to the victims that campaign targets: when combined with this idiom, you could describe a campaign that targets victims by industry sector.
 
+## Scenario
+
+In this scenario, the STIX document describes a very simple victim targeting structure that denotes that the threat targets organizations in the energy sector and in the banking and finance sector.
+
 ## Data model
 
 The portion of the TTP data model that is used to represent victim targeting is [VictimTargetingType](/documentation/ttp/VictimTargetingType) within [BehaviorType](/documentation/ttp/BehaviorType). That type contains a field called `Identity` that is used to express facts about victim identity that are targeted, including industry sector.
@@ -17,7 +21,7 @@ Within CIQ, the specific field used is `@IndustryType` within `OrganisationInfo`
 
 ![TTP Targeting Sector Diagram](diagram.png)
 
-### XML
+## XML
 
 {% highlight xml linenos %}
 <stix:TTP timestamp="2014-02-20T09:00:00.000000Z" id="example:ttp-030d3edf-da7c-4d1f-a0b9-6c38a8af73db" xsi:type="ttp:TTPType">
@@ -30,13 +34,12 @@ Within CIQ, the specific field used is `@IndustryType` within `OrganisationInfo`
         </ttp:Identity>
     </ttp:Victim_Targeting>
 </stix:TTP>
-
 {% endhighlight %}
 
-### Python
-
-TODO
+[Full XML](victim-targeting-sector.xml)
 
 ## Further Reading
 
-TODO
+* [TTP](/documentation/ttp/TTPType)
+* [Victim Targeting](/documentation/ttp/VictimTargetingType)
+* [OASIS CIQ](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=ciq)
