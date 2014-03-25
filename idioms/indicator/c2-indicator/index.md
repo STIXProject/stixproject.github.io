@@ -44,6 +44,33 @@ In the diagram above, the Indicator component contains the test: a CybOX [Addres
 
 [Full XML](ip-indicator.xml)
 
+## Python
+
+{% highlight python linenos %}
+from stix.core import STIXPackage
+from stix.indicator import Indicator
+from stix.ttp import TTP
+from cybox.core import Observable
+from cybox.objects.address_object import Address
+
+stix_package = STIXPackage()
+ttp = TTP(title="C2 Behavior")
+   
+indicator = Indicator(title="IP Address for known C2 Channel")
+indicator.add_indicator_type("IP Watchlist")
+  
+addr = Address(address_value="10.0.0.0", category=Address.CAT_IPV4)
+indicator.add_observable(addr)
+indicator.add_indicated_ttp(TTP(idref=ttp.id_))
+    
+stix_package.add_indicator(indicator)
+stix_package.add_ttp(ttp)
+    
+print stix_package.to_xml()
+{% endhighlight %}
+
+[Full Python](indicator-for-c2-ip-address.py)
+
 ## Further Reading
 
 * [Indicator Type](/documentation/indicator/IndicatorType)

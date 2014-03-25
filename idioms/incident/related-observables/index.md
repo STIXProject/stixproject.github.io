@@ -33,6 +33,40 @@ Given the constrained scenario, the incident construct is fairly limited: it con
 
 [Full XML](sample.xml)
 
+## Python
+
+{% highlight python linenos %}
+from stix.core import STIXPackage
+from stix.incident import (Incident, RelatedObservables)
+from stix.common.related import (RelatedObservable)
+from cybox.core import Observable
+from cybox.common import Hash
+from cybox.objects.file_object import File
+
+file_object1 = File()
+file_object1.file_name = "readme.doc.exe"
+file_object1.size_in_bytes = 40891
+file_object1.add_hash(Hash("e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"))
+observable1 = Observable(file_object1)
+    
+file_object2 = File()
+file_object2.file_name = "readme.doc.exe"
+file_object2.size_in_bytes = 40891
+file_object2.add_hash(Hash("d7a8fbb307d7809469ca9abcb0082e4f8d5651e46d3cdb762d02d0bf37c9e592"))
+observable2 = Observable(file_object2)
+    
+incident = Incident(title="Detected files delivered by malicious attacker")
+    
+related_observable1 = RelatedObservable(observable1, relationship="Malicious Observable")
+related_observable2 = RelatedObservable(observable2, relationship="Malicious Observable")
+incident.related_observables.append(related_observable1)
+incident.related_observables.append(related_observable2)
+
+print incident.to_xml()
+{% endhighlight %}
+
+[Full Python](incident-with-related-observables.py)
+
 ## Further Reading
 
 See the full documentation for the relevant types for further information that may be provided:
