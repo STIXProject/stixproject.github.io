@@ -15,7 +15,7 @@ In this scenario, two unrelated threat reports are distributed in a single docum
 
 The data model for this scenario is very simple, but leverages several some new features in STIX 1.1 that might be unknown to many people.
 
-The outer package wrapper is, as usual, given the suggested ID value (though it isn't in the diagram, it's also given a timestamp) but other than that does not contain any metadata. Instead, the `Related Package` field is used to embed two full [STIX Package](/documentation/stixCore/STIXType) constructs inside it. Thus, the entire data model consists of the the wrapper package containing almost no information and the two included reports that independently convey all necessary information.
+The outer package wrapper is, as usual, given the suggested ID value (though it isn't in the diagram, it's also given a timestamp) but other than that does not contain any metadata. Instead, the `Related Package` field is used to embed two full [STIX Package](/documentation/stix/STIXType) constructs inside it. Thus, the entire data model consists of the the wrapper package containing almost no information and the two included reports that independently convey all necessary information.
 
 For example, the first report is marked TLP:AMBER while the second is marked TLP:RED.
 
@@ -28,4 +28,4 @@ For example, the first report is marked TLP:AMBER while the second is marked TLP
 
 ## Further Reading
 
-* [STIX Package](/documentation/stixCore/STIXType)
+* [STIX Package](/documentation/stix/STIXType)
