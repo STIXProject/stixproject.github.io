@@ -25,6 +25,28 @@ Because this indicator doesn't include any context (see scenario above), the ind
 
 [Full XML](url-indicator.xml)
 
+## Python
+
+{% highlight python linenos %}
+from stix.core import STIXPackage
+from stix.indicator import Indicator
+from cybox.objects.uri_object import URI
+
+indicator = Indicator()
+indicator.id_ = "example:package-382ded87-52c9-4644-bab0-ad3168cbad50"
+indicator.title = "Malicious site hosting downloader"
+indicator.add_indicator_type("URL Watchlist")
+    
+url = URI()
+url.value = "http://x4z9arb.cn/4712"
+url.type_ =  URI.TYPE_URL
+    
+indicator.add_observable(url)
+print indicator.to_xml()
+{% endhighlight %}
+
+[Full Python](indicator-for-malicious-url.py)
+
 ## Further Reading
 
 * [Indicator Type](/documentation/indicator/IndicatorType)
