@@ -32,10 +32,71 @@ The `Parameter Observables` field is a set of CybOX [Observables](/documentation
 ## XML
 
 {% highlight xml linenos %}
+<coa:CourseOfActionType id="example:coa-55f57cc7-ddd5-467b-1312-6fd602549d9e" xsi:type='coa:CourseOfActionType' version="1.1">
+    <coa:Title>Block traffic to PIVY C2 Server (10.10.10.10)</coa:Title>
+    <coa:Stage xsi:type="stixVocabs:COAStageVocab-1.0">Response</coa:Stage>
+    <coa:Type xsi:type="stixVocabs:CourseOfActionTypeVocab-1.0">Perimeter Blocking</coa:Type>
+    <coa:Objective>
+        <coa:Description>Block communication between the PIVY agents and the C2 Server</coa:Description>
+        <coa:Applicability_Confidence>
+            <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">High</stixCommon:Value>
+        </coa:Applicability_Confidence>
+    </coa:Objective>
+    <coa:Parameter_Observables cybox_major_version="2" cybox_minor_version="1" cybox_update_version="0">
+        <cybox:Observable id="example:Observable-ef0d428f-7f22-44bd-b210-1e2524d2408e">
+            <cybox:Object id="example:Address-ac809826-1c67-45de-addc-e91fe357b328">
+                <cybox:Properties xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                    <AddressObj:Address_Value>10.0.0.0</AddressObj:Address_Value>
+                </cybox:Properties>
+            </cybox:Object>
+        </cybox:Observable>
+    </coa:Parameter_Observables>
+    <coa:Impact>
+        <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">Low</stixCommon:Value>
+        <stixCommon:Description>This IP address is not used for legitmate hosting so there should be no operational impact.</stixCommon:Description>
+    </coa:Impact>
+    <coa:Cost>
+        <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">Low</stixCommon:Value>
+    </coa:Cost>
+    <coa:Efficacy>
+        <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">High</stixCommon:Value>
+    </coa:Efficacy>
+</coa:CourseOfActionType>
 
 {% endhighlight %}
 
-[Full XML](sample.xml)
+[Full XML](block-network-traffic.xml)
+
+## Python
+
+{% highlight python linenos %}
+from stix.coa import CourseOfAction, Objective
+from stix.common import Confidence
+from cybox.core import Observables
+from cybox.objects.address_object import Address
+
+coa = CourseOfAction()
+coa.title = "Block traffic to PIVY C2 Server (10.10.10.10)"
+coa.stage = "Response"
+coa.type_ = "Perimeter Blocking"
+
+obj = Objective()
+obj.description = "Block communication between the PIVY agents and the C2 Server"
+obj.applicability_confidence = Confidence("High")
+
+coa.objective = obj
+coa.impact = "Low"
+coa.impact.description = "This IP address is not used for legitmate hosting so there should be no operational impact."
+coa.cost = "Low"
+coa.efficacy = "High"
+
+addr = Address(address_value="10.0.0.0", category=Address.CAT_IPV4)
+coa.parameter_observables=Observables(addr)
+
+print coa.to_xml()
+{% endhighlight %}
+
+[Full Python](block-network-traffic.py)
 
 ## Further Reading
 
