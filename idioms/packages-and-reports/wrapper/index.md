@@ -22,9 +22,37 @@ For example, the first report is marked TLP:AMBER while the second is marked TLP
 ## XML
 
 {% highlight xml linenos %}
-
+<stix:Related_Packages>
+    <stix:Related_Package>
+        <stix:Package id="example:package-ca6e215c-fbb7-4b7a-b678-632562f85e93" timestamp="2014-02-20T09:00:00.000000Z" version="1.1">
+            <stix:STIX_Header>
+                <stix:Title>Report on Adversary Alpha</stix:Title>
+                <stix:Handling>
+                    <markings:Marking>
+                        <markings:Controlled_Structure>../../../../node()</markings:Controlled_Structure>
+                        <markings:Marking_Structure xsi:type="tlpMarking:TLPMarkingStructureType" color="AMBER"/>
+                    </markings:Marking>
+                 </stix:Handling>
+            </stix:STIX_Header>                
+        </stix:Package>
+    </stix:Related_Package>
+    <stix:Related_Package>
+        <stix:Package id="example:package-162faaf6-4fa8-47d8-b128-115b392bbb19" timestamp="2014-03-26T02:01:00.000000Z" version="1.1">
+            <stix:STIX_Header>
+                <stix:Title>Report on Adversary Bravo</stix:Title>
+                <stix:Handling>
+                    <markings:Marking>
+                        <markings:Controlled_Structure>../../../../node()</markings:Controlled_Structure>
+                        <markings:Marking_Structure xsi:type="tlpMarking:TLPMarkingStructureType" color="RED"/>
+                    </markings:Marking>
+                </stix:Handling>
+            </stix:STIX_Header>
+        </stix:Package>
+    </stix:Related_Package>
+</stix:Related_Packages>
 {% endhighlight %}
 
+[Full XML](multiple-packages.xml) 
 
 ## Further Reading
 
