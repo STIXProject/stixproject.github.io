@@ -20,9 +20,39 @@ The STIX default extension for identity is [OASIS CIQ](https://www.oasis-open.or
 ## XML
 
 {% highlight xml linenos %}
-
+<stix:Threat_Actors>
+    <stix:Threat_Actor xsi:type="ta:ThreatActorType" id="example:threatactor-d98aaf55-ce5b-4c2e-aa05-2e57a07e45cf" timestamp="2014-02-20T09:00:00.000000Z">
+        <ta:Title>Disco Team Threat Actor Group</ta:Title>
+        <ta:Identity xsi:type="stixCIQIdentity:CIQIdentity3.0InstanceType" id="example:identity-5855111c-8cf4-4803-8236-efc74b2441be">
+            <stixCIQIdentity:Specification>
+                <ciq:PartyName>
+                    <OrganisationName xmlns="urn:oasis:names:tc:ciq:xnl:3">
+                        <NameElement>Disco Team</NameElement>
+                    </OrganisationName>
+                    <OrganisationName xmlns="urn:oasis:names:tc:ciq:xnl:3">
+                        <NameElement >Equipo del Discoteca</NameElement>
+                    </OrganisationName>
+                </ciq:PartyName>
+                <ciq:Addresses>
+                    <ciq:Address>
+                        <Country xmlns="urn:oasis:names:tc:ciq:xal:3">
+                            <NameElement>United States</NameElement>
+                        </Country>
+                        <AdministrativeArea xmlns="urn:oasis:names:tc:ciq:xal:3">
+                            <NameElement>California</NameElement>
+                        </AdministrativeArea>
+                    </ciq:Address>
+                </ciq:Addresses>
+                <ciq:Languages>
+                    <ciq:Language>Spanish</ciq:Language>
+                </ciq:Languages>
+            </stixCIQIdentity:Specification>
+        </ta:Identity>
+    </stix:Threat_Actor>
+</stix:Threat_Actors>
 {% endhighlight %}
 
+[Full XML](threat-actor-with-identity.xml)
 
 ## Further Reading
 
