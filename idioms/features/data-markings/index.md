@@ -33,7 +33,17 @@ Here's a simplified look at a marking placed in the STIX header. The actual mark
   </div>
   <div class="tab-pane" id="header-markings-python">
 {% highlight python linenos %}
+from stix.core import STIXPackage, STIXHeader
+from stix.data_marking import Marking, MarkingSpecification
 
+handling = Marking()
+handling.add_marking(MarkingSpecification())
+
+stix_package = STIXPackage()
+stix_package.stix_header = STIXHeader()
+stix_package.stix_header.handling = handling
+
+print stix_package.to_xml()
 {% endhighlight %}
   </div>
 </div>
@@ -60,7 +70,14 @@ The document header is not the only place data markings can be used, however. In
   </div>
   <div class="tab-pane" id="component-markings-python">
 {% highlight python linenos %}
+from stix.indicator import Indicator
+from stix.data_marking import Marking, MarkingSpecification
 
+indicator = Indicator()
+indicator.handling = Marking()
+indicator.handling.add_marking(MarkingSpecification())
+
+print indicator.to_xml()
 {% endhighlight %}
   </div>
 </div>
@@ -114,7 +131,20 @@ As an example, here's a small snippet that shows the controlled structure field 
   </div>
   <div class="tab-pane" id="cs-python">
 {% highlight python linenos %}
+from stix.core import STIXPackage, STIXHeader
+from stix.data_marking import Marking, MarkingSpecification
 
+marking_specification = MarkingSpecification()
+marking_specification.controlled_structure = "//node()"
+
+handling = Marking()
+handling.add_marking(marking_specification)
+
+stix_package = STIXPackage()
+stix_package.stix_header = STIXHeader()
+stix_package.stix_header.handling = handling
+
+print stix_package.to_xml()
 {% endhighlight %}
   </div>
 </div>
@@ -174,11 +204,11 @@ STIX itself defines three marking structure extensions, however others in the co
 The simple marking extension allows users to make a text statement to mark the content. For example, copyright information can easily be communicated via a simple text statement "Copyright 2014, Acme Inc.". As an example:
 
 <ul class="nav nav-tabs">
-  <li class="active"><a href="#ms-xml" data-toggle="tab">XML</a></li>
-  <li><a href="#ms-python" data-toggle="tab">Python</a></li>
+  <li class="active"><a href="#simple-marking-xml" data-toggle="tab">XML</a></li>
+  <li><a href="#simple-marking-python" data-toggle="tab">Python</a></li>
 </ul>
 <div class="tab-content">
-  <div class="tab-pane active" id="ms-xml">
+  <div class="tab-pane active" id="simple-marking-xml">
 {% highlight xml linenos %}
 <stix:Handling>
   <marking:Marking>
@@ -190,8 +220,27 @@ The simple marking extension allows users to make a text statement to mark the c
 </stix:Handling>
 {% endhighlight %}
   </div>
-  <div class="tab-pane" id="ms-python">
+  <div class="tab-pane" id="simple-marking-python">
 {% highlight python linenos %}
+from stix.core import STIXPackage, STIXHeader
+from stix.data_marking import Marking, MarkingSpecification
+from stix.extensions.marking.simple_marking import SimpleMarkingStructure
+
+marking_specification = MarkingSpecification()
+marking_specification.controlled_structure = "//node()"
+
+simple = SimpleMarkingStructure()
+simple.statement = "Copyright 2014, Acme Inc."
+marking_specification.marking_structure.append(simple)
+
+handling = Marking()
+handling.add_marking(marking_specification)
+
+stix_package = STIXPackage()
+stix_package.stix_header = STIXHeader()
+stix_package.stix_header.handling = handling
+
+print stix_package.to_xml()
 
 {% endhighlight %}
   </div>
@@ -204,11 +253,11 @@ The terms of use marking extension allows users to make a text statement to mark
 As an example:
 
 <ul class="nav nav-tabs">
-  <li class="active"><a href="#ms-xml" data-toggle="tab">XML</a></li>
-  <li><a href="#ms-python" data-toggle="tab">Python</a></li>
+  <li class="active"><a href="#tou-marking-xml" data-toggle="tab">XML</a></li>
+  <li><a href="#tou-marking-python" data-toggle="tab">Python</a></li>
 </ul>
 <div class="tab-content">
-  <div class="tab-pane active" id="ms-xml">
+  <div class="tab-pane active" id="tou-marking-xml">
 {% highlight xml linenos %}
 <stix:Handling>
   <marking:Marking>
@@ -220,9 +269,27 @@ As an example:
 </stix:Handling>
 {% endhighlight %}
   </div>
-  <div class="tab-pane" id="ms-python">
+  <div class="tab-pane" id="tou-marking-python">
 {% highlight python linenos %}
+from stix.core import STIXPackage, STIXHeader
+from stix.data_marking import Marking, MarkingSpecification
+from stix.extensions.marking.terms_of_use_marking import TermsOfUseMarkingStructure
 
+marking_specification = MarkingSpecification()
+marking_specification.controlled_structure = "//node()"
+
+tou = TermsOfUseMarkingStructure()
+tou.terms_of_use = "Acme Inc. is not responsible for the content of this file."
+marking_specification.marking_structure.append(tou)
+
+handling = Marking()
+handling.add_marking(marking_specification)
+
+stix_package = STIXPackage()
+stix_package.stix_header = STIXHeader()
+stix_package.stix_header.handling = handling
+
+print stix_package.to_xml()
 {% endhighlight %}
   </div>
 </div>
@@ -234,11 +301,11 @@ As an example:
 As an example:
 
 <ul class="nav nav-tabs">
-  <li class="active"><a href="#ms-xml" data-toggle="tab">XML</a></li>
-  <li><a href="#ms-python" data-toggle="tab">Python</a></li>
+  <li class="active"><a href="#tlp-marking-xml" data-toggle="tab">XML</a></li>
+  <li><a href="#tlp-marking-python" data-toggle="tab">Python</a></li>
 </ul>
 <div class="tab-content">
-  <div class="tab-pane active" id="ms-xml">
+  <div class="tab-pane active" id="tlp-marking-xml">
 {% highlight xml linenos %}
 <stix:Handling>
   <marking:Marking>
@@ -248,9 +315,27 @@ As an example:
 </stix:Handling>
 {% endhighlight %}
   </div>
-  <div class="tab-pane" id="ms-python">
+  <div class="tab-pane" id="tlp-marking-python">
 {% highlight python linenos %}
+from stix.core import STIXPackage, STIXHeader
+from stix.data_marking import Marking, MarkingSpecification
+from stix.extensions.marking.tlp import TLPMarkingStructure
 
+marking_specification = MarkingSpecification()
+marking_specification.controlled_structure = "//node()"
+
+tlp = TLPMarkingStructure()
+tlp.color = "AMBER"
+marking_specification.marking_structure.append(tlp)
+
+handling = Marking()
+handling.add_marking(marking_specification)
+
+stix_package = STIXPackage()
+stix_package.stix_header = STIXHeader()
+stix_package.stix_header.handling = handling
+
+print stix_package.to_xml()
 {% endhighlight %}
   </div>
 </div>
