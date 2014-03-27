@@ -52,7 +52,7 @@
             <ttp:Resources>
                 <ttp:Infrastructure>
                     <ttp:Type>Malware C2</ttp:Type>
-                    <ttp:Observable_Characterization cybox_major_version="1" cybox_minor_version="1">
+                    <ttp:Observable_Characterization cybox_major_version="2" cybox_minor_version="1">
                         <cybox:Observable idref="example:observable-c8c32b6e-2ea8-51c4-6446-7f5218072f27"/>
                         <cybox:Observable idref="example:observable-b57aa65f-9598-04fb-a9d1-5094c36d5dc4"/>
                         <cybox:Observable idref="example:observable-19c16346-0eb4-99e2-00bb-4ec3ed174cac"/>

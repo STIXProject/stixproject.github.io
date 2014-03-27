@@ -32,10 +32,39 @@ The `Parameter Observables` field is a set of CybOX [Observables](/documentation
 ## XML
 
 {% highlight xml linenos %}
-
+<stix:Course_Of_Action xsi:type="coa:CourseOfActionType" id="example:coa-55f57cc7-ddd5-467b-a3a2-6fd602549d9e" timestamp="2014-02-20T09:00:00.000000Z">
+    <coa:Title>Block traffic to PIVY C2 Server (10.10.10.10)</coa:Title>
+    <coa:Stage xsi:type="stixVocabs:COAStageVocab-1.0">Response</coa:Stage>
+    <coa:Type xsi:type="stixVocabs:CourseOfActionTypeVocab-1.0">Perimeter Blocking</coa:Type>
+    <coa:Objective>
+        <coa:Description>Block communication between the PIVY agents and the C2 Server</coa:Description>
+        <coa:Applicability_Confidence>
+            <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">High</stixCommon:Value>
+        </coa:Applicability_Confidence>
+     </coa:Objective>
+     <coa:Parameter_Observables cybox_major_version="2" cybox_minor_version="1">
+        <cybox:Observable id="example:Observable-9667bc6e-a0fc-49cd-a2e6-18ed2ef83519">
+            <cybox:Object id="example:Object-b7ecdc5e-9fca-4c69-b053-5641c9b3b839">
+                <cybox:Properties xsi:type="AddressObject:AddressObjectType" category="ipv4-addr">
+                    <AddressObject:Address_Value condition="Equals">10.10.10.10</AddressObject:Address_Value>
+                </cybox:Properties>
+            </cybox:Object>
+        </cybox:Observable>
+    </coa:Parameter_Observables>
+    <coa:Impact>
+        <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">Low</stixCommon:Value>
+        <stixCommon:Description>This IP address is not used for legitimate hosting so there should be no operational impact.</stixCommon:Description>
+    </coa:Impact>
+    <coa:Cost>
+        <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">Low</stixCommon:Value>
+    </coa:Cost>
+    <coa:Efficacy>
+        <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">High</stixCommon:Value>
+    </coa:Efficacy>
+</stix:Course_Of_Action>
 {% endhighlight %}
 
-[Full XML](sample.xml)
+[Full XML](COA-to-block-network-traffic.xml)
 
 ## Further Reading
 
