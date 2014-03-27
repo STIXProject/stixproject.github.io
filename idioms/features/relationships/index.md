@@ -61,7 +61,20 @@ If using that field as a reference, the `idref` field is used to point to the `i
   </div>
   <div class="tab-pane" id="ms-python">
 {% highlight python linenos %}
-# Show how to create a relationship via idref
+from stix.core import STIXPackage
+from stix.indicator import Indicator
+from stix.ttp import TTP
+
+stix_package = STIXPackage()
+ttp = TTP()
+
+indicator = Indicator()
+indicator.add_indicated_ttp(TTP(idref=ttp.id_))
+
+stix_package.add_indicator(indicator)
+stix_package.add_ttp(ttp)
+
+print stix_package.to_xml()
 {% endhighlight %}
   </div>
 </div>
@@ -72,7 +85,7 @@ Assuming that you're using a full relationship structure, you can also choose to
 
 <ul class="nav nav-tabs">
   <li class="active"><a href="#ms-xml" data-toggle="tab">XML</a></li>
-  <li><a href="#ms-python" data-toggle="tab">Python</a></li>
+  <li><a href="#embed-python" data-toggle="tab">Python</a></li>
 </ul>
 <div class="tab-content">
   <div class="tab-pane active" id="ms-xml">
@@ -88,9 +101,20 @@ Assuming that you're using a full relationship structure, you can also choose to
 </stix:Indicators>
 {% endhighlight %}
   </div>
-  <div class="tab-pane" id="ms-python">
+  <div class="tab-pane" id="embed-python">
 {% highlight python linenos %}
-# Show how to create a relationship via idref
+from stix.core import STIXPackage
+from stix.indicator import Indicator
+from stix.ttp import TTP
+
+stix_package = STIXPackage()
+ttp = TTP()
+
+indicator = Indicator()
+indicator.add_indicated_ttp(ttp)
+
+stix_package.add_indicator(indicator)
+print stix_package.to_xml()
 {% endhighlight %}
   </div>
 </div>
