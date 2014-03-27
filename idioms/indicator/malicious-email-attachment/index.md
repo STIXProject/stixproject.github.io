@@ -40,10 +40,70 @@ The composite indicator has the same indicated TTP as the other two indicators, 
 ## XML
 
 {% highlight xml linenos %}
-
+<stix:Indicators>
+    <stix:Indicator xsi:type="indicator:IndicatorType" id="example:indicator-e8bbe4fe-eef1-4ca9-9195-a3098de27569" timestamp="2014-01-20T12:34:56.000000Z">
+        <indicator:Title>Malicious E-mail Composite</indicator:Title>
+        <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Malicious E-mail</indicator:Type>
+        <indicator:Composite_Indicator_Expression operator="AND">
+            <indicator:Indicator idref="example:indicator-462964e9-b50a-4f83-8907-260a0d3c1d6e"/>
+            <indicator:Indicator idref="example:indicator-63d40185-a653-4c70-a10f-8d2db3ca747e"/>
+        </indicator:Composite_Indicator_Expression>
+        <indicator:Indicated_TTP>
+            <stixCommon:TTP idref="example:ttp-c32a6ab5-17b0-4bf4-b85b-a1f4f54d2ecd"/>
+        </indicator:Indicated_TTP>
+        <indicator:Confidence>
+            <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">High</stixCommon:Value>
+        </indicator:Confidence>
+    </stix:Indicator>
+    <stix:Indicator xsi:type="indicator:IndicatorType" id="example:indicator-462964e9-b50a-4f83-8907-260a0d3c1d6e" timestamp="2014-01-20T12:34:56.000000Z">
+        <indicator:Title>Malicious E-mail Subject Line</indicator:Title>
+        <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Malicious E-mail</indicator:Type>
+        <indicator:Observable>
+            <cybox:Object id="example:object-0364bb18-d117-4eaf-8d37-93da840fbb52">
+                <cybox:Properties xsi:type="EmailMessageObj:EmailMessageObjectType">
+                    <EmailMessageObj:Header>
+                        <EmailMessageObj:Subject condition="StartsWith">[IMPORTANT] Please Review Before</EmailMessageObj:Subject>
+                    </EmailMessageObj:Header>
+                    <EmailMessageObj:Attachments>
+                        <EmailMessageObj:File object_reference="example:object-fe0c45d2-1d5a-4d62-a0f1-8295c60a599d"/>
+                    </EmailMessageObj:Attachments>
+                </cybox:Properties>
+            </cybox:Object>
+        </indicator:Observable>
+        <indicator:Indicated_TTP>
+            <stixCommon:TTP idref="example:ttp-c32a6ab5-17b0-4bf4-b85b-a1f4f54d2ecd"/>
+        </indicator:Indicated_TTP>
+        <indicator:Confidence>
+            <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">Low</stixCommon:Value>
+        </indicator:Confidence>
+    </stix:Indicator>
+    <stix:Indicator xsi:type="indicator:IndicatorType" id="example:indicator-63d40185-a653-4c70-a10f-8d2db3ca747e" timestamp="2014-01-20T12:34:56.000000Z">
+        <indicator:Title>Malicious E-mail Attachment</indicator:Title>
+        <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Malicious E-mail</indicator:Type>
+        <indicator:Observable>
+            <cybox:Object id="example:object-fe0c45d2-1d5a-4d62-a0f1-8295c60a599d">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:File_Name condition="StartsWith">Final Report</FileObj:File_Name>
+                    <FileObj:File_Extension condition="Equals">doc.exe</FileObj:File_Extension>
+                </cybox:Properties>
+            </cybox:Object>
+        </indicator:Observable>
+        <indicator:Indicated_TTP>
+            <stixCommon:TTP idref="example:ttp-c32a6ab5-17b0-4bf4-b85b-a1f4f54d2ecd"/>
+        </indicator:Indicated_TTP>
+        <indicator:Confidence>
+            <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">Low</stixCommon:Value>
+        </indicator:Confidence>
+     </stix:Indicator>
+</stix:Indicators>
+<stix:TTPs>
+    <stix:TTP xsi:type="ttp:TTPType" id="example:ttp-c32a6ab5-17b0-4bf4-b85b-a1f4f54d2ecd" timestamp="2014-02-20T09:00:00.000000Z">
+        <ttp:Title>Malware C2 Channel</ttp:Title>
+    </stix:TTP>
+</stix:TTPs>
 {% endhighlight %}
 
-[Full XML](malicious-email-indicator.xml)
+[Full XML](malicious-email-indicator-with-attachment.xml)
 
 ## Python
 {% highlight python linenos %}
