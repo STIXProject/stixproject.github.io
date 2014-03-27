@@ -6,7 +6,6 @@
     xmlns:ttp="http://stix.mitre.org/TTP-1"
     xmlns:cybox="http://cybox.mitre.org/cybox-2"
     xmlns:AddressObject="http://cybox.mitre.org/objects#AddressObject-2"
-    xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2"
     xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1"
     xmlns:example="http://example.com/"
     xsi:schemaLocation="
