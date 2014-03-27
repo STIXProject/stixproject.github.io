@@ -28,10 +28,53 @@ Given the constrained scenario, the incident construct is fairly limited: it con
 ## XML
 
 {% highlight xml linenos %}
-
+<stix:Observables cybox_major_version="2" cybox_minor_version="1">
+    <cybox:Observable id="example:observable-8f43e891-7de2-a17a-2853-7979a1178c95">
+        <cybox:Object id="example:object-3d77c3fe-9e96-4967-bff8-1184dd82ad4a">
+            <cybox:Properties xsi:type="FileObj:FileObjectType">
+                <FileObj:File_Name>readme.doc.exe</FileObj:File_Name>
+                <FileObj:Size_In_Bytes>40891</FileObj:Size_In_Bytes>
+                <FileObj:Hashes>
+                    <Hash xmlns="http://cybox.mitre.org/common-2">
+                        <Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</Type>
+                        <Simple_Hash_Value>e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</Simple_Hash_Value>
+                    </Hash>
+                </FileObj:Hashes>
+            </cybox:Properties>
+        </cybox:Object>
+    </cybox:Observable>
+    <cybox:Observable id="example:observable-c45fe831-c851-9e6e-c188-38b49e2aa3b9">
+        <cybox:Object id="example:object-e492bfe4-b62d-41a5-b2eb-d6784413bbba">
+            <cybox:Properties xsi:type="FileObj:FileObjectType">
+                <FileObj:File_Name>readme.doc.exe</FileObj:File_Name>
+                <FileObj:Size_In_Bytes>40891</FileObj:Size_In_Bytes>
+                <FileObj:Hashes>
+                    <Hash xmlns="http://cybox.mitre.org/common-2">
+                        <Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</Type>
+                        <Simple_Hash_Value>d7a8fbb307d7809469ca9abcb0082e4f8d5651e46d3cdb762d02d0bf37c9e592</Simple_Hash_Value>
+                    </Hash>
+                </FileObj:Hashes>
+            </cybox:Properties>
+        </cybox:Object>
+    </cybox:Observable>
+</stix:Observables>
+<stix:Incidents>
+    <stix:Incident xsi:type="incident:IncidentType" id="example:incident-1b75ee8f-14d6-819a-d729-09ab52c91fdb" timestamp="2014-03-20T11:15:00.000000Z">
+        <incident:Related_Observables>
+            <incident:Related_Observable>
+                <stixCommon:Relationship>Malicious Observable</stixCommon:Relationship>
+                <stixCommon:Observable idref="example:observable-8f43e891-7de2-a17a-2853-7979a1178c95"/>
+            </incident:Related_Observable>
+            <incident:Related_Observable>
+                <stixCommon:Relationship>Malicious Observable</stixCommon:Relationship>
+                <stixCommon:Observable idref="example:observable-c45fe831-c851-9e6e-c188-38b49e2aa3b9"/>
+            </incident:Related_Observable>
+        </incident:Related_Observables>
+    </stix:Incident>
+</stix:Incidents>
 {% endhighlight %}
 
-[Full XML](sample.xml)
+[Full XML](incident-with-related-observables.xml)
 
 ## Python
 
