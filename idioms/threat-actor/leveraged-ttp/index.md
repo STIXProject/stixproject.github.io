@@ -21,7 +21,7 @@ It's technically possible to use a single TTP to represent both an attack patter
 
 So rather than adding an attack pattern section to the malware TTP, a new TTP was used that contains just the attack pattern. The attack pattern, described using [AttackPatternType](/documentation/ttp/AttackPatternType), contains a `CAPEC ID` and a `Description`. [CAPEC](http://capec.mitre.org) is a dictionary of potential attack patterns, so in this case by looking in that dictionary the producer was able to see that "CAPEC-98" is the ID for phishing. The best way to find the correct CAPEC is to use a generic search engine like Google or to use the CAPEC website. Other than just the CAPEC ID, the attack pattern `Description` field is filled in with more specific information about how the phishing attacks are executed.
 
-Finally, the `Leveraged TTP` list inside the threat actor is used to relate the threat actor to the two TTPs. For the malware TTP, the `Relationship` descriptor "Leverages Malware" is used while for the attack pattern TTP "Leverages Attack Pattern" is used.
+Finally, the `Observed TTP` list inside the threat actor is used to relate the threat actor to the two TTPs. For the malware TTP, the `Relationship` descriptor "Leverages Malware" is used while for the attack pattern TTP "Leverages Attack Pattern" is used.
 
 Taken together, the three constructs represent the threat actor and the known malware/attack patterns leveraged by that actor.
 
