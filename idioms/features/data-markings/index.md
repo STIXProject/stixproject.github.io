@@ -92,7 +92,7 @@ Notice that, although the handling field is placed directly in an indicator, the
 
 ### Deciding where to place markings
 
-For obvious reasons (given the scope for field-level markings) the only place to put markings that apply to a complete STIX document are in the `Handling` field of the STIX header. Generally, copyright statements and TLP will apply at this level, though there will be exceptions.
+For obvious reasons (given the scope for field-level markings) the only place to put markings that apply to a complete STIX document are in the `Handling` field of the STIX header. Generally, copyright statements and terms of use will apply at this level, though there will be exceptions.
 
 Similarly, when applying markings to specific types of information wherever they occur (all indicator titles, all threat actor identities, etc.) it's usually best to place these markings in the header. That way they can consistently apply to everything in the package no matter which specific constructs they appear in.
 
