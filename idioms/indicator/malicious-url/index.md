@@ -20,10 +20,20 @@ Because this indicator doesn't include any context (see scenario above), the ind
 ## XML
 
 {% highlight xml linenos %}
-
+<stix:Indicator id="example:Indicator-d81f86b9-975b-bc0b-775e-810c5ad45a4f" xsi:type='indicator:IndicatorType'>
+    <indicator:Title>Malicious site hosting downloader</indicator:Title>
+    <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.0">URL Watchlist</indicator:Type>
+    <indicator:Observable id="example:Observable-ee59c28e-d922-480e-9b7b-a79502696505">
+        <cybox:Object id="example:URI-b13ae3fc-80af-49c2-9de9-f713abc070ba">
+            <cybox:Properties xsi:type="URIObj:URIObjectType" type="URL">
+                <URIObj:Value condition="Equals">http://x4z9arb.cn/4712</URIObj:Value>
+            </cybox:Properties>
+        </cybox:Object>
+    </indicator:Observable>
+</stix:Indicator>
 {% endhighlight %}
 
-[Full XML](url-indicator.xml)
+[Full XML](indicator-for-malicious-url.xml)
 
 ## Python
 
