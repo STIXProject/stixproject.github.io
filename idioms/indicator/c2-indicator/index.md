@@ -7,7 +7,7 @@ One of the most common forms of [indicator](/idioms/indicator) seen describes a 
 
 ## Scenario
 
-This scenario consists of the description of a simple indicator that represents a test for a single IP address and the context that if that IP address is seen it means that there might be C2 traffic.
+This scenario consists of the description of a simple indicator that represents a test for a single IP address and the context that if that IP address is seen it means that there might be C2 traffic. Unlike many real-world use cases, it does not state that the C2 channel is for any particular piece of malware and does not give much context beyond simply that it's C2 Behavior.
 
 ## Data model
 
@@ -17,7 +17,7 @@ In this case, the "test" portion will be a simple cyber observable for an IP add
 
 ![IP Address Indicator Diagram](diagram.png)
 
-In the diagram above, the Indicator component contains the test: a CybOX [Address Object](/documentation/AddressObj/AddressObjectType/) with an `Address Value` of the IP to check for (10.0.0.0). The `Indicated TTP` then uses a [STIX Relationship](idioms/relationships) to link to a TTP that describes the indicator. Note that, besides the TTP, the indicator `Type` field is also used to give the indicator some context.
+In the diagram above, the Indicator component contains the test: a CybOX [Address Object](/documentation/AddressObj/AddressObjectType/) with an `Address Value` of the IP to check for (10.0.0.0). The `Indicated TTP` then uses a [STIX Relationship](idioms/relationships) to link to a TTP that gives context as to why the test is relevant. In this case, that context is that the indicator indicates "C2 Behavior". Note that, besides the TTP, the indicator `Type` field is also used to give the indicator some context.
 
 ## XML
 
