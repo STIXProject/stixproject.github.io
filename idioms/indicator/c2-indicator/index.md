@@ -42,7 +42,7 @@ In the diagram above, the Indicator component contains the test: a CybOX [Addres
 </stix:TTP>
 {% endhighlight %}
 
-[Full XML](ip-indicator.xml)
+[Full XML](indicator-for-c2-ip-address.xml)
 
 ## Python
 

@@ -62,6 +62,8 @@ The actual IP addresses are represented in CybOX within the `Observable Characte
 </stix:TTPs> 
 {% endhighlight %}
 
+[Full Python](command-and-control-ip-range.xml)
+
 ## Python
 
 {% highlight python linenos %}

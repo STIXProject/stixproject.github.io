@@ -1,4 +1,4 @@
-<indicator:IndicatorType 
+<stix:STIX_Package 
 	xmlns:cyboxCommon="http://cybox.mitre.org/common-2"
 	xmlns:cybox="http://cybox.mitre.org/cybox-2"
 	xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2"
@@ -17,15 +17,19 @@
 	http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.1/indicator.xsd
 	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1/stix_common.xsd
 	http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.0/stix_default_vocabularies.xsd
-	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1/stix_core.xsd" id="example:package-382ded87-52c9-4644-bab0-ad3168cbad50" xsi:type='indicator:IndicatorType' negate="false" version="2.1">
-    <indicator:Title>Malicious site hosting downloader</indicator:Title>
-    <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.0">URL Watchlist</indicator:Type>
-    <indicator:Observable id="example:Observable-0427830f-5dc1-41cf-8aab-0596855e9379">
-        <cybox:Object id="example:URI-271c5cca-6572-41e4-9260-1b3acfe4d228">
-            <cybox:Properties xsi:type="URIObj:URIObjectType" type="URL">
-                <URIObj:Value>http://x4z9arb.cn/4712</URIObj:Value>
-            </cybox:Properties>
-        </cybox:Object>
-    </indicator:Observable>
-</indicator:IndicatorType>
+	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1/stix_core.xsd" id="example:Package-8fab937e-b694-11e3-b71c-0800271e87d2" version="1.1">
+    <stix:Indicators>
+        <stix:Indicator id="example:package-382ded87-52c9-4644-bab0-ad3168cbad50" xsi:type='indicator:IndicatorType'>
+            <indicator:Title>Malicious site hosting downloader</indicator:Title>
+            <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.0">URL Watchlist</indicator:Type>
+            <indicator:Observable id="example:Observable-ee59c28e-d922-480e-9b7b-a79502696505">
+                <cybox:Object id="example:URI-b13ae3fc-80af-49c2-9de9-f713abc070ba">
+                    <cybox:Properties xsi:type="URIObj:URIObjectType" type="URL">
+                        <URIObj:Value>http://x4z9arb.cn/4712</URIObj:Value>
+                    </cybox:Properties>
+                </cybox:Object>
+            </indicator:Observable>
+        </stix:Indicator>
+    </stix:Indicators>
+</stix:STIX_Package>
 
