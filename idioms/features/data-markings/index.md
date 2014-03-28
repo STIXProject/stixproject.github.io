@@ -70,6 +70,7 @@ The document header is not the only place data markings can be used, however. In
   </div>
   <div class="tab-pane" id="component-markings-python">
 {% highlight python linenos %}
+from stix.core import STIXPackage
 from stix.indicator import Indicator
 from stix.data_marking import Marking, MarkingSpecification
 
@@ -77,7 +78,10 @@ indicator = Indicator()
 indicator.handling = Marking()
 indicator.handling.add_marking(MarkingSpecification())
 
-print indicator.to_xml()
+stix_package = STIXPackage()
+stix_package.add_indicator(indicator)
+
+print stix_package.to_xml()
 {% endhighlight %}
   </div>
 </div>
