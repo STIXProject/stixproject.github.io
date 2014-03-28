@@ -3,13 +3,15 @@ layout: idiom
 title: Marking Data
 ---
 
+<img src="/images/Data Marking.png" class="component-img" alt="Data Marking Icon" />
+
 In STIX, data markings are used to mark specific pieces of the STIX document with some sort of information. In many cases that information is handling instructions, classifications, or terms of use but in reality the data markings structure can be used to mark the data with anything. For example, data markings could be used to indicate that the STIX document is part of an exercise and is not actual production data.
 
-Markings in STIX are applied at the field level, meaning that marking statements can apply as atomically as individual fields (elements and attributes in the XML) up to all fields in the document (essentially marking the whole document). Thus a copyright may be applied across the entire document while specific terms of use might apply to certain fields in indicator test mechanisms or courses of action (as an example).
+Markings in STIX are are abstract in specification but applied at the field level, meaning that marking statements can be made in locations other than directly on the fields being marked but can apply as atomically as individual fields (elements and attributes in the XML) up to all fields in the document (essentially marking the whole document). Thus a copyright may be applied across the entire document while specific terms of use might apply to certain fields in indicator test mechanisms or courses of action (as an example).
 
 ## Using Markings
 
-Before talking about how markings are defined and represented it's useful to understand how and where markings are used. The most common place to see data markings is in the `Handling` field of the `STIX Header`. Markings placed in this field are often used to apply markings globally either to the entire document or to specific types of information regardless of where it appears in the document.
+Before talking about how markings are defined and represented it's useful to understand how and where markings are used. The most common place to see data markings is in the `Handling` field of the `STIX Header`. Markings placed in this field are often used to apply markings globally either to the entire package or to specific types of information regardless of where it appears in the Package.
 
 For example, a copyright that applies to the entire STIX package would be best placed in the handling field of the header. Similarly, the indication that all indicator courses of action are TLP:RED would also be best placed in the header.
 
@@ -96,7 +98,7 @@ Notice that, although the handling field is placed directly in an indicator, the
 
 ### Deciding where to place markings
 
-For obvious reasons (given the scope for field-level markings) the only place to put markings that apply to a complete STIX document are in the `Handling` field of the STIX header. Generally, copyright statements and terms of use will apply at this level, though there will be exceptions.
+For obvious reasons (given the scope for field-level markings) the only place to put markings that apply to a complete STIX Package/document are in the `Handling` field of the STIX header. Generally, copyright statements and terms of use will apply at this level, though there will be exceptions.
 
 Similarly, when applying markings to specific types of information wherever they occur (all indicator titles, all threat actor identities, etc.) it's usually best to place these markings in the header. That way they can consistently apply to everything in the package no matter which specific constructs they appear in.
 
@@ -106,7 +108,7 @@ One common use case, at least in TLP, is that most of the document is marked at 
 
 ## Defining Markings
 
-STIX data markings are implemented via [MarkingType](/documentation/marking/MarkingType), which has two primary fields: the `Controlled Structure` field indicates which part of the STIX document is being marked, while the `Marking Structure` field, which contains the marking itself. Besides these two primary fields are an `id` and `idref` pair to enable re-using markings, a `version` to indicate which version the data markings schema is being used, and an `Information Source` to indicate who is marking the data and when it was marked.
+STIX data markings are implemented via [MarkingType](/documentation/marking/MarkingType), which has two primary fields: the `Controlled Structure` field indicates which part of the STIX document is being marked, while the `Marking Structure` field contains the marking itself. Besides these two primary fields are an `id` and `idref` pair to enable re-using markings, a `version` to indicate which version the data markings schema is being used, and an `Information Source` to indicate who is marking the data and when it was marked.
 
 Let's dive into each piece of STIX data markings in turn.
 
@@ -114,7 +116,7 @@ Let's dive into each piece of STIX data markings in turn.
 
 As explained above, the `Controlled Structure` field indicates which part of the document the markings apply to. Currently, this is implemented using [XPath 1.0](http://www.w3.org/TR/xpath/), a language for selecting portions of XML documents. As you would imagine, this means that the data markings structure is currently tied to XML, though notionally this controlled structure field simply indicates which part of the STIX document is being marked and so could be implemented in other document selection languages.
 
-Note that the controlled structure must EXPLICITLY select ALL nodes that the marking applies to. It's not enough to select the parent and assume it applies to all children. So a selector for just an Indicator element will only select that element itself, it does not select the indicator content. To select that indicator and its children, make sure to use a selector like 'node()' or 'descendant-or-self()' that selects all fields. Note that in XPath, '*' only selects elements, not attributes, and so is not sufficient.
+Note that the controlled structure must EXPLICITLY select ALL nodes that the marking applies to. It's not enough to select the parent and assume it applies to all children. So a selector for just an Indicator element will only select that element itself, it does not select the indicator content. To select that indicator and its children, make sure to use a selector like 'node()' or 'descendant-or-self()' that selects all fields within the given context. Note that in XPath, '*' only selects elements, not attributes, and so is not sufficient.
 
 As an example, here's a small snippet that shows the controlled structure field in a handling construct:
 
@@ -177,31 +179,31 @@ A couple examples of some controlled structure statements are below:
     <tr>
       <td>Header</td>
       <td>//node()</td>
-      <td>Entire Document</td>
+      <td>All nodes in the entire document</td>
     </tr>
     <tr>
       <td>Individual Component</td>
       <td>../../../descendant-or-self()</td>
-      <td>Entire Component</td>
+      <td>All nodes in the entire enclosing component</td>
     </tr>
     <tr>
       <td>Header</td>
       <td>//stix:Indicator</td>
-      <td>All top-level indicators</td>
+      <td>All instances of indicators in the document</td>
     </tr>
     <tr>
       <td>Individual Component</td>
       <td>../../../ta:Title</td>
-      <td>Threat actor title</td>
+      <td>The Title field of the enclosing Threat Actor component</td>
     </tr>
   </tbody>
 </table>
 
 ### Marking Structures and Default Extensions
 
-Marking structures, as mentioned above, are an [extension point](/idioms/features/xsi-type) in STIX. This means that any marking structure in use by the community can be used within STIX documents. Note, however, that producers and consumers should agree on which types of extensions are used (perhaps through profiles) in order to make sure that all parties understand and will respect the particular marking structures used.
+Marking structures, as mentioned above, are an [extension point](/idioms/features/xsi-type) in STIX. This means that any marking structure in use by the community can be used within STIX documents by simply defining the appropriate structure as an extension of [MarkingStructureType](/documentation/marking/MarkingStructureType). Note, however, that producers and consumers should agree on which types of extensions are used (perhaps through profiles) in order to make sure that all parties understand and will respect the particular marking structures used.
 
-STIX itself defines three marking structure extensions, however others in the community may define additional structures. For example, the Information Sharing Architecture community has defined an extension to mark STIX documents with their extensions to the U.S. Government's Enterprise Data Headers.
+STIX itself defines three marking structure extensions, however others in the community may define additional structures. For example, the Information Sharing Architecture effort within the Enhanced Shared Situational Awareness (ESSA) community has defined an extension to mark STIX documents with their extensions to the U.S. Government's Enterprise Data Headers.
 
 #### Simple Marking
 
