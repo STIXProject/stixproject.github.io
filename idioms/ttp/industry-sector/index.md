@@ -13,7 +13,7 @@ In this scenario, the STIX document describes a very simple victim targeting str
 
 ## Data model
 
-The portion of the TTP data model that is used to represent victim targeting is [VictimTargetingType](/documentation/ttp/VictimTargetingType) within [BehaviorType](/documentation/ttp/BehaviorType). That type contains a field called `Identity` that is used to express facts about victim identity that are targeted, including industry sector.
+The portion of the TTP data model that is used to represent victim targeting is [VictimTargetingType](/documentation/ttp/VictimTargetingType). That type contains a field called `Identity` that is used to express facts about victim identity that are targeted, including industry sector.
 
 The `Identity` field is an extension point represented by [IdentityType](/documentation/stixCommon/IdentityType). The default extension provided by STIX for use in expressing identity is the [CIQIdentity3.0InstanceType](/documentation/stixCiqIdentity/CIQIdentity3.0InstanceType), which leverages the external [CIQ](TODO) (Customer Information Quality) standard published by OASIS. Though it's possible to use a different extension, in most cases producers will be using CIQ.
 
