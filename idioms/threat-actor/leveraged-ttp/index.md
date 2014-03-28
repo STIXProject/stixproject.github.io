@@ -94,8 +94,7 @@ attack_pattern.description = ("Adversary Bravo's primary malware delivery "
 
 ttp_phishing.behavior = Behavior()
 ttp_phishing.behavior.add_attack_pattern(attack_pattern)
-                             
-                            
+
 ttp_pivy = TTP()
 malware_instance = MalwareInstance()
 malware_instance.add_name("Poison Ivy Variant d1c6")
@@ -107,10 +106,10 @@ ttp_pivy.behavior.add_malware_instance(malware_instance)
 ta_bravo = ThreatActor(title="Adversary Bravo")
 ta_bravo.identity = Identity(name="Adversary Bravo")
 
-related_ttp_phishing = RelatedTTP(ttp_phishing, relationship="Leverages Attack Pattern")
+related_ttp_phishing = RelatedTTP(TTP(idref=ttp_phishing.id_), relationship="Leverages Attack Pattern")
 ta_bravo.observed_ttps.append(related_ttp_phishing)
 
-related_ttp_pivy = RelatedTTP(ttp_pivy, relationship="Leverages Malware")
+related_ttp_pivy = RelatedTTP(TTP(idref=ttp_pivy.id_), relationship="Leverages Malware")
 ta_bravo.observed_ttps.append(related_ttp_pivy)
 
 stix_package.add_ttp(ttp_phishing)

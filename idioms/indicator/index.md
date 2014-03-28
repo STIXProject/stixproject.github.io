@@ -35,6 +35,8 @@ Describes an indicator for a phishing e-mail that contains a malicious attachmen
 
 [View this idiom »](malicious-email-attachment)
 
+{% comment %}
+
 ### Indicator Composition
 
 This set of idioms describes various methods for composing lists of indicators (multiple IP addresses or malicious URLs, for example). {% comment %}For a writeup on when to use each form of composition, see the [suggested practices](/documentation/indicator/IndicatorType#suggested-practices-composition) for indicator composition.{% endcomment %}
@@ -49,3 +51,5 @@ Test mechanisms are a part of the indicator data model that allow you to represe
 
 * [Snort Test Mechanism »](snort)
 * [OpenIOC Test Mechanism »](openioc)
+
+{% endcomment %}
