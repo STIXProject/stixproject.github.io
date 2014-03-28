@@ -7,7 +7,7 @@ Versioning and revocation of STIX content is a concept that has only been explor
 
 That said, versioning and revoking content is an important topic that often gets overlooked. Threat intelligence is not an information domain where the information is published once and then forgotten: it constantly evolves over time as information is discovered, expanded, changed, and - when found to be wrong - deleted.
 
-STIX versioning takes two parallel approaches: [relationships](/idioms/features/relationships) are used to version content when a new version is significant enough a difference to be conceptually different, while updated timestamps are used for more incremental updates or updates within an organization.
+STIX versioning takes two parallel approaches: [relationships](/idioms/features/relationships) are used to version content when a new version is significant enough a difference to be conceptually different or the new version is from a different producer (id namespace prefix) than the previous version, while updated timestamps are used for more incremental updates or updates within an organization.
 
 ## Baseline
 
@@ -58,22 +58,18 @@ The question of when to use each type of update is still under some level of eva
 
 Current suggested practices suggest using an incremental update whenever you're making very minor changes to a construct that don't change its inherent meaning. Adding an alias to a threat actor, for example, would be an incremental update. Additionally, incremental updates can be used within an organization while it is developing a more final version of the construct in order to avoid churn on IDs.
 
-Major updates, on the other hand, are suggested for anything that changes the inherent meaning of a construct. Changing a TTP from "phishing" to "spear phishing", for example, would be a major update because even though phishing and spear phishing are similar the inherent meaning of the construct changed.
+Major updates, on the other hand, are suggested for anything that changes the inherent meaning of a construct or changes of content between organizations. Changing a TTP from "phishing" to "spear phishing", for example, would be a major update because even though phishing and spear phishing are similar the inherent meaning of the construct changed.
 
 ## Revocation
 
-Revocation of content is addressed as a major update with the relationship descriptor denoting the component "revokes" all previous versions. This new version should not contain any content other than the relationships.
+Revocation of content is addressed as a major update with the relationship descriptor denoting the component "revokes" a previous version of the component. If a `timestamp` is specified for the previous version then just that version is to be revoked. If no `timestamp` is specified and only an `id` is specified then all versions of content with the specified `id` are to be revoked. This new version should not contain any content other than the relationships.
 
 {% highlight xml linenos %}
 <stix:TTP xsi:type="ttp:TTPType" id="3" timestamp="01-04-2014T15:53:47.832653">
   <ttp:Related_TTPs>
     <ttp:Related_TTP>
       <stixCommon:Relationship>Revokes</stixCommon:Relationship>
-      <stixCommon:TTP id="1" />
-    </ttp:Related_TTP>
-    <ttp:Related_TTP>
-      <stixCommon:Relationship>Revokes</stixCommon:Relationship>
-      <stixCommon:TTP id="2" />
+      <stixCommon:TTP idref="2" timestamp="01-04-2014T09:21:35.369431ZS" />
     </ttp:Related_TTP>
   </ttp:Related_TTPs>
 </stix:TTP>
