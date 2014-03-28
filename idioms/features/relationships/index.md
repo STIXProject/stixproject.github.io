@@ -48,16 +48,14 @@ For example:
   <div class="tab-pane active" id="ms-xml">
 {% highlight xml linenos %}
 <stix:Indicators>
-  <stix:Indicator id="1" timestamp="2014-03-31T00:00:00.000000Z" xsi:type="indicator:IndicatorType">
-    <stix:Indicated_TTP>
-      <stix:TTP idref="2" />
-    </stix:Indicated_TTP>
-  </stix:Indicator>
+    <stix:Indicator id="example:indicator-8837a4b4-b682-11e3-b0f3-0800271e87d2" xsi:type='indicator:IndicatorType' timestamp="2014-03-31T00:00:00.000000Z">
+        <indicator:Indicated_TTP>
+            <stixCommon:TTP idref="example:ttp-883730f6-b682-11e3-b0f3-0800271e87d2" />
+        </indicator:Indicated_TTP>
+    </stix:Indicator>
 </stix:Indicators>
 <stix:TTPs>
-  <stix:TTP id="2" timestamp="2014-03-31T00:00:00.000000Z" xsi:type="ttp:TTPType">
-    <!-- SNIP -->
-  </stix:TTP>
+    <stix:TTP id="example:ttp-883730f6-b682-11e3-b0f3-0800271e87d2" xsi:type='ttp:TTPType' timestamp="2014-03-31T00:00:00.000000Z"/>
 </stix:TTPs>
 {% endhighlight %}
   </div>
@@ -93,12 +91,12 @@ Assuming that you're using a full relationship structure, you can also choose to
   <div class="tab-pane active" id="ms-xml">
 {% highlight xml linenos %}
 <stix:Indicators>
-  <stix:Indicator id="1" timestamp="2014-03-31T00:00:00.000000Z" xsi:type="indicator:IndicatorType">
-    <stix:Indicated_TTP>
-      <stix:TTP id="2" timestamp="2014-03-31T00:00:00.000000Z" xsi:type="ttp:TTPType">
+  <stix:Indicator id="example:indicator-3cdff264-b682-11e3-ab3e-0800271e87d2" timestamp="2014-03-31T00:00:00.000000Z" xsi:type="indicator:IndicatorType">
+    <indicator:Indicated_TTP>
+      <stixCommon:TTP id="example:ttp-3cdf6c54-b682-11e3-ab3e-0800271e87d2" timestamp="2014-03-31T00:00:00.000000Z" xsi:type="ttp:TTPType">
         <!-- SNIP -->
-      </stix:TTP>
-    </stix:Indicated_TTP>
+      </stixCommon:TTP>
+    </indicator:Indicated_TTP>
   </stix:Indicator>
 </stix:Indicators>
 {% endhighlight %}
@@ -137,11 +135,179 @@ In this case the TTP is not defined separately at the top level, it is included 
 
 ### Minimal Embed
 
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#e-xml" data-toggle="tab">XML</a></li>
+  <li><a href="#e-python" data-toggle="tab">Python</a></li>
+</ul>
+<div class="tab-content">
+  <div class="tab-pane active" id="e-xml">
+{% highlight xml linenos %}
+<stix:Indicators>
+  <stix:Indicator id="example:indicator-3cdff264-b682-11e3-ab3e-0800271e87d2" timestamp="2014-03-31T00:00:00.000000Z" xsi:type="indicator:IndicatorType">
+    <indicator:Indicated_TTP>
+      <stixCommon:TTP id="example:ttp-3cdf6c54-b682-11e3-ab3e-0800271e87d2" timestamp="2014-03-31T00:00:00.000000Z" xsi:type="ttp:TTPType">
+        <!-- SNIP -->
+      </stixCommon:TTP>
+    </indicator:Indicated_TTP>
+  </stix:Indicator>
+</stix:Indicators>
+{% endhighlight %}
+  </div>
+  <div class="tab-pane" id="e-python">
+{% highlight python linenos %}
+from stix.core import STIXPackage
+from stix.indicator import Indicator
+from stix.ttp import TTP
+
+stix_package = STIXPackage()
+ttp = TTP()
+
+indicator = Indicator()
+indicator.add_indicated_ttp(ttp)
+
+stix_package.add_indicator(indicator)
+print stix_package.to_xml()
+{% endhighlight %}
+  </div>
+</div>
+
 ### Minimal Reference
+
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#r-xml" data-toggle="tab">XML</a></li>
+  <li><a href="#r-python" data-toggle="tab">Python</a></li>
+</ul>
+<div class="tab-content">
+  <div class="tab-pane active" id="r-xml">
+{% highlight xml linenos %}
+<stix:Indicators>
+    <stix:Indicator id="example:indicator-8837a4b4-b682-11e3-b0f3-0800271e87d2" xsi:type='indicator:IndicatorType' timestamp="2014-03-31T00:00:00.000000Z">
+        <indicator:Indicated_TTP>
+            <stixCommon:TTP idref="example:ttp-883730f6-b682-11e3-b0f3-0800271e87d2" />
+        </indicator:Indicated_TTP>
+    </stix:Indicator>
+</stix:Indicators>
+<stix:TTPs>
+    <stix:TTP id="example:ttp-883730f6-b682-11e3-b0f3-0800271e87d2" xsi:type='ttp:TTPType' timestamp="2014-03-31T00:00:00.000000Z"/>
+</stix:TTPs>
+{% endhighlight %}
+  </div>
+  <div class="tab-pane" id="r-python">
+{% highlight python linenos %}
+from stix.core import STIXPackage
+from stix.indicator import Indicator
+from stix.ttp import TTP
+
+stix_package = STIXPackage()
+ttp = TTP()
+
+indicator = Indicator()
+indicator.add_indicated_ttp(TTP(idref=ttp.id_))
+
+stix_package.add_indicator(indicator)
+stix_package.add_ttp(ttp)
+
+print stix_package.to_xml()
+{% endhighlight %}
+  </div>
+</div>
 
 ### Use of Relationship Field
 
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#ex-r-xml" data-toggle="tab">XML</a></li>
+  <li><a href="#ex-r-python" data-toggle="tab">Python</a></li>
+</ul>
+<div class="tab-content">
+  <div class="tab-pane active" id="ex-r-xml">
+{% highlight xml linenos %}
+<stix:Indicators>
+    <stix:Indicator id="example:indicator-7f7b073e-b683-11e3-b79d-0800271e87d2" xsi:type='indicator:IndicatorType' timestamp="2014-03-31T00:00:00.000000Z">
+        <indicator:Indicated_TTP>
+            <stixCommon:Relationship>Indicates Malware</stixCommon:Relationship>
+            <stixCommon:TTP idref="example:ttp-7f7a4ede-b683-11e3-b79d-0800271e87d2" />
+        </indicator:Indicated_TTP>
+    </stix:Indicator>
+</stix:Indicators>
+<stix:TTPs>
+    <stix:TTP id="example:ttp-7f7a4ede-b683-11e3-b79d-0800271e87d2" xsi:type='ttp:TTPType' timestamp="2014-03-31T00:00:00.000000Z"/>
+</stix:TTPs>
+{% endhighlight %}
+  </div>
+  <div class="tab-pane" id="ex-r-python">
+{% highlight python linenos %}
+from stix.core import STIXPackage
+from stix.indicator import Indicator
+from stix.ttp import TTP
+from stix.common.related import RelatedTTP
+
+stix_package = STIXPackage()
+ttp = TTP()
+
+indicator = Indicator()
+indicator.add_indicated_ttp(RelatedTTP(TTP(idref=ttp.id_), relationship="Indicates Malware"))
+
+stix_package.add_indicator(indicator)
+stix_package.add_ttp(ttp)
+
+print stix_package.to_xml()
+{% endhighlight %}
+  </div>
+</div>
+
 ### Use of Confidence and Information Source
+
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#ex-c-xml" data-toggle="tab">XML</a></li>
+  <li><a href="#ex-c-python" data-toggle="tab">Python</a></li>
+</ul>
+<div class="tab-content">
+  <div class="tab-pane active" id="ex-c-xml">
+{% highlight xml linenos %}
+<stix:Indicators>
+    <stix:Indicator id="example:indicator-50787664-b684-11e3-9149-0800271e87d2" xsi:type='indicator:IndicatorType' timestamp="2014-03-31T00:00:00.000000Z">
+        <indicator:Indicated_TTP>
+            <stixCommon:Confidence>
+                <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">High</stixCommon:Value>
+            </stixCommon:Confidence>
+            <stixCommon:Information_Source>
+                <stixCommon:Identity id="example:Identity-50790476-b684-11e3-9149-0800271e87d2">
+                    <stixCommon:Name>Acme, Inc.</stixCommon:Name>
+                </stixCommon:Identity>
+            </stixCommon:Information_Source>
+            <stixCommon:Relationship>Indicates Malware</stixCommon:Relationship>
+            <stixCommon:TTP idref="example:ttp-5077da92-b684-11e3-9149-0800271e87d2"/>
+        </indicator:Indicated_TTP>
+    </stix:Indicator>
+</stix:Indicators>
+<stix:TTPs>
+    <stix:TTP id="example:ttp-5077da92-b684-11e3-9149-0800271e87d2" xsi:type='ttp:TTPType' timestamp="2014-03-31T00:00:00.000000Z"/>
+</stix:TTPs>
+{% endhighlight %}
+  </div>
+  <div class="tab-pane" id="ex-c-python">
+{% highlight python linenos %}
+from stix.core import STIXPackage
+from stix.indicator import Indicator
+from stix.ttp import TTP
+from stix.common.related import RelatedTTP
+from stix.common import Confidence, InformationSource, Identity
+
+stix_package = STIXPackage()
+ttp = TTP()
+
+indicator = Indicator()
+confidence = Confidence(value="High")
+info_src = InformationSource(identity=Identity(name="Acme, Inc."))
+indicator.add_indicated_ttp(RelatedTTP(TTP(idref=ttp.id_), relationship="Indicates Malware", information_source=info_src, confidence=confidence))
+
+stix_package.add_indicator(indicator)
+stix_package.add_ttp(ttp)
+
+print stix_package.to_xml()
+{% endhighlight %}
+  </div>
+</div>
 
 ## Further Reading
 
