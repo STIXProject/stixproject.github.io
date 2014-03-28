@@ -17,11 +17,11 @@ The focus of this data model is of course on the STIX [Course of Action](/docume
 
 The `Title` field simply gives the course of action a human-readable title. Similarly, `Description` and `Short Description` could be used to give it longer human-readable descriptions if desired.
 
-The `Stage` field describes the stage of the response process that the course of action is used at. This is a [controlled vocabulary](/idioms/features/controlled-vocabularies) where the default vocabulary is [COAStageVocab-1.0](/documentation/stixVocabs/COAStageVocab-1.0). For this idiom, the action is a response to some known activity so it's set to "Response".
+The `Stage` field describes the stage of the response process that the course of action is used at. This is a controlled vocabulary (see [xsi:type idiom](/idioms/features/xsi-type)) where the default vocabulary is [COAStageVocab-1.0](/documentation/stixVocabs/COAStageVocab-1.0). For this idiom, the action is a response to some known activity so it's set to "Response".
 
 The `Type` field, also a controlled vocabulary (default is [CourseOfActionTypeVocab-1.0](/documentation/stixVocabs/CourseOfActionTypeVocab-1.0)), indicates what general type of course of action is being described. This COA describes blocking of an IP address by perimeter firewalls, so is set to "Perimeter Blocking".
 
-The `Objective` field describes the intended purpose of the course of action at a technical level. It consists of a text description describing that objective and a [confidence](/idioms/features/confidence) that the COA will achieve that objective. Since the objective is strightforward and the COA has a high degree of success in achieving it, that is set to high.
+The `Objective` field describes the intended purpose of the course of action at a technical level. It consists of a text description describing that objective and a confidence statement that the COA will achieve that objective. Since the objective is strightforward and the COA has a high degree of success in achieving it, that is set to high.
 
 The `Impact` field describes the expected impact that implementing the course of action will have on normal operations. It uses [StatementType](/documentation/stixCommon/StatementType), which consists of a set of fields allowing the information producer to assert a statement about something. In this case, the `Value` field of the statement is set to "Low" (using the defualt vocabulary for this statement, [HighMediumLowVocab-1.0](/documentation/stixVocabs/HighMediumLowVocab-1.0)) and a description is given as to why the impact is low. Because this COA involves blocking an IP address that is not used for any legitimate purposes the impact to operations will be low.
 
