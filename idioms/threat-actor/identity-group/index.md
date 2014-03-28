@@ -52,7 +52,7 @@ The STIX default extension for identity is [OASIS CIQ](https://www.oasis-open.or
 </stix:Threat_Actors>
 {% endhighlight %}
 
-[Full XML](threat-actor-with-identity.xml)
+[Full XML](identifying-a-threat-actor-group.xml)
 
 ## Python
 
