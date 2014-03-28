@@ -28,8 +28,50 @@ Taken together, the three constructs represent the threat actor and the known ma
 ## XML
 
 {% highlight xml linenos %}
-
+    <stix:TTPs>
+        <stix:TTP id="example:ttp-8ac90ff3-ecf8-4835-95b8-6aea6a623df5" xsi:type='ttp:TTPType' version="1.1">
+            <ttp:Title>Adversary Bravo Phishing</ttp:Title>
+            <ttp:Behavior>
+                <ttp:Attack_Patterns>
+                    <ttp:Attack_Pattern capec_id="CAPEC-98">
+                        <ttp:Description>Adversary Bravo’s primary malware deliver mechanism is through untargeted phishing.</ttp:Description>
+                    </ttp:Attack_Pattern>
+                </ttp:Attack_Patterns>
+            </ttp:Behavior>
+        </stix:TTP>
+        <stix:TTP id="example:ttp-d1c612bc-146f-4b65-b7b0-9a54a14150a4" xsi:type='ttp:TTPType' version="1.1">
+            <ttp:Title>Adversary Bravo PIVY Instance</ttp:Title>
+            <ttp:Behavior>
+                <ttp:Malware>
+                    <ttp:Malware_Instance id="example:malware-1621d4d2-b67d-11e3-ba9e-f01faf20d111">
+                        <ttp:Type xsi:type="stixVocabs:MalwareTypeVocab-1.0">Remote Access Trojan</ttp:Type>
+                        <ttp:Name>Poison Ivy Variant d1c6</ttp:Name>
+                    </ttp:Malware_Instance>
+                </ttp:Malware>
+            </ttp:Behavior>
+        </stix:TTP>
+    </stix:TTPs>
+    <stix:Threat_Actors>
+        <stix:Threat_Actor id="example:threatactor-9a8a0d25-7636-429b-a99e-b2a73cd0f11f" xsi:type='ta:ThreatActorType' version="1.1">
+            <ta:Title>Adversary Bravo</ta:Title>
+            <ta:Identity id="example:Identity-1621d4d4-b67d-11e3-9670-f01faf20d111">
+                <stixCommon:Name>Adversary Bravo</stixCommon:Name>
+            </ta:Identity>
+            <ta:Observed_TTPs>
+                <ta:Observed_TTP>
+                    <stixCommon:Relationship>Leverages Attack Pattern</stixCommon:Relationship>
+                    <stixCommon:TTP idref="example:ttp-8ac90ff3-ecf8-4835-95b8-6aea6a623df5"/>
+                </ta:Observed_TTP>
+                <ta:Observed_TTP>
+                    <stixCommon:Relationship>Leverages Malware</stixCommon:Relationship>
+                    <stixCommon:TTP idref="example:ttp-d1c612bc-146f-4b65-b7b0-9a54a14150a4"/>
+                </ta:Observed_TTP>
+            </ta:Observed_TTPs>
+        </stix:Threat_Actor>
+    </stix:Threat_Actors>
 {% endhighlight %}
+
+[Full XML](threat-actor-leveraged-attack-patterns-and-malware.xml)
 
 ## Python
 

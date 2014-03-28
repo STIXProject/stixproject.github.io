@@ -1,0 +1,31 @@
+<indicator:IndicatorType 
+	xmlns:cyboxCommon="http://cybox.mitre.org/common-2"
+	xmlns:cybox="http://cybox.mitre.org/cybox-2"
+	xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2"
+	xmlns:URIObj="http://cybox.mitre.org/objects#URIObject-2"
+	xmlns:example="http://example.com"
+	xmlns:indicator="http://stix.mitre.org/Indicator-2"
+	xmlns:stixCommon="http://stix.mitre.org/common-1"
+	xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1"
+	xmlns:stix="http://stix.mitre.org/stix-1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd
+	http://cybox.mitre.org/cybox-2 http://cybox.mitre.org/XMLSchema/core/2.1/cybox_core.xsd
+	http://cybox.mitre.org/default_vocabularies-2 http://cybox.mitre.org/XMLSchema/default_vocabularies/2.1/cybox_default_vocabularies.xsd
+	http://cybox.mitre.org/objects#URIObject-2 http://cybox.mitre.org/XMLSchema/objects/URI/2.1/URI_Object.xsd
+	http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.1/indicator.xsd
+	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1/stix_common.xsd
+	http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.0/stix_default_vocabularies.xsd
+	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1/stix_core.xsd" id="example:package-382ded87-52c9-4644-bab0-ad3168cbad50" xsi:type='indicator:IndicatorType' negate="false" version="2.1">
+    <indicator:Title>Malicious site hosting downloader</indicator:Title>
+    <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.0">URL Watchlist</indicator:Type>
+    <indicator:Observable id="example:Observable-0427830f-5dc1-41cf-8aab-0596855e9379">
+        <cybox:Object id="example:URI-271c5cca-6572-41e4-9260-1b3acfe4d228">
+            <cybox:Properties xsi:type="URIObj:URIObjectType" type="URL">
+                <URIObj:Value>http://x4z9arb.cn/4712</URIObj:Value>
+            </cybox:Properties>
+        </cybox:Object>
+    </indicator:Observable>
+</indicator:IndicatorType>
+
