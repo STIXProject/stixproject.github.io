@@ -1,24 +1,37 @@
-from stix.campaign import Campaign
-from stix.common.related import RelatedTTP
-from stix.core import STIXPackage
-from stix.ttp import TTP
+#!/usr/bin/env python
+# Copyright (c) 2014, The MITRE Corporation. All rights reserved.
+# See LICENSE.txt for complete terms.
 
-ttp = TTP()
-ttp.title = "Victim Targeting for Operation Alpha"
-ttp.victim_targeting.add_targeted_information("Information Assets - Customer PII")
-ttp.victim_targeting.add_targeted_information("Information Assets - Financial Data")
+'''
+The following code requires python-stix v1.1.0.4 or greater installed.
+For installation instructions, please refer to https://github.com/STIXProject/python-stix.
+'''
 
-ttp_ref = TTP()
-ttp_ref.idref = ttp.id_
-related_ttp = RelatedTTP(ttp_ref)
-related_ttp.relationship = "Targets"
+def main():
+    from stix.campaign import Campaign
+    from stix.common.related import RelatedTTP
+    from stix.core import STIXPackage
+    from stix.ttp import TTP
 
-c = Campaign()
-c.title = "Operation Alpha"
-c.related_ttps.append(related_ttp)
+    ttp = TTP()
+    ttp.title = "Victim Targeting for Operation Alpha"
+    ttp.victim_targeting.add_targeted_information("Information Assets - Customer PII")
+    ttp.victim_targeting.add_targeted_information("Information Assets - Financial Data")
 
-pkg = STIXPackage()
-pkg.add_campaign(c)
-pkg.add_ttp(ttp)
+    ttp_ref = TTP()
+    ttp_ref.idref = ttp.id_
+    related_ttp = RelatedTTP(ttp_ref)
+    related_ttp.relationship = "Targets"
 
-print pkg.to_xml()
+    c = Campaign()
+    c.title = "Operation Alpha"
+    c.related_ttps.append(related_ttp)
+
+    pkg = STIXPackage()
+    pkg.add_campaign(c)
+    pkg.add_ttp(ttp)
+
+    print pkg.to_xml()
+
+if __name__ == '__main__':
+    main()
