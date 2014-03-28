@@ -52,4 +52,4 @@ If you're looking for information on using STIX, you can:
 
 * Download the [official release](http://stix.mitre.org/language/version1.1/)
 * Read the [STIX Whitepaper](http://stix.mitre.org/about/documents/STIX_Whitepaper_v1.1.pdf)
-* Review the [Suggested Practices](suggested-practices)
+* Review the [Suggested Practices](https://github.com/STIXProject/schemas/wiki/Suggested-Practices-%281.1%29)
