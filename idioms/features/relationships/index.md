@@ -3,7 +3,7 @@ layout: idiom
 title: STIX Relationships
 ---
 
-Relationships are one of the features of STIX that make it so powerful for expressing cyber threat intelligence when compared to other options. Although each of the major components is valuable on its own and can be used independently of the others in order to express those concepts, the true power of STIX is realized when components are used in conjunction with each other to better enable threat analysis. It's one thing to use STIX to describe an indicator for an IP address without context, it's another to relate that to the relevant TTP that it indicates, the TTP to the threat actor or actors that are known to use it, to the incidents where it was observed, and to courses of action that can help mitigate its impact.
+Relationships are one of the features of STIX that make it so powerful for expressing cyber threat intelligence when compared to other options. Although each of the major components is valuable on its own and can be used independently of the others in order to express those concepts, the true power of STIX is realized when components are used in conjunction with each other to better enable contextual understanding for threat analysis. It's one thing to use STIX to describe an indicator for an IP address without context, it's another to relate that to the relevant TTP that it indicates, the TTP to the threat actor or actors that are known to use it, to the incidents where it was observed, and to courses of action that can help mitigate its impact.
 
 STIX relationships enable all of this by defining these connection points and how to express them:
 
@@ -11,13 +11,13 @@ STIX relationships enable all of this by defining these connection points and ho
 
 ## Concept
 
-All relationships in STIX are implemented using a similar structure to ensure consistency and ease of implementation. The structure allows for representation of the relationship itself (of course), a name to further describe the semantics of the relationship, a confidence in the assertion of a relationship, and an information source for the relationship. These fields mean that not only can STIX components be related together, they can be related together in a semantically meaninful way that preserves confidence and providence of the relationship assertion.
+All relationships in STIX are implemented using a similar structure to ensure consistency and ease of implementation. The structure allows for representation of the relationship itself (of course), a label to further describe the semantics of the relationship, a confidence in the assertion of a relationship, and an information source for the relationship assertion. These fields mean that not only can STIX components be related together, they can be related together in a semantically meaningful way that preserves the confidence and provenance of the relationship assertion.
 
-While all relationships in STIX allow for the information above, there are two general types of relationships: full relationships, which describes almost all STIX relationships, allow for either embedding the full related component inside the relationship or to reference the other component via an idref. Reference relationships only allow relationship by reference, not by embedding it.
+While all relationships in STIX allow for the information above, there are two general types of relationships. The first type is a full relationship (the large majority of STIX relationships are this type) which allows for either embedding the full related component inside the relationship or to reference the other component via an idref. The second type is a reference relationship which only allows relationship by reference, not by embedding it.
 
 ## Data Model
 
-In XML, a basic STIX relationship looks like this (the relationship is "Indicated_TTP", which goes from an indicator to a TTP):
+In XML, a basic STIX relationship structure looks like this (the relationship is "Indicated_TTP", which goes from an indicator to a TTP):
 
 ```xml
 <indicator:Indicator>
@@ -36,9 +36,9 @@ The `Confidence` field uses the STIX confidence mechanism to express confidence 
 
 The `Information Source` field, using [InformationSourceType](/documentation/stixCommon/InformationSourceType), is used to characterize provenance information about the relationship assertion. It can be used to indicate who, when, and how (what tools) the relationship assertion was made.
 
-The `Relationship` field uses a STIX controlled vocabulary to specify what type of relationship is being asserted. Although no default vocabulary has been identified, the STIX community is currently soliciting input on potential vocabularies.
+The `Relationship` field uses specifies a semantic label for what kind of relationship is being asserted. This value can be ad-hoc or reference a value from a STIX controlled vocabulary. Although no default vocabulary has currently been defined, the STIX community is currently soliciting input on potential vocabularies.
 
-Finally, the `TTP` field: this field contains either a pointer to or a full representation of the related component (assuming it's a full relationship type, if not only the reference might be supported). The field name will always be the name of the component that the relationship is pointing to, which in this case is TTP.
+Finally, the `TTP` field (contextually specific to an Indicated_TTP relationship) contains either a reference to or a full representation of the related component. This assumes it is a full relationship type. If it is only a reference type then only a reference to the related component would be supported. The field name will always be the name of the component that the relationship is pointing to, which in this case is TTP.
 
 If using that field as a reference, the `idref` field is used to point to the `id` of the construct that the relationship is to. Optionally, the `timestamp` field can also be used to create a reference to a specific version of the construct.
 
@@ -83,7 +83,7 @@ print stix_package.to_xml()
   </div>
 </div>
 
-In the example above, a referenced is created by setting the `idref` of the relationship TTP to the `id` of the TTP itself. Note that while the TTP definition requires the `xsi:type`, the relationship TTP does not because it only uses the `id` field. It could also have added a `timestamp` set to exactly "2014-03-31T00:00:00.000000Z" to indicate that the relationship applies to that specific version of the TTP.
+In the example above, a reference is created by setting the `idref` of the relationship TTP to the `id` of the TTP related itself. Note that while the TTP definition requires the `xsi:type`, the TTP reference does not because it only uses the `idref` field. It could also have added a `timestamp` set to exactly "2014-03-31T00:00:00.000000Z" to indicate that the relationship applies to that specific version of the TTP.
 
 Assuming that you're using a full relationship structure, you can also choose to embed the related component:
 
@@ -129,8 +129,8 @@ In this case the TTP is not defined separately at the top level, it is included 
 <h4>Referencing vs. Embedding</h4>
 <p>One of the most common questions that the STIX team gets is about how to decide when to reference a construct and when to embed it. There's not a decisive answer to this question that will make the decision for you, it's to a large extent a judgment call that depends on how you expect the content to be used. That said, there are a few guidelines:</p>
 <ul>
-  <li>If you expect the content to be referenced by multiple other components, it should not be embedded</li>
-  <li>If the content has meaning outside of the relationship, it should not be embedded</li>
+  <li>If you expect the content to be referenced by multiple other components, it should typically not be embedded</li>
+  <li>If the content has meaning outside of the relationship, it should typically not be embedded</li>
   <li>If the content, on the other hand, ONLY has meaning in the context of the single relationship, it can probably be embedded</li>
   <li>If you're not sure, it's probably safer to reference it</li>
 </div>
