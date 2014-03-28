@@ -13,7 +13,7 @@ In this scenario, the STIX document describes a very simple victim targeting str
 
 ## Data model
 
-The portion of the TTP data model that is used to represent victim targeting is [VictimTargetingType](/documentation/ttp/VictimTargetingType) within [BehaviorType](/documentation/ttp/BehaviorType). That type contains a field called `Identity` that is used to express facts about victim identity that are targeted, including industry sector.
+The portion of the TTP data model that is used to represent victim targeting is [VictimTargetingType](/documentation/ttp/VictimTargetingType). That type contains a field called `Identity` that is used to express facts about victim identity that are targeted, including industry sector.
 
 The `Identity` field is an extension point represented by [IdentityType](/documentation/stixCommon/IdentityType). The default extension provided by STIX for use in expressing identity is the [CIQIdentity3.0InstanceType](/documentation/stixCiqIdentity/CIQIdentity3.0InstanceType), which leverages the external [CIQ](TODO) (Customer Information Quality) standard published by OASIS. Though it's possible to use a different extension, in most cases producers will be using CIQ.
 
@@ -24,16 +24,18 @@ Within CIQ, the specific field used is `@IndustryType` within `OrganisationInfo`
 ## XML
 
 {% highlight xml linenos %}
-<stix:TTP timestamp="2014-02-20T09:00:00.000000Z" id="example:ttp-030d3edf-da7c-4d1f-a0b9-6c38a8af73db" xsi:type="ttp:TTPType">
-    <ttp:Title>Victim Targeting: Electricity Sector and Industrial Control System Sector</ttp:Title>
-    <ttp:Victim_Targeting>
-        <ttp:Identity id="example:ciqidentity30instance-f8cd0af8-6534-496e-bf53-f6a9aa11e5ce" xsi:type="stixCiqIdentity:CIQIdentity3.0InstanceType">
-            <stixCiqIdentity:Specification>
-                <xpil:OrganisationInfo xpil:IndustryType="Energy Sector, Banking and Finance Sector"/>
-            </stixCiqIdentity:Specification>
-        </ttp:Identity>
-    </ttp:Victim_Targeting>
-</stix:TTP>
+<stix:TTPs>
+    <stix:TTP timestamp="2014-02-20T09:00:00.000000Z" id="example:ttp-030d3edf-da7c-4d1f-a0b9-6c38a8af73db" xsi:type="ttp:TTPType">
+        <ttp:Title>Victim Targeting: Electricity Sector and Industrial Control System Sector</ttp:Title>
+        <ttp:Victim_Targeting>
+            <ttp:Identity id="example:ciqidentity3.0instance-f8cd0af8-6534-496e-bf53-f6a9aa11e5ce" xsi:type="stixCIQIdentity:CIQIdentity3.0InstanceType">
+                <stixCIQIdentity:Specification>
+                    <xpil:OrganisationInfo xpil:IndustryType="Electricity Sector, Industrial Control System Sector"/>
+                </stixCIQIdentity:Specification>
+            </ttp:Identity>
+        </ttp:Victim_Targeting>
+    </stix:TTP>
+</stix:TTPs>
 {% endhighlight %}
 
 [Full XML](victim-targeting-sector.xml)

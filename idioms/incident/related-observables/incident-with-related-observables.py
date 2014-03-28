@@ -15,6 +15,7 @@ from cybox.common import Hash
 from cybox.objects.file_object import File
 
 def main():
+    pkg = STIXPackage()
     file_object1 = File()
     file_object1.file_name = "readme.doc.exe"
     file_object1.size_in_bytes = 40891
@@ -34,7 +35,9 @@ def main():
     incident.related_observables.append(related_observable1)
     incident.related_observables.append(related_observable2)
 
-    print incident.to_xml()
+    pkg.add_incident(incident)
+
+    print pkg.to_xml()
 
 if __name__ == '__main__':
     main()

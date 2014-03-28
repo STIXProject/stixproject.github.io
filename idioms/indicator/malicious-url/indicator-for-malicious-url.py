@@ -7,6 +7,7 @@ from stix.indicator import Indicator
 from cybox.objects.uri_object import URI
 
 def main():
+    pkg = STIXPackage()
     indicator = Indicator()
     indicator.id_ = "example:package-382ded87-52c9-4644-bab0-ad3168cbad50"
     indicator.title = "Malicious site hosting downloader"
@@ -17,7 +18,10 @@ def main():
     url.type_ =  URI.TYPE_URL
     
     indicator.add_observable(url)
-    print indicator.to_xml()
+
+    pkg.add_indicator(indicator)
+    
+    print pkg.to_xml()
     
 if __name__ == '__main__':
     main()
