@@ -13,7 +13,7 @@ This idiom describes the representation of a cyber threat campaign characterized
 
 There are two main pieces of information that need to be communicated in this idiom: the campaign construct itself (using [CampaignType](/documentation/campaign/CampaignType)) and the victim targeting (using [VictimTargetingType](/documentation/ttp/VictimTargetingType)) in TTP. These are related together using the Campaign=>Related_TTP relationship.
 
-The campaign is represented with just a title and a related TTP with a relationship name of "Targets". The TTP leverages the victim targeting constructs to represent the types of information that are targeted. For targeting of a specific type of information, the `Targeted Information` field is used, leveraging the [controlled vocabulary](/idioms/features/controlled-vocabs) for information types, [InformationTypeVocab-1.0](/documentation/stixVocabs/InformationTypeVocab-1.0/).
+The campaign is represented with just a title and a related TTP with a relationship name of "Targets". The TTP leverages the victim targeting constructs to represent the types of information that are targeted. For targeting of a specific type of information, the `Targeted Information` field is used, leveraging the controlled vocabulary for information types, [InformationTypeVocab-1.0](/documentation/stixVocabs/InformationTypeVocab-1.0/).
 
 ## XML
 
