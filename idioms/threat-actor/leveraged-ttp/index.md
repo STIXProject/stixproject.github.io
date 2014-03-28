@@ -34,7 +34,7 @@ Taken together, the three constructs represent the threat actor and the known ma
             <ttp:Behavior>
                 <ttp:Attack_Patterns>
                     <ttp:Attack_Pattern capec_id="CAPEC-98">
-                        <ttp:Description>Adversary Bravo’s primary malware deliver mechanism is through untargeted phishing.</ttp:Description>
+                        <ttp:Description>Adversary Bravo's primary malware deliver mechanism is through untargeted phishing.</ttp:Description>
                     </ttp:Attack_Pattern>
                 </ttp:Attack_Patterns>
             </ttp:Behavior>
