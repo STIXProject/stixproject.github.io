@@ -19,14 +19,14 @@ While all relationships in STIX allow for the information above, there are two g
 
 In XML, a basic STIX relationship looks like this:
 
-{% highlight xml linenos %}
+```xml
 <indicator:Indicated_TTP>
   <stixCommon:Confidence />
   <stixCommon:Information_Source />
   <stixCommon:Relationship />
   <stixCommon:TTP />
 </indicator:Indicated_TTP>
-{% endhighlight %}
+```
 
 The `Confidence` field uses the STIX [confidence mechanism](/idioms/features/confidence) to express confidence in the relationship assertion. For example, if the producer is not certain that a particular TTP is used by a Threat Actor they could use "Low" confidence to denote that.
 
@@ -36,7 +36,9 @@ The `Relationship` field uses a STIX controlled vocabulary to specify what type 
 
 Finally, the `TTP` field, which is specific to TTP in this place but will always be the name of the related component, contains either a pointer to or a full representation of the related component (assuming it's a full relationship type, if not only the reference might be supported).
 
-If using that field as a reference, the `idref` field is used to point to the `id` of the construct that the relationship is to. Optionally, the `timestamp` field can also be used to create a reference to a specific version of the construct. For example:
+If using that field as a reference, the `idref` field is used to point to the `id` of the construct that the relationship is to. Optionally, the `timestamp` field can also be used to create a reference to a specific version of the construct.
+
+For example:
 
 <ul class="nav nav-tabs">
   <li class="active"><a href="#ms-xml" data-toggle="tab">XML</a></li>
