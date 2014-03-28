@@ -25,7 +25,7 @@ The idioms documentation is meant to give you a place to look for guidance on ho
 * [Versioning](idioms/features/versioning) - Describes a few different versioning scenarios and how those are handled in STIX
 * [Data Markings](idioms/features/data-markings) - Describes how to use data markings to mark STIX content
 * [Relationships](idioms/features/relationships) - Describes how to use STIX relationships
-* [xsi:type](idioms/features/xsitype) - Describes the STIX usage of xsi:type for core components, extension points, and controlled vocabularies
+* [xsi:type](idioms/features/xsi-type) - Describes the STIX usage of xsi:type for core components, extension points, and controlled vocabularies
 
 ### Use Cases
 
