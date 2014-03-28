@@ -28,7 +28,7 @@ In XML, a basic STIX relationship looks like this:
 </indicator:Indicated_TTP>
 ```
 
-The `Confidence` field uses the STIX [confidence mechanism](/idioms/features/confidence) to express confidence in the relationship assertion. For example, if the producer is not certain that a particular TTP is used by a Threat Actor they could use "Low" confidence to denote that.
+The `Confidence` field uses the STIX confidence mechanism to express confidence in the relationship assertion. For example, if the producer is not certain that a particular TTP is used by a Threat Actor they could use "Low" confidence to denote that.
 
 The `Information Source` field, using [InformationSourceType](/documentation/stixCommon/InformationSourceType), is used to characterize provenance information about the relationship assertion. It can be used to indicate who, when, and how (what tools) the relationship assertion was made.
 
@@ -313,7 +313,7 @@ print stix_package.to_xml()
 
 Many (even most) of the use-case driven idioms show specific examples of STIX relationships:
 
-* [Campaign Victim Targeting](/idioms/campaigns/victim-targeting)
+* [Campaign Victim Targeting](/idioms/campaign/victim-targeting)
 * [Malware used in an Incident](/idioms/incident/incident-malware)
 * [C2 Indicator](/idioms/indicator/c2-indicator)
 * [Malicious E-mail Attachment](/idioms/indicator/malicious-email-attachment)
