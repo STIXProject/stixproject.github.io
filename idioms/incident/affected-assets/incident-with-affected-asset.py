@@ -15,6 +15,7 @@ from cybox.common import Hash
 from cybox.objects.file_object import File
 
 def main():
+    pkg = STIXPackage()
     affected_asset = AffectedAsset()
     affected_asset.description = "Database server at hr-data1.example.com"
     affected_asset.type_ = "Database"
@@ -33,8 +34,10 @@ def main():
     affected_asset.nature_of_security_effect = property_affected
     incident = Incident(title="Exfiltration from hr-data1.example.com")
     incident.affected_assets = affected_asset
+
+    pkg.add_incident(incident)
     
-    print incident.to_xml()
+    print pkg.to_xml()
    
 if __name__ == '__main__':
     main()
