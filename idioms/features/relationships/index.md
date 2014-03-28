@@ -3,7 +3,7 @@ layout: idiom
 title: STIX Relationships
 ---
 
-Relationships are one of the features of STIX that make it so powerful for expression cyber threat intelligence. Although each of the major components is valuable on its own and can be used independently of the others in order to express those concepts, the true power of STIX is realized when components are used in conjunction with each other to better enable threat analysis. It's one thing to use STIX to describe an indicator for an IP address without context, it's another to relate that to the relevant TTP that it indicates, the TTP to the threat actor or actors that are known to use it, to the incidents where it was observed, and to courses of action that can help mitigate its impact.
+Relationships are one of the features of STIX that make it so powerful for expressing cyber threat intelligence when compared to other options. Although each of the major components is valuable on its own and can be used independently of the others in order to express those concepts, the true power of STIX is realized when components are used in conjunction with each other to better enable threat analysis. It's one thing to use STIX to describe an indicator for an IP address without context, it's another to relate that to the relevant TTP that it indicates, the TTP to the threat actor or actors that are known to use it, to the incidents where it was observed, and to courses of action that can help mitigate its impact.
 
 STIX relationships enable all of this by defining these connection points and how to express them:
 
@@ -11,21 +11,25 @@ STIX relationships enable all of this by defining these connection points and ho
 
 ## Concept
 
-All relationships in STIX are implemented using a similar structure to ensure consistency and ease of implementation. It allows for representation of the relationship itself (of course), a name to further describe the semantics of the relationship, a confidence in the assertion of a relationship, and an information source for the relationship. These fields mean that not only can STIX components be related together, they can be related together in a semantically meaninful way that preserves confidence and providence of the relationship assertion.
+All relationships in STIX are implemented using a similar structure to ensure consistency and ease of implementation. The structure allows for representation of the relationship itself (of course), a name to further describe the semantics of the relationship, a confidence in the assertion of a relationship, and an information source for the relationship. These fields mean that not only can STIX components be related together, they can be related together in a semantically meaninful way that preserves confidence and providence of the relationship assertion.
 
 While all relationships in STIX allow for the information above, there are two general types of relationships: full relationships, which describes almost all STIX relationships, allow for either embedding the full related component inside the relationship or to reference the other component via an idref. Reference relationships only allow relationship by reference, not by embedding it.
 
 ## Data Model
 
-In XML, a basic STIX relationship looks like this:
+In XML, a basic STIX relationship looks like this (the relationship is "Indicated_TTP", which goes from an indicator to a TTP):
 
 ```xml
-<indicator:Indicated_TTP>
-  <stixCommon:Confidence />
-  <stixCommon:Information_Source />
-  <stixCommon:Relationship />
-  <stixCommon:TTP />
-</indicator:Indicated_TTP>
+<indicator:Indicator>
+  <indicator:Indicated_TTPs>
+    <indicator:Indicated_TTP>
+      <stixCommon:Confidence />
+      <stixCommon:Information_Source />
+      <stixCommon:Relationship />
+      <stixCommon:TTP />
+    </indicator:Indicated_TTP>
+  </indicator:Indicated_TTPs>
+</indicator:Indicator>
 ```
 
 The `Confidence` field uses the STIX confidence mechanism to express confidence in the relationship assertion. For example, if the producer is not certain that a particular TTP is used by a Threat Actor they could use "Low" confidence to denote that.
@@ -34,7 +38,7 @@ The `Information Source` field, using [InformationSourceType](/documentation/sti
 
 The `Relationship` field uses a STIX controlled vocabulary to specify what type of relationship is being asserted. Although no default vocabulary has been identified, the STIX community is currently soliciting input on potential vocabularies.
 
-Finally, the `TTP` field, which is specific to TTP in this place but will always be the name of the related component, contains either a pointer to or a full representation of the related component (assuming it's a full relationship type, if not only the reference might be supported).
+Finally, the `TTP` field: this field contains either a pointer to or a full representation of the related component (assuming it's a full relationship type, if not only the reference might be supported). The field name will always be the name of the component that the relationship is pointing to, which in this case is TTP.
 
 If using that field as a reference, the `idref` field is used to point to the `id` of the construct that the relationship is to. Optionally, the `timestamp` field can also be used to create a reference to a specific version of the construct.
 

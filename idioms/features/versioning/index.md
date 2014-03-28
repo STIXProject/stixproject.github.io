@@ -13,14 +13,14 @@ STIX versioning takes two parallel approaches: [relationships](/idioms/features/
 
 In order to support the versioning of a construct, the following baseline requirements must be met:
 
-* The construct must be a versionable type, which includes the 7 core STIX components (not Observable)
+* The construct must be a versionable type, which includes the 7 core STIX components and STIX Package. Note that Observable is not included, as it is defined in CybOX and does not have the required versioning fields.
 * The construct must be given an `id` when it is created
 * The construct must be given a `timestamp` when it is created, which is set to the current time. It's strongly suggested that the timestamp go to six decimal places in the seconds: "01-01-2014T01:01:01.000000Z". As with all STIX timestamps, you should also indicate the timezone if at all possible.
 
 By meeting those three requirements when initially creating a construct, you can ensure that you can version the construct later. As an example:
 
 {% highlight xml %}
-<stix:TTP xsi:type="ttp:TTPType" id="1" timestamp="01-04-2014T04:23:57.409238" />
+<stix:TTP xsi:type="ttp:TTPType" id="1" timestamp="01-04-2014T04:23:57.409238Z" />
 {% endhighlight %}
 
 ## Incremental Update
@@ -30,7 +30,7 @@ Incremental updates can be used when the basic nature of the construct isn't cha
 As an example, the following TTP is an update of the previous TTP:
 
 {% highlight xml %}
-<stix:TTP xsi:type="ttp:TTPType" id="1" timestamp="01-04-2014T07:52:25.937584" />
+<stix:TTP xsi:type="ttp:TTPType" id="1" timestamp="01-04-2014T07:52:25.937584Z" />
 {% endhighlight %}
 
 ## Major Update
@@ -38,7 +38,7 @@ As an example, the following TTP is an update of the previous TTP:
 To perform a major update, the component should be given a new `id`, a new `timestamp`, and a relationship back to the previous version:
 
 {% highlight xml linenos %}
-<stix:TTP xsi:type="ttp:TTPType" id="2" timestamp="01-04-2014T09:21:35.369431">
+<stix:TTP xsi:type="ttp:TTPType" id="2" timestamp="01-04-2014T09:21:35.369431ZS">
   <ttp:Related_TTPs>
     <ttp:Related_TTP>
       <stixCommon:Relationship>Supersedes</stixCommon:Relationship>
@@ -48,17 +48,17 @@ To perform a major update, the component should be given a new `id`, a new `time
 </stix:TTP>
 {% endhighlight %}
 
-Further updates should include the previous relationships, such that the third update will have two Related TTPs to previous versions, etc. This ensures that even consumers who don't see all content updates understand the history of the element.
+Further updates should include the previous relationships, such that the third major update will have two Related TTPs to previous versions, etc. This ensures that even consumers who don't see all content updates understand the history of the element.
 
-Though there has been some discussion about what a versioning vocabulary would look like, nothing has been formalized within the STIX community. Any input on this topic is appreciated, please send it to the <a href="mailto:stix-discussion-list@lists.mitre.org">STIX discussion list</a> and the community can talk it over.
+Though there has been some discussion about what a versioning vocabulary would look like, nothing has been formalized within the STIX community. Any input on this topic is appreciated, please send it to the <a href="mailto:stix-discussion-list@lists.mitre.org">STIX discussion list</a> and the community can talk it over. Note that you will have to [register](http://stix.mitre.org/community/registration.html) for the mailing list before posting, if you haven't already.
 
 ## When to use each?
 
 The question of when to use each type of update is still under some level of evaluation, particularly as implementations are still being developed and the operational impact of the various approaches are not yet clear. As implementations are developed, it is hoped that the STIX community can share their experiences and work towards developing best practices for versioning using this approach as well as, if necessary, suggestions to change the approach towards something that better meets the use cases.
 
-Current suggested practices suggest using an incremental update whenever you're making very minor changes to a construct that don't change its inherent meaning. Adding an alias to a threat actor, for example, would be an incremental update. Additionlly, incremental updates can be used within an organization while it is developing a more final version of the construct in order to avoid churn on IDs.
+Current suggested practices suggest using an incremental update whenever you're making very minor changes to a construct that don't change its inherent meaning. Adding an alias to a threat actor, for example, would be an incremental update. Additionally, incremental updates can be used within an organization while it is developing a more final version of the construct in order to avoid churn on IDs.
 
-Major updates, on the other hand, are suggested for anything that changes the basic meaning of a construct. Changing a TTP from "phishing" to "spear phishing", for example, would be a major update because even though phishing and spear phishing are similar the essential meaning of the construct changed.
+Major updates, on the other hand, are suggested for anything that changes the inherent meaning of a construct. Changing a TTP from "phishing" to "spear phishing", for example, would be a major update because even though phishing and spear phishing are similar the inherent meaning of the construct changed.
 
 ## Revocation
 
