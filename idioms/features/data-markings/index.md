@@ -5,7 +5,7 @@ title: Marking Data
 
 In STIX, data markings are used to mark specific pieces of the STIX document with some sort of information. In many cases that information is handling instructions, classifications, or terms of use but in reality the data markings structure can be used to mark the data with anything. For example, data markings could be used to indicate that the STIX document is part of an exercise and is not actual production data.
 
-Markings in STIX are applied at the field level, meaning that marking statements can apply as atomically as individual fields up to all fields in the document (essentially marking the whole document). Thus a copyright may be applied across the entire document while specific terms of use might apply to certain fields in indicator test mechanisms or courses of action (as an example).
+Markings in STIX are applied at the field level, meaning that marking statements can apply as atomically as individual fields (elements and attributes in the XML) up to all fields in the document (essentially marking the whole document). Thus a copyright may be applied across the entire document while specific terms of use might apply to certain fields in indicator test mechanisms or courses of action (as an example).
 
 ## Using Markings
 
