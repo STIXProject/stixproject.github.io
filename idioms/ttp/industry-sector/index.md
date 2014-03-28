@@ -24,16 +24,18 @@ Within CIQ, the specific field used is `@IndustryType` within `OrganisationInfo`
 ## XML
 
 {% highlight xml linenos %}
-<stix:TTP timestamp="2014-02-20T09:00:00.000000Z" id="example:ttp-030d3edf-da7c-4d1f-a0b9-6c38a8af73db" xsi:type="ttp:TTPType">
-    <ttp:Title>Victim Targeting: Electricity Sector and Industrial Control System Sector</ttp:Title>
-    <ttp:Victim_Targeting>
-        <ttp:Identity id="example:ciqidentity30instance-f8cd0af8-6534-496e-bf53-f6a9aa11e5ce" xsi:type="stixCiqIdentity:CIQIdentity3.0InstanceType">
-            <stixCiqIdentity:Specification>
-                <xpil:OrganisationInfo xpil:IndustryType="Energy Sector, Banking and Finance Sector"/>
-            </stixCiqIdentity:Specification>
-        </ttp:Identity>
-    </ttp:Victim_Targeting>
-</stix:TTP>
+<stix:TTPs>
+    <stix:TTP timestamp="2014-02-20T09:00:00.000000Z" id="example:ttp-030d3edf-da7c-4d1f-a0b9-6c38a8af73db" xsi:type="ttp:TTPType">
+        <ttp:Title>Victim Targeting: Electricity Sector and Industrial Control System Sector</ttp:Title>
+        <ttp:Victim_Targeting>
+            <ttp:Identity id="example:ciqidentity3.0instance-f8cd0af8-6534-496e-bf53-f6a9aa11e5ce" xsi:type="stixCIQIdentity:CIQIdentity3.0InstanceType">
+                <stixCIQIdentity:Specification>
+                    <xpil:OrganisationInfo xpil:IndustryType="Electricity Sector, Industrial Control System Sector"/>
+                </stixCIQIdentity:Specification>
+            </ttp:Identity>
+        </ttp:Victim_Targeting>
+    </stix:TTP>
+</stix:TTPs>
 {% endhighlight %}
 
 [Full XML](victim-targeting-sector.xml)
