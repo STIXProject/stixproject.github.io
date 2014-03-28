@@ -98,7 +98,7 @@ The composite indicator has the same indicated TTP as the other two indicators, 
 </stix:Indicators>
 <stix:TTPs>
     <stix:TTP xsi:type="ttp:TTPType" id="example:ttp-c32a6ab5-17b0-4bf4-b85b-a1f4f54d2ecd" timestamp="2014-02-20T09:00:00.000000Z">
-        <ttp:Title>Malware C2 Channel</ttp:Title>
+        <ttp:Title>Phishing</ttp:Title>
     </stix:TTP>
 </stix:TTPs>
 {% endhighlight %}

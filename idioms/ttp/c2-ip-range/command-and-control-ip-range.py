@@ -19,9 +19,9 @@ from cybox.objects.address_object import Address
 def main():
     stix_package = STIXPackage()
     
-    addr1 = Observable(Address(address_value="198.51.100.1", category=Address.CAT_IPV4))
-    addr2 = Observable(Address(address_value="198.51.100.2", category=Address.CAT_IPV4))
-    addr3 = Observable(Address(address_value="198.51.100.3", category=Address.CAT_IPV4))
+    addr1 = Observable(Address(address_value="198.51.100.2", category=Address.CAT_IPV4))
+    addr2 = Observable(Address(address_value="198.51.100.17", category=Address.CAT_IPV4))
+    addr3 = Observable(Address(address_value="203.0.113.19", category=Address.CAT_IPV4))
     
     stix_package.add_observable(addr1)
     stix_package.add_observable(addr2)
