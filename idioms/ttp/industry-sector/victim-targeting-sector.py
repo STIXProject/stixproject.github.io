@@ -16,7 +16,7 @@ def main():
     identity_spec.organisation_info = OrganisationInfo(industry_type="Electricity, Industrial Control Systems")
     ciq_identity.specification = identity_spec
     
-    ttp = TTP()
+    ttp = TTP(title="Victim Targeting: Electricity Sector and Industrial Control System Sector")
     ttp.victim_targeting = VictimTargeting()
     ttp.victim_targeting.identity = ciq_identity
     

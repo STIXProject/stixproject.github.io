@@ -9,15 +9,15 @@ TTP Victim Targeting, including by industry sector, is commonly used within a la
 
 ## Scenario
 
-In this scenario, the STIX document describes a very simple victim targeting structure that denotes that the threat targets organizations in the energy sector and in the banking and finance sector.
+In this scenario, the STIX document describes a very simple victim targeting structure that denotes that the targeting of organizations in the energy sector and in the banking and finance sector.
 
 ## Data model
 
-The portion of the TTP data model that is used to represent victim targeting is [VictimTargetingType](/documentation/ttp/VictimTargetingType). That type contains a field called `Identity` that is used to express facts about victim identity that are targeted, including industry sector.
+The portion of the TTP data model that is used to represent victim targeting is [VictimTargetingType](/documentation/ttp/VictimTargetingType). That type contains a field called `Identity` that is used to express characterizing facts about the identity of targeted victims, including things like relevant industry sectors.
 
 The `Identity` field is an extension point represented by [IdentityType](/documentation/stixCommon/IdentityType). The default extension provided by STIX for use in expressing identity is the [CIQIdentity3.0InstanceType](/documentation/stix-ciqidentity/CIQIdentity3.0InstanceType), which leverages the external [CIQ](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=ciq) (Customer Information Quality) standard published by OASIS. Though it's possible to use a different extension, in most cases producers will be using CIQ.
 
-Within CIQ, the specific field used is `@IndustryType` within `OrganisationInfo`. That field is an XML attribute and, therefore, the suggested practice is to use comma separated values.
+Within CIQ, the specific field used is `@IndustryType` within `OrganisationInfo`. That field is an XML attribute and, therefore, the suggested practice is to use a comma separated list when multiple values are needed.
 
 ![TTP Targeting Sector Diagram](diagram.png)
 
@@ -51,7 +51,7 @@ identity_spec = STIXCIQIdentity3_0()
 identity_spec.organisation_info = OrganisationInfo(industry_type="Electricity, Industrial Control Systems")
 ciq_identity.specification = identity_spec
 
-ttp = TTP()
+ttp = TTP(title="Victim Targeting: Electricity Sector and Industrial Control System Sector")
 ttp.victim_targeting = VictimTargeting()
 ttp.victim_targeting.identity = ciq_identity
 
