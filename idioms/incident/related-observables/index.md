@@ -3,6 +3,8 @@ layout: idiom
 title: Incident with Related Observables
 ---
 
+<img src="/images/Observable.png" class="component-img" alt="Observable Icon" />
+
 During the course of an incident investigation it's useful to record the pieces of observable data that led to the discovery of the incident or that were detected and presumed to be related to the incident. These can be captured in a vendor-independent manner using [CybOX](http://cybox.mitre.org) and then related into STIX incident records.
 
 ## Scenario
