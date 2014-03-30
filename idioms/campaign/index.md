@@ -5,7 +5,7 @@ title: Campaign Idioms
 
 <img src="/images/Campaign.png" class="component-img" alt="Campaign Icon" />
 
-A STIX [Campaign](/documentation/campaign/CampaignType) represents a set of TTPs, incidents, or threat actors that together express a common intent or desired effect. For example, an adversary using a particular set of TTPs (malware and tools) to target an industry sector constitutes a campaign. In the STIX data model, campaigns represent both that intent itself and, perhaps more importantly, act as a meta-construct to relate the associated TTPs, incidents, and threat actors that are part of that campaign together.
+A STIX [Campaign](/documentation/campaign/CampaignType) represents a set of TTPs, incidents, or threat actors that together express a common intent or desired effect. For example, an adversary using a particular set of TTPs (malware and tools) to target an industry sector with a specific intent may constitute a campaign. In the STIX data model, campaigns represent both that intent itself and, perhaps more importantly, act as a meta-construct to relate the associated TTPs, incidents, and threat actors that are part of that campaign together.
 
 The campaign idioms documented here can be divided into how to express data about the campaign itself (such as expressing multiple aliases for the same campaign) and how to use the campaign construct to tie together related TTPs, incidents, and threat actors.
 
