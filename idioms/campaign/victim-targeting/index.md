@@ -3,7 +3,7 @@ layout: idiom
 title: Victim Targeting for a Campaign
 ---
 
-<img src="/images/VictimTargeting.png" class="component-img" alt="Victim Targeting Icon" />
+<img src="/images/Victim Targeting.png" class="component-img" alt="Victim Targeting Icon" />
 
 One common method by which cyber threat campaigns are defined and tracked is based on the types of victims they target, whether victims are defined by the victim themselves (where they are located, the types of work they do), or by the fact that they have certain types of information or systems (customer PII, Industrial Control Systems, etc), or by the fact that they target specific technical configurations (a certain browser or OS for example).
 
