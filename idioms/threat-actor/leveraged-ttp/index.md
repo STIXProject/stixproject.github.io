@@ -7,7 +7,7 @@ title: Threat Actor Leveraging Attack Patterns and Malware
 
 <img src="/images/Malware.png" class="component-img" alt="Malware Icon" />
 
-A large part of the reason for doing threat actor attribution and correlation is to develop an understanding of the adversary behavior in order to better defend against those types of attacks. In many cases, adversary behavior can be characterized by the types of attack patterns they typically use: for example, using spear phishing as a delivery mechanism for malware is an attack pattern. In other cases, behavior can be described based on the malware that the adversary typically uses.
+A large part of the reason for doing threat actor attribution and correlation is to develop an understanding of the adversary behavior in order to better prioritize courses of action and defend against those types of attacks. In many cases, adversary behavior can be characterized by the types of attack patterns they typically use: for example, using spear phishing as a delivery mechanism for malware is an attack pattern. In other cases, behavior can be described based on the malware that the adversary typically uses.
 
 ## Scenario
 
@@ -23,7 +23,7 @@ Adversary behavior, including attack patterns and malware, are represented in ST
 
 It's technically possible to use a single TTP to represent both an attack pattern and a piece of malware, however combining distinct concepts into single components makes pivoting data in the future much more difficult. For example, if it's later determined that the same PIVY variant is used by a different threat actor it's useful to have it in a separate TTP in order to relate both threat actors to it (and only Adversary Bravo to the attack pattern). To make sure this works from the start, it's generally better to split distinct concepts into separate components. This primarily comes up in representing TTPs but the same suggestion holds true for all components.
 
-So rather than adding an attack pattern section to the malware TTP, a new TTP was used that contains just the attack pattern. The attack pattern, described using [AttackPatternType](/documentation/ttp/AttackPatternType), contains a `CAPEC ID` and a `Description`. [CAPEC](http://capec.mitre.org) is a dictionary of potential attack patterns, so in this case by looking in that dictionary the producer was able to see that "CAPEC-98" is the ID for phishing. The best way to find the correct CAPEC is to use a generic search engine like Google or to use the CAPEC website. Other than just the CAPEC ID, the attack pattern `Description` field is filled in with more specific information about how the phishing attacks are executed.
+So rather than adding an attack pattern section to the malware TTP, a new TTP was used that contains just the attack pattern. The attack pattern, described using [AttackPatternType](/documentation/ttp/AttackPatternType), contains a `CAPEC ID` and a `Description`. [CAPEC](http://capec.mitre.org) is a dictionary of potential attack patterns, so in this case by looking in that dictionary the producer was able to see that "CAPEC-98" is the ID for phishing. The best way to find the correct CAPEC is to use a generic search engine like Google or to use the CAPEC website. Other than just the CAPEC ID, the attack pattern `Description` field is used to clearly and simply convey that CAPEC-98 is "Phishing".
 
 Finally, the `Observed TTP` list inside the threat actor is used to relate the threat actor to the two TTPs. For the malware TTP, the `Relationship` descriptor "Leverages Malware" is used while for the attack pattern TTP "Leverages Attack Pattern" is used.
 
@@ -34,17 +34,17 @@ Taken together, the three constructs represent the threat actor and the known ma
 {% highlight xml linenos %}
     <stix:TTPs>
         <stix:TTP id="example:ttp-8ac90ff3-ecf8-4835-95b8-6aea6a623df5" xsi:type='ttp:TTPType' version="1.1">
-            <ttp:Title>Adversary Bravo Phishing</ttp:Title>
+            <ttp:Title>Phishing</ttp:Title>
             <ttp:Behavior>
                 <ttp:Attack_Patterns>
                     <ttp:Attack_Pattern capec_id="CAPEC-98">
-                        <ttp:Description>Adversary Bravo's primary malware deliver mechanism is through untargeted phishing.</ttp:Description>
+                        <ttp:Description>Phishing</ttp:Description>
                     </ttp:Attack_Pattern>
                 </ttp:Attack_Patterns>
             </ttp:Behavior>
         </stix:TTP>
         <stix:TTP id="example:ttp-d1c612bc-146f-4b65-b7b0-9a54a14150a4" xsi:type='ttp:TTPType' version="1.1">
-            <ttp:Title>Adversary Bravo PIVY Instance</ttp:Title>
+            <ttp:Title>Poison Ivy Variant d1c6</ttp:Title>
             <ttp:Behavior>
                 <ttp:Malware>
                     <ttp:Malware_Instance id="example:malware-1621d4d2-b67d-11e3-ba9e-f01faf20d111">
@@ -89,17 +89,16 @@ from stix.ttp import TTP, Behavior
 from stix.ttp.behavior import MalwareInstance, AttackPattern
 
 stix_package = STIXPackage()
-ttp_phishing = TTP(title="Adversary Bravo Phishing")
+ttp_phishing = TTP(title="Phishing")
 
 attack_pattern = AttackPattern()
 attack_pattern.capec_id = "CAPEC-98"
-attack_pattern.description = ("Adversary Bravo's primary malware delivery "
-                              "mechanism is through untargeted phishing")
+attack_pattern.description = ("Phishing")
 
 ttp_phishing.behavior = Behavior()
 ttp_phishing.behavior.add_attack_pattern(attack_pattern)
 
-ttp_pivy = TTP()
+ttp_pivy = TTP(title="Poison Ivy Variant d1c6")
 malware_instance = MalwareInstance()
 malware_instance.add_name("Poison Ivy Variant d1c6")
 malware_instance.add_type("Remote Access Trojan")
