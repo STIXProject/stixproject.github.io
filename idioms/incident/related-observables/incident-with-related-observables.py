@@ -28,10 +28,10 @@ def main():
     file_object2.add_hash(Hash("d7a8fbb307d7809469ca9abcb0082e4f8d5651e46d3cdb762d02d0bf37c9e592"))
     observable2 = Observable(file_object2)
     
-    incident = Incident(title="Detected files delivered by malicious attacker")
+    incident = Incident(title="Malicious files detected")
     
-    related_observable1 = RelatedObservable(observable1, relationship="Malicious Observable")
-    related_observable2 = RelatedObservable(observable2, relationship="Malicious Observable")
+    related_observable1 = RelatedObservable(observable1, relationship="Malicious Artifact Detected")
+    related_observable2 = RelatedObservable(observable2, relationship="Malicious Artifact Detected")
     incident.related_observables.append(related_observable1)
     incident.related_observables.append(related_observable2)
 

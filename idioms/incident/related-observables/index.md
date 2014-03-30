@@ -3,27 +3,29 @@ layout: idiom
 title: Incident with Related Observables
 ---
 
-During the course of an incident investigation it's useful to record the pieces of observable data that led to the discovery of the incident or that were detected and presumed to be malicious on behalf of the attacker. These can be captured in a vendor-independent manner using [CybOX](http://cybox.mitre.org) and then related into STIX incident records.
+During the course of an incident investigation it's useful to record the pieces of observable data that led to the discovery of the incident or that were detected and presumed to be related to the incident. These can be captured in a vendor-independent manner using [CybOX](http://cybox.mitre.org) and then related into STIX incident records.
 
 ## Scenario
 
-This scenario consists of an incident where during the investigation, it was determined that 3 files discovered on end user systems were traced back to the attacher. The idiom describes representing the incident itself with just a title and the set of related files.
+This scenario consists of an incident where during the investigation, it was determined that 2 files discovered on end user systems were malicious. The idiom describes representing the incident itself with just a title and the set of related files.
 
 ## Data model
 
 <img src="diagram.png" alt="Observables related to an incident" />
 
-This idiom is represented as a relationship between the [Incident](/documentation/incident/IncidentType) component and the CybOX [Observable](/documentation/cybox/ObservableType) component. The incident describes information specific to the incident itself while the observable contains a list of file names, sizes, and hashes that were found. The `Related Observables` relationship is used to indicate that the observables were traced back to the attacker.
+This idiom is represented as a relationship between the [Incident](/documentation/incident/IncidentType) component and the CybOX [Observable](/documentation/cybox/ObservableType) component. The incident describes information specific to the incident itself while the observable instance components each contain a file object with the name, size, and hash that were found for that file. The `Related Observables` relationship is used to link the observed files to the incident.
 
 #### Observables
 
-The observables are represented using CybOX [Observables](/documentation/cybox/ObservableType) that leverage the [File Object](/documentation/FileObj/FileObjectType). Each file has three fields that are filled out: the `Hash` field (within a hash structure) is the hash of the file, the `File_Name` field contains the name (not path) of the file, and the `Size` field contains the size in bytes of the file.
+The observables are represented using CybOX [Observables](/documentation/cybox/ObservableType) that leverage the [File Object](/documentation/FileObj/FileObjectType). Each file has three fields that are filled out: the `Hash` field (within a hash structure) is the hash of the file, the `File_Name` field contains the name (not path) of the file, and the `Size` field contains the size in bytes of the file. In the case of this scenario, the two files observed share the same name and size but differing hashes.
 
 Notice that, unlike when working with indicators, these are CybOX instance objects rather than patterns. Therefore the CybOX patterning capabilities such as conditions and apply conditions are not leveraged.
 
+For simplicity sake of this idiom, the Observable structures were kept to a minimum. Observables detected during an incident investigation would also typically include a `Observable Source` structure to convey when, how and by whom the observable was observed.
+
 #### Incident
 
-Given the constrained scenario, the incident construct is fairly limited: it contains a `Title` to identify the incident and a set of `Related Observable`s. The observable references point to the individual observables defined above each relationship is characterized as "Malicious Observable".
+Given the constrained scenario, the incident construct is fairly limited: it contains a `Title` to identify the incident and a set of `Related Observables`. The observable references point to the individual observables defined above each relationship is characterized as "Malicious Artifact Detected".
 
 ## XML
 
@@ -60,13 +62,14 @@ Given the constrained scenario, the incident construct is fairly limited: it con
 </stix:Observables>
 <stix:Incidents>
     <stix:Incident xsi:type="incident:IncidentType" id="example:incident-1b75ee8f-14d6-819a-d729-09ab52c91fdb" timestamp="2014-03-20T11:15:00.000000Z">
+        <incident:Title>Malicious files detected</incident:Title>
         <incident:Related_Observables>
             <incident:Related_Observable>
-                <stixCommon:Relationship>Malicious Observable</stixCommon:Relationship>
+                <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
                 <stixCommon:Observable idref="example:observable-8f43e891-7de2-a17a-2853-7979a1178c95"/>
             </incident:Related_Observable>
             <incident:Related_Observable>
-                <stixCommon:Relationship>Malicious Observable</stixCommon:Relationship>
+                <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
                 <stixCommon:Observable idref="example:observable-c45fe831-c851-9e6e-c188-38b49e2aa3b9"/>
             </incident:Related_Observable>
         </incident:Related_Observables>
@@ -98,10 +101,10 @@ file_object2.size_in_bytes = 40891
 file_object2.add_hash(Hash("d7a8fbb307d7809469ca9abcb0082e4f8d5651e46d3cdb762d02d0bf37c9e592"))
 observable2 = Observable(file_object2)
     
-incident = Incident(title="Detected files delivered by malicious attacker")
+incident = Incident(title="Malicious files detected")
     
-related_observable1 = RelatedObservable(observable1, relationship="Malicious Observable")
-related_observable2 = RelatedObservable(observable2, relationship="Malicious Observable")
+related_observable1 = RelatedObservable(observable1, relationship="Malicious Artifact Detected")
+related_observable2 = RelatedObservable(observable2, relationship="Malicious Artifact Detected")
 incident.related_observables.append(related_observable1)
 incident.related_observables.append(related_observable2)
 

@@ -54,13 +54,16 @@
     </stix:Observables>
     <stix:Incidents>
         <stix:Incident xsi:type="incident:IncidentType" id="example:incident-1b75ee8f-14d6-819a-d729-09ab52c91fdb" timestamp="2014-03-20T11:15:00.000000Z">
+            <incident:Title>Malicious files detected</incident:Title>
             <incident:Related_Observables>
                 <incident:Related_Observable>
-                    <stixCommon:Relationship>Malicious Observable</stixCommon:Relationship>
+                    <stixCommon:Relationship>Malicious Artifact Detected
+</stixCommon:Relationship>
                     <stixCommon:Observable idref="example:observable-8f43e891-7de2-a17a-2853-7979a1178c95"/>
                 </incident:Related_Observable>
                 <incident:Related_Observable>
-                    <stixCommon:Relationship>Malicious Observable</stixCommon:Relationship>
+                    <stixCommon:Relationship>Malicious Artifact Detected
+</stixCommon:Relationship>
                     <stixCommon:Observable idref="example:observable-c45fe831-c851-9e6e-c188-38b49e2aa3b9"/>
                 </incident:Related_Observable>
             </incident:Related_Observables>
