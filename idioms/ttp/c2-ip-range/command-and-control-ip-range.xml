@@ -27,21 +27,21 @@
         <cybox:Observable id="example:observable-c8c32b6e-2ea8-51c4-6446-7f5218072f27">
             <cybox:Object id="example:object-d7fcce87-0e98-4537-81bf-1e7ca9ad3734">
                 <cybox:Properties xsi:type="AddressObject:AddressObjectType" category="ipv4-addr">
-                    <AddressObject:Address_Value condition="Equals">198.51.100.2</AddressObject:Address_Value>
+                    <AddressObject:Address_Value>198.51.100.2</AddressObject:Address_Value>
                 </cybox:Properties>
             </cybox:Object>
         </cybox:Observable>
         <cybox:Observable id="example:observable-b57aa65f-9598-04fb-a9d1-5094c36d5dc4">
             <cybox:Object id="example:object-f4fac80a-1239-47cc-b0e6-771b1a73f817">
                 <cybox:Properties xsi:type="AddressObject:AddressObjectType" category="ipv4-addr">
-                    <AddressObject:Address_Value condition="Equals">198.51.100.17</AddressObject:Address_Value>
+                    <AddressObject:Address_Value>198.51.100.17</AddressObject:Address_Value>
                 </cybox:Properties>
             </cybox:Object>
         </cybox:Observable>
         <cybox:Observable id="example:observable-19c16346-0eb4-99e2-00bb-4ec3ed174cac">
             <cybox:Object id="example:object-174bf9a3-f163-4919-9119-b52598f97ce3">
                 <cybox:Properties xsi:type="AddressObject:AddressObjectType" category="ipv4-addr">
-                    <AddressObject:Address_Value condition="Equals">203.0.113.19</AddressObject:Address_Value>
+                    <AddressObject:Address_Value>203.0.113.19</AddressObject:Address_Value>
                 </cybox:Properties>
             </cybox:Object>
         </cybox:Observable>

@@ -3,11 +3,11 @@ layout: idiom
 title: Command and Control IP Range
 ---
 
-Adversary infrastructure is the set of fixed resources used by the adversary to carry out cyber attacks and exploitations. An understanding of adversary infrastructure is helpful to network defenders and security operations teams because they can help drive attribution and correlation as well as serve as a source of indicators of malicious activity. In this example, a knowledge of the adversary's command and control (C2) infrastructure is described using the [TTP](/documentation/ttp/TTPType) component.
+Adversary infrastructure is the set of resources used by the adversary to carry out cyber attacks and exploitations. An understanding of adversary infrastructure is helpful to network defenders and security operations teams because they can help drive attribution and correlation, serve as a source of indicators of malicious activity, and provide a target list for defenders to block or isolate. In this example, a knowledge of the adversary's command and control (C2) infrastructure is described using the [TTP](/documentation/ttp/TTPType) component.
 
 ## Scenario
 
-This scenario represents a set of 5 IP addresses that are known C2 for an adversary's remote access mechanism. The IPs (198.51.100.2, 198.51.100.17, 203.0.113.19, 203.0.113.12, and 192.0.2.22) are not in any one subnet.
+This scenario represents a set of 3 IP addresses that are known C2 for an adversary's remote access mechanism. The IPs (198.51.100.2, 198.51.100.17 and 203.0.113.19) are not in any one subnet.
 
 ## Data model
 
@@ -17,7 +17,7 @@ Adversary infrastructure is represented using the [InfrastructureType](/document
 
 The infrastructure `Type` is a controlled vocabulary field. In this case the default vocabulary, [AttackerInfrastructureTypeVocab-1.0](/documentation/stixVocabs/AttackerInfrastructureTypeVocab-1.0), does not contain an appropriate value for malware C2 and so rather than using that vocabulary the field just sets the value to "Malware C2" and leaves the vocabulary blank. The title and description fields are not used, although the TTP's `Title` is set to "Malware C2 Channel". Setting the TTP title vs. the infrastructure title is a judgment call, but generally one or the other should be set at minimum and if the TTP describes more than one thing both should be used to distinguish them. In this case the TTP only describes one thing, so it's sufficient to just use the TTP title.
 
-The actual IP addresses are represented in CybOX within the `Observable Characterization` field. Because these are instance observables (i.e. instances of IP addresses, not patterns) separate observables are used rather than using the `Apply Condition` field. 5 observables are created, with 5 objects, with 5 properties for [Address Objects](/documentation/AddressObj/AddressObjectType). Each set of properties includes the `Address Value` field set to the IP address and the `Category` field set to IPV4 address.
+The actual IP addresses are represented in CybOX within the `Observable Characterization` field. Because these are instance observables (i.e. instances of IP addresses, not patterns) separate observables are used rather than using the `Apply Condition` field. 3 observables are created, with 3 objects, with 3 properties for [Address Objects](/documentation/AddressObj/AddressObjectType). Each set of properties includes the `Address Value` field set to the IP address and the `Category` field set to IPV4 address.
 
 ## XML
 
@@ -26,21 +26,21 @@ The actual IP addresses are represented in CybOX within the `Observable Characte
     <cybox:Observable id="example:observable-c8c32b6e-2ea8-51c4-6446-7f5218072f27">
         <cybox:Object id="example:object-d7fcce87-0e98-4537-81bf-1e7ca9ad3734">
             <cybox:Properties xsi:type="AddressObject:AddressObjectType" category="ipv4-addr">
-                <AddressObject:Address_Value condition="Equals">198.51.100.2</AddressObject:Address_Value>
+                <AddressObject:Address_Value>198.51.100.2</AddressObject:Address_Value>
             </cybox:Properties>
         </cybox:Object>
     </cybox:Observable>
     <cybox:Observable id="example:observable-b57aa65f-9598-04fb-a9d1-5094c36d5dc4">
         <cybox:Object id="example:object-f4fac80a-1239-47cc-b0e6-771b1a73f817">
             <cybox:Properties xsi:type="AddressObject:AddressObjectType" category="ipv4-addr">
-                <AddressObject:Address_Value condition="Equals">198.51.100.17</AddressObject:Address_Value>
+                <AddressObject:Address_Value>198.51.100.17</AddressObject:Address_Value>
             </cybox:Properties>
         </cybox:Object>
     </cybox:Observable>
     <cybox:Observable id="example:observable-19c16346-0eb4-99e2-00bb-4ec3ed174cac">
         <cybox:Object id="example:object-174bf9a3-f163-4919-9119-b52598f97ce3">
             <cybox:Properties xsi:type="AddressObject:AddressObjectType" category="ipv4-addr">
-                <AddressObject:Address_Value condition="Equals">203.0.113.19</AddressObject:Address_Value>
+                <AddressObject:Address_Value>203.0.113.19</AddressObject:Address_Value>
             </cybox:Properties>
         </cybox:Object>
     </cybox:Observable>
