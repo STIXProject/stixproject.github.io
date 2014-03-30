@@ -7,7 +7,7 @@ A very common method for delivering malware to potential targets is to host it a
 
 ## Scenario
 
-This scenario consists of an indicator the URL `http://x4z9arb.cn/4712/`, which is known to be malicious. Unlike the [C2 beaconing](/idioms/indicator/c2-indicator) and [Malware hash](/idioms/indicator/malware-hash) idioms, in this scenario the organization creating the indicator does not have any specific context and so chooses to just represent the indicator. Though it's suggested that some context always be given with an indicator if possible, in this case the organization does not have enough additional context to add anything.
+This scenario consists of an indicator for the URL `http://x4z9arb.cn/4712/`, which is known to be malicious. Unlike the [C2 beaconing](/idioms/indicator/c2-indicator) and [Malware hash](/idioms/indicator/malware-hash) idioms, in this scenario the organization creating the indicator does not have any specific context and so chooses to just represent the indicator without additional context. Though it's suggested that some context always be given with an indicator if possible, in this case the organization does not have enough additional context to add anything.
 
 ## Data model
 
