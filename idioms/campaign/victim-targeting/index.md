@@ -20,7 +20,7 @@ The campaign is represented with just a title and a related TTP with a relations
 {% highlight xml linenos %}
 <stix:TTPs>
     <stix:TTP xsi:type="ttp:TTPType" id="example:ttp-4fde045a-b25f-f035-e8d0-29c9d5130cd9" timestamp="2014-02-20T09:00:00.000000Z">
-        <ttp:Title>Victim Targeting for Operation Alpha</ttp:Title>
+        <ttp:Title>Victim Targeting: Customer PII and Financial Data</ttp:Title>
         <ttp:Victim_Targeting xsi:type="ttp:VictimTargetingType">
             <ttp:Targeted_Information xsi:type="stixVocabs:InformationTypeVocab-1.0">Information Assets - Customer PII</ttp:Targeted_Information>
             <ttp:Targeted_Information xsi:type="stixVocabs:InformationTypeVocab-1.0">Information Assets - Financial Data</ttp:Targeted_Information>
@@ -51,7 +51,7 @@ from stix.core import STIXPackage
 from stix.ttp import TTP
 
 ttp = TTP()
-ttp.title = "Victim Targeting for Operation Alpha"
+ttp.title = "Victim Targeting: Customer PII and Financial Data"
 ttp.victim_targeting.add_targeted_information("Information Assets - Customer PII")
 ttp.victim_targeting.add_targeted_information("Information Assets - Financial Data")
 
