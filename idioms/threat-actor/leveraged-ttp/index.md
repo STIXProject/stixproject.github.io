@@ -3,6 +3,10 @@ layout: idiom
 title: Threat Actor Leveraging Attack Patterns and Malware
 ---
 
+<img src="/images/Attack Patterns.png" class="component-img" alt="Attack Patterns Icon" />
+
+<img src="/images/Malware.png" class="component-img" alt="Malware Icon" />
+
 A large part of the reason for doing threat actor attribution and correlation is to develop an understanding of the adversary behavior in order to better defend against those types of attacks. In many cases, adversary behavior can be characterized by the types of attack patterns they typically use: for example, using spear phishing as a delivery mechanism for malware is an attack pattern. In other cases, behavior can be described based on the malware that the adversary typically uses.
 
 ## Scenario
