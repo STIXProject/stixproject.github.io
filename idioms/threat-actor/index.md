@@ -5,7 +5,7 @@ title: Threat Actor Idioms
 
 <img src="/images/Threat Actor.png" class="component-img" alt="Threat Actor Icon" />
 
-A STIX Threat Actor conveys information that characterizes or identifies (or both) an adversary. The characterization consists of information like the sophistication of the threat actor, its motivations and desired effects, and observed behavior. In the STIX relationship model, threat actors also include information such as observed TTPs, historic (or current) campaigns, and threat actors that appear associated with this actor.
+A STIX Threat Actor conveys information that characterizes or identifies (or both) an adversary. The characterization consists of information like the sophistication of the threat actor, its motivations and desired effects, and historically observed behavior. In the STIX relationship model, threat actors also include information such as observed TTPs, historic (or current) campaigns, and other threat actors that appear associated with this actor.
 
 <hr class="separator" />
 
