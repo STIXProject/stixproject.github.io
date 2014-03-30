@@ -3,6 +3,8 @@ layout: idiom
 title: Command and Control IP Range
 ---
 
+<img src="/images/Infrastructure.png" class="component-img" alt="Infrastructure Icon" />
+
 Adversary infrastructure is the set of resources used by the adversary to carry out cyber attacks and exploitations. An understanding of adversary infrastructure is helpful to network defenders and security operations teams because they can help drive attribution and correlation, serve as a source of indicators of malicious activity, and provide a target list for defenders to block or isolate. In this example, a knowledge of the adversary's command and control (C2) infrastructure is described using the [TTP](/documentation/ttp/TTPType) component.
 
 ## Scenario
