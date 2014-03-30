@@ -26,10 +26,10 @@ The STIX default extension for identity is [OASIS CIQ](https://www.oasis-open.or
         <ta:Identity xsi:type="stixCIQIdentity:CIQIdentity3.0InstanceType" id="example:identity-5855111c-8cf4-4803-8236-efc74b2441be">
             <stixCIQIdentity:Specification>
                 <ciq:PartyName>
-                    <OrganisationName xmlns="urn:oasis:names:tc:ciq:xnl:3">
+                    <OrganisationName xmlns="urn:oasis:names:tc:ciq:xnl:3" Type="CommonUse">
                         <NameElement>Disco Team</NameElement>
                     </OrganisationName>
-                    <OrganisationName xmlns="urn:oasis:names:tc:ciq:xnl:3">
+                    <OrganisationName xmlns="urn:oasis:names:tc:ciq:xnl:3" Type="UnofficialName">
                         <NameElement >Equipo del Discoteca</NameElement>
                     </OrganisationName>
                 </ciq:PartyName>
@@ -43,6 +43,9 @@ The STIX default extension for identity is [OASIS CIQ](https://www.oasis-open.or
                         </AdministrativeArea>
                     </ciq:Address>
                 </ciq:Addresses>
+                <xpil:ElectronicAddressIdentifiers>
+						<xpil:ElectronicAddressIdentifier xpil:Type="EMAIL">disco-team@stealthemail.com</xpil:ElectronicAddressIdentifier>
+					</xpil:ElectronicAddressIdentifiers>
                 <ciq:Languages>
                     <ciq:Language>Spanish</ciq:Language>
                 </ciq:Languages>
