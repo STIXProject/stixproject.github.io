@@ -62,22 +62,28 @@ The STIX default extension for identity is [OASIS CIQ](https://www.oasis-open.or
 {% highlight python linenos %}
 from stix.threat_actor import ThreatActor
 from stix.extensions.identity.ciq_identity_3_0 import (CIQIdentity3_0Instance, PartyName, STIXCIQIdentity3_0, 
-                                      Address, Country, Language, AdministrativeArea)
+                                      Address, Country, Language, AdministrativeArea, OrganisationName)
 
 ta = ThreatActor()
 ta.title = "Disco Team Threat Actor Group"
 
 ta.identity = CIQIdentity3_0Instance()
 identity_spec = STIXCIQIdentity3_0()
-identity_spec.party_name = PartyName(organisation_names=["Disco Team", "Equipo del Discoteca"])
+
+identity_spec.party_name = PartyName()
+identity_spec.party_name.add_organisation_name(OrganisationName("Disco Tean", type_="CommonUse"))
+identity_spec.party_name.add_organisation_name(OrganisationName("Equipo del Discoteca", type_="UnofficialName"))
+
 identity_spec.add_language("Spanish")
 
 address = Address()
 address.country = Country()
 address.country.add_name_element("United States")
 address.administrative_area = AdministrativeArea()
-address.administrative_area.add_name_element("California")
+address.administrative_area.add_name_element("California")    
 identity_spec.add_address(address)
+
+identity_spec.add_electronic_address_identifier("disco-team@stealthemail.com")
 
 ta.identity.specification = identity_spec
 print ta.to_xml()
