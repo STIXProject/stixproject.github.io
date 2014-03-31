@@ -20,45 +20,60 @@ def main():
     stix_package = STIXPackage()
     ttp = TTP(title="Phishing")
     stix_package.add_ttp(ttp)
+
+    # Create the indicator for just the subject
+    email_subject_object = EmailMessage()
+    email_subject_object.header = EmailHeader()
+    email_subject_object.header.subject = "[IMPORTANT] Please Review Before"
+    email_subject_object.header.subject.condition = "StartsWith"
     
-    comp_indicator = Indicator(title="Malicious E-mail Composite")
-    comp_indicator.add_indicator_type("Malicious E-mail")
-    comp_indicator.confidence = Confidence(value="High")
-    
-    email = EmailMessage()
-    email.header = EmailHeader()
-    email.header.subject = "[IMPORTANT] Please Review Before"
-    email.header.subject.condition = "StartsWith"
-    email.attachments = Attachments()
-    
-    file_attachment = File()
-    file_attachment.file_name = "Final Report"
-    file_attachment.file_name.condition = "StartsWith"
-    file_attachment.file_extension = "doc.exe"
-    
-    email.attachments.append(file_attachment.parent.id_)
-    
-    indicator_email = Indicator()
-    indicator_email.title = "Malicious E-mail Subject Line"
-    indicator_email.add_indicator_type("Malicious E-mail")
-    indicator_email.observable = email
-    indicator_email.confidence = "Low"
+    email_subject_indicator = Indicator()
+    email_subject_indicator.title = "Malicious E-mail Subject Line"
+    email_subject_indicator.add_indicator_type("Malicious E-mail")
+    email_subject_indicator.observable = email_subject_object
+    email_subject_indicator.confidence = "Low"
+
+    # Create the indicator for just the attachment
+
+    file_attachment_object = EmailMessage()
+    file_attachment_object.attachments = Attachments()
+
+    attached_file_object = File()
+    attached_file_object.file_name = "Final Report"
+    attached_file_object.file_name.condition = "StartsWith"
+    attached_file_object.file_extension = "doc.exe"
+    attached_file_object.file_extension.condition = "Equals"
+
+    file_attachment_object.add_related(attached_file_object, "Contains", inline=True)
+    file_attachment_object.attachments.append(file_attachment_object.parent.id_)
     
     indicator_attachment = Indicator()
     indicator_attachment.title = "Malicious E-mail Attachment"
     indicator_attachment.add_indicator_type("Malicious E-mail")
-    indicator_attachment.observable = file_attachment    
+    indicator_attachment.observable = file_attachment_object
     indicator_attachment.confidence = "Low"
+
+    # Create the combined indicator w/ both subject an attachment
+    full_email_object = EmailMessage()
+    full_email_object.attachments = Attachments()
+
+    # Add the previously referenced file as another reference rather than define it again:
+    full_email_object.attachments.append(file_attachment_object.parent.id_)
+
+    full_email_object.header = EmailHeader()
+    full_email_object.header.subject = "[IMPORTANT] Please Review Before"
+    full_email_object.header.subject.condition = "StartsWith"
+
+    combined_indicator = Indicator(title="Malicious E-mail")
+    combined_indicator.add_indicator_type("Malicious E-mail")
+    combined_indicator.confidence = Confidence(value="High")
+    combined_indicator.observable = full_email_object
     
-    indicator_email.add_indicated_ttp(TTP(idref=ttp.id_))
+    email_subject_indicator.add_indicated_ttp(TTP(idref=ttp.id_))
     indicator_attachment.add_indicated_ttp(TTP(idref=ttp.id_))
-    comp_indicator.add_indicated_ttp(TTP(idref=ttp.id_))
+    combined_indicator.add_indicated_ttp(TTP(idref=ttp.id_))
     
-    comp_indicator.composite_indicator_expression = CompositeIndicatorExpression(operator="AND")
-    comp_indicator.composite_indicator_expression.append(Indicator(idref=indicator_email.id_))
-    comp_indicator.composite_indicator_expression.append(Indicator(idref=indicator_attachment.id_))
-    
-    stix_package.indicators = [comp_indicator, indicator_email, indicator_attachment]
+    stix_package.indicators = [combined_indicator, email_subject_indicator, indicator_attachment]
     print stix_package.to_xml()
     
 if __name__ == '__main__':

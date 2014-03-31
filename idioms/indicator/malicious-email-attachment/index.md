@@ -11,93 +11,112 @@ This scenario consists of several related indicators used to represent a malicio
 
 ## Data model
 
-The data model for this idiom is fairly complicated because the set of matchable patterns is varied: an e-mail could come in that matches the subject but ends in ".ppt.exe" instead of ".doc.exe", or it might come in and match ".doc.exe" but not match the subject pattern, or it might match both. To represent this in the data, three indicators are used: one indicator for the e-mail subject pattern with low confidence, one indicator for the attachment pattern with low confidence, and one indicator as a composite AND with high confidence. That way if only one fact or the other matches it's clearer that the match may be less accurate, while a match of both is more accurate.
+The data model for this idiom is fairly complicated because the set of matchable patterns is varied: an e-mail could come in that matches the subject but ends in ".ppt.exe" instead of ".doc.exe", or it might come in and match ".doc.exe" but not match the subject pattern, or it might match both. To represent this in the data, three indicators are used: one indicator for the e-mail subject pattern with low confidence, one indicator for the attachment pattern with low confidence, and one indicator with both the subject pattern and the attachment with a high confidence. That way if only one fact or the other matches it's clearer that the match may be less accurate, while a match of both is more accurate.
 
-In addition, CybOX object relationships are used within each observable to indicate that the file was attached to the e-mail. This is not important for indicator matching but can help correlate the objects with other information upon a match being found or even absent a match.
-
-Finally, a very simple indicated TTP is present in order to indicate that if the composite (or either individual) indicator matches it indicates a potential phishing attempt.
+Finally, a very simple indicated TTP is present in order to indicate that if either the full e-mail indicator or either individual indicator matches it indicates a potential phishing attempt.
 
 <img src="diagram.png" alt="Malicious E-mail Indicator" />
 
 Yes, this diagram is fairly complicated. It's easiest to understand if you take a look at each object and its relationships separately.
 
-### E-mail Indicator
+### E-mail Subject Indicator
 
-The e-mail subject indicator, in the top-right, matches the e-mail pattern itself (specifically the subject line). It has a `Title` and a `Type` (using the [IndicatorTypeVocab-1.1](/documentation/stixVocabs/IndicatorTypeVocab-1.0) vocabulary) to give it some basic identifying information meant for humans. The "test" portion of the indicator consists of an [Observable](/documentation/cybox/ObservableType) with an [Email Message Object](/documentation/EmailMessageObj/EmailMessageObjectType). The pattern for the subject is that it always starts with the same text, so the field value for e-mail `Subject` field (inside the `Header`) is set to "[IMPORTANT] Please Review Before" and the CybOX `Condition` field is set to "Starts With" to indicate that the pattern should match if an e-mail is matched against it whose subject line starts with that text.
-
-The fact that the e-mail contains an attachment is contained in the `Attachments` field, which has a list of references to [File](/documentation/FileObj/FileObjectType) objects using the CybOX object reference mechanism. This reference is indicated by the blue line and resolves to the actual file object characterization, contained in the second indicator.
+The e-mail subject indicator, in the bottom-right, matches just the e-mail subject line. It has a `Title` and a `Type` (using the [IndicatorTypeVocab-1.1](/documentation/stixVocabs/IndicatorTypeVocab-1.0) vocabulary) to give it some basic identifying information meant for humans. The "test" portion of the indicator consists of an [Observable](/documentation/cybox/ObservableType) with an [Email Message Object](/documentation/EmailMessageObj/EmailMessageObjectType). The pattern for the subject is that it always starts with the same text, so the field value for e-mail `Subject` field (inside the `Header`) is set to "[IMPORTANT] Please Review Before" and the CybOX `Condition` field is set to "Starts With" to indicate that the pattern should match if an e-mail is matched against it whose subject line starts with that text.
 
 The indicated TTP for the indicator gives the indicator some context (relationship line in red). In this case, it says that if you see something that matches the pattern it indicates that you could have a phishing attack. In order to focus on the indicator portion of the data model for this idiom, the TTP was left purposefully vague but could easily be filled in with the more advanced [TTP idioms](/idioms/ttp).
 
 Finally, the `Confidence` field is used to indicate that this indicator is "Low" confidence (using the default vocabulary in STIX for confidence, [HighMediumLowVocab-1.0](/documentation/stixVocabs/HighMediumLowVocab-1.0)).
 
-The file indicator, immediately below that, has much the same structure. Instead of the email message object, however, it has the [File](/documentation/FileObj/FileObjectType) object representing the attachment. The `File Name` field is set to "Final Report" and the `Condition` attribute of that field is set to "Starts With" to indicate that the file name of the attachment should match if it starts with "Final Report". The `File Extension` field is set to match only if the extension is exactly "doc.exe". The rest of the indicator is similar to the email indicator, so let's move on to the composite indicator.
+### E-mail Attachment Indicator
 
-The composite indicator uses the `Composite_Indicator_Expression` field to create an AND group. That field uses the [CompositeIndicatorExpressionType](/documentation/indicator/CompositeIndicatorExpressionType) to describe a nested set of ANDed and ORed indicators. In this case, two references are created to the existing indicators (relationship line in green) and the `Operator` field is used to indicate that the composite should match only if BOTH of the included indicators match.
+The indicator for the attachment, in the top-left, has a somewhat more complicated structure. In CybOX, attachments to an e-mail are represented via the `Attachments` field by using an `object reference` to the ID of the attached object (generally a [FileObject](/documentation/FileObj/FileObjectType)) defined elsewhere. In this case, the attachment is indeed represented as a FileObject and is defined as a `Related Object` on the e-mail message object. The `Relationship` descriptor uses [ObjectRelationshipVocab-1.1](/documentation/cyboxVocabs/ObjectRelationshipVocab-1.1) (the default vocabulary for this field) to describe that the e-mail "Contains" the file.
 
-The composite indicator has the same indicated TTP as the other two indicators, however note that the `Confidence` is high. This type of combination of a set of individual indicators with low confidence along with a composite AND with high confidence can help drive both high quality matches if everything matches exactly but also match (at a lower level of confidence) if the adversary changes their TTP slightly. It's recommended to use this composite approach whenever you have individual pieces of information that might match by themselves but indicate a stronger match when they match together.
+That's a fairly complicated structure but is repeatable as a pattern throughout CybOX when one object (in this case a File) is contained in another object (in this case an e-mail). It ensures that each object is representable as an IDable construct on its own but still allows you to represent the full semantics of how one object is embedded in another.
+
+The indicated TTP and Confidence structures are identical to the e-mail subject indicator as explained above.
+
+### Combined Indicator
+
+The combined indicator essentially takes both data points (e-mail subject and attachment) from the previous two indicators and combines them. The e-mail subject is completely duplicated, but because the file object for the attachment is already defined the combined indicator simply references it. This reduces the size of the XML and, more importantly, correctly represents that the two indicators are talking about the exact same attachment.
+
+The indicated TTP is the same as the previous indicators, while confidence is represented the same but is set to "High" for this combined indicator because a match against both subject and attachment is more likely to be accurate than a match against one or the other.
 
 ## XML
 
 {% highlight xml linenos %}
 <stix:Indicators>
-    <stix:Indicator xsi:type="indicator:IndicatorType" id="example:indicator-e8bbe4fe-eef1-4ca9-9195-a3098de27569" timestamp="2014-01-20T12:34:56.000000Z">
-        <indicator:Title>Malicious E-mail Composite</indicator:Title>
-        <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Malicious E-mail</indicator:Type>
-        <indicator:Composite_Indicator_Expression operator="AND">
-            <indicator:Indicator idref="example:indicator-462964e9-b50a-4f83-8907-260a0d3c1d6e"/>
-            <indicator:Indicator idref="example:indicator-63d40185-a653-4c70-a10f-8d2db3ca747e"/>
-        </indicator:Composite_Indicator_Expression>
-        <indicator:Indicated_TTP>
-            <stixCommon:TTP idref="example:ttp-c32a6ab5-17b0-4bf4-b85b-a1f4f54d2ecd"/>
-        </indicator:Indicated_TTP>
-        <indicator:Confidence>
-            <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">High</stixCommon:Value>
-        </indicator:Confidence>
-    </stix:Indicator>
-    <stix:Indicator xsi:type="indicator:IndicatorType" id="example:indicator-462964e9-b50a-4f83-8907-260a0d3c1d6e" timestamp="2014-01-20T12:34:56.000000Z">
-        <indicator:Title>Malicious E-mail Subject Line</indicator:Title>
-        <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Malicious E-mail</indicator:Type>
-        <indicator:Observable>
-            <cybox:Object id="example:object-0364bb18-d117-4eaf-8d37-93da840fbb52">
+    <stix:Indicator id="example:indicator-5cc558cc-b8fc-11e3-9a15-0800271e87d2" timestamp="2014-03-31T13:46:17.895653" xsi:type='indicator:IndicatorType'>
+        <indicator:Title>Malicious E-mail</indicator:Title>
+        <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.0">Malicious E-mail</indicator:Type>
+        <indicator:Observable id="example:Observable-1037c602-9e1c-43fd-8d07-c8e1d01466d1">
+            <cybox:Object id="example:EmailMessage-977c4bb1-0a5d-4c36-9bd7-99b5c2082fdd">
                 <cybox:Properties xsi:type="EmailMessageObj:EmailMessageObjectType">
                     <EmailMessageObj:Header>
                         <EmailMessageObj:Subject condition="StartsWith">[IMPORTANT] Please Review Before</EmailMessageObj:Subject>
                     </EmailMessageObj:Header>
                     <EmailMessageObj:Attachments>
-                        <EmailMessageObj:File object_reference="example:object-fe0c45d2-1d5a-4d62-a0f1-8295c60a599d"/>
+                        <EmailMessageObj:File object_reference="example:EmailMessage-6c5185d4-dfca-46b5-8c15-adcfb464bf99"/>
                     </EmailMessageObj:Attachments>
                 </cybox:Properties>
             </cybox:Object>
         </indicator:Observable>
         <indicator:Indicated_TTP>
-            <stixCommon:TTP idref="example:ttp-c32a6ab5-17b0-4bf4-b85b-a1f4f54d2ecd"/>
+            <stixCommon:TTP idref="example:ttp-5cc396ea-b8fc-11e3-9a15-0800271e87d2" />
         </indicator:Indicated_TTP>
-        <indicator:Confidence>
-            <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">Low</stixCommon:Value>
+        <indicator:Confidence timestamp="2014-03-31T13:46:17.895959">
+            <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">High</stixCommon:Value>
         </indicator:Confidence>
     </stix:Indicator>
-    <stix:Indicator xsi:type="indicator:IndicatorType" id="example:indicator-63d40185-a653-4c70-a10f-8d2db3ca747e" timestamp="2014-01-20T12:34:56.000000Z">
-        <indicator:Title>Malicious E-mail Attachment</indicator:Title>
-        <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Malicious E-mail</indicator:Type>
-        <indicator:Observable>
-            <cybox:Object id="example:object-fe0c45d2-1d5a-4d62-a0f1-8295c60a599d">
-                <cybox:Properties xsi:type="FileObj:FileObjectType">
-                    <FileObj:File_Name condition="StartsWith">Final Report</FileObj:File_Name>
-                    <FileObj:File_Extension condition="Equals">doc.exe</FileObj:File_Extension>
+    <stix:Indicator id="example:indicator-5cc41142-b8fc-11e3-9a15-0800271e87d2" timestamp="2014-03-31T13:46:17.887364" xsi:type='indicator:IndicatorType'>
+        <indicator:Title>Malicious E-mail Subject Line</indicator:Title>
+        <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.0">Malicious E-mail</indicator:Type>
+        <indicator:Observable id="example:Observable-6964f5ca-3705-4ebf-9cd5-79ac6244df57">
+            <cybox:Object id="example:EmailMessage-f154f5a8-d302-430a-acd5-48f87c6a2119">
+                <cybox:Properties xsi:type="EmailMessageObj:EmailMessageObjectType">
+                    <EmailMessageObj:Header>
+                        <EmailMessageObj:Subject condition="StartsWith">[IMPORTANT] Please Review Before</EmailMessageObj:Subject>
+                    </EmailMessageObj:Header>
                 </cybox:Properties>
             </cybox:Object>
         </indicator:Observable>
         <indicator:Indicated_TTP>
-            <stixCommon:TTP idref="example:ttp-c32a6ab5-17b0-4bf4-b85b-a1f4f54d2ecd"/>
+            <stixCommon:TTP idref="example:ttp-5cc396ea-b8fc-11e3-9a15-0800271e87d2" />
         </indicator:Indicated_TTP>
-        <indicator:Confidence>
+        <indicator:Confidence timestamp="2014-03-31T13:46:17.888834">
             <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">Low</stixCommon:Value>
         </indicator:Confidence>
-     </stix:Indicator>
+    </stix:Indicator>
+    <stix:Indicator id="example:indicator-5cc4cd76-b8fc-11e3-9a15-0800271e87d2" timestamp="2014-03-31T13:46:17.892160" xsi:type='indicator:IndicatorType'>
+        <indicator:Title>Malicious E-mail Attachment</indicator:Title>
+        <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.0">Malicious E-mail</indicator:Type>
+        <indicator:Observable id="example:Observable-484190c0-efdc-49a6-aa19-aa2cb784aacf">
+            <cybox:Object id="example:EmailMessage-6c5185d4-dfca-46b5-8c15-adcfb464bf99">
+                <cybox:Properties xsi:type="EmailMessageObj:EmailMessageObjectType">
+                    <EmailMessageObj:Attachments>
+                        <EmailMessageObj:File object_reference="example:EmailMessage-6c5185d4-dfca-46b5-8c15-adcfb464bf99"/>
+                    </EmailMessageObj:Attachments>
+                </cybox:Properties>
+                <cybox:Related_Objects>
+                    <cybox:Related_Object id="example:File-4e98a690-408a-4ed8-a7ba-3564a2dfb3fd">
+                        <cybox:Properties xsi:type="FileObj:FileObjectType">
+                            <FileObj:File_Name condition="StartsWith">Final Report</FileObj:File_Name>
+                            <FileObj:File_Extension condition="Equals">doc.exe</FileObj:File_Extension>
+                        </cybox:Properties>
+                        <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.0">Contains</cybox:Relationship>
+                    </cybox:Related_Object>
+                </cybox:Related_Objects>
+            </cybox:Object>
+        </indicator:Observable>
+        <indicator:Indicated_TTP>
+            <stixCommon:TTP idref="example:ttp-5cc396ea-b8fc-11e3-9a15-0800271e87d2" />
+        </indicator:Indicated_TTP>
+        <indicator:Confidence timestamp="2014-03-31T13:46:17.892662">
+            <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">Low</stixCommon:Value>
+        </indicator:Confidence>
+    </stix:Indicator>
 </stix:Indicators>
 <stix:TTPs>
-    <stix:TTP xsi:type="ttp:TTPType" id="example:ttp-c32a6ab5-17b0-4bf4-b85b-a1f4f54d2ecd" timestamp="2014-02-20T09:00:00.000000Z">
+    <stix:TTP id="example:ttp-5cc396ea-b8fc-11e3-9a15-0800271e87d2" timestamp="2014-03-31T13:46:17.884031" xsi:type='ttp:TTPType' version="1.1">
         <ttp:Title>Phishing</ttp:Title>
     </stix:TTP>
 </stix:TTPs>
@@ -120,44 +139,59 @@ stix_package = STIXPackage()
 ttp = TTP(title="Phishing")
 stix_package.add_ttp(ttp)
 
-comp_indicator = Indicator(title="Malicious E-mail Composite")
-comp_indicator.add_indicator_type("Malicious E-mail")
-comp_indicator.confidence = Confidence(value="High")
+# Create the indicator for just the subject
+email_subject_object = EmailMessage()
+email_subject_object.header = EmailHeader()
+email_subject_object.header.subject = "[IMPORTANT] Please Review Before"
+email_subject_object.header.subject.condition = "StartsWith"
 
-email = EmailMessage()
-email.header = EmailHeader()
-email.header.subject = "[IMPORTANT] Please Review Before"
-email.header.subject.condition = "StartsWith"
-email.attachments = Attachments()
+email_subject_indicator = Indicator()
+email_subject_indicator.title = "Malicious E-mail Subject Line"
+email_subject_indicator.add_indicator_type("Malicious E-mail")
+email_subject_indicator.observable = email_subject_object
+email_subject_indicator.confidence = "Low"
 
-file_attachment = File()
-file_attachment.file_name = "Final Report"
-file_attachment.file_name.condition = "StartsWith"
-file_attachment.file_extension = "doc.exe"
+# Create the indicator for just the attachment
 
-email.attachments.append(file_attachment.parent.id_)
+file_attachment_object = EmailMessage()
+file_attachment_object.attachments = Attachments()
 
-indicator_email = Indicator()
-indicator_email.title = "Malicious E-mail Subject Line"
-indicator_email.add_indicator_type("Malicious E-mail")
-indicator_email.observable = email
-indicator_email.confidence = "Low"
+attached_file_object = File()
+attached_file_object.file_name = "Final Report"
+attached_file_object.file_name.condition = "StartsWith"
+attached_file_object.file_extension = "doc.exe"
+attached_file_object.file_extension.condition = "Equals"
+
+file_attachment_object.add_related(attached_file_object, "Contains", inline=True)
+file_attachment_object.attachments.append(file_attachment_object.parent.id_)
 
 indicator_attachment = Indicator()
 indicator_attachment.title = "Malicious E-mail Attachment"
 indicator_attachment.add_indicator_type("Malicious E-mail")
-indicator_attachment.observable = file_attachment    
+indicator_attachment.observable = file_attachment_object
 indicator_attachment.confidence = "Low"
 
-indicator_email.add_indicated_ttp(TTP(idref=ttp.id_))
+# Create the combined indicator w/ both subject an attachment
+full_email_object = EmailMessage()
+full_email_object.attachments = Attachments()
+
+# Add the previously referenced file as another reference rather than define it again:
+full_email_object.attachments.append(file_attachment_object.parent.id_)
+
+full_email_object.header = EmailHeader()
+full_email_object.header.subject = "[IMPORTANT] Please Review Before"
+full_email_object.header.subject.condition = "StartsWith"
+
+combined_indicator = Indicator(title="Malicious E-mail")
+combined_indicator.add_indicator_type("Malicious E-mail")
+combined_indicator.confidence = Confidence(value="High")
+combined_indicator.observable = full_email_object
+
+email_subject_indicator.add_indicated_ttp(TTP(idref=ttp.id_))
 indicator_attachment.add_indicated_ttp(TTP(idref=ttp.id_))
-comp_indicator.add_indicated_ttp(TTP(idref=ttp.id_))
+combined_indicator.add_indicated_ttp(TTP(idref=ttp.id_))
 
-comp_indicator.composite_indicator_expression = CompositeIndicatorExpression(operator="AND")
-comp_indicator.composite_indicator_expression.append(Indicator(idref=indicator_email.id_))
-comp_indicator.composite_indicator_expression.append(Indicator(idref=indicator_attachment.id_))
-
-stix_package.indicators = [comp_indicator, indicator_email, indicator_attachment]
+stix_package.indicators = [combined_indicator, email_subject_indicator, indicator_attachment]
 print stix_package.to_xml()
 {% endhighlight %}
 
