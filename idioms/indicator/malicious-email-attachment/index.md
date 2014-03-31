@@ -7,7 +7,7 @@ Given that phishing is such a common attack vector, the ability to represent ind
 
 ## Scenario
 
-This scenario consists of several related indicators used to represent a malicious e-mail. The e-mail has a somewhat subject (it always starts with "[IMPORTANT] Please Review Before" and is followed by a date in the near future) asking for a document to be reviewed but has a random sender. It includes an attachment to a file with the extension ".doc.exe", but the actual file is somewhat variable so no consistent hash could be identified.
+This scenario consists of several related indicators used to represent a malicious e-mail. The e-mail has a somewhat unique subject pattern (it always starts with "[IMPORTANT] Please Review Before" and is followed by a date in the near future) asking for a document to be reviewed but has a random sender. It includes an attachment to a file with the extension ".doc.exe", but the actual file is somewhat variable so no consistent hash could be identified. It is desired to enable detection of this complete multi-part pattern or either of its partial patterns.
 
 ## Data model
 
