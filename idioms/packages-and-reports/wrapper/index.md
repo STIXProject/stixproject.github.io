@@ -11,8 +11,6 @@ In this scenario, two unrelated threat reports are distributed by a government s
 
 ## Data model
 
-<img src="diagram.png" alt="Wrapper around packages" />
-
 ### STIX Packages and Shared Context
 
 STIX packages, which are sometimes called "reports", are a way to give a shared context to a set of STIX content. In many cases, that shared context is very rich and meaningful and the package is published, distributed, and consumed with the STIX Package wrapper as a distinct single context. For example, a threat report that gets distributed by itself by a threat intelligence vendor could be distributed as a single STIX package.
@@ -22,6 +20,8 @@ In other cases, it's useful to distribute content with varying levels of shared 
 This scenario describes another common use case: distributing multiple reports at the same time as part of a scheduled release of content. For example, many sharing programs have a daily or weekly release of all of their reports. Each report is self-contained, but all are released by the same organization at the same time. This scenario also has several levels of shared context: the weekly release is one (albiet high) level of shared context while each individual report is another.
 
 STIX 1.1 introduced the `Related Packages` field of STIX Package as a mechanism to support these types of use cases. Essentially, it allows for both hierarchical shared context (as in this scenario) as well as other types of relationships as enabled by the full graph relationship structure used by all STIX components. Essentially, STIX packages can be related together the same way that campaigns, threat actors, and the other components can.
+
+<img src="diagram.png" alt="Wrapper around packages" />
 
 ### Representing a simple "wrapper" context
 

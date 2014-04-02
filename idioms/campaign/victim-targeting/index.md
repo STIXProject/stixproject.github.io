@@ -54,6 +54,7 @@ from stix.ttp import TTP
 
 ttp = TTP()
 ttp.title = "Victim Targeting: Customer PII and Financial Data"
+ttp.victim_targeting = VictimTargeting()
 ttp.victim_targeting.add_targeted_information("Information Assets - Customer PII")
 ttp.victim_targeting.add_targeted_information("Information Assets - Financial Data")
 
