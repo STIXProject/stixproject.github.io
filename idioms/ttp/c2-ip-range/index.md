@@ -101,6 +101,7 @@ obs_addr3.idref = addr3.id_
 
 infrastructure = Infrastructure()
 infrastructure.observable_characterization = Observables([obs_addr1, obs_addr2, obs_addr3])
+infrastructure.add_type('Malware C2', vocab_type=None)
 
 resource = Resource()
 resource.infrastructure = infrastructure
