@@ -7,6 +7,7 @@ The following code requires python-stix v1.1.0.4 or greater installed.
 For installation instructions, please refer to https://github.com/STIXProject/python-stix.
 '''
 
+from stix.common.vocabs import VocabString
 from stix.core import STIXPackage
 from stix.indicator import Indicator
 from stix.ttp import TTP
@@ -14,7 +15,6 @@ from stix.ttp.infrastructure import Infrastructure
 from stix.ttp.resource import Resource
 from cybox.core import Observables, Observable, Object
 from cybox.objects.address_object import Address
-
 
 def main():
     stix_package = STIXPackage()
@@ -39,9 +39,11 @@ def main():
     obs_addr2.idref = addr2.id_
     obs_addr3.idref = addr3.id_
     
+    vocab_string = VocabString(value='Malware C2')
+
     infrastructure = Infrastructure()
     infrastructure.observable_characterization = Observables([obs_addr1, obs_addr2, obs_addr3])
-    infrastructure.add_type('Malware C2', vocab_type=None)
+    infrastructure.add_type(vocab_string)
     
     resource = Resource()
     resource.infrastructure = infrastructure
