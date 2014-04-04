@@ -2,7 +2,7 @@ name: STIX Documentation
 markdown: redcarpet
 pygments: true
 
-copyright: HS SEDI
+copyright: The MITRE Corporation
 generate_documentation: true
 
 exclude: ['README.md', 'Gemfile', 'Gemfile.lock']
