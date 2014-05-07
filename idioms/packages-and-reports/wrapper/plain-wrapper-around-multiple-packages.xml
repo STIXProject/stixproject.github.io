@@ -14,8 +14,8 @@
     http://cybox.mitre.org/objects#AddressObject-2 http://cybox.mitre.org/XMLSchema/objects/Address/2.1/Address_Object.xsd
     http//data-marking.mitre.org/extensions/MarkingStructure#TLP-1 http://stix.mitre.org/XMLSchema/extensions/marking/tlp/1.1/tlp_marking.xsd"
     id="example:package-a7c79e0a-3918-41f0-b7d0-e29df9325aa6"
-    timestamp="2014-02-20T09:00:00.000000Z"
-    version="1.1"
+    timestamp="2014-05-08T09:00:00.000000Z"
+    version="1.1.1"
     >
     <stix:STIX_Header>
         <stix:Title>Example Plain Wrapper Around Multiple Reports</stix:Title>
@@ -27,7 +27,7 @@
     </stix:STIX_Header>
     <stix:Related_Packages>
         <stix:Related_Package>
-            <stix:Package id="example:package-ca6e215c-fbb7-4b7a-b678-632562f85e93" timestamp="2014-02-20T09:00:00.000000Z" version="1.1">
+            <stix:Package id="example:package-ca6e215c-fbb7-4b7a-b678-632562f85e93" timestamp="2014-05-08T09:00:00.000000Z" version="1.1.1">
                 <stix:STIX_Header>
                     <stix:Title>Report on Adversary Alpha's Campaign against the Industrial Control Sector</stix:Title>
                     <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Campaign Characterization</stix:Package_Intent>
@@ -41,7 +41,7 @@
             </stix:Package>
         </stix:Related_Package>
         <stix:Related_Package>
-            <stix:Package id="example:package-162faaf6-4fa8-47d8-b128-115b392bbb19" timestamp="2014-03-26T02:01:00.000000Z" version="1.1">
+            <stix:Package id="example:package-162faaf6-4fa8-47d8-b128-115b392bbb19" timestamp="2014-05-08T09:00:00.000000Z" version="1.1.1">
                 <stix:STIX_Header>
                     <stix:Title>Indicators for Malware DrownedRat</stix:Title>
                     <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Indicators - Malware Artifacts</stix:Package_Intent>
