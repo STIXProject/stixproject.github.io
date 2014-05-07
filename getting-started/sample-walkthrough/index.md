@@ -15,7 +15,7 @@ Finally, this tutorial does assume intermediate knowledge of XML. You should kno
 
 ## Get Started
 
-First, download the [IP Watchlist sample](IP_Watchlist-1.1.xml) we'll be working with. It's very similar to the one hosted on the STIX sample page except I've modified the ```schemaLocation``` attribute to use the online schemas so you can validate it without a local copy of the schemas. Open this file up in your XML editor.
+First, download the [IP Watchlist sample](IP_Watchlist-1.1.1.xml) we'll be working with. It's very similar to the one hosted on the STIX sample page except I've modified the ```schemaLocation``` attribute to use the online schemas so you can validate it without a local copy of the schemas. Open this file up in your XML editor.
 
 The intent of this file (if it were a real file and not an example) would be to provide a list of IP address that are suspected (or known) to be malicious. In STIX, this is done using the Indicator construct, utilizing CybOX observables: the CybOX observable is a pattern that matches data that can be observed (IP addresses in network traffic, for example) while the STIX indicator describes what it means when the CybOX pattern matches.
 
@@ -34,10 +34,10 @@ Let's get started at the very top by looking through the XML Namespace declarati
   xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1"
   xmlns:example="http://example.com/"
   xsi:schemaLocation="
-  http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1/stix_core.xsd
-  http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.1/indicator.xsd
+  http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd
+  http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.1.1/indicator.xsd
   http://cybox.mitre.org/default_vocabularies-2 http://cybox.mitre.org/XMLSchema/default_vocabularies/2.1/cybox_default_vocabularies.xsd
-  http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1/stix_default_vocabularies.xsd
+  http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
   http://cybox.mitre.org/objects#AddressObject-2 http://cybox.mitre.org/XMLSchema/objects/Address/2.1/Address_Object.xsd"
   ...>
 ```
@@ -63,14 +63,14 @@ You'll also notice a `schemaLocation` attribute with these schema namespaces map
   ...
   id="example:STIXPackage-33fe3b22-0201-47cf-85d0-97c02164528d"
   timestamp="2014-02-20T09:00:00.000000Z"
-  version="1.1">
+  version="1.1.1">
 ```
 
 At the top level of almost every STIX document will be the `STIX_Package` element. This element is a wrapper around a header, which contains metadata about the information in the package, and the lists of components (indicators in this case) that make up the package. It also contains the namespace prefix declarations and schema location attribute, as described above.
 
-One attribute you'll see on STIX_Package is `version`. This version attribute is strongly suggested when creating content and indicates which version of STIX the package conforms to. In this case, the package conforms to STIX 1.1.
+One attribute you'll see on STIX_Package is `version`. This version attribute is strongly suggested when creating content and indicates which version of STIX the package conforms to. In this case, the package conforms to STIX 1.1.1.
 
-The other important attributes are `@id` and `@timestamp`. As you might expect, the `@id` is a globally unique ID given to an instance of a construct in STIX. STIX suggests several practices for creating and using IDs that you can see on our [[Suggested Practices|Suggested Practices (1.1)#formatting-ids]] page. (I'll take a timeout to let you read that section). As you can see, in this case we've set the namespace portion of the ID to "example" and the ID portion to "Indicator-33fe3b22-0201-47cf-85d0-97c02164528d" in keeping with STIX suggested practices. You'll also remember that we had defined the example namespace in the head of the document:
+The other important attributes are `@id` and `@timestamp`. As you might expect, the `@id` is a globally unique ID given to an instance of a construct in STIX. STIX suggests several practices for creating and using IDs that you can see on our [Suggested Practices(https://github.com/STIXProject/schemas/wiki/Suggested-Practices-%281.1%29#formatting-ids) page. (I'll take a timeout to let you read that section). As you can see, in this case we've set the namespace portion of the ID to "example" and the ID portion to "Indicator-33fe3b22-0201-47cf-85d0-97c02164528d" in keeping with STIX suggested practices. You'll also remember that we had defined the example namespace in the head of the document:
 
 ```xml
 xmlns:example="http://example.com/"
@@ -150,7 +150,7 @@ Though we're looking at an indicator now, the two pieces of data we'll look at a
 
 The first thing to note is that, as we discussed above, the xsi:type attribute is used to indicate that we're implementing the `IndicatorBaseType` extension point on the `Indicator` element with a type of `IndicatorType`. For each component you add (except Observable) you will need to do this.
 
-Next, notice the ID and timestamp attributes. We suggest giving all top-level components in STIX an ID compliant with our [[Suggested Practices|Suggested Practices (1.0.1)#formatting-ids]] and, as explained above, whenever you give a versioned construct an ID you should give it a timestamp.
+Next, notice the ID and timestamp attributes. We suggest giving all top-level components in STIX an ID compliant with our [Suggested Practices|(https://github.com/STIXProject/schemas/wiki/Suggested-Practices-%281.1%29#formatting-ids) and, as explained above, whenever you give a versioned construct an ID you should give it a timestamp.
 
 ### Indicator Type
 
