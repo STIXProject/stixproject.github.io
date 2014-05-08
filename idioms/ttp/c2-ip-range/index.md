@@ -69,6 +69,7 @@ The actual IP addresses are represented in CybOX within the `Observable Characte
 ## Python
 
 {% highlight python linenos %}
+from stix.common.vocabs import VocabString
 from stix.core import STIXPackage
 from stix.indicator import Indicator
 from stix.ttp import TTP
@@ -99,8 +100,11 @@ obs_addr1.idref = addr1.id_
 obs_addr2.idref = addr2.id_
 obs_addr3.idref = addr3.id_
 
+vocab_string = VocabString(value='Malware C2')
+
 infrastructure = Infrastructure()
 infrastructure.observable_characterization = Observables([obs_addr1, obs_addr2, obs_addr3])
+infrastructure.add_type(vocab_string)
 
 resource = Resource()
 resource.infrastructure = infrastructure
