@@ -21,9 +21,13 @@
 	http://stix.mitre.org/TTP-1 http://stix.mitre.org/XMLSchema/ttp/1.1/ttp.xsd
 	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1/stix_common.xsd
 	http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.0/stix_default_vocabularies.xsd
-	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1/stix_core.xsd" id="example:Package-5cc31c10-b8fc-11e3-9a15-0800271e87d2" version="1.1" timestamp="2014-03-31T13:46:17.881152">
+	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1/stix_core.xsd" 
+	id="example:Package-5cc31c10-b8fc-11e3-9a15-0800271e87d2" 
+	timestamp="2014-05-08T09:00:00.000000Z"
+	version="1.1.1"
+	>
     <stix:Indicators>
-        <stix:Indicator id="example:indicator-5cc558cc-b8fc-11e3-9a15-0800271e87d2" timestamp="2014-03-31T13:46:17.895653" xsi:type='indicator:IndicatorType'>
+        <stix:Indicator id="example:indicator-5cc558cc-b8fc-11e3-9a15-0800271e87d2" timestamp="2014-05-08T09:00:00.000000Z" xsi:type='indicator:IndicatorType'>
             <indicator:Title>Malicious E-mail</indicator:Title>
             <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.0">Malicious E-mail</indicator:Type>
             <indicator:Observable id="example:Observable-1037c602-9e1c-43fd-8d07-c8e1d01466d1">
@@ -41,11 +45,11 @@
             <indicator:Indicated_TTP>
                 <stixCommon:TTP idref="example:ttp-5cc396ea-b8fc-11e3-9a15-0800271e87d2" />
             </indicator:Indicated_TTP>
-            <indicator:Confidence timestamp="2014-03-31T13:46:17.895959">
+            <indicator:Confidence timestamp="2014-05-08T09:00:00.000000Z">
                 <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">High</stixCommon:Value>
             </indicator:Confidence>
         </stix:Indicator>
-        <stix:Indicator id="example:indicator-5cc41142-b8fc-11e3-9a15-0800271e87d2" timestamp="2014-03-31T13:46:17.887364" xsi:type='indicator:IndicatorType'>
+        <stix:Indicator id="example:indicator-5cc41142-b8fc-11e3-9a15-0800271e87d2" timestamp="2014-05-08T09:00:00.000000Z" xsi:type='indicator:IndicatorType'>
             <indicator:Title>Malicious E-mail Subject Line</indicator:Title>
             <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.0">Malicious E-mail</indicator:Type>
             <indicator:Observable id="example:Observable-6964f5ca-3705-4ebf-9cd5-79ac6244df57">
@@ -60,11 +64,11 @@
             <indicator:Indicated_TTP>
                 <stixCommon:TTP idref="example:ttp-5cc396ea-b8fc-11e3-9a15-0800271e87d2" />
             </indicator:Indicated_TTP>
-            <indicator:Confidence timestamp="2014-03-31T13:46:17.888834">
+            <indicator:Confidence timestamp="2014-05-08T09:00:00.000000Z">
                 <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">Low</stixCommon:Value>
             </indicator:Confidence>
         </stix:Indicator>
-        <stix:Indicator id="example:indicator-5cc4cd76-b8fc-11e3-9a15-0800271e87d2" timestamp="2014-03-31T13:46:17.892160" xsi:type='indicator:IndicatorType'>
+        <stix:Indicator id="example:indicator-5cc4cd76-b8fc-11e3-9a15-0800271e87d2" timestamp="2014-05-08T09:00:00.000000Z" xsi:type='indicator:IndicatorType'>
             <indicator:Title>Malicious E-mail Attachment</indicator:Title>
             <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.0">Malicious E-mail</indicator:Type>
             <indicator:Observable id="example:Observable-484190c0-efdc-49a6-aa19-aa2cb784aacf">
@@ -88,13 +92,13 @@
             <indicator:Indicated_TTP>
                 <stixCommon:TTP idref="example:ttp-5cc396ea-b8fc-11e3-9a15-0800271e87d2" />
             </indicator:Indicated_TTP>
-            <indicator:Confidence timestamp="2014-03-31T13:46:17.892662">
+            <indicator:Confidence timestamp="2014-05-08T09:00:00.000000Z">
                 <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">Low</stixCommon:Value>
             </indicator:Confidence>
         </stix:Indicator>
     </stix:Indicators>
     <stix:TTPs>
-        <stix:TTP id="example:ttp-5cc396ea-b8fc-11e3-9a15-0800271e87d2" timestamp="2014-03-31T13:46:17.884031" xsi:type='ttp:TTPType' version="1.1">
+        <stix:TTP id="example:ttp-5cc396ea-b8fc-11e3-9a15-0800271e87d2" timestamp="2014-05-08T09:00:00.000000Z" xsi:type='ttp:TTPType' version="1.1.1">
             <ttp:Title>Phishing</ttp:Title>
         </stix:TTP>
     </stix:TTPs>

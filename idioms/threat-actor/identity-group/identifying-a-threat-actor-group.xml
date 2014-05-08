@@ -5,7 +5,9 @@
     xmlns:stixCommon="http://stix.mitre.org/common-1"
     xmlns:ta="http://stix.mitre.org/ThreatActor-1"
     xmlns:ciq="urn:oasis:names:tc:ciq:xpil:3"
+    xmlns:xpil="urn:oasis:names:tc:ciq:xpil:3"
     xmlns:stixCIQIdentity="http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1"
+    xmlns:xnl="urn:oasis:names:tc:ciq:xnl:3"
     xmlns:example="http://example.com/"
     xsi:schemaLocation="
     http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1/stix_core.xsd
@@ -13,22 +15,22 @@
     http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1 http://stix.mitre.org/XMLSchema/extensions/identity/ciq_3.0/1.1/ciq_3.0_identity.xsd
     urn:oasis:names:tc:ciq:xpil:3 http://stix.mitre.org/XMLSchema/external/oasis_ciq_3.0/xPIL.xsd"
     id="example:STIXPackage-f12a0fa4-4342-419b-a92a-a51f365fc43f"
-    timestamp="2014-02-20T09:00:00.000000Z"
-    version="1.1"
+    timestamp="2014-05-08T09:00:00.000000Z"
+    version="1.1.1"
     >
     <stix:STIX_Header>
         <stix:Title>Example Identifying a Threat Actor Group</stix:Title>
     </stix:STIX_Header>
     <stix:Threat_Actors>
-        <stix:Threat_Actor xsi:type="ta:ThreatActorType" id="example:threatactor-d98aaf55-ce5b-4c2e-aa05-2e57a07e45cf" timestamp="2014-02-20T09:00:00.000000Z">
+        <stix:Threat_Actor xsi:type="ta:ThreatActorType" id="example:threatactor-d98aaf55-ce5b-4c2e-aa05-2e57a07e45cf" timestamp="2014-05-08T09:00:00.000000Z">
             <ta:Title>Disco Team Threat Actor Group</ta:Title>
             <ta:Identity xsi:type="stixCIQIdentity:CIQIdentity3.0InstanceType" id="example:identity-5855111c-8cf4-4803-8236-efc74b2441be">
                 <stixCIQIdentity:Specification>
                     <ciq:PartyName>
-                        <OrganisationName xmlns="urn:oasis:names:tc:ciq:xnl:3" Type="CommonUse">
+                        <OrganisationName xmlns="urn:oasis:names:tc:ciq:xnl:3" xnl:Type="CommonUse">
                             <NameElement>Disco Team</NameElement>
                         </OrganisationName>
-                        <OrganisationName xmlns="urn:oasis:names:tc:ciq:xnl:3" Type="UnofficialName">
+                        <OrganisationName xmlns="urn:oasis:names:tc:ciq:xnl:3" xnl:Type="UnofficialName">
                             <NameElement >Equipo del Discoteca</NameElement>
                         </OrganisationName>
                     </ciq:PartyName>
