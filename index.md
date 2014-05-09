@@ -1,55 +1,34 @@
 ---
 layout: flat
-title: STIX Project Documentation
+title: STIX Documentation
 tagline: User and developer documentation for STIX
 ---
 
-<br />
-<div class="jumbotron">
-  <h1>STIX Project Documentation</h1>
-  <p>Welcome to the STIX Project! Continue reading below for the full documentation or click the button for a tutorial on getting started with STIX.</p>
-  <p><a class="btn btn-primary btn-lg" role="button" href="getting-started">Getting Started »</a></p>
-</div>
 
-# Idioms and Common Patterns
+## The Specification
+[Official release](http://stix.mitre.org/language/)
 
-The idioms documentation is meant to give you a place to look for guidance on how to implement common STIX patterns, whether they're cross-cutting concerns like confidence and data markings or specific use case patterns, like representing indicators for malware C2.
+[Whitepaper](http://stix.mitre.org/about/documents/STIX_Whitepaper_v1.1.pdf)
 
-### Cross-cutting Features
+[Quick Start](/getting-started)
+
+## Developer Tools
+
+[Hacking on STIX](/contrib)
+
+[Best Practices](/best-practices)
+
+[Use Cases](/idioms)
+
+[Validate your Output] (/validation)
 
 {% comment %}
-* [IDs](idioms/features/ids) - Describes the basic usage of STIX IDs
-* [Confidence](idioms/features/confidence) - Describes how to use the confidence structure to mark STIX constructs with confidence
-* [Structured Text](idioms/features/structured-text) - Describes how to use STIX structured text fields for both plain text and markup
+could also drop the "if your app can parse this then you get a big checkmark" samples here
 {% endcomment %}
-* [Versioning](idioms/features/versioning) - Describes a few different versioning scenarios and how those are handled in STIX
-* [Data Markings](idioms/features/data-markings) - Describes how to use data markings to mark STIX content
-* [Relationships](idioms/features/relationships) - Describes how to use STIX relationships
-* [xsi:type](idioms/features/xsi-type) - Describes the STIX usage of xsi:type for core components, extension points, and controlled vocabularies
 
-### Use Cases
 
-* [Indicator](idioms/indicator)
-* [TTP](idioms/ttp)
-* [Incident](idioms/incident)
-* [Course of Action](idioms/course-of-action)
-* [Exploit Target](idioms/exploit-target)
-* [Campaign](idioms/campaign)
-* [Threat Actor](idioms/threat-actor)
-* [Packages and Reports](idioms/packages-and-reports)
+## Contact 
 
-# Data Model Documentation
+Email us at <stix@mitre.org>
 
-The STIX Project provides complete documentation for all fields in the STIX and CybOX data model. Simply search below for specific elements and types (try 'Indicator') and explore from there.
-
-<div class="full-width">
-  <input type="text" class="doc-types form-control input-lg" placeholder="Search STIX Data Model..." />
-</div>
-
-# Further Reading
-
-If you're looking for information on using STIX, you can:
-
-* Download the [official release](http://stix.mitre.org/language/version1.1/)
-* Read the [STIX Whitepaper](http://stix.mitre.org/about/documents/STIX_Whitepaper_v1.1.pdf)
-* Review the [Suggested Practices](https://github.com/STIXProject/schemas/wiki/Suggested-Practices-%281.1%29)
+[Join the mailing list] (http://stix.mitre.org/community/registration.html)
