@@ -11,10 +11,10 @@
     xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1"
     xmlns:example="http://example.com/"
     xsi:schemaLocation="
-    http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1/stix_core.xsd
-    http://stix.mitre.org/TTP-2 http://stix.mitre.org/XMLSchema/ttp/1.1/ttp.xsd
-    http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.0/stix_default_vocabularies.xsd
-    http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1 http://stix.mitre.org/XMLSchema/extensions/identity/ciq_3.0/1.1/ciq_3.0_identity.xsd
+    http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd
+    http://stix.mitre.org/TTP-2 http://stix.mitre.org/XMLSchema/ttp/1.1.1/ttp.xsd
+    http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
+    http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1 http://stix.mitre.org/XMLSchema/extensions/identity/ciq_3.0/1.1.1/ciq_3.0_identity.xsd
     urn:oasis:names:tc:ciq:xpil:3 http://stix.mitre.org/XMLSchema/external/oasis_ciq_3.0/xPIL.xsd"
     id="example:STIXPackage-33fe3b22-0201-47cf-85d0-97c02164528d"
     timestamp="2014-05-08T09:00:00.000000Z"

@@ -6,10 +6,10 @@
 	xmlns:stix="http://stix.mitre.org/stix-1"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="
-	http://stix.mitre.org/Incident-1 http://stix.mitre.org/XMLSchema/incident/1.1/incident.xsd
-	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1/stix_common.xsd
-	http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.0/stix_default_vocabularies.xsd
-	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1/stix_core.xsd" 
+	http://stix.mitre.org/Incident-1 http://stix.mitre.org/XMLSchema/incident/1.1.1/incident.xsd
+	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd
+	http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
+	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd" 
 	id="example:Package-d1a8110e-b693-11e3-8747-0800271e87d2" 
 	timestamp="2014-05-08T09:00:00.000000Z"
 	version="1.1.1">
@@ -18,7 +18,7 @@
             <incident:Title>Exfiltration from hr-data1.example.com</incident:Title>
             <incident:Affected_Assets>
                 <incident:Affected_Asset>
-                    <incident:Type xsi:type="stixVocabs:AssetTypeVocab-1.0" count_affected="1">Database</incident:Type>
+                    <incident:Type count_affected="1">Database</incident:Type>
                     <incident:Description>Database server at hr-data1.example.com</incident:Description>
                     <incident:Business_Function_Or_Role>Hosts the database for example.com</incident:Business_Function_Or_Role>
                     <incident:Ownership_Class xsi:type="stixVocabs:OwnershipClassVocab-1.0">Internally-Owned</incident:Ownership_Class>
