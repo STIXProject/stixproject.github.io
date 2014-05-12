@@ -16,7 +16,7 @@ tagline: User and developer documentation for STIX
 
 [Hacking on STIX](/utilities)
 
-[Best Practices](/best-practices)
+[Suggested Practices](/suggestions)
 
 [Use Cases](/idioms)
 
