@@ -14,7 +14,7 @@ tagline: User and developer documentation for STIX
 
 ## Developer Tools
 
-[Hacking on STIX](/contrib)
+[Hacking on STIX](/utilities)
 
 [Best Practices](/best-practices)
 
