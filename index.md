@@ -19,11 +19,9 @@ tagline: User and developer documentation for STIX
 [Use Cases](/idioms)
 
 ## Developer Tools
-
-[Hacking on STIX](/utilities)
-
 [Suggested Practices](/suggestions)
 
+[Hacking on STIX](/utilities)
 
 ## Well-formedness
 

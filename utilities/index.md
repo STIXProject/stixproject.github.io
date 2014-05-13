@@ -8,8 +8,6 @@ User-level tooling can help abstract away the STIX XML and provide you with diff
 
 ### STIXViz
 
-![STIXViz Screenshot](https://github.com/STIXProject/stix-viz/wiki/images/STIXVizExampleFigure1.png)
-
 STIXViz is a tool provided by the STIX project to visualize STIX documents in a tree-type structure. It can show the linkages between various STIX components to help you understand how everything fits together.
 
 The STIXViz tool is packaged and available for download as a Windows executable but is implemented in a combination of HTML and Javascript so, when built from source, is cross-platform or could even be integrated into a webpage.
