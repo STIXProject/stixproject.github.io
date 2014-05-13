@@ -1,2 +1,5 @@
 source 'http://rubygems.org'
-gem 'github-pages'
+
+gem 'stix_schema_spy'
+gem 'jekyll'
+gem 'RedCloth'

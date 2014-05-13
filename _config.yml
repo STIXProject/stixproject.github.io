@@ -3,7 +3,7 @@ markdown: redcarpet
 pygments: true
 
 copyright: The MITRE Corporation
-generate_documentation: false
+generate_documentation: true
 
 exclude: ['README.md', 'Gemfile', 'Gemfile.lock']
 
