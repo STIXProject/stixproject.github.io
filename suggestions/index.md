@@ -9,9 +9,6 @@ Metadata about a STIX package is optional, but highly recommended
     Package_Intent
     Information_Source
 
-{% comment %} 
-should probably just use epoch time
-{% endcomment %}
 
 Timestamps should include time zones
 
@@ -26,9 +23,6 @@ Timestamps should include time zones
 
 
 ## Creating pattern observables for indicators
-{% comment %} 
-no idea what this means, and its super unclear 
-{% endcomment %}
 When creating observables for use as patterns within indicators, you should always set the condition attribute on all possible fields to an appropriate value, even if that value is equals. Leaving off the condition attribute implies that the observable is an instance rather than a pattern.
 
 

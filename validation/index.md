@@ -2,10 +2,6 @@
 layout: flat
 ---
 
-{% comment %}
-I feel like if we need this page then something has gone wrong - i.e. it should either be clear if invalid or just accept it
-{% endcomment %}
-
 ## @idref Integrity
 > When using the ```@idref``` attribute to create a reference, the target of the reference **MUST** be of the same type or a descendent type of the source of the reference.
 

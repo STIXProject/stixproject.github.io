@@ -22,10 +22,6 @@ tagline: User and developer documentation for STIX
 
 [Validate your Output] (/validation)
 
-{% comment %}
-could also drop the "if your app can parse this then you get a big checkmark" samples here
-{% endcomment %}
-
 
 ## Contact 
 
