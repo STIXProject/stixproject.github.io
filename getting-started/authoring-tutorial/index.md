@@ -8,7 +8,7 @@ An editor like Oxygen or XMLSpy
 
 Knowledge of XML elements and validation against a schema.
 
-[Suggested Practices](/suggestions) 
+Understanding of [STIX suggested practices](/suggestions) 
 
 ## Creating the package
 
