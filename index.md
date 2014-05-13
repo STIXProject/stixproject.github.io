@@ -1,6 +1,6 @@
 ---
 layout: flat
-title: STIX Documentation
+title: STIX Project Documentation
 tagline: User and developer documentation for STIX
 ---
 
@@ -29,7 +29,6 @@ tagline: User and developer documentation for STIX
 
 [Security Considerations](/security)
 
-## Contact 
 
 Send feedback to <stix@mitre.org>
 
