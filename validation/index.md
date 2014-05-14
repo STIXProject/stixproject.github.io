@@ -52,4 +52,4 @@ This is **not valid** because the element contains both an ```@idref``` as well 
 This is **not valid** because the element contains both an ```@idref``` as well as content.
 
 ## @version Presence
-> In STIX 1.0.1, the @version attribute MUST be present and set to "1.0.1" on the STIX_Package construct. The version MAY be specified on individual components if they are the default version of that component for version 1.0.1 of STIX, however MUST be specified on individual components if they are a different version than the default for version 1.0.1 of STIX.
+> In STIX 1.1, the @version attribute MUST be present and set to "1.1" on the STIX_Package construct. The version MAY be specified on individual components if they are the default version of that component for version 1.1 of STIX, however MUST be specified on individual components if they are a different version than the default for version 1.1 of STIX.
