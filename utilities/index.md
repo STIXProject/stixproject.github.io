@@ -58,13 +58,13 @@ The STIX project currently provides bindings and higher-level APIs to the STIX l
 
 ### Java
 
-The STIX project does not currently provide bindings, but it should be possible to generate JAXB or XMLBeans bindings from the schemas (with some tweaking). If a community member provides these for STIX 1.0.1, we could link to them from here.
-
-For JAXB, you will essentially need to create a bindings file that resolves some conflicts in the STIX schemas that occur when you turn the XML names into Java names. You'll also likely want a bindings file to put each of the schemas into a reasonable namespace. Finally, you'll run the JAXB generator, specifying the bindings file, against all of the STIX and CybOX schemas.
+A community member ([@woot4moo](https://github.com/woot4moo)) has contributed [their JAXB Bindings](https://github.com/STIXProject/contrib/tree/master/java-stix) to the contrib repository.
 
 ### .NET
 
 Again, the STIX project does not provide bindings for .NET. Community members, however, have used Microsoft's standard XML tooling to work with STIX documents and create useful utilities.
+
+We would be happy to link to a .NET project providing bindings.
 
 ### Ruby
 
