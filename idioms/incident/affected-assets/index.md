@@ -42,7 +42,7 @@ The `Description of Effect` field in the same `Property Affected` is a simple pr
     <incident:Title>Exfiltration from hr-data1.example.com</incident:Title>
     <incident:Affected_Assets>
         <incident:Affected_Asset>
-            <incident:Type xsi:type="stixVocabs:AssetTypeVocab-1.0" count_affected="1">Database</incident:Type>
+            <incident:Type count_affected="1">Database</incident:Type>
             <incident:Description>Database server at hr-data1.example.com</incident:Description>
             <incident:Business_Function_Or_Role>Hosts the database for example.com</incident:Business_Function_Or_Role>
             <incident:Ownership_Class xsi:type="stixVocabs:OwnershipClassVocab-1.0">Internally-Owned</incident:Ownership_Class>

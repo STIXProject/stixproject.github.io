@@ -10,9 +10,9 @@
     xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2"
     xmlns:example="http://example.com/"
     xsi:schemaLocation="
-    http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1/stix_core.xsd
-    http://stix.mitre.org/Incident-1 http://stix.mitre.org/XMLSchema/incident/1.1/incident.xsd
-    http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.0/stix_default_vocabularies.xsd
+    http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd
+    http://stix.mitre.org/Incident-1 http://stix.mitre.org/XMLSchema/incident/1.1.1/incident.xsd
+    http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
     http://cybox.mitre.org/objects#FileObject-2 http://cybox.mitre.org/XMLSchema/objects/File/2.1/File_Object.xsd
     http://cybox.mitre.org/default_vocabularies-2 http://cybox.mitre.org/XMLSchema/default_vocabularies/2.1/cybox_default_vocabularies.xsd"
     id="example:STIXPackage-5cb09f80-9750-4224-9c82-d693cbac6fde"
