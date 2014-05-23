@@ -2,6 +2,8 @@
 layout: flat
 ---
 
+# TODO rewrite for clarity
+
 ## User-level Tooling
 
 User-level tooling can help abstract away the STIX XML and provide you with different views or capabilities for working with STIX that may not require you to know XML at all. Currently, the two more capable user-level tools are STIXViz and stix_to_html.
