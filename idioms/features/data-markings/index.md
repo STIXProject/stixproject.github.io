@@ -237,7 +237,7 @@ marking_specification.controlled_structure = "//node()"
 
 simple = SimpleMarkingStructure()
 simple.statement = "Copyright 2014, Acme Inc."
-marking_specification.marking_structure.append(simple)
+marking_specification.marking_structures.append(simple)
 
 handling = Marking()
 handling.add_marking(marking_specification)
@@ -286,7 +286,7 @@ marking_specification.controlled_structure = "//node()"
 
 tou = TermsOfUseMarkingStructure()
 tou.terms_of_use = "Acme Inc. is not responsible for the content of this file."
-marking_specification.marking_structure.append(tou)
+marking_specification.marking_structures.append(tou)
 
 handling = Marking()
 handling.add_marking(marking_specification)
@@ -332,7 +332,7 @@ marking_specification.controlled_structure = "//node()"
 
 tlp = TLPMarkingStructure()
 tlp.color = "AMBER"
-marking_specification.marking_structure.append(tlp)
+marking_specification.marking_structures.append(tlp)
 
 handling = Marking()
 handling.add_marking(marking_specification)
