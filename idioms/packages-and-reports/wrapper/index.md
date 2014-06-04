@@ -99,7 +99,7 @@ alpha_marking = MarkingSpecification()
 alpha_marking.controlled_structure = "../../../../node()"
 alpha_tlp_marking = TLPMarkingStructure()
 alpha_tlp_marking.color = "AMBER"
-alpha_marking.marking_structure.append(alpha_tlp_marking)
+alpha_marking.marking_structures.append(alpha_tlp_marking)
 alpha_package.stix_header.handling.add_marking(alpha_marking)
 
 rat_package = STIXPackage()
@@ -112,7 +112,7 @@ bravo_marking = MarkingSpecification()
 bravo_marking.controlled_structure = "../../../../node()"
 bravo_tlp_marking = TLPMarkingStructure()
 bravo_tlp_marking.color = "RED"
-alpha_marking.marking_structure.append(bravo_tlp_marking)
+alpha_marking.marking_structures.append(bravo_tlp_marking)
 rat_package.stix_header.handling.add_marking(bravo_marking)
     
 stix_package = STIXPackage()
