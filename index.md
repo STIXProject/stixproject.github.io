@@ -3,11 +3,6 @@ layout: flat
 title: STIX Project Documentation
 tagline: User and developer documentation for STIX
 ---
-<br />
-<div class="jumbotron">
-  <h1>STIX Project Documentation</h1>
-  <p><a class="btn btn-primary btn-lg" role="button" href="getting-started">Getting Started »</a></p>
-</div>
 
 # What is it?
 STIX is meant to provide a [standard way of talking about security breaches](http://stix.mitre.org/language/)
@@ -18,7 +13,7 @@ See [the whitepaper](http://stix.mitre.org/about/documents/STIX_Whitepaper_v1.1.
 
 # How do I use it?
 
-Learn [how to apply STIX](/idioms) to your existing indicators and breach reports
+Go through the [quickstart guide](/getting-started) to learn how to learn [how to apply STIX](/idioms) to your existing indicators and breach reports
 
 Avail yourself of the [helper tools](/utilities) for streamlining your efforts 
 
