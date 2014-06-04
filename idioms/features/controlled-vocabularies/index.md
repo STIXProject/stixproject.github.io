@@ -75,11 +75,11 @@ print stix_package.to_xml()
 The VocabString object can hold a number of other properties, which are demonstrated in this example.
 
 <ul class="nav nav-tabs">
-  <li class="active"><a href="#xml-1" data-toggle="tab">XML</a></li>
-  <li><a href="#python-1" data-toggle="tab">Python</a></li>
+  <li class="active"><a href="#xml-2" data-toggle="tab">XML</a></li>
+  <li><a href="#python-2" data-toggle="tab">Python</a></li>
 </ul>
 <div class="tab-content">
-  <div class="tab-pane active" id="xml-1">
+  <div class="tab-pane active" id="xml-2">
 {% highlight xml linenos %}
 <stix:STIX_Package>
   <stix:STIX_Header>
@@ -91,7 +91,7 @@ The VocabString object can hold a number of other properties, which are demonstr
 </stix:STIX_Package>
 {% endhighlight %}
   </div>
-  <div class="tab-pane" id="python-1">
+  <div class="tab-pane" id="python-2">
 {% highlight python linenos %}
 from stix.core import STIXPackage, STIXHeader
 from stix.common.vocabs import VocabString
