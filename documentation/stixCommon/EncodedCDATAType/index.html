@@ -1,0 +1,41 @@
+---
+layout: documentation
+title: EncodedCDATAType
+---
+
+<h1>EncodedCDATAType<span class="subdued">STIX Common Schema</span></h1>
+
+<p>
+				This type is used to represent data in an XML CDATA block. Data in a CDATA block may either be represented as-is or, in cases where it may contain characters that are not valid in CDATA, it may be encoded in Base64 per RFC4648. Data encoded in Base64 must be denoted as such using the encoded attribute.
+			</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@encoded</td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>If true, specifies that the content encoded in the element is encoded using Base64 per RFC4648.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

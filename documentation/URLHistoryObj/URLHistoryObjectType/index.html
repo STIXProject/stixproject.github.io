@@ -1,0 +1,81 @@
+---
+layout: documentation
+title: URLHistoryObjectType
+---
+
+<h1>URLHistoryObjectType<span class="subdued">URL History Object Schema</span></h1>
+
+<p>The URLHistoryObject type is intended to characterize the stored URL history for a particular web browser.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@object_reference</td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>The object_reference field specifies a unique ID reference to an Object defined elsewhere. This construct allows for the re-use of the defined Properties of one Object within another, without the need to embed the full Object in the location from which it is being referenced. Thus, this ID reference is intended to resolve to the Properties of the Object that it points to.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Custom_Properties</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/CustomPropertiesType">CustomPropertiesType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Custom_Properties construct is optional and enables the specification of a set of custom Object Properties that may not be defined in existing Properties schemas.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Browser_Information</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/ToolInformationType">ToolInformationType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Browser_Information field captures information about the particular Web Browser whose URL history is being captured. It uses the ToolInformationType from the imported CybOX Common schema.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>URL_History_Entry</td>
+      <td>
+        
+          <a href="/documentation/URLHistoryObj/URLHistoryEntryType">URLHistoryEntryType</a>
+        
+      </td>
+      <td>
+        
+          <p>The URL_History_Entry field specifies a single URL history entry stored in the browser's history.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

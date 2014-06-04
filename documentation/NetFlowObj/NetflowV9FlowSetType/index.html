@@ -1,0 +1,67 @@
+---
+layout: documentation
+title: NetflowV9FlowSetType
+---
+
+<h1>NetflowV9FlowSetType<span class="subdued">Network Flow Object Schema</span></h1>
+
+<p>In an Export Packet, one or more FlowSets follow the Packet Header. There are three different types of FlowSets, as defined in RFC 3954: a Template FlowSet, Options Template FlowSet and Data FlowSet.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Template_Flow_Set</td>
+      <td>
+        
+          <a href="/documentation/NetFlowObj/NetflowV9TemplateFlowSetType">NetflowV9TemplateFlowSetType</a>
+        
+      </td>
+      <td>
+        
+          <p>One of the essential elements in the NetFlow format is the Template FlowSet. Templates greatly enhance the flexibility of the Flow Record format because they allow the NetFlow Collector to process Flow Records without necessarily knowing the interpretation of all the data in the Flow Record. http://www.ietf.org/rfc/rfc3954.txt.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Options_Template_Flow_Set</td>
+      <td>
+        
+          <a href="/documentation/NetFlowObj/NetflowV9OptionsTemplateFlowSetType">NetflowV9OptionsTemplateFlowSetType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies an Options Template FlowSet, which is one or more Options Template Records that have been grouped together in an Export Packet.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Data_Flow_Set</td>
+      <td>
+        
+          <a href="/documentation/NetFlowObj/NetflowV9DataFlowSetType">NetflowV9DataFlowSetType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies a Data FlowSet, which is one or more records, of the same type, that are grouped together in an Export Packet. Each record is either a Flow Data Record or an Options Data Record previously defined by a Template Record or an Options Template Record.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

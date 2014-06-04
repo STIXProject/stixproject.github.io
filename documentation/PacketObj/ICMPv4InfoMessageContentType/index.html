@@ -1,0 +1,53 @@
+---
+layout: documentation
+title: ICMPv4InfoMessageContentType
+---
+
+<h1>ICMPv4InfoMessageContentType<span class="subdued">Network Packet Object Schema</span></h1>
+
+<p>Elements associated with ICMPv4 informational messages (as opposed to ICMP error messages or ICMP traceroute message).</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Identifier</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>16-bit identifier. Combined with the sequence number, called the "quench" for echo reply and echo request.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Sequence_Number</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>16-bit sequence number. The identifier and sequence number can be used by the client to match the reply with the request that caused the reply.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

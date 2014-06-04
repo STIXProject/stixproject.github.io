@@ -1,0 +1,291 @@
+---
+layout: documentation
+title: WhoisObjectType
+---
+
+<h1>WhoisObjectType<span class="subdued">Whois Object Schema</span></h1>
+
+<p>The WhoisObjectType type is intended to characterize Whois information for a domain.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@object_reference</td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>The object_reference field specifies a unique ID reference to an Object defined elsewhere. This construct allows for the re-use of the defined Properties of one Object within another, without the need to embed the full Object in the location from which it is being referenced. Thus, this ID reference is intended to resolve to the Properties of the Object that it points to.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Custom_Properties</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/CustomPropertiesType">CustomPropertiesType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Custom_Properties construct is optional and enables the specification of a set of custom Object Properties that may not be defined in existing Properties schemas.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Lookup_Date</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Lookup_Date field specifies the date and time that the Whois record was queried.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Domain_Name</td>
+      <td>
+        
+          <a href="/documentation/URIObj/URIObjectType">URIObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Domain_Name field specifies the corresponding domain name for this whois entry.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Domain_ID</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Domain_ID field specifies the domain id for the domain associated with this Whois entry.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Server_Name</td>
+      <td>
+        
+          <a href="/documentation/URIObj/URIObjectType">URIObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Server_Name field specifies the corresponding server name for this whois entry. This usually corresponds to a nameserver lookup.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>IP_Address</td>
+      <td>
+        
+          <a href="/documentation/AddressObj/AddressObjectType">AddressObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>The IP_Address field specifies the corresponding ip address for this whois entry. The usually corresponds to a nameserver lookup.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>DNSSEC</td>
+      <td>
+        
+          WhoisDNSSECTypeEnum
+        
+      </td>
+      <td>
+        
+          <p>The DNSSEC element corresponds to the DNSSEC field associated with a Whois entry. Acceptable values are: "Signed" or "Unsigned".</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Nameservers</td>
+      <td>
+        
+          <a href="/documentation/WhoisObj/WhoisNameserversType">WhoisNameserversType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Nameservers element represents a list of nameserver entries for a Whois entry.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Status</td>
+      <td>
+        
+          <a href="/documentation/WhoisObj/WhoisStatusesType">WhoisStatusesType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Status element represents a list of statuses for a given Whois entry.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Updated_Date</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/DateObjectPropertyType">DateObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Updated_Date field specifies the date in which the registered domain information was last updated.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Creation_Date</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/DateObjectPropertyType">DateObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Creation_Date field specifies the date in which the registered domain was created.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Expiration_Date</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/DateObjectPropertyType">DateObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Expiration_Date field specifies the date in which the registered domain will expire.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Regional_Internet_Registry</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/RegionalRegistryType">RegionalRegistryType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Regional_Internet_Registry field specifies the name of the Regional Internet Registry (RIR) which allocated the IP address contained in this WHOIS entry.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Sponsoring_Registrar</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Sponsoring_Registrar field holds the name of the sponsoring registrar for the domain.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Registrar_Info</td>
+      <td>
+        
+          <a href="/documentation/WhoisObj/WhoisRegistrarInfoType">WhoisRegistrarInfoType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Registrar_Info element represents registrar info that would be returned from a registrar lookup.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Registrants</td>
+      <td>
+        
+          <a href="/documentation/WhoisObj/WhoisRegistrantsType">WhoisRegistrantsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Registrants element represents the registrant information associated with a domain lookup.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Contact_Info</td>
+      <td>
+        
+          <a href="/documentation/WhoisObj/WhoisContactType">WhoisContactType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Contact_Info element represents contact info that would be returned from a contact lookup.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Remarks</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Remarks field specifies any remarks associated with this Whois entry.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

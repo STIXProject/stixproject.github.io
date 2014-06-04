@@ -1,0 +1,221 @@
+---
+layout: documentation
+title: StartupInfoType
+---
+
+<h1>StartupInfoType<span class="subdued">Win Process Object Schema</span></h1>
+
+<p>The StartupInfoType type encapsulates the information contained in the STARTUPINFO struct for the process.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>lpDesktop</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The lpDesktop field specifies the name of the desktop, or the name of both the desktop and window station for this process.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>lpTitle</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The lpTitle field specifies the title displayed in the title bar if a new console window is created.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>dwX</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The dwX field specifies the x offset of the upper left corner of a window if a new window is created, in pixels.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>dwY</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The dwY field specifies the y offset of the upper left corner of a window if a new window is created, in pixels.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>dwXSize</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/PositiveIntegerObjectPropertyType">PositiveIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The dwXSize field specifies the width of the window if a new window is created, in pixels.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>dwYSize</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/PositiveIntegerObjectPropertyType">PositiveIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The dwYSize field specifies the height of the window if a new window is created, in pixels.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>dwXCountChars</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/PositiveIntegerObjectPropertyType">PositiveIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The dwXCountChars field specifies the screen buffer width, in character columns.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>dwYCountChars</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/PositiveIntegerObjectPropertyType">PositiveIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The dwYCountChars field specifies the screen buffer height, in character rows.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>dwFillAttribute</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The dwFillAttribute field specifies the initial text and background colors if a new console window is created in a console application.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>dwFlags</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The dwFlags field specifies a bitfield that determines whether certain STARTUPINFO members are used when the process creates a window.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>wShowWindow</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The wShowWindow field specifies STARTF_USESHOWWINDOW, this member can be any of the values that can be specified in the nCmdShow parameter for the ShowWindow function, except for SW_SHOWDEFAULT.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>hStdInput</td>
+      <td>
+        
+          <a href="/documentation/WinHandleObj/WindowsHandleObjectType">WindowsHandleObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>The hStdInput field specifies the standard input handle for the process.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>hStdOutput</td>
+      <td>
+        
+          <a href="/documentation/WinHandleObj/WindowsHandleObjectType">WindowsHandleObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>The hStdOutput field specifies the standard output handle for the process.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>hStdError</td>
+      <td>
+        
+          <a href="/documentation/WinHandleObj/WindowsHandleObjectType">WindowsHandleObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>The hStdError field specifies the standard error handle for the process.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

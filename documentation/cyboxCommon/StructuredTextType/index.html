@@ -1,0 +1,39 @@
+---
+layout: documentation
+title: StructuredTextType
+---
+
+<h1>StructuredTextType<span class="subdued">CybOX Common Schema</span></h1>
+
+<p>The StructuredTextType is a type representing a generalized structure for capturing structured or unstructured textual information such as descriptions of things.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@structuring_format</td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>Used to indicate a particular structuring format (e.g., HTML5) used within an instance of StructuredTextType. Note that if the markup tags used by this format would be interpreted as XML information (such as the bracket-based tags of HTML) the text area should be enclosed in a CDATA section to prevent the markup from interfering with XML validation of the CybOX document. If this attribute is absent, the implication is that no markup is being used.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

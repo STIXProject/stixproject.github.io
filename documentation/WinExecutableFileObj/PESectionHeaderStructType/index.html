@@ -1,0 +1,165 @@
+---
+layout: documentation
+title: PESectionHeaderStructType
+---
+
+<h1>PESectionHeaderStructType<span class="subdued">Win Executable File Object Schema</span></h1>
+
+<p>The PESectionHeaderStruct type is intended as container for the properties relevant to a PE binary's section header structure.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Name</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Name field specifies the name of the PE binary section.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Virtual_Size</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Virtual_Size field is the total size of the PE binary section when loaded into memory. It is valid only for executables and should be 0 for object files.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Virtual_Address</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Virtual_Address field specifies the relative virtual address (RVA) of the PE binary section.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Size_Of_Raw_Data</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Size_Of_Raw_Data field specifies the size of the data contained in the PE binary section.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Pointer_To_Raw_Data</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Pointer_To_Raw_Data field specifies the file offset of the beginning of the PE binary section.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Pointer_To_Relocations</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Pointer_To_Relocations field specifies the offset of the PE binary section relocations, if applicable.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Pointer_To_Linenumbers</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the beginning of line-number entries for the section. Should be 0.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Number_Of_Relocations</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/NonNegativeIntegerObjectPropertyType">NonNegativeIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Number_Of_Relocations field specifies the number of relocations defined for the specified PE binary section.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Number_Of_Linenumbers</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/NonNegativeIntegerObjectPropertyType">NonNegativeIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the number of line number entries for the section. Should be 0.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Characteristics</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Characteristics field specifies any flags defined for the specified PE binary section.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

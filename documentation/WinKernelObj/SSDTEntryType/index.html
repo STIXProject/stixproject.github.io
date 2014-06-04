@@ -1,0 +1,95 @@
+---
+layout: documentation
+title: SSDTEntryType
+---
+
+<h1>SSDTEntryType<span class="subdued">Win Kernel Object Schema</span></h1>
+
+<p>The SSDTEntryType type specifies a single entry in the System Service Descriptor Table (SSDT).</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@hooked</td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The hooked attribute specifies whether the SSDT entry is hooked.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Service_Table_Base</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Pointer to the system service dispatch table, an array of function addresses which is indexed by the system call number.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Service_Counter_Table_Base</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Pointer to an array of usage counters.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Number_Of_Services</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/NonNegativeIntegerObjectPropertyType">NonNegativeIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Number of entries in the system service dispatch table.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Argument_Table_Base</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Pointer to an array of bytes, which indicate the number of bytes used by the function's arguments.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

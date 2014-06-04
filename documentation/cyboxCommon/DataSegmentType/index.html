@@ -1,0 +1,137 @@
+---
+layout: documentation
+title: DataSegmentType
+---
+
+<h1>DataSegmentType<span class="subdued">CybOX Common Schema</span></h1>
+
+<p>The DataSegmentType is intended to provide a relatively abstract way of characterizing data segments that may be written/read/transmitted or otherwise utilized in actions or behaviors.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@id</td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>The id field specifies a unique id for this data segment.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Data_Format</td>
+      <td>
+        
+          DataFormatEnum
+        
+      </td>
+      <td>
+        
+          <p>The Data_Format field refers to the type of data contained in the Data_Segment element.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Data_Size</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/DataSizeType">DataSizeType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Data_Size field contains the size of the data contained in this element.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Byte_Order</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/EndiannessType">EndiannessType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Byte_Order field specifies the endianness of the unpacked (e.g., decoded, unencrypted, etc.) data stored within the Data_Segment field.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Data_Segment</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Data_Segment field contains the actual segment of data being characterized.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Offset</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Offset field allows for the specification of where to start searching for the specified data segment in an object, in bytes.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Search_Distance</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Search_Distance field specifies how far into an object should be ignored, in bytes, before starting to search for the specified data segment relative to the end of the previous data segment.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Search_Within</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Search_Within field specifies that at most N bytes are between data segments in related objects.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

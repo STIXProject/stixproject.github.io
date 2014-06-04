@@ -1,0 +1,193 @@
+---
+layout: documentation
+title: NetworkConnectionObjectType
+---
+
+<h1>NetworkConnectionObjectType<span class="subdued">Network Connection Object Schema</span></h1>
+
+<p>The NetworkConnectionObjectType is intended as a way of characterizing local or remote (i.e. Internet) network connections.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@object_reference</td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>The object_reference field specifies a unique ID reference to an Object defined elsewhere. This construct allows for the re-use of the defined Properties of one Object within another, without the need to embed the full Object in the location from which it is being referenced. Thus, this ID reference is intended to resolve to the Properties of the Object that it points to.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Custom_Properties</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/CustomPropertiesType">CustomPropertiesType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Custom_Properties construct is optional and enables the specification of a set of custom Object Properties that may not be defined in existing Properties schemas.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@tls_used</td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The tls_used field specifies whether or not Transport Layer Security (TLS) is used in the network connection.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Creation_Time</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Creation_Time field specifies the date/time the network connection was created.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Layer3_Protocol</td>
+      <td>
+        
+          <a href="/documentation/NetworkConnectionObj/Layer3ProtocolType">Layer3ProtocolType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Layer3_Protocol field specifies the particular network (layer 3 in the OSI model) layer protocol used in the connection.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Layer4_Protocol</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/Layer4ProtocolType">Layer4ProtocolType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Layer4_Protocol field specifies the particular transport (layer 4 in the OSI model) layer protocol used in the connection.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Layer7_Protocol</td>
+      <td>
+        
+          <a href="/documentation/NetworkConnectionObj/Layer7ProtocolType">Layer7ProtocolType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Layer7_Protocol field specifies the particular application (layer 7 in the OSI model) layer protocol used in the connection.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Source_Socket_Address</td>
+      <td>
+        
+          <a href="/documentation/SocketAddressObj/SocketAddressObjectType">SocketAddressObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Source_Socket_Address field specifies the source socket address, consisting of an IP Address and port number, used in the connection.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Source_TCP_State</td>
+      <td>
+        
+          TCPStateEnum
+        
+      </td>
+      <td>
+        
+          <p>The Source_TCP_State field specifies the current state of the TCP network connection at the source, if applicable.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Destination_Socket_Address</td>
+      <td>
+        
+          <a href="/documentation/SocketAddressObj/SocketAddressObjectType">SocketAddressObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Destination_Socket_Address field specifies the destination socket address, consisting of an IP Address and port number, used in the connection.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Destination_TCP_State</td>
+      <td>
+        
+          TCPStateEnum
+        
+      </td>
+      <td>
+        
+          <p>The Destination_TCP_State field specifies the current state of the TCP network connection at the destination, if applicable.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Layer7_Connections</td>
+      <td>
+        
+          <a href="/documentation/NetworkConnectionObj/Layer7ConnectionsType">Layer7ConnectionsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Layer7_Connections field allows for the characterization of any application (layer 7 in the OSI model) layer connections observed as part of the network connection.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

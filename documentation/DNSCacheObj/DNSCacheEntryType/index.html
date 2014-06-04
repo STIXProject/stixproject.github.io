@@ -1,0 +1,53 @@
+---
+layout: documentation
+title: DNSCacheEntryType
+---
+
+<h1>DNSCacheEntryType<span class="subdued">DNS Cache Object Schema</span></h1>
+
+<p>The DNSCacheEntryType type is intended to characterize a single entry in a system's DNS cache.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>DNS_Entry</td>
+      <td>
+        
+          <a href="/documentation/DNSRecordObj/DNSRecordObjectType">DNSRecordObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>The DNS_Entry field specifies the relevant DNS entry (including Domain Name and IP Address) for this DNS Cache Entry.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>TTL</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/PositiveIntegerObjectPropertyType">PositiveIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The TTL field specifies the time-to-live value for the DNS cache entry, or in other words the number of seconds before the entry expires.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

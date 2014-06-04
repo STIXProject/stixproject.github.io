@@ -1,0 +1,151 @@
+---
+layout: documentation
+title: ARPType
+---
+
+<h1>ARPType<span class="subdued">Network Packet Object Schema</span></h1>
+
+<p>The Address Resolution Protocol is a request and reply protocol that runs encapsulated by the line protocol. It is communicated within the boundaries of a single network, never routed across internetwork nodes. This property places ARP into the Link Layer. It is encapsulated. REF: http://www.comptechdoc.org/independent/networking/guide/netarp.html.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Hardware_Addr_Type</td>
+      <td>
+        
+          <a href="/documentation/PacketObj/IANAHardwareType">IANAHardwareType</a>
+        
+      </td>
+      <td>
+        
+          <p>Characterizes the type of hardware address specified in an ARP message.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Proto_Addr_Type</td>
+      <td>
+        
+          <a href="/documentation/PacketObj/IANAEtherType">IANAEtherType</a>
+        
+      </td>
+      <td>
+        
+          <p>ProtoAddrType characterizes the type of protocol address being mapped. For IPv4 addresses, value = 0x0800.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Hardware_Addr_Size</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Harware_Addr_Size represents the byte size of the hardware address. For Ethernet or other IEEE 802 MAC addresses, the value is 6.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Proto_Addr_Size</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Proto_Addr_Size represents the byte size of the protocol address. IPv4 addresses = 4.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Op_Type</td>
+      <td>
+        
+          <a href="/documentation/PacketObj/ARPOpType">ARPOpType</a>
+        
+      </td>
+      <td>
+        
+          <p>Op_Type characterizes the type of operation. 1 = ARP request, 2=ARP reply, 3=RARP request, 4=RARP reply.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Sender_Hardware_Addr</td>
+      <td>
+        
+          <a href="/documentation/AddressObj/AddressObjectType">AddressObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>Sender_Hardware_Addr characterizes the sender's hardware address (e.g., MAC address).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Sender_Protocol_Addr</td>
+      <td>
+        
+          <a href="/documentation/AddressObj/AddressObjectType">AddressObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>Sender_Protocol_Addr characterizes the sender's IP address.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Recip_Hardware_Addr</td>
+      <td>
+        
+          <a href="/documentation/AddressObj/AddressObjectType">AddressObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>Recip_Sender_Hardware Addr characterizes the recipients' hardware address (e.g., MAC address).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Recip_Protocol_Addr</td>
+      <td>
+        
+          <a href="/documentation/AddressObj/AddressObjectType">AddressObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>Recip Protocol Addr characterizes the recipient's IP address.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

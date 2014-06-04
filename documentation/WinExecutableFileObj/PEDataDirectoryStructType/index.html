@@ -1,0 +1,53 @@
+---
+layout: documentation
+title: PEDataDirectoryStructType
+---
+
+<h1>PEDataDirectoryStructType<span class="subdued">Win Executable File Object Schema</span></h1>
+
+<p>The PEDataDirectoryStruct type is intended as container for the properties relevant to a PE binary's data directory structure.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Virtual_Address</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Virtual_Address field specifies the relative virtual address (RVA) of the data structure.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Size</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/NonNegativeIntegerObjectPropertyType">NonNegativeIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The size field specifies the size of the data structure, in bytes.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

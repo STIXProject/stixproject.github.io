@@ -1,0 +1,81 @@
+---
+layout: documentation
+title: OptionDataType
+---
+
+<h1>OptionDataType<span class="subdued">Network Packet Object Schema</span></h1>
+
+<p>Defines the variable-length fields associated with IPv6 extension headers (the Hop-by-Hop Options header and the Destination Options header). Contains one or more type-length-value (TLV)-encoded options.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Option_Type</td>
+      <td>
+        
+          <a href="/documentation/PacketObj/IPv6OptionType">IPv6OptionType</a>
+        
+      </td>
+      <td>
+        
+          <p>Identifies the type of option. This 8-bit Option Type identifier is internally encoded such that different bits have different meanings. These meanings are further specified in the IPv6OptionType type.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Option_Data_Len</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Length of the Option Data field of this option, in octets.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Pad1</td>
+      <td>
+        
+          <a href="/documentation/PacketObj/Pad1Type">Pad1Type</a>
+        
+      </td>
+      <td>
+        
+          <p>The Pad1 option is used to insert one octet of padding into the Options area of a header. The Pad1 option does not have length and value fields.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>PadN</td>
+      <td>
+        
+          <a href="/documentation/PacketObj/PadNType">PadNType</a>
+        
+      </td>
+      <td>
+        
+          <p>The PadN option is used to insert two or more octets of paddings into the Options area of a header.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

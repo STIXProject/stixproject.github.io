@@ -1,0 +1,81 @@
+---
+layout: documentation
+title: PDFStreamType
+---
+
+<h1>PDFStreamType<span class="subdued">PDF File Object Schema</span></h1>
+
+<p>The PDFStreamType element captures details of PDF document stream objects, which represent arbitrary sequences of bytes.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Raw_Stream</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Raw_Stream element captures the raw, undecoded stream (i.e., everything between the 'stream' and 'endstream' keywords), as a hex string.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Raw_Stream_Hashes</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HashListType">HashListType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Raw_Stream_Hashes field captures any hashes of the raw, undecoded stream.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Decoded_Stream</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Decoded_Stream field captures the decoded stream (i.e., after undoing the specified filters in the correct order) as a hex string.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Decoded_Stream_Hashes</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HashListType">HashListType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Decoded_Stream_Hashes field captures any hashes of the decoded stream.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

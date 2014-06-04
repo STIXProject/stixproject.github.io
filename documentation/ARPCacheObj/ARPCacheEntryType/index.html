@@ -1,0 +1,81 @@
+---
+layout: documentation
+title: ARPCacheEntryType
+---
+
+<h1>ARPCacheEntryType<span class="subdued">ARP Cache Object Schema</span></h1>
+
+<p>The ARPCacheEntryType type is intended to characterize a single entry in a system's ARP cache.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>IP_Address</td>
+      <td>
+        
+          <a href="/documentation/AddressObj/AddressObjectType">AddressObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>The IP_Address field specifies the IP address that is mapped to the physical address in the ARP cache entry.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Physical_Address</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Physical_Address field specifies the physical (e.g. MAC-48) address that is mapped to the IP address in the ARP cache entry. Either a colon (':') or a dash ('-') may be used as a separator between the octets.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Type</td>
+      <td>
+        
+          <a href="/documentation/ARPCacheObj/ARPCacheEntryTypeType">ARPCacheEntryTypeType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Type field specifies the type of ARP cache entry, which typically refers to the way the entry was added to the cache.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Network_Interface</td>
+      <td>
+        
+          <a href="/documentation/SystemObj/NetworkInterfaceType">NetworkInterfaceType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Network_Interface field permits the specification of the network interface to which the ARP cache entry belongs.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

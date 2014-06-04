@@ -1,0 +1,67 @@
+---
+layout: documentation
+title: IPFIXOptionsTemplateSetType
+---
+
+<h1>IPFIXOptionsTemplateSetType<span class="subdued">Network Flow Object Schema</span></h1>
+
+<p>Specifies the regions of an Options Template Set, of which there are three: the Set Header, the collection of Options Template Records, and the optional padding at the end of the Options Template Set. See RFC 5101 under Set Format, which is section 3.3.1, for more information.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Set_Header</td>
+      <td>
+        
+          <a href="/documentation/NetFlowObj/IPFIXSetHeaderType">IPFIXSetHeaderType</a>
+        
+      </td>
+      <td>
+        
+          <p>Indicates the Set Header region, which is 32-bit region containing the 16-bit fields Set ID and Length, in that order. These are the same fields referenced in the IPFIXSetHeaderType.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Options_Template_Record</td>
+      <td>
+        
+          <a href="/documentation/NetFlowObj/IPFIXOptionsTemplateRecordType">IPFIXOptionsTemplateRecordType</a>
+        
+      </td>
+      <td>
+        
+          <p>Indicates the region of Options Template Records. These are the same fields referenced in the IPFIXOptionsTemplateRecordType.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Padding</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Indicates the optional Padding at the end of an Options Template Set. As mentioned in RFC 5101, the Exporting Process MAY insert some padding octets, so that the subsequent Set starts at an aligned boundary. For security reasons, the padding octet(s) MUST be composed of zero (0) valued octets, and the padding length MUST be shorter than any allowable record in this Set. For more information see RFC 5101 under Padding.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

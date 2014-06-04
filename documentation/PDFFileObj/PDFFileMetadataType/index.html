@@ -1,0 +1,123 @@
+---
+layout: documentation
+title: PDFFileMetadataType
+---
+
+<h1>PDFFileMetadataType<span class="subdued">PDF File Object Schema</span></h1>
+
+<p>The PDFFileMetadaType captures some metadata regarding the PDF file object.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@encrypted</td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The encrypted field specifies whether the PDF file is encrypted.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@optimized</td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The optimized field specifies whether the PDF file has been optimized.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Document_Information_Dictionary</td>
+      <td>
+        
+          <a href="/documentation/PDFFileObj/PDFDocumentInformationDictionaryType">PDFDocumentInformationDictionaryType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Document_Information_Dictionary field captures the details of the PDF Document Information Dicitonary, which includes properties like the document creation date and producer, if present in the PDF document.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Number_Of_Indirect_Objects</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/PositiveIntegerObjectPropertyType">PositiveIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Number_Of_Indirect_Objects field captures the number of indirect PDF objects contained in the file.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Number_Of_Trailers</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/PositiveIntegerObjectPropertyType">PositiveIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Number_Of_Trailers field captures the number of trailers contained in the file.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Number_Of_Cross_Reference_Tables</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/PositiveIntegerObjectPropertyType">PositiveIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Number_Of_Cross_Reference_Tables field captures the number of cross-reference tables contained in the file.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Keyword_Counts</td>
+      <td>
+        
+          <a href="/documentation/PDFFileObj/PDFKeywordCountsType">PDFKeywordCountsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Keyword_Counts field captures the counts of various PDF keyword names in the file.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

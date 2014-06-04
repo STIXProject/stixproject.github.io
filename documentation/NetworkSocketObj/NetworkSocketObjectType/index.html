@@ -1,0 +1,193 @@
+---
+layout: documentation
+title: NetworkSocketObjectType
+---
+
+<h1>NetworkSocketObjectType<span class="subdued">Network Socket Object Schema</span></h1>
+
+<p>The NetworkSocketObjectType is intended to characterize network sockets.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@object_reference</td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>The object_reference field specifies a unique ID reference to an Object defined elsewhere. This construct allows for the re-use of the defined Properties of one Object within another, without the need to embed the full Object in the location from which it is being referenced. Thus, this ID reference is intended to resolve to the Properties of the Object that it points to.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Custom_Properties</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/CustomPropertiesType">CustomPropertiesType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Custom_Properties construct is optional and enables the specification of a set of custom Object Properties that may not be defined in existing Properties schemas.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@is_blocking</td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The is_blocking field specifies whether or not the socket is in blocking mode.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@is_listening</td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The is_listening field specifies whether or not the socket is in listening mode.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Address_Family</td>
+      <td>
+        
+          <a href="/documentation/NetworkSocketObj/AddressFamilyType">AddressFamilyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Address_Family field specifies the address family (AF_*) that the socket is configured for.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Domain</td>
+      <td>
+        
+          <a href="/documentation/NetworkSocketObj/DomainFamilyType">DomainFamilyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Domain field specifies the communication domain (PF_*) of the socket.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Local_Address</td>
+      <td>
+        
+          <a href="/documentation/SocketAddressObj/SocketAddressObjectType">SocketAddressObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Local_Address field specifies the IP address and port for the socket on the local machine.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Options</td>
+      <td>
+        
+          <a href="/documentation/NetworkSocketObj/SocketOptionsType">SocketOptionsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Options field specifies any particular options used by the socket.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Protocol</td>
+      <td>
+        
+          <a href="/documentation/NetworkSocketObj/ProtocolType">ProtocolType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Protocol field specifies the type of IP layer protocol used by the socket.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Remote_Address</td>
+      <td>
+        
+          <a href="/documentation/SocketAddressObj/SocketAddressObjectType">SocketAddressObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Remote_Address field specifies the IP address and port for the socket on the remote machine.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Type</td>
+      <td>
+        
+          <a href="/documentation/NetworkSocketObj/SocketType">SocketType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Type field specifies the type of socket being characterized.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Socket_Descriptor</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/NonNegativeIntegerObjectPropertyType">NonNegativeIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Socket_Descriptor field specifies the socket file descriptor value associated with the socket. Negative values are not allowed.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

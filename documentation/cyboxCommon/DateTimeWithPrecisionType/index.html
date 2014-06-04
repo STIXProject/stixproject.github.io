@@ -1,0 +1,40 @@
+---
+layout: documentation
+title: DateTimeWithPrecisionType
+---
+
+<h1>DateTimeWithPrecisionType<span class="subdued">CybOX Common Schema</span></h1>
+
+<p>This type is used as a replacement for the standard xs:dateTime type but allows for the representation of the precision of the dateTime.  If the precision is given, consumers must ignore the portions of this field that is more precise than the given precision. Producers should zero-out (fill with zeros) digits in the dateTime that are required by the xs:dateTime datatype but are beyond the specified precision.
+In order to avoid ambiguity, it is strongly suggested that all dateTimes include a specification of the timezone if it is known.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@precision</td>
+      <td>
+        
+          DateTimePrecisionEnum
+        
+      </td>
+      <td>
+        
+          <p>The precision of the associated dateTime. If omitted, the default is "second", meaning the full field value (including fractional seconds).</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

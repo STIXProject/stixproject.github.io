@@ -1,0 +1,67 @@
+---
+layout: documentation
+title: YAFTCPFlowType
+---
+
+<h1>YAFTCPFlowType<span class="subdued">Network Flow Object Schema</span></h1>
+
+<p>Contains TCP-related information of the network flow.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>TCP_Sequence_Number</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>TCP sequence number.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Initial_TCP_Flags</td>
+      <td>
+        
+          <a href="/documentation/PacketObj/TCPFlagsType">TCPFlagsType</a>
+        
+      </td>
+      <td>
+        
+          <p>TCP flags of the first packet.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Union_TCP_Flags</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The union of the TCP flags of the 2...nth packet.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

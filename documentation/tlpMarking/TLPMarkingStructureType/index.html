@@ -1,0 +1,98 @@
+---
+layout: documentation
+title: TLPMarkingStructureType
+---
+
+<h1>TLPMarkingStructureType<span class="subdued">TLP Schema</span></h1>
+
+<p>The TLPMarkingStructureType is an implementation of the data marking schema that allows for a TLP Designation to be attached to an identified XML structure. Information about TLP is available here: http://www.us-cert.gov/tlp.
+Nodes may be marked by multiple TLP Marking statements. When this occurs, the node should be considered marked at the most restrictive TLP Marking of all TLP Markings that were applied to it. For example, if a node is marked both GREEN and AMBER, the node should be considered AMBER.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@marking_model_name</td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>This field specifies the name of the marking model to be applied within this Marking_Structure.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@marking_model_ref</td>
+      <td>
+        
+          anyURI
+        
+      </td>
+      <td>
+        
+          <p>This field contains a reference to an authoritative source on the marking model to be applied within this Marking_Structure.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@id</td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>Specifies a unique ID for this Marking_Structure.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@idref</td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>Specifies a reference to the ID of a Marking_Structure defined elsewhere.</p>
+        
+          <p>When idref is specified, the id attribute must not be specified, and any instance of this Marking_Structure should not hold content.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@color</td>
+      <td>
+        
+          TLPColorEnum
+        
+      </td>
+      <td>
+        
+          <p>The TLP color designation of the marked structure.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

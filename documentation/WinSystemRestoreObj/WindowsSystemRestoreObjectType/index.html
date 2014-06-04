@@ -1,0 +1,319 @@
+---
+layout: documentation
+title: WindowsSystemRestoreObjectType
+---
+
+<h1>WindowsSystemRestoreObjectType<span class="subdued">Win System Restore Object Schema</span></h1>
+
+<p>The WindowsSystemRestoreObjectType is intended to characterize Windows system restore points.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@object_reference</td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>The object_reference field specifies a unique ID reference to an Object defined elsewhere. This construct allows for the re-use of the defined Properties of one Object within another, without the need to embed the full Object in the location from which it is being referenced. Thus, this ID reference is intended to resolve to the Properties of the Object that it points to.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Custom_Properties</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/CustomPropertiesType">CustomPropertiesType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Custom_Properties construct is optional and enables the specification of a set of custom Object Properties that may not be defined in existing Properties schemas.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Restore_Point_Description</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The description of this restore point.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Restore_Point_Full_Path</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The full path to the restore point.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Restore_Point_Name</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The name associated with this restore point.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Restore_Point_Type</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The type of restore point. (ex: "Checkpoint").</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>ACL_Change_SID</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The SID associated with a restore point change log event. This usually appears when the event flag includes "ACL Info".</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>ACL_Change_Username</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The username associated with a restore point change log event. It usually appears when the event flag includes "ACL Info".</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Backup_File_Name</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The backup file name associated with a particular restore point change log event.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Change_Event</td>
+      <td>
+        
+          <a href="/documentation/WinSystemRestoreObj/ChangeLogEntryTypeType">ChangeLogEntryTypeType</a>
+        
+      </td>
+      <td>
+        
+          <p>The change event associated with this restore point object (ex: "System Checkpoint", "Software Installation", etc.).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>ChangeLog_Entry_Flags</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The flags associated with a restore point change log entry (ex: "ACL Info, "Short Name", etc.).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>ChangeLog_Entry_Sequence_Number</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/LongObjectPropertyType">LongObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The change log sequence number associated with this restore point object.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>ChangeLog_Entry_Type</td>
+      <td>
+        
+          <a href="/documentation/WinSystemRestoreObj/ChangeLogEntryTypeType">ChangeLogEntryTypeType</a>
+        
+      </td>
+      <td>
+        
+          <p>The changelog entry type associated with this restore point object.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Change_Log_File_Name</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The changelog file associated with the restore point.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Created</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The created date of the system restore point.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>File_Attributes</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Attributes of the file associated with this restore point object (ex: "Directory").</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>New_File_Name</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The new filename of the file associated with this restore point object.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Original_File_Name</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The original filename associated with this restore point change log event.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Original_Short_File_Name</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The original Short filename (SFN) of the file associated with this restore point object.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Process_Name</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The process name associated with this restore point object.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Registry_Hive_List</td>
+      <td>
+        
+          <a href="/documentation/WinSystemRestoreObj/HiveListType">HiveListType</a>
+        
+      </td>
+      <td>
+        
+          <p>The registry hives associated with this restore point.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

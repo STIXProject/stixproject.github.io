@@ -1,0 +1,53 @@
+---
+layout: documentation
+title: LeveragedTTPsType
+---
+
+<h1>LeveragedTTPsType<span class="subdued">Incident Schema</span></h1>
+
+
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@scope</td>
+      <td>
+        
+          RelationshipScopeEnum
+        
+      </td>
+      <td>
+        
+          <p>Indicates how multiple related items should be interpreted in this relationship. If "inclusive" is specified, then a single conceptual relationship is being defined between the subject and the collection of objects indicated by the related items (i.e. the relationship is not necessarily relevant for any one particular object being referenced, but for the aggregated collection of objects referenced). If "exclusive" is specified, then multiple relationships are being defined between the specific subject and each object individually. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Leveraged_TTP</td>
+      <td>
+        
+          <a href="/documentation/stixCommon/RelatedTTPType">RelatedTTPType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Leveraged_TTP field specifies a single TTP asserted to be related to this cyber threat Incident.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

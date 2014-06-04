@@ -1,0 +1,53 @@
+---
+layout: documentation
+title: UnixProcessStatusType
+---
+
+<h1>UnixProcessStatusType<span class="subdued">Unix Process Object Schema</span></h1>
+
+<p>The UnixProcessStatusType field specifies the current status of the running Unix process. It extends the abstract ProcessStatusType from the CybOX Process Object.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Current_Status</td>
+      <td>
+        
+          <a href="/documentation/UnixProcessObj/UnixProcessStateType">UnixProcessStateType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the current state of the Unix process, using the UnixProcessStatusEnum enumeration.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Timestamp</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies when the process started up.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

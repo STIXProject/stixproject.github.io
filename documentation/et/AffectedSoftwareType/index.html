@@ -1,0 +1,53 @@
+---
+layout: documentation
+title: AffectedSoftwareType
+---
+
+<h1>AffectedSoftwareType<span class="subdued">Exploit Target Schema</span></h1>
+
+
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@scope</td>
+      <td>
+        
+          RelationshipScopeEnum
+        
+      </td>
+      <td>
+        
+          <p>Indicates how multiple related items should be interpreted in this relationship. If "inclusive" is specified, then a single conceptual relationship is being defined between the subject and the collection of objects indicated by the related items (i.e. the relationship is not necessarily relevant for any one particular object being referenced, but for the aggregated collection of objects referenced). If "exclusive" is specified, then multiple relationships are being defined between the specific subject and each object individually. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Affected_Software</td>
+      <td>
+        
+          <a href="/documentation/stixCommon/RelatedObservableType">RelatedObservableType</a>
+        
+      </td>
+      <td>
+        
+          <p>Characterizes a single instance of software affected by this vulnerability.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

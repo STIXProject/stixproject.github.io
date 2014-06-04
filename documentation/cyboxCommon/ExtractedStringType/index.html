@@ -1,0 +1,141 @@
+---
+layout: documentation
+title: ExtractedStringType
+---
+
+<h1>ExtractedStringType<span class="subdued">CybOX Common Schema</span></h1>
+
+<p>The ExtractedStringType type is intended as container a single string extracted from a CybOX object.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Encoding</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Encoding field refers to the encoding method used for the string extracted from the CybOX object, via a standardized controlled vocabulary.</p>
+        
+          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is CharacterEncodingVocab in the http://cybox.mitre.org/default_vocabularies-2 namespace. This type is defined in the cybox_default_vocabularies.xsd file or at the URL http://cybox.mitre.org/XMLSchema/default_vocabularies/2.0.1/cybox_default_vocabularies.xsd.</p>
+        
+          <p>Users may also define their own vocabulary using the type extension mechanism (by specifying a vocabulary name and/or reference using the vocab_name and vocab_reference attributes, respectively) or simply use this as a string field.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>String_Value</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The String_Value field specifies the actual value of the string extracted from the CybOX object, if it is capable of being represented in the encoding scheme used in the document (most commonly UTF-8).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Byte_String_Value</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Byte_String_Value field specifies the raw, byte-string representation of the string extracted from the CybOX object, in hexadecimal format.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Hashes</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HashListType">HashListType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Hashes field is used to include any hash values computed using the string extracted from the CybOX object as input.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Address</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Address field specifies the location or offset of the specified string in the CybOX objects.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Length</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/PositiveIntegerObjectPropertyType">PositiveIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Length field specifies the length, in characters, of the string extracted from the CybOX object.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Language</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Language field specifies the language the string is written in, e.g. English. For consistency, we strongly recommend using the ISO 639-2 language code, if available. Please see http://www.loc.gov/standards/iso639-2/php/code_list.php for a list of ISO 639-2 codes.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>English_Translation</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The English_Translation field specifies the English translation of the string, if it is not written in English.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

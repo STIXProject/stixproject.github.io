@@ -1,0 +1,109 @@
+---
+layout: documentation
+title: NetflowV9PacketHeaderType
+---
+
+<h1>NetflowV9PacketHeaderType<span class="subdued">Network Flow Object Schema</span></h1>
+
+<p>Header fields defined for Netflow v9. Note that common elements are included in the Network_Flow_Label. http://www.ietf.org/rfc/rfc3954.txt.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Version</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the version of flow record format exported in this packet. The value of this field is 9 for the Netflow v9.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Record_Count</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the total number of records in the Export Packet, which is the sum of Options FlowSet records, Template FlowSet records, and Data FlowSet records. http://www.ietf.org/rfc/rfc3954.txt.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Sys_Up_Time</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the time in milliseconds since this device was first booted.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Unix_Secs</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the time in seconds since 0000 UTC 1970 at which the Export Packet leaves the Exporter.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Sequence_Number</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Incremental sequence counter of all Export Packets sent from the current Observation Domain by the Exporter. This value MUST be cumulative, and SHOULD be used by the Collector to identify whether any Export Packets have been missed. http://www.ietf.org/rfc/rfc3954.txt.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Source_ID</td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies a 32-bit value that identifies the Exporter Observation Domain. NetFlow Collectors SHOULD use the combination of the source IP address and the Source ID field to separate different export streams originating from the same Exporter.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
