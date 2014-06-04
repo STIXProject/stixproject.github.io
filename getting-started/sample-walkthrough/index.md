@@ -245,15 +245,10 @@ To summarize, there are several main fields in this instance document:
 * `Indicator` is a way of describing a pattern for something you might observe in cyber (using CybOX) and the context to give it meaning
 * CybOX (`Observable`, `Object`, Object Properties) are the way of representing that pattern (when used for indicators, they can also represent instances of things that were actually observed).
 
-## Where to go from here
+## Advanced Topics
 
-This tutorial tool a look at a very basic indicator. You might be thinking "why should I use STIX when it takes 54 lines of complicated XML just to describe 3 IP addresses?" That's a good point, but it's important to keep in mind that STIX offers a lot of capabilities and when it's used for simple examples (like this one) much of those capabilities are reflected in things that seem redundant. For example, the "Observable" and "Object" layer of CybOX provide many capabilities that were not used, so they look superfluous. As you start to use more advanced capabilities, you'll begin to see that the things that might seem bulky in simple use cases become important.
-
-To start to work towards more advanced indicator matching, some concepts to research are:
-
-* Observable composition, which allows you to combine multiple observables into a logical combination of AND/OR for more complicated matching
-* Indicator composition, which allows you to combine multiple indicators into a logical combination of AND/OR for more complicated matching
-* Other objects (File, E-mail Message, etc.), which of course can let you create indicators against other types of cyber observables
-* Multiple fields in an object, which can let you create patterns against multiple fields on an object (file name and hash, for example)
-* Indicated TTP, which can give more structured meaning to an indicator through use of the TTP component
-* Suggested Course of Action, which can provide suggested mitigations, remediations, or other responses for when an indicator is observed.
+* Combining indicators logically (i.e. AND/OR)
+* File and E-mail Message objects
+* Matching multiple fields on an object such as file name and hash
+* Indicated TTP
+* Suggested Course of Action to define what to do when you see an indicator
