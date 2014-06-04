@@ -92,7 +92,7 @@ from stix.extensions.marking.tlp import TLPMarkingStructure
 alpha_package = STIXPackage()
 alpha_package.stix_header = STIXHeader()
 alpha_package.stix_header.title = "Report on Adversary Alpha's Campaign against the Industrial Control Sector"
-rat_package.stix_header.package_intent = "Campaign Characterization"
+rat_package.stix_header.package_intents = "Campaign Characterization"
 alpha_package.stix_header.handling = Marking()
 
 alpha_marking = MarkingSpecification()
@@ -105,7 +105,7 @@ alpha_package.stix_header.handling.add_marking(alpha_marking)
 rat_package = STIXPackage()
 rat_package.stix_header = STIXHeader()
 rat_package.stix_header.title = "Indicators for Malware DrownedRat"
-rat_package.stix_header.package_intent = "Indicators - Malware Artifacts"
+rat_package.stix_header.package_intents = "Indicators - Malware Artifacts"
 rat_package.stix_header.handling = Marking()
 
 bravo_marking = MarkingSpecification()
