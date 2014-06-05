@@ -10,9 +10,9 @@ Knowledge of XML elements and validation against a schema.
 
 Understanding of [STIX suggested practices](/suggestions) 
 
-## Creating the package
+## Package up the data
 
-As a general rule, all STIX content should be enclosed in a STIX_Package. This allows you to represent metadata about the content, such as the intent, title, and information source. So, let's start off with that:
+All STIX content should be enclosed in STIX_Package tags, representing the title and intent of the data content.
 
 ```xml
 <stix:STIX_Package>
@@ -20,9 +20,9 @@ As a general rule, all STIX content should be enclosed in a STIX_Package. This a
 </stix:STIX_Package>
 ```
 
-### Define namespace prefixes
 
-You'll notice two things: one is that STIX_Package uses the `stix` namespace prefix and the second is that this obviously isn't valid yet. In order to make this valid, we need to declare the relevant namespace prefixes and map them to the full namespaces. Since we might not know what all of these are from the start, I like to add a couple commonly used ones at first and then expand on that as I use things. So, let's define some basic namespaces used in most STIX documents first. `xsi` is required to use `xsi:type` (the STIX extension mechanism), `stix` is the top-level STIX namespace (that STIX_Package is in), `stixVocabs` is the namespace for the default vocabularies, `stixCommon` and `cyboxCommon` are library namespaces that are used throughout STIX, and `example` is the namespace we'll use when creating IDs (it denotes the producer of the content, so feel free to use your company name here). We'll be adding more throughout this tutorial, but in general the namespaces below are a good place to start.
+### Define namespace prefixes
+`STIX_Package` uses the `stix` namespace, and includes a list of namespace prefixes:
 
 ```xml
 <stix:STIX_Package
@@ -35,87 +35,70 @@ You'll notice two things: one is that STIX_Package uses the `stix` namespace pre
 </stix:STIX_Package>
 ```
 
+- `xsi` is required to use the `xsi:type` extension method
+- `stix` defines the top-level STIX namespace  
+- `stixVocabs` is the namespace for the default vocabularies
+- `stixCommon` and `cyboxCommon` are library namespaces 
+- `example` denotes the producer of the content, for instance your own organization. 
+
+
 ### Add schemaLocation
 
-Next, let's set the schemaLocation attribute, which is a space-separated list of namespaces mapped to schemas. In this case, we say the `http://stix.mitre.org/stix-1` namespace can be found in the `http://stix.mitre.org/XMLSchema/core/1.1/stix_core.xsd` schema. You can find these locations by going to the [current release](http://stix.mitre.org/language/version1.1/) page and copying the XSD URL for the correct link (STIX Core, in this case). If you're offline or behind a firewall and can't access the schema locations above, you can also use a relative or absolute path to a local copy of the schema that you've downloaded.
+The schemaLocation attribute is a space-separated list that maps a given namespace to the file containing its schema. 
+For instance, the `http://stix.mitre.org/stix-1` namespace can be found in the `http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd` schema. 
+
+URLs are found under the  [current release](http://stix.mitre.org/language/version1.1.1/)  
+Copies of schema files can also be referenced locally.
 
 ```xml
 <stix:STIX_Package
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns:stix="http://stix.mitre.org/stix-1"
-  xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1"
-  xmlns:stixCommon="http://stix.mitre.org/common-1"
-  xmlns:cyboxCommon="http://cybox.mitre.org/common-2"
-  xmlns:example="http://example.com"
+<..trimmed>
   xsi:schemaLocation="
-    http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1/stix_core.xsd
-    http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1/stix_common.xsd
+    http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd
+    http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd
     http://cybox.mitre.org/common-1 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd
-    http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1/stix_default_vocabularies.xsd
+    http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
   ">
 </stix:STIX_Package>
 ```
-
-Note that we don't need a schema location for xsi (because editors always know what it means) or for example (because it's only used for IDs, not schema constructs).
 
 ### Set the version and ID fields
 
 ```xml
 <stix:STIX_Package
   ...
-  version="1.1"
+  version="1.1.1"
   id="example:package-382ded87-52c9-4644-bab0-ad3168cbad59"
   timestamp="2014-02-20T09:00:00.000000"
   >
 </stix:STIX_Package>
 ```
 
-The version attribute is set to the version of STIX that you're targeting, which in almost all cases will be the same as the version of the schemas that you're using. In this case, we're using STIX 1.1 so we set the `version` attribute to "1.1".
+The current version of STIX is `1.1.1`
+The `id` attribute is set to a globally-unique
+These files can also be referenced locally for offline access.
 
-The `id` attribute is set to a globally-unique identifier for this content i.e. for creating IDs: a producer namespace prefix, followed by a ":" (required by the field to separate the namespace from the ID), followed by the type of construct the ID is for ("package"), followed by a GUID. You can use an [online GUID generator](https://www.google.com/search?q=guid+generator) to generate the GUID. In this case the producer namespace prefix is "example" (note that this prefix must also be declared in the head of the document), the construct type is "package", and the GUID itself is "382ded87-52c9-4644-bab0-ad3168cbad59".
+`timestamp` is set to the creation time of this document. It can be updated later to include new information with the same ID 
 
-Finally, the `timestamp` attribute is set to the time (with fractional seconds if possible) that this version of the construct was published. Later versions of the construct can then re-use the same ID but update the timestamp to reflect the new version.
-
-### Validate the document
-
-Try to validate the document in your XML tool. With the schemaLocation set and the namespaces defined, the document should now validate against the schemas and we can move on. In many tools, the editor will now automatically validate the document against the schemas and even autocomplete element and attribute names for you (both Oxygen and XML Spy do this).
 
 ## Add the STIX_Header
 
-Next, we need to add a STIX_Header element in order to represent metadata. It should be added inside STIX_Package:
+Add a STIX_Header element to store 
 
 ```xml
 <stix:STIX_Package
-  ... >
   <stix:STIX_Header>
+    <stix:Title> My First Package </stix:Title>
   </stix:STIX_Header>
 </stix:STIX_Package>
 ```
+### Add Intent
 
+The package intent tells consumers what type of data is being sent. 
 
-### Add Title
-Moving along, let's add the title, that's easy:
+These fields can optionally follow a standard vocabulary, listed [in the schema](http://stix.mitre.org/language/version1.1.1/xsddocs/core/1.1.1/stix_core_xsd.html#STIXHeaderType_Package_Intent) . 
 
-```xml
-<stix:STIX_Header>
-  <stix:Title>Example File Hash Watchlist for Fake Malware XYZ</stix:Title>
-</stix:STIX_Header>
-```
-
-### Add Package Intent
-
-After that comes the package intent. The package intent tells consumers what type of threat intelligence you're intending to convey. In this case, we'll be conveying indicators of a malicious piece of software.
-
-If you followed the sample walkthrough, or have been checking the documentation, you'll know that this field is a controlled vocabulary. To figure out which vocabulary you should use by default, check the [schema annotations](http://stix.mitre.org/language/version1.1/xsddocs/core/1.1/stix_core_xsd.html#STIXHeaderType_Package_Intent) for the field. You can do this either in the online docs (linked from the release page) or by looking directly at the schemas. In this case, they tell us to use "PackageIntentVocab-1.0", so we set that in the `xsi:type` field (see the section on xsi:type in the sample walkthrough for more info on this).
-
-```xml
-<stix:STIX_Header>
-  <stix:Title>Example File Hash Watchlist for Fake Malware XYZ</stix:Title>
-  <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0"></stix:Package_Intent>
-</stix:STIX_Header>
-```
-
-In many editors, the possible types you can use for `xsi:type` will autocomplete for you. Additionally, the element value itself will autocomplete once you put in the `xsi:type`. Either way, we take a look through the values that are acceptable for that vocabulary (looking in the schemas, in the documentation, or in the editor autocomplete) and choose "Indicators - Malware Artifacts".
+`PackageIntentVocab-1.0` can be defined in the `xsi:type` field to enforce this vocab, which we set to "Indicators - Malware Artifacts" for this example.
 
 ```xml
 <stix:STIX_Header>
@@ -174,21 +157,21 @@ Now, if you go to autocomplete new elements in the indicator you'll find that no
   xmlns:indicator="http://stix.mitre.org/Indicator-2"
   xmlns:example="http://example.com"
   xsi:schemaLocation="
-    http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1/stix_core.xsd
+    http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd
     http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.1/indicator.xsd
-    http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1/stix_common.xsd
+    http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd
     http://cybox.mitre.org/common-1 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd
-    http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1/stix_default_vocabularies.xsd
+    http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
   ">
 ```
 
-Next, we need to set the xsi:type to `indicator:IndicatorType`. After that's done, we should be able to autocomplete elements. The same pattern will apply to any component.
+Next, we need to set the xsi:type to `indicator:IndicatorType`. 
 
 ```xml
 <stix:Indicator xsi:type="indicator:IndicatorType">
 ```
 
-Before we add content though, we should set an ID and timestamp. Following the suggesting practice, we set the prefix to our producer prefix, use "indicator-" as the basis for the ID portion, and generate a new GUID to fill in the rest:
+Before adding content, set an ID and timestamp. Following the suggesting practice, we set the prefix to our producer prefix, use "indicator-" as the basis for the ID portion, and generate a new GUID to fill in the rest:
 
 ```xml
 <stix:Indicator xsi:type="indicator:IndicatorType" id="example:indicator-3c3885fe-a350-4a5c-aae3-6f014df36975" timestamp="2014-02-20T09:00:00.000000Z">
@@ -205,14 +188,14 @@ Like we did with STIX_Header, we also look at the suggested practices for STIX i
 
 ### Set the Indicator Title and Type
 
-That looks like a lot, but a couple are easy: `Title` and `Type` are very similar to the `Title` and `Package_Intent` fields on `STIX_Header`: title is just a title for the indicator, and type indicates what general type of indicator it is (using a controlled vocabulary).
+`Title` and `Type` are very similar to the `Title` and `Package_Intent` fields on `STIX_Header`: title is just a title for the indicator, and type indicates what general type of indicator it is (using a controlled vocabulary).
 
 It might be worth seeing if you can add these yourself before looking to see how I did it. Specifically, make sure you can identify the fact that `Type` is a controlled vocabulary field and, from there, figure out which vocabulary to use.
 
 ```xml
 <stix:Indicator xsi:type="indicator:IndicatorType" id="example:indicator-3c3885fe-a350-4a5c-aae3-6f014df36975">
   <indicator:Title>Malware XYZ Hashes</indicator:Title>
-  <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">File Hash Watchlist</indicator:Type>
+  <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1.1">File Hash Watchlist</indicator:Type>
 </stix:Indicator>
 ```
 
@@ -229,7 +212,7 @@ So to start, we just need to create the CybOX observable and object wrappers:
 ```xml
 <stix:Indicator xsi:type="indicator:IndicatorType" id="example:indicator-3c3885fe-a350-4a5c-aae3-6f014df36975" timestamp="2014-02-20T09:00:00.000000Z">
   <indicator:Title>Malware XYZ Hashes</indicator:Title>
-  <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">File Hash Watchlist</indicator:Type>
+  <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1.1">File Hash Watchlist</indicator:Type>
   <indicator:Observable id="example:observable-3d7b08aa-88bf-4f9c-bb34-939b7548b636">
     <cybox:Object id="example:observable-5a5a0a2d-3b75-4ba6-932f-9d5f596c3c5b">
     </cybox:Object>
@@ -255,13 +238,13 @@ Next, we need to identify the correct CybOX object type to use to represent file
   xmlns:FileObj="http://cybox.mitre.org/objects#FileObject-2"
   xmlns:example="http://example.com"
   xsi:schemaLocation="
-    http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1/stix_core.xsd
+    http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd
     http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.1/indicator.xsd
-    http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1/stix_common.xsd
+    http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd
     http://cybox.mitre.org/cybox-2 http://cybox.mitre.org/XMLSchema/core/2.1/cybox_core.xsd
     http://cybox.mitre.org/common-1 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd
     http://cybox.mitre.org/objects#FileObject-2 http://cybox.mitre.org/XMLSchema/objects/File/2.1/File_Object.xsd
-    http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1/stix_default_vocabularies.xsd
+    http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
   ">
 ```
 
@@ -317,7 +300,7 @@ These fields are fairly standard STIX, so I'll just show you the end result. It 
 ```xml
 <stix:Indicator xsi:type="indicator:IndicatorType" id="example:indicator-3c3885fe-a350-4a5c-aae3-6f014df36975" timestamp="2014-02-20T09:00:00.000000Z">
   <indicator:Title>Malware XYZ Hashes</indicator:Title>
-  <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">File Hash Watchlist</indicator:Type>
+  <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1.1">File Hash Watchlist</indicator:Type>
   <indicator:Valid_Time_Position>
     <indicator:Start_Time>2014-01-01T12:48:50Z</indicator:Start_Time>
     <indicator:End_Time>2014-01-31T12:48:50Z</indicator:End_Time>
@@ -428,14 +411,7 @@ An alternative to the reference-based approach using @idref is embedding the TTP
 </stix:Indicator>
 ```
 
-Note that the TTP looks essentially the same regardless of whether it's embedded or referenced. You do need the `xsi:type` in this case, by the way.
-
-# Summary
-
-Congratulations, you just wrote a STIX document. It might be a simple one, but you've learned STIX concepts that will let you compose much more complicated documents once you learn the rest of the data model.
-
-The entire document, by the way, should look something like this:
-
+# Complete example
 ```xml
 <stix:STIX_Package
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -450,17 +426,17 @@ The entire document, by the way, should look something like this:
   xmlns:FileObj="http://cybox.mitre.org/objects#FileObject-2"
   xmlns:example="http://example.com"
   xsi:schemaLocation="
-    http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1/stix_core.xsd
+    http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd
     http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.1/indicator.xsd
-    http://stix.mitre.org/TTP-1 http://stix.mitre.org/XMLSchema/ttp/1.1/ttp.xsd
-    http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1/stix_common.xsd
+    http://stix.mitre.org/TTP-1 http://stix.mitre.org/XMLSchema/ttp/1.1.1/ttp.xsd
+    http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd
     http://cybox.mitre.org/cybox-2 http://cybox.mitre.org/XMLSchema/core/2.1/cybox_core.xsd
     http://cybox.mitre.org/common-1 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd
     http://cybox.mitre.org/objects#FileObject-2 http://cybox.mitre.org/XMLSchema/objects/File/2.1/File_Object.xsd
-    http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1/stix_default_vocabularies.xsd
+    http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
     http://cybox.mitre.org/default_vocabularies-2 http://cybox.mitre.org/XMLSchema/default_vocabularies/2.1/cybox_default_vocabularies.xsd
   "
-  version="1.1"
+  version="1.1.1"
   id="example:package-382ded87-52c9-4644-bab0-ad3168cbad59"
   timestamp="2014-02-20T09:00:00.000000Z">
   <stix:STIX_Header>
@@ -478,7 +454,7 @@ The entire document, by the way, should look something like this:
   <stix:Indicators>
     <stix:Indicator xsi:type="indicator:IndicatorType" id="example:indicator-3c3885fe-a350-4a5c-aae3-6f014df36975" timestamp="2014-02-20T09:00:00.000000Z">
       <indicator:Title>Malware XYZ Hashes</indicator:Title>
-      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">File Hash Watchlist</indicator:Type>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1.1">File Hash Watchlist</indicator:Type>
       <indicator:Valid_Time_Position>
         <indicator:Start_Time>2014-01-01T12:48:50Z</indicator:Start_Time>
         <indicator:End_Time>2014-01-31T12:48:50Z</indicator:End_Time>
