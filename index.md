@@ -55,3 +55,4 @@ If you're looking for information on using STIX, you can:
 * [Validating STIX Content](/validation)
 * [Suggested Practices](/suggested-practices)
 * [Security Considerations](/security-considerations)
+* [Profiles](/getting-started/profiles)

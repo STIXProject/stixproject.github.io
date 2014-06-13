@@ -116,3 +116,9 @@ hr.separator {
 h1, h2 {
   clear: both;
 }
+
+.caption {
+  font-size: 85%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
