@@ -4,26 +4,22 @@ title: STIX Project Documentation
 tagline: User and developer documentation for STIX
 ---
 
-# What is it?
-STIX is meant to provide a [standard way of talking about security breaches](http://stix.mitre.org/language/)
- and represents indicators [in the CybOX format](cyboxproject.github.io) 
+# What is STIX?
+STIX provides a [standard way of talking about security breaches](http://stix.mitre.org/language/) and represents data [in the CybOX format](cyboxproject.github.io) 
 
-See [the whitepaper](http://stix.mitre.org/about/documents/STIX_Whitepaper_v1.1.pdf) 
- describing how STIX addresses the divergent data formats in computer security
+Learn how STIX [helps you untangle the mess of proprietary vendor formats](http://stix.mitre.org/about/documents/STIX_Whitepaper_v1.1.pdf)
 
-# How do I use it?
+# How do I use STIX?
 
-Go through the [quickstart guide](/getting-started) to learn how to learn [how to apply STIX](/idioms) to your existing indicators and breach reports
+You can [apply STIX conventions](/idioms) to existing indicators and reports
 
-Avail yourself of the [helper tools](/utilities) for streamlining your efforts 
+Programmers can use [the included tools](/utilities) to streamline deployment
 
-Read the  [Suggested Practices](/suggestions) before creating real-world content
+## Hints and Tips
 
-## Validating other people's data
+Read [Suggested Practices](/suggested-practices) and make sure that [your data is formatted correctly](/validation)
 
-Make sure that [your data is formatted correctly](/validation)
-
-There are a variety of ways that STIX data [can be parsed incorrectly](/security)
+Parsing STIX data [is fairly nontrivial](/security)
 
 ### Contact 
 Send feedback to <stix@mitre.org>
