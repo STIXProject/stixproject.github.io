@@ -41,6 +41,8 @@ STIX controlled vocabularies are implemented via [ControlledVocabularyStringType
 
 Using a defined vocabulary allows producers and consumers to agree on a defined set of values that have a shared meaning. [HighMediumLowVocab-1.0](/documentation/stixVocabs/HighMediumLowVocab-1.0) defines confidence as either high, medium, or low. While not a precise definition, at least the relative values are known: high is the highest value, medium is in the middle, and low is the lowest. To indicate a field uses the HighMediumLow vocabulary, as with the extension points, the `xsi:type` attribute should be set to `HighMediumLowVocab-1.0`.
 
+For further reading on this topic, see the [Controlled Vocabularies](../controlled-vocabularies) idiom.
+
 ## Further Reading
 
 Use of `xsi:type` from a consumer's perspective is explained in the [sample walkthrough](/getting-started/sample-walkthrough) and from a producer's perspective in the [authoring tutorial](/getting-started/authoring-tutorial).
