@@ -6,71 +6,7 @@
       {% include nav.html active="documentation" %}
       
       <div class="container">
-        <h1>{{ page.title }}<span class="subdued">{{ page.subtitle }} Schema</span></h1>
-        {% for doc in page.documentation %}
-          <p>{{doc}}</p>
-        {% endfor %}
-
-        <hr /> 
-
-        {% if page.vocab_items %}
-
-        <h2>Vocabulary Items</h2>
-
-        <table class="table table-striped table-hover">
-          <thead>
-            <tr>
-              <th>Item</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-
-          <tbody>
-          {% for item in page.vocab_items %}
-            <tr>
-              <td>{{ item[0] }}</td>
-              <td>{{ item[1] }}</td>
-            </tr>
-          {% endfor %}
-          </tbody>
-        </table>
-
-        <h2>Fields</h2> <!-- Show a heading here b/c we have vocab values to show -->
-
-        {% endif %}
-
-        {% if page.type_fields %}
-
-          <table class="table table-striped table-hover">
-            <thead>
-              <tr>
-                <th>Field Name</th>
-                <th>Type</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-            {% for field in page.type_fields %}
-              <tr>
-                <td>{{field.name}}</td>
-                <td>
-                  {% if field.link %}
-                    <a href="{{field.link}}">{{field.type}}</a>
-                  {% else %}
-                    {{field.type}}
-                  {% endif %}
-                </td>
-                <td>
-                  {% for doc in field.documentation %}
-                    <p>{{doc}}</p>
-                  {% endfor %}
-                </td>
-              </tr>
-            {% endfor %}
-            </tbody>
-          </table>
-        {% endif %}
-
+        {{ content }}
       </div>
 
       {% include footer.html %}

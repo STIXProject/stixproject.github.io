@@ -1,0 +1,193 @@
+---
+layout: documentation
+title: NetflowV5FlowRecordType
+---
+
+<h1>NetflowV5FlowRecordType<span class="subdued">Network Flow Object Schema</span></h1>
+
+<p>Defines elements of a Netflow v5 flow record. Recall that the seven elements that define the flow itself (e.g., source IP address) are provided in NetworkFlowLabelType. https://bto.bluecoat.com/packetguide/8.6/info/netflow5-records.htm.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Nexthop_IPv4_Addr<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/AddressObj/AddressObjectType">AddressObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>Represents the IP address of the next hop router.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Packet_Count<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Represents the number of packets in the flow.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Byte_Count<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Represents the total number of bytes in the flow.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>SysUpTime_Start<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Represents the SysUpTime at start of flow: the total time in milliseconds starting from when the first packet in the flow was seen.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>SysUpTime_End<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Represents the SysUpTime at end of flow: when the last packet in the flow was seen.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Padding1<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>One byte of padding.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>TCP_Flags<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the union of all TCP flags observed over the life of the flow.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Src_Autonomous_System<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the source autonomous system number, either origin or peer.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Dest_Autonomous_System<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the destination autonomous system number, either origin or peer.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Src_IP_Mask_Bit_Count<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the source address prefix mask bits.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Dest_IP_Mask_Bit_Count<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the destination address prefix mask bits.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Padding2<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Unused (zero) bytes, which is used for purposes of padding.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

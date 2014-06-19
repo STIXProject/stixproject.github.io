@@ -1,0 +1,67 @@
+---
+layout: documentation
+title: TCPType
+---
+
+<h1>TCPType<span class="subdued">Network Packet Object Schema</span></h1>
+
+<p>TCP provides reliable, ordered delivery of a stream of bytes from a program on one computer to another program on another computer. http://en.wikipedia.org/wiki/Transmission_Control_Protocol.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>TCP_Header<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/PacketObj/TCPHeaderType">TCPHeaderType</a>
+        
+      </td>
+      <td>
+        
+          <p>The TCP header contains 10 mandatory fields and an optional extension field. http://en.wikipedia.org/wiki/Transmission_Control_Protocol.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Options<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Options have up to three fields: Option-Kind (1 byte), Option-Length (1 byte), Option-Data (variable). This field will be further defined when required.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Data<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/DataSegmentType">DataSegmentType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Data field specifies the data payload of the TCP packet.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

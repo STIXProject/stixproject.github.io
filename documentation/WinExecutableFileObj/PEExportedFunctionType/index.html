@@ -1,0 +1,67 @@
+---
+layout: documentation
+title: PEExportedFunctionType
+---
+
+<h1>PEExportedFunctionType<span class="subdued">Win Executable File Object Schema</span></h1>
+
+<p>The PEExportType specifies the type describing exported functions.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Function_Name<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Function_Name field specifies the name of the function exported by the PE binary.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Entry_Point<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Entry_Point field specifies the entry point of the function exported by the PE binary.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Ordinal<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/NonNegativeIntegerObjectPropertyType">NonNegativeIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Ordinal field specifies the ordinal value (index) of the function exported by the PE binary.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

@@ -1,0 +1,95 @@
+---
+layout: documentation
+title: IDTEntryType
+---
+
+<h1>IDTEntryType<span class="subdued">Win Kernel Object Schema</span></h1>
+
+<p>The <a href='/documentation/WinKernelObj/IDTEntryType'>IDTEntryType</a> type specifies a single entry in the Interrupt Descriptor Table (IDT). Entries can be interrupt gates, task gates, and trap gates.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Type_Attr<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>A byte that encodes the gate type and interrupt attributes (e.g., the Descriptor Privilege Level).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Offset_High<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Higher part of the interrupt function's offset address bits 16-31 in 32-bit, bits 32-63 in 64-bit).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Offset_Low<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Lower part of the interrupt function's offset address (bits 0-15).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Offset_Middle<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>In 64-bit architectures, middle part of the interrupt function's offset address (bits 16-31).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Selector<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>A 16-bit value that points to a code segment selector in the Global Descriptot Table.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

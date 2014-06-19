@@ -1,0 +1,95 @@
+---
+layout: documentation
+title: HostnameObjectType
+---
+
+<h1>HostnameObjectType<span class="subdued">Hostname Object Schema</span></h1>
+
+<p>The <a href='/documentation/HostnameObj/HostnameObjectType'>HostnameObjectType</a> object is intended to specify network hostnames.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@object_reference<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>The object_reference field specifies a unique ID reference to an Object defined elsewhere. This construct allows for the re-use of the defined Properties of one Object within another, without the need to embed the full Object in the location from which it is being referenced. Thus, this ID reference is intended to resolve to the Properties of the Object that it points to.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Custom_Properties<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/CustomPropertiesType">CustomPropertiesType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Custom_Properties construct is optional and enables the specification of a set of custom Object Properties that may not be defined in existing Properties schemas.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@is_domain_name<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The is_domain_name field specifies if this is also a valid domain name.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Hostname_Value<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Hostname_Value construct specifies the actual value of the Hostname.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Naming_System<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Naming_System construct specifies a relevant Naming System for the Hostname (e.g. DNS, NIS, NetBIOS).</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

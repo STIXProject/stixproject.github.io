@@ -1,0 +1,67 @@
+---
+layout: documentation
+title: PatternFidelityType
+---
+
+<h1>PatternFidelityType<span class="subdued">CybOX Core Schema</span></h1>
+
+
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Noisiness<span class="occurrence">0..1</span></td>
+      <td>
+        
+          NoisinessEnum
+        
+      </td>
+      <td>
+        
+          <p>The Noisiness field is optional and enables simple characterization of how noisy this Observable typically could be. In other words, how likely is it to generate false positives.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Ease_of_Evasion<span class="occurrence">0..1</span></td>
+      <td>
+        
+          EaseOfObfuscationEnum
+        
+      </td>
+      <td>
+        
+          <p>The Ease_of_Obfuscation field is optional and enables simple characterization of how easy it would be for an attacker to obfuscate the observability of this Observable.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Evasion_Techniques<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cybox/ObfuscationTechniquesType">ObfuscationTechniquesType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Obfuscation_Techniques field is optional and enables the description of potential techniques an attacker could leverage to obfuscate the observability of this Observable.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

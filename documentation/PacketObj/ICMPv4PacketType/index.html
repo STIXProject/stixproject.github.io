@@ -1,0 +1,81 @@
+---
+layout: documentation
+title: ICMPv4PacketType
+---
+
+<h1>ICMPv4PacketType<span class="subdued">Network Packet Object Schema</span></h1>
+
+<p>ICMP is used to send error messages (e.g., a datagram cannot reach its destination), informational messages ( e.g., timestamp information), or a traceroute message. REF: http://www.networksorcery.com/enp/protocol/icmp.htm.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>ICMPv4_Header<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/PacketObj/ICMPv4HeaderType">ICMPv4HeaderType</a>
+        
+      </td>
+      <td>
+        
+          <p>Actual header bytes are captured here. The message content of each type/code pair is also defined as part of the larger, complex "ICMPv4PacketType" type as either an error message, an informational message, or a traceroute message. The meaning of the type and code bytes is made explicit in the elements corresponding to each message type.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Error_Msg<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/PacketObj/ICMPv4ErrorMessageType">ICMPv4ErrorMessageType</a>
+        
+      </td>
+      <td>
+        
+          <p>For ICMP error messages, boolean values are used in this field to explicitly interpret the type and code bytes appearing in the ICMP header. Additional fields and message content are also defined here.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Info_Msg<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/PacketObj/ICMPv4InfoMessageType">ICMPv4InfoMessageType</a>
+        
+      </td>
+      <td>
+        
+          <p>For ICMP informational messages, boolean values are used in this field to explicitly interpret the type and code bytes appearing in the ICMP header. Additional fields and message content are also defined here.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Traceroute<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/PacketObj/ICMPv4TracerouteType">ICMPv4TracerouteType</a>
+        
+      </td>
+      <td>
+        
+          <p>For ICMP traceroute messages (type = 30), specifies related fields and ICMP code value. A boolean value is used to explicitly interpret the code byte appearing in the ICMP header. Additional fields and message content are also defined here.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

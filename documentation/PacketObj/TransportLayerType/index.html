@@ -1,0 +1,53 @@
+---
+layout: documentation
+title: TransportLayerType
+---
+
+<h1>TransportLayerType<span class="subdued">Network Packet Object Schema</span></h1>
+
+<p>only UDP and TCP defined to begin. Other protocols will be defined as necessary.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>TCP<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/PacketObj/TCPType">TCPType</a>
+        
+      </td>
+      <td>
+        
+          <p>TCP provides reliable, ordered delivery of a stream of bytes from a program on one computer to another program on another computer. http://en.wikipedia.org/wiki/Transmission_Control_Protocol.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>UDP<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/PacketObj/UDPType">UDPType</a>
+        
+      </td>
+      <td>
+        
+          <p>UDP uses a simple transmission model without implicit handshaking dialogues for providing reliability, ordering, or data integrity. Thus, UDP provides an unreliable service and datagrams may arrive out of order, appear duplicated, or go missing without notice. http://en.wikipedia.org/wiki/User_Datagram_Protocol.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

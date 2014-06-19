@@ -1,0 +1,295 @@
+---
+layout: documentation
+title: ProcessObjectType
+---
+
+<h1>ProcessObjectType<span class="subdued">Process Object Schema</span></h1>
+
+<p>The <a href='/documentation/ProcessObj/ProcessObjectType'>ProcessObjectType</a> type is intended to characterize system processes.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@object_reference<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>The object_reference field specifies a unique ID reference to an Object defined elsewhere. This construct allows for the re-use of the defined Properties of one Object within another, without the need to embed the full Object in the location from which it is being referenced. Thus, this ID reference is intended to resolve to the Properties of the Object that it points to.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Custom_Properties<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/CustomPropertiesType">CustomPropertiesType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Custom_Properties construct is optional and enables the specification of a set of custom Object Properties that may not be defined in existing Properties schemas.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@is_hidden<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The is_hidden field specifies whether the process is hidden or not.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>PID<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/UnsignedIntegerObjectPropertyType">UnsignedIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The PID field specifies the Process ID, or PID, of the process.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Name<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Name field specifies the name of the process.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Creation_Time<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Creation_Time field specifies the local date/time at which the process was created.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Parent_PID<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/UnsignedIntegerObjectPropertyType">UnsignedIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Parent_PID field specifies the process ID (PID) of the parent process (i.e. the process that spawned this one), if applicable.</p>
+        
+          <p>NOTE: this field will be deprecated in the next major version of this object, at which point the parent process of this process should be specified using a Related_Object with the "Child_Of" Relationship value.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Child_PID_List<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/ProcessObj/ChildPIDListType">ChildPIDListType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Child_PID_List field specifies any children spawned by the process being characterized, by way of a list of PIDs.</p>
+        
+          <p>NOTE: this field will be deprecated in the next major version of this object, at which point child processes of this process should be specified using a Related_Object with the "Parent_Of" Relationship value.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Image_Info<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/ProcessObj/ImageInfoType">ImageInfoType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Image_Info field specifies information about the image associated with the process, such as its file name and path.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Argument_List<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/ProcessObj/ArgumentListType">ArgumentListType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Argument_List field is optional and specifies a list of arguments utilized in initiating the process.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Environment_Variable_List<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/EnvironmentVariableListType">EnvironmentVariableListType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Environment_Variable_List field specifies any environment variables associated with the process. This field imports and uses the <a href='/documentation/cyboxCommon/EnvironmentVariableListType'>EnvironmentVariableListType</a> from the CybOX Common Types.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Kernel_Time<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/DurationObjectPropertyType">DurationObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Kernel_Time field specifies the duration of time that the process has executed in kernel mode.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Port_List<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/ProcessObj/PortListType">PortListType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Port_List field is optional and specifies a list of ports owned by the process.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Network_Connection_List<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/ProcessObj/NetworkConnectionListType">NetworkConnectionListType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Network_Connection_List field specifies information about any network connections opened or initiated by the process.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Start_Time<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Start_Time field specifies the local date/time at which the process was started.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Status<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/ProcessObj/ProcessStatusType">ProcessStatusType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Status field specifies the current status of the process. Since this is an operating system specific Object property, this is defined here as an abstract type which is then used as a base type in any OS-specific extensions.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Username<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Username field specifies the name of the user that created the process.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>User_Time<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/DurationObjectPropertyType">DurationObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The User_Time field specifies the duration of time that the process has executed in user mode.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Extracted_Features<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/ExtractedFeaturesType">ExtractedFeaturesType</a>
+        
+      </td>
+      <td>
+        
+          <p>A description of features extracted from the memory image of this process.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

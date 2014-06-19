@@ -1,0 +1,53 @@
+---
+layout: documentation
+title: RedirectOptionsType
+---
+
+<h1>RedirectOptionsType<span class="subdued">Network Packet Object Schema</span></h1>
+
+<p>Redirect messages include zero or more options, some of which may appear multiple times in the same message.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Target_Link_Addr<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/PacketObj/NDPLinkAddrType">NDPLinkAddrType</a>
+        
+      </td>
+      <td>
+        
+          <p>The link-layer address for the target.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Redirected_Header<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/PacketObj/NDPRedirectedHeaderType">NDPRedirectedHeaderType</a>
+        
+      </td>
+      <td>
+        
+          <p>As much as possible of the IP packet that triggered the sending of the Redirect message without making the redirect packet exceed the minimum MTU specified in the IPv6 protocol.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

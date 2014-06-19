@@ -1,0 +1,123 @@
+---
+layout: documentation
+title: CVSSVectorType
+---
+
+<h1>CVSSVectorType<span class="subdued">Exploit Target Schema</span></h1>
+
+
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Overall_Score<span class="occurrence">0..1</span></td>
+      <td>
+        
+          CVSSScoreType
+        
+      </td>
+      <td>
+        
+          <p>Captures the overall CVSS 2.0 score. Note that this is not the same as the unadjusted CVSS Base Score, which should be captured in the Base_Score field.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Base_Score<span class="occurrence">0..1</span></td>
+      <td>
+        
+          CVSSScoreType
+        
+      </td>
+      <td>
+        
+          <p>Captures the unadjusted CVSS 2.0 Base score.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Base_Vector<span class="occurrence">0..1</span></td>
+      <td>
+        
+          CVSSBaseVectorType
+        
+      </td>
+      <td>
+        
+          <p>Captures the CVSS 2.0 Base Vector per the compressed string format.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Temporal_Score<span class="occurrence">0..1</span></td>
+      <td>
+        
+          CVSSScoreType
+        
+      </td>
+      <td>
+        
+          <p>Captures the unadjusted CVSS 2.0 Temporal score.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Temporal_Vector<span class="occurrence">0..1</span></td>
+      <td>
+        
+          CVSSTemporalVectorType
+        
+      </td>
+      <td>
+        
+          <p>Captures the CVSS 2.0 Temporal Vector per the compressed string format.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Environmental_Score<span class="occurrence">0..1</span></td>
+      <td>
+        
+          CVSSScoreType
+        
+      </td>
+      <td>
+        
+          <p>Captures the unadjusted CVSS 2.0 Environmental score.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Environmental_Vector<span class="occurrence">0..1</span></td>
+      <td>
+        
+          CVSSEnvironmentalVectorType
+        
+      </td>
+      <td>
+        
+          <p>Captures the CVSS 2.0 Environmental Vector in the compressed string format.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

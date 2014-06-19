@@ -1,0 +1,169 @@
+---
+layout: documentation
+title: TimeType
+---
+
+<h1>TimeType<span class="subdued">Incident Schema</span></h1>
+
+
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>First_Malicious_Action<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/stixCommon/DateTimeWithPrecisionType">DateTimeWithPrecisionType</a>
+        
+      </td>
+      <td>
+        
+          <p>The First_Malicious_Action field specifies the time that the first malicious action related to this Incident occured.</p>
+        
+          <p>In order to avoid ambiguity, it is strongly suggest that all timestamps include a specification of the timezone if it is known.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Initial_Compromise<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/stixCommon/DateTimeWithPrecisionType">DateTimeWithPrecisionType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Initial_Compromise field specifies the time that the initial compromise occured for this Incident.</p>
+        
+          <p>In order to avoid ambiguity, it is strongly suggest that all timestamps include a specification of the timezone if it is known.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>First_Data_Exfiltration<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/stixCommon/DateTimeWithPrecisionType">DateTimeWithPrecisionType</a>
+        
+      </td>
+      <td>
+        
+          <p>The First_Data_Exfiltration field specifies the first time at which non-public data was taken from the victim environment</p>
+        
+          <p>In order to avoid ambiguity, it is strongly suggest that all timestamps include a specification of the timezone if it is known.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Incident_Discovery<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/stixCommon/DateTimeWithPrecisionType">DateTimeWithPrecisionType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Incident_Discovery field specifies the first time at which the organization learned the incident had occurred.</p>
+        
+          <p>In order to avoid ambiguity, it is strongly suggest that all timestamps include a specification of the timezone if it is known.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Incident_Opened<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/stixCommon/DateTimeWithPrecisionType">DateTimeWithPrecisionType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Incident_Opened field specifies the time at which the Incident was officially opened.</p>
+        
+          <p>In order to avoid ambiguity, it is strongly suggest that all timestamps include a specification of the timezone if it is known.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Containment_Achieved<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/stixCommon/DateTimeWithPrecisionType">DateTimeWithPrecisionType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Containment_Achieved field specifies the first time at which the incident is contained (e.g., the “bleeding is stopped”).</p>
+        
+          <p>In order to avoid ambiguity, it is strongly suggest that all timestamps include a specification of the timezone if it is known.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Restoration_Achieved<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/stixCommon/DateTimeWithPrecisionType">DateTimeWithPrecisionType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Restoration_Achieved field specifies the first time at which the incident's assets are restored (e.g., fully functional)”.</p>
+        
+          <p>In order to avoid ambiguity, it is strongly suggest that all timestamps include a specification of the timezone if it is known.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Incident_Reported<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/stixCommon/DateTimeWithPrecisionType">DateTimeWithPrecisionType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Incident_Reported field specifies the time at which the Incident was reported.</p>
+        
+          <p>In order to avoid ambiguity, it is strongly suggest that all timestamps include a specification of the timezone if it is known.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Incident_Closed<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/stixCommon/DateTimeWithPrecisionType">DateTimeWithPrecisionType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Incident_Closed field specifies the time at which the Incident was officially closed.</p>
+        
+          <p>In order to avoid ambiguity, it is strongly suggest that all timestamps include a specification of the timezone if it is known.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

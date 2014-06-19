@@ -1,0 +1,39 @@
+---
+layout: documentation
+title: DefinedEffectType
+---
+
+<h1>DefinedEffectType<span class="subdued">CybOX Core Schema</span></h1>
+
+<p>The <a href='/documentation/cybox/DefinedEffectType'>DefinedEffectType</a> is an abstract placeholder for various predefined Object Effect types (e.g. DataReadEffect, ValuesEnumeratedEffect or StateChangeEffect) that can be instantiated in its place through extension of the DefinedEffectType. This mechanism enables the specification of a broad range of types of potential complex action effects on Objects. The set of Defined_Effect types (extending the DefinedEffectType) are maintained as part of the core CybOX schema.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@effect_type<span class="occurrence">optional</span></td>
+      <td>
+        
+          EffectTypeEnum
+        
+      </td>
+      <td>
+        
+          <p>The effect_type field specifies the nature of the Defined Effect instantiated in the place of the Defined_Effect element.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

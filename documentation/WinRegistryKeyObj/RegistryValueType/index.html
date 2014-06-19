@@ -1,0 +1,81 @@
+---
+layout: documentation
+title: RegistryValueType
+---
+
+<h1>RegistryValueType<span class="subdued">Win Registry Key Object Schema</span></h1>
+
+<p>The <a href='/documentation/WinRegistryKeyObj/RegistryValueType'>RegistryValueType</a> type is intended to characterize Windows registry Value name/data pairs.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Name<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Name field specifies the name of the registry value. For specifying the default value in a registry key, an empty string should be used. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Data<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Data field specifies the data contained in the registry value.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Datatype<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/WinRegistryKeyObj/RegistryDatatypeType">RegistryDatatypeType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Datatype field specifies the registry (REG_*) datatype used in the registry value.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Byte_Runs<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/ByteRunsType">ByteRunsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Byte_Runs field contains a list of byte runs from the raw registry key entry.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

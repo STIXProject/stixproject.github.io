@@ -1,0 +1,39 @@
+---
+layout: documentation
+title: EthernetInterfaceType
+---
+
+<h1>EthernetInterfaceType<span class="subdued">Network Packet Object Schema</span></h1>
+
+<p>Ethernet sends network packets from the sending host to one or more receiving hosts. (REF: IEEE 802.3; http://wiki.wireshark.org/Ethernet).</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Ethernet_Header<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/PacketObj/EthernetHeaderType">EthernetHeaderType</a>
+        
+      </td>
+      <td>
+        
+          <p>The ethernet header includes information such as source MAC address, destination MAC address, and more.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

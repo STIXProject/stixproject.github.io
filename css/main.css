@@ -116,3 +116,19 @@ hr.separator {
 h1, h2 {
   clear: both;
 }
+
+.caption {
+  font-size: 85%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.occurrence {
+  font-size: 70%;
+  margin-left: 5px;
+  color: #ccc;
+}
+
+tr > td > p:last-child {
+  margin-bottom: 0;
+}
