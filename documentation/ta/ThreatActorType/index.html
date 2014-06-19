@@ -22,7 +22,7 @@ title: ThreatActorType
   <tbody>
   
     <tr>
-      <td>@id</td>
+      <td>@id<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -36,7 +36,7 @@ title: ThreatActorType
     </tr>
   
     <tr>
-      <td>@idref</td>
+      <td>@idref<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -52,7 +52,7 @@ title: ThreatActorType
     </tr>
   
     <tr>
-      <td>@timestamp</td>
+      <td>@timestamp<span class="occurrence">optional</span></td>
       <td>
         
           dateTime
@@ -66,7 +66,7 @@ title: ThreatActorType
     </tr>
   
     <tr>
-      <td>@version</td>
+      <td>@version<span class="occurrence">optional</span></td>
       <td>
         
           ThreatActorVersionType
@@ -80,7 +80,7 @@ title: ThreatActorType
     </tr>
   
     <tr>
-      <td>Title</td>
+      <td>Title<span class="occurrence">0..1</span></td>
       <td>
         
           string
@@ -94,7 +94,7 @@ title: ThreatActorType
     </tr>
   
     <tr>
-      <td>Description</td>
+      <td>Description<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/StructuredTextType">StructuredTextType</a>
@@ -108,7 +108,7 @@ title: ThreatActorType
     </tr>
   
     <tr>
-      <td>Short_Description</td>
+      <td>Short_Description<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/StructuredTextType">StructuredTextType</a>
@@ -122,7 +122,7 @@ title: ThreatActorType
     </tr>
   
     <tr>
-      <td>Identity</td>
+      <td>Identity<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/IdentityType">IdentityType</a>
@@ -132,7 +132,7 @@ title: ThreatActorType
         
           <p>The Identity field characterizes the identity of this Threat Actor.</p>
         
-          <p>This field is implemented through the xsi:type extension mechanism. The default type is CIQIdentity3.0InstanceType in the http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1 namespace. This type is defined in the extensions/identity/ciq_identity.xsd file or at the URL http://stix.mitre.org/XMLSchema/extensions/identity/ciq_identity/1.1/ciq_identity.xsd.</p>
+          <p>This field is implemented through the xsi:type extension mechanism. The default type is <a href='/documentation/stix-ciqidentity/CIQIdentity3.0InstanceType'>CIQIdentity3.0InstanceType</a> in the http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1 namespace. This type is defined in the extensions/identity/ciq_identity.xsd file or at the URL http://stix.mitre.org/XMLSchema/extensions/identity/ciq_identity/1.1/ciq_identity.xsd.</p>
         
           <p>Those who wish to express a simple name may also do so by not specifying an xsi:type and using the Name field.</p>
         
@@ -140,7 +140,7 @@ title: ThreatActorType
     </tr>
   
     <tr>
-      <td>Type</td>
+      <td>Type<span class="occurrence">0..n</span></td>
       <td>
         
           <a href="/documentation/stixCommon/StatementType">StatementType</a>
@@ -150,7 +150,7 @@ title: ThreatActorType
         
           <p>The Type field characterizes the type(s) of this threat actor. It may be used multiple times to capture multiple types.</p>
         
-          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is ThreatActorTypeVocab-1.0 in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
+          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is <a href='/documentation/stixVocabs/ThreatActorTypeVocab-1.0'>ThreatActorTypeVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
         
           <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
         
@@ -158,7 +158,7 @@ title: ThreatActorType
     </tr>
   
     <tr>
-      <td>Motivation</td>
+      <td>Motivation<span class="occurrence">0..n</span></td>
       <td>
         
           <a href="/documentation/stixCommon/StatementType">StatementType</a>
@@ -168,7 +168,7 @@ title: ThreatActorType
         
           <p>The Type field characterizes the motivations of this threat actor. It may be used multiple times to capture multiple motivations.</p>
         
-          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is MotivationVocab-1.1 in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
+          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is <a href='/documentation/stixVocabs/MotivationVocab-1.1'>MotivationVocab-1.1</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
         
           <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
         
@@ -176,7 +176,7 @@ title: ThreatActorType
     </tr>
   
     <tr>
-      <td>Sophistication</td>
+      <td>Sophistication<span class="occurrence">0..n</span></td>
       <td>
         
           <a href="/documentation/stixCommon/StatementType">StatementType</a>
@@ -186,7 +186,7 @@ title: ThreatActorType
         
           <p>The Sophistication field specifies the sophistication of this Threat Actor.</p>
         
-          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is ThreatActorSophisticationVocab-1.0 in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd .</p>
+          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is <a href='/documentation/stixVocabs/ThreatActorSophisticationVocab-1.0'>ThreatActorSophisticationVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd .</p>
         
           <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
         
@@ -194,7 +194,7 @@ title: ThreatActorType
     </tr>
   
     <tr>
-      <td>Intended_Effect</td>
+      <td>Intended_Effect<span class="occurrence">0..n</span></td>
       <td>
         
           <a href="/documentation/stixCommon/StatementType">StatementType</a>
@@ -204,7 +204,7 @@ title: ThreatActorType
         
           <p>The Intended_Effect field specifies the suspected intended effect for this Threat Actor.</p>
         
-          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is IntendedEffectVocab-1.0 in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
+          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is <a href='/documentation/stixVocabs/IntendedEffectVocab-1.0'>IntendedEffectVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
         
           <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
         
@@ -212,7 +212,7 @@ title: ThreatActorType
     </tr>
   
     <tr>
-      <td>Planning_And_Operational_Support</td>
+      <td>Planning_And_Operational_Support<span class="occurrence">0..n</span></td>
       <td>
         
           <a href="/documentation/stixCommon/StatementType">StatementType</a>
@@ -222,7 +222,7 @@ title: ThreatActorType
         
           <p>The Planning_And_Operational_Support field specifies the suspected planning and operational support performed by this threat actor.</p>
         
-          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is PlanningAndOperationalSupportVocab-1.0.1 in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
+          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is <a href='/documentation/stixVocabs/PlanningAndOperationalSupportVocab-1.0'>PlanningAndOperationalSupportVocab-1.0</a>.1 in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
         
           <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
         
@@ -230,7 +230,7 @@ title: ThreatActorType
     </tr>
   
     <tr>
-      <td>Observed_TTPs</td>
+      <td>Observed_TTPs<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/ta/ObservedTTPsType">ObservedTTPsType</a>
@@ -244,7 +244,7 @@ title: ThreatActorType
     </tr>
   
     <tr>
-      <td>Associated_Campaigns</td>
+      <td>Associated_Campaigns<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/ta/AssociatedCampaignsType">AssociatedCampaignsType</a>
@@ -258,7 +258,7 @@ title: ThreatActorType
     </tr>
   
     <tr>
-      <td>Associated_Actors</td>
+      <td>Associated_Actors<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/ta/AssociatedActorsType">AssociatedActorsType</a>
@@ -272,7 +272,7 @@ title: ThreatActorType
     </tr>
   
     <tr>
-      <td>Handling</td>
+      <td>Handling<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/marking/MarkingType">MarkingType</a>
@@ -280,13 +280,13 @@ title: ThreatActorType
       </td>
       <td>
         
-          <p>The Handling field specifies the appropriate data handling markings for the elements of this Threat Actor characterization. The valid marking scope is the nearest ThreatActorBaseType ancestor of this Handling element and all its descendants.</p>
+          <p>The Handling field specifies the appropriate data handling markings for the elements of this Threat Actor characterization. The valid marking scope is the nearest <a href='/documentation/stixCommon/ThreatActorBaseType'>ThreatActorBaseType</a> ancestor of this Handling element and all its descendants.</p>
         
       </td>
     </tr>
   
     <tr>
-      <td>Confidence</td>
+      <td>Confidence<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/ConfidenceType">ConfidenceType</a>
@@ -300,7 +300,7 @@ title: ThreatActorType
     </tr>
   
     <tr>
-      <td>Information_Source</td>
+      <td>Information_Source<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/InformationSourceType">InformationSourceType</a>
@@ -314,7 +314,7 @@ title: ThreatActorType
     </tr>
   
     <tr>
-      <td>Related_Packages</td>
+      <td>Related_Packages<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/RelatedPackageRefsType">RelatedPackageRefsType</a>

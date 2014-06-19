@@ -22,6 +22,41 @@ title: ActionRelationshipTypeVocab-1.0
 
   <tbody>
   
+    <tr>
+      <td>Preceded_By</td>
+      <td>Specifies that this action is preceded by the related action.</td>
+    </tr>
+  
+    <tr>
+      <td>Followed_By</td>
+      <td>Specifies that this action is followed by the related action.</td>
+    </tr>
+  
+    <tr>
+      <td>Equivalent_To</td>
+      <td>Specifies that this entity (e.g. Action) is equivalent to the associated entity.</td>
+    </tr>
+  
+    <tr>
+      <td>Related_To</td>
+      <td>Specifies that this action is simply related to the related action in some way.</td>
+    </tr>
+  
+    <tr>
+      <td>Dependent_On</td>
+      <td>Specifies that this action is dependent on the related action.</td>
+    </tr>
+  
+    <tr>
+      <td>Initiated_By</td>
+      <td>Specifies that this action was initiated by the related action.</td>
+    </tr>
+  
+    <tr>
+      <td>Initiated</td>
+      <td>Specifies that this action initiated the related action.</td>
+    </tr>
+  
   </tbody>
 </table>
 
@@ -40,7 +75,7 @@ title: ActionRelationshipTypeVocab-1.0
   <tbody>
   
     <tr>
-      <td>@condition</td>
+      <td>@condition<span class="occurrence">optional</span></td>
       <td>
         
           ConditionTypeEnum
@@ -54,7 +89,7 @@ title: ActionRelationshipTypeVocab-1.0
     </tr>
   
     <tr>
-      <td>@is_case_sensitive</td>
+      <td>@is_case_sensitive<span class="occurrence">optional</span></td>
       <td>
         
           boolean
@@ -68,7 +103,7 @@ title: ActionRelationshipTypeVocab-1.0
     </tr>
   
     <tr>
-      <td>@apply_condition</td>
+      <td>@apply_condition<span class="occurrence">optional</span></td>
       <td>
         
           ConditionApplicationEnum
@@ -82,7 +117,7 @@ title: ActionRelationshipTypeVocab-1.0
     </tr>
   
     <tr>
-      <td>@delimiter</td>
+      <td>@delimiter<span class="occurrence">optional</span></td>
       <td>
         
           string
@@ -96,7 +131,7 @@ title: ActionRelationshipTypeVocab-1.0
     </tr>
   
     <tr>
-      <td>@bit_mask</td>
+      <td>@bit_mask<span class="occurrence">optional</span></td>
       <td>
         
           hexBinary
@@ -110,7 +145,7 @@ title: ActionRelationshipTypeVocab-1.0
     </tr>
   
     <tr>
-      <td>@pattern_type</td>
+      <td>@pattern_type<span class="occurrence">optional</span></td>
       <td>
         
           PatternTypeEnum
@@ -124,7 +159,7 @@ title: ActionRelationshipTypeVocab-1.0
     </tr>
   
     <tr>
-      <td>@regex_syntax</td>
+      <td>@regex_syntax<span class="occurrence">optional</span></td>
       <td>
         
           string
@@ -142,7 +177,7 @@ title: ActionRelationshipTypeVocab-1.0
     </tr>
   
     <tr>
-      <td>@has_changed</td>
+      <td>@has_changed<span class="occurrence">optional</span></td>
       <td>
         
           boolean
@@ -156,7 +191,7 @@ title: ActionRelationshipTypeVocab-1.0
     </tr>
   
     <tr>
-      <td>@trend</td>
+      <td>@trend<span class="occurrence">optional</span></td>
       <td>
         
           boolean
@@ -170,7 +205,7 @@ title: ActionRelationshipTypeVocab-1.0
     </tr>
   
     <tr>
-      <td>@vocab_name</td>
+      <td>@vocab_name<span class="occurrence">optional</span></td>
       <td>
         
           string
@@ -184,7 +219,7 @@ title: ActionRelationshipTypeVocab-1.0
     </tr>
   
     <tr>
-      <td>@vocab_reference</td>
+      <td>@vocab_reference<span class="occurrence">optional</span></td>
       <td>
         
           anyURI

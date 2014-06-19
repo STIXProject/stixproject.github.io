@@ -5,7 +5,7 @@ title: CourseOfActionBaseType
 
 <h1>CourseOfActionBaseType<span class="subdued">STIX Common Schema</span></h1>
 
-<p>This type represents the STIX Course of Action component. It is extended using the XML Schema Extension feature by the STIX Course of Action type itself. Users of this type who wish to express a full course of action using STIX must do so using the xsi:type extension feature. The STIX-defined Course of Action type is CourseOfActionType in the http://stix.mitre.org/CourseOfAction-1 namespace. This type is defined in the course_of_action.xsd file or at the URL http://stix.mitre.org/XMLSchema/course_of_action/1.1.1/course_of_action.xsd.
+<p>This type represents the STIX Course of Action component. It is extended using the XML Schema Extension feature by the STIX Course of Action type itself. Users of this type who wish to express a full course of action using STIX must do so using the xsi:type extension feature. The STIX-defined Course of Action type is <a href='/documentation/coa/CourseOfActionType'>CourseOfActionType</a> in the http://stix.mitre.org/CourseOfAction-1 namespace. This type is defined in the course_of_action.xsd file or at the URL http://stix.mitre.org/XMLSchema/course_of_action/1.1.1/course_of_action.xsd.
 Alternatively, uses that require simply specifying an idref as a reference to a course of action defined elsewhere can do so without specifying an xsi:type.</p>
 
 <hr />
@@ -23,7 +23,7 @@ Alternatively, uses that require simply specifying an idref as a reference to a 
   <tbody>
   
     <tr>
-      <td>@id</td>
+      <td>@id<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -37,7 +37,7 @@ Alternatively, uses that require simply specifying an idref as a reference to a 
     </tr>
   
     <tr>
-      <td>@idref</td>
+      <td>@idref<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -53,7 +53,7 @@ Alternatively, uses that require simply specifying an idref as a reference to a 
     </tr>
   
     <tr>
-      <td>@timestamp</td>
+      <td>@timestamp<span class="occurrence">optional</span></td>
       <td>
         
           dateTime

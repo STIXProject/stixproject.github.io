@@ -5,7 +5,7 @@ title: ImpactAssessmentType
 
 <h1>ImpactAssessmentType<span class="subdued">Incident Schema</span></h1>
 
-<p>The ImpactAssessmentType specifies a summary assessment of impact for this cyber threat Incident. </p>
+<p>The <a href='/documentation/incident/ImpactAssessmentType'>ImpactAssessmentType</a> specifies a summary assessment of impact for this cyber threat Incident. </p>
 
 <hr />
 
@@ -22,7 +22,7 @@ title: ImpactAssessmentType
   <tbody>
   
     <tr>
-      <td>Direct_Impact_Summary</td>
+      <td>Direct_Impact_Summary<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/incident/DirectImpactSummaryType">DirectImpactSummaryType</a>
@@ -36,7 +36,7 @@ title: ImpactAssessmentType
     </tr>
   
     <tr>
-      <td>Indirect_Impact_Summary</td>
+      <td>Indirect_Impact_Summary<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/incident/IndirectImpactSummaryType">IndirectImpactSummaryType</a>
@@ -50,7 +50,7 @@ title: ImpactAssessmentType
     </tr>
   
     <tr>
-      <td>Total_Loss_Estimation</td>
+      <td>Total_Loss_Estimation<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/incident/TotalLossEstimationType">TotalLossEstimationType</a>
@@ -64,7 +64,7 @@ title: ImpactAssessmentType
     </tr>
   
     <tr>
-      <td>Impact_Qualification</td>
+      <td>Impact_Qualification<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
@@ -74,7 +74,7 @@ title: ImpactAssessmentType
         
           <p>The Impact_Qualification field is optional and summarizes the subjective level of impact of the Incident.</p>
         
-          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is ImpactQualificationVocab-1.0 in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
+          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is <a href='/documentation/stixVocabs/ImpactQualificationVocab-1.0'>ImpactQualificationVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
         
           <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
         
@@ -82,7 +82,7 @@ title: ImpactAssessmentType
     </tr>
   
     <tr>
-      <td>Effects</td>
+      <td>Effects<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/incident/EffectsType">EffectsType</a>
@@ -96,7 +96,7 @@ title: ImpactAssessmentType
     </tr>
   
     <tr>
-      <td>External_Impact_Assessment_Model</td>
+      <td>External_Impact_Assessment_Model<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/incident/ExternalImpactAssessmentModelType">ExternalImpactAssessmentModelType</a>

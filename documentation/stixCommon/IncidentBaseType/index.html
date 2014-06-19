@@ -5,7 +5,7 @@ title: IncidentBaseType
 
 <h1>IncidentBaseType<span class="subdued">STIX Common Schema</span></h1>
 
-<p>This type represents the STIX Incident component. It is extended using the XML Schema Extension feature by the STIX Incident type itself. Users of this type who wish to express a full incident using STIX must do so using the xsi:type extension feature. The STIX-defined Incident type is IncidentType in the http://stix.mitre.org/Incident-1 namespace. This type is defined in the incident.xsd file or at the URL http://stix.mitre.org/XMLSchema/incident/1.1.1/incident.xsd.
+<p>This type represents the STIX Incident component. It is extended using the XML Schema Extension feature by the STIX Incident type itself. Users of this type who wish to express a full incident using STIX must do so using the xsi:type extension feature. The STIX-defined Incident type is <a href='/documentation/incident/IncidentType'>IncidentType</a> in the http://stix.mitre.org/Incident-1 namespace. This type is defined in the incident.xsd file or at the URL http://stix.mitre.org/XMLSchema/incident/1.1.1/incident.xsd.
 Alternatively, uses that require simply specifying an idref as a reference to an incident defined elsewhere can do so without specifying an xsi:type.</p>
 
 <hr />
@@ -23,7 +23,7 @@ Alternatively, uses that require simply specifying an idref as a reference to an
   <tbody>
   
     <tr>
-      <td>@id</td>
+      <td>@id<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -37,7 +37,7 @@ Alternatively, uses that require simply specifying an idref as a reference to an
     </tr>
   
     <tr>
-      <td>@idref</td>
+      <td>@idref<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -53,7 +53,7 @@ Alternatively, uses that require simply specifying an idref as a reference to an
     </tr>
   
     <tr>
-      <td>@timestamp</td>
+      <td>@timestamp<span class="occurrence">optional</span></td>
       <td>
         
           dateTime

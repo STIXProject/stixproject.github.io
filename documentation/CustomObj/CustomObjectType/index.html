@@ -5,7 +5,7 @@ title: CustomObjectType
 
 <h1>CustomObjectType<span class="subdued">Custom Object Schema</span></h1>
 
-<p>The CustomObjectType is intended to characterize objects that are not described by other defined CybOX Object schemas. Objects of this type have no pre-defined properties but instead all properties are provided by the author using the inherited Custom_Properties field.</p>
+<p>The <a href='/documentation/CustomObj/CustomObjectType'>CustomObjectType</a> is intended to characterize objects that are not described by other defined CybOX Object schemas. Objects of this type have no pre-defined properties but instead all properties are provided by the author using the inherited Custom_Properties field.</p>
 
 <hr />
 
@@ -22,7 +22,7 @@ title: CustomObjectType
   <tbody>
   
     <tr>
-      <td>@object_reference</td>
+      <td>@object_reference<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -36,7 +36,7 @@ title: CustomObjectType
     </tr>
   
     <tr>
-      <td>Custom_Properties</td>
+      <td>Custom_Properties<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/CustomPropertiesType">CustomPropertiesType</a>
@@ -50,7 +50,7 @@ title: CustomObjectType
     </tr>
   
     <tr>
-      <td>@custom_name</td>
+      <td>@custom_name<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -64,7 +64,7 @@ title: CustomObjectType
     </tr>
   
     <tr>
-      <td>Description</td>
+      <td>Description<span class="occurrence">0..1</span></td>
       <td>
         
           string

@@ -5,7 +5,7 @@ title: ObjectPropertiesType
 
 <h1>ObjectPropertiesType<span class="subdued">CybOX Common Schema</span></h1>
 
-<p>The ObjectPropertiesType is an Abstract type placeholder within the CybOX schema enabling the inclusion of contextually varying object properties descriptions. This Abstract type is leveraged as the extension base for all predefined CybOX object properties schemas. Through this extension mechanism any object instance data based on an object properties schema extended from ObjectPropertiesType (e.g. File_Object, Address_Object, etc.) can be directly integrated into any instance document where a field is defined as ObjectPropertiesType. For flexibility and extensibility purposes any user of CybOX can specify their own externally defined object properties schemas (outside of or derived from the set of predefined objects) extended from ObjectPropertiesType and utilize them as part of their CybOX content.</p>
+<p>The <a href='/documentation/cyboxCommon/ObjectPropertiesType'>ObjectPropertiesType</a> is an Abstract type placeholder within the CybOX schema enabling the inclusion of contextually varying object properties descriptions. This Abstract type is leveraged as the extension base for all predefined CybOX object properties schemas. Through this extension mechanism any object instance data based on an object properties schema extended from <a href='/documentation/cyboxCommon/ObjectPropertiesType'>ObjectPropertiesType</a> (e.g. File_Object, Address_Object, etc.) can be directly integrated into any instance document where a field is defined as ObjectPropertiesType. For flexibility and extensibility purposes any user of CybOX can specify their own externally defined object properties schemas (outside of or derived from the set of predefined objects) extended from <a href='/documentation/cyboxCommon/ObjectPropertiesType'>ObjectPropertiesType</a> and utilize them as part of their CybOX content.</p>
 
 <hr />
 
@@ -22,7 +22,7 @@ title: ObjectPropertiesType
   <tbody>
   
     <tr>
-      <td>@object_reference</td>
+      <td>@object_reference<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -36,7 +36,7 @@ title: ObjectPropertiesType
     </tr>
   
     <tr>
-      <td>Custom_Properties</td>
+      <td>Custom_Properties<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/CustomPropertiesType">CustomPropertiesType</a>

@@ -5,7 +5,7 @@ title: EventType
 
 <h1>EventType<span class="subdued">CybOX Core Schema</span></h1>
 
-<p>The EventType is a complex type representing a cyber observable event that is dynamic in nature with specific action(s) taken against specific cyber relevant objects (e.g. a file is deleted, a registry key is created or an HTTP Get Request is received).</p>
+<p>The <a href='/documentation/cybox/EventType'>EventType</a> is a complex type representing a cyber observable event that is dynamic in nature with specific action(s) taken against specific cyber relevant objects (e.g. a file is deleted, a registry key is created or an HTTP Get Request is received).</p>
 
 <hr />
 
@@ -22,7 +22,7 @@ title: EventType
   <tbody>
   
     <tr>
-      <td>@id</td>
+      <td>@id<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -36,7 +36,7 @@ title: EventType
     </tr>
   
     <tr>
-      <td>@idref</td>
+      <td>@idref<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -52,7 +52,7 @@ title: EventType
     </tr>
   
     <tr>
-      <td>Type</td>
+      <td>Type<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
@@ -62,7 +62,7 @@ title: EventType
         
           <p>The Type field uses a standardized controlled vocabulary to capture what type of Event this is.</p>
         
-          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is EventTypeVocab-1.0.1 in the http://cybox.mitre.org/default_vocabularies-2 namespace. This type is defined in the cybox_default_vocabularies.xsd file or at the URL http://cybox.mitre.org/XMLSchema/default_vocabularies/2.0.1/cybox_default_vocabularies.xsd.</p>
+          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is <a href='/documentation/stixVocabs/EventTypeVocab-1.0'>EventTypeVocab-1.0</a>.1 in the http://cybox.mitre.org/default_vocabularies-2 namespace. This type is defined in the cybox_default_vocabularies.xsd file or at the URL http://cybox.mitre.org/XMLSchema/default_vocabularies/2.0.1/cybox_default_vocabularies.xsd.</p>
         
           <p>Users may also define their own vocabulary using the type extension mechanism (by specifying a vocabulary name and/or reference using the vocab_name and vocab_reference attributes, respectively) or simply use this as a string field.</p>
         
@@ -70,7 +70,7 @@ title: EventType
     </tr>
   
     <tr>
-      <td>Description</td>
+      <td>Description<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StructuredTextType">StructuredTextType</a>
@@ -84,7 +84,7 @@ title: EventType
     </tr>
   
     <tr>
-      <td>Observation_Method</td>
+      <td>Observation_Method<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/MeasureSourceType">MeasureSourceType</a>
@@ -98,7 +98,7 @@ title: EventType
     </tr>
   
     <tr>
-      <td>Actions</td>
+      <td>Actions<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cybox/ActionsType">ActionsType</a>
@@ -112,7 +112,7 @@ title: EventType
     </tr>
   
     <tr>
-      <td>Location</td>
+      <td>Location<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/LocationType">LocationType</a>
@@ -130,7 +130,7 @@ title: EventType
     </tr>
   
     <tr>
-      <td>Frequency</td>
+      <td>Frequency<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cybox/FrequencyType">FrequencyType</a>
@@ -144,7 +144,7 @@ title: EventType
     </tr>
   
     <tr>
-      <td>Event</td>
+      <td>Event<span class="occurrence">1..1</span></td>
       <td>
         
           <a href="/documentation/cybox/EventType">EventType</a>

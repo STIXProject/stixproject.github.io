@@ -5,8 +5,8 @@ title: LocationType
 
 <h1>LocationType<span class="subdued">CybOX Common Schema</span></h1>
 
-<p>The LocationType is used to express geographic location information.
-This type is extended through the xsi:type mechanism. The default type is CIQAddress3.0InstanceType in the http://cybox.mitre.org/extensions/Address#CIQAddress3.0-1 namespace. This type is defined in the extensions/location/ciq_address_3.0.xsd file or at the URL http://cybox.mitre.org/XMLSchema/extensions/location/ciq_address_3.0/1.0/ciq_address_3.0.xsd.
+<p>The <a href='/documentation/cyboxCommon/LocationType'>LocationType</a> is used to express geographic location information.
+This type is extended through the xsi:type mechanism. The default type is <a href='/documentation/stix-ciqaddress/CIQAddress3.0InstanceType'>CIQAddress3.0InstanceType</a> in the http://cybox.mitre.org/extensions/Address#CIQAddress3.0-1 namespace. This type is defined in the extensions/location/ciq_address_3.0.xsd file or at the URL http://cybox.mitre.org/XMLSchema/extensions/location/ciq_address_3.0/1.0/ciq_address_3.0.xsd.
 Those who wish to express a simple name may also do so by not specifying an xsi:type and using the Name field of this type.</p>
 
 <hr />
@@ -24,7 +24,7 @@ Those who wish to express a simple name may also do so by not specifying an xsi:
   <tbody>
   
     <tr>
-      <td>@id</td>
+      <td>@id<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -38,7 +38,7 @@ Those who wish to express a simple name may also do so by not specifying an xsi:
     </tr>
   
     <tr>
-      <td>@idref</td>
+      <td>@idref<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -52,7 +52,7 @@ Those who wish to express a simple name may also do so by not specifying an xsi:
     </tr>
   
     <tr>
-      <td>Name</td>
+      <td>Name<span class="occurrence">0..1</span></td>
       <td>
         
           string

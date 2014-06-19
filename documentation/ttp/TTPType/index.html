@@ -22,7 +22,7 @@ title: TTPType
   <tbody>
   
     <tr>
-      <td>@id</td>
+      <td>@id<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -36,7 +36,7 @@ title: TTPType
     </tr>
   
     <tr>
-      <td>@idref</td>
+      <td>@idref<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -52,7 +52,7 @@ title: TTPType
     </tr>
   
     <tr>
-      <td>@timestamp</td>
+      <td>@timestamp<span class="occurrence">optional</span></td>
       <td>
         
           dateTime
@@ -66,7 +66,7 @@ title: TTPType
     </tr>
   
     <tr>
-      <td>@version</td>
+      <td>@version<span class="occurrence">optional</span></td>
       <td>
         
           TTPVersionType
@@ -80,7 +80,7 @@ title: TTPType
     </tr>
   
     <tr>
-      <td>Title</td>
+      <td>Title<span class="occurrence">0..1</span></td>
       <td>
         
           string
@@ -94,7 +94,7 @@ title: TTPType
     </tr>
   
     <tr>
-      <td>Description</td>
+      <td>Description<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/StructuredTextType">StructuredTextType</a>
@@ -108,7 +108,7 @@ title: TTPType
     </tr>
   
     <tr>
-      <td>Short_Description</td>
+      <td>Short_Description<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/StructuredTextType">StructuredTextType</a>
@@ -122,7 +122,7 @@ title: TTPType
     </tr>
   
     <tr>
-      <td>Intended_Effect</td>
+      <td>Intended_Effect<span class="occurrence">0..n</span></td>
       <td>
         
           <a href="/documentation/stixCommon/StatementType">StatementType</a>
@@ -132,7 +132,7 @@ title: TTPType
         
           <p>The Intended_Effect field specifies the suspected intended effect for this TTP.</p>
         
-          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is IntendedEffectVocab-1.0 in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
+          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is <a href='/documentation/stixVocabs/IntendedEffectVocab-1.0'>IntendedEffectVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
         
           <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
         
@@ -140,7 +140,7 @@ title: TTPType
     </tr>
   
     <tr>
-      <td>Behavior</td>
+      <td>Behavior<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/ttp/BehaviorType">BehaviorType</a>
@@ -154,7 +154,7 @@ title: TTPType
     </tr>
   
     <tr>
-      <td>Resources</td>
+      <td>Resources<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/ttp/ResourceType">ResourceType</a>
@@ -168,7 +168,7 @@ title: TTPType
     </tr>
   
     <tr>
-      <td>Victim_Targeting</td>
+      <td>Victim_Targeting<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/ttp/VictimTargetingType">VictimTargetingType</a>
@@ -182,7 +182,7 @@ title: TTPType
     </tr>
   
     <tr>
-      <td>Exploit_Targets</td>
+      <td>Exploit_Targets<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/ttp/ExploitTargetsType">ExploitTargetsType</a>
@@ -196,7 +196,7 @@ title: TTPType
     </tr>
   
     <tr>
-      <td>Related_TTPs</td>
+      <td>Related_TTPs<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/ttp/RelatedTTPsType">RelatedTTPsType</a>
@@ -210,7 +210,7 @@ title: TTPType
     </tr>
   
     <tr>
-      <td>Kill_Chain_Phases</td>
+      <td>Kill_Chain_Phases<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/KillChainPhasesReferenceType">KillChainPhasesReferenceType</a>
@@ -224,7 +224,7 @@ title: TTPType
     </tr>
   
     <tr>
-      <td>Information_Source</td>
+      <td>Information_Source<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/InformationSourceType">InformationSourceType</a>
@@ -238,7 +238,7 @@ title: TTPType
     </tr>
   
     <tr>
-      <td>Kill_Chains</td>
+      <td>Kill_Chains<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/KillChainsType">KillChainsType</a>
@@ -252,7 +252,7 @@ title: TTPType
     </tr>
   
     <tr>
-      <td>Handling</td>
+      <td>Handling<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/marking/MarkingType">MarkingType</a>
@@ -260,13 +260,13 @@ title: TTPType
       </td>
       <td>
         
-          <p>Specifies the relevant handling guidance for this TTP. The valid marking scope is the nearest TTPBaseType ancestor of this Handling element and all its descendants.</p>
+          <p>Specifies the relevant handling guidance for this TTP. The valid marking scope is the nearest <a href='/documentation/stixCommon/TTPBaseType'>TTPBaseType</a> ancestor of this Handling element and all its descendants.</p>
         
       </td>
     </tr>
   
     <tr>
-      <td>Related_Packages</td>
+      <td>Related_Packages<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/RelatedPackageRefsType">RelatedPackageRefsType</a>

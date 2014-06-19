@@ -5,7 +5,7 @@ title: KillChainType
 
 <h1>KillChainType<span class="subdued">STIX Common Schema</span></h1>
 
-<p>The KillChainType characterizes a specific Kill Chain definition for reference within specific TTP entries, Indicators and elsewhere.</p>
+<p>The <a href='/documentation/stixCommon/KillChainType'>KillChainType</a> characterizes a specific Kill Chain definition for reference within specific TTP entries, Indicators and elsewhere.</p>
 
 <hr />
 
@@ -22,7 +22,7 @@ title: KillChainType
   <tbody>
   
     <tr>
-      <td>@id</td>
+      <td>@id<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -36,7 +36,7 @@ title: KillChainType
     </tr>
   
     <tr>
-      <td>@name</td>
+      <td>@name<span class="occurrence">optional</span></td>
       <td>
         
           string
@@ -50,7 +50,7 @@ title: KillChainType
     </tr>
   
     <tr>
-      <td>@definer</td>
+      <td>@definer<span class="occurrence">optional</span></td>
       <td>
         
           
@@ -64,7 +64,7 @@ title: KillChainType
     </tr>
   
     <tr>
-      <td>@reference</td>
+      <td>@reference<span class="occurrence">optional</span></td>
       <td>
         
           anyURI
@@ -78,7 +78,7 @@ title: KillChainType
     </tr>
   
     <tr>
-      <td>@number_of_phases</td>
+      <td>@number_of_phases<span class="occurrence">optional</span></td>
       <td>
         
           
@@ -92,7 +92,7 @@ title: KillChainType
     </tr>
   
     <tr>
-      <td>Kill_Chain_Phase</td>
+      <td>Kill_Chain_Phase<span class="occurrence">1..n</span></td>
       <td>
         
           <a href="/documentation/stixCommon/KillChainPhaseType">KillChainPhaseType</a>

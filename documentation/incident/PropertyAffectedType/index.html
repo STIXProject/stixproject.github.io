@@ -22,7 +22,7 @@ title: PropertyAffectedType
   <tbody>
   
     <tr>
-      <td>Property</td>
+      <td>Property<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
@@ -32,7 +32,7 @@ title: PropertyAffectedType
         
           <p>The security property that was affected by the incident.</p>
         
-          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is LossPropertyVocab-1.0 in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
+          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is <a href='/documentation/stixVocabs/LossPropertyVocab-1.0'>LossPropertyVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
         
           <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
         
@@ -40,7 +40,7 @@ title: PropertyAffectedType
     </tr>
   
     <tr>
-      <td>Description_Of_Effect</td>
+      <td>Description_Of_Effect<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/StructuredTextType">StructuredTextType</a>
@@ -54,7 +54,7 @@ title: PropertyAffectedType
     </tr>
   
     <tr>
-      <td>Type_Of_Availability_Loss</td>
+      <td>Type_Of_Availability_Loss<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
@@ -64,7 +64,7 @@ title: PropertyAffectedType
         
           <p>The Type_Of_Availability_Loss field is optional and characterizes in what manner the availability of this asset was affected (e.g. Destruction, Deletion, Interruption).</p>
         
-          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is AvailabilityLossTypeVocab-1.1.1 in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
+          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is <a href='/documentation/stixVocabs/AvailabilityLossTypeVocab-1.1'>AvailabilityLossTypeVocab-1.1</a>.1 in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
         
           <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
         
@@ -72,7 +72,7 @@ title: PropertyAffectedType
     </tr>
   
     <tr>
-      <td>Duration_Of_Availability_Loss</td>
+      <td>Duration_Of_Availability_Loss<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
@@ -82,7 +82,7 @@ title: PropertyAffectedType
         
           <p>The Duration_Of_Availability_Loss field is optional and specifies the approximate length of time availability was affected (e.g. Permanent, Seconds, Minutes, Hours, Days).</p>
         
-          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is LossDurationVocab-1.0 in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
+          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is <a href='/documentation/stixVocabs/LossDurationVocab-1.0'>LossDurationVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
         
           <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
         
@@ -90,7 +90,7 @@ title: PropertyAffectedType
     </tr>
   
     <tr>
-      <td>Non_Public_Data_Compromised</td>
+      <td>Non_Public_Data_Compromised<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/incident/NonPublicDataCompromisedType">NonPublicDataCompromisedType</a>
@@ -100,7 +100,7 @@ title: PropertyAffectedType
         
           <p>This field specifies whether non-public data was compromised or exposed and whether that data was encrypted or not.</p>
         
-          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is SecurityCompromiseVocab-1.0 in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
+          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is <a href='/documentation/stixVocabs/SecurityCompromiseVocab-1.0'>SecurityCompromiseVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
         
           <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
         

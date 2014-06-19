@@ -22,6 +22,126 @@ title: ToolTypeVocab-1.1
 
   <tbody>
   
+    <tr>
+      <td>NIDS</td>
+      <td>The NIDS value specifies a Network Intrusion Detection System tool.</td>
+    </tr>
+  
+    <tr>
+      <td>NIPS</td>
+      <td>The NIPS value specifies a Network Intrusion Protection System tool.</td>
+    </tr>
+  
+    <tr>
+      <td>HIDS</td>
+      <td>The HIDS value specifies a Host-based Intrusion Detection System tool.</td>
+    </tr>
+  
+    <tr>
+      <td>HIPS</td>
+      <td>The HIPS value specifies a Host-based Intrusion Protection System tool.</td>
+    </tr>
+  
+    <tr>
+      <td>Firewall</td>
+      <td>The Firewall value specifies a software or hardware firewall.</td>
+    </tr>
+  
+    <tr>
+      <td>Router</td>
+      <td>The Router value specifies a software or hardware router.</td>
+    </tr>
+  
+    <tr>
+      <td>Proxy</td>
+      <td>The Proxy value specifies a cyber observation made using a software or hardware network proxy.</td>
+    </tr>
+  
+    <tr>
+      <td>Gateway</td>
+      <td>The Gateway value specifies a cyber observation made using a software or hardware network gateway.</td>
+    </tr>
+  
+    <tr>
+      <td>SNMP/MIBs</td>
+      <td>The SNMP/MIBs value specifies a Simple Network Management Protocol or Management Information Base tool.</td>
+    </tr>
+  
+    <tr>
+      <td>AV</td>
+      <td>The AV value specifies Anti-Virus tools and/or software.</td>
+    </tr>
+  
+    <tr>
+      <td>DBMS Monitor</td>
+      <td>The DBMS value specifies a Database Management System monitor tool.</td>
+    </tr>
+  
+    <tr>
+      <td>Vulnerability Scanner</td>
+      <td>The Vulnerability Scanner value specifies a vulnerability scanner tool.</td>
+    </tr>
+  
+    <tr>
+      <td>Configuration Scanner</td>
+      <td>The Configuration Scanner value specifies a configuration scanner tool.</td>
+    </tr>
+  
+    <tr>
+      <td>Asset Scanner</td>
+      <td>The Asset Scanner value specifies an asset scanner tool.</td>
+    </tr>
+  
+    <tr>
+      <td>SIM</td>
+      <td>The SIM value specifies a Security Information Management tool.</td>
+    </tr>
+  
+    <tr>
+      <td>SEM</td>
+      <td>The SEM value specifies a Security Event Management tool.</td>
+    </tr>
+  
+    <tr>
+      <td>Digital Forensics</td>
+      <td>The Digital Forensics value specifies a digital forensics tool.</td>
+    </tr>
+  
+    <tr>
+      <td>Static Malware Analysis</td>
+      <td>The Static Malware Analysis value specifies a static malware Analysis tool.</td>
+    </tr>
+  
+    <tr>
+      <td>Dynamic Malware Analysis</td>
+      <td>The Dynamic Malware Analysis value specifies a dynamic malware Analysis tool.</td>
+    </tr>
+  
+    <tr>
+      <td>System Configuration Management Tool</td>
+      <td>The System Configuration Management value specifies a system configuration management tool.</td>
+    </tr>
+  
+    <tr>
+      <td>Network Configuration Management Tool</td>
+      <td>The Network Configuration Management value specifies a network configuration management tool.</td>
+    </tr>
+  
+    <tr>
+      <td>Packet Capture and Analysis</td>
+      <td>The Packet Capture and Analysis value specifies a packet capture and analysis tool.</td>
+    </tr>
+  
+    <tr>
+      <td>Network Flow Capture and Analysis</td>
+      <td>The Network Flow Capture and Analysis value specifies a network flow capture and analysis tool.</td>
+    </tr>
+  
+    <tr>
+      <td>Intelligence Service Platform</td>
+      <td>The Intelligence Service Platform value specifies an intelligence service platform tool.</td>
+    </tr>
+  
   </tbody>
 </table>
 
@@ -40,7 +160,7 @@ title: ToolTypeVocab-1.1
   <tbody>
   
     <tr>
-      <td>@condition</td>
+      <td>@condition<span class="occurrence">optional</span></td>
       <td>
         
           ConditionTypeEnum
@@ -54,7 +174,7 @@ title: ToolTypeVocab-1.1
     </tr>
   
     <tr>
-      <td>@is_case_sensitive</td>
+      <td>@is_case_sensitive<span class="occurrence">optional</span></td>
       <td>
         
           boolean
@@ -68,7 +188,7 @@ title: ToolTypeVocab-1.1
     </tr>
   
     <tr>
-      <td>@apply_condition</td>
+      <td>@apply_condition<span class="occurrence">optional</span></td>
       <td>
         
           ConditionApplicationEnum
@@ -82,7 +202,7 @@ title: ToolTypeVocab-1.1
     </tr>
   
     <tr>
-      <td>@delimiter</td>
+      <td>@delimiter<span class="occurrence">optional</span></td>
       <td>
         
           string
@@ -96,7 +216,7 @@ title: ToolTypeVocab-1.1
     </tr>
   
     <tr>
-      <td>@bit_mask</td>
+      <td>@bit_mask<span class="occurrence">optional</span></td>
       <td>
         
           hexBinary
@@ -110,7 +230,7 @@ title: ToolTypeVocab-1.1
     </tr>
   
     <tr>
-      <td>@pattern_type</td>
+      <td>@pattern_type<span class="occurrence">optional</span></td>
       <td>
         
           PatternTypeEnum
@@ -124,7 +244,7 @@ title: ToolTypeVocab-1.1
     </tr>
   
     <tr>
-      <td>@regex_syntax</td>
+      <td>@regex_syntax<span class="occurrence">optional</span></td>
       <td>
         
           string
@@ -142,7 +262,7 @@ title: ToolTypeVocab-1.1
     </tr>
   
     <tr>
-      <td>@has_changed</td>
+      <td>@has_changed<span class="occurrence">optional</span></td>
       <td>
         
           boolean
@@ -156,7 +276,7 @@ title: ToolTypeVocab-1.1
     </tr>
   
     <tr>
-      <td>@trend</td>
+      <td>@trend<span class="occurrence">optional</span></td>
       <td>
         
           boolean
@@ -170,7 +290,7 @@ title: ToolTypeVocab-1.1
     </tr>
   
     <tr>
-      <td>@vocab_name</td>
+      <td>@vocab_name<span class="occurrence">optional</span></td>
       <td>
         
           string
@@ -184,7 +304,7 @@ title: ToolTypeVocab-1.1
     </tr>
   
     <tr>
-      <td>@vocab_reference</td>
+      <td>@vocab_reference<span class="occurrence">optional</span></td>
       <td>
         
           anyURI

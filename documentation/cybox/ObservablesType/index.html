@@ -5,7 +5,7 @@ title: ObservablesType
 
 <h1>ObservablesType<span class="subdued">CybOX Core Schema</span></h1>
 
-<p>The ObservablesType is a type representing a collection of cyber observables.</p>
+<p>The <a href='/documentation/cybox/ObservablesType'>ObservablesType</a> is a type representing a collection of cyber observables.</p>
 
 <hr />
 
@@ -22,7 +22,7 @@ title: ObservablesType
   <tbody>
   
     <tr>
-      <td>@cybox_major_version</td>
+      <td>@cybox_major_version<span class="occurrence">required</span></td>
       <td>
         
           string
@@ -36,7 +36,7 @@ title: ObservablesType
     </tr>
   
     <tr>
-      <td>@cybox_minor_version</td>
+      <td>@cybox_minor_version<span class="occurrence">required</span></td>
       <td>
         
           string
@@ -50,7 +50,7 @@ title: ObservablesType
     </tr>
   
     <tr>
-      <td>@cybox_update_version</td>
+      <td>@cybox_update_version<span class="occurrence">optional</span></td>
       <td>
         
           string
@@ -64,7 +64,7 @@ title: ObservablesType
     </tr>
   
     <tr>
-      <td>Observable_Package_Source</td>
+      <td>Observable_Package_Source<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/MeasureSourceType">MeasureSourceType</a>
@@ -78,7 +78,7 @@ title: ObservablesType
     </tr>
   
     <tr>
-      <td>Observable</td>
+      <td>Observable<span class="occurrence">1..n</span></td>
       <td>
         
           <a href="/documentation/cybox/ObservableType">ObservableType</a>
@@ -90,7 +90,7 @@ title: ObservablesType
     </tr>
   
     <tr>
-      <td>Pools</td>
+      <td>Pools<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cybox/PoolsType">PoolsType</a>

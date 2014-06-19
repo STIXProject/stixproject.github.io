@@ -22,7 +22,7 @@ title: MarkingSpecificationType
   <tbody>
   
     <tr>
-      <td>@id</td>
+      <td>@id<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -36,7 +36,7 @@ title: MarkingSpecificationType
     </tr>
   
     <tr>
-      <td>@idref</td>
+      <td>@idref<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -52,7 +52,7 @@ title: MarkingSpecificationType
     </tr>
   
     <tr>
-      <td>@version</td>
+      <td>@version<span class="occurrence">optional</span></td>
       <td>
         
           string
@@ -66,7 +66,7 @@ title: MarkingSpecificationType
     </tr>
   
     <tr>
-      <td>Controlled_Structure</td>
+      <td>Controlled_Structure<span class="occurrence">0..1</span></td>
       <td>
         
           string
@@ -82,13 +82,13 @@ title: MarkingSpecificationType
         
           <p>Note that all Controlled_Structure elements have a scope within the document for which their XPath is valid to reference.</p>
         
-          <p>Usages of MarkingType may specify a "marking scope". The marking scope is always recursive and specifies the set of nodes that may be selected by the XPath expression (and therefore that may have the markings applied to them). If no marking scope is specified in the schema documentation or specification where the MarkingType is used, it should be assumed that the document itself and all nodes are within scope.</p>
+          <p>Usages of <a href='/documentation/marking/MarkingType'>MarkingType</a> may specify a "marking scope". The marking scope is always recursive and specifies the set of nodes that may be selected by the XPath expression (and therefore that may have the markings applied to them). If no marking scope is specified in the schema documentation or specification where the <a href='/documentation/marking/MarkingType'>MarkingType</a> is used, it should be assumed that the document itself and all nodes are within scope.</p>
         
       </td>
     </tr>
   
     <tr>
-      <td>Marking_Structure</td>
+      <td>Marking_Structure<span class="occurrence">0..n</span></td>
       <td>
         
           <a href="/documentation/marking/MarkingStructureType">MarkingStructureType</a>
@@ -96,13 +96,13 @@ title: MarkingSpecificationType
       </td>
       <td>
         
-          <p>This field contains the marking information to be applied to the portions of XML content specified in the ControlledStructure field. This field is defined as MarkingStructureType which is an abstract type the enables the flexibility to utilize any variety of marking structures.</p>
+          <p>This field contains the marking information to be applied to the portions of XML content specified in the ControlledStructure field. This field is defined as <a href='/documentation/marking/MarkingStructureType'>MarkingStructureType</a> which is an abstract type the enables the flexibility to utilize any variety of marking structures.</p>
         
       </td>
     </tr>
   
     <tr>
-      <td>Information_Source</td>
+      <td>Information_Source<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/InformationSourceType">InformationSourceType</a>

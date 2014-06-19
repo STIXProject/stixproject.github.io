@@ -5,7 +5,7 @@ title: TimeObjectPropertyType
 
 <h1>TimeObjectPropertyType<span class="subdued">CybOX Common Schema</span></h1>
 
-<p>The TimeObjectPropertyType is a type (extended from BaseObjectPropertyType) representing the specification of a single Object property whose core value is of type time. This type will be assigned to any property of a CybOX object that should contain content of type Time and enables the use of relevant metadata for the property.  In order to avoid ambiguity, it is strongly suggested that any time representation in this field include a specification of the timezone if it is known. As with the rest of the field, this should be formatted per the xs:time specification.
+<p>The <a href='/documentation/cyboxCommon/TimeObjectPropertyType'>TimeObjectPropertyType</a> is a type (extended from BaseObjectPropertyType) representing the specification of a single Object property whose core value is of type time. This type will be assigned to any property of a CybOX object that should contain content of type Time and enables the use of relevant metadata for the property.  In order to avoid ambiguity, it is strongly suggested that any time representation in this field include a specification of the timezone if it is known. As with the rest of the field, this should be formatted per the xs:time specification.
 Properties that use this type can express multiple values by providing them using a delimiter-separated list. The default delimiter is '##comma##' (no quotes) but can be overridden through use of the delimiter field. Note that whitespace is preserved and so, when specifying a list of values, do not include a space following the delimiter in a list unless the first character of the next list item should, in fact, be a space.
 For fields of this type using CybOX patterning, it is strongly suggested that the condition (pattern type) is limited to one of Equals, DoesNotEqual, GreaterThan, LessThan, GreaterThanOrEqual, LessThanOrEqual, ExclusiveBetween, or InclusiveBetween. The use of other conditions may lead to ambiguity or unexpected results. When evaluating data against a pattern, the evaluator should take into account the precision of the field (as given by the precision attribute) and any timezone information that is available to perform a data-aware comparison. The usage of simple string comparisons is discouraged due to ambiguities in how precision and timezone information is processed.</p>
 
@@ -24,7 +24,7 @@ For fields of this type using CybOX patterning, it is strongly suggested that th
   <tbody>
   
     <tr>
-      <td>@id</td>
+      <td>@id<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -38,7 +38,7 @@ For fields of this type using CybOX patterning, it is strongly suggested that th
     </tr>
   
     <tr>
-      <td>@idref</td>
+      <td>@idref<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -54,7 +54,7 @@ For fields of this type using CybOX patterning, it is strongly suggested that th
     </tr>
   
     <tr>
-      <td>@datatype</td>
+      <td>@datatype<span class="occurrence">optional</span></td>
       <td>
         
           DatatypeEnum
@@ -68,7 +68,7 @@ For fields of this type using CybOX patterning, it is strongly suggested that th
     </tr>
   
     <tr>
-      <td>@appears_random</td>
+      <td>@appears_random<span class="occurrence">optional</span></td>
       <td>
         
           boolean
@@ -82,7 +82,7 @@ For fields of this type using CybOX patterning, it is strongly suggested that th
     </tr>
   
     <tr>
-      <td>@is_obfuscated</td>
+      <td>@is_obfuscated<span class="occurrence">optional</span></td>
       <td>
         
           boolean
@@ -96,7 +96,7 @@ For fields of this type using CybOX patterning, it is strongly suggested that th
     </tr>
   
     <tr>
-      <td>@obfuscation_algorithm_ref</td>
+      <td>@obfuscation_algorithm_ref<span class="occurrence">optional</span></td>
       <td>
         
           anyURI
@@ -110,7 +110,7 @@ For fields of this type using CybOX patterning, it is strongly suggested that th
     </tr>
   
     <tr>
-      <td>@is_defanged</td>
+      <td>@is_defanged<span class="occurrence">optional</span></td>
       <td>
         
           boolean
@@ -124,7 +124,7 @@ For fields of this type using CybOX patterning, it is strongly suggested that th
     </tr>
   
     <tr>
-      <td>@defanging_algorithm_ref</td>
+      <td>@defanging_algorithm_ref<span class="occurrence">optional</span></td>
       <td>
         
           anyURI
@@ -138,7 +138,7 @@ For fields of this type using CybOX patterning, it is strongly suggested that th
     </tr>
   
     <tr>
-      <td>@refanging_transform_type</td>
+      <td>@refanging_transform_type<span class="occurrence">optional</span></td>
       <td>
         
           string
@@ -152,7 +152,7 @@ For fields of this type using CybOX patterning, it is strongly suggested that th
     </tr>
   
     <tr>
-      <td>@refanging_transform</td>
+      <td>@refanging_transform<span class="occurrence">optional</span></td>
       <td>
         
           string
@@ -166,7 +166,7 @@ For fields of this type using CybOX patterning, it is strongly suggested that th
     </tr>
   
     <tr>
-      <td>@observed_encoding</td>
+      <td>@observed_encoding<span class="occurrence">optional</span></td>
       <td>
         
           string
@@ -184,7 +184,7 @@ For fields of this type using CybOX patterning, it is strongly suggested that th
     </tr>
   
     <tr>
-      <td>@condition</td>
+      <td>@condition<span class="occurrence">optional</span></td>
       <td>
         
           ConditionTypeEnum
@@ -198,7 +198,7 @@ For fields of this type using CybOX patterning, it is strongly suggested that th
     </tr>
   
     <tr>
-      <td>@is_case_sensitive</td>
+      <td>@is_case_sensitive<span class="occurrence">optional</span></td>
       <td>
         
           boolean
@@ -212,7 +212,7 @@ For fields of this type using CybOX patterning, it is strongly suggested that th
     </tr>
   
     <tr>
-      <td>@apply_condition</td>
+      <td>@apply_condition<span class="occurrence">optional</span></td>
       <td>
         
           ConditionApplicationEnum
@@ -226,7 +226,7 @@ For fields of this type using CybOX patterning, it is strongly suggested that th
     </tr>
   
     <tr>
-      <td>@delimiter</td>
+      <td>@delimiter<span class="occurrence">optional</span></td>
       <td>
         
           string
@@ -240,7 +240,7 @@ For fields of this type using CybOX patterning, it is strongly suggested that th
     </tr>
   
     <tr>
-      <td>@bit_mask</td>
+      <td>@bit_mask<span class="occurrence">optional</span></td>
       <td>
         
           hexBinary
@@ -254,7 +254,7 @@ For fields of this type using CybOX patterning, it is strongly suggested that th
     </tr>
   
     <tr>
-      <td>@pattern_type</td>
+      <td>@pattern_type<span class="occurrence">optional</span></td>
       <td>
         
           PatternTypeEnum
@@ -268,7 +268,7 @@ For fields of this type using CybOX patterning, it is strongly suggested that th
     </tr>
   
     <tr>
-      <td>@regex_syntax</td>
+      <td>@regex_syntax<span class="occurrence">optional</span></td>
       <td>
         
           string
@@ -286,7 +286,7 @@ For fields of this type using CybOX patterning, it is strongly suggested that th
     </tr>
   
     <tr>
-      <td>@has_changed</td>
+      <td>@has_changed<span class="occurrence">optional</span></td>
       <td>
         
           boolean
@@ -300,7 +300,7 @@ For fields of this type using CybOX patterning, it is strongly suggested that th
     </tr>
   
     <tr>
-      <td>@trend</td>
+      <td>@trend<span class="occurrence">optional</span></td>
       <td>
         
           boolean
@@ -314,7 +314,7 @@ For fields of this type using CybOX patterning, it is strongly suggested that th
     </tr>
   
     <tr>
-      <td>@precision</td>
+      <td>@precision<span class="occurrence">optional</span></td>
       <td>
         
           TimePrecisionEnum

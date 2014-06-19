@@ -5,7 +5,7 @@ title: UnixProcessObjectType
 
 <h1>UnixProcessObjectType<span class="subdued">Unix Process Object Schema</span></h1>
 
-<p>The UnixProcessObjectType type is intended to characterize Unix processes.</p>
+<p>The <a href='/documentation/UnixProcessObj/UnixProcessObjectType'>UnixProcessObjectType</a> type is intended to characterize Unix processes.</p>
 
 <hr />
 
@@ -22,7 +22,7 @@ title: UnixProcessObjectType
   <tbody>
   
     <tr>
-      <td>@object_reference</td>
+      <td>@object_reference<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -36,7 +36,7 @@ title: UnixProcessObjectType
     </tr>
   
     <tr>
-      <td>Custom_Properties</td>
+      <td>Custom_Properties<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/CustomPropertiesType">CustomPropertiesType</a>
@@ -50,7 +50,7 @@ title: UnixProcessObjectType
     </tr>
   
     <tr>
-      <td>@is_hidden</td>
+      <td>@is_hidden<span class="occurrence">optional</span></td>
       <td>
         
           boolean
@@ -64,7 +64,7 @@ title: UnixProcessObjectType
     </tr>
   
     <tr>
-      <td>PID</td>
+      <td>PID<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/UnsignedIntegerObjectPropertyType">UnsignedIntegerObjectPropertyType</a>
@@ -78,7 +78,7 @@ title: UnixProcessObjectType
     </tr>
   
     <tr>
-      <td>Name</td>
+      <td>Name<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
@@ -92,7 +92,7 @@ title: UnixProcessObjectType
     </tr>
   
     <tr>
-      <td>Creation_Time</td>
+      <td>Creation_Time<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
@@ -106,7 +106,7 @@ title: UnixProcessObjectType
     </tr>
   
     <tr>
-      <td>Parent_PID</td>
+      <td>Parent_PID<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/UnsignedIntegerObjectPropertyType">UnsignedIntegerObjectPropertyType</a>
@@ -122,7 +122,7 @@ title: UnixProcessObjectType
     </tr>
   
     <tr>
-      <td>Child_PID_List</td>
+      <td>Child_PID_List<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/ProcessObj/ChildPIDListType">ChildPIDListType</a>
@@ -138,7 +138,7 @@ title: UnixProcessObjectType
     </tr>
   
     <tr>
-      <td>Image_Info</td>
+      <td>Image_Info<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/ProcessObj/ImageInfoType">ImageInfoType</a>
@@ -152,7 +152,7 @@ title: UnixProcessObjectType
     </tr>
   
     <tr>
-      <td>Argument_List</td>
+      <td>Argument_List<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/ProcessObj/ArgumentListType">ArgumentListType</a>
@@ -166,7 +166,7 @@ title: UnixProcessObjectType
     </tr>
   
     <tr>
-      <td>Environment_Variable_List</td>
+      <td>Environment_Variable_List<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/EnvironmentVariableListType">EnvironmentVariableListType</a>
@@ -174,13 +174,13 @@ title: UnixProcessObjectType
       </td>
       <td>
         
-          <p>The Environment_Variable_List field specifies any environment variables associated with the process. This field imports and uses the EnvironmentVariableListType from the CybOX Common Types.</p>
+          <p>The Environment_Variable_List field specifies any environment variables associated with the process. This field imports and uses the <a href='/documentation/cyboxCommon/EnvironmentVariableListType'>EnvironmentVariableListType</a> from the CybOX Common Types.</p>
         
       </td>
     </tr>
   
     <tr>
-      <td>Kernel_Time</td>
+      <td>Kernel_Time<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/DurationObjectPropertyType">DurationObjectPropertyType</a>
@@ -194,7 +194,7 @@ title: UnixProcessObjectType
     </tr>
   
     <tr>
-      <td>Port_List</td>
+      <td>Port_List<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/ProcessObj/PortListType">PortListType</a>
@@ -208,7 +208,7 @@ title: UnixProcessObjectType
     </tr>
   
     <tr>
-      <td>Network_Connection_List</td>
+      <td>Network_Connection_List<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/ProcessObj/NetworkConnectionListType">NetworkConnectionListType</a>
@@ -222,7 +222,7 @@ title: UnixProcessObjectType
     </tr>
   
     <tr>
-      <td>Start_Time</td>
+      <td>Start_Time<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
@@ -236,7 +236,7 @@ title: UnixProcessObjectType
     </tr>
   
     <tr>
-      <td>Status</td>
+      <td>Status<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/ProcessObj/ProcessStatusType">ProcessStatusType</a>
@@ -250,7 +250,7 @@ title: UnixProcessObjectType
     </tr>
   
     <tr>
-      <td>Username</td>
+      <td>Username<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
@@ -264,7 +264,7 @@ title: UnixProcessObjectType
     </tr>
   
     <tr>
-      <td>User_Time</td>
+      <td>User_Time<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/DurationObjectPropertyType">DurationObjectPropertyType</a>
@@ -278,7 +278,7 @@ title: UnixProcessObjectType
     </tr>
   
     <tr>
-      <td>Extracted_Features</td>
+      <td>Extracted_Features<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/ExtractedFeaturesType">ExtractedFeaturesType</a>
@@ -292,7 +292,7 @@ title: UnixProcessObjectType
     </tr>
   
     <tr>
-      <td>Open_File_Descriptor_List</td>
+      <td>Open_File_Descriptor_List<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/UnixProcessObj/FileDescriptorListType">FileDescriptorListType</a>
@@ -306,7 +306,7 @@ title: UnixProcessObjectType
     </tr>
   
     <tr>
-      <td>Priority</td>
+      <td>Priority<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/NonNegativeIntegerObjectPropertyType">NonNegativeIntegerObjectPropertyType</a>
@@ -320,7 +320,7 @@ title: UnixProcessObjectType
     </tr>
   
     <tr>
-      <td>RUID</td>
+      <td>RUID<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/NonNegativeIntegerObjectPropertyType">NonNegativeIntegerObjectPropertyType</a>
@@ -334,7 +334,7 @@ title: UnixProcessObjectType
     </tr>
   
     <tr>
-      <td>Session_ID</td>
+      <td>Session_ID<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/NonNegativeIntegerObjectPropertyType">NonNegativeIntegerObjectPropertyType</a>

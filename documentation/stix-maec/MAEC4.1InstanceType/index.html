@@ -5,7 +5,7 @@ title: MAEC4.1InstanceType
 
 <h1>MAEC4.1InstanceType<span class="subdued">MAEC 4.1 Malware Instance Schema</span></h1>
 
-<p>The MAEC4.1InstanceType provides an extension to MalwareInstanceType which imports and leverages the MAEC 4.1 schema for structured characterization of Malware.</p>
+<p>The <a href='/documentation/stix-maec/MAEC4.1InstanceType'>MAEC4.1InstanceType</a> provides an extension to <a href='/documentation/ttp/MalwareInstanceType'>MalwareInstanceType</a> which imports and leverages the MAEC 4.1 schema for structured characterization of Malware.</p>
 
 <hr />
 
@@ -22,7 +22,7 @@ title: MAEC4.1InstanceType
   <tbody>
   
     <tr>
-      <td>@id</td>
+      <td>@id<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -36,7 +36,7 @@ title: MAEC4.1InstanceType
     </tr>
   
     <tr>
-      <td>@idref</td>
+      <td>@idref<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -50,7 +50,7 @@ title: MAEC4.1InstanceType
     </tr>
   
     <tr>
-      <td>Type</td>
+      <td>Type<span class="occurrence">0..n</span></td>
       <td>
         
           <a href="/documentation/stixCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
@@ -60,7 +60,7 @@ title: MAEC4.1InstanceType
         
           <p>The Type field provides a characterization of what type of malware this MalwareInstance is.</p>
         
-          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is MalwareTypeVocab-1.0 in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
+          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is <a href='/documentation/stixVocabs/MalwareTypeVocab-1.0'>MalwareTypeVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
         
           <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
         
@@ -68,7 +68,7 @@ title: MAEC4.1InstanceType
     </tr>
   
     <tr>
-      <td>Name</td>
+      <td>Name<span class="occurrence">0..n</span></td>
       <td>
         
           <a href="/documentation/stixCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
@@ -84,7 +84,7 @@ title: MAEC4.1InstanceType
     </tr>
   
     <tr>
-      <td>Title</td>
+      <td>Title<span class="occurrence">0..1</span></td>
       <td>
         
           string
@@ -98,7 +98,7 @@ title: MAEC4.1InstanceType
     </tr>
   
     <tr>
-      <td>Description</td>
+      <td>Description<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/StructuredTextType">StructuredTextType</a>
@@ -112,7 +112,7 @@ title: MAEC4.1InstanceType
     </tr>
   
     <tr>
-      <td>Short_Description</td>
+      <td>Short_Description<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/StructuredTextType">StructuredTextType</a>
@@ -126,7 +126,7 @@ title: MAEC4.1InstanceType
     </tr>
   
     <tr>
-      <td>MAEC</td>
+      <td>MAEC<span class="occurrence">1..1</span></td>
       <td>
         
           PackageType

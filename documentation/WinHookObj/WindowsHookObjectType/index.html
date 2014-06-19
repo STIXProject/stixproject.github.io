@@ -5,7 +5,7 @@ title: WindowsHookObjectType
 
 <h1>WindowsHookObjectType<span class="subdued">Win Event Object Schema</span></h1>
 
-<p>The WindowsHookObjectType type is intended to characterize Windows hook procedure objects.
+<p>The <a href='/documentation/WinHookObj/WindowsHookObjectType'>WindowsHookObjectType</a> type is intended to characterize Windows hook procedure objects.
 For more information please see http://msdn.microsoft.com/en-us/library/windows/desktop/ms644990(v=vs.85).aspx.</p>
 
 <hr />
@@ -23,7 +23,7 @@ For more information please see http://msdn.microsoft.com/en-us/library/windows/
   <tbody>
   
     <tr>
-      <td>@object_reference</td>
+      <td>@object_reference<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -37,7 +37,7 @@ For more information please see http://msdn.microsoft.com/en-us/library/windows/
     </tr>
   
     <tr>
-      <td>Custom_Properties</td>
+      <td>Custom_Properties<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/CustomPropertiesType">CustomPropertiesType</a>
@@ -51,7 +51,7 @@ For more information please see http://msdn.microsoft.com/en-us/library/windows/
     </tr>
   
     <tr>
-      <td>Type</td>
+      <td>Type<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/WinHookObj/WinHookType">WinHookType</a>
@@ -65,7 +65,7 @@ For more information please see http://msdn.microsoft.com/en-us/library/windows/
     </tr>
   
     <tr>
-      <td>Handle</td>
+      <td>Handle<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/WinHandleObj/WindowsHandleObjectType">WindowsHandleObjectType</a>
@@ -73,13 +73,13 @@ For more information please see http://msdn.microsoft.com/en-us/library/windows/
       </td>
       <td>
         
-          <p>The Handle field specifies the handle associated with the  Windows hook procedure. It uses the WindowsHandleObjectType type from the imported CybOX Windows Handle object.</p>
+          <p>The Handle field specifies the handle associated with the  Windows hook procedure. It uses the <a href='/documentation/WinHandleObj/WindowsHandleObjectType'>WindowsHandleObjectType</a> type from the imported CybOX Windows Handle object.</p>
         
       </td>
     </tr>
   
     <tr>
-      <td>Hooking_Function_Name</td>
+      <td>Hooking_Function_Name<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
@@ -93,7 +93,7 @@ For more information please see http://msdn.microsoft.com/en-us/library/windows/
     </tr>
   
     <tr>
-      <td>Hooking_Module</td>
+      <td>Hooking_Module<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/LibraryObj/LibraryObjectType">LibraryObjectType</a>
@@ -101,13 +101,13 @@ For more information please see http://msdn.microsoft.com/en-us/library/windows/
       </td>
       <td>
         
-          <p>The Hooking_Module field specifies the properties of the module that contains the hooking function used in the Windows hook procedure that is specified in the Hooking_Function_Name field. It uses the LibraryObjectType from the imported CybOX Library Object.</p>
+          <p>The Hooking_Module field specifies the properties of the module that contains the hooking function used in the Windows hook procedure that is specified in the Hooking_Function_Name field. It uses the <a href='/documentation/LibraryObj/LibraryObjectType'>LibraryObjectType</a> from the imported CybOX Library Object.</p>
         
       </td>
     </tr>
   
     <tr>
-      <td>Thread_ID</td>
+      <td>Thread_ID<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/NonNegativeIntegerObjectPropertyType">NonNegativeIntegerObjectPropertyType</a>

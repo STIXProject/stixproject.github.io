@@ -5,7 +5,7 @@ title: UnixNetworkRouteEntryObjectType
 
 <h1>UnixNetworkRouteEntryObjectType<span class="subdued">Unix Network Route Entry Object Schema</span></h1>
 
-<p>The UnixNetworkRouteEntryObjectType type is intended to characterize entries in the network routing table of a Unix system.</p>
+<p>The <a href='/documentation/UnixNetworkRouteEntryObj/UnixNetworkRouteEntryObjectType'>UnixNetworkRouteEntryObjectType</a> type is intended to characterize entries in the network routing table of a Unix system.</p>
 
 <hr />
 
@@ -22,7 +22,7 @@ title: UnixNetworkRouteEntryObjectType
   <tbody>
   
     <tr>
-      <td>@object_reference</td>
+      <td>@object_reference<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -36,7 +36,7 @@ title: UnixNetworkRouteEntryObjectType
     </tr>
   
     <tr>
-      <td>Custom_Properties</td>
+      <td>Custom_Properties<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/CustomPropertiesType">CustomPropertiesType</a>
@@ -50,7 +50,7 @@ title: UnixNetworkRouteEntryObjectType
     </tr>
   
     <tr>
-      <td>@is_ipv6</td>
+      <td>@is_ipv6<span class="occurrence">optional</span></td>
       <td>
         
           boolean
@@ -64,7 +64,7 @@ title: UnixNetworkRouteEntryObjectType
     </tr>
   
     <tr>
-      <td>@is_autoconfigure_address</td>
+      <td>@is_autoconfigure_address<span class="occurrence">optional</span></td>
       <td>
         
           boolean
@@ -78,7 +78,7 @@ title: UnixNetworkRouteEntryObjectType
     </tr>
   
     <tr>
-      <td>@is_immortal</td>
+      <td>@is_immortal<span class="occurrence">optional</span></td>
       <td>
         
           boolean
@@ -92,7 +92,7 @@ title: UnixNetworkRouteEntryObjectType
     </tr>
   
     <tr>
-      <td>@is_loopback</td>
+      <td>@is_loopback<span class="occurrence">optional</span></td>
       <td>
         
           boolean
@@ -106,7 +106,7 @@ title: UnixNetworkRouteEntryObjectType
     </tr>
   
     <tr>
-      <td>@is_publish</td>
+      <td>@is_publish<span class="occurrence">optional</span></td>
       <td>
         
           boolean
@@ -120,7 +120,7 @@ title: UnixNetworkRouteEntryObjectType
     </tr>
   
     <tr>
-      <td>Destination_Address</td>
+      <td>Destination_Address<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/AddressObj/AddressObjectType">AddressObjectType</a>
@@ -128,13 +128,13 @@ title: UnixNetworkRouteEntryObjectType
       </td>
       <td>
         
-          <p>The Destination_Address field specifies the destination IP address of the network route. It imports and uses the AddressObjectType from the CybOX Address object.</p>
+          <p>The Destination_Address field specifies the destination IP address of the network route. It imports and uses the <a href='/documentation/AddressObj/AddressObjectType'>AddressObjectType</a> from the CybOX Address object.</p>
         
       </td>
     </tr>
   
     <tr>
-      <td>Origin</td>
+      <td>Origin<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/AddressObj/AddressObjectType">AddressObjectType</a>
@@ -142,13 +142,13 @@ title: UnixNetworkRouteEntryObjectType
       </td>
       <td>
         
-          <p>The Origin field specifies the origin address of the network route. It imports and uses the AddressObjectType from the CybOX Address object.</p>
+          <p>The Origin field specifies the origin address of the network route. It imports and uses the <a href='/documentation/AddressObj/AddressObjectType'>AddressObjectType</a> from the CybOX Address object.</p>
         
       </td>
     </tr>
   
     <tr>
-      <td>Netmask</td>
+      <td>Netmask<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/AddressObj/AddressObjectType">AddressObjectType</a>
@@ -162,7 +162,7 @@ title: UnixNetworkRouteEntryObjectType
     </tr>
   
     <tr>
-      <td>Gateway_Address</td>
+      <td>Gateway_Address<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/AddressObj/AddressObjectType">AddressObjectType</a>
@@ -170,13 +170,13 @@ title: UnixNetworkRouteEntryObjectType
       </td>
       <td>
         
-          <p>The Gateway_Address field specifies the IP address of the gateway through which all packets using this route will be gatewayed. It imports and uses the AddressObjectType from the CybOX Address object.</p>
+          <p>The Gateway_Address field specifies the IP address of the gateway through which all packets using this route will be gatewayed. It imports and uses the <a href='/documentation/AddressObj/AddressObjectType'>AddressObjectType</a> from the CybOX Address object.</p>
         
       </td>
     </tr>
   
     <tr>
-      <td>Metric</td>
+      <td>Metric<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/UnsignedLongObjectPropertyType">UnsignedLongObjectPropertyType</a>
@@ -190,7 +190,7 @@ title: UnixNetworkRouteEntryObjectType
     </tr>
   
     <tr>
-      <td>Type</td>
+      <td>Type<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/NetworkRouteEntryObj/RouteType">RouteType</a>
@@ -204,7 +204,7 @@ title: UnixNetworkRouteEntryObjectType
     </tr>
   
     <tr>
-      <td>Protocol</td>
+      <td>Protocol<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
@@ -218,7 +218,7 @@ title: UnixNetworkRouteEntryObjectType
     </tr>
   
     <tr>
-      <td>Interface</td>
+      <td>Interface<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
@@ -232,7 +232,7 @@ title: UnixNetworkRouteEntryObjectType
     </tr>
   
     <tr>
-      <td>Preferred_Lifetime</td>
+      <td>Preferred_Lifetime<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/DurationObjectPropertyType">DurationObjectPropertyType</a>
@@ -246,7 +246,7 @@ title: UnixNetworkRouteEntryObjectType
     </tr>
   
     <tr>
-      <td>Valid_Lifetime</td>
+      <td>Valid_Lifetime<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/DurationObjectPropertyType">DurationObjectPropertyType</a>
@@ -260,7 +260,7 @@ title: UnixNetworkRouteEntryObjectType
     </tr>
   
     <tr>
-      <td>Route_Age</td>
+      <td>Route_Age<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/DurationObjectPropertyType">DurationObjectPropertyType</a>
@@ -274,7 +274,7 @@ title: UnixNetworkRouteEntryObjectType
     </tr>
   
     <tr>
-      <td>Flags</td>
+      <td>Flags<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
@@ -288,7 +288,7 @@ title: UnixNetworkRouteEntryObjectType
     </tr>
   
     <tr>
-      <td>MSS</td>
+      <td>MSS<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/UnsignedIntegerObjectPropertyType">UnsignedIntegerObjectPropertyType</a>
@@ -302,7 +302,7 @@ title: UnixNetworkRouteEntryObjectType
     </tr>
   
     <tr>
-      <td>Ref</td>
+      <td>Ref<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/UnsignedLongObjectPropertyType">UnsignedLongObjectPropertyType</a>
@@ -316,7 +316,7 @@ title: UnixNetworkRouteEntryObjectType
     </tr>
   
     <tr>
-      <td>Use</td>
+      <td>Use<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/UnsignedLongObjectPropertyType">UnsignedLongObjectPropertyType</a>
@@ -330,7 +330,7 @@ title: UnixNetworkRouteEntryObjectType
     </tr>
   
     <tr>
-      <td>Window</td>
+      <td>Window<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/UnsignedIntegerObjectPropertyType">UnsignedIntegerObjectPropertyType</a>

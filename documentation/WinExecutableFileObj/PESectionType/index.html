@@ -5,7 +5,7 @@ title: PESectionType
 
 <h1>PESectionType<span class="subdued">Win Executable File Object Schema</span></h1>
 
-<p>The PESectionType type is intended as container for the properties relevant to PE binary sections. A PE Section consists of a header and data. The PESectionType contains properties that describe the Section Header and metadata computed about the section (e.g., hashes, entropy).</p>
+<p>The <a href='/documentation/WinExecutableFileObj/PESectionType'>PESectionType</a> type is intended as container for the properties relevant to PE binary sections. A PE Section consists of a header and data. The <a href='/documentation/WinExecutableFileObj/PESectionType'>PESectionType</a> contains properties that describe the Section Header and metadata computed about the section (e.g., hashes, entropy).</p>
 
 <hr />
 
@@ -22,7 +22,7 @@ title: PESectionType
   <tbody>
   
     <tr>
-      <td>Section_Header</td>
+      <td>Section_Header<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/WinExecutableFileObj/PESectionHeaderStructType">PESectionHeaderStructType</a>
@@ -36,7 +36,7 @@ title: PESectionType
     </tr>
   
     <tr>
-      <td>Data_Hashes</td>
+      <td>Data_Hashes<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/HashListType">HashListType</a>
@@ -50,7 +50,7 @@ title: PESectionType
     </tr>
   
     <tr>
-      <td>Entropy</td>
+      <td>Entropy<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/WinExecutableFileObj/EntropyType">EntropyType</a>
@@ -64,7 +64,7 @@ title: PESectionType
     </tr>
   
     <tr>
-      <td>Header_Hashes</td>
+      <td>Header_Hashes<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/HashListType">HashListType</a>

@@ -5,7 +5,7 @@ title: NonNegativeIntegerObjectPropertyType
 
 <h1>NonNegativeIntegerObjectPropertyType<span class="subdued">CybOX Common Schema</span></h1>
 
-<p>The NonNegativeIntegerObjectPropertyType is a type (extended from BaseObjectPropertyType) representing the specification of a single Object property whose core value is of type nonNegativeInteger. This type will be assigned to any property of a CybOX object that should contain content of type NonNegativeInteger and enables the use of relevant metadata for the property.
+<p>The <a href='/documentation/cyboxCommon/NonNegativeIntegerObjectPropertyType'>NonNegativeIntegerObjectPropertyType</a> is a type (extended from BaseObjectPropertyType) representing the specification of a single Object property whose core value is of type nonNegativeInteger. This type will be assigned to any property of a CybOX object that should contain content of type NonNegativeInteger and enables the use of relevant metadata for the property.
 Properties that use this type can express multiple values by providing them using a delimiter-separated list. The default delimiter is '##comma##' (no quotes) but can be overridden through use of the delimiter field. Note that whitespace is preserved and so, when specifying a list of values, do not include a space following the delimiter in a list unless the first character of the next list item should, in fact, be a space.</p>
 
 <hr />
@@ -23,7 +23,7 @@ Properties that use this type can express multiple values by providing them usin
   <tbody>
   
     <tr>
-      <td>@id</td>
+      <td>@id<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -37,7 +37,7 @@ Properties that use this type can express multiple values by providing them usin
     </tr>
   
     <tr>
-      <td>@idref</td>
+      <td>@idref<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -53,7 +53,7 @@ Properties that use this type can express multiple values by providing them usin
     </tr>
   
     <tr>
-      <td>@datatype</td>
+      <td>@datatype<span class="occurrence">optional</span></td>
       <td>
         
           DatatypeEnum
@@ -67,7 +67,7 @@ Properties that use this type can express multiple values by providing them usin
     </tr>
   
     <tr>
-      <td>@appears_random</td>
+      <td>@appears_random<span class="occurrence">optional</span></td>
       <td>
         
           boolean
@@ -81,7 +81,7 @@ Properties that use this type can express multiple values by providing them usin
     </tr>
   
     <tr>
-      <td>@is_obfuscated</td>
+      <td>@is_obfuscated<span class="occurrence">optional</span></td>
       <td>
         
           boolean
@@ -95,7 +95,7 @@ Properties that use this type can express multiple values by providing them usin
     </tr>
   
     <tr>
-      <td>@obfuscation_algorithm_ref</td>
+      <td>@obfuscation_algorithm_ref<span class="occurrence">optional</span></td>
       <td>
         
           anyURI
@@ -109,7 +109,7 @@ Properties that use this type can express multiple values by providing them usin
     </tr>
   
     <tr>
-      <td>@is_defanged</td>
+      <td>@is_defanged<span class="occurrence">optional</span></td>
       <td>
         
           boolean
@@ -123,7 +123,7 @@ Properties that use this type can express multiple values by providing them usin
     </tr>
   
     <tr>
-      <td>@defanging_algorithm_ref</td>
+      <td>@defanging_algorithm_ref<span class="occurrence">optional</span></td>
       <td>
         
           anyURI
@@ -137,7 +137,7 @@ Properties that use this type can express multiple values by providing them usin
     </tr>
   
     <tr>
-      <td>@refanging_transform_type</td>
+      <td>@refanging_transform_type<span class="occurrence">optional</span></td>
       <td>
         
           string
@@ -151,7 +151,7 @@ Properties that use this type can express multiple values by providing them usin
     </tr>
   
     <tr>
-      <td>@refanging_transform</td>
+      <td>@refanging_transform<span class="occurrence">optional</span></td>
       <td>
         
           string
@@ -165,7 +165,7 @@ Properties that use this type can express multiple values by providing them usin
     </tr>
   
     <tr>
-      <td>@observed_encoding</td>
+      <td>@observed_encoding<span class="occurrence">optional</span></td>
       <td>
         
           string
@@ -183,7 +183,7 @@ Properties that use this type can express multiple values by providing them usin
     </tr>
   
     <tr>
-      <td>@condition</td>
+      <td>@condition<span class="occurrence">optional</span></td>
       <td>
         
           ConditionTypeEnum
@@ -197,7 +197,7 @@ Properties that use this type can express multiple values by providing them usin
     </tr>
   
     <tr>
-      <td>@is_case_sensitive</td>
+      <td>@is_case_sensitive<span class="occurrence">optional</span></td>
       <td>
         
           boolean
@@ -211,7 +211,7 @@ Properties that use this type can express multiple values by providing them usin
     </tr>
   
     <tr>
-      <td>@apply_condition</td>
+      <td>@apply_condition<span class="occurrence">optional</span></td>
       <td>
         
           ConditionApplicationEnum
@@ -225,7 +225,7 @@ Properties that use this type can express multiple values by providing them usin
     </tr>
   
     <tr>
-      <td>@delimiter</td>
+      <td>@delimiter<span class="occurrence">optional</span></td>
       <td>
         
           string
@@ -239,7 +239,7 @@ Properties that use this type can express multiple values by providing them usin
     </tr>
   
     <tr>
-      <td>@bit_mask</td>
+      <td>@bit_mask<span class="occurrence">optional</span></td>
       <td>
         
           hexBinary
@@ -253,7 +253,7 @@ Properties that use this type can express multiple values by providing them usin
     </tr>
   
     <tr>
-      <td>@pattern_type</td>
+      <td>@pattern_type<span class="occurrence">optional</span></td>
       <td>
         
           PatternTypeEnum
@@ -267,7 +267,7 @@ Properties that use this type can express multiple values by providing them usin
     </tr>
   
     <tr>
-      <td>@regex_syntax</td>
+      <td>@regex_syntax<span class="occurrence">optional</span></td>
       <td>
         
           string
@@ -285,7 +285,7 @@ Properties that use this type can express multiple values by providing them usin
     </tr>
   
     <tr>
-      <td>@has_changed</td>
+      <td>@has_changed<span class="occurrence">optional</span></td>
       <td>
         
           boolean
@@ -299,7 +299,7 @@ Properties that use this type can express multiple values by providing them usin
     </tr>
   
     <tr>
-      <td>@trend</td>
+      <td>@trend<span class="occurrence">optional</span></td>
       <td>
         
           boolean

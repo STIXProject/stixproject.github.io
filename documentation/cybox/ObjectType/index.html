@@ -5,7 +5,7 @@ title: ObjectType
 
 <h1>ObjectType<span class="subdued">CybOX Core Schema</span></h1>
 
-<p>The ObjectType is a complex type representing the characteristics of a specific cyber-relevant object (e.g. a file, a registry key or a process).</p>
+<p>The <a href='/documentation/cybox/ObjectType'>ObjectType</a> is a complex type representing the characteristics of a specific cyber-relevant object (e.g. a file, a registry key or a process).</p>
 
 <hr />
 
@@ -22,7 +22,7 @@ title: ObjectType
   <tbody>
   
     <tr>
-      <td>@id</td>
+      <td>@id<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -36,7 +36,7 @@ title: ObjectType
     </tr>
   
     <tr>
-      <td>@idref</td>
+      <td>@idref<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -52,7 +52,7 @@ title: ObjectType
     </tr>
   
     <tr>
-      <td>@has_changed</td>
+      <td>@has_changed<span class="occurrence">optional</span></td>
       <td>
         
           boolean
@@ -66,7 +66,7 @@ title: ObjectType
     </tr>
   
     <tr>
-      <td>State</td>
+      <td>State<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
@@ -84,7 +84,7 @@ title: ObjectType
     </tr>
   
     <tr>
-      <td>Description</td>
+      <td>Description<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StructuredTextType">StructuredTextType</a>
@@ -98,7 +98,7 @@ title: ObjectType
     </tr>
   
     <tr>
-      <td>Properties</td>
+      <td>Properties<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/ObjectPropertiesType">ObjectPropertiesType</a>
@@ -112,7 +112,7 @@ title: ObjectType
     </tr>
   
     <tr>
-      <td>Domain_Specific_Object_Properties</td>
+      <td>Domain_Specific_Object_Properties<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cybox/DomainSpecificObjectPropertiesType">DomainSpecificObjectPropertiesType</a>
@@ -126,7 +126,7 @@ title: ObjectType
     </tr>
   
     <tr>
-      <td>Location</td>
+      <td>Location<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/LocationType">LocationType</a>
@@ -144,7 +144,7 @@ title: ObjectType
     </tr>
   
     <tr>
-      <td>Related_Objects</td>
+      <td>Related_Objects<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cybox/RelatedObjectsType">RelatedObjectsType</a>
@@ -158,7 +158,7 @@ title: ObjectType
     </tr>
   
     <tr>
-      <td>Defined_Effect</td>
+      <td>Defined_Effect<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cybox/DefinedEffectType">DefinedEffectType</a>
@@ -172,7 +172,7 @@ title: ObjectType
     </tr>
   
     <tr>
-      <td>Discovery_Method</td>
+      <td>Discovery_Method<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/MeasureSourceType">MeasureSourceType</a>

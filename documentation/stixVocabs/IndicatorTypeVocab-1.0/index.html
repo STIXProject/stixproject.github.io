@@ -8,7 +8,7 @@ title: IndicatorTypeVocab-1.0
 <p>
                 The IndicatorTypeVocab is the default STIX vocabulary for expressing indicator types.
             
-NOTE: As of STIX Version 1.1, this version of the IndicatorTypeVocab is deprecated. Please use IndicatorTypeVocab-1.1 instead.</p>
+NOTE: As of STIX Version 1.1, this version of the IndicatorTypeVocab is deprecated. Please use <a href='/documentation/stixVocabs/IndicatorTypeVocab-1.1'>IndicatorTypeVocab-1.1</a> instead.</p>
 
 <hr />
 
@@ -24,6 +24,56 @@ NOTE: As of STIX Version 1.1, this version of the IndicatorTypeVocab is deprecat
   </thead>
 
   <tbody>
+  
+    <tr>
+      <td>Malicious E-mail</td>
+      <td>Indicator describes suspected malicious e-mail (phishing, spear phishing, infected, etc.).</td>
+    </tr>
+  
+    <tr>
+      <td>IP Watchlist</td>
+      <td>Indicator describes a set of suspected malicious IP addresses or IP blocks.</td>
+    </tr>
+  
+    <tr>
+      <td>File Hash Watchlist</td>
+      <td>Indicator describes a set of hashes for suspected malicious files.</td>
+    </tr>
+  
+    <tr>
+      <td>Domain Watchlist</td>
+      <td>Indicator describes a set of suspected malicious domains.</td>
+    </tr>
+  
+    <tr>
+      <td>URL Watchlist</td>
+      <td>Indicator describes a set of suspected malicious URLS.</td>
+    </tr>
+  
+    <tr>
+      <td>Malware Artifacts</td>
+      <td>Indicator describes the effects of suspected malware.</td>
+    </tr>
+  
+    <tr>
+      <td>C2</td>
+      <td>Indicator describes suspected command and control activity or static indications.</td>
+    </tr>
+  
+    <tr>
+      <td>Anonymization</td>
+      <td>Indicator describes suspected anonymization techniques (Proxy, TOR, VPN, etc.).</td>
+    </tr>
+  
+    <tr>
+      <td>Exfiltration</td>
+      <td>Indicator describes suspected exfiltration techniques or behavior.</td>
+    </tr>
+  
+    <tr>
+      <td>Host Characteristics</td>
+      <td>Indicator describes suspected malicious host characteristics.</td>
+    </tr>
   
   </tbody>
 </table>
@@ -43,7 +93,7 @@ NOTE: As of STIX Version 1.1, this version of the IndicatorTypeVocab is deprecat
   <tbody>
   
     <tr>
-      <td>@vocab_name</td>
+      <td>@vocab_name<span class="occurrence">optional</span></td>
       <td>
         
           string
@@ -57,7 +107,7 @@ NOTE: As of STIX Version 1.1, this version of the IndicatorTypeVocab is deprecat
     </tr>
   
     <tr>
-      <td>@vocab_reference</td>
+      <td>@vocab_reference<span class="occurrence">optional</span></td>
       <td>
         
           anyURI

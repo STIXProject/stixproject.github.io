@@ -6,7 +6,7 @@ title: CVRF1.1InstanceType
 <h1>CVRF1.1InstanceType<span class="subdued"> Schema</span></h1>
 
 <p>
-                The CVRF1.1InstanceType provides an extension to the VulnerabilityType which imports and leverages the CVRF schema for structured characterization of Vulnerabilities. This could include characterization of 0-days or other vulnerabilities that do not have a CVE or OSVDB ID.
+                The <a href='/documentation/stix-cvrf/CVRF1.1InstanceType'>CVRF1.1InstanceType</a> provides an extension to the <a href='/documentation/et/VulnerabilityType'>VulnerabilityType</a> which imports and leverages the CVRF schema for structured characterization of Vulnerabilities. This could include characterization of 0-days or other vulnerabilities that do not have a CVE or OSVDB ID.
             </p>
 
 <hr />
@@ -24,7 +24,7 @@ title: CVRF1.1InstanceType
   <tbody>
   
     <tr>
-      <td>@is_known</td>
+      <td>@is_known<span class="occurrence">optional</span></td>
       <td>
         
           boolean
@@ -38,7 +38,7 @@ title: CVRF1.1InstanceType
     </tr>
   
     <tr>
-      <td>@is_publicly_acknowledged</td>
+      <td>@is_publicly_acknowledged<span class="occurrence">optional</span></td>
       <td>
         
           boolean
@@ -52,7 +52,7 @@ title: CVRF1.1InstanceType
     </tr>
   
     <tr>
-      <td>Title</td>
+      <td>Title<span class="occurrence">0..1</span></td>
       <td>
         
           string
@@ -66,7 +66,7 @@ title: CVRF1.1InstanceType
     </tr>
   
     <tr>
-      <td>Description</td>
+      <td>Description<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/StructuredTextType">StructuredTextType</a>
@@ -80,7 +80,7 @@ title: CVRF1.1InstanceType
     </tr>
   
     <tr>
-      <td>Short_Description</td>
+      <td>Short_Description<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/StructuredTextType">StructuredTextType</a>
@@ -94,7 +94,7 @@ title: CVRF1.1InstanceType
     </tr>
   
     <tr>
-      <td>CVE_ID</td>
+      <td>CVE_ID<span class="occurrence">0..1</span></td>
       <td>
         
           CVE_IDInlineType
@@ -108,7 +108,7 @@ title: CVRF1.1InstanceType
     </tr>
   
     <tr>
-      <td>OSVDB_ID</td>
+      <td>OSVDB_ID<span class="occurrence">0..1</span></td>
       <td>
         
           positiveInteger
@@ -122,7 +122,7 @@ title: CVRF1.1InstanceType
     </tr>
   
     <tr>
-      <td>Source</td>
+      <td>Source<span class="occurrence">0..1</span></td>
       <td>
         
           string
@@ -136,7 +136,7 @@ title: CVRF1.1InstanceType
     </tr>
   
     <tr>
-      <td>CVSS_Score</td>
+      <td>CVSS_Score<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/et/CVSSVectorType">CVSSVectorType</a>
@@ -150,7 +150,7 @@ title: CVRF1.1InstanceType
     </tr>
   
     <tr>
-      <td>Discovered_DateTime</td>
+      <td>Discovered_DateTime<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/DateTimeWithPrecisionType">DateTimeWithPrecisionType</a>
@@ -164,7 +164,7 @@ title: CVRF1.1InstanceType
     </tr>
   
     <tr>
-      <td>Published_DateTime</td>
+      <td>Published_DateTime<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/DateTimeWithPrecisionType">DateTimeWithPrecisionType</a>
@@ -178,7 +178,7 @@ title: CVRF1.1InstanceType
     </tr>
   
     <tr>
-      <td>Affected_Software</td>
+      <td>Affected_Software<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/et/AffectedSoftwareType">AffectedSoftwareType</a>
@@ -192,7 +192,7 @@ title: CVRF1.1InstanceType
     </tr>
   
     <tr>
-      <td>References</td>
+      <td>References<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/ReferencesType">ReferencesType</a>
@@ -206,7 +206,7 @@ title: CVRF1.1InstanceType
     </tr>
   
     <tr>
-      <td>cvrfdoc</td>
+      <td>cvrfdoc<span class="occurrence">1..1</span></td>
       <td>
         
           cvrfdoc

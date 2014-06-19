@@ -5,7 +5,7 @@ title: SimpleMarkingStructureType
 
 <h1>SimpleMarkingStructureType<span class="subdued">Simple Marking Instance Schema</span></h1>
 
-<p>The SimpleMarkingStructureType is a basic implementation of the data marking schema that allows for a string statement to be associated with the data being marked. One example might be the application of a copyright statement to some data set.
+<p>The <a href='/documentation/simpleMarking/SimpleMarkingStructureType'>SimpleMarkingStructureType</a> is a basic implementation of the data marking schema that allows for a string statement to be associated with the data being marked. One example might be the application of a copyright statement to some data set.
 Nodes may be marked by multiple SimpleMarking statements. When this occurs, all SimpleMarking statements applied to that node are considered valid. There is no resolution for SimpleMarking Statements that appear to conflict: the behavior is undefined at the STIX level.</p>
 
 <hr />
@@ -23,7 +23,7 @@ Nodes may be marked by multiple SimpleMarking statements. When this occurs, all 
   <tbody>
   
     <tr>
-      <td>@marking_model_name</td>
+      <td>@marking_model_name<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -37,7 +37,7 @@ Nodes may be marked by multiple SimpleMarking statements. When this occurs, all 
     </tr>
   
     <tr>
-      <td>@marking_model_ref</td>
+      <td>@marking_model_ref<span class="occurrence">optional</span></td>
       <td>
         
           anyURI
@@ -51,7 +51,7 @@ Nodes may be marked by multiple SimpleMarking statements. When this occurs, all 
     </tr>
   
     <tr>
-      <td>@id</td>
+      <td>@id<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -65,7 +65,7 @@ Nodes may be marked by multiple SimpleMarking statements. When this occurs, all 
     </tr>
   
     <tr>
-      <td>@idref</td>
+      <td>@idref<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -81,7 +81,7 @@ Nodes may be marked by multiple SimpleMarking statements. When this occurs, all 
     </tr>
   
     <tr>
-      <td>Statement</td>
+      <td>Statement<span class="occurrence">1..1</span></td>
       <td>
         
           string

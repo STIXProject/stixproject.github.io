@@ -5,7 +5,7 @@ title: ConfidenceType
 
 <h1>ConfidenceType<span class="subdued">STIX Common Schema</span></h1>
 
-<p>The ConfidenceType specifies a level of Confidence held in some assertion.</p>
+<p>The <a href='/documentation/stixCommon/ConfidenceType'>ConfidenceType</a> specifies a level of Confidence held in some assertion.</p>
 
 <hr />
 
@@ -22,7 +22,7 @@ title: ConfidenceType
   <tbody>
   
     <tr>
-      <td>@timestamp</td>
+      <td>@timestamp<span class="occurrence">optional</span></td>
       <td>
         
           dateTime
@@ -38,7 +38,7 @@ title: ConfidenceType
     </tr>
   
     <tr>
-      <td>@timestamp_precision</td>
+      <td>@timestamp_precision<span class="occurrence">optional</span></td>
       <td>
         
           DateTimePrecisionEnum
@@ -52,7 +52,7 @@ title: ConfidenceType
     </tr>
   
     <tr>
-      <td>Value</td>
+      <td>Value<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
@@ -62,7 +62,7 @@ title: ConfidenceType
         
           <p>Specifies the level of confidence held in this direct assertion.</p>
         
-          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is HighMediumLowVocab-1.0 in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
+          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is <a href='/documentation/stixVocabs/HighMediumLowVocab-1.0'>HighMediumLowVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
         
           <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
         
@@ -70,7 +70,7 @@ title: ConfidenceType
     </tr>
   
     <tr>
-      <td>Description</td>
+      <td>Description<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/StructuredTextType">StructuredTextType</a>
@@ -84,7 +84,7 @@ title: ConfidenceType
     </tr>
   
     <tr>
-      <td>Source</td>
+      <td>Source<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/InformationSourceType">InformationSourceType</a>
@@ -100,7 +100,7 @@ title: ConfidenceType
     </tr>
   
     <tr>
-      <td>Confidence_Assertion_Chain</td>
+      <td>Confidence_Assertion_Chain<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/ConfidenceAssertionChainType">ConfidenceAssertionChainType</a>

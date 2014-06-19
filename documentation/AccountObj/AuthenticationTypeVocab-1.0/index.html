@@ -22,6 +22,41 @@ title: AuthenticationTypeVocab-1.0
 
   <tbody>
   
+    <tr>
+      <td>No Authentication</td>
+      <td>The No Authentication value specifies that there is no authentication mechanism in place.</td>
+    </tr>
+  
+    <tr>
+      <td>Password</td>
+      <td>The Password value specifies password based authentication.</td>
+    </tr>
+  
+    <tr>
+      <td>Cryptographic Key</td>
+      <td>The Cryptographic Key value specifies cryptographic key based authentication.</td>
+    </tr>
+  
+    <tr>
+      <td>Biometrics</td>
+      <td>The Biometrics value specifies biometrics based authentication. Examples include fingerprint or retina readers.</td>
+    </tr>
+  
+    <tr>
+      <td>Hardware Token</td>
+      <td>The Hardware Token value specifies authentication requiring physical or hardware tokens. Examples include smart cards, bluetooth tokens, and usb tokens.</td>
+    </tr>
+  
+    <tr>
+      <td>Software Token</td>
+      <td>The Software Token value specifies an authentication device stored in software form.</td>
+    </tr>
+  
+    <tr>
+      <td>Multifactor</td>
+      <td>The Multifactor authentication value specifies multifactor authentication.</td>
+    </tr>
+  
   </tbody>
 </table>
 
@@ -40,7 +75,7 @@ title: AuthenticationTypeVocab-1.0
   <tbody>
   
     <tr>
-      <td>@condition</td>
+      <td>@condition<span class="occurrence">optional</span></td>
       <td>
         
           ConditionTypeEnum
@@ -54,7 +89,7 @@ title: AuthenticationTypeVocab-1.0
     </tr>
   
     <tr>
-      <td>@is_case_sensitive</td>
+      <td>@is_case_sensitive<span class="occurrence">optional</span></td>
       <td>
         
           boolean
@@ -68,7 +103,7 @@ title: AuthenticationTypeVocab-1.0
     </tr>
   
     <tr>
-      <td>@apply_condition</td>
+      <td>@apply_condition<span class="occurrence">optional</span></td>
       <td>
         
           ConditionApplicationEnum
@@ -82,7 +117,7 @@ title: AuthenticationTypeVocab-1.0
     </tr>
   
     <tr>
-      <td>@delimiter</td>
+      <td>@delimiter<span class="occurrence">optional</span></td>
       <td>
         
           string
@@ -96,7 +131,7 @@ title: AuthenticationTypeVocab-1.0
     </tr>
   
     <tr>
-      <td>@bit_mask</td>
+      <td>@bit_mask<span class="occurrence">optional</span></td>
       <td>
         
           hexBinary
@@ -110,7 +145,7 @@ title: AuthenticationTypeVocab-1.0
     </tr>
   
     <tr>
-      <td>@pattern_type</td>
+      <td>@pattern_type<span class="occurrence">optional</span></td>
       <td>
         
           PatternTypeEnum
@@ -124,7 +159,7 @@ title: AuthenticationTypeVocab-1.0
     </tr>
   
     <tr>
-      <td>@regex_syntax</td>
+      <td>@regex_syntax<span class="occurrence">optional</span></td>
       <td>
         
           string
@@ -142,7 +177,7 @@ title: AuthenticationTypeVocab-1.0
     </tr>
   
     <tr>
-      <td>@has_changed</td>
+      <td>@has_changed<span class="occurrence">optional</span></td>
       <td>
         
           boolean
@@ -156,7 +191,7 @@ title: AuthenticationTypeVocab-1.0
     </tr>
   
     <tr>
-      <td>@trend</td>
+      <td>@trend<span class="occurrence">optional</span></td>
       <td>
         
           boolean
@@ -170,7 +205,7 @@ title: AuthenticationTypeVocab-1.0
     </tr>
   
     <tr>
-      <td>@vocab_name</td>
+      <td>@vocab_name<span class="occurrence">optional</span></td>
       <td>
         
           string
@@ -184,7 +219,7 @@ title: AuthenticationTypeVocab-1.0
     </tr>
   
     <tr>
-      <td>@vocab_reference</td>
+      <td>@vocab_reference<span class="occurrence">optional</span></td>
       <td>
         
           anyURI

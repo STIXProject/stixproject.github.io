@@ -5,7 +5,7 @@ title: PEExportsType
 
 <h1>PEExportsType<span class="subdued">Win Executable File Object Schema</span></h1>
 
-<p>The PEExportsType specifies the PE File exports data section. The exports data section contains information about symbols exported by the PE File (a DLL) which can be dynamically loaded by other executables. This type abstracts, and its components, abstract the Windows structures.</p>
+<p>The <a href='/documentation/WinExecutableFileObj/PEExportsType'>PEExportsType</a> specifies the PE File exports data section. The exports data section contains information about symbols exported by the PE File (a DLL) which can be dynamically loaded by other executables. This type abstracts, and its components, abstract the Windows structures.</p>
 
 <hr />
 
@@ -22,7 +22,7 @@ title: PEExportsType
   <tbody>
   
     <tr>
-      <td>Name</td>
+      <td>Name<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
@@ -36,7 +36,7 @@ title: PEExportsType
     </tr>
   
     <tr>
-      <td>Exported_Functions</td>
+      <td>Exported_Functions<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/WinExecutableFileObj/PEExportedFunctionsType">PEExportedFunctionsType</a>
@@ -50,7 +50,7 @@ title: PEExportsType
     </tr>
   
     <tr>
-      <td>Exports_Time_Stamp</td>
+      <td>Exports_Time_Stamp<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
@@ -64,7 +64,7 @@ title: PEExportsType
     </tr>
   
     <tr>
-      <td>Number_Of_Addresses</td>
+      <td>Number_Of_Addresses<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/LongObjectPropertyType">LongObjectPropertyType</a>
@@ -78,7 +78,7 @@ title: PEExportsType
     </tr>
   
     <tr>
-      <td>Number_Of_Names</td>
+      <td>Number_Of_Names<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/LongObjectPropertyType">LongObjectPropertyType</a>
@@ -92,7 +92,7 @@ title: PEExportsType
     </tr>
   
     <tr>
-      <td>Number_Of_Functions</td>
+      <td>Number_Of_Functions<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>

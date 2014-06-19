@@ -5,7 +5,7 @@ title: STIXHeaderType
 
 <h1>STIXHeaderType<span class="subdued">STIX Core Schema</span></h1>
 
-<p>The STIXHeaderType provides a structure for characterizing a package of STIX content.</p>
+<p>The <a href='/documentation/stix/STIXHeaderType'>STIXHeaderType</a> provides a structure for characterizing a package of STIX content.</p>
 
 <hr />
 
@@ -22,7 +22,7 @@ title: STIXHeaderType
   <tbody>
   
     <tr>
-      <td>Title</td>
+      <td>Title<span class="occurrence">0..1</span></td>
       <td>
         
           string
@@ -36,7 +36,7 @@ title: STIXHeaderType
     </tr>
   
     <tr>
-      <td>Package_Intent</td>
+      <td>Package_Intent<span class="occurrence">0..n</span></td>
       <td>
         
           <a href="/documentation/stixCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
@@ -46,7 +46,7 @@ title: STIXHeaderType
         
           <p>The Package_Intent field characterizes the intended purpose(s) or use(s) for this package of STIX content.</p>
         
-          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is PackageIntentVocab-1.0 in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
+          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is <a href='/documentation/stixVocabs/PackageIntentVocab-1.0'>PackageIntentVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
         
           <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
         
@@ -54,7 +54,7 @@ title: STIXHeaderType
     </tr>
   
     <tr>
-      <td>Description</td>
+      <td>Description<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/StructuredTextType">StructuredTextType</a>
@@ -68,7 +68,7 @@ title: STIXHeaderType
     </tr>
   
     <tr>
-      <td>Short_Description</td>
+      <td>Short_Description<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/StructuredTextType">StructuredTextType</a>
@@ -82,7 +82,7 @@ title: STIXHeaderType
     </tr>
   
     <tr>
-      <td>Profiles</td>
+      <td>Profiles<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/ProfilesType">ProfilesType</a>
@@ -96,7 +96,7 @@ title: STIXHeaderType
     </tr>
   
     <tr>
-      <td>Handling</td>
+      <td>Handling<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/marking/MarkingType">MarkingType</a>
@@ -110,7 +110,7 @@ title: STIXHeaderType
     </tr>
   
     <tr>
-      <td>Information_Source</td>
+      <td>Information_Source<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/InformationSourceType">InformationSourceType</a>

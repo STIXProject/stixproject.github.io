@@ -5,7 +5,7 @@ title: HTTPSessionObjectType
 
 <h1>HTTPSessionObjectType<span class="subdued">HTTP Session Object Schema</span></h1>
 
-<p>The HTTPSessionObjectType is intended to capture the details of an HTTP session.</p>
+<p>The <a href='/documentation/HTTPSessionObj/HTTPSessionObjectType'>HTTPSessionObjectType</a> is intended to capture the details of an HTTP session.</p>
 
 <hr />
 
@@ -22,7 +22,7 @@ title: HTTPSessionObjectType
   <tbody>
   
     <tr>
-      <td>@object_reference</td>
+      <td>@object_reference<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -36,7 +36,7 @@ title: HTTPSessionObjectType
     </tr>
   
     <tr>
-      <td>Custom_Properties</td>
+      <td>Custom_Properties<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/CustomPropertiesType">CustomPropertiesType</a>
@@ -50,7 +50,7 @@ title: HTTPSessionObjectType
     </tr>
   
     <tr>
-      <td>HTTP_Request_Response</td>
+      <td>HTTP_Request_Response<span class="occurrence">1..n</span></td>
       <td>
         
           <a href="/documentation/HTTPSessionObj/HTTPRequestResponseType">HTTPRequestResponseType</a>

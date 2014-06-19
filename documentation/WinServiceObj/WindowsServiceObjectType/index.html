@@ -5,7 +5,7 @@ title: WindowsServiceObjectType
 
 <h1>WindowsServiceObjectType<span class="subdued">Win Service Object Schema</span></h1>
 
-<p>The WindowsServiceObjectType type is intended to characterize Windows services.</p>
+<p>The <a href='/documentation/WinServiceObj/WindowsServiceObjectType'>WindowsServiceObjectType</a> type is intended to characterize Windows services.</p>
 
 <hr />
 
@@ -22,7 +22,7 @@ title: WindowsServiceObjectType
   <tbody>
   
     <tr>
-      <td>@object_reference</td>
+      <td>@object_reference<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -36,7 +36,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Custom_Properties</td>
+      <td>Custom_Properties<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/CustomPropertiesType">CustomPropertiesType</a>
@@ -50,7 +50,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>@is_hidden</td>
+      <td>@is_hidden<span class="occurrence">optional</span></td>
       <td>
         
           boolean
@@ -64,7 +64,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>PID</td>
+      <td>PID<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/UnsignedIntegerObjectPropertyType">UnsignedIntegerObjectPropertyType</a>
@@ -78,7 +78,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Name</td>
+      <td>Name<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
@@ -92,7 +92,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Creation_Time</td>
+      <td>Creation_Time<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
@@ -106,7 +106,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Parent_PID</td>
+      <td>Parent_PID<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/UnsignedIntegerObjectPropertyType">UnsignedIntegerObjectPropertyType</a>
@@ -122,7 +122,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Child_PID_List</td>
+      <td>Child_PID_List<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/ProcessObj/ChildPIDListType">ChildPIDListType</a>
@@ -138,7 +138,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Image_Info</td>
+      <td>Image_Info<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/ProcessObj/ImageInfoType">ImageInfoType</a>
@@ -152,7 +152,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Argument_List</td>
+      <td>Argument_List<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/ProcessObj/ArgumentListType">ArgumentListType</a>
@@ -166,7 +166,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Environment_Variable_List</td>
+      <td>Environment_Variable_List<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/EnvironmentVariableListType">EnvironmentVariableListType</a>
@@ -174,13 +174,13 @@ title: WindowsServiceObjectType
       </td>
       <td>
         
-          <p>The Environment_Variable_List field specifies any environment variables associated with the process. This field imports and uses the EnvironmentVariableListType from the CybOX Common Types.</p>
+          <p>The Environment_Variable_List field specifies any environment variables associated with the process. This field imports and uses the <a href='/documentation/cyboxCommon/EnvironmentVariableListType'>EnvironmentVariableListType</a> from the CybOX Common Types.</p>
         
       </td>
     </tr>
   
     <tr>
-      <td>Kernel_Time</td>
+      <td>Kernel_Time<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/DurationObjectPropertyType">DurationObjectPropertyType</a>
@@ -194,7 +194,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Port_List</td>
+      <td>Port_List<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/ProcessObj/PortListType">PortListType</a>
@@ -208,7 +208,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Network_Connection_List</td>
+      <td>Network_Connection_List<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/ProcessObj/NetworkConnectionListType">NetworkConnectionListType</a>
@@ -222,7 +222,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Start_Time</td>
+      <td>Start_Time<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
@@ -236,7 +236,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Status</td>
+      <td>Status<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/ProcessObj/ProcessStatusType">ProcessStatusType</a>
@@ -250,7 +250,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Username</td>
+      <td>Username<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
@@ -264,7 +264,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>User_Time</td>
+      <td>User_Time<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/DurationObjectPropertyType">DurationObjectPropertyType</a>
@@ -278,7 +278,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Extracted_Features</td>
+      <td>Extracted_Features<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/ExtractedFeaturesType">ExtractedFeaturesType</a>
@@ -292,7 +292,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>@aslr_enabled</td>
+      <td>@aslr_enabled<span class="occurrence">optional</span></td>
       <td>
         
           boolean
@@ -306,7 +306,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>@dep_enabled</td>
+      <td>@dep_enabled<span class="occurrence">optional</span></td>
       <td>
         
           boolean
@@ -320,7 +320,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Handle_List</td>
+      <td>Handle_List<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/WinHandleObj/WindowsHandleListType">WindowsHandleListType</a>
@@ -334,7 +334,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Priority</td>
+      <td>Priority<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
@@ -348,7 +348,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Section_List</td>
+      <td>Section_List<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/WinProcessObj/MemorySectionListType">MemorySectionListType</a>
@@ -362,7 +362,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Security_ID</td>
+      <td>Security_ID<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
@@ -376,7 +376,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Startup_Info</td>
+      <td>Startup_Info<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/WinProcessObj/StartupInfoType">StartupInfoType</a>
@@ -390,7 +390,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Security_Type</td>
+      <td>Security_Type<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/SIDType">SIDType</a>
@@ -404,7 +404,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Window_Title</td>
+      <td>Window_Title<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
@@ -418,7 +418,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Thread</td>
+      <td>Thread<span class="occurrence">0..n</span></td>
       <td>
         
           <a href="/documentation/WinThreadObj/WindowsThreadObjectType">WindowsThreadObjectType</a>
@@ -432,7 +432,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>@service_dll_signature_exists</td>
+      <td>@service_dll_signature_exists<span class="occurrence">optional</span></td>
       <td>
         
           boolean
@@ -446,7 +446,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>@service_dll_signature_verified</td>
+      <td>@service_dll_signature_verified<span class="occurrence">optional</span></td>
       <td>
         
           boolean
@@ -460,7 +460,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Description_List</td>
+      <td>Description_List<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/WinServiceObj/ServiceDescriptionListType">ServiceDescriptionListType</a>
@@ -474,7 +474,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Display_Name</td>
+      <td>Display_Name<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
@@ -488,7 +488,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Group_Name</td>
+      <td>Group_Name<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
@@ -502,7 +502,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Service_Name</td>
+      <td>Service_Name<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
@@ -516,7 +516,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Service_DLL</td>
+      <td>Service_DLL<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
@@ -530,7 +530,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Service_DLL_Certificate_Issuer</td>
+      <td>Service_DLL_Certificate_Issuer<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
@@ -544,7 +544,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Service_DLL_Certificate_Subject</td>
+      <td>Service_DLL_Certificate_Subject<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
@@ -558,7 +558,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Service_DLL_Hashes</td>
+      <td>Service_DLL_Hashes<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/HashListType">HashListType</a>
@@ -572,7 +572,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Service_DLL_Signature_Description</td>
+      <td>Service_DLL_Signature_Description<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
@@ -586,7 +586,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Startup_Command_Line</td>
+      <td>Startup_Command_Line<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
@@ -600,7 +600,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Startup_Type</td>
+      <td>Startup_Type<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/WinServiceObj/ServiceModeType">ServiceModeType</a>
@@ -614,7 +614,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Service_Status</td>
+      <td>Service_Status<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/WinServiceObj/ServiceStatusType">ServiceStatusType</a>
@@ -628,7 +628,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Service_Type</td>
+      <td>Service_Type<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/WinServiceObj/ServiceType">ServiceType</a>
@@ -642,7 +642,7 @@ title: WindowsServiceObjectType
     </tr>
   
     <tr>
-      <td>Started_As</td>
+      <td>Started_As<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>

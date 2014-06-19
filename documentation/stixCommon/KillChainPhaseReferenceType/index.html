@@ -5,7 +5,7 @@ title: KillChainPhaseReferenceType
 
 <h1>KillChainPhaseReferenceType<span class="subdued">STIX Common Schema</span></h1>
 
-<p>The KillChainPhaseReferenceType is used to reference kill chains that are defined elsewhere.
+<p>The <a href='/documentation/stixCommon/KillChainPhaseReferenceType'>KillChainPhaseReferenceType</a> is used to reference kill chains that are defined elsewhere.
 This type extends from stixCommon:KillChainPhaseType and contains several attributes that are redundant to the original kill chain definition: @kill_chain_name, @ordinality, and @name. These attributes should not be used to redefine attributes in the referenced kill chain. Instead, it is strongly suggested that they either be omitted or, if they are present, they must contain the same values as the kill chain definition. This ensures data consistency across the kill chain itself and all references to it.</p>
 
 <hr />
@@ -23,7 +23,7 @@ This type extends from stixCommon:KillChainPhaseType and contains several attrib
   <tbody>
   
     <tr>
-      <td>@phase_id</td>
+      <td>@phase_id<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -39,7 +39,7 @@ This type extends from stixCommon:KillChainPhaseType and contains several attrib
     </tr>
   
     <tr>
-      <td>@name</td>
+      <td>@name<span class="occurrence">optional</span></td>
       <td>
         
           string
@@ -55,7 +55,7 @@ This type extends from stixCommon:KillChainPhaseType and contains several attrib
     </tr>
   
     <tr>
-      <td>@ordinality</td>
+      <td>@ordinality<span class="occurrence">optional</span></td>
       <td>
         
           int
@@ -71,7 +71,7 @@ This type extends from stixCommon:KillChainPhaseType and contains several attrib
     </tr>
   
     <tr>
-      <td>@kill_chain_id</td>
+      <td>@kill_chain_id<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -85,7 +85,7 @@ This type extends from stixCommon:KillChainPhaseType and contains several attrib
     </tr>
   
     <tr>
-      <td>@kill_chain_name</td>
+      <td>@kill_chain_name<span class="occurrence">optional</span></td>
       <td>
         
           string

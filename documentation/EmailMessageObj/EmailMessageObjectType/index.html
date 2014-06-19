@@ -5,7 +5,7 @@ title: EmailMessageObjectType
 
 <h1>EmailMessageObjectType<span class="subdued">Email Message Object Schema</span></h1>
 
-<p>The EmailMessageObjectType type is intended to characterize an individual email message.</p>
+<p>The <a href='/documentation/EmailMessageObj/EmailMessageObjectType'>EmailMessageObjectType</a> type is intended to characterize an individual email message.</p>
 
 <hr />
 
@@ -22,7 +22,7 @@ title: EmailMessageObjectType
   <tbody>
   
     <tr>
-      <td>@object_reference</td>
+      <td>@object_reference<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -36,7 +36,7 @@ title: EmailMessageObjectType
     </tr>
   
     <tr>
-      <td>Custom_Properties</td>
+      <td>Custom_Properties<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/CustomPropertiesType">CustomPropertiesType</a>
@@ -50,7 +50,7 @@ title: EmailMessageObjectType
     </tr>
   
     <tr>
-      <td>Header</td>
+      <td>Header<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/EmailMessageObj/EmailHeaderType">EmailHeaderType</a>
@@ -64,7 +64,7 @@ title: EmailMessageObjectType
     </tr>
   
     <tr>
-      <td>Email_Server</td>
+      <td>Email_Server<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
@@ -78,7 +78,7 @@ title: EmailMessageObjectType
     </tr>
   
     <tr>
-      <td>Raw_Body</td>
+      <td>Raw_Body<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
@@ -92,7 +92,7 @@ title: EmailMessageObjectType
     </tr>
   
     <tr>
-      <td>Raw_Header</td>
+      <td>Raw_Header<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
@@ -106,7 +106,7 @@ title: EmailMessageObjectType
     </tr>
   
     <tr>
-      <td>Attachments</td>
+      <td>Attachments<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/EmailMessageObj/AttachmentsType">AttachmentsType</a>
@@ -114,13 +114,13 @@ title: EmailMessageObjectType
       </td>
       <td>
         
-          <p>The Attachments field specifies any files that were attached to the email message. It imports and uses the CybOX FileObjectType from the File_Object to do so.</p>
+          <p>The Attachments field specifies any files that were attached to the email message. It imports and uses the CybOX <a href='/documentation/FileObj/FileObjectType'>FileObjectType</a> from the File_Object to do so.</p>
         
       </td>
     </tr>
   
     <tr>
-      <td>Links</td>
+      <td>Links<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/EmailMessageObj/LinksType">LinksType</a>
@@ -128,7 +128,7 @@ title: EmailMessageObjectType
       </td>
       <td>
         
-          <p>The Links field specifies any URL links contained within the email message. It imports and uses the CybOX LinkObjectType from the Link_Object to do so.</p>
+          <p>The Links field specifies any URL links contained within the email message. It imports and uses the CybOX <a href='/documentation/LinkObj/LinkObjectType'>LinkObjectType</a> from the Link_Object to do so.</p>
         
       </td>
     </tr>

@@ -5,7 +5,7 @@ title: ARPCacheObjectType
 
 <h1>ARPCacheObjectType<span class="subdued">ARP Cache Object Schema</span></h1>
 
-<p>The ARPCacheObjectType type is intended to characterize entries in a system's address resolution protocol (ARP) cache.</p>
+<p>The <a href='/documentation/ARPCacheObj/ARPCacheObjectType'>ARPCacheObjectType</a> type is intended to characterize entries in a system's address resolution protocol (ARP) cache.</p>
 
 <hr />
 
@@ -22,7 +22,7 @@ title: ARPCacheObjectType
   <tbody>
   
     <tr>
-      <td>@object_reference</td>
+      <td>@object_reference<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -36,7 +36,7 @@ title: ARPCacheObjectType
     </tr>
   
     <tr>
-      <td>Custom_Properties</td>
+      <td>Custom_Properties<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/CustomPropertiesType">CustomPropertiesType</a>
@@ -50,7 +50,7 @@ title: ARPCacheObjectType
     </tr>
   
     <tr>
-      <td>ARP_Cache_Entry</td>
+      <td>ARP_Cache_Entry<span class="occurrence">1..n</span></td>
       <td>
         
           <a href="/documentation/ARPCacheObj/ARPCacheEntryType">ARPCacheEntryType</a>

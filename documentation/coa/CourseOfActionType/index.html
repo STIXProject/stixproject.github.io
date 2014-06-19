@@ -5,7 +5,7 @@ title: CourseOfActionType
 
 <h1>CourseOfActionType<span class="subdued">Course of Action Schema</span></h1>
 
-<p>The CourseOfActionType characterizes a Course of Action to be taken in regards to one of more cyber threats. NOTE: This construct is still in its early stages of maturity and will require a good deal of review and refinement.</p>
+<p>The <a href='/documentation/coa/CourseOfActionType'>CourseOfActionType</a> characterizes a Course of Action to be taken in regards to one of more cyber threats. NOTE: This construct is still in its early stages of maturity and will require a good deal of review and refinement.</p>
 
 <hr />
 
@@ -22,7 +22,7 @@ title: CourseOfActionType
   <tbody>
   
     <tr>
-      <td>@id</td>
+      <td>@id<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -36,7 +36,7 @@ title: CourseOfActionType
     </tr>
   
     <tr>
-      <td>@idref</td>
+      <td>@idref<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -52,7 +52,7 @@ title: CourseOfActionType
     </tr>
   
     <tr>
-      <td>@timestamp</td>
+      <td>@timestamp<span class="occurrence">optional</span></td>
       <td>
         
           dateTime
@@ -66,7 +66,7 @@ title: CourseOfActionType
     </tr>
   
     <tr>
-      <td>@version</td>
+      <td>@version<span class="occurrence">optional</span></td>
       <td>
         
           CourseOfActionVersionType
@@ -80,7 +80,7 @@ title: CourseOfActionType
     </tr>
   
     <tr>
-      <td>Title</td>
+      <td>Title<span class="occurrence">0..1</span></td>
       <td>
         
           string
@@ -94,7 +94,7 @@ title: CourseOfActionType
     </tr>
   
     <tr>
-      <td>Stage</td>
+      <td>Stage<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
@@ -104,7 +104,7 @@ title: CourseOfActionType
         
           <p>The Stage field specifies what stage in the cyber threat management lifecycle this CourseOfAction is relevant to (e.g. Remedy or Response).</p>
         
-          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is COAStageVocab-1.0 in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
+          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is <a href='/documentation/stixVocabs/COAStageVocab-1.0'>COAStageVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
         
           <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
         
@@ -112,7 +112,7 @@ title: CourseOfActionType
     </tr>
   
     <tr>
-      <td>Type</td>
+      <td>Type<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
@@ -122,13 +122,13 @@ title: CourseOfActionType
         
           <p>The Type field specifies the type of this CourseOfAction.</p>
         
-          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is CourseOfActionTypeVocab-1.0 in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
+          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is <a href='/documentation/stixVocabs/CourseOfActionTypeVocab-1.0'>CourseOfActionTypeVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
         
       </td>
     </tr>
   
     <tr>
-      <td>Description</td>
+      <td>Description<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/StructuredTextType">StructuredTextType</a>
@@ -142,7 +142,7 @@ title: CourseOfActionType
     </tr>
   
     <tr>
-      <td>Short_Description</td>
+      <td>Short_Description<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/StructuredTextType">StructuredTextType</a>
@@ -156,7 +156,7 @@ title: CourseOfActionType
     </tr>
   
     <tr>
-      <td>Objective</td>
+      <td>Objective<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/coa/ObjectiveType">ObjectiveType</a>
@@ -170,7 +170,7 @@ title: CourseOfActionType
     </tr>
   
     <tr>
-      <td>Parameter_Observables</td>
+      <td>Parameter_Observables<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cybox/ObservablesType">ObservablesType</a>
@@ -184,7 +184,7 @@ title: CourseOfActionType
     </tr>
   
     <tr>
-      <td>Structured_COA</td>
+      <td>Structured_COA<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/coa/StructuredCOAType">StructuredCOAType</a>
@@ -194,13 +194,13 @@ title: CourseOfActionType
         
           <p>The Structured_COA field enables the specification of an actionable structured representation for the CourseOfAction potentially for automated consumption and implementation.</p>
         
-          <p>	This field is implemented through the xsi:type extension mechanism. While STIX has not defined a default type, it has provided support for passing proprietary or externally defined structured courses of action using the Generic Structured COA extension. The Generic Structured COA extension is captured in the GenericStructuredCOAType in the http://stix.mitre.org/extensions/StructuredCOA#Generic-1 namespace. This type is defined in the extensions/structured_coa/generic_structured_coa.xsd file or at the URL http://stix.mitre.org/XMLSchema/extensions/structured_coa/generic/1.1/generic_structured_coa.xsd.</p>
+          <p>	This field is implemented through the xsi:type extension mechanism. While STIX has not defined a default type, it has provided support for passing proprietary or externally defined structured courses of action using the Generic Structured COA extension. The Generic Structured COA extension is captured in the <a href='/documentation/genericStructuredCOA/GenericStructuredCOAType'>GenericStructuredCOAType</a> in the http://stix.mitre.org/extensions/StructuredCOA#Generic-1 namespace. This type is defined in the extensions/structured_coa/generic_structured_coa.xsd file or at the URL http://stix.mitre.org/XMLSchema/extensions/structured_coa/generic/1.1/generic_structured_coa.xsd.</p>
         
       </td>
     </tr>
   
     <tr>
-      <td>Impact</td>
+      <td>Impact<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/StatementType">StatementType</a>
@@ -210,7 +210,7 @@ title: CourseOfActionType
         
           <p>The Impact field characterizes the estimated impact of applying this CourseOfAction.</p>
         
-          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is HighMediumLowVocab-1.0 in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
+          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is <a href='/documentation/stixVocabs/HighMediumLowVocab-1.0'>HighMediumLowVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
         
           <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
         
@@ -218,7 +218,7 @@ title: CourseOfActionType
     </tr>
   
     <tr>
-      <td>Cost</td>
+      <td>Cost<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/StatementType">StatementType</a>
@@ -228,7 +228,7 @@ title: CourseOfActionType
         
           <p>The Cost field characterizes the estimated cost for applying this CourseOfAction.</p>
         
-          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is HighMediumLowVocab-1.0 in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
+          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is <a href='/documentation/stixVocabs/HighMediumLowVocab-1.0'>HighMediumLowVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
         
           <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
         
@@ -236,7 +236,7 @@ title: CourseOfActionType
     </tr>
   
     <tr>
-      <td>Efficacy</td>
+      <td>Efficacy<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/StatementType">StatementType</a>
@@ -246,7 +246,7 @@ title: CourseOfActionType
         
           <p>The Efficacy field characterizes the effectiveness of this CourseOfAction in achieving its targeted Objective.</p>
         
-          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is HighMediumLowVocab-1.0 in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
+          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is <a href='/documentation/stixVocabs/HighMediumLowVocab-1.0'>HighMediumLowVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
         
           <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
         
@@ -254,7 +254,7 @@ title: CourseOfActionType
     </tr>
   
     <tr>
-      <td>Information_Source</td>
+      <td>Information_Source<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/InformationSourceType">InformationSourceType</a>
@@ -268,7 +268,7 @@ title: CourseOfActionType
     </tr>
   
     <tr>
-      <td>Handling</td>
+      <td>Handling<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/marking/MarkingType">MarkingType</a>
@@ -276,13 +276,13 @@ title: CourseOfActionType
       </td>
       <td>
         
-          <p>The Handling field specifies the appropriate data handling markings for the elements of this COA. The valid marking scope is the nearest CourseOfActionBaseType ancestor of this Handling element and all its descendants.</p>
+          <p>The Handling field specifies the appropriate data handling markings for the elements of this COA. The valid marking scope is the nearest <a href='/documentation/stixCommon/CourseOfActionBaseType'>CourseOfActionBaseType</a> ancestor of this Handling element and all its descendants.</p>
         
       </td>
     </tr>
   
     <tr>
-      <td>Related_COAs</td>
+      <td>Related_COAs<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/coa/RelatedCOAsType">RelatedCOAsType</a>
@@ -296,7 +296,7 @@ title: CourseOfActionType
     </tr>
   
     <tr>
-      <td>Related_Packages</td>
+      <td>Related_Packages<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/RelatedPackageRefsType">RelatedPackageRefsType</a>

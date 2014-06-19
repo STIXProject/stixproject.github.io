@@ -5,7 +5,7 @@ title: NetworkFlowLabelType
 
 <h1>NetworkFlowLabelType<span class="subdued">Network Flow Object Schema</span></h1>
 
-<p>The NetworkFlowLabelType contains elements that are common to all flow record formats. It builds off of network layer information (a 5-tuple that commonly defines a flow) and includes ingress and egress interface indexes and IP protocol information (not present if all flow record formats). Egress information is usually not thought of as part of the extended 7-tuple, but we include it for organizational purposes. Because these fields are defined here, they are excluded from the fields associated directly with each different flow record format type.</p>
+<p>The <a href='/documentation/NetFlowObj/NetworkFlowLabelType'>NetworkFlowLabelType</a> contains elements that are common to all flow record formats. It builds off of network layer information (a 5-tuple that commonly defines a flow) and includes ingress and egress interface indexes and IP protocol information (not present if all flow record formats). Egress information is usually not thought of as part of the extended 7-tuple, but we include it for organizational purposes. Because these fields are defined here, they are excluded from the fields associated directly with each different flow record format type.</p>
 
 <hr />
 
@@ -22,7 +22,7 @@ title: NetworkFlowLabelType
   <tbody>
   
     <tr>
-      <td>Src_Socket_Address</td>
+      <td>Src_Socket_Address<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/SocketAddressObj/SocketAddressObjectType">SocketAddressObjectType</a>
@@ -36,7 +36,7 @@ title: NetworkFlowLabelType
     </tr>
   
     <tr>
-      <td>Dest_Socket_Address</td>
+      <td>Dest_Socket_Address<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/SocketAddressObj/SocketAddressObjectType">SocketAddressObjectType</a>
@@ -50,7 +50,7 @@ title: NetworkFlowLabelType
     </tr>
   
     <tr>
-      <td>IP_Protocol</td>
+      <td>IP_Protocol<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/PacketObj/IANAAssignedIPNumbersType">IANAAssignedIPNumbersType</a>
@@ -64,7 +64,7 @@ title: NetworkFlowLabelType
     </tr>
   
     <tr>
-      <td>Ingress_Interface_Index</td>
+      <td>Ingress_Interface_Index<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
@@ -78,7 +78,7 @@ title: NetworkFlowLabelType
     </tr>
   
     <tr>
-      <td>Egress_Interface_Index</td>
+      <td>Egress_Interface_Index<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
@@ -92,7 +92,7 @@ title: NetworkFlowLabelType
     </tr>
   
     <tr>
-      <td>IP_Type_Of_Service</td>
+      <td>IP_Type_Of_Service<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>

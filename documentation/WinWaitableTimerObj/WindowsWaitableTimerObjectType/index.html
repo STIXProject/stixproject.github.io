@@ -5,7 +5,7 @@ title: WindowsWaitableTimerObjectType
 
 <h1>WindowsWaitableTimerObjectType<span class="subdued">Win Waitable Timer Object Schema</span></h1>
 
-<p>The WindowsWaitableTimerObjectType is intended to characterize Windows waitable timer (synchronization) objects.</p>
+<p>The <a href='/documentation/WinWaitableTimerObj/WindowsWaitableTimerObjectType'>WindowsWaitableTimerObjectType</a> is intended to characterize Windows waitable timer (synchronization) objects.</p>
 
 <hr />
 
@@ -22,7 +22,7 @@ title: WindowsWaitableTimerObjectType
   <tbody>
   
     <tr>
-      <td>@object_reference</td>
+      <td>@object_reference<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -36,7 +36,7 @@ title: WindowsWaitableTimerObjectType
     </tr>
   
     <tr>
-      <td>Custom_Properties</td>
+      <td>Custom_Properties<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/CustomPropertiesType">CustomPropertiesType</a>
@@ -50,7 +50,7 @@ title: WindowsWaitableTimerObjectType
     </tr>
   
     <tr>
-      <td>Handle</td>
+      <td>Handle<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/WinHandleObj/WindowsHandleObjectType">WindowsHandleObjectType</a>
@@ -58,13 +58,13 @@ title: WindowsWaitableTimerObjectType
       </td>
       <td>
         
-          <p>The Handle field specifies the handle to the Windows waitable timer object. It imports and uses the WindowsHandleObjectType type from the CybOX Windows Handle object.</p>
+          <p>The Handle field specifies the handle to the Windows waitable timer object. It imports and uses the <a href='/documentation/WinHandleObj/WindowsHandleObjectType'>WindowsHandleObjectType</a> type from the CybOX Windows Handle object.</p>
         
       </td>
     </tr>
   
     <tr>
-      <td>Name</td>
+      <td>Name<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
@@ -78,7 +78,7 @@ title: WindowsWaitableTimerObjectType
     </tr>
   
     <tr>
-      <td>Security_Attributes</td>
+      <td>Security_Attributes<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
@@ -92,7 +92,7 @@ title: WindowsWaitableTimerObjectType
     </tr>
   
     <tr>
-      <td>Type</td>
+      <td>Type<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/WinWaitableTimerObj/WaitableTimerType">WaitableTimerType</a>

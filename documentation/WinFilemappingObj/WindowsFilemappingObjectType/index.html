@@ -5,7 +5,7 @@ title: WindowsFilemappingObjectType
 
 <h1>WindowsFilemappingObjectType<span class="subdued">Win Filemapping Object Schema</span></h1>
 
-<p>The WindowsFilemappingObjectType type is intended to characterize Windows file mapping objects.</p>
+<p>The <a href='/documentation/WinFilemappingObj/WindowsFilemappingObjectType'>WindowsFilemappingObjectType</a> type is intended to characterize Windows file mapping objects.</p>
 
 <hr />
 
@@ -22,7 +22,7 @@ title: WindowsFilemappingObjectType
   <tbody>
   
     <tr>
-      <td>@object_reference</td>
+      <td>@object_reference<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -36,7 +36,7 @@ title: WindowsFilemappingObjectType
     </tr>
   
     <tr>
-      <td>Custom_Properties</td>
+      <td>Custom_Properties<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/CustomPropertiesType">CustomPropertiesType</a>
@@ -50,7 +50,7 @@ title: WindowsFilemappingObjectType
     </tr>
   
     <tr>
-      <td>Name</td>
+      <td>Name<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
@@ -64,7 +64,7 @@ title: WindowsFilemappingObjectType
     </tr>
   
     <tr>
-      <td>File_Handle</td>
+      <td>File_Handle<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/WinHandleObj/WindowsHandleObjectType">WindowsHandleObjectType</a>
@@ -72,13 +72,13 @@ title: WindowsFilemappingObjectType
       </td>
       <td>
         
-          <p>The File_Handle field specifies the Windows handle to the file from which the file mapping was created. It uses the WindowsHandleObjectType from the imported CybOX Windows Handle Object.</p>
+          <p>The File_Handle field specifies the Windows handle to the file from which the file mapping was created. It uses the <a href='/documentation/WinHandleObj/WindowsHandleObjectType'>WindowsHandleObjectType</a> from the imported CybOX Windows Handle Object.</p>
         
       </td>
     </tr>
   
     <tr>
-      <td>Handle</td>
+      <td>Handle<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/WinHandleObj/WindowsHandleObjectType">WindowsHandleObjectType</a>
@@ -86,13 +86,13 @@ title: WindowsFilemappingObjectType
       </td>
       <td>
         
-          <p>The Handle field specifies the Windows handle to the file mapping. It uses the WindowsHandleObjectType from the imported CybOX Windows Handle Object.</p>
+          <p>The Handle field specifies the Windows handle to the file mapping. It uses the <a href='/documentation/WinHandleObj/WindowsHandleObjectType'>WindowsHandleObjectType</a> from the imported CybOX Windows Handle Object.</p>
         
       </td>
     </tr>
   
     <tr>
-      <td>Page_Protection_Value</td>
+      <td>Page_Protection_Value<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/WinFilemappingObj/PageProtectionValueType">PageProtectionValueType</a>
@@ -106,7 +106,7 @@ title: WindowsFilemappingObjectType
     </tr>
   
     <tr>
-      <td>Page_Protection_Attribute</td>
+      <td>Page_Protection_Attribute<span class="occurrence">0..n</span></td>
       <td>
         
           <a href="/documentation/WinFilemappingObj/PageProtectionAttributeType">PageProtectionAttributeType</a>
@@ -120,7 +120,7 @@ title: WindowsFilemappingObjectType
     </tr>
   
     <tr>
-      <td>Maximum_Size</td>
+      <td>Maximum_Size<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/UnsignedLongObjectPropertyType">UnsignedLongObjectPropertyType</a>
@@ -134,7 +134,7 @@ title: WindowsFilemappingObjectType
     </tr>
   
     <tr>
-      <td>Actual_Size</td>
+      <td>Actual_Size<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/UnsignedLongObjectPropertyType">UnsignedLongObjectPropertyType</a>
@@ -148,7 +148,7 @@ title: WindowsFilemappingObjectType
     </tr>
   
     <tr>
-      <td>Security_Attributes</td>
+      <td>Security_Attributes<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>

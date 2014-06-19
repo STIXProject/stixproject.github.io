@@ -5,7 +5,7 @@ title: IncidentType
 
 <h1>IncidentType<span class="subdued">Incident Schema</span></h1>
 
-<p>The IncidentType characterizes a single cyber threat Incident.</p>
+<p>The <a href='/documentation/incident/IncidentType'>IncidentType</a> characterizes a single cyber threat Incident.</p>
 
 <hr />
 
@@ -22,7 +22,7 @@ title: IncidentType
   <tbody>
   
     <tr>
-      <td>@id</td>
+      <td>@id<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -36,7 +36,7 @@ title: IncidentType
     </tr>
   
     <tr>
-      <td>@idref</td>
+      <td>@idref<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -52,7 +52,7 @@ title: IncidentType
     </tr>
   
     <tr>
-      <td>@timestamp</td>
+      <td>@timestamp<span class="occurrence">optional</span></td>
       <td>
         
           dateTime
@@ -66,7 +66,7 @@ title: IncidentType
     </tr>
   
     <tr>
-      <td>@version</td>
+      <td>@version<span class="occurrence">optional</span></td>
       <td>
         
           IncidentVersionType
@@ -80,7 +80,7 @@ title: IncidentType
     </tr>
   
     <tr>
-      <td>@URL</td>
+      <td>@URL<span class="occurrence">optional</span></td>
       <td>
         
           
@@ -94,7 +94,7 @@ title: IncidentType
     </tr>
   
     <tr>
-      <td>Title</td>
+      <td>Title<span class="occurrence">0..1</span></td>
       <td>
         
           string
@@ -108,7 +108,7 @@ title: IncidentType
     </tr>
   
     <tr>
-      <td>External_ID</td>
+      <td>External_ID<span class="occurrence">0..n</span></td>
       <td>
         
           <a href="/documentation/incident/ExternalIDType">ExternalIDType</a>
@@ -122,7 +122,7 @@ title: IncidentType
     </tr>
   
     <tr>
-      <td>Time</td>
+      <td>Time<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/incident/TimeType">TimeType</a>
@@ -136,7 +136,7 @@ title: IncidentType
     </tr>
   
     <tr>
-      <td>Description</td>
+      <td>Description<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/StructuredTextType">StructuredTextType</a>
@@ -150,7 +150,7 @@ title: IncidentType
     </tr>
   
     <tr>
-      <td>Short_Description</td>
+      <td>Short_Description<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/StructuredTextType">StructuredTextType</a>
@@ -164,7 +164,7 @@ title: IncidentType
     </tr>
   
     <tr>
-      <td>Categories</td>
+      <td>Categories<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/incident/CategoriesType">CategoriesType</a>
@@ -178,7 +178,7 @@ title: IncidentType
     </tr>
   
     <tr>
-      <td>Reporter</td>
+      <td>Reporter<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/InformationSourceType">InformationSourceType</a>
@@ -192,7 +192,7 @@ title: IncidentType
     </tr>
   
     <tr>
-      <td>Responder</td>
+      <td>Responder<span class="occurrence">0..n</span></td>
       <td>
         
           <a href="/documentation/stixCommon/InformationSourceType">InformationSourceType</a>
@@ -206,7 +206,7 @@ title: IncidentType
     </tr>
   
     <tr>
-      <td>Coordinator</td>
+      <td>Coordinator<span class="occurrence">0..n</span></td>
       <td>
         
           <a href="/documentation/stixCommon/InformationSourceType">InformationSourceType</a>
@@ -220,7 +220,7 @@ title: IncidentType
     </tr>
   
     <tr>
-      <td>Victim</td>
+      <td>Victim<span class="occurrence">0..n</span></td>
       <td>
         
           <a href="/documentation/stixCommon/IdentityType">IdentityType</a>
@@ -230,7 +230,7 @@ title: IncidentType
         
           <p>The Victim field is optional and details information about a victim of this Incident.</p>
         
-          <p>This field is implemented through the xsi:type extension mechanism. The default type is CIQIdentity3.0InstanceType in the http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1 namespace. This type is defined in the extensions/identity/ciq_identity.xsd file or at the URL http://stix.mitre.org/XMLSchema/extensions/identity/ciq_identity/1.1/ciq_identity.xsd.</p>
+          <p>This field is implemented through the xsi:type extension mechanism. The default type is <a href='/documentation/stix-ciqidentity/CIQIdentity3.0InstanceType'>CIQIdentity3.0InstanceType</a> in the http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1 namespace. This type is defined in the extensions/identity/ciq_identity.xsd file or at the URL http://stix.mitre.org/XMLSchema/extensions/identity/ciq_identity/1.1/ciq_identity.xsd.</p>
         
           <p>Those who wish to express a simple name may also do so by not specifying an xsi:type and using the Name field.</p>
         
@@ -238,7 +238,7 @@ title: IncidentType
     </tr>
   
     <tr>
-      <td>Affected_Assets</td>
+      <td>Affected_Assets<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/incident/AffectedAssetsType">AffectedAssetsType</a>
@@ -252,7 +252,7 @@ title: IncidentType
     </tr>
   
     <tr>
-      <td>Impact_Assessment</td>
+      <td>Impact_Assessment<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/incident/ImpactAssessmentType">ImpactAssessmentType</a>
@@ -266,7 +266,7 @@ title: IncidentType
     </tr>
   
     <tr>
-      <td>Status</td>
+      <td>Status<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
@@ -276,7 +276,7 @@ title: IncidentType
         
           <p>Status describes the current status (sometimes called "state" or "disposition") of the incident.</p>
         
-          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is IncidentStatusVocab-1.0 in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
+          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is <a href='/documentation/stixVocabs/IncidentStatusVocab-1.0'>IncidentStatusVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
         
           <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
         
@@ -284,7 +284,7 @@ title: IncidentType
     </tr>
   
     <tr>
-      <td>Related_Indicators</td>
+      <td>Related_Indicators<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/incident/RelatedIndicatorsType">RelatedIndicatorsType</a>
@@ -298,7 +298,7 @@ title: IncidentType
     </tr>
   
     <tr>
-      <td>Related_Observables</td>
+      <td>Related_Observables<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/incident/RelatedObservablesType">RelatedObservablesType</a>
@@ -312,7 +312,7 @@ title: IncidentType
     </tr>
   
     <tr>
-      <td>Leveraged_TTPs</td>
+      <td>Leveraged_TTPs<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/incident/LeveragedTTPsType">LeveragedTTPsType</a>
@@ -326,7 +326,7 @@ title: IncidentType
     </tr>
   
     <tr>
-      <td>Attributed_Threat_Actors</td>
+      <td>Attributed_Threat_Actors<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/incident/AttributedThreatActorsType">AttributedThreatActorsType</a>
@@ -340,7 +340,7 @@ title: IncidentType
     </tr>
   
     <tr>
-      <td>Intended_Effect</td>
+      <td>Intended_Effect<span class="occurrence">0..n</span></td>
       <td>
         
           <a href="/documentation/stixCommon/StatementType">StatementType</a>
@@ -350,7 +350,7 @@ title: IncidentType
         
           <p>The Intended_Effect field specifies the suspected intended effect of this incident.</p>
         
-          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is IntendedEffectVocab-1.0 in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
+          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is <a href='/documentation/stixVocabs/IntendedEffectVocab-1.0'>IntendedEffectVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
         
           <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
         
@@ -358,7 +358,7 @@ title: IncidentType
     </tr>
   
     <tr>
-      <td>Security_Compromise</td>
+      <td>Security_Compromise<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
@@ -368,7 +368,7 @@ title: IncidentType
         
           <p>Specifies knowledge of whether the Incident involved a compromise of security properties.</p>
         
-          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is SecurityCompromiseVocab-1.0 in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
+          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is <a href='/documentation/stixVocabs/SecurityCompromiseVocab-1.0'>SecurityCompromiseVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
         
           <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
         
@@ -376,7 +376,7 @@ title: IncidentType
     </tr>
   
     <tr>
-      <td>Discovery_Method</td>
+      <td>Discovery_Method<span class="occurrence">0..n</span></td>
       <td>
         
           <a href="/documentation/stixCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
@@ -386,7 +386,7 @@ title: IncidentType
         
           <p>The Discovery_Method field identifies how the incident was discovered.</p>
         
-          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is DiscoveryMethodVocab-1.0 in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
+          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is <a href='/documentation/stixVocabs/DiscoveryMethodVocab-1.0'>DiscoveryMethodVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
         
           <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
         
@@ -394,7 +394,7 @@ title: IncidentType
     </tr>
   
     <tr>
-      <td>Related_Incidents</td>
+      <td>Related_Incidents<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/incident/RelatedIncidentsType">RelatedIncidentsType</a>
@@ -408,7 +408,7 @@ title: IncidentType
     </tr>
   
     <tr>
-      <td>COA_Requested</td>
+      <td>COA_Requested<span class="occurrence">0..n</span></td>
       <td>
         
           <a href="/documentation/incident/COARequestedType">COARequestedType</a>
@@ -422,7 +422,7 @@ title: IncidentType
     </tr>
   
     <tr>
-      <td>COA_Taken</td>
+      <td>COA_Taken<span class="occurrence">0..n</span></td>
       <td>
         
           <a href="/documentation/incident/COATakenType">COATakenType</a>
@@ -436,7 +436,7 @@ title: IncidentType
     </tr>
   
     <tr>
-      <td>Confidence</td>
+      <td>Confidence<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/ConfidenceType">ConfidenceType</a>
@@ -450,7 +450,7 @@ title: IncidentType
     </tr>
   
     <tr>
-      <td>Contact</td>
+      <td>Contact<span class="occurrence">0..n</span></td>
       <td>
         
           <a href="/documentation/stixCommon/InformationSourceType">InformationSourceType</a>
@@ -464,7 +464,7 @@ title: IncidentType
     </tr>
   
     <tr>
-      <td>History</td>
+      <td>History<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/incident/HistoryType">HistoryType</a>
@@ -478,7 +478,7 @@ title: IncidentType
     </tr>
   
     <tr>
-      <td>Information_Source</td>
+      <td>Information_Source<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/InformationSourceType">InformationSourceType</a>
@@ -492,7 +492,7 @@ title: IncidentType
     </tr>
   
     <tr>
-      <td>Handling</td>
+      <td>Handling<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/marking/MarkingType">MarkingType</a>
@@ -500,13 +500,13 @@ title: IncidentType
       </td>
       <td>
         
-          <p>The Handling field specifies the appropriate data handling markings for the elements of this Incident. The valid marking scope is the nearest IncidentBaseType ancestor of this Handling element and all its descendants.</p>
+          <p>The Handling field specifies the appropriate data handling markings for the elements of this Incident. The valid marking scope is the nearest <a href='/documentation/stixCommon/IncidentBaseType'>IncidentBaseType</a> ancestor of this Handling element and all its descendants.</p>
         
       </td>
     </tr>
   
     <tr>
-      <td>Related_Packages</td>
+      <td>Related_Packages<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/RelatedPackageRefsType">RelatedPackageRefsType</a>

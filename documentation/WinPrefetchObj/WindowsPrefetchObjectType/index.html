@@ -5,7 +5,7 @@ title: WindowsPrefetchObjectType
 
 <h1>WindowsPrefetchObjectType<span class="subdued">Win Prefetch Object Schema</span></h1>
 
-<p>The WindowsPrefetchObjectType type is intended to characterize entries in the Windows prefetch files. Starting with Windows XP, prefetching was introduced to speed up application startup. The prefetch object draws upon the descriptions and XML sample at http://www.forensicswiki.org/wiki/Prefetch_XML.</p>
+<p>The <a href='/documentation/WinPrefetchObj/WindowsPrefetchObjectType'>WindowsPrefetchObjectType</a> type is intended to characterize entries in the Windows prefetch files. Starting with Windows XP, prefetching was introduced to speed up application startup. The prefetch object draws upon the descriptions and XML sample at http://www.forensicswiki.org/wiki/Prefetch_XML.</p>
 
 <hr />
 
@@ -22,7 +22,7 @@ title: WindowsPrefetchObjectType
   <tbody>
   
     <tr>
-      <td>@object_reference</td>
+      <td>@object_reference<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -36,7 +36,7 @@ title: WindowsPrefetchObjectType
     </tr>
   
     <tr>
-      <td>Custom_Properties</td>
+      <td>Custom_Properties<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/CustomPropertiesType">CustomPropertiesType</a>
@@ -50,7 +50,7 @@ title: WindowsPrefetchObjectType
     </tr>
   
     <tr>
-      <td>Application_File_Name</td>
+      <td>Application_File_Name<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
@@ -64,7 +64,7 @@ title: WindowsPrefetchObjectType
     </tr>
   
     <tr>
-      <td>Prefetch_Hash</td>
+      <td>Prefetch_Hash<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
@@ -78,7 +78,7 @@ title: WindowsPrefetchObjectType
     </tr>
   
     <tr>
-      <td>Times_Executed</td>
+      <td>Times_Executed<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/LongObjectPropertyType">LongObjectPropertyType</a>
@@ -92,7 +92,7 @@ title: WindowsPrefetchObjectType
     </tr>
   
     <tr>
-      <td>First_Run</td>
+      <td>First_Run<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
@@ -106,7 +106,7 @@ title: WindowsPrefetchObjectType
     </tr>
   
     <tr>
-      <td>Last_Run</td>
+      <td>Last_Run<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
@@ -120,7 +120,7 @@ title: WindowsPrefetchObjectType
     </tr>
   
     <tr>
-      <td>Volume</td>
+      <td>Volume<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/WinPrefetchObj/VolumeType">VolumeType</a>
@@ -134,7 +134,7 @@ title: WindowsPrefetchObjectType
     </tr>
   
     <tr>
-      <td>Accessed_File_List</td>
+      <td>Accessed_File_List<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/WinPrefetchObj/AccessedFileListType">AccessedFileListType</a>
@@ -148,7 +148,7 @@ title: WindowsPrefetchObjectType
     </tr>
   
     <tr>
-      <td>Accessed_Directory_List</td>
+      <td>Accessed_Directory_List<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/WinPrefetchObj/AccessedDirectoryListType">AccessedDirectoryListType</a>

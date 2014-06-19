@@ -5,7 +5,7 @@ title: WindowsSemaphoreObjectType
 
 <h1>WindowsSemaphoreObjectType<span class="subdued">Win Semaphore Object Schema</span></h1>
 
-<p>The WindowsSemaphoreObjectType is intended to characterize Windows semaphore (synchronization) objects.</p>
+<p>The <a href='/documentation/WinSemaphoreObj/WindowsSemaphoreObjectType'>WindowsSemaphoreObjectType</a> is intended to characterize Windows semaphore (synchronization) objects.</p>
 
 <hr />
 
@@ -22,7 +22,7 @@ title: WindowsSemaphoreObjectType
   <tbody>
   
     <tr>
-      <td>@object_reference</td>
+      <td>@object_reference<span class="occurrence">optional</span></td>
       <td>
         
           QName
@@ -36,7 +36,7 @@ title: WindowsSemaphoreObjectType
     </tr>
   
     <tr>
-      <td>Custom_Properties</td>
+      <td>Custom_Properties<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/CustomPropertiesType">CustomPropertiesType</a>
@@ -50,7 +50,7 @@ title: WindowsSemaphoreObjectType
     </tr>
   
     <tr>
-      <td>@named</td>
+      <td>@named<span class="occurrence">optional</span></td>
       <td>
         
           boolean
@@ -64,7 +64,7 @@ title: WindowsSemaphoreObjectType
     </tr>
   
     <tr>
-      <td>Current_Count</td>
+      <td>Current_Count<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/UnsignedIntegerObjectPropertyType">UnsignedIntegerObjectPropertyType</a>
@@ -78,7 +78,7 @@ title: WindowsSemaphoreObjectType
     </tr>
   
     <tr>
-      <td>Maximum_Count</td>
+      <td>Maximum_Count<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/PositiveIntegerObjectPropertyType">PositiveIntegerObjectPropertyType</a>
@@ -92,7 +92,7 @@ title: WindowsSemaphoreObjectType
     </tr>
   
     <tr>
-      <td>Name</td>
+      <td>Name<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
@@ -106,7 +106,7 @@ title: WindowsSemaphoreObjectType
     </tr>
   
     <tr>
-      <td>Handle</td>
+      <td>Handle<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/WinHandleObj/WindowsHandleObjectType">WindowsHandleObjectType</a>
@@ -114,13 +114,13 @@ title: WindowsSemaphoreObjectType
       </td>
       <td>
         
-          <p>The Handle field specifies the open Windows handle to the semaphore. It imports and uses the WindowsHandleObjectType from the CybOX Windows Handle Object.</p>
+          <p>The Handle field specifies the open Windows handle to the semaphore. It imports and uses the <a href='/documentation/WinHandleObj/WindowsHandleObjectType'>WindowsHandleObjectType</a> from the CybOX Windows Handle Object.</p>
         
       </td>
     </tr>
   
     <tr>
-      <td>Security_Attributes</td>
+      <td>Security_Attributes<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>

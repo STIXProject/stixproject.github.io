@@ -21,10 +21,10 @@ title: {{ type.name }}
   </thead>
 
   <tbody>
-  {% for item in vocab_items %}
+  {% for item in type.vocab_items %}
     <tr>
-      <td>{{ item[0] }}</td>
-      <td>{{ item[1] }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.description }}</td>
     </tr>
   {% endfor %}
   </tbody>
@@ -45,7 +45,7 @@ title: {{ type.name }}
   <tbody>
   {% for field in type.fields %}
     <tr>
-      <td>{{field.name}}</td>
+      <td>{{field.name}}<span class="occurrence">{{field.occurrence}}</span></td>
       <td>
         {% if field.link %}
           <a href="{{field.link}}">{{field.type}}</a>

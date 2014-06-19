@@ -5,7 +5,7 @@ title: AssetTypeType
 
 <h1>AssetTypeType<span class="subdued">Incident Schema</span></h1>
 
-<p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is AssetTypeVocab-1.0 in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.
+<p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is <a href='/documentation/stixVocabs/AssetTypeVocab-1.0'>AssetTypeVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.
 Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
 
 <hr />
@@ -23,7 +23,7 @@ Users may also define their own vocabulary using the type extension mechanism, s
   <tbody>
   
     <tr>
-      <td>@vocab_name</td>
+      <td>@vocab_name<span class="occurrence">optional</span></td>
       <td>
         
           string
@@ -37,7 +37,7 @@ Users may also define their own vocabulary using the type extension mechanism, s
     </tr>
   
     <tr>
-      <td>@vocab_reference</td>
+      <td>@vocab_reference<span class="occurrence">optional</span></td>
       <td>
         
           anyURI
@@ -51,7 +51,7 @@ Users may also define their own vocabulary using the type extension mechanism, s
     </tr>
   
     <tr>
-      <td>@count_affected</td>
+      <td>@count_affected<span class="occurrence">optional</span></td>
       <td>
         
           

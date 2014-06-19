@@ -6,7 +6,7 @@ title: AvailabilityLossTypeVocab-1.0
 <h1>AvailabilityLossTypeVocab-1.0<span class="subdued">STIX Vocabularies Schema</span></h1>
 
 <p>The AvailabilityLossTypeVocab is the default STIX vocabulary for expressing the type of availability that was lost due to an incident.
-NOTE: As of STIX Version 1.1.1, this version of the AvailabilityLossTypeVocab is deprecated. Please use AvailabilityLossTypeVocab-1.1.1 instead.</p>
+NOTE: As of STIX Version 1.1.1, this version of the AvailabilityLossTypeVocab is deprecated. Please use <a href='/documentation/stixVocabs/AvailabilityLossTypeVocab-1.1'>AvailabilityLossTypeVocab-1.1</a>.1 instead.</p>
 
 <hr />
 
@@ -22,6 +22,41 @@ NOTE: As of STIX Version 1.1.1, this version of the AvailabilityLossTypeVocab is
   </thead>
 
   <tbody>
+  
+    <tr>
+      <td>Destruction</td>
+      <td>The information was destroyed or wiped.</td>
+    </tr>
+  
+    <tr>
+      <td>Loss</td>
+      <td>Availability to the information was lost.</td>
+    </tr>
+  
+    <tr>
+      <td>Interruption</td>
+      <td>Availability to the information was interrupted.</td>
+    </tr>
+  
+    <tr>
+      <td>Degredation</td>
+      <td>Availability to the information was degraded.</td>
+    </tr>
+  
+    <tr>
+      <td>Acceleration</td>
+      <td>Availability loss type is acceleration.</td>
+    </tr>
+  
+    <tr>
+      <td>Obscuration</td>
+      <td>Availability to the information is obscured.</td>
+    </tr>
+  
+    <tr>
+      <td>Unknown</td>
+      <td>The availability loss type is not known.</td>
+    </tr>
   
   </tbody>
 </table>
@@ -41,7 +76,7 @@ NOTE: As of STIX Version 1.1.1, this version of the AvailabilityLossTypeVocab is
   <tbody>
   
     <tr>
-      <td>@vocab_name</td>
+      <td>@vocab_name<span class="occurrence">optional</span></td>
       <td>
         
           string
@@ -55,7 +90,7 @@ NOTE: As of STIX Version 1.1.1, this version of the AvailabilityLossTypeVocab is
     </tr>
   
     <tr>
-      <td>@vocab_reference</td>
+      <td>@vocab_reference<span class="occurrence">optional</span></td>
       <td>
         
           anyURI

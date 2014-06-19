@@ -5,7 +5,7 @@ title: SiLKRecordType
 
 <h1>SiLKRecordType<span class="subdued">Network Flow Object Schema</span></h1>
 
-<p>System for Internet-Level Knowledge (CMU/SEI). The fields are taken from a list shown in http://tools.netsa.cert.org/silk/rwcut.html. Fields common to all network flows are defined in NetworkFlowLabelType (e.g., source IP, SNMP ingress, etc.). For additional references, see http://tools.netsa.cert.org/silk/analysis-handbook.pdf, http://tools.netsa.cert.org/silk/faq.html#ipfix-fields.</p>
+<p>System for Internet-Level Knowledge (CMU/SEI). The fields are taken from a list shown in http://tools.netsa.cert.org/silk/rwcut.html. Fields common to all network flows are defined in <a href='/documentation/NetFlowObj/NetworkFlowLabelType'>NetworkFlowLabelType</a> (e.g., source IP, SNMP ingress, etc.). For additional references, see http://tools.netsa.cert.org/silk/analysis-handbook.pdf, http://tools.netsa.cert.org/silk/faq.html#ipfix-fields.</p>
 
 <hr />
 
@@ -22,7 +22,7 @@ title: SiLKRecordType
   <tbody>
   
     <tr>
-      <td>Packet_Count</td>
+      <td>Packet_Count<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
@@ -36,7 +36,7 @@ title: SiLKRecordType
     </tr>
   
     <tr>
-      <td>Byte_Count</td>
+      <td>Byte_Count<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
@@ -50,7 +50,7 @@ title: SiLKRecordType
     </tr>
   
     <tr>
-      <td>TCP_Flags</td>
+      <td>TCP_Flags<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
@@ -64,7 +64,7 @@ title: SiLKRecordType
     </tr>
   
     <tr>
-      <td>Start_Time</td>
+      <td>Start_Time<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
@@ -78,7 +78,7 @@ title: SiLKRecordType
     </tr>
   
     <tr>
-      <td>Duration</td>
+      <td>Duration<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
@@ -92,7 +92,7 @@ title: SiLKRecordType
     </tr>
   
     <tr>
-      <td>End_Time</td>
+      <td>End_Time<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
@@ -106,7 +106,7 @@ title: SiLKRecordType
     </tr>
   
     <tr>
-      <td>Sensor_Info</td>
+      <td>Sensor_Info<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/NetFlowObj/SiLKSensorInfoType">SiLKSensorInfoType</a>
@@ -120,7 +120,7 @@ title: SiLKRecordType
     </tr>
   
     <tr>
-      <td>ICMP_Type</td>
+      <td>ICMP_Type<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
@@ -134,7 +134,7 @@ title: SiLKRecordType
     </tr>
   
     <tr>
-      <td>ICMP_Code</td>
+      <td>ICMP_Code<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
@@ -148,7 +148,7 @@ title: SiLKRecordType
     </tr>
   
     <tr>
-      <td>Router_Next_Hop_IP</td>
+      <td>Router_Next_Hop_IP<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/AddressObj/AddressObjectType">AddressObjectType</a>
@@ -162,7 +162,7 @@ title: SiLKRecordType
     </tr>
   
     <tr>
-      <td>Initial_TCP_Flags</td>
+      <td>Initial_TCP_Flags<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/PacketObj/TCPFlagsType">TCPFlagsType</a>
@@ -176,7 +176,7 @@ title: SiLKRecordType
     </tr>
   
     <tr>
-      <td>Session_TCP_Flags</td>
+      <td>Session_TCP_Flags<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
@@ -190,7 +190,7 @@ title: SiLKRecordType
     </tr>
   
     <tr>
-      <td>Flow_Attributes</td>
+      <td>Flow_Attributes<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/NetFlowObj/SiLKFlowAttributesType">SiLKFlowAttributesType</a>
@@ -204,7 +204,7 @@ title: SiLKRecordType
     </tr>
   
     <tr>
-      <td>Flow_Application</td>
+      <td>Flow_Application<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/PacketObj/IANAPortNumberRegistryType">IANAPortNumberRegistryType</a>
@@ -218,7 +218,7 @@ title: SiLKRecordType
     </tr>
   
     <tr>
-      <td>Src_IP_Type</td>
+      <td>Src_IP_Type<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/NetFlowObj/SiLKAddressType">SiLKAddressType</a>
@@ -232,7 +232,7 @@ title: SiLKRecordType
     </tr>
   
     <tr>
-      <td>Dest_IP_Type</td>
+      <td>Dest_IP_Type<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/NetFlowObj/SiLKAddressType">SiLKAddressType</a>
@@ -246,7 +246,7 @@ title: SiLKRecordType
     </tr>
   
     <tr>
-      <td>Src_Country_Code</td>
+      <td>Src_Country_Code<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/NetFlowObj/SiLKCountryCodeType">SiLKCountryCodeType</a>
@@ -260,7 +260,7 @@ title: SiLKRecordType
     </tr>
   
     <tr>
-      <td>Dest_Country_Code</td>
+      <td>Dest_Country_Code<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/NetFlowObj/SiLKCountryCodeType">SiLKCountryCodeType</a>
@@ -274,7 +274,7 @@ title: SiLKRecordType
     </tr>
   
     <tr>
-      <td>Src_MAPNAME</td>
+      <td>Src_MAPNAME<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
@@ -288,7 +288,7 @@ title: SiLKRecordType
     </tr>
   
     <tr>
-      <td>Dest_MAPNAME</td>
+      <td>Dest_MAPNAME<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>

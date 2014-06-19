@@ -5,7 +5,7 @@ title: StateChangeEffectType
 
 <h1>StateChangeEffectType<span class="subdued">CybOX Core Schema</span></h1>
 
-<p>The StateChangeEffectType is intended as a generic way of characterizing the effects of actions upon objects where the some state of the object is changed.</p>
+<p>The <a href='/documentation/cybox/StateChangeEffectType'>StateChangeEffectType</a> is intended as a generic way of characterizing the effects of actions upon objects where the some state of the object is changed.</p>
 
 <hr />
 
@@ -22,7 +22,7 @@ title: StateChangeEffectType
   <tbody>
   
     <tr>
-      <td>@effect_type</td>
+      <td>@effect_type<span class="occurrence">optional</span></td>
       <td>
         
           EffectTypeEnum
@@ -36,7 +36,7 @@ title: StateChangeEffectType
     </tr>
   
     <tr>
-      <td>Old_Object</td>
+      <td>Old_Object<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cybox/ObjectType">ObjectType</a>
@@ -50,7 +50,7 @@ title: StateChangeEffectType
     </tr>
   
     <tr>
-      <td>New_Object</td>
+      <td>New_Object<span class="occurrence">1..1</span></td>
       <td>
         
           <a href="/documentation/cybox/ObjectType">ObjectType</a>

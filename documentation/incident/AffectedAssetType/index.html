@@ -22,7 +22,7 @@ title: AffectedAssetType
   <tbody>
   
     <tr>
-      <td>Type</td>
+      <td>Type<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/incident/AssetTypeType">AssetTypeType</a>
@@ -36,7 +36,7 @@ title: AffectedAssetType
     </tr>
   
     <tr>
-      <td>Description</td>
+      <td>Description<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/StructuredTextType">StructuredTextType</a>
@@ -50,7 +50,7 @@ title: AffectedAssetType
     </tr>
   
     <tr>
-      <td>Business_Function_Or_Role</td>
+      <td>Business_Function_Or_Role<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/StructuredTextType">StructuredTextType</a>
@@ -64,7 +64,7 @@ title: AffectedAssetType
     </tr>
   
     <tr>
-      <td>Ownership_Class</td>
+      <td>Ownership_Class<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
@@ -74,7 +74,7 @@ title: AffectedAssetType
         
           <p>The Ownership_Class field is optional and gives a high-level characterization of who owns (or controls) this asset (e.g. Internally-owned, Employee-owned, Partner-owned, Customer-owned).</p>
         
-          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is OwnershipClassVocab-1.0 in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
+          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is <a href='/documentation/stixVocabs/OwnershipClassVocab-1.0'>OwnershipClassVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
         
           <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
         
@@ -82,7 +82,7 @@ title: AffectedAssetType
     </tr>
   
     <tr>
-      <td>Management_Class</td>
+      <td>Management_Class<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
@@ -92,7 +92,7 @@ title: AffectedAssetType
         
           <p>The Management_Class field is optional and gives a high-level characterization of who is responsible for the day-to-day management and administration of this asset (e.g. Managed Internally, Managed by External Party, Co-managed).</p>
         
-          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is ManagementClassVocab-1.0 in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
+          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is <a href='/documentation/stixVocabs/ManagementClassVocab-1.0'>ManagementClassVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
         
           <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
         
@@ -100,7 +100,7 @@ title: AffectedAssetType
     </tr>
   
     <tr>
-      <td>Location_Class</td>
+      <td>Location_Class<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
@@ -110,7 +110,7 @@ title: AffectedAssetType
         
           <p>The Location_Class field is optional and gives a high-level characterization of where this asset is physically located (e.g. Internal location, External location, Co-located, Mobile).</p>
         
-          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is LocationClassVocab-1.0 in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
+          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is <a href='/documentation/stixVocabs/LocationClassVocab-1.0'>LocationClassVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
         
           <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
         
@@ -118,7 +118,7 @@ title: AffectedAssetType
     </tr>
   
     <tr>
-      <td>Location</td>
+      <td>Location<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/stixCommon/AddressAbstractType">AddressAbstractType</a>
@@ -136,7 +136,7 @@ title: AffectedAssetType
     </tr>
   
     <tr>
-      <td>Nature_Of_Security_Effect</td>
+      <td>Nature_Of_Security_Effect<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/incident/NatureOfSecurityEffectType">NatureOfSecurityEffectType</a>
@@ -150,7 +150,7 @@ title: AffectedAssetType
     </tr>
   
     <tr>
-      <td>Structured_Description</td>
+      <td>Structured_Description<span class="occurrence">0..1</span></td>
       <td>
         
           <a href="/documentation/cybox/ObservablesType">ObservablesType</a>
