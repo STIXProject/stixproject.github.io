@@ -39,9 +39,9 @@ Describes an indicator for a phishing e-mail that contains a malicious attachmen
 
 Test mechanisms are a part of the indicator data model that allow you to represent common methods for detecting indicators within the indicator itself (either in conjunction or instead of the standard CybOX mechanism) in order to easily implement that indicator. These idioms describe various types of test mechanisms:
 
-* [Snort Test Mechanism »](snort)
-* [OpenIOC Test Mechanism »](openioc)
-* [YARA Test Mechanism »](openioc)
+* [Snort Test Mechanism »](snort-test-mechanism)
+* [OpenIOC Test Mechanism »](openioc-test-mechanism)
+* [YARA Test Mechanism »](yara-test-mechanism)
 
 {% comment %}
 

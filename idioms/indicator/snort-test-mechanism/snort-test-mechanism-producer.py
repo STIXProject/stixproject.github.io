@@ -44,6 +44,7 @@ def main():
     ]
     tm.efficacy = "Low"
     tm.producer = InformationSource(identity=Identity(name="FOX IT"))
+    tm.producer.references = ["http://blog.fox-it.com/2014/04/08/openssl-heartbleed-bug-live-blog/"]
     indicator.test_mechanisms = [tm]
     indicator.add_indicated_ttp(TTP(idref=ttp.id_))
 

@@ -21,13 +21,14 @@ The information that the producer provided was that the Snort signatures detecte
 
 This structure allows for pivoting and information expression at each conceptual level: signature, exploit, and vulnerability. The diagram looks like this:
 
-<img src="diagram.png" alt="File hash indicator" />
+<img src="diagram.png" alt="Snort test mechanism" />
 
 There are a few other details to note as well:
 
 * Because the producer noted that the indicator has a low rate of false positives, the `Confidence` on the indicator is set to High. This indicates that if the indicator "triggers", it's likely that the indicated TTP has been discovered.
 * Because the producer also noted that the indicator has a lower detection rate, the `Efficacy` on the Test Mechanism is set to Low. This indicates that the indicator is not likely to catch all cases of the indicated TTP.
 * The `Producer` field is set to provide a reference back to the original information source (blog entry) from FOX IT.
+* The rules themselves are wrapped in CDATA to ensure that any tags or things like that won't break the XML structure and don't need to be escaped.
 
 ## XML
 
@@ -46,6 +47,9 @@ There are a few other details to note as well:
                 <stixCommon:Identity id="example:Identity-a0740d84-9fcd-44af-9033-94e76a53201e">
                     <stixCommon:Name>FOX IT</stixCommon:Name>
                 </stixCommon:Identity>
+                <stixCommon:References>
+                    <stixCommon:Reference>http://blog.fox-it.com/2014/04/08/openssl-heartbleed-bug-live-blog/</stixCommon:Reference>
+                </stixCommon:References>
             </indicator:Producer>
             <snortTM:Rule><![CDATA[alert tcp any any -> any any (msg:"FOX-SRT - Flowbit - TLS-SSL Client Hello"; flow:established; dsize:< 500; content:"|16 03|"; depth:2; byte_test:1, <=, 2, 3; byte_test:1, !=, 2, 1; content:"|01|"; offset:5; depth:1; content:"|03|"; offset:9; byte_test:1, <=, 3, 10; byte_test:1, !=, 2, 9; content:"|00 0f 00|"; flowbits:set,foxsslsession; flowbits:noalert; threshold:type limit, track by_src, count 1, seconds 60; reference:cve,2014-0160; classtype:bad-unknown; sid: 21001130; rev:9;)]]></snortTM:Rule>
             <snortTM:Rule><![CDATA[alert tcp any any -> any any (msg:"FOX-SRT - Suspicious - TLS-SSL Large Heartbeat Response"; flow:established; flowbits:isset,foxsslsession; content:"|18 03|"; depth: 2; byte_test:1, <=, 3, 2; byte_test:1, !=, 2, 1; byte_test:2, >, 200, 3; threshold:type limit, track by_src, count 1, seconds 600; reference:cve,2014-0160; classtype:bad-unknown; sid: 21001131; rev:5;)]]></snortTM:Rule>
