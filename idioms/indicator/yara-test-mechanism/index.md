@@ -60,7 +60,7 @@ $a or $b or $c
 </stix:Indicator>
 {% endhighlight %}
 
-<a href="snort-test-mechanism.xml">Full XML</a>
+<a href="yara-test-mechanism.xml">Full XML</a>
 
 <h2>Python</h2>
 

@@ -65,7 +65,7 @@ There are a few other details to note as well:
 
 <h2>Python</h2>
 
-<p class="alert alert-danger"><strong>Notice</strong> The current version of python-stix, 1.1.1.0, has a bug in its handling of the Snort test mechanism that causes it to create invalid content.</p>
+<p class="alert alert-danger"><strong>Notice</strong> The current version of python-stix, 1.1.1.0, has a bug (<a href="https://github.com/STIXProject/python-stix/issues/148">#148</a>) in its handling of the Snort test mechanism that causes it to create invalid content.</p>
 
 <ul class="nav nav-tabs">
   <li class="active"><a href="#produce" data-toggle="tab">Produce</a></li>

@@ -15,11 +15,10 @@ def main():
     for indicator in stix_package.indicators:
         print "== INDICATOR =="
         print "Title: " + indicator.title
-        print "Description: " + indicator.description
+        print "Description: " + indicator.description.value
 
         for tm in indicator.test_mechanisms:
             print "Producer: " + tm.producer.identity.name
-            print "Efficacy: " + tm.efficacy.value.value
             for rule in tm.rules:
                 print "Rule: " + rule.value
     

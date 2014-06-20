@@ -38,7 +38,6 @@ rule silent_banker : banker
 
     tm = YaraTestMechanism()
     tm.rules = [rule]
-    tm.efficacy = "Low"
     tm.producer = InformationSource(identity=Identity(name="Yara"))
     tm.producer.references = ["http://plusvic.github.io/yara/"]
     indicator.test_mechanisms = [tm]
