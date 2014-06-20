@@ -21,7 +21,7 @@ The idioms documentation is meant to give you a place to look for guidance on ho
 * [IDs](idioms/features/ids) - Describes the basic usage of STIX IDs
 * [Confidence](idioms/features/confidence) - Describes how to use the confidence structure to mark STIX constructs with confidence
 * [Structured Text](idioms/features/structured-text) - Describes how to use STIX structured text fields for both plain text and markup
-* [Controlled Vocabularies] (idioms/features/controlled-vocabularies) - Describes how to use and extend controlled vocabularies
+* [Controlled Vocabularies](idioms/features/controlled-vocabularies) - Describes how to use and extend controlled vocabularies
 {% endcomment %}
 * [Versioning](idioms/features/versioning) - Describes a few different versioning scenarios and how those are handled in STIX
 * [Data Markings](idioms/features/data-markings) - Describes how to use data markings to mark STIX content

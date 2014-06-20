@@ -35,6 +35,14 @@ Describes an indicator for a phishing e-mail that contains a malicious attachmen
 
 [View this idiom »](malicious-email-attachment)
 
+### Test Mechanisms
+
+Test mechanisms are a part of the indicator data model that allow you to represent common methods for detecting indicators within the indicator itself (either in conjunction or instead of the standard CybOX mechanism) in order to easily implement that indicator. These idioms describe various types of test mechanisms:
+
+* [Snort Test Mechanism »](snort)
+* [OpenIOC Test Mechanism »](openioc)
+* [YARA Test Mechanism »](openioc)
+
 {% comment %}
 
 ### Indicator Composition
@@ -44,12 +52,5 @@ This set of idioms describes various methods for composing lists of indicators (
 * [Composition through CybOX @apply_condition »](apply-condition)
 * [Composition through Composite Observables »](observable-composition)
 * [Composition through Composite Indicators »](indicator-composition)
-
-### Test Mechanisms
-
-Test mechanisms are a part of the indicator data model that allow you to represent common methods for detecting indicators within the indicator itself (either in conjunction or instead of the standard CybOX mechanism) in order to easily implement that indicator. These idioms describe various types of test mechanisms:
-
-* [Snort Test Mechanism »](snort)
-* [OpenIOC Test Mechanism »](openioc)
 
 {% endcomment %}
