@@ -119,7 +119,7 @@ for indicator in stix_package.indicators:
   </div>
 </div>
 
-[Production Python](snort-test-mechanism-producer.py) | [Consumption Python](snort-test-mechanism-consumer.py)
+[Production Python](yara-test-mechanism-producer.py) | [Consumption Python](yara-test-mechanism-consumer.py)
 
 ## Further Reading
 
