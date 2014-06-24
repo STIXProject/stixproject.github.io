@@ -1,0 +1,109 @@
+---
+layout: documentation
+title: SemaphoreObjectType
+---
+
+<h1>SemaphoreObjectType<span class="subdued">Semaphore Object Schema</span></h1>
+
+<p>The <a href='/documentation/SemaphoreObj/SemaphoreObjectType'>SemaphoreObjectType</a> type is intended to characterize generic semaphore objects.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@object_reference<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>The object_reference field specifies a unique ID reference to an Object defined elsewhere. This construct allows for the re-use of the defined Properties of one Object within another, without the need to embed the full Object in the location from which it is being referenced. Thus, this ID reference is intended to resolve to the Properties of the Object that it points to.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Custom_Properties<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/CustomPropertiesType">CustomPropertiesType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Custom_Properties construct is optional and enables the specification of a set of custom Object Properties that may not be defined in existing Properties schemas.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@named<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The named field specifies whether the Semaphore is named.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Current_Count<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/UnsignedIntegerObjectPropertyType">UnsignedIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Current_Count field specifies the current count value for the semaphore.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Maximum_Count<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/PositiveIntegerObjectPropertyType">PositiveIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Maximum_Count field specifies the maximum count value for the semaphore.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Name<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Name field specifies the name of the semaphore, if applicable.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

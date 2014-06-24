@@ -1,0 +1,109 @@
+---
+layout: documentation
+title: IPv6ExtHeaderType
+---
+
+<h1>IPv6ExtHeaderType<span class="subdued">Network Packet Object Schema</span></h1>
+
+<p>In IPv6, optional internet-layer information is encoded in separate headers that may be placed between the IPv6 header and the upper-layer header in a packet. An IPv6 packet may carry zero, one, or more extension headers, each identified by the Next Header field of the preceding header. http://tools.ietf.org/html/rfc2460.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Hop_by_Hop_Options<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/PacketObj/HopByHopOptionsType">HopByHopOptionsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Hop-by-Hop Options header is used to carry optional information that must be examined by every node along a packet's delivery path. It carries a variable number of type-length-value (TLV) encoded options.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Routing<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/PacketObj/RoutingType">RoutingType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Routing header is used by an IPv6 source to list one or more intermediate nodes to be "visited" on the way to a packet's destination. http://tools.ietf.org/html/rfc2460.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Fragment<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/PacketObj/FragmentType">FragmentType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Fragment header is used by an IPv6 source to send a packet larger than would fit in the path MTU. A fragment packet begins with an unfragmentable part consisting of the IPv6 header plus all extension headers up to and including the routing header. We don't include it for this field because the data is already stored in other elements. We provide the elements necessary for the Fragmentable Part. http://tools.ietf.org/html/rfc2460.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Destination_Options<span class="occurrence">0..2</span></td>
+      <td>
+        
+          <a href="/documentation/PacketObj/DestinationOptionsType">DestinationOptionsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Destination Options header is used to carry optional information that needs to be examined only by a packet's destination node(s).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Authentication_Header<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/PacketObj/AuthenticationHeaderType">AuthenticationHeaderType</a>
+        
+      </td>
+      <td>
+        
+          <p>Follows RFC2402. The IP Authentication Header is used to provide connectionless integrity and data origin authentication for IP datagrams and to provide protection against replays. http://www.ietf.org/rfc/rfc2402.txt.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Encapsulating_Security_Payload<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/PacketObj/EncapsulatingSecurityPayloadType">EncapsulatingSecurityPayloadType</a>
+        
+      </td>
+      <td>
+        
+          <p>Follows RFC2406. ESP is used to provide confidentiality, data origin authentication, connectionless integrity, an anti-replay service (a form of partial sequence integrity), and limited traffic flow confidentiality.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

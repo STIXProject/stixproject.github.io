@@ -1,0 +1,81 @@
+---
+layout: documentation
+title: EthernetHeaderType
+---
+
+<h1>EthernetHeaderType<span class="subdued">Network Packet Object Schema</span></h1>
+
+<p>Ethernet header characterizes and ethernet header and includes information such as source MAC address, destination MAC address, and more.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Destination_MAC_Addr<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/AddressObj/AddressObjectType">AddressObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>Destination MAC Addr characterizes the destination MAC Address of the ethernet frame.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Source_MAC_Addr<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/AddressObj/AddressObjectType">AddressObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>Source MAC Addr characterizes the source MAC Address of the ethernet frame.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Type_Or_Length<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/PacketObj/TypeLengthType">TypeLengthType</a>
+        
+      </td>
+      <td>
+        
+          <p>Type or Length characterizes either the length of the ethernet frame or the protocol type of the network layer.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Checksum<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Checksum characterizes the Frame Check sequence of an ethernet frame.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

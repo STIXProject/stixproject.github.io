@@ -1,0 +1,151 @@
+---
+layout: documentation
+title: PDFTrailerType
+---
+
+<h1>PDFTrailerType<span class="subdued">PDF File Object Schema</span></h1>
+
+<p>The <a href='/documentation/PDFFileObj/PDFTrailerType'>PDFTrailerType</a> captures the details of a PDF trailer.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Size<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/PositiveIntegerObjectPropertyType">PositiveIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Size field captures the total number of entries in the file's cross-reference table.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Prev<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/PositiveIntegerObjectPropertyType">PositiveIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Prev field the byte offset from the beginning of the file to the beginning of the previous cross-reference table. This is only applicable for files that have more than one cross-reference table.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Root<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/PDFFileObj/PDFIndirectObjectIDType">PDFIndirectObjectIDType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Root field captures an indirect object reference that points to the catalog dictionary for the PDF document contained in the file.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Encrypt<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/PDFFileObj/PDFDictionaryType">PDFDictionaryType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Encrypt field captures the PDF document's encryption dictionary, either through an indirect reference or embedded set of key/value pairs.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Info<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/PDFFileObj/PDFIndirectObjectIDType">PDFIndirectObjectIDType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Info field captures an indirect object reference that points to the document information dictionary.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>ID<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/PDFFileObj/PDFFileIDType">PDFFileIDType</a>
+        
+      </td>
+      <td>
+        
+          <p>The ID field captures an array of two strings that constitutes a file identifier.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Last_Cross_Reference_Offset<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/PositiveIntegerObjectPropertyType">PositiveIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Last_Cross_Reference_Offset field captures the byte offset, relative to the beginning of the file, of the last cross-reference table contained in the file.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Offset<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/PositiveIntegerObjectPropertyType">PositiveIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Offset field specifies the offset of the trailer from the beginning of the file, in bytes.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Hashes<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HashListType">HashListType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Hashes field captures any hashes that were computed for the trailer.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

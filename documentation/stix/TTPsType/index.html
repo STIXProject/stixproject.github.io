@@ -1,0 +1,55 @@
+---
+layout: documentation
+title: TTPsType
+---
+
+<h1>TTPsType<span class="subdued">STIX Core Schema</span></h1>
+
+
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>TTP<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/documentation/stixCommon/TTPBaseType">TTPBaseType</a>
+        
+      </td>
+      <td>
+        
+          <p>Characterizes a single cyber threat adversary Tactic, Technique or Procedure.</p>
+        
+          <p>This field is implemented through the xsi:type extension mechanism. The default and strongly recommended type is <a href='/documentation/ttp/TTPType'>TTPType</a> in the http://stix.mitre.org/TTP-1 namespace. This type is defined in the ttp.xsd file or at the URL http://stix.mitre.org/XMLSchema/ttp/1.1.1/ttp.xsd.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Kill_Chains<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/stixCommon/KillChainsType">KillChainsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Kill_Chains field characterizes specific Kill Chain definitions for reference within specific TTP entries, Indicators and elsewhere.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

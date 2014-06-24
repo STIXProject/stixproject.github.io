@@ -1,0 +1,67 @@
+---
+layout: documentation
+title: RouterAdvertisementOptionsType
+---
+
+<h1>RouterAdvertisementOptionsType<span class="subdued">Network Packet Object Schema</span></h1>
+
+<p>Router Advertisement messages include zero or more options, some of which may appear multiple times in the same message.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Src_Link_Addr<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/PacketObj/NDPLinkAddrType">NDPLinkAddrType</a>
+        
+      </td>
+      <td>
+        
+          <p>Src Link Addr characterizes the Source Link-Layer Address option.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>MTU<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/PacketObj/NDPMTUType">NDPMTUType</a>
+        
+      </td>
+      <td>
+        
+          <p>32-bit unsigned integer. The recommended MTU for the link.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Prefix_Info<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/PacketObj/NDPPrefixInfoType">NDPPrefixInfoType</a>
+        
+      </td>
+      <td>
+        
+          <p>Prefix Info characterizes Prefix Information for Router Advertisement Options.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

@@ -1,0 +1,175 @@
+---
+layout: documentation
+title: PackageIntentVocab-1.0
+---
+
+<h1>PackageIntentVocab-1.0<span class="subdued">STIX Vocabularies Schema</span></h1>
+
+<p>
+                The PackageIntentVocab is the default STIX vocabulary for Package Intent.
+            
+                Note that this vocabulary is under development. Feedback is appreciated and should be sent to the STIX discussion list.
+            </p>
+
+<hr />
+
+
+<h2>Vocabulary Items</h2>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  
+    <tr>
+      <td>Collective Threat Intelligence</td>
+      <td>Package is intended to convey a broad characterization of a threat across multiple facets.</td>
+    </tr>
+  
+    <tr>
+      <td>Threat Report</td>
+      <td>Package is intended to convey a broad characterization of a threat across multiple facets expressed as a cohesive report.</td>
+    </tr>
+  
+    <tr>
+      <td>Indicators</td>
+      <td>Package is intended to convey mainly indicators.</td>
+    </tr>
+  
+    <tr>
+      <td>Indicators - Phishing</td>
+      <td>Package is intended to convey mainly phishing indicators.</td>
+    </tr>
+  
+    <tr>
+      <td>Indicators - Watchlist</td>
+      <td>Package is intended to convey mainly network watchlist indicators.</td>
+    </tr>
+  
+    <tr>
+      <td>Indicators - Malware Artifacts</td>
+      <td>Package is intended to convey mainly malware artifact indicators.</td>
+    </tr>
+  
+    <tr>
+      <td>Indicators - Network Activity</td>
+      <td>Package is intended to convey mainly network activity indicators.</td>
+    </tr>
+  
+    <tr>
+      <td>Indicators - Endpoint Characteristics</td>
+      <td>Package is intended to convey mainly endpoint characteristics (hashes, registry values, installed software, known vulnerabilities, etc.) indicators.</td>
+    </tr>
+  
+    <tr>
+      <td>Campaign Characterization</td>
+      <td>Package is intended to convey mainly a characterization of one or more campaigns.</td>
+    </tr>
+  
+    <tr>
+      <td>Threat Actor Characterization</td>
+      <td>Package is intended to convey mainly a characterization of one or more threat actors.</td>
+    </tr>
+  
+    <tr>
+      <td>Exploit Characterization</td>
+      <td>Package is intended to convey mainly a characterization of one or more exploits.</td>
+    </tr>
+  
+    <tr>
+      <td>Attack Pattern Characterization</td>
+      <td>Package is intended to convey mainly a characterization of one or more attack patterns.</td>
+    </tr>
+  
+    <tr>
+      <td>Malware Characterization</td>
+      <td>Package is intended to convey mainly a characterization of one or more malware instances.</td>
+    </tr>
+  
+    <tr>
+      <td>TTP - Infrastructure</td>
+      <td>Package is intended to convey mainly a characterization of attacker infrastructure.</td>
+    </tr>
+  
+    <tr>
+      <td>TTP - Tools</td>
+      <td>Package is intended to convey mainly a characterization of attacker tools.</td>
+    </tr>
+  
+    <tr>
+      <td>Courses of Action</td>
+      <td>Package is intended to convey mainly a set of courses of action.</td>
+    </tr>
+  
+    <tr>
+      <td>Incident</td>
+      <td>Package is intended to convey mainly information about one or more incidents.</td>
+    </tr>
+  
+    <tr>
+      <td>Observations</td>
+      <td>Package is intended to convey mainly information about instantial observations (cyber observables).</td>
+    </tr>
+  
+    <tr>
+      <td>Observations - Email</td>
+      <td>Package is intended to convey mainly information about instantial email observations (email cyber observables).</td>
+    </tr>
+  
+    <tr>
+      <td>Malware Samples</td>
+      <td>Package is intended to convey a set of malware samples.</td>
+    </tr>
+  
+  </tbody>
+</table>
+
+<h2>Fields</h2>
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@vocab_name<span class="occurrence">optional</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>The vocab_name field specifies the name of the controlled vocabulary.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@vocab_reference<span class="occurrence">optional</span></td>
+      <td>
+        
+          anyURI
+        
+      </td>
+      <td>
+        
+          <p>The vocab_reference field specifies the URI to the location of where the controlled vocabulary is defined, e.g., in an externally located XML schema file.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

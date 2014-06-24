@@ -1,0 +1,151 @@
+---
+layout: documentation
+title: X509CertificateContentsType
+---
+
+<h1>X509CertificateContentsType<span class="subdued">X509 Certificate Object Schema</span></h1>
+
+<p>The <a href='/documentation/X509CertificateObj/X509CertificateContentsType'>X509CertificateContentsType</a> type represents the contents of an X.509 certificate, including items such as issuer, subject, and others.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Version<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Version describes the version of the encoded certificate.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Serial_Number<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The serial number is a unique identifier for each X.509 certificate issued by a specific Certificate Authority.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Signature_Algorithm<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The signature algorithm is the algorithm used to sign the X.509 certificate.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Issuer<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The issuer is the Certificate Authority who issued the X.509 certificate.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Validity<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/X509CertificateObj/ValidityType">ValidityType</a>
+        
+      </td>
+      <td>
+        
+          <p>Validity is the time interval during which the issuer warrants that it will maintain information about the status of the certificate.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Subject<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The subject identifies the entity associated with the public key stored in the subject public key field of the X.509 certificate.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Subject_Public_Key<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/X509CertificateObj/SubjectPublicKeyType">SubjectPublicKeyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Subject Public Key is used to carry the public key and identify the algorithm with which the key is used.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Standard_Extensions<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/X509CertificateObj/X509V3ExtensionsType">X509V3ExtensionsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Standard_Extensions field captures standard X509 V3 extensions that may be specified in the certificate.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Non_Standard_Extensions<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/X509CertificateObj/X509NonStandardExtensionsType">X509NonStandardExtensionsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Non_Standard_Extensions field captures non-standard X509 extensions that may be specified in the certificate.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

@@ -1,0 +1,95 @@
+---
+layout: documentation
+title: PEImportType
+---
+
+<h1>PEImportType<span class="subdued">Win Executable File Object Schema</span></h1>
+
+<p>The <a href='/documentation/WinExecutableFileObj/PEImportType'>PEImportType</a> type is intended as container for the properties relevant to PE binary imports.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@delay_load<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The delay_load field is a boolean value that is intended to describe whether a PE binary import is delay-load or not.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@initially_visible<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The initially_visible field refers to whether the import is initially visible, with regards to being initially visible or hidden in relation to PE binary packing. A packed binary will typically have few initially visible imports, and thus it is necessary to make the distinction between those that are visible initially or only after the binary is unpacked.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>File_Name<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The File_Name field specifies the name of the library (file) that the PE binary imports.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Imported_Functions<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/WinExecutableFileObj/PEImportedFunctionsType">PEImportedFunctionsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Imported_Functions field is used to enumerate any functions imported from a particular library.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Virtual_Address<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Virtual_Address field specifies the relative virtual address (RVA) of the PE binary library import.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

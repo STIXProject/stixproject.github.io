@@ -1,0 +1,67 @@
+---
+layout: documentation
+title: IPv4FlagsType
+---
+
+<h1>IPv4FlagsType<span class="subdued">Network Packet Object Schema</span></h1>
+
+<p>These flag types are used to control or identify fragments in an IP packet. It is a three-bit field, each of the three bits are defined by a field with a string value that indicates the meaning of whether or not the bit is set.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Reserved<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Bit 0: This bit value (0) is reserved and must be zero.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Do_Not_Fragment<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/PacketObj/DoNotFragmentType">DoNotFragmentType</a>
+        
+      </td>
+      <td>
+        
+          <p>Bit 1: This is the "don't fragment" bit. Values are specified in the DoNotFragmentType.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>More_Fragments<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/documentation/PacketObj/MoreFragmentsType">MoreFragmentsType</a>
+        
+      </td>
+      <td>
+        
+          <p>Bit 2: This is the "more fragments" bit. Values are specified in the MoreFragmentsType.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

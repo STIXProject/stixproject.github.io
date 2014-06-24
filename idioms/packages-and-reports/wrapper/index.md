@@ -92,27 +92,27 @@ from stix.extensions.marking.tlp import TLPMarkingStructure
 alpha_package = STIXPackage()
 alpha_package.stix_header = STIXHeader()
 alpha_package.stix_header.title = "Report on Adversary Alpha's Campaign against the Industrial Control Sector"
-rat_package.stix_header.package_intent = "Campaign Characterization"
+rat_package.stix_header.package_intents = "Campaign Characterization"
 alpha_package.stix_header.handling = Marking()
 
 alpha_marking = MarkingSpecification()
 alpha_marking.controlled_structure = "../../../../node()"
 alpha_tlp_marking = TLPMarkingStructure()
 alpha_tlp_marking.color = "AMBER"
-alpha_marking.marking_structure.append(alpha_tlp_marking)
+alpha_marking.marking_structures.append(alpha_tlp_marking)
 alpha_package.stix_header.handling.add_marking(alpha_marking)
 
 rat_package = STIXPackage()
 rat_package.stix_header = STIXHeader()
 rat_package.stix_header.title = "Indicators for Malware DrownedRat"
-rat_package.stix_header.package_intent = "Indicators - Malware Artifacts"
+rat_package.stix_header.package_intents = "Indicators - Malware Artifacts"
 rat_package.stix_header.handling = Marking()
 
 bravo_marking = MarkingSpecification()
 bravo_marking.controlled_structure = "../../../../node()"
 bravo_tlp_marking = TLPMarkingStructure()
 bravo_tlp_marking.color = "RED"
-alpha_marking.marking_structure.append(bravo_tlp_marking)
+alpha_marking.marking_structures.append(bravo_tlp_marking)
 rat_package.stix_header.handling.add_marking(bravo_marking)
     
 stix_package = STIXPackage()
