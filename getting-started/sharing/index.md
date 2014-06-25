@@ -9,9 +9,9 @@ Reports created in STIX are meant to be shared between parties, with data added 
 ## Updating an Indicator
 The supported method involves referencing a given object by its `id`, and including a new `timestamp` with any updates.
 
-Refer [here](/idioms/features/versioning/) for specific guidance
+Refer [here](/idioms/features/versioning/) for examples of version updates in XML.
 
-As implemented in Python:
+An indicator can be updated in Python as follows:
 
 ``` python
 old_indicator = Indicator()
@@ -30,18 +30,20 @@ new_indicator.add_related_indicator(old_indicator)
 
 Sharing the context around a detection is valuable to the community at large.
 
-For instance, to indicate that a particular `Sighting` of an indicator:
+For instance, to indicate that a particular `Sighting` of an indicator happened just now
 
 ``` python
- = Sighting()
-?TODO make an observable and relate?
+ind = Indicator()
+sight = Sighting()
+sight.description = "observed bot activity"
+sight.timestamp = datetime.now(tzutc())
+ind.sightings.append(sight)
 ```
 
-
-You can add the degree of confidence you have in this sighting: 
+You can also add a degree of confidence in this sighting
 
 ``` python
-# TODO add sighting.confidence = Confidence("Medium")
+sight.confidence = Confidence("Medium")
 ```
 
 Others can then reference this assertion as part of their operations.
