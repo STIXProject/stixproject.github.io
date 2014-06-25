@@ -4,8 +4,6 @@ title: STIX Idioms
 active: idioms
 ---
 
-# TODO udpate to be less of a sitemap
-
 The idioms documentation is meant to give you a place to look for guidance on how to implement common STIX patterns, whether they're cross-cutting concerns like confidence and data markings or specific use case patterns, like representing indicators for malware C2.
 
 ### Cross-cutting Features
