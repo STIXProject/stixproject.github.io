@@ -2,12 +2,35 @@
 layout: flat
 ---
 
-This page contains suggested practices for developing and consuming STIX content. There's a similar page in the CybOX wiki for [CybOX Suggested Practices](https://github.com/CybOXProject/schemas/wiki/Suggested-Practices).
+## STIX Header
+Metadata about a STIX package is optional, but highly recommended
 
-Note that these are simply suggested practices. In many cases, operational or technical concerns may prohibit you from implementing them or they may just not make sense in your situation. That's perfectly fine, these are just suggestions.
+    Title
+    Package_Intent
+    Information_Source
 
-# General Practices
 
+Timestamps should include time zones
+
+## Indicator Metadata
+
+	Title
+	Type
+    	Timestamp
+	Observed TTP
+	Confidence
+	Observable, Observable Composition, or Indicator Composition 
+
+
+## Creating pattern observables for indicators
+When creating observables for use as patterns within indicators, you should always set the condition attribute on all possible fields to an appropriate value, even if that value is equals. Leaving off the condition attribute implies that the observable is an instance rather than a pattern.
+
+
+## Controlled Structure XPaths
+
+The XPath specified in a data marking controlled structure field must select all fields (elements and attributes) that the marking will be applied to. It is not sufficient to select only the root element using the `/` character. Instead, you should use the `node()` function to select relevant nodes. For example, to select the entire document you should use `//node()` while to select a parent construct (Indicator, for example), you could use `ancestor-or-self::stix:Indicator//node()`.
+
+As noted in the annotations, prefixes are valid if they are declared in scope of the Controlled_Structure element.
 ## Formatting IDs
 
 STIX IDs are [XML QNames](http://en.wikipedia.org/wiki/QName). Each ID includes both a namespace portion (optional) and an ID portion (required) separated by a colon (:). The recommend approach to creating STIX IDs is to define a producer namespace and namespace prefix, then use the form:
@@ -140,34 +163,3 @@ Many places in STIX use controlled vocabularies to represent data. When possible
 
 If you do this to add values that you think might be useful for other STIX users, you should [let us know](https://github.com/STIXProject/schemas/wiki#feedback) so we can consider adding it to the default vocabulary.
 
-## Creating Timestamps
-
-To remove ambiguity regarding the timezone, all times should include an explicit timezone if possible.
-
-# Specific Elements
-
-## STIX Header
-You should always include a STIX header whenever possible to communicate the source, intent, and other metadata about the package. In particular, it's recommended to fill out:
-* Title
-* Package_Intent
-* Information_Source
-
-## Indicator
-If possible, an indicator should include the following fields:
-* Either Observable, Observable Composition, or Indicator Composition to represent the detectable pattern
-* Title
-* Type
-* Valid_Time_Position
-* Indicated_TTP, even if pointing to a very simple TTP with just a title
-* A confidence assertion
-
-### Creating pattern observables for indicators
-When creating observables for use as patterns within indicators, you should always set the condition attribute on all possible fields to an appropriate value, even if that value is equals. Leaving off the condition attribute implies that the observable is an instance rather than a pattern.
-
-## Handling
-
-### Controlled Structure XPaths
-
-The XPath specified in a data marking controlled structure field must select all fields (elements and attributes) that the marking will be applied to. It is not sufficient to select only the root element using the `/` character. Instead, you should use the `node()` function to select relevant nodes. For example, to select the entire document you should use `//node()` while to select a parent construct (Indicator, for example), you could use `ancestor-or-self::stix:Indicator//node()`.
-
-As noted in the annotations, prefixes are valid if they are declared in scope of the Controlled_Structure element.
