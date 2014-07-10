@@ -132,3 +132,25 @@ h1, h2 {
 tr > td > p:last-child {
   margin-bottom: 0;
 }
+
+blockquote p {
+  font-style: italic;
+  font-size: 1em;
+}
+
+.well h4 {
+  margin-top: 0;
+}
+
+a.disabled {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.getting-started-left {
+  border-right: 2px solid #f5f5f5;
+}
+
+.getting-started-right {
+  border-left: 2px solid #f5f5f5;
+}

@@ -1,12 +1,13 @@
 ---
-layout: flat
+layout: getting_started
+title: Suggested Practices
 ---
 
-This page contains suggested practices for developing and consuming STIX content. There's a similar page in the CybOX wiki for [CybOX Suggested Practices](https://github.com/CybOXProject/schemas/wiki/Suggested-Practices).
+This page contains suggested practices (sometimes called best practices) for producing and consuming STIX content. Following these practices will ensure the best conformance with the design goals of STIX and the best compatibility with other STIX tools. These are not requirements, however: in some cases, technical or business requirements will mean you can't comply with them and that's fine. Think of them as "do it this way unless you have a good reason not to".
 
-Note that these are simply suggested practices. In many cases, operational or technical concerns may prohibit you from implementing them or they may just not make sense in your situation. That's perfectly fine, these are just suggestions.
+## General Practices
 
-# General Practices
+General practices apply across STIX (and sometimes CybOX).
 
 ## Formatting IDs
 
@@ -17,11 +18,10 @@ STIX IDs are [XML QNames](http://en.wikipedia.org/wiki/QName). Each ID includes 
 The "ns prefix" should be a namespace prefix bound to a namespace owned/controlled by the producer of the content.
 
 Some examples:
-```xml
-acme:package-ce431003-ad07-4c96-bd7a-a50a3196e2a0
-acme:indicator-bf8bc5d5-c7e6-46b0-8d22-7500fea77196
-acme:campaign-79090715-8d6a-46b7-943b-c0bb9e063788
-```
+
+    acme:package-ce431003-ad07-4c96-bd7a-a50a3196e2a0
+    acme:indicator-bf8bc5d5-c7e6-46b0-8d22-7500fea77196
+    acme:campaign-79090715-8d6a-46b7-943b-c0bb9e063788
 
 In order to use this approach, you will need to define that namespace prefix in the head of your XML document:
 
@@ -49,6 +49,7 @@ For example, an Indicator can include Indicated TTPs. One way of doing this is t
 ```
 
 The other alternative is to reference that TTP, which would be represented elsewhere:
+
 ```xml
 <stix:Indicator id="example:indicator-65b13502-8eee-427d-a9a4-13c32f259410" timestamp="2014-02-20T09:00:00.000000" xsi:type="indicator:IndicatorType">
   <!-- SNIP -->
@@ -64,46 +65,20 @@ These situations are a judgment call, but when making that judgment you should c
 
 8 major STIX constructs are versioned:
 
-* Packages (STIXType, STIX_Package)
-* Campaigns
-* Courses of Action
-* Exploit Targets
-* Indicators
-* Incidents
-* Threat Actors
-* TTPs
+* [Packages](/documentation/stix/STIXType) (STIXType, STIX_Package)
+* [Campaigns](/documentation/campaign/CampaignType)
+* [Courses of Action](/documentation/coa/CourseOfActionType)
+* [Exploit Targets](/documentation/et/ExploitTargetType)
+* [Indicators](/documentation/indicator/IndicatorType)
+* [Incidents](/documentation/incident/IncidentType)
+* [Threat Actors](/documentation/ta/ThreatActorType)
+* [TTPs](/documentation/ttp/TTPType)
 
-These versioned constructs include a `@timestamp` attribute at the top level in addition to the `@id`. To create versioned content (which is always suggested), the suggested approach is to always include the `@timestamp` attribute whenever you include an `@id` and set that timestamp to the exact time the construct was last modified (or was created if it's new). The `@id` is then re-used for the initial creation and all modifications. For example, when creating a new indicator set the timestamp to the time it was created:
-
-```xml
-<stix:Indicator id="example:indicator-65b13502-8eee-427d-a9a4-13c32f259410" timestamp="2014-02-20T09:00:00.000000" xsi:type="indicator:IndicatorType" />
-```
-
-When it's updated, update that timestamp but keep the id:
-
-```xml
-<stix:Indicator id="example:indicator-65b13502-8eee-427d-a9a4-13c32f259410" timestamp="2014-02-21T12:32:13.234234" xsi:type="indicator:IndicatorType" />
-```
-
-Note that because you should only publish content in your own ID namespace, you should not version content created by someone else using this mechanism. To create content derived off of content published by someone else, use a relationship to the original content and set the relationship field to "Derived From":
-
-```xml
-<stix:Indicator id="example2:indicator-65b13502-8eee-427d-a9a4-13c32f259410" timestamp="2014-02-22T16:23:37.456332" xsi:type="indicator:IndicatorType">
-  <indicator:Related_Indicators>
-    <indicator:Related_Indicator>
-      <stixCommon:Relationship>Derived From</stixCommon:Relationship>
-      <stixCommon:Indicator idref="example:indicator-65b13502-8eee-427d-a9a4-13c32f259410" />
-    </indicator:Related_Indicator>
-  </indicator:Related_Indicators>
-</stix:Indicator>
-```
-
-You can create that with or without the timestamp reference as appropriate, but if you use the timestamp attribute consumers will know which specific version your derived content was created from.
-
+It is always suggested that you version these constructs by including a relevant `@id` and `@timestamp` per the [STIX versioning guide](/idioms/features/versioning).
 
 ## Creating References
 
-There are two primary ways to create references in STIX 1.1: you can either create a reference to a specific version of a construct or you can create a reference to the latest version of a construct.
+There are two primary ways to create references in STIX 1.1.1: you can either create a reference to a specific version of a construct or you can create a reference to the latest version of a construct.
 
 To create a reference to a specific version, set the idref attribute to the ID of the construct you want to reference and set the timestamp attribute to the exact timestamp of the version that you want to reference:
 
@@ -112,6 +87,7 @@ To create a reference to a specific version, set the idref attribute to the ID o
 ```
 
 The alternative is to omit the timestamp attribute, which indicates that the reference is to the latest version of that construct:
+
 ```xml
 <stixCommon:TTP idref="example:ttp-cc250866-cde4-4029-bf37-4b65bf712cb9" />
 ```
@@ -125,12 +101,14 @@ References to non-versioned constructs (anything with an id/idref but not a time
 These suggestions only apply when you're creating documents you intend to be human-readable. They simply make the document more readable and easy to validate by XML editors but are not important for automated processing.
 
 For best readability:
+
 * Only include necessary namespaces
 * Use the namespace prefixes as defined in the schemas
 * Affinity-group or alphabetize namespaces
 * Do not include attributes that have default attributes if you're simply setting the attribute to the default (i.e. @negate on indicators).
 
 To ease validation in XML editors:
+
 * Include schemaLocation attributes to the hosted versions of the STIX schemas
 * If you include any non-standard extension or marking schemas, include them with the bundle and include that reference in the schemaLocation attribute
 
@@ -142,7 +120,7 @@ If you do this to add values that you think might be useful for other STIX users
 
 ## Creating Timestamps
 
-To remove ambiguity regarding the timezone, all times should include an explicit timezone if possible.
+To remove ambiguity regarding the timezone, all times should include an explicit timezone whenever possible.
 
 # Specific Elements
 
@@ -154,6 +132,7 @@ You should always include a STIX header whenever possible to communicate the sou
 
 ## Indicator
 If possible, an indicator should include the following fields:
+
 * Either Observable, Observable Composition, or Indicator Composition to represent the detectable pattern
 * Title
 * Type

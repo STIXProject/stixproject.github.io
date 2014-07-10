@@ -1,5 +1,6 @@
 ---
-layout: flat
+layout: getting_started
+title: Utilities & Tooling
 ---
 
 ## User-level Tooling
@@ -14,9 +15,9 @@ The STIXViz tool is packaged and available for download as a Windows executable 
 
 If you're just starting out in STIX and want to see what it's capable of, I suggest downloading STIXViz and opening up the more complex reports available on the STIX [Samples Page](http://stix.mitre.org/language/version1.0.1/samples.html) (Poison Ivy and APT1) in the tool.
 
-STIXViz also includes stix_to_html as a component, so downloading the packaged build is a 2-for-one.
+STIXViz also includes stix_to_html as a component, so downloading the packaged build is a two for the price of one.
 
-* [Direct Download (exe)](http://stix.mitre.org/downloads/StixVizDistro.zip)
+* [Download](https://github.com/STIXProject/stix-viz/releases)
 * [Usage Guide](https://github.com/STIXProject/stix-viz/wiki/STIXViz-Usage)
 * [Source Code](https://github.com/STIXProject/stix-viz/)
 
@@ -58,7 +59,7 @@ The STIX project currently provides bindings and higher-level APIs to the STIX l
 
 ### Java
 
-A community member ([@woot4moo](https://github.com/woot4moo)) has contributed [their JAXB Bindings](https://github.com/STIXProject/contrib/tree/master/java-stix) to the contrib repository.
+A community member ([@woot4moo](https://github.com/woot4moo)) has contributed [their JAXB Bindings](https://github.com/STIXProject/contrib/tree/master/java-stix) to the contrib repository. There has been discussion in the community about maintaining a set of APIs on top of that, those interested should e-mail the discussion list (stix-discussion-list@lists.mitre.org).
 
 ### .NET
 

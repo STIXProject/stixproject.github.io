@@ -1,8 +1,9 @@
 ---
-layout: flat
+layout: getting_started
+title: Suggested Practices
 ---
 
-**UNDER DEVELOPMENT**: This guide is still under development. Please consider that it may be both inaccurate and/or incomplete._
+<p class="alert alert-danger"><strong>UNDER DEVELOPMENT:</strong> This guide is still under development. Please consider that it may be both inaccurate and/or incomplete.</p>
 
 There are several potential avenues for attack when processing incoming STIX documents. The following list is non-exhaustive and should not take the place of a comprehensive security review that takes into account your unique technology stack and processes.
 
