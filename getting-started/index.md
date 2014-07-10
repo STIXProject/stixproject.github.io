@@ -8,13 +8,6 @@ active: getting-started
   <div class="row">
     <div class="col-md-6 getting-started-left">
       <h3>For Analysts & Managers</h3>
-    </div>
-    <div class="col-md-6 getting-started-right">
-      <h3>For Developers</h3>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6 getting-started-left">
       <p>The Analysts & Manager tutorial track will walk you through understanding the STIX data model and how content is expressed in it at a high level. You won't have to deal with XML or Python at all.</p>
 
       <div class="well">
@@ -38,6 +31,8 @@ active: getting-started
     </div>
 
     <div class="col-md-6 getting-started-right">
+      <h3>For Developers</h3>
+
       <p>The Developer tutorial track gets into the nitty gritty of STIX XML and the python-stix APIs that make working with it easier. The analyst tutorials give important context as to why things are the way they are and should be completed first.</p>
 
       <div class="well">
