@@ -1,10 +1,8 @@
 ---
 layout: flat
-title: STIX Data Model
+title: Data Model Documentation
 active: data-model
 ---
-
-# Data Model Documentation
 
 <div class="full-width">
   <input type="text" class="doc-types form-control input-lg" placeholder="Search STIX Data Model..." />

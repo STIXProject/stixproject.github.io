@@ -1,6 +1,6 @@
 ---
-layout: getting_started
-title: Suggested Practices
+layout: flat
+title: Security Considerations
 ---
 
 <p class="alert alert-danger"><strong>UNDER DEVELOPMENT:</strong> This guide is still under development. Please consider that it may be both inaccurate and/or incomplete.</p>

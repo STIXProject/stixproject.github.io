@@ -1,6 +1,7 @@
 ---
-layout: getting_started
+layout: flat
 title: Authoring Tutorial
+active: getting-started
 ---
 
 This authoring tutorial will walk you through how to create a simple STIX indicator that looks for a file hash and, if that file hash is found, points to a piece of malware that might be present. You can think of it as a correlary to the [sample walkthrough](/getting-started/sample-walkthrough): while that takes an existing piece of content and explains what it means, this will walk through how to actually author content.

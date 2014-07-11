@@ -1,5 +1,5 @@
 ---
-layout: getting_started
+layout: flat
 title: Authoring profiles
 ---
 
