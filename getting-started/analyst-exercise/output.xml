@@ -1,0 +1,175 @@
+<stix:STIX_Package 
+	xmlns:cyboxCommon="http://cybox.mitre.org/common-2"
+	xmlns:cybox="http://cybox.mitre.org/cybox-2"
+	xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2"
+	xmlns:AddressObj="http://cybox.mitre.org/objects#AddressObject-2"
+	xmlns:DomainNameObj="http://cybox.mitre.org/objects#DomainNameObject-1"
+	xmlns:EmailMessageObj="http://cybox.mitre.org/objects#EmailMessageObject-2"
+	xmlns:FileObj="http://cybox.mitre.org/objects#FileObject-2"
+	xmlns:example="http://example.com"
+	xmlns:incident="http://stix.mitre.org/Incident-1"
+	xmlns:indicator="http://stix.mitre.org/Indicator-2"
+	xmlns:ttp="http://stix.mitre.org/TTP-1"
+	xmlns:ta="http://stix.mitre.org/ThreatActor-1"
+	xmlns:stixCommon="http://stix.mitre.org/common-1"
+	xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1"
+	xmlns:stix="http://stix.mitre.org/stix-1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd
+	http://cybox.mitre.org/cybox-2 http://cybox.mitre.org/XMLSchema/core/2.1/cybox_core.xsd
+	http://cybox.mitre.org/default_vocabularies-2 http://cybox.mitre.org/XMLSchema/default_vocabularies/2.1/cybox_default_vocabularies.xsd
+	http://cybox.mitre.org/objects#AddressObject-2 http://cybox.mitre.org/XMLSchema/objects/Address/2.1/Address_Object.xsd
+	http://cybox.mitre.org/objects#DomainNameObject-1 http://cybox.mitre.org/XMLSchema/objects/Domain_Name/1.0/Domain_Name_Object.xsd
+	http://cybox.mitre.org/objects#EmailMessageObject-2 http://cybox.mitre.org/XMLSchema/objects/Email_Message/2.1/Email_Message_Object.xsd
+	http://cybox.mitre.org/objects#FileObject-2 http://cybox.mitre.org/XMLSchema/objects/File/2.1/File_Object.xsd
+	http://stix.mitre.org/Incident-1 http://stix.mitre.org/XMLSchema/incident/1.1.1/incident.xsd
+	http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.1.1/indicator.xsd
+	http://stix.mitre.org/TTP-1 http://stix.mitre.org/XMLSchema/ttp/1.1.1/ttp.xsd
+	http://stix.mitre.org/ThreatActor-1 http://stix.mitre.org/XMLSchema/threat_actor/1.1.1/threat_actor.xsd
+	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd
+	http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
+	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd" id="example:Package-ddc9522f-cff5-4a9f-b681-d436989f929a" version="1.1.1" timestamp="2014-06-20T14:06:44.591439+00:00">
+    <stix:STIX_Header>
+        <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Threat Report</stix:Package_Intent>
+        <stix:Description>Indicators for FireEye report on Saffron</stix:Description>
+        <stix:Information_Source>
+            <stixCommon:Time>
+                <cyboxCommon:Produced_Time>2014-05-15T00:00:00</cyboxCommon:Produced_Time>
+            </stixCommon:Time>
+        </stix:Information_Source>
+    </stix:STIX_Header>
+    <stix:Indicators>
+        <stix:Indicator id="example:indicator-085b5b19-d1db-4fa7-a156-109b76efaeb3" timestamp="2014-06-20T14:06:44.595243+00:00" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
+            <indicator:Title>Phishing email</indicator:Title>
+            <indicator:Description>Malicious emails sent from actors</indicator:Description>
+            <indicator:Observable id="example:Observable-3f818358-2692-4543-afad-c97f2ab0b931">
+                <cybox:Object id="example:EmailMessage-a662ac47-7481-4dfe-ad16-61b8e2a9d0de">
+                    <cybox:Properties xsi:type="EmailMessageObj:EmailMessageObjectType">
+                        <EmailMessageObj:Header>
+                            <EmailMessageObj:Subject>IEEE Aerospace Conference 2014</EmailMessageObj:Subject>
+                            <EmailMessageObj:Sender xsi:type="AddressObj:AddressObjectType" category="e-mail">
+                                <AddressObj:Address_Value>invite@aeroconf2014.org</AddressObj:Address_Value>
+                            </EmailMessageObj:Sender>
+                        </EmailMessageObj:Header>
+                    </cybox:Properties>
+                </cybox:Object>
+            </indicator:Observable>
+            <indicator:Indicated_TTP>
+                <stixCommon:TTP idref="example:ttp-e7aa7097-34f3-497e-aa20-2bae6ff1c574" xsi:type='ttp:TTPType' version="1.1.1"/>
+            </indicator:Indicated_TTP>
+            <indicator:Producer>
+                <stixCommon:Identity id="example:Identity-95fa6aed-268d-4687-a614-885f36494091">
+                    <stixCommon:Name>FireEye</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2014-05-15T00:00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+        <stix:Indicator id="example:indicator-477ebbd6-797e-4063-99e6-8f3720753f63" timestamp="2014-06-20T14:06:44.595979+00:00" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
+            <indicator:Title>Malware control server</indicator:Title>
+            <indicator:Description>Malicious domains ond IP wned by actors</indicator:Description>
+            <indicator:Observable id="example:Observable-aa3aa35c-7976-4833-a6e3-0e34e2a4b1e9">
+                <cybox:Observable_Composition operator="AND">
+                    <cybox:Observable id="example:Observable-e50545e6-84b5-4846-9ef9-ec85ff9cef96">
+                        <cybox:Object id="example:DomainName-7b589113-d352-40a6-a5f1-c18a28652a75">
+                            <cybox:Properties xsi:type="DomainNameObj:DomainNameObjectType">
+                                <DomainNameObj:Value>yahoomail.com.co</DomainNameObj:Value>
+                            </cybox:Properties>
+                        </cybox:Object>
+                    </cybox:Observable>
+                    <cybox:Observable id="example:Observable-9f594ae7-fe05-4baf-a387-4b8f67ce537c">
+                        <cybox:Object id="example:Address-91f0b005-865c-4607-81a5-159c5e711338">
+                            <cybox:Properties xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                <AddressObj:Address_Value>81.17.28.227</AddressObj:Address_Value>
+                            </cybox:Properties>
+                        </cybox:Object>
+                    </cybox:Observable>
+                </cybox:Observable_Composition>
+            </indicator:Observable>
+            <indicator:Indicated_TTP>
+                <stixCommon:TTP idref="example:ttp-ebfe6ef4-f481-48cb-bd2f-9ac27339ebee" xsi:type='ttp:TTPType' version="1.1.1"/>
+            </indicator:Indicated_TTP>
+            <indicator:Producer>
+                <stixCommon:Identity id="example:Identity-04fdf09e-b3a7-4eda-aee9-f842183af4c8">
+                    <stixCommon:Name>FireEye</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2013-11-28T00:00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+        <stix:Indicator id="example:indicator-d9468c89-7ad9-4512-aafe-bd15989832d4" timestamp="2014-06-20T14:06:44.596879+00:00" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
+            <indicator:Title>Malware used by actors</indicator:Title>
+            <indicator:Description>Remote access trojan "Stealer"</indicator:Description>
+            <indicator:Observable id="example:Observable-5fab612a-87be-4e7c-a4a2-05781b6dcf6d">
+                <cybox:Object id="example:File-39e80ba3-5399-4cfd-b06a-4c5a7d196ca1">
+                    <cybox:Properties xsi:type="FileObj:FileObjectType">
+                        <FileObj:File_Name>IntelRS.exe</FileObj:File_Name>
+                        <FileObj:File_Path>C:\Documents and Settings{USER}\Application Data\IntelRapidStart\AppTransferWiz.dll</FileObj:File_Path>
+                        <FileObj:File_Extension>.exe</FileObj:File_Extension>
+                        <FileObj:Hashes>
+                            <cyboxCommon:Hash>
+                                <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                                <cyboxCommon:Simple_Hash_Value>6dc7cc33a3cdcfee6c4edb6c085b869d</cyboxCommon:Simple_Hash_Value>
+                            </cyboxCommon:Hash>
+                        </FileObj:Hashes>
+                    </cybox:Properties>
+                    <cybox:Related_Objects>
+                        <cybox:Related_Object id="example:Address-8283f568-a61e-4e14-b782-5c363ab6948f">
+                            <cybox:Properties xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                                <AddressObj:Address_Value>81.17.28.227</AddressObj:Address_Value>
+                            </cybox:Properties>
+                            <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.0">Related_To</cybox:Relationship>
+                        </cybox:Related_Object>
+                    </cybox:Related_Objects>
+                </cybox:Object>
+            </indicator:Observable>
+            <indicator:Producer>
+                <stixCommon:Identity id="example:Identity-e3c3b8ab-6974-4f67-aa5a-f5fb94471bc1">
+                    <stixCommon:Name>FireEye</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2014-05-15T00:00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+    </stix:Indicators>
+    <stix:TTPs>
+        <stix:TTP id="example:ttp-e7aa7097-34f3-497e-aa20-2bae6ff1c574" timestamp="2014-06-20T14:06:44.594365+00:00" xsi:type='ttp:TTPType' version="1.1.1">
+            <ttp:Title>Phishing Attempt</ttp:Title>
+            <ttp:Description>Emails sent to targets</ttp:Description>
+            <ttp:Intended_Effect timestamp="2014-06-20T14:06:44.594407+00:00">
+                <stixCommon:Value xsi:type="stixVocabs:IntendedEffectVocab-1.0">Theft - Credential Theft</stixCommon:Value>
+            </ttp:Intended_Effect>
+        </stix:TTP>
+        <stix:TTP id="example:ttp-ebfe6ef4-f481-48cb-bd2f-9ac27339ebee" timestamp="2014-06-20T14:06:44.594547+00:00" xsi:type='ttp:TTPType' version="1.1.1">
+            <ttp:Title>Malware Implant</ttp:Title>
+            <ttp:Description>Customized trojan written in .NET</ttp:Description>
+            <ttp:Intended_Effect timestamp="2014-06-20T14:06:44.594572+00:00">
+                <stixCommon:Value xsi:type="stixVocabs:IntendedEffectVocab-1.0">Account Takeover</stixCommon:Value>
+            </ttp:Intended_Effect>
+        </stix:TTP>
+    </stix:TTPs>
+    <stix:Threat_Actors>
+        <stix:Threat_Actor id="example:threatactor-49156116-5708-4aeb-8ae0-a8f178c5e2ef" timestamp="2014-06-20T14:06:44.594717+00:00" xsi:type='ta:ThreatActorType' version="1.1.1">
+            <ta:Title>Ajax Team</ta:Title>
+            <ta:Description>Iranian intrusion team</ta:Description>
+            <ta:Motivation timestamp="2014-06-20T14:06:44.594752+00:00">
+                <stixCommon:Value xsi:type="stixVocabs:MotivationVocab-1.1">Political</stixCommon:Value>
+            </ta:Motivation>
+            <ta:Motivation timestamp="2014-06-20T14:06:44.594783+00:00">
+                <stixCommon:Value xsi:type="stixVocabs:MotivationVocab-1.1">Military</stixCommon:Value>
+            </ta:Motivation>
+            <ta:Sophistication timestamp="2014-06-20T14:06:44.594805+00:00">
+                <stixCommon:Value xsi:type="stixVocabs:ThreatActorSophisticationVocab-1.0">Practitioner</stixCommon:Value>
+            </ta:Sophistication>
+            <ta:Intended_Effect timestamp="2014-06-20T14:06:44.594831+00:00">
+                <stixCommon:Value xsi:type="stixVocabs:IntendedEffectVocab-1.0">Advantage - Political</stixCommon:Value>
+            </ta:Intended_Effect>
+            <ta:Observed_TTPs scope="&lt;stix.ttp.TTP object at 0x399e510&gt;"/>
+        </stix:Threat_Actor>
+    </stix:Threat_Actors>
+</stix:STIX_Package>
+
