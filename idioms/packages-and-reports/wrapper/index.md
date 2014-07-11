@@ -32,7 +32,7 @@ In this scenario, there are two levels of shared context:
 
 The structuring for this content is to have the top-level context as the outer `STIX Package`. It contains information about its level of shared context, such as the name of the government sharing program.
 
-Each individual report is represented as a `Related Package` inside the outer level `STIX Package`. Note that the individual reports are of the same STIX Package type ([STIXType](/documentation/stix/STIXType)) as the outer level report, meaning they can contain the exact metadata (shared context) as the top-level package. In this scenario, each is given a separate TLP level, package intent, and title. The `Information Source` (the name of the government sharing program) is inherited from the top-level package and does not need to be re-stated in the `Information Source` for each individual field.
+Each individual report is represented as a `Related Package` inside the outer level `STIX Package`. Note that the individual reports are of the same STIX Package type ([STIXType](/data-model/{{site.current_version}}/stix/STIXType)) as the outer level report, meaning they can contain the exact metadata (shared context) as the top-level package. In this scenario, each is given a separate TLP level, package intent, and title. The `Information Source` (the name of the government sharing program) is inherited from the top-level package and does not need to be re-stated in the `Information Source` for each individual field.
 
 One other note about this example is the XPath used in the data markings. Because each must mark only the package it is contained in, the `//node()` marking that is typically used to mark an entire document is not used: instead, a relative path traversal starting from the `Controlled Structure` node walks back up to the parent package and then marks every child of that.
 
@@ -129,4 +129,4 @@ print stix_package.to_xml()
 
 ## Further Reading
 
-* [STIX Package](/documentation/stix/STIXType)
+* [STIX Package](/data-model/{{site.current_version}}/stix/STIXType)

@@ -15,11 +15,11 @@ This scenario consists of an incident where during the investigation, it was det
 
 <img src="diagram.png" alt="Observables related to an incident" />
 
-This idiom is represented as a relationship between the [Incident](/documentation/incident/IncidentType) component and the CybOX [Observable](/documentation/cybox/ObservableType) component. The incident describes information specific to the incident itself while the observable instance components each contain a file object with the name, size, and hash that were found for that file. The `Related Observables` relationship is used to link the observed files to the incident.
+This idiom is represented as a relationship between the [Incident](/data-model/{{site.current_version}}/incident/IncidentType) component and the CybOX [Observable](/data-model/{{site.current_version}}/cybox/ObservableType) component. The incident describes information specific to the incident itself while the observable instance components each contain a file object with the name, size, and hash that were found for that file. The `Related Observables` relationship is used to link the observed files to the incident.
 
 #### Observables
 
-The observables are represented using CybOX [Observables](/documentation/cybox/ObservableType) that leverage the [File Object](/documentation/FileObj/FileObjectType). Each file has three fields that are filled out: the `Hash` field (within a hash structure) is the hash of the file, the `File_Name` field contains the name (not path) of the file, and the `Size` field contains the size in bytes of the file. In the case of this scenario, the two files observed share the same name and size but differing hashes.
+The observables are represented using CybOX [Observables](/data-model/{{site.current_version}}/cybox/ObservableType) that leverage the [File Object](/data-model/{{site.current_version}}/FileObj/FileObjectType). Each file has three fields that are filled out: the `Hash` field (within a hash structure) is the hash of the file, the `File_Name` field contains the name (not path) of the file, and the `Size` field contains the size in bytes of the file. In the case of this scenario, the two files observed share the same name and size but differing hashes.
 
 Notice that, unlike when working with indicators, these are CybOX instance objects rather than patterns. Therefore the CybOX patterning capabilities such as conditions and apply conditions are not leveraged.
 
@@ -119,4 +119,4 @@ print incident.to_xml()
 
 See the full documentation for the relevant types for further information that may be provided:
 
-* [IncidentType](/documentation/incident/IncidentType)
+* [IncidentType](/data-model/{{site.current_version}}/incident/IncidentType)

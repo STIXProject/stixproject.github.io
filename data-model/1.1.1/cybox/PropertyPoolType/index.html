@@ -1,0 +1,39 @@
+---
+layout: data_model
+title: PropertyPoolType
+---
+
+<h1>PropertyPoolType<span class="subdued">CybOX Core Schema</span></h1>
+
+<p>The <a href='/data-model/1.1.1/cybox/PropertyPoolType'>PropertyPoolType</a> enables the description of CybOX Properties in a space-efficient pooled manner with the actual Observable structures defined in the CybOX schema containing references to the pooled Properties elements. This reduces redundancy caused when identical Properties occur multiple times within a set of defined Observables.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Property<span class="occurrence">1..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/PropertyType">PropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Property construct enables the specification of a single Object Property.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

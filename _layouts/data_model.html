@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    {% include header.html %}
+    <body>
+
+      {% include nav.html active="data-model" %}
+      
+      <div class="container">
+        {{ content }}
+      </div>
+
+      {% include footer.html %}
+    </body>
+</html>

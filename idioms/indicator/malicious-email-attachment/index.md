@@ -21,15 +21,15 @@ Yes, this diagram is fairly complicated. It's easiest to understand if you take 
 
 ### E-mail Subject Indicator
 
-The e-mail subject indicator, in the bottom-right, matches just the e-mail subject line. It has a `Title` and a `Type` (using the [IndicatorTypeVocab-1.1](/documentation/stixVocabs/IndicatorTypeVocab-1.0) vocabulary) to give it some basic identifying information meant for humans. The "test" portion of the indicator consists of an [Observable](/documentation/cybox/ObservableType) with an [Email Message Object](/documentation/EmailMessageObj/EmailMessageObjectType). The pattern for the subject is that it always starts with the same text, so the field value for e-mail `Subject` field (inside the `Header`) is set to "[IMPORTANT] Please Review Before" and the CybOX `Condition` field is set to "Starts With" to indicate that the pattern should match if an e-mail is matched against it whose subject line starts with that text.
+The e-mail subject indicator, in the bottom-right, matches just the e-mail subject line. It has a `Title` and a `Type` (using the [IndicatorTypeVocab-1.1](/data-model/{{site.current_version}}/stixVocabs/IndicatorTypeVocab-1.0) vocabulary) to give it some basic identifying information meant for humans. The "test" portion of the indicator consists of an [Observable](/data-model/{{site.current_version}}/cybox/ObservableType) with an [Email Message Object](/data-model/{{site.current_version}}/EmailMessageObj/EmailMessageObjectType). The pattern for the subject is that it always starts with the same text, so the field value for e-mail `Subject` field (inside the `Header`) is set to "[IMPORTANT] Please Review Before" and the CybOX `Condition` field is set to "Starts With" to indicate that the pattern should match if an e-mail is matched against it whose subject line starts with that text.
 
 The indicated TTP for the indicator gives the indicator some context (relationship line in red). In this case, it says that if you see something that matches the pattern it indicates that you could have a phishing attack. In order to focus on the indicator portion of the data model for this idiom, the TTP was left purposefully vague but could easily be filled in with the more advanced [TTP idioms](/idioms/ttp).
 
-Finally, the `Confidence` field is used to indicate that this indicator is "Low" confidence (using the default vocabulary in STIX for confidence, [HighMediumLowVocab-1.0](/documentation/stixVocabs/HighMediumLowVocab-1.0)).
+Finally, the `Confidence` field is used to indicate that this indicator is "Low" confidence (using the default vocabulary in STIX for confidence, [HighMediumLowVocab-1.0](/data-model/{{site.current_version}}/stixVocabs/HighMediumLowVocab-1.0)).
 
 ### E-mail Attachment Indicator
 
-The indicator for the attachment, in the top-left, has a somewhat more complicated structure. In CybOX, attachments to an e-mail are represented via the `Attachments` field by using an `object reference` to the ID of the attached object (generally a [FileObject](/documentation/FileObj/FileObjectType)) defined elsewhere. In this case, the attachment is indeed represented as a FileObject and is defined as a `Related Object` on the e-mail message object. The `Relationship` descriptor uses [ObjectRelationshipVocab-1.1](/documentation/cyboxVocabs/ObjectRelationshipVocab-1.1) (the default vocabulary for this field) to describe that the e-mail "Contains" the file.
+The indicator for the attachment, in the top-left, has a somewhat more complicated structure. In CybOX, attachments to an e-mail are represented via the `Attachments` field by using an `object reference` to the ID of the attached object (generally a [FileObject](/data-model/{{site.current_version}}/FileObj/FileObjectType)) defined elsewhere. In this case, the attachment is indeed represented as a FileObject and is defined as a `Related Object` on the e-mail message object. The `Relationship` descriptor uses [ObjectRelationshipVocab-1.1](/data-model/{{site.current_version}}/cyboxVocabs/ObjectRelationshipVocab-1.1) (the default vocabulary for this field) to describe that the e-mail "Contains" the file.
 
 That's a fairly complicated structure but is repeatable as a pattern throughout CybOX when one object (in this case a File) is contained in another object (in this case an e-mail). It ensures that each object is representable as an IDable construct on its own but still allows you to represent the full semantics of how one object is embedded in another.
 
@@ -199,5 +199,5 @@ print stix_package.to_xml()
 
 ## Further Reading
 
-* [Indicator Type](/documentation/indicator/IndicatorType)
-* [CybOX File Object](/documentation/FileObj/FileObjectType)
+* [Indicator Type](/data-model/{{site.current_version}}/indicator/IndicatorType)
+* [CybOX File Object](/data-model/{{site.current_version}}/FileObj/FileObjectType)

@@ -65,14 +65,14 @@ These situations are a judgment call, but when making that judgment you should c
 
 8 major STIX constructs are versioned:
 
-* [Packages](/documentation/stix/STIXType) (STIXType, STIX_Package)
-* [Campaigns](/documentation/campaign/CampaignType)
-* [Courses of Action](/documentation/coa/CourseOfActionType)
-* [Exploit Targets](/documentation/et/ExploitTargetType)
-* [Indicators](/documentation/indicator/IndicatorType)
-* [Incidents](/documentation/incident/IncidentType)
-* [Threat Actors](/documentation/ta/ThreatActorType)
-* [TTPs](/documentation/ttp/TTPType)
+* [Packages](/data-model/{{site.current_version}}/stix/STIXType) (STIXType, STIX_Package)
+* [Campaigns](/data-model/{{site.current_version}}/campaign/CampaignType)
+* [Courses of Action](/data-model/{{site.current_version}}/coa/CourseOfActionType)
+* [Exploit Targets](/data-model/{{site.current_version}}/et/ExploitTargetType)
+* [Indicators](/data-model/{{site.current_version}}/indicator/IndicatorType)
+* [Incidents](/data-model/{{site.current_version}}/incident/IncidentType)
+* [Threat Actors](/data-model/{{site.current_version}}/ta/ThreatActorType)
+* [TTPs](/data-model/{{site.current_version}}/ttp/TTPType)
 
 It is always suggested that you version these constructs by including a relevant `@id` and `@timestamp` per the [STIX versioning guide](/idioms/features/versioning).
 

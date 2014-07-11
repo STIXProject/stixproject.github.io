@@ -1,0 +1,53 @@
+---
+layout: data_model
+title: OptionsDataRecordType
+---
+
+<h1>OptionsDataRecordType<span class="subdued">Network Flow Object Schema</span></h1>
+
+<p>The data record that contains values and scope information of the Flow measurement parameters, corresponding to an Options Template Record.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Scope_Field_Value<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Corresponds to a previously defined Options Template Record.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Option_Record_Collection_Element<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/NetFlowObj/OptionCollectionElementType">OptionCollectionElementType</a>
+        
+      </td>
+      <td>
+        
+          <p>For each option data record, field values are listed.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

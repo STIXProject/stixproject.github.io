@@ -11,7 +11,7 @@ This scenario consists of an indicator for the URL `http://x4z9arb.cn/4712/`, wh
 
 ## Data model
 
-Because this indicator doesn't include any context (see scenario above), the indicator itself is the only top-level component. Within the indicator, the URL is represented as a [URI Object](/documentation/URIObj/URIObjectType) with the `Type` set to "URL" and the `Value` set to the malicious URL itself (`http://x4z9arb.cn/4712/`).
+Because this indicator doesn't include any context (see scenario above), the indicator itself is the only top-level component. Within the indicator, the URL is represented as a [URI Object](/data-model/{{site.current_version}}/URIObj/URIObjectType) with the `Type` set to "URL" and the `Value` set to the malicious URL itself (`http://x4z9arb.cn/4712/`).
 
 ![URL Indicator Diagram](diagram.png)
 
@@ -59,5 +59,5 @@ print indicator.to_xml()
 
 ## Further Reading
 
-* [Indicator Type](/documentation/indicator/IndicatorType)
-* [CybOX URI Object](/documentation/URIObj/URIObjectType)
+* [Indicator Type](/data-model/{{site.current_version}}/indicator/IndicatorType)
+* [CybOX URI Object](/data-model/{{site.current_version}}/URIObj/URIObjectType)

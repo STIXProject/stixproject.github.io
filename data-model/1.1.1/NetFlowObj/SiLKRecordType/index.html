@@ -1,0 +1,305 @@
+---
+layout: data_model
+title: SiLKRecordType
+---
+
+<h1>SiLKRecordType<span class="subdued">Network Flow Object Schema</span></h1>
+
+<p>System for Internet-Level Knowledge (CMU/SEI). The fields are taken from a list shown in http://tools.netsa.cert.org/silk/rwcut.html. Fields common to all network flows are defined in <a href='/data-model/1.1.1/NetFlowObj/NetworkFlowLabelType'>NetworkFlowLabelType</a> (e.g., source IP, SNMP ingress, etc.). For additional references, see http://tools.netsa.cert.org/silk/analysis-handbook.pdf, http://tools.netsa.cert.org/silk/faq.html#ipfix-fields.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Packet_Count<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Represents the number of packets in the flow.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Byte_Count<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Represents the number of Layer 3 bytes in the packets of the flow.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>TCP_Flags<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the union of all TCP flags observed over the life of the flow.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Start_Time<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Represents the SysUpTime at start of flow, i.e. the total time in milliseconds starting from when the router booted. There is another element "Start_Time+msec" which is the starting time of flow including milliseconds, but milliseconds are the resolution of Start_Time unless the -legacy-timestamps switch is specified, so "Start_Time+msec" is not defined separately.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Duration<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the duration of the flow. There is another element "Duration+msec" which is the starting time of flow including milliseconds, but milliseconds are the resolution of Duration unless the -legacy-timestamps switch is specified, so "Duration+msec" is not defined separately.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>End_Time<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Represents the SysUpTime at end of flow. There is another element "End_Time+msec" which is the starting time of flow including milliseconds, but milliseconds are the resolution of End_Time unless the -legacy-timestamps switch is specified, so "End_Time+msec" is not defined separately.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Sensor_Info<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/NetFlowObj/SiLKSensorInfoType">SiLKSensorInfoType</a>
+        
+      </td>
+      <td>
+        
+          <p>Defines the fields associated with the sensor at the collection point.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>ICMP_Type<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>ICMP type for ICMP flows. Empty for non-ICMP flows.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>ICMP_Code<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>ICMP code for ICMP flows. Empty for non-ICMP flows.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Router_Next_Hop_IP<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/AddressObj/AddressObjectType">AddressObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>Router next hop IP.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Initial_TCP_Flags<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/PacketObj/TCPFlagsType">TCPFlagsType</a>
+        
+      </td>
+      <td>
+        
+          <p>TCP flags on first packet in the flow.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Session_TCP_Flags<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>bit-wise OR of TCP flags over all packets except the first in the flow.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Flow_Attributes<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/NetFlowObj/SiLKFlowAttributesType">SiLKFlowAttributesType</a>
+        
+      </td>
+      <td>
+        
+          <p>Flow attributes set by the flow generator.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Flow_Application<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/PacketObj/IANAPortNumberRegistryType">IANAPortNumberRegistryType</a>
+        
+      </td>
+      <td>
+        
+          <p>Based on an examination of payload contents, this value = the port number traditionally used for that type of traffic (21 for FTP traffic even if actually routed over port 80). Documentation (http://tools.netsa.cert.org/silk/rwcut.html) says this is a "guess as to the content of the flow".</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Src_IP_Type<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/NetFlowObj/SiLKAddressType">SiLKAddressType</a>
+        
+      </td>
+      <td>
+        
+          <p>The type of the source IP in terms of whether the address is routable, external, etc.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Dest_IP_Type<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/NetFlowObj/SiLKAddressType">SiLKAddressType</a>
+        
+      </td>
+      <td>
+        
+          <p>The type of the destination IP in terms of whether the address is routable, external, etc.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Src_Country_Code<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/NetFlowObj/SiLKCountryCodeType">SiLKCountryCodeType</a>
+        
+      </td>
+      <td>
+        
+          <p>A two-letter country code denoting the country of location of the source IP address.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Dest_Country_Code<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/NetFlowObj/SiLKCountryCodeType">SiLKCountryCodeType</a>
+        
+      </td>
+      <td>
+        
+          <p>A two-letter country code denoting the country of location of the destination IP address.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Src_MAPNAME<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>User defined string for integrating external information into SiLK records. See documentation on SiLK pmap filter for details (defined in the prefix map associated with MAPNAME).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Dest_MAPNAME<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>User defined string for integrating external information into SiLK records. See documentation on SiLK pmap filter for details (defined in the prefix map associated with MAPNAME).</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

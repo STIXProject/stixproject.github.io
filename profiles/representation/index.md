@@ -80,7 +80,7 @@ Profile rules are specified in the Occurrence, Implementation, Value(s), and Not
 
 ## Understanding profiles
 
-STIX profiles are based defining rules for how STIX types may be used. For example, the top-level of any STIX document is `STIX_Package`, which is an instance of [STIXType](/documentation/stix/STIXType) in the STIX Core schema. Therefore, the rules that define how STIX_Package must be used can be found in the `STIXType` section of the `STIX Core` profile tab. That tab lists each field and the rules for that field.
+STIX profiles are based defining rules for how STIX types may be used. For example, the top-level of any STIX document is `STIX_Package`, which is an instance of [STIXType](/data-model/{{site.current_version}}/stix/STIXType) in the STIX Core schema. Therefore, the rules that define how STIX_Package must be used can be found in the `STIXType` section of the `STIX Core` profile tab. That tab lists each field and the rules for that field.
 
 For each field that is permitted in the profile (required, suggested, or optional) the type that defines that field will also be present, with two exceptions: simple types (strings, numbers, text, etc.) without structure don't need to be defined and are not present, and types in external schemas may not be present. Other types, however, will be present in their corresponding tab and will also be fully defined.
 

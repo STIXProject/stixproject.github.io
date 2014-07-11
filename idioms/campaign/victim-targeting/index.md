@@ -13,9 +13,9 @@ This idiom describes the representation of a cyber threat campaign characterized
 
 <img src="diagram.png" alt="Campaign victim targeting" class="aside-text" />
 
-There are two main pieces of information that need to be communicated in this idiom: the campaign construct itself (using [CampaignType](/documentation/campaign/CampaignType)) and the victim targeting (using [VictimTargetingType](/documentation/ttp/VictimTargetingType)) in TTP. These are related together using the Campaign=>Related_TTP relationship.
+There are two main pieces of information that need to be communicated in this idiom: the campaign construct itself (using [CampaignType](/data-model/{{site.current_version}}/campaign/CampaignType)) and the victim targeting (using [VictimTargetingType](/data-model/{{site.current_version}}/ttp/VictimTargetingType)) in TTP. These are related together using the Campaign=>Related_TTP relationship.
 
-The campaign is represented with just a title and a related TTP with a relationship name of "Targets". The TTP leverages the victim targeting constructs to represent the types of information that are targeted. For targeting of a specific type of information, the `Targeted Information` field is used, leveraging the controlled vocabulary for information types, [InformationTypeVocab-1.0](/documentation/stixVocabs/InformationTypeVocab-1.0/).
+The campaign is represented with just a title and a related TTP with a relationship name of "Targets". The TTP leverages the victim targeting constructs to represent the types of information that are targeted. For targeting of a specific type of information, the `Targeted Information` field is used, leveraging the controlled vocabulary for information types, [InformationTypeVocab-1.0](/data-model/{{site.current_version}}/stixVocabs/InformationTypeVocab-1.0/).
 
 ## XML
 
@@ -84,6 +84,6 @@ You can build on this idiom by representing other types of victim targeting in t
 
 See the full documentation for the relevant types for further information that may be provided:
 
-* [CampaignType](/documentation/campaign/CampaignType)
-* [TTPType](/documentation/ttp/TTPType)
-* [VictimTargetingType](/documentation/ttp/VictimTargetingType)
+* [CampaignType](/data-model/{{site.current_version}}/campaign/CampaignType)
+* [TTPType](/data-model/{{site.current_version}}/ttp/TTPType)
+* [VictimTargetingType](/data-model/{{site.current_version}}/ttp/VictimTargetingType)

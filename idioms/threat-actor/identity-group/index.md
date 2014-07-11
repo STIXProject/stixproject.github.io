@@ -13,9 +13,9 @@ In this scenario, the STIX represents a threat actor group named "Disco Team" th
 
 <img src="diagram.png" alt="Threat Actor Group Identification" />
 
-Threat actor identification is, as you would expect, represented using the STIX [Threat Actor](/documentation/ta/ThreatActorType) component. More specifically, the `Identity` field, which uses the [IdentityType](/documentation/stixCommon/IdentityType) extension point, is the field that contains information about the identity of the actor. Other fields in threat actor describe what the actor targets, how sophisticated it is, and other information about it.
+Threat actor identification is, as you would expect, represented using the STIX [Threat Actor](/data-model/{{site.current_version}}/ta/ThreatActorType) component. More specifically, the `Identity` field, which uses the [IdentityType](/data-model/{{site.current_version}}/stixCommon/IdentityType) extension point, is the field that contains information about the identity of the actor. Other fields in threat actor describe what the actor targets, how sophisticated it is, and other information about it.
 
-The STIX default extension for identity is [OASIS CIQ](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=ciq) implemented via the [CIQIdentity3.0InstanceType](/documentation/stix-ciqidentity/CIQIdentity3.0InstanceType). Using this extension point, the threat actor identity is characterized in CIQ within the `Specification` field.
+The STIX default extension for identity is [OASIS CIQ](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=ciq) implemented via the [CIQIdentity3.0InstanceType](/data-model/{{site.current_version}}/stix-ciqidentity/CIQIdentity3.0InstanceType). Using this extension point, the threat actor identity is characterized in CIQ within the `Specification` field.
 
 ## XML
 
@@ -92,6 +92,6 @@ print ta.to_xml()
 [Full Python](identifying-a-threat-actor-group.py)
 ## Further Reading
 
-* [Threat Actor Component](/documentation/ta/ThreatActorType)
+* [Threat Actor Component](/data-model/{{site.current_version}}/ta/ThreatActorType)
 
 Much of this idiom focused on using the OASIS CIQ standard to represent information about a threat actor's identity. For further information and full documentation on CIQ, download the release from OASIS [here](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=ciq#download).

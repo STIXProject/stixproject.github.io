@@ -5,7 +5,7 @@ title: Indicator Idioms
 
 <img src="/images/Indicator.png" class="component-img" alt="Indicator Icon" />
 
-A STIX [Indicator](/documentation/indicator/IndicatorType) conveys specific Observable patterns combined with contextual information intended to represent artifacts and/or behaviors of interest within a cyber security context. They consist of one or more Observable patterns potentially mapped to a related [TTP](/idioms/ttp) context and adorned with other relevant metadata on things like confidence in the indicator’s assertion, handling restrictions, valid time windows, likely impact, sightings of the indicator, structured test mechanisms for detection, related campaigns, suggested courses of action, related indicators, the source of the Indicator, etc. Recognizing limitations in current standardized approaches of representation, STIX leverages community knowledge and best practices to define a new Indicator structure for representing Indicator information. 
+A STIX [Indicator](/data-model/{{site.current_version}}/indicator/IndicatorType) conveys specific Observable patterns combined with contextual information intended to represent artifacts and/or behaviors of interest within a cyber security context. They consist of one or more Observable patterns potentially mapped to a related [TTP](/idioms/ttp) context and adorned with other relevant metadata on things like confidence in the indicator’s assertion, handling restrictions, valid time windows, likely impact, sightings of the indicator, structured test mechanisms for detection, related campaigns, suggested courses of action, related indicators, the source of the Indicator, etc. Recognizing limitations in current standardized approaches of representation, STIX leverages community knowledge and best practices to define a new Indicator structure for representing Indicator information. 
 
 These indicator idioms describe either types of indicators based on the data that they match against (i.e. focus on the "test" portion of the indicator) or the indicator as it relates to other STIX constructs (i.e. the "context" portion of the indicator). There are also idioms that explain different pieces of the indicator itself, like confidence and valid time position.
 
@@ -47,7 +47,7 @@ Test mechanisms are a part of the indicator data model that allow you to represe
 
 ### Indicator Composition
 
-This set of idioms describes various methods for composing lists of indicators (multiple IP addresses or malicious URLs, for example). {% comment %}For a writeup on when to use each form of composition, see the [suggested practices](/documentation/indicator/IndicatorType#suggested-practices-composition) for indicator composition.{% endcomment %}
+This set of idioms describes various methods for composing lists of indicators (multiple IP addresses or malicious URLs, for example). {% comment %}For a writeup on when to use each form of composition, see the [suggested practices](/data-model/{{site.current_version}}/indicator/IndicatorType#suggested-practices-composition) for indicator composition.{% endcomment %}
 
 * [Composition through CybOX @apply_condition »](apply-condition)
 * [Composition through Composite Observables »](observable-composition)

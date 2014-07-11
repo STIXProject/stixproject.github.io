@@ -5,7 +5,7 @@ title: Victim Targeting by Sector
 
 <img src="/images/Victim Targeting.png" class="component-img" alt="Victim Targeting Icon" />
 
-A key usage of the [TTP](/documentation/ttp/TTPType) component is to characterize the types of victims that a particular threat targets, known as victim targeting. This idiom describes how to use the victim targeting structures in STIX to characterize a threat that targets particular industry sectors, such as the Energy Sector and the Banking and Finance Sector.
+A key usage of the [TTP](/data-model/{{site.current_version}}/ttp/TTPType) component is to characterize the types of victims that a particular threat targets, known as victim targeting. This idiom describes how to use the victim targeting structures in STIX to characterize a threat that targets particular industry sectors, such as the Energy Sector and the Banking and Finance Sector.
 
 TTP Victim Targeting, including by industry sector, is commonly used within a larger STIX document by relating it to a threat actor or a campaign via a Related TTP. For example, the [Campaign Victim Targeting](/idioms/campaign/victim-targeting) idiom describes linking a campaign to the victims that campaign targets: when combined with this idiom, you could describe a campaign that targets victims by industry sector.
 
@@ -15,9 +15,9 @@ In this scenario, the STIX document describes a very simple victim targeting str
 
 ## Data model
 
-The portion of the TTP data model that is used to represent victim targeting is [VictimTargetingType](/documentation/ttp/VictimTargetingType). That type contains a field called `Identity` that is used to express characterizing facts about the identity of targeted victims, including things like relevant industry sectors.
+The portion of the TTP data model that is used to represent victim targeting is [VictimTargetingType](/data-model/{{site.current_version}}/ttp/VictimTargetingType). That type contains a field called `Identity` that is used to express characterizing facts about the identity of targeted victims, including things like relevant industry sectors.
 
-The `Identity` field is an extension point represented by [IdentityType](/documentation/stixCommon/IdentityType). The default extension provided by STIX for use in expressing identity is the [CIQIdentity3.0InstanceType](/documentation/stix-ciqidentity/CIQIdentity3.0InstanceType), which leverages the external [CIQ](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=ciq) (Customer Information Quality) standard published by OASIS. Though it's possible to use a different extension, in most cases producers will be using CIQ.
+The `Identity` field is an extension point represented by [IdentityType](/data-model/{{site.current_version}}/stixCommon/IdentityType). The default extension provided by STIX for use in expressing identity is the [CIQIdentity3.0InstanceType](/data-model/{{site.current_version}}/stix-ciqidentity/CIQIdentity3.0InstanceType), which leverages the external [CIQ](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=ciq) (Customer Information Quality) standard published by OASIS. Though it's possible to use a different extension, in most cases producers will be using CIQ.
 
 Within CIQ, the specific field used is `@IndustryType` within `OrganisationInfo`. That field is an XML attribute and, therefore, the suggested practice is to use a comma separated list when multiple values are needed.
 
@@ -64,6 +64,6 @@ print ttp.to_xml()
 
 ## Further Reading
 
-* [TTP](/documentation/ttp/TTPType)
-* [Victim Targeting](/documentation/ttp/VictimTargetingType)
+* [TTP](/data-model/{{site.current_version}}/ttp/TTPType)
+* [Victim Targeting](/data-model/{{site.current_version}}/ttp/VictimTargetingType)
 * [OASIS CIQ](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=ciq)

@@ -5,7 +5,7 @@ title: Course of Action Idioms
 
 <img src="/images/Course of Action.png" class="component-img" alt="Course of Action Icon" />
 
-A STIX [Course of Action](/documentation/coa/CourseOfActionType) component is used to convey information about courses of action that may be taken either in response to an attack or as a preventative measure prior to an attack. They are used to express both courses of action that might be taken (are possible options are are suggested) in the course of an incident to respond to something that has occurred or to mitigate the effect of an exploit target (vulnerability or misconfiguration) apriori.
+A STIX [Course of Action](/data-model/{{site.current_version}}/coa/CourseOfActionType) component is used to convey information about courses of action that may be taken either in response to an attack or as a preventative measure prior to an attack. They are used to express both courses of action that might be taken (are possible options are are suggested) in the course of an incident to respond to something that has occurred or to mitigate the effect of an exploit target (vulnerability or misconfiguration) apriori.
 
 The course of action component itself contains information about the objective of the action, its efficacy, its likely impact, cost, structured parameter observables, and even a structured course of action meant to be implemented automatically in a tool.
 

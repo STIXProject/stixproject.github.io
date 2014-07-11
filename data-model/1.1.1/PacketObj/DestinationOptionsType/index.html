@@ -1,0 +1,67 @@
+---
+layout: data_model
+title: DestinationOptionsType
+---
+
+<h1>DestinationOptionsType<span class="subdued">Network Packet Object Schema</span></h1>
+
+<p>Defines fields for the IPv6 Destination Options header which is used to carry optional information that needs to be examined only by a packet's destination node(s).</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Next_Header<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/PacketObj/IANAAssignedIPNumbersType">IANAAssignedIPNumbersType</a>
+        
+      </td>
+      <td>
+        
+          <p>Identifies the type of header immediately following the Destination_Options options header. Uses the same values as the IPv4 Protocol field.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Header_Ext_Len<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Length of the Destination Options header in 8-octet units, not including the first 8 octets.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Option_Data<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/PacketObj/OptionDataType">OptionDataType</a>
+        
+      </td>
+      <td>
+        
+          <p>Variable-length field, of length such that the complete Destinations Options header is an integer multiple of 8 octets long. Contains one or more type-length-value (TLV)-encoded options.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

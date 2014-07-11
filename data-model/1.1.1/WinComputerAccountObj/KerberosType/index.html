@@ -1,0 +1,53 @@
+---
+layout: data_model
+title: KerberosType
+---
+
+<h1>KerberosType<span class="subdued">Win Computer Account Object Schema</span></h1>
+
+<p>The <a href='/data-model/1.1.1/WinComputerAccountObj/KerberosType'>KerberosType</a> type specifies the Kerberos authentication protocol specific Object properties for the Windows computer account.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Delegation<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/WinComputerAccountObj/KerberosDelegationType">KerberosDelegationType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Delegation field specifies the Kerberos delegation used for the Windows computer account.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Ticket<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/UnsignedLongObjectPropertyType">UnsignedLongObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Ticket field specifies the ID of the Kerberos ticket assigned to the Windows computer account.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

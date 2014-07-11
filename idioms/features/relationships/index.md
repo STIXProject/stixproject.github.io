@@ -34,7 +34,7 @@ In XML, a basic STIX relationship structure looks like this (the relationship is
 
 The `Confidence` field uses the STIX confidence mechanism to express confidence in the relationship assertion. For example, if the producer is not certain that a particular TTP is used by a Threat Actor they could use "Low" confidence to denote that.
 
-The `Information Source` field, using [InformationSourceType](/documentation/stixCommon/InformationSourceType), is used to characterize provenance information about the relationship assertion. It can be used to indicate who, when, and how (what tools) the relationship assertion was made.
+The `Information Source` field, using [InformationSourceType](/data-model/{{site.current_version}}/stixCommon/InformationSourceType), is used to characterize provenance information about the relationship assertion. It can be used to indicate who, when, and how (what tools) the relationship assertion was made.
 
 The `Relationship` field uses specifies a semantic label for what kind of relationship is being asserted. This value can be ad-hoc or reference a value from a STIX controlled vocabulary. Although no default vocabulary has currently been defined, the STIX community is currently soliciting input on potential vocabularies.
 
