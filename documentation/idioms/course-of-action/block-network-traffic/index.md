@@ -17,7 +17,7 @@ The focus of this data model is of course on the STIX [Course of Action](/data-m
 
 The `Title` field simply gives the course of action a human-readable title. Similarly, `Description` and `Short Description` could be used to give it longer human-readable descriptions if desired.
 
-The `Stage` field describes the stage of the response process that the course of action is used at. This is a controlled vocabulary (see [xsi:type idiom](/idioms/features/xsi-type)) where the default vocabulary is [COAStageVocab-1.0](/data-model/{{site.current_version}}/stixVocabs/COAStageVocab-1.0). For this idiom, the action is a response to some known activity so it's set to "Response".
+The `Stage` field describes the stage of the response process that the course of action is used at. This is a controlled vocabulary (see [xsi:type idiom](../../features/xsi-type)) where the default vocabulary is [COAStageVocab-1.0](/data-model/{{site.current_version}}/stixVocabs/COAStageVocab-1.0). For this idiom, the action is a response to some known activity so it's set to "Response".
 
 The `Type` field, also a controlled vocabulary (default is [CourseOfActionTypeVocab-1.0](/data-model/{{site.current_version}}/stixVocabs/CourseOfActionTypeVocab-1.0)), indicates what general type of course of action is being described. This COA describes blocking of an IP address by perimeter firewalls, so is set to "Perimeter Blocking".
 

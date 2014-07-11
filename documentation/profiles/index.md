@@ -26,7 +26,7 @@ Profiles can be thought of a second compatability level for STIX content: STIX c
 Profiles outline several types of rules:
 
 1. **Presence** rules indicate whether fields and constructs are required, suggested, allowed, or prohibited
-2. **Implementation** rules indicate that extension points (implemented through [xsi:type](/idioms/features/xsi-type)) must have specific implementations
+2. **Implementation** rules indicate that extension points (implemented through [xsi:type](/documentation/idioms/features/xsi-type)) must have specific implementations
 3. **Value** rules indicate that fields have to have a certain set of values
 4. **Miscellaneous** rules indicate other requirements that don't fall into the above categories. For example, they might say that if the indicator type field is "IP Watchlist", the contained object must be an address object. These rules are not generally automatically testable but can be included in profiles for human consumption.
 

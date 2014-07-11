@@ -7,7 +7,7 @@ Versioning and revocation of STIX content is a concept that has only been explor
 
 That said, versioning and revoking content is an important topic that often gets overlooked. Threat intelligence is not an information domain where the information is published once and then forgotten: it constantly evolves over time as information is discovered, expanded, changed, and - when found to be wrong - deleted.
 
-STIX versioning takes two parallel approaches: [relationships](/idioms/features/relationships) are used to version content when a new version is significant enough a difference to be conceptually different or the new version is from a different producer (id namespace prefix) than the previous version, while updated timestamps are used for more incremental updates or updates within an organization.
+STIX versioning takes two parallel approaches: [relationships](../relationships) are used to version content when a new version is significant enough a difference to be conceptually different or the new version is from a different producer (id namespace prefix) than the previous version, while updated timestamps are used for more incremental updates or updates within an organization.
 
 ## Baseline
 
@@ -77,4 +77,4 @@ Revocation of content is addressed as a major update with the relationship descr
 
 ## Further Reading
 
-See the [relationships](/idioms/features/relationships) idiom for more information on using relationships.
+See the [relationships](../relationships) idiom for more information on using relationships.

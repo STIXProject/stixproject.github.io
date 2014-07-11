@@ -80,7 +80,7 @@ print pkg.to_xml()
 
 You can build on this idiom by representing other types of victim targeting in the TTP:
 
-* [Targeting by Industry Sector](/idioms/ttp/industry-sector)
+* [Targeting by Industry Sector](../../ttp/industry-sector)
 
 See the full documentation for the relevant types for further information that may be provided:
 

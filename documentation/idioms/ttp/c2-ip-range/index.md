@@ -123,4 +123,4 @@ print stix_package.to_xml()
 * [TTP Component](/data-model/{{site.current_version}}/ttp/TTPType)
 * [InfrastructureType](/data-model/{{site.current_version}}/ttp/InfrastructureType)
 
-This idiom can be composed with the [C2 indicator](/idioms/indicator/c2-indicator) idiom to represent both the C2 infrastructure itself (as here) and the set of indicators for that infrastructure. Simply replace the TTP in that idiom, which only has a title, with something similar to the TTP in this idiom that includes a structured description of the C2 range.
+This idiom can be composed with the [C2 indicator](../../indicator/c2-indicator) idiom to represent both the C2 infrastructure itself (as here) and the set of indicators for that infrastructure. Simply replace the TTP in that idiom, which only has a title, with something similar to the TTP in this idiom that includes a structured description of the C2 range.

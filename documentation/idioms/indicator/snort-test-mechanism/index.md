@@ -17,7 +17,7 @@ The information that the producer provided was that the Snort signatures detecte
 
 * An [Indicator](/data-model/{{site.current_version}}/indicator/IndicatorType) is used to encode the Snort signatures themselves
 * The indicator is related to an indicated [TTP](/data-model/{{site.current_version}}/ttp/TTPType) that simply states the TTP is for exploits of Heartbleed
-* The TTP is related to an [Exploit Target](/data-model/{{site.current_version}}/et/ExploitTargetType) describing the [CVE](/idioms/exploit-target/cve)
+* The TTP is related to an [Exploit Target](/data-model/{{site.current_version}}/et/ExploitTargetType) describing the [CVE](../../exploit-target/cve)
 
 This structure allows for pivoting and information expression at each conceptual level: signature, exploit, and vulnerability. The diagram looks like this:
 
