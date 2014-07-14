@@ -21,6 +21,8 @@ A [priority report](output.xml) hits the wire - seconds later a STIX file is loa
 
 You check the header - looks like it came from FireEye with high confidence and TLP: White
 
+It seems this was a larger campaign - they redacted individual incidents and built specific indicators so people could clean their networks
+
 ## Getting some context
 
 There's some indicators attached, at a glance you can tell it's for phishing emails, malware samples and bad domains
