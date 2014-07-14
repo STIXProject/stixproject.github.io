@@ -4,187 +4,65 @@ title: Getting Started
 active: getting-started
 ---
 
-# Setup
-Familiarize yourself with this [FireEye report](report) on malicious actors leveraging network exploitation operations from Iran
+# Another Busy Monday 
+A [FireEye report](report) just crossed your desk - malicious actors from Iran have been stealing information from global systems, especially governments.
 
-Have the [STIX XML representation](output.xml) of the report at the ready
+You skim the abstract - custom malware? domain typosquatting? Seems interesting, and the boss will want to get an update either way. 
 
-## Capture metadata about report
-Keeping track of the author, date of publication, and the intent of the report is valuable when evaluating the actionability of information.
+Looks like distribution is unlimited, you can tell from the page footer there's no TLP or sensitivity restrictions.
 
-``` python
-stix_header.description = "Indicators for FireEye report on Saffron"
-stix_header.add_package_intent ("Threat Report")
-stix_header.information_source = InformationSource()
-stix_header.information_source.time = Time()
-stix_header.information_source.time.produced_time = datetime.strptime('2014-05-15', "%Y-%m-%d")
-```
+Only problem is: it's 20 pages and the boss will want actionable recommendations within the hour - there's no time to call your techie friend for a breakdown of what's important.
 
-If the report includes limited distribution markings, those restrictions would be included here.
+Sound familiar? Let's walk through how STIX makes it easy to get the information you need.
 
+# A Better Way
 
-## Create Indicator for email message 
+A [priority report](output.xml) hits the wire - seconds later a STIX file is loaded into your analyst console. 
 
-Several types of indicators are clearly visible -  malicious emails sent by the actors as a prime example.
+You check the header - looks like it came from FireEye with high confidence and TLP: White
 
-First, instantiate an `Indicator` for the malicious email.
-``` python
-email_ind = Indicator()
-email_ind.title = "Phishing email"
-email_ind.description = "Malicious emails sent from actors"
-```
+## Getting some context
 
-Then, create an `EmailMessage` observable and link it to the `Indicator`.
+There's some indicators attached, at a glance you can tell it's for phishing emails, malware samples and bad domains
 
-``` python
-# build observable
-eml = EmailMessage()
-eml.sender = "invite@aeroconf2014.org"
-eml.subject = "IEEE Aerospace Conference 2014"
+Our Threat Actor is based in Iran, have a medium level of sophistication and call themselves Ajax Team (you file that away for later)
 
-# link to indicator
-email_ind.add_object(eml)
-```
+There's a few tactics (TTPs in milspeak) linked from there - they install host implants with remote servers for control
 
-## Break out Indicator for malware
+You're expected to mark indicators that are directly usable by the security team - leaving out the extraneous details
 
-Similarly, malware samples can be captured along with their hashes.
+You can get these loaded by the morning standup meeting - no sweat.
 
-``` python
-malware_ind = Indicator()
-malware_ind.title = "Malware used by actors"
-malware_ind.description = "Remote access trojan Stealer"
-```
+## Triaging
 
-In this case, the observable type is `File`, which includes the original file path and name.
+From the description and confidence rating, you tag `invite@aeroconf2014.org` as a blacklisted sender, and `IEEE Aerospace Conference 2014` as a suspicious subject 
 
-``` python
-sample = File()
-sample.add_hash ( Hash('6dc7cc33a3cdcfee6c4edb6c085b869d'))
-sample.file_extension = '.exe'
-sample.file_name = 'IntelRS.exe' 
-sample.file_path = 'C:\Documents and Settings{USER}\Application Data\IntelRapidStart\AppTransferWiz.dll'
+Looks like their Stealer implant named 'IntelRS.exe' has been seen with a couple hashes, so you queue a sweep for those along with its installation filepath
 
-# link to indicator
-malware_ind.add_object(sample)
-```
+They've registered their own domains pretending to be legitimate services (like yahoomail.com.co) hosted on some Swiss provider. The IPs are linked from the domain, so it's easy to create a ticket for a DNS filter and firewall update.
 
-## Generate Indicator for control server
+## Sharing
 
-All together now, we can create an `Indicator` for the use of a remtoe server to control the malware, and link it to `DomainName` and `Address` observables.
+After getting kudos for your timely update from the group lead, you get an email from the security team
 
-``` python
-control_ind = Indicator()
-control_ind.title = "Malware control server"
-control_ind.description = "Malicious domains ond IP wned by actors"
+"We found a machine talking to that domain, it's being re-imaged now - can you let the community know?"
 
-# add domain object
-domain = DomainName()
-domain.value = 'yahoomail.com.co'
-control_ind.add_object(domain)
+"Sure, got it" - You click the "Share Sighting" button for the control domain and include the binary hash
 
-ip = Address()
-ip.category = ip.CAT_IPV4
-ip.address_value = '81.17.28.227'
-control_ind.add_object(ip)
-```
+Since you're not sure if it's the same malware, you pick `Medium Confidence` and tentatively link it to Stealer
 
-# Enriching the report
+After confirming that you want to share anonymously as a victim in your market segment, it update your sharing partners as a new `Sighting`
 
-Add context by creating a relationship between the malware sample and its control server IP.
+## Feedback
 
-``` python
-sample.add_related(ip,"Related_To")
-```
+The secure line rings, "Hey this is European operations thanks for the heads-up - we just saw your post, swept for that hash and found three more boxes"
 
-Each indicator can also include where it came from and when it was first seen.
+You forward their message to the security team and get a reply "On it, we're reversing the malware now, it looks different than the FireEye report"
 
-``` python
-indicator.set_producer_identity("FireEye")
-indicator.set_produced_time(datetime.strptime('2014-05-15', "%Y-%m-%d"))
-```
+After a few days scoping the intrusion, you help write the post-mortem report 
 
-## Adding a TTP
-Stepping back from the indicator, the next step is to represent the TTP that the indicator indicates. In STIX, TTPs are used to represent three primary concepts:
+In this case the bad guys wrote a custom version bundled with OpenVNC, just for you - part of the report is an update for Stealer signatures
 
-* Resources (infrastructure and tools)
-* Behavior (attack patterns, malware, exploits)
-* Victim Targeting
+Re-using the same `Indicator ID`, you add a note that Stealer may also include VNC functionality with `High Confidence`, and include the strings and hashes for detection under the `Course of Action`
 
-``` python
-malware = TTP()
-malware.title = 'Malware Implant'
-malware.description = 'Customized trojan written in .NET'
-malware.intended_effects = 'Account Takeover'
-
-control_ind.add_indicated_ttp(TTP(idref=malware.id_))
-
-```
-
-## Define threat actor
-
-To capture the overall intrusion team behind this campaign, we create a `ThreatActor` object.
-
-This enables defenders to share estimates of the actor's intent, motivation, and sophistication.
-
-
-``` python
-actor = ThreatActor()
-actor.title = "Ajax Team"
-actor.description = "Iranian intrusion team"
-actor.add_motivation ("Political")
-actor.add_motivation ("Military")
-actor.add_sophistication ("Practitioner")
-actor.add_intended_effect ("Advantage - Political")
-```
-
-
-We can also link the previously observed TTP of using a particular malware sample to the actor
-
-``` python
-actor.observed_ttps = ObservedTTPs(TTP(idref=malware.id_))
-```
-
-## Updating an Indicator
-The supported method involves referencing a given object by its `id`, and including a new `timestamp` with any updates.
-
-Refer [here](/idioms/features/versioning/) for examples of version updates in XML.
-
-An indicator can be updated in Python as follows:
-
-``` python
-old_indicator = Indicator()
-old_indicator.description = "an inaccurate assertion"
-
-# re-version the old 
-new_indicator = Indicator()
-new_indicator.id_ = old_indicator.id_
-new_indicator.description = "much better assertion"
-
-new_indicator.add_related_indicator(old_indicator)
-
-```
-
-## Add a Sighting of the indicator
-
-Sharing the context around a detection is valuable to the community at large.
-
-For instance, to indicate that a particular `Sighting` of an indicator happened just now
-
-``` python
-ind = Indicator()
-sight = Sighting()
-sight.description = "observed bot activity"
-sight.timestamp = datetime.now(tzutc())
-ind.sightings.append(sight)
-```
-
-You can also add a degree of confidence in this sighting
-
-``` python
-sight.confidence = Confidence("Medium")
-```
-
-Others can then reference this assertion as part of their operations.
-For instance they may choose to only accept sightings with a `High` confidence.
-
+Looks like you'll be speaking at the next conference call with the execs - you take a well-deserved sip of coffee before the inbox dings again
