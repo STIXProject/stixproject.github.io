@@ -1,0 +1,53 @@
+---
+layout: data_model
+title: BuildConfigurationType
+---
+
+<h1>BuildConfigurationType<span class="subdued">CybOX Common Schema</span></h1>
+
+<p>The <a href='/data-model/1.1.1/cyboxCommon/BuildConfigurationType'>BuildConfigurationType</a> describes how the build utility was configured for this build of this application.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Configuration_Setting_Description<span class="occurrence">0..1</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>This field contains the description of the configuration settings for this build of this application instance.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Configuration_Settings<span class="occurrence">1..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/ConfigurationSettingsType">ConfigurationSettingsType</a>
+        
+      </td>
+      <td>
+        
+          <p>This field contains the configuration settings for this build of this application instance.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

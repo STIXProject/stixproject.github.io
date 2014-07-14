@@ -1,0 +1,53 @@
+---
+layout: data_model
+title: EPJumpCodeType
+---
+
+<h1>EPJumpCodeType<span class="subdued">File Object Schema</span></h1>
+
+<p>Specifies an entry-point jump code used by a packer.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Depth<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The frequency that a jump instruction is found to be immediately followed by another jump instruction within the PE(Portable Executable) entry point.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Opcodes<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The hex value of the bytes located at the jump location for a relative jump identified in the PE(Portable Executable) entry point up to 10 bytes or the end of the RVA(Relative Virtual Address) section.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

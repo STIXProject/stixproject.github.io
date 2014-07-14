@@ -1,0 +1,67 @@
+---
+layout: data_model
+title: ErrorType
+---
+
+<h1>ErrorType<span class="subdued">CybOX Common Schema</span></h1>
+
+<p>The <a href='/data-model/1.1.1/cyboxCommon/ErrorType'>ErrorType</a> captures a single error generated during the run of the tool.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Error_Type<span class="occurrence">1..1</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>This field specifies the type for this tool run error.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Error_Count<span class="occurrence">0..1</span></td>
+      <td>
+        
+          integer
+        
+      </td>
+      <td>
+        
+          <p>This field specifies the count of instances for this error in the tool run.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Error_Instances<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/ErrorInstancesType">ErrorInstancesType</a>
+        
+      </td>
+      <td>
+        
+          <p>This field captures the actual error output for each instance of this type of error.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

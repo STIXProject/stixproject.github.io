@@ -1,0 +1,39 @@
+---
+layout: data_model
+title: ProfilesType
+---
+
+<h1>ProfilesType<span class="subdued">STIX Common Schema</span></h1>
+
+<p>The <a href='/data-model/1.1.1/stixCommon/ProfilesType'>ProfilesType</a> represents a list of STIX Profiles</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Profile<span class="occurrence">1..n</span></td>
+      <td>
+        
+          anyURI
+        
+      </td>
+      <td>
+        
+          <p>The Profile field represents a reference to one STIX Profile. The profile is referenced as a URI and should include components for: the creator of the profile, the name of the profile, and the version of the profile. When publishing a profile, this URI should be published alongside the profile such that it can be referred to from this field.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

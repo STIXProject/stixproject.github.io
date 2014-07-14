@@ -4,56 +4,49 @@ title: STIX Project Documentation
 tagline: User and developer documentation for STIX
 ---
 
-<br />
-<div class="jumbotron">
-  <h1>STIX Project Documentation</h1>
-  <p>Welcome to the STIX Project! Continue reading below for the full documentation or click the button for a tutorial on getting started with STIX.</p>
-  <p><a class="btn btn-primary btn-lg" role="button" href="getting-started">Getting Started »</a></p>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="well">
+      <h2>Getting Started</h2>
+      <h4>Start here if you're new to STIX!</h4>
+      <p>Regardless of whether you're an analyst, developer, or manager, we
+      have tutorials, walkthroughs, and exercises to help you become familiar
+      with STIX.</p>
+      <p><a class="btn btn-primary btn-lg" role="button" href="/getting-started">Getting Started »</a></p>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <div class="well">
+      <h2>Documentation</h2>
+      <p>Now that you have an idea of what STIX is and how it can be used,
+      learn about tools that support STIX, some common STIX idioms, along
+      with other more in-depth documentation.</p>
+      <p><a class="btn btn-primary btn-lg" role="button" href="/documentation">Documentation »</a></p>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="well">
+      <h2>Data Model</h2>
+      <p>Explore all of the STIX data types, including the fields used for
+      each. Enter a type (try 'Indicator') in the box below to get
+      started.</p>
+      <div class="full-width">
+        <p><input type="text" class="doc-types form-control input-lg" placeholder="Search STIX Data Model..." /></p>
+      </div>
+    </div>
+  </div>
 </div>
 
-# Idioms and Common Patterns
+## Get in Touch!
 
-The idioms documentation is meant to give you a place to look for guidance on how to implement common STIX patterns, whether they're cross-cutting concerns like confidence and data markings or specific use case patterns, like representing indicators for malware C2.
+We're always happy to set up either teleconferences or in-person meetings (in
+the Boston, MA and Washington, DC area) to go through an introductory session,
+a more in-depth training/development session, or to walk you through how to map
+your existing content into STIX. If that's something you're interested in,
+reach out to us at [stix@mitre.org](mailto:stix@mitre.org) and let us know.
 
-### Cross-cutting Features
-
-{% comment %}
-* [IDs](idioms/features/ids) - Describes the basic usage of STIX IDs
-* [Confidence](idioms/features/confidence) - Describes how to use the confidence structure to mark STIX constructs with confidence
-* [Structured Text](idioms/features/structured-text) - Describes how to use STIX structured text fields for both plain text and markup
-* [Controlled Vocabularies](idioms/features/controlled-vocabularies) - Describes how to use and extend controlled vocabularies
-{% endcomment %}
-* [Versioning](idioms/features/versioning) - Describes a few different versioning scenarios and how those are handled in STIX
-* [Data Markings](idioms/features/data-markings) - Describes how to use data markings to mark STIX content
-* [Relationships](idioms/features/relationships) - Describes how to use STIX relationships
-* [xsi:type](idioms/features/xsi-type) - Describes the STIX usage of xsi:type for core components, extension points, and controlled vocabularies
-
-### Use Cases
-
-* [Indicator](idioms/indicator)
-* [TTP](idioms/ttp)
-* [Incident](idioms/incident)
-* [Course of Action](idioms/course-of-action)
-* [Exploit Target](idioms/exploit-target)
-* [Campaign](idioms/campaign)
-* [Threat Actor](idioms/threat-actor)
-* [Packages and Reports](idioms/packages-and-reports)
-
-# Data Model Documentation
-
-The STIX Project provides complete documentation for all fields in the STIX and CybOX data model. Simply search below for specific elements and types (try 'Indicator') and explore from there.
-
-<div class="full-width">
-  <input type="text" class="doc-types form-control input-lg" placeholder="Search STIX Data Model..." />
-</div>
-
-# Further Reading
-
-If you're looking for information on using STIX, you can:
-
-* [Current Release](http://stix.mitre.org/language/version1.1/)
-* [STIX Whitepaper](http://stix.mitre.org/about/documents/STIX_Whitepaper_v1.1.pdf)
-* [Validating STIX Content](/validation)
-* [Suggested Practices](/suggested-practices)
-* [Security Considerations](/security-considerations)
-* [Profiles](/profiles)
+We also host occasional training sessions that are free and open to the public.
+Information on these can be found on the
+[training](http://stix.mitre.org/training/index.html) page.

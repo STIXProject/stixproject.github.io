@@ -1,6 +1,7 @@
 ---
-layout: getting_started
+layout: flat
 title: Authoring Tutorial
+active: getting-started
 ---
 
 This authoring tutorial will walk you through how to create a simple STIX indicator that looks for a file hash and, if that file hash is found, points to a piece of malware that might be present. You can think of it as a correlary to the [sample walkthrough](/getting-started/sample-walkthrough): while that takes an existing piece of content and explains what it means, this will walk through how to actually author content.
@@ -26,7 +27,7 @@ As explained above, in this walkthrough we'll create a STIX report that describe
 
 ## Creating the Document
 
-The root element for all STIX content is `STIX_Package` ([STIXType](/documentation/stix/STIXType)). This type contains all STIX content (indicators, campaigns, incidents, etc.) as well as metadata that applies to the content it bundles such as who produced it and how it can be shared. `STIX_Package` is defined in the STIX Core namespace and therefore is represent as `stix:STIX_Package`.
+The root element for all STIX content is `STIX_Package` ([STIXType](/data-model/{{site.current_version}}/stix/STIXType)). This type contains all STIX content (indicators, campaigns, incidents, etc.) as well as metadata that applies to the content it bundles such as who produced it and how it can be shared. `STIX_Package` is defined in the STIX Core namespace and therefore is represent as `stix:STIX_Package`.
 
 ```xml
 <stix:STIX_Package>
@@ -87,11 +88,11 @@ The `@version` attribute is set to the version of STIX that you're targeting, wh
 
 The `@id` attribute is set to a globally-unique identifier for this content, and in general the best way to achieve that goal is to follow our [suggested practice](/suggested-practices/#toc_1) for creating IDs: a producer namespace prefix, followed by a ":" (required by the field to separate the namespace from the ID), followed by the type of construct the ID is for ("package"), followed by a GUID. You can use an [online GUID generator](https://www.google.com/search?q=guid+generator) to generate the GUID. In this case the producer namespace prefix is "example" (note that this prefix must also be declared in the head of the document), the construct type is "package", and the GUID itself is "382ded87-52c9-4644-bab0-ad3168cbad59".
 
-Finally, the `@timestamp` attribute is used for [versioning](/idioms/features/versioning/) and should be set to the time (with fractional seconds if possible) that this version of the construct was published. To avoid ambiguity, this time should include a timezone if at all possible.
+Finally, the `@timestamp` attribute is used for [versioning](/documentation/idioms/features/versioning/) and should be set to the time (with fractional seconds if possible) that this version of the construct was published. To avoid ambiguity, this time should include a timezone if at all possible.
 
 ## STIX Header
 
-The `STIX_Header` element ([STIXHeaderType](/documentation/stix/STIXHeaderType)) is used to represent metadata about the content contained in the containing `STIX_Package`. It is added as a child of the `STIX_Package`:
+The `STIX_Header` element ([STIXHeaderType](/data-model/{{site.current_version}}/stix/STIXHeaderType)) is used to represent metadata about the content contained in the containing `STIX_Package`. It is added as a child of the `STIX_Package`:
 
 ```xml
 <stix:STIX_Package
@@ -117,7 +118,7 @@ The `Title` field gives the package (report) a basic title. Because this report 
 
 The `Package_Intent` field tells consumers what type of threat intelligence you're intending to convey. In this case, we'll be conveying indicators of a malicious piece of software.
 
-If you followed the sample walkthrough or checked the documentation, you'll know that this field is a [controlled vocabulary](/idioms/features/controlled-vocabularies/). In this case we'll set the intent to a value in the default vocabulary by setting the `xsi:type` to the type for the default vocabulary for package intent. You can find the default vocabulary listed in the [documentation](/documentation/stix/STIXHeaderType) for the field.
+If you followed the sample walkthrough or checked the documentation, you'll know that this field is a [controlled vocabulary](/documentation/idioms/features/controlled-vocabularies/). In this case we'll set the intent to a value in the default vocabulary by setting the `xsi:type` to the type for the default vocabulary for package intent. You can find the default vocabulary listed in the [documentation](/data-model/{{site.current_version}}/stix/STIXHeaderType) for the field.
 
 For this scenario we'll set that field to "Indicators - Malware Artifacts".
 
@@ -166,7 +167,7 @@ Now that we've finished the header, let's move on to adding the indicator itself
 </stix:STIX_Package>
 ```
 
-Now, if you go to autocomplete new elements in the indicator you'll find that not many are available. This is because, like controlled vocabularies, the core STIX components also use the [xsi:type abstraction mechanism](/idioms/features/xsi-type). In nearly all cases, you'll want to set the `@xsi:type` attribute to the appropriate STIX schema type (`indicator:IndicatorType` in this case). If you work off the template, you'll notice that the xsi:type is already set for you.
+Now, if you go to autocomplete new elements in the indicator you'll find that not many are available. This is because, like controlled vocabularies, the core STIX components also use the [xsi:type abstraction mechanism](/documentation/idioms/features/xsi-type). In nearly all cases, you'll want to set the `@xsi:type` attribute to the appropriate STIX schema type (`indicator:IndicatorType` in this case). If you work off the template, you'll notice that the xsi:type is already set for you.
 
 ```xml
 <stix:Indicator xsi:type="indicator:IndicatorType">
@@ -195,11 +196,11 @@ Basic indicator data includes a human-readable `Title` and the indicator's `Type
 
 ### Set the Observable Pattern using CybOX
 
-As explained in the [indicator idioms](/idioms/indicator), indicators consist of two key pieces of information: a pattern for what to look for, and a description of what it means if that pattern is seen. The pattern portion is captured either via CybOX in the `Observable` field or via a native signature in the `Test_Mechanism` field. The indicator idioms give several examples of both approaches.
+As explained in the [indicator idioms](/documentation/idioms/indicator), indicators consist of two key pieces of information: a pattern for what to look for, and a description of what it means if that pattern is seen. The pattern portion is captured either via CybOX in the `Observable` field or via a native signature in the `Test_Mechanism` field. The indicator idioms give several examples of both approaches.
 
 In this case, we'll use CybOX.
 
-The first step is to identify the correct CybOX object to use for the data we want to represent (a file hash) and then create a pattern observable in CybOX that represents the hash. What does that mean? First, we need an [Observable](/documentation/cybox/ObservableType) wrapper to contain the CybOX pattern. Then, we need an [Object](/documentation/cybox/ObjectType) element to indicate that we're creating a static (stateful measure) observable instead of a dynamic (event-based) observable. Lastly, we add a CybOX object, using the `Properties` field, and give it the properties we want the indicator to look for.
+The first step is to identify the correct CybOX object to use for the data we want to represent (a file hash) and then create a pattern observable in CybOX that represents the hash. What does that mean? First, we need an [Observable](/data-model/{{site.current_version}}/cybox/ObservableType) wrapper to contain the CybOX pattern. Then, we need an [Object](/data-model/{{site.current_version}}/cybox/ObjectType) element to indicate that we're creating a static (stateful measure) observable instead of a dynamic (event-based) observable. Lastly, we add a CybOX object, using the `Properties` field, and give it the properties we want the indicator to look for.
 
 So to start, we just need to create the CybOX observable and object wrappers:
 
@@ -220,7 +221,7 @@ Notice that we've assigned IDs for the Observable and Object. CybOX IDs are reco
 
 #### Object Properties
 
-Next, we need to identify the correct CybOX object type to use to represent file hashes. Looking through the list on the [CybOX release page](http://cybox.mitre.org/language/version2.1/), the best choice seems to be the [FileObject](/documentation/FileObj/FileObjectType/). Opening the documentation for that object, we can see that it does include a `Hashes` element that we can use to represent file hashes.
+Next, we need to identify the correct CybOX object type to use to represent file hashes. Looking through the list on the [CybOX release page](http://cybox.mitre.org/language/version2.1/), the best choice seems to be the [FileObject](/data-model/{{site.current_version}}/FileObj/FileObjectType/). Opening the documentation for that object, we can see that it does include a `Hashes` element that we can use to represent file hashes.
 
 So, we'll create the `Properties` element and fill in the `xsi:type` to indicate that we're using the file object:
 
@@ -248,7 +249,7 @@ This looks a little bit complicated, but you should be able to see the logic beh
 
 #### CybOX Pattern Fields
 
-All of the lowest-level fields in CybOX representing cyber observables data extend from a field that implements CybOX patterning capability called [BaseObjectPropertyType](/documentation/cyboxCommon/BaseObjectPropertyType). That type adds fields and defines behaviors for CybOX patterning. The most common field you'll need to set is `@condition`, which indicates how the value in the field should be matched against target data.
+All of the lowest-level fields in CybOX representing cyber observables data extend from a field that implements CybOX patterning capability called [BaseObjectPropertyType](/data-model/{{site.current_version}}/cyboxCommon/BaseObjectPropertyType). That type adds fields and defines behaviors for CybOX patterning. The most common field you'll need to set is `@condition`, which indicates how the value in the field should be matched against target data.
 
 For this hash match, the condition is set to "Equals" because we want to test whether file hashes equal each other. When using observables in an indicator (or any other time you use observables for patterns) you MUST have the condition attribute set. Omitting it implies the CybOX observable is an instance and therefore matching content against it does not make sense.
 
@@ -290,7 +291,7 @@ These fields are fairly standard STIX, so let's just look at the end result. Alt
 
 ## Add the TTP
 
-Once again, an indicator consists of a pattern for something to look for and then the context for what that means. The STIX [TTP](/documentation/ttp/TTPType) construct is often used to describe the latter, including:
+Once again, an indicator consists of a pattern for something to look for and then the context for what that means. The STIX [TTP](/data-model/{{site.current_version}}/ttp/TTPType) construct is often used to describe the latter, including:
 
 * Resources (infrastructure and tools)
 * Behavior (attack patterns, malware, exploits)
@@ -439,6 +440,6 @@ The entire document, by the way, should look something like this:
 
 # Where to go from here
 
-1. Read up on the [idioms](/idioms) to learn more about how STIX can help with specific use cases and to see many more examples
+1. Read up on the [idioms](/documentation/idioms) to learn more about how STIX can help with specific use cases and to see many more examples
 1. Take a look at the data model documentation for the types you're interested in
 1. Try your own! Make sure to validate your documents when you're finished.

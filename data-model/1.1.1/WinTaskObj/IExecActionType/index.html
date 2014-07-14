@@ -1,0 +1,81 @@
+---
+layout: data_model
+title: IExecActionType
+---
+
+<h1>IExecActionType<span class="subdued">Win Task Object Schema</span></h1>
+
+<p>The <a href='/data-model/1.1.1/WinTaskObj/IExecActionType'>IExecActionType</a> type characterizes IExec actions.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Exec_Arguments<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Exec_Arguments field specifies the arguments associated with the command-line operation launched by the action. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380715(v=vs.85).aspx.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Exec_Program_Path<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Exec_Program_Path field specifies the path to the executable file launched by the action. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380715(v=vs.85).aspx.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Exec_Working_Directory<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Exec_Working_Directory field specifies the directory that contains either the executable file or the files that are used by the executable file launched by the action. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380715(v=vs.85).aspx.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Exec_Program_Hashes<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/HashListType">HashListType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Exec_Program_Element specifies the hashes of the executable file launched by the action.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

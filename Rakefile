@@ -3,11 +3,11 @@ require 'fileutils'
 require 'liquid'
 require 'stix_schema_spy'
 
+$destination = "data-model/1.1.1"
+
 desc "Clean the data model documentation folder"
 task :clean do
-  blacklist = ['documentation/index.md'] # Files to not delete in the documentation directory
-  
-  FileUtils.rm_rf(Dir.glob("documentation/*") - blacklist)
+  FileUtils.rm_rf($destination)
 end
 
 desc "Regenerate the data model documentation"
@@ -15,7 +15,7 @@ task :regenerate do
   StixSchemaSpy::Schema.preload!
 
   # Load the documentation page template
-  template = File.read("_layouts/documentation_page.html")
+  template = File.read("_layouts/data_model_page.html")
 
   # Write the file for the data model autocompleter
   json = StixSchemaSpy::Schema.all.map {|schema| schema.complex_types}.flatten.map {|type| {:name => type.name, :schema => type.schema.title, :link => type_link(type)}}
@@ -30,7 +30,7 @@ task :regenerate do
 end
 
 def write_page(type, template)
-  destination = "documentation/#{type.schema.prefix}/#{type.name}"
+  destination = type_path(type)
 
   FileUtils.mkdir_p(destination)
 
@@ -52,7 +52,11 @@ def write_page(type, template)
 end
 
 def type_link(type)
-  "/documentation/#{type.schema.prefix}/#{type.name}"
+  "/#{type_path(type)}"
+end
+
+def type_path(type)
+  "#{$destination}/#{type.schema.prefix}/#{type.name}"
 end
 
 def fields(type)
@@ -99,12 +103,12 @@ end
 
 def add_internal_links(doc)
   doc
-    .gsub(/\S+Vocab-\d\.\d/) {|match| "<a href='/documentation/stixVocabs/#{match}'>#{match}</a>"}
+    .gsub(/\S+Vocab-\d\.\d/) {|match| "<a href='/#{$destination}/stixVocabs/#{match}'>#{match}</a>"}
     .gsub(/ \S+Type /) do |match|
       name = match.strip
       type = find_type(name)
       if type
-        " <a href='/documentation/#{type.schema.prefix}/#{name}'>#{name}</a> "
+        " <a href='#{type_link(type)}'>#{name}</a> "
       else
         match
       end

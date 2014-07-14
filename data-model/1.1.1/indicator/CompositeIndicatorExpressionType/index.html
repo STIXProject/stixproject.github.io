@@ -1,0 +1,53 @@
+---
+layout: data_model
+title: CompositeIndicatorExpressionType
+---
+
+<h1>CompositeIndicatorExpressionType<span class="subdued">Indicator Schema</span></h1>
+
+<p>Type for allowing content creators to create composite indicator expressions using basic boolean logic. </p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@operator<span class="occurrence">required</span></td>
+      <td>
+        
+          OperatorTypeEnum
+        
+      </td>
+      <td>
+        
+          <p>Specifies the logical composition operator for this composite cyber threat Indicator.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Indicator<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/indicator/IndicatorType">IndicatorType</a>
+        
+      </td>
+      <td>
+        
+          <p>The indicator field specifies one cyber threat indicator made up of a pattern identifying certain observable conditions as well as contextual information about the patterns meaning, how and when it should be acted on, etc.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
