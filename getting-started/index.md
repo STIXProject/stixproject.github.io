@@ -22,8 +22,8 @@ active: getting-started
     </div>
 
     <div class="well">
-      <h4>Analyst Modeling Exercise (Coming Soon)</h4>
-      <p>The analyst modeling exercise will walk you through a fictional threat report and discuss how it's mapped into the STIX data model. It discussions decisions about which components to use and how to relate the components together.</p>
+      <h4><a href="analyst-exercise">Analyst Modeling Exercise</a></h4>
+      <p>How a threat report would be represented in STIX - including relationships and objects.
       <a class="btn btn-primary" href="analyst-exercise">Go »</a>
     </div>
 
