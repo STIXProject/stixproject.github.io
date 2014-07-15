@@ -1,8 +1,11 @@
 ---
+layout: flat
+title: Threat Report
 ---
 
-Excerpted with permission from the FireEye Blog post entitled ‘Operation Saffron Rose,’ written by Nart Villeneuve, Ned Moran, Thoufique Haq and Mike Scott.  
-The original FireEye Blog post can be found [here](http://www.fireeye.com/resources/pdfs/fireeye-operation-saffron-rose.pdf)
+Excerpted with permission from FireEye Blog post entitled Operation Saffron Rose written by Nart Villeneuve, Ned Moran, Thoufique Haq and Mike Scott.  
+
+**The original post can be found [here](http://www.fireeye.com/resources/pdfs/fireeye-operation-saffron-rose.pdf)**
 
 # Impetus
 In this report, we document the activities of the Ajax Security Team, a hacking group believed to be 
