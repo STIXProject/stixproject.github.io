@@ -4,71 +4,38 @@ title: Analyst Exercise
 active: getting-started
 ---
 
-## Another Busy Monday 
-A [FireEye report](report) just crossed your desk - malicious actors from Iran have been stealing information from global systems, especially governments.
+## Background
+Read the [FireEye report](report) on malicious actors from Iran targeting governments and commercial computers.
 
-You skim the abstract - custom malware? domain typosquatting? Seems interesting, and the boss will want to get an update either way. 
+The [STIX version of this report](output.xml) includes the same information in a structured format.
 
-Looks like distribution is unlimited, you can tell from the page footer there's no TLP or sensitivity restrictions.
+ Since victims appear to have been anonymized, there is no **Incident** details, but rather individual **Indicators**.
 
-Only problem is: it's 20 pages and the boss will want actionable recommendations within the hour - there's no time to call your techie friend for a breakdown of what's important.
 
-Sound familiar? Let's walk through how STIX makes it easy to get the information you need.
+## Reading the Header
 
-## A Better Way
+Distribution is unlimited since the **STIX Header** includes no TLP or sensitivity restrictions. 
 
-A [priority report](output.xml) hits the wire - seconds later a STIX file is loaded into your analyst console. 
+Information comes directly from a trusted vendor, so we have high **Confidence** in the accuracy of the report.
 
-You check the header - looks like it came from FireEye with high confidence and TLP: White
+Our **Threat Actor** Ajax Team is based in Iran, and could be construed as having a medium level of **Sophistication**. 
 
-It seems this was a larger campaign - they redacted individual incidents and built specific indicators so people could clean their networks
+Their use of phishing emails and customized malware are captured under a **TTP** entry, which is related to each malware sample and control server.
 
-## Getting context
+## Understanding the content
 
-There's some indicators attached, at a glance you can tell it's for phishing emails, malware samples and bad domains
+The **Email Indicator** suggests that invite@aeroconf2014.org should be blocked unilaterally, as it's owned by the malicious actors.
 
-Our Threat Actor is based in Iran, have a medium level of sophistication and call themselves Ajax Team (you file that away for later)
+"IEEE Aerospace Conference 2014" is a suspicious subject line seen in those emails, but may also include legitimate emails.
 
-There's a few tactics (TTPs in milspeak) linked from there - they install host implants with remote servers for control
+Under the **File Indicator** a malware sample named 'IntelRS.exe' has been seen with several hashes, which can be directly added to a blacklist.
 
-You're expected to mark indicators that are directly usable by the security team - leaving out the extraneous details
+The malware's installation **filepath** is fairly unique, and can be used as a trigger for generic detection as well.
 
-You can get these loaded by the morning standup meeting - no sweat.
+Domains are owned by the malicious actors, and linked to the IP addresses resolved at the time of analysis, which appear to be hosted on an overseas provider. Firewall blocks and DNS filters can be used to prevent access to those without much issue.
 
-## Triaging
+## Sharing with others
+Say you find an instance of the malware in the course of investigations, a **Sighting** can be created with the control domain and binary hash. This would be created with an appropriate **Confidence** level and linked it to the **ID value** of the overall malware family.
 
-From the description and confidence rating, you tag `invite@aeroconf2014.org` as a blacklisted sender, and `IEEE Aerospace Conference 2014` as a suspicious subject 
+Any signatures to detect samples can be added under a **Course of Action** entry, for instance a YARA signature for the debug path used in the malware.
 
-Looks like their Stealer implant named 'IntelRS.exe' has been seen with a couple hashes, so you queue a sweep for those along with its installation filepath
-
-They've registered their own domains pretending to be legitimate services (like yahoomail.com.co) hosted on some Swiss provider. 
-
-The IPs are linked to the domain, so it's easy to create a ticket for a DNS filter and firewall update.
-
-## Sharing
-
-After getting kudos for your timely update from the group lead, you get an email from the security team
-
-"We found a machine talking to that domain, it's being re-imaged now - can you let the community know?"
-
-"Sure, got it" - You click the "Share Sighting" button for the control domain and include the binary hash
-
-Since you're not sure if it's the same malware, you pick `Medium Confidence` and tentatively link it to Stealer
-
-After confirming that you want to share anonymously as a victim in your market segment, it update your sharing partners as a new `Sighting`
-
-## Feedback
-
-The secure line rings, "Hey this is European operations thanks for the heads-up - we just saw your post, swept for that hash and found three more boxes"
-
-You forward their message to the security team and get a reply "On it, we're reversing the malware now, it looks different than the FireEye report"
-
-After a few days scoping the intrusion, you help write the post-mortem report 
-
-In this case the bad guys wrote a custom version bundled with OpenVNC, just for you - part of the report is an update for Stealer signatures
-
-Re-using the same `ID` value for the Stealer indicator, you add a `High Confidence` note that Stealer may also include VNC functionality 
-
-Based on the malware analyst writeup, you add signatures for unique strings under a `Course of Action` entry
-
-Looks like you'll be speaking at the next conference call with the execs - you take a well-deserved sip of coffee before the inbox dings again
