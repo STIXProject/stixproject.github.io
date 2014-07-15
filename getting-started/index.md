@@ -23,7 +23,7 @@ active: getting-started
 
     <div class="well">
       <h4><a href="analyst-exercise">Analyst Modeling Exercise</a></h4>
-      <p>How a threat report would be represented in STIX - including relationships and objects.
+      <p>How a threat report would be represented in STIX - including relationships and objects.</p>
       <a class="btn btn-primary" href="analyst-exercise">Go »</a>
     </div>
 
