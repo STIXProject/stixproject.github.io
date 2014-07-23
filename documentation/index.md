@@ -37,6 +37,16 @@ active: documentation
 
       <a class="btn btn-primary" href="security">Go »</a>
     </div>
+
+    <div class="well">
+      <h4><a href="features">Concepts</a></h4>
+
+      <p>This page describes several central STIX concepts that cut
+      across all of the core STIX data types, including extension points,
+      relationships, versioning, and data markings.</p>
+
+      <a class="btn btn-primary" href="concepts">Go »</a>
+    </div>
   </div>
 
   <div class="col-md-6">
