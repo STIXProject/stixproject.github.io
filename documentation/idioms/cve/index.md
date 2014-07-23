@@ -1,6 +1,9 @@
 ---
 layout: flat
 title: CVE in an Exploit Target
+tags:
+  - exploit_target
+summary: This idiom describes how to represent a disclosed vulnerability identified by a CVE using the Exploit Target construct.
 ---
 
 Threat intelligence often contains references to the vulnerabilities that threat actors are targeting. When those vulnerabilities have been formally disclosed and identified (i.e. are not 0-day or unknown vulnerabilites) they are almost always identified via a [CVE](http://cve.mitre.org) identifier. This idiom describes how to use the STIX Exploit Target element to represent a disclosed vulnerability via its CVE ID.

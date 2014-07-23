@@ -1,6 +1,9 @@
 ---
 layout: flat
 title: COA to Block Network Traffic
+tags:
+  - coa
+summary: One response to malware activity on a network is to block the malware's command and control server traffic at an external firewall. This idiom describes a course of action to implement such a block.
 ---
 
 One potential course of action in response to an attack is to block network traffic associated with that attack. This idiom describes how that course of action can be represented in STIX.

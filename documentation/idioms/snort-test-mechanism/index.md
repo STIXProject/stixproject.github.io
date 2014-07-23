@@ -1,6 +1,9 @@
 ---
 layout: flat
 title: Snort Test Mechanism
+tags:
+  - indicator
+summary: Represent how to detect an indicator using Snort.
 ---
 
 While one option when sharing indicator signatures is to use the tool-neutral `Observable` field in the indicator using CybOX, another option is to take a tool-specific approach and share indicators with signatures in the native language of specific tools via the `Test_Mechanisms` field. The advantage of this is that you can share signatures that work natively in existing tools but can still integrate with the rest of the STIX architecture.

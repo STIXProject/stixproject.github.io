@@ -1,6 +1,9 @@
 ---
 layout: flat
 title: Assets Affected in an Incident
+tags:
+  - incident
+summary: This idiom describes how an asset was affected in the course of an incident. In this case, the example used is an information asset but a similar set of constructs can be used to describe affected IT assets.
 ---
 
 Among many other things, one of the pieces of information that an incident report can convey is the set of assets that were affected in the course of that incident. The list allows incident responders and management to understand the impact of a particular incident on the IT assets that it affects and, by extension, the business functions that are supported by that IT asset.

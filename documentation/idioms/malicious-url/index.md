@@ -1,6 +1,9 @@
 ---
 layout: flat
 title: Indicator for Malicious URL
+tags:
+  - indicator
+summary: This idiom is an example of a malicious URL indicator that represents a URL and indicates that it's a delivery mechanism for a piece of malware.
 ---
 
 A very common method for delivering malware to potential targets is to host it at a particular URL. Targets are then directed to that URL via a phishing e-mail or a link from another site and, when they reach it, are exploited. Sharing lists of malicious URLs can be an effective and cheap way to limit exposure to malicious code.

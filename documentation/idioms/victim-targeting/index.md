@@ -1,6 +1,9 @@
 ---
 layout: flat
 title: Victim Targeting for a Campaign
+tags:
+  - campaign
+summary:  A cyber campaign may be defined based on the fact that it targets a consistent set of victims, as defined by their nationality or industry sector (as an example). This idiom demonstrates how to express that in STIX, accomplished through the use of a related TTP.
 ---
 
 <img src="/images/Victim Targeting.png" class="component-img" alt="Victim Targeting Icon" />

@@ -1,6 +1,9 @@
 ---
 layout: flat
 title: Plain Wrapper Around Multiple Reports
+tags:
+  - package
+summary: This idiom describes how to use a "wrapper" package to provide a single container for several unrelated reports. This mimics some earlier usage of STIX where a "STIX_Packages" wrapper (not part of STIX) was inserted around several STIX Package structures.
 ---
 
 Although not always considered as important as the content itself, the packaging of cyber threat intelligence can often be very important. A basic title, intent, and description of the data is of course important, but other metadata can include data handling instructions, information about the source of the data, and information about how the data was generated. This idiom describes representing a bundle of content coming from one source but containing several unrelated reports.

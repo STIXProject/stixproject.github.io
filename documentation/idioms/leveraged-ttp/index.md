@@ -1,6 +1,11 @@
 ---
 layout: flat
 title: Threat Actor Leveraging Attack Patterns and Malware
+tags:
+  - threat_actor
+  - malware
+  - ttp
+summary: Threat actors can often be characterized by the types of victims they target, attack patterns they leverage, and malware varieties that they use. This Threat Actor idiom describes how you can use a leveraged TTP to represent a threat actor that leverages a certain variety of malware.
 ---
 
 <img src="/images/Attack Patterns.png" class="component-img" alt="Attack Patterns Icon" />

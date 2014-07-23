@@ -1,6 +1,9 @@
 ---
 layout: flat
 title: Identifying a Threat Actor Group
+tags:
+  - threat_actor
+summary: This idiom describes how to use the threat actor construct to represent the identity of a threat actor group. An example of this in threat intelligence is the characterization of the APT1 threat actor group by Mandiant in their 2013 APT1 report.
 ---
 
 Although many smaller threat intelligence programs do not consider threat actor attribution and identification as part of their core mission, multiple threat intelligence providers and other large organizations do practice threat actor attribution and include those characterizations in their threat intelligence. For example, Mandiant released their [report](http://intelreport.mandiant.com/) on the APT1 threat actor which included a characterization of that actor's identity.

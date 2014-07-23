@@ -4,8 +4,56 @@ title: STIX Idioms
 active: idioms
 ---
 
-The idioms documentation is meant to give you a place to look for guidance on how to implement common STIX patterns for use cases  like representing indicators for malware C2.
+The idioms on this page provide guidance on how to represent common cyber threat
+information in STIX. They are grouped based on the situation in which they would
+be useful, as well as by the STIX types that they use.  **The same idiom may
+appear in one or more sections.**
 
+
+## By Use Case
+
+### Command and Control (C2)
+{% include tag_list.html tag="c2" %}
+
+### Malware
+{% include tag_list.html tag="malware" %}
+
+### Victim Targeting
+{% include tag_list.html tag="victim" %}
+
+
+## By STIX Type
+
+### Campaign
+{% include tag_list.html tag="campaign" %}
+
+### Course of Action
+{% include tag_list.html tag="coa" %}
+
+### Exploit Target
+{% include tag_list.html tag="exploit_target" %}
+
+### Incident
+{% include tag_list.html tag="incident" %}
+
+### Indicator
+{% include tag_list.html tag="indicator" %}
+
+### Threat Actor
+{% include tag_list.html tag="threat_actor" %}
+
+### TTP
+{% include tag_list.html tag="ttp" %}
+
+
+## Other
+
+### Package
+{% include tag_list.html tag="package" %}
+
+
+<hr class="separator" />
+## Old List
 * [Command and Control IP Address](c2-indicator) - This idiom walks through the very common use case where you have an indicator where the "test" is a simple IP address and the context is that the IP is being used to host a C2 server. This is often implemented via a network block to that IP address as the external firewall. [Indicator]
 * [Malware Hash](malware-hash) - This idiom is an example of a host-based indicator that looks for a piece of malware through a file hash. File hash watchlists generally take this form. [Indicator]
 * [Malicious URL](malicious-url) - This idiom is an example of a malicious URL indicator that represents a URL and indicates that it's a delivery mechanism for a piece of malware. [Indicator]

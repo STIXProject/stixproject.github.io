@@ -1,6 +1,9 @@
 ---
 layout: flat
 title: Incident with Related Observables
+tags:
+  - incident
+summary: This idiom describes several observables that were seen in the course of an incident.
 ---
 
 <img src="/images/Observable.png" class="component-img" alt="Observable Icon" />
