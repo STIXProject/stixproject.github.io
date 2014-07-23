@@ -1,5 +1,5 @@
 ---
-layout: idiom
+layout: flat
 title: Victim Targeting by Sector
 ---
 

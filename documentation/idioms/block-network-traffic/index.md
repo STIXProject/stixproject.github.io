@@ -1,5 +1,5 @@
 ---
-layout: idiom
+layout: flat
 title: COA to Block Network Traffic
 ---
 

@@ -1,5 +1,5 @@
 ---
-layout: idiom
+layout: flat
 title: Snort Test Mechanism
 ---
 

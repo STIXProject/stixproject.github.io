@@ -1,5 +1,5 @@
 ---
-layout: idiom
+layout: flat
 title: Indicator for C2 IP Address
 ---
 

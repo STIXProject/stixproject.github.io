@@ -1,5 +1,5 @@
 ---
-layout: idiom
+layout: flat
 title: Threat Actor Leveraging Attack Patterns and Malware
 ---
 

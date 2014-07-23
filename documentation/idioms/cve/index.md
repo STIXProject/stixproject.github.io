@@ -1,5 +1,5 @@
 ---
-layout: idiom
+layout: flat
 title: CVE in an Exploit Target
 ---
 

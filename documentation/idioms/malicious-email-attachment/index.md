@@ -1,5 +1,5 @@
 ---
-layout: idiom
+layout: flat
 title: Malicious E-mail Indicator With Attachment
 ---
 
