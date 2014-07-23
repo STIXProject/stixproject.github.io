@@ -10,73 +10,63 @@ be useful, as well as by the STIX types that they use.  **The same idiom may
 appear in one or more sections.**
 
 
-## By Use Case
+<div class="row">
+  <div class="col-md-6">
+    <h2>By Use Case</h2>
+    <div class="well">
+      <h3>Command and Control (C2)</h3>
+      {% include tag_list.html tag="c2" %}
 
-### Command and Control (C2)
-{% include tag_list.html tag="c2" %}
+      <h3>Malware</h3>
+      <img src="/images/Malware.png" class="component-img" alt="Malware Icon">
+      {% include tag_list.html tag="malware" %}
 
-### Malware
-{% include tag_list.html tag="malware" %}
+      <h3>Victim Targeting</h3>
+      <img src="/images/Victim Targeting.png" class="component-img" alt="Victim Targeting Icon">
+      {% include tag_list.html tag="victim" %}
+    </div>
 
-### Victim Targeting
-{% include tag_list.html tag="victim" %}
+    <h2>Other</h2>
+    <div class="well">
+      <h3>Package</h3>
+      {% include tag_list.html tag="package" %}
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <h2>By STIX Type</h2>
+    <div class="well">
+      <h3>Campaign</h3>
+      <img src="/images/Campaign.png" class="component-img" alt="Campaign Icon" />
+      {% include tag_list.html tag="campaign" %}
+
+      <h3>Course of Action</h3>
+      <img src="/images/Course of Action.png" class="component-img" alt="Course of Action Icon" />
+      {% include tag_list.html tag="coa" %}
+
+      <h3>Exploit Target</h3>
+      <img src="/images/Exploit Target.png" class="component-img" alt="Exploit Target Icon" />
+      {% include tag_list.html tag="exploit_target" %}
+
+      <h3>Incident</h3>
+      <img src="/images/Incident.png" class="component-img" alt="Incident Icon" />
+      {% include tag_list.html tag="incident" %}
+
+      <h3>Indicator</h3>
+      <img src="/images/Indicator.png" class="component-img" alt="Indicator Icon" />
+      {% include tag_list.html tag="indicator" %}
+
+      <h3>Threat Actor</h3>
+      <img src="/images/Threat Actor.png" class="component-img" alt="Threat Actor Icon" />
+      {% include tag_list.html tag="threat_actor" %}
+
+      <h3>TTP</h3>
+      <img src="/images/TTP.png" class="component-img" alt="TTP Icon" />
+      {% include tag_list.html tag="ttp" %}
+    </div>
+  </div>
+</div>
 
 
-## By STIX Type
-
-### Campaign
-{% include tag_list.html tag="campaign" %}
-
-### Course of Action
-{% include tag_list.html tag="coa" %}
-
-### Exploit Target
-{% include tag_list.html tag="exploit_target" %}
-
-### Incident
-{% include tag_list.html tag="incident" %}
-
-### Indicator
-{% include tag_list.html tag="indicator" %}
-
-### Threat Actor
-{% include tag_list.html tag="threat_actor" %}
-
-### TTP
-{% include tag_list.html tag="ttp" %}
 
 
-## Other
-
-### Package
-{% include tag_list.html tag="package" %}
-
-
-<hr class="separator" />
-## Old List
-* [Command and Control IP Address](c2-indicator) - This idiom walks through the very common use case where you have an indicator where the "test" is a simple IP address and the context is that the IP is being used to host a C2 server. This is often implemented via a network block to that IP address as the external firewall. [Indicator]
-* [Malware Hash](malware-hash) - This idiom is an example of a host-based indicator that looks for a piece of malware through a file hash. File hash watchlists generally take this form. [Indicator]
-* [Malicious URL](malicious-url) - This idiom is an example of a malicious URL indicator that represents a URL and indicates that it's a delivery mechanism for a piece of malware. [Indicator]
-* [Phishing Email with Malicious Attachment](malicious-email-attachment) - Describes an indicator for a phishing e-mail that contains a malicious attachment [Indicator]
-* [Snort Test Mechanism](snort-test-mechanism) - Represent how to detect an indicator using Snort. [Indicator]
-* [OpenIOC Test Mechanism](openioc-test-mechanism) - Represent how to detect an indicator using OpenIOC. [Indicator]
-* [YARA Test Mechanism](yara-test-mechanism) - Represent how to detect an indicator using YARA. [Indicator]
-{% comment %}* [Indicator Composition through CybOX @apply_condition](apply-condition) - [Indicator]{% endcomment %}
-{% comment %}* [Indicator Composition through Composite Observables](observable-composition) - [Indicator]{% endcomment %}
-{% comment %}* [Indicator Composition through Composite Indicators](indicator-composition) - [Indicator]{% endcomment %}
-{% comment %}For a writeup on when to use each form of composition, see the [suggested practices](/data-model/{{site.current_version}}/indicator/IndicatorType#suggested-practices-composition) for indicator composition.{% endcomment %}
-{% comment %}* [Simple Malware Identification](simple-malware) - One of the most common uses of TTPs is to represent malware by name. This idiom describes how to do that through the TTP MalwareInstance type, and can serve as a building block to using leveraged or indicated TTPs as a relationship from indicator, incident, campaign, and threat actor. [TTP]{% endcomment %}
-* [Malware Characterization using MAEC](maec-malware) - In addition to just naming a malware variety, it's occasionally useful to describe that malware's detailed behavior in a structured format. [MAEC](http://maec.mitre.org) is a structured language for representing malware behavior and can be used within the STIX TTP construct to describe a detailed characterization of the malware for use in the broader context of campaigns, threat actors, indicators, incidents and exploit targets. This idiom describes the use of the TTP structure to carry a MAEC malware characterization and can serve as a building block to creating related TTPs in the use cases mentioned previously. [TTP]
-* [Victim Targeting by Industry Sector](industry-sector) - TTP can also be used to describe the types of victims that an adversary targets. This idiom describes the use of TTP victim targeting structures to describe an adversary TTP that targets specific industry sectors. [TTP]
-* [C2 Infrastructure](c2-ip-range) - Adversary infrastructure is also represented in STIX using the TTP structure. This idiom describes using the TTP structure to represent an adversary's command and control infrastructure by characterizing its IP range. [TTP]
-{% comment %}* [Kill Chain](kill-chain) - Though they may not be a part of any specific TTP, kill chains are also defined in the TTP schema. This idiom describes representing the Lockheed Martin Kill Chain using STIX (kill chain reproduced with the permission of Lockheed Martin). [TTP]{% endcomment %}
-* [Affected Assets](affected-assets) - This idiom describes how an asset was affected in the course of an incident. In this case, the example used is an information asset but a similar set of constructs can be used to describe affected IT assets. [Incident]
-* [Leveraged Malware](incident-malware) - This idiom describes an incident and a piece of malware, represented via a TTP, that was used to carry out the incident. [Incident]
-* [Blocking Network Traffic](block-network-traffic) - One response to malware activity on a network is to block the malware's command and control server traffic at an external firewall. This idiom describes a course of action to implement such a block. [Course of Action]
-{% comment %}* [Campaign Aliases](aliases) - Often, a cyber threat campaign will be known by several different aliases (names). This idiom shows an example of how this can be done using the Campaign Names field. [Campaign]{% endcomment %}
-{% comment %}* [Attribution](attribution) - It is often very useful to express "attribution" for a given campaign, whereby one or more threat actors are said to be responsible for the campaign. This idiom shows an example of expressing campaign attribution in STIX, accomplished through the Attribution field on a campaign. [Campaign]{% endcomment %}
-* [Victim Targeting](victim-targeting) - A cyber campaign may be defined based on the fact that it targets a consistent set of victims, as defined by their nationality or industry sector (as an example). This idiom demonstrates how to express that in STIX, accomplished through the use of a related TTP. [Campaign]
-* [Representing a vulnerability by CVE](cve) - This idiom describes how to represent a disclosed vulnerability identified by a CVE using the Exploit Target construct. [Exploit Target]
-* [Identity of Threat Actor Group](identity-group) - This idiom describes how to use the threat actor construct to represent the identity of a threat actor group. An example of this in threat intelligence is the characterization of the APT1 threat actor group by Mandiant in their 2013 APT1 report. [Threat Actor]
-* [Leveraged TTP](leveraged-ttp) - Threat actors can often be characterized by the types of victims they target, attack patterns they leverage, and malware varieties that they use. This Threat Actor idiom describes how you can use a leveraged TTP to represent a threat actor that leverages a certain variety of malware. [Threat Actor]
-* [Wrapper around multiple reports](wrapper) - This idiom describes how to use a "wrapper" package to provide a single container for several unrelated reports. This mimics some earlier usage of STIX where a "STIX_Packages" wrapper (not part of STIX) was inserted around several STIX Package structures. [Package]
