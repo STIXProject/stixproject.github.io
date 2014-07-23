@@ -4,9 +4,7 @@ title: STIX Idioms
 active: idioms
 ---
 
-The idioms documentation is meant to give you a place to look for guidance on how to implement common STIX patterns, whether they're cross-cutting concerns like confidence and data markings or specific use case patterns, like representing indicators for malware C2.
-
-## Idiom List
+The idioms documentation is meant to give you a place to look for guidance on how to implement common STIX patterns for use cases  like representing indicators for malware C2.
 
 * [Command and Control IP Address](c2-indicator) - This idiom walks through the very common use case where you have an indicator where the "test" is a simple IP address and the context is that the IP is being used to host a C2 server. This is often implemented via a network block to that IP address as the external firewall. [Indicator]
 * [Malware Hash](malware-hash) - This idiom is an example of a host-based indicator that looks for a piece of malware through a file hash. File hash watchlists generally take this form. [Indicator]

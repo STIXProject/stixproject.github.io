@@ -1,15 +1,9 @@
 ---
-layout: idiom
-title: STIX Idioms
-active: idioms
+layout: flat
+title: STIX Concepts
 ---
 
-The idioms documentation is meant to give you a place to look for guidance on
-how to implement common STIX patterns, whether they're cross-cutting concerns
-like confidence and data markings or specific use case patterns, like
-representing indicators for malware C2.
-
-### STIX Concepts
+This page describes several central STIX concepts that cut across all of the core STIX data types
 
 {% comment %}
 * [IDs](ids) - Describes the basic usage of STIX IDs
