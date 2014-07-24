@@ -317,8 +317,8 @@ print stix_package.to_xml()
 
 Many (even most) of the use-case driven idioms show specific examples of STIX relationships:
 
-* [Campaign Victim Targeting](../../campaign/victim-targeting)
-* [Malware used in an Incident](../../incident/incident-malware)
-* [C2 Indicator](../../indicator/c2-indicator)
-* [Malicious E-mail Attachment](../../indicator/malicious-email-attachment)
-* [TTP Leveraged by a Threat Actor](../../threat-actor/leveraged-ttp)
+* [Campaign Victim Targeting](/documentation/idioms/victim-targeting)
+* [Malware used in an Incident](/documentation/idioms/incident-malware)
+* [C2 Indicator](/documentation/idioms/c2-indicator)
+* [Malicious E-mail Attachment](/documentation/idioms/malicious-email-attachment)
+* [TTP Leveraged by a Threat Actor](/documentation/idioms/leveraged-ttp)

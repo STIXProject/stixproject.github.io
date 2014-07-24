@@ -16,7 +16,7 @@ The hypothetical producer of this information could want to use OpenIOC because 
 
 ## Data Model
 
-The information that the producer provides is simply the OpenIOC signature and the fact that it indicates Zeus malware. The [Malware Hash](../../indicator/malware-hash/) idiom describes, we can use the [Indicator](/data-model/{{site.current_version}}/indicator/IndicatorType) and [TTP](/data-model/{{site.current_version}}/ttp/TTPType) components to describe this type of relationship. Unlike in that idiom however, in this case we'll provide the OpenIOC test mechanism in the indicator rather than a CybOX pattern.
+The information that the producer provides is simply the OpenIOC signature and the fact that it indicates Zeus malware. The [Malware Hash](../malware-hash/) idiom describes, we can use the [Indicator](/data-model/{{site.current_version}}/indicator/IndicatorType) and [TTP](/data-model/{{site.current_version}}/ttp/TTPType) components to describe this type of relationship. Unlike in that idiom however, in this case we'll provide the OpenIOC test mechanism in the indicator rather than a CybOX pattern.
 
 Because OpenIOC is also an XML language, we're able to use XML schema features to ensure that both the STIX and the OpenIOC are valid. This is in contrast to the Snort and Yara test mechanisms, which merely embed those text rules and therefore their format cannot be validated during STIX validation. The other advantage of both languages being XML is that XML parsers are the only ones required to understand the full contents.
 
@@ -112,7 +112,7 @@ for indicator in stix_package.indicators:
 
 ## Further Reading
 
-* The [TTP idioms](../../ttp) describe other usage of [TTP](/data-model/{{site.current_version}}/ttp/TTPType), which may be helpful when giving OpenIOC indicators context.
+* The [TTP idioms](../#ttp) describe other usage of [TTP](/data-model/{{site.current_version}}/ttp/TTPType), which may be helpful when giving OpenIOC indicators context.
 * The [OpenIOC2010TestMechanism](/data-model/{{site.current_version}}/stix-openioc/OpenIOC2010TestMechanismType/) data model documentation has more information on other fields that are available.
 * Other test mechanisms are [Snort](../snort-test-mechanism), [Yara](../yara-test-mechanism), and OVAL.
 * The [OpenIOC homepage](http://openioc.org/) has more information and examples on OpenIOC

@@ -3,6 +3,7 @@ layout: flat
 title: Victim Targeting for a Campaign
 tags:
   - campaign
+  - victim
 summary:  A cyber campaign may be defined based on the fact that it targets a consistent set of victims, as defined by their nationality or industry sector (as an example). This idiom demonstrates how to express that in STIX, accomplished through the use of a related TTP.
 ---
 
@@ -83,7 +84,7 @@ print pkg.to_xml()
 
 You can build on this idiom by representing other types of victim targeting in the TTP:
 
-* [Targeting by Industry Sector](../../ttp/industry-sector)
+* [Targeting by Industry Sector](../industry-sector)
 
 See the full documentation for the relevant types for further information that may be provided:
 

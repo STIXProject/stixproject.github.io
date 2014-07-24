@@ -11,7 +11,7 @@ summary: A cyber campaign may be defined based on the fact that it targets a con
 
 A key usage of the [TTP](/data-model/{{site.current_version}}/ttp/TTPType) component is to characterize the types of victims that a particular threat targets, known as victim targeting. This idiom describes how to use the victim targeting structures in STIX to characterize a threat that targets particular industry sectors, such as the Energy Sector and the Banking and Finance Sector.
 
-TTP Victim Targeting, including by industry sector, is commonly used within a larger STIX document by relating it to a threat actor or a campaign via a Related TTP. For example, the [Campaign Victim Targeting](../../campaign/victim-targeting) idiom describes linking a campaign to the victims that campaign targets: when combined with this idiom, you could describe a campaign that targets victims by industry sector.
+TTP Victim Targeting, including by industry sector, is commonly used within a larger STIX document by relating it to a threat actor or a campaign via a Related TTP. For example, the [Campaign Victim Targeting](../victim-targeting) idiom describes linking a campaign to the victims that campaign targets: when combined with this idiom, you could describe a campaign that targets victims by industry sector.
 
 ## Scenario
 

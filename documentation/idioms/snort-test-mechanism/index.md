@@ -20,7 +20,7 @@ The information that the producer provided was that the Snort signatures detecte
 
 * An [Indicator](/data-model/{{site.current_version}}/indicator/IndicatorType) is used to encode the Snort signatures themselves
 * The indicator is related to an indicated [TTP](/data-model/{{site.current_version}}/ttp/TTPType) that simply states the TTP is for exploits of Heartbleed
-* The TTP is related to an [Exploit Target](/data-model/{{site.current_version}}/et/ExploitTargetType) describing the [CVE](../../exploit-target/cve)
+* The TTP is related to an [Exploit Target](/data-model/{{site.current_version}}/et/ExploitTargetType) describing the [CVE](../cve)
 
 This structure allows for pivoting and information expression at each conceptual level: signature, exploit, and vulnerability. The diagram looks like this:
 
@@ -125,7 +125,7 @@ for indicator in stix_package.indicators:
 
 ## Further Reading
 
-* The [CVE idiom](../../exploit-target/cve) has more description on how to work with the [Exploit Target](/data-model/{{site.current_version}}/et/ExploitTargetType) to describe CVEs.
-* The [TTP idioms](../../ttp) describe other usage of [TTP](/data-model/{{site.current_version}}/ttp/TTPType), which may be helpful when giving snort indicators context.
+* The [CVE idiom](../cve) has more description on how to work with the [Exploit Target](/data-model/{{site.current_version}}/et/ExploitTargetType) to describe CVEs.
+* The [TTP idioms](../#ttp) describe other usage of [TTP](/data-model/{{site.current_version}}/ttp/TTPType), which may be helpful when giving snort indicators context.
 * The [SnortTestMechanism](/data-model/{{site.current_version}}/snortTM/SnortTestMechanismType) data model documentation has more information on other fields that are available.
 * Other test mechanisms are [YARA](../yara-test-mechanism), [OpenIOC](../openioc-test-mechanism), and OVAL.

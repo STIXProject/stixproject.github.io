@@ -126,7 +126,7 @@ for indicator in stix_package.indicators:
 
 ## Further Reading
 
-* The [CVE idiom](../../exploit-target/cve) has more description on how to work with the [Exploit Target](/data-model/{{site.current_version}}/et/ExploitTargetType) to describe CVEs.
-* The [TTP idioms](../../ttp) describe other usage of [TTP](/data-model/{{site.current_version}}/ttp/TTPType), which may be helpful when giving Yara indicators context.
+* The [CVE idiom](../cve) has more description on how to work with the [Exploit Target](/data-model/{{site.current_version}}/et/ExploitTargetType) to describe CVEs.
+* The [TTP idioms](../#ttp) describe other usage of [TTP](/data-model/{{site.current_version}}/ttp/TTPType), which may be helpful when giving Yara indicators context.
 * The [YaraTestMechanism](/data-model/{{site.current_version}}/yaraTM/YaraTestMechanismType) data model documentation has more information on other fields that are available.
 * Other test mechanisms are [Snort](../snort-test-mechanism), [OpenIOC](../openioc-test-mechanism), and OVAL.

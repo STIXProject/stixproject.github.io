@@ -74,7 +74,7 @@ These situations are a judgment call, but when making that judgment you should c
 * [Threat Actors](/data-model/{{site.current_version}}/ta/ThreatActorType)
 * [TTPs](/data-model/{{site.current_version}}/ttp/TTPType)
 
-It is always suggested that you version these constructs by including a relevant `@id` and `@timestamp` per the [STIX versioning guide](/documentation/idioms/features/versioning).
+It is always suggested that you version these constructs by including a relevant `@id` and `@timestamp` per the [STIX versioning guide](/documentation/concepts/versioning).
 
 ## Creating References
 

@@ -201,7 +201,7 @@ A couple examples of some controlled structure statements are below:
 
 ### Marking Structures and Default Extensions
 
-Marking structures, as mentioned above, are an [extension point](xsi-type) in STIX. This means that any marking structure in use by the community can be used within STIX documents by simply defining the appropriate structure as an extension of [MarkingStructureType](/data-model/{{site.current_version}}/marking/MarkingStructureType). Note, however, that producers and consumers should agree on which types of extensions are used (perhaps through profiles) in order to make sure that all parties understand and will respect the particular marking structures used.
+Marking structures, as mentioned above, are an [extension point](../xsi-type) in STIX. This means that any marking structure in use by the community can be used within STIX documents by simply defining the appropriate structure as an extension of [MarkingStructureType](/data-model/{{site.current_version}}/marking/MarkingStructureType). Note, however, that producers and consumers should agree on which types of extensions are used (perhaps through profiles) in order to make sure that all parties understand and will respect the particular marking structures used.
 
 STIX itself defines three marking structure extensions, however others in the community may define additional structures. For example, the Information Sharing Architecture effort within the Enhanced Shared Situational Awareness (ESSA) community has defined an extension to mark STIX documents with their extensions to the U.S. Government's Enterprise Data Headers.
 
