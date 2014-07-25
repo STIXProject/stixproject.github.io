@@ -79,8 +79,8 @@ In STIX 1.1.1, the @version attribute MUST be present and set to "1.1.1" on the 
 
 ## Profile Validation
 
-STIX content may conform to one or more profiles. Profile validation for a majority (though not all) rules can be performed automatically but automatic validation does not ensure that the content is valid against the profile. For more information, see the [validation](/profiles/validation) section of the [profile documentation](/profiles).
+STIX content may conform to one or more profiles. Profile validation for a majority (though not all) rules can be performed automatically but automatic validation does not ensure that the content is valid against the profile. For more information, see the [validation](../profiles/validation) section of the [profile documentation](../profiles).
 
 ## Suggested Practice Compliance
 
-STIX content may or may not conform to the set of STIX [suggested practices](/suggested-practices). Content that does not conform to all suggested practices is still considered valid STIX.
+STIX content may or may not conform to the set of STIX [suggested practices](../suggested-practices). Content that does not conform to all suggested practices is still considered valid STIX.

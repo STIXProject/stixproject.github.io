@@ -1,5 +1,5 @@
 ---
-layout: idiom
+layout: flat
 title: C2 Indicator
 ---
 

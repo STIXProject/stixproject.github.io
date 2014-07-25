@@ -12,8 +12,10 @@
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Getting Started</a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Getting Started<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
+            <li role="presentation"><a href="/getting-started">Getting Started Home</a></li>
+            <li role="presentation" class="divider"></li>
             <li role="presentation" class="dropdown-header">Analysts &amp; Managers</li>
             <li role="presentation"><a href="http://stix.mitre.org/about/documents/STIX_Whitepaper_v1.1.pdf">Whitepaper (PDF)</a></li>
             <li role="presentation" class="disabled"><a href="#" class="coming-soon" data-toggle="tooltip" data-placement="right" title="Coming Soon!">Walkthrough></li>
@@ -27,18 +29,47 @@
         </li>
 
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation</a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li role="presentation"><a href="/documentation/validation">Validation</a></li>
-            <li role="presentation"><a href="/documentation/suggested-practices">Suggested Practices</a></li>
-            <li role="presentation"><a href="/documentation/security">Security Considerations</a></li>
-            <li role="presentation"><a href="/documentation/utilities">Utilities</a></li>
-            <li role="presentation"><a href="/documentation/profiles">Profiles</a></li>
+            <li role="presentation"><a href="/documentation">Documentation Home</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a href="/documentation/concepts">Concepts</a></li>
             <li role="presentation"><a href="/documentation/idioms">Idioms</a></li>
+            <li role="presentation"><a href="/documentation/profiles">Profiles</a></li>
+            <li role="presentation"><a href="/documentation/security">Security Considerations</a></li>
+            <li role="presentation"><a href="/documentation/suggested-practices">Suggested Practices</a></li>
+            <li role="presentation"><a href="/documentation/utilities">Utilities</a></li>
+            <li role="presentation"><a href="/documentation/validation">Validation</a></li>
           </ul>
         </li>
 
-        <li><a href="/data-model">Data Model</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Data Model<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li role="presentation"><a href="/data-model">Overview</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Core Types</li>
+            <li role="presentation"><a href="/data-model/{{site.current_version}}/campaign/CampaignType">Campaign</a></li>
+            <li role="presentation"><a href="/data-model/{{site.current_version}}/coa/CourseOfActionType">Course of Action</a></li>
+            <li role="presentation"><a href="/data-model/{{site.current_version}}/et/ExploitTargetType">Exploit Target</a></li>
+            <li role="presentation"><a href="/data-model/{{site.current_version}}/incident/IncidentType">Incident</a></li>
+            <li role="presentation"><a href="/data-model/{{site.current_version}}/indicator/IndicatorType">Indicator</a></li>
+            <li role="presentation"><a href="/data-model/{{site.current_version}}/ta/ThreatActorType">Threat Actor</a></li>
+            <li role="presentation"><a href="/data-model/{{site.current_version}}/ttp/TTPType">TTP</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Extension Points</li>
+            <li role="presentation" class="disabled"><a href="#" class="coming-soon" data-toggle="tooltip" data-placement="right" title="Coming Soon!">Address</a></li>
+            <li role="presentation" class="disabled"><a href="#" class="coming-soon" data-toggle="tooltip" data-placement="right" title="Coming Soon!">Attack Pattern</a></li>
+            <li role="presentation" class="disabled"><a href="#" class="coming-soon" data-toggle="tooltip" data-placement="right" title="Coming Soon!">Identity</a></li>
+            <li role="presentation" class="disabled"><a href="#" class="coming-soon" data-toggle="tooltip" data-placement="right" title="Coming Soon!">Malware</a></li>
+            <li role="presentation" class="disabled"><a href="#" class="coming-soon" data-toggle="tooltip" data-placement="right" title="Coming Soon!">Marking</a></li>
+            <li role="presentation" class="disabled"><a href="#" class="coming-soon" data-toggle="tooltip" data-placement="right" title="Coming Soon!">Structured COA</a></li>
+            <li role="presentation" class="disabled"><a href="#" class="coming-soon" data-toggle="tooltip" data-placement="right" title="Coming Soon!">Test Mechanism</a></li>
+            <li role="presentation" class="disabled"><a href="#" class="coming-soon" data-toggle="tooltip" data-placement="right" title="Coming Soon!">Vulnerability</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="disabled"><a href="#" class="coming-soon" data-toggle="tooltip" data-placement="right" title="Coming Soon!">Vocabs</a></li>
+          </ul>
+        </li>
       </ul>
 
       <div class="col-sm-4 col-md-4 pull-right header-search">

@@ -2,42 +2,35 @@
 layout: flat
 title: STIX Project Documentation
 tagline: User and developer documentation for STIX
+no_in_page_title: true
 ---
 
-<div class="row">
-  <div class="col-xs-12">
-    <div class="well">
-      <h2>Getting Started</h2>
-      <h4>Start here if you're new to STIX!</h4>
-      <p>Regardless of whether you're an analyst, developer, or manager, we
-      have tutorials, walkthroughs, and exercises to help you become familiar
-      with STIX.</p>
-      <p><a class="btn btn-primary btn-lg" role="button" href="/getting-started">Getting Started »</a></p>
-    </div>
-  </div>
+<h1 class="site-title">STIX Project Documentation</h1>
+
+<div class="jumbotron">
+  <h2><strong>Start here if you're new to STIX!</strong></h2>
+  <p>Regardless of whether you're an analyst, developer, or manager, we have tutorials, walkthroughs, and exercises to help you become familiar
+  with STIX.</p>
+  <p><a class="btn btn-primary btn-lg" role="button" href="/getting-started">Get Started »</a></p>
 </div>
+
 <div class="row">
   <div class="col-md-6">
-    <div class="well">
-      <h2>Documentation</h2>
-      <p>Now that you have an idea of what STIX is and how it can be used,
-      learn about tools that support STIX, some common STIX idioms, along
-      with other more in-depth documentation.</p>
-      <p><a class="btn btn-primary btn-lg" role="button" href="/documentation">Documentation »</a></p>
-    </div>
+    <h2>Documentation</h2>
+    <p>Now that you have an idea of what STIX is and how it can be used,
+    learn about tools that support STIX, suggested practices, and other in-depth
+    documentation.</p>
+    <p><a class="btn btn-primary btn-lg" role="button" href="/documentation">Documentation »</a></p>
   </div>
   <div class="col-md-6">
-    <div class="well">
-      <h2>Data Model</h2>
-      <p>Explore all of the STIX data types, including the fields used for
-      each. Enter a type (try 'Indicator') in the box below to get
-      started.</p>
-      <div class="full-width">
-        <p><input type="text" class="doc-types form-control input-lg" placeholder="Search STIX Data Model..." /></p>
-      </div>
-    </div>
+    <h2>Idioms</h2>
+    <p>You can also see examples of common design patterns in STIX and
+    learn how to create and understand idiomatic STIX content.</p>
+    <p><a class="btn btn-primary btn-lg" role="button" href="/documentation/idioms">Idioms »</a></p>
   </div>
 </div>
+
+<hr />
 
 ## Get in Touch!
 

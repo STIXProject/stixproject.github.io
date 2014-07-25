@@ -4,7 +4,7 @@ title: Authoring Tutorial
 active: getting-started
 ---
 
-This authoring tutorial will walk you through how to create a simple STIX indicator that looks for a file hash and, if that file hash is found, points to a piece of malware that might be present. You can think of it as a correlary to the [sample walkthrough](/getting-started/sample-walkthrough): while that takes an existing piece of content and explains what it means, this will walk through how to actually author content.
+This authoring tutorial will walk you through how to create a simple STIX indicator that looks for a file hash and, if that file hash is found, points to a piece of malware that might be present. You can think of it as a correlary to the [sample walkthrough](../sample-walkthrough): while that takes an existing piece of content and explains what it means, this will walk through how to actually author content.
 
 <p class="alert alert-info">This guide covers authoring content by hand or with languages/tools other than the <a href="http://stix.readthedocs.org">python-stix API</a>. If you're using the Python API, the <a href="http://stix.readthedocs.org/en/latest/getting_started.html#your-first-stix-application">Your First STIX Application</a> guide in the API docs is recommended.</p>
 
@@ -12,7 +12,7 @@ This authoring tutorial will walk you through how to create a simple STIX indica
 
 1. Understand the general concept of what STIX is and what problems it's designed to solve. Get this by reading the [whitepaper](http://stix.mitre.org/about/documents/STIX_Whitepaper_v1.1.pdf).
 
-1. Understand how STIX is structured and interpreted. Get this by going through the [sample walkthrough](/getting-started/sample-walkthrough)
+1. Understand how STIX is structured and interpreted. Get this by going through the [sample walkthrough](../sample-walkthrough)
 
 1. Beginner/intermediate knowledge of XML is suggested. You should know what elements and attributes are, how namespaces work, what validation means, and other basic concepts.
 
@@ -86,9 +86,9 @@ In this case, we've looked and figured out which namespaces/schemas we'll be usi
 
 The `@version` attribute is set to the version of STIX that you're targeting, which in almost all cases will be the same as the version of the schemas that you're using.
 
-The `@id` attribute is set to a globally-unique identifier for this content, and in general the best way to achieve that goal is to follow our [suggested practice](/suggested-practices/#toc_1) for creating IDs: a producer namespace prefix, followed by a ":" (required by the field to separate the namespace from the ID), followed by the type of construct the ID is for ("package"), followed by a GUID. You can use an [online GUID generator](https://www.google.com/search?q=guid+generator) to generate the GUID. In this case the producer namespace prefix is "example" (note that this prefix must also be declared in the head of the document), the construct type is "package", and the GUID itself is "382ded87-52c9-4644-bab0-ad3168cbad59".
+The `@id` attribute is set to a globally-unique identifier for this content, and in general the best way to achieve that goal is to follow our [suggested practice](/documentation/suggested-practices/#toc_1) for creating IDs: a producer namespace prefix, followed by a ":" (required by the field to separate the namespace from the ID), followed by the type of construct the ID is for ("package"), followed by a GUID. You can use an [online GUID generator](https://www.google.com/search?q=guid+generator) to generate the GUID. In this case the producer namespace prefix is "example" (note that this prefix must also be declared in the head of the document), the construct type is "package", and the GUID itself is "382ded87-52c9-4644-bab0-ad3168cbad59".
 
-Finally, the `@timestamp` attribute is used for [versioning](/documentation/idioms/features/versioning/) and should be set to the time (with fractional seconds if possible) that this version of the construct was published. To avoid ambiguity, this time should include a timezone if at all possible.
+Finally, the `@timestamp` attribute is used for [versioning](/documentation/concepts/versioning/) and should be set to the time (with fractional seconds if possible) that this version of the construct was published. To avoid ambiguity, this time should include a timezone if at all possible.
 
 ## STIX Header
 
@@ -118,7 +118,7 @@ The `Title` field gives the package (report) a basic title. Because this report 
 
 The `Package_Intent` field tells consumers what type of threat intelligence you're intending to convey. In this case, we'll be conveying indicators of a malicious piece of software.
 
-If you followed the sample walkthrough or checked the documentation, you'll know that this field is a [controlled vocabulary](/documentation/idioms/features/controlled-vocabularies/). In this case we'll set the intent to a value in the default vocabulary by setting the `xsi:type` to the type for the default vocabulary for package intent. You can find the default vocabulary listed in the [documentation](/data-model/{{site.current_version}}/stix/STIXHeaderType) for the field.
+If you followed the sample walkthrough or checked the documentation, you'll know that this field is a [controlled vocabulary](/documentation/concepts/controlled-vocabularies/). In this case we'll set the intent to a value in the default vocabulary by setting the `xsi:type` to the type for the default vocabulary for package intent. You can find the default vocabulary listed in the [documentation](/data-model/{{site.current_version}}/stix/STIXHeaderType) for the field.
 
 For this scenario we'll set that field to "Indicators - Malware Artifacts".
 
@@ -167,7 +167,7 @@ Now that we've finished the header, let's move on to adding the indicator itself
 </stix:STIX_Package>
 ```
 
-Now, if you go to autocomplete new elements in the indicator you'll find that not many are available. This is because, like controlled vocabularies, the core STIX components also use the [xsi:type abstraction mechanism](/documentation/idioms/features/xsi-type). In nearly all cases, you'll want to set the `@xsi:type` attribute to the appropriate STIX schema type (`indicator:IndicatorType` in this case). If you work off the template, you'll notice that the xsi:type is already set for you.
+Now, if you go to autocomplete new elements in the indicator you'll find that not many are available. This is because, like controlled vocabularies, the core STIX components also use the [xsi:type abstraction mechanism](/documentation/concepts/xsi-type). In nearly all cases, you'll want to set the `@xsi:type` attribute to the appropriate STIX schema type (`indicator:IndicatorType` in this case). If you work off the template, you'll notice that the xsi:type is already set for you.
 
 ```xml
 <stix:Indicator xsi:type="indicator:IndicatorType">
@@ -196,7 +196,7 @@ Basic indicator data includes a human-readable `Title` and the indicator's `Type
 
 ### Set the Observable Pattern using CybOX
 
-As explained in the [indicator idioms](/documentation/idioms/indicator), indicators consist of two key pieces of information: a pattern for what to look for, and a description of what it means if that pattern is seen. The pattern portion is captured either via CybOX in the `Observable` field or via a native signature in the `Test_Mechanism` field. The indicator idioms give several examples of both approaches.
+Indicators consist of two key pieces of information: a pattern for what to look for, and a description of what it means if that pattern is seen. The pattern portion is captured either via CybOX in the `Observable` field or via a native signature in the `Test_Mechanism` field. The indicator [idioms](/documentation/idioms/) give several examples of both approaches.
 
 In this case, we'll use CybOX.
 
