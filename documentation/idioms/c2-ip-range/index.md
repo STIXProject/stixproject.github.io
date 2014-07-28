@@ -3,6 +3,7 @@ layout: flat
 title: Command and Control IP Range
 tags:
   - c2
+  - observable
   - ttp
 summary: Adversary infrastructure is also represented in STIX using the TTP structure. This idiom describes using the TTP structure to represent an adversary's command and control infrastructure by characterizing its IP range.
 ---

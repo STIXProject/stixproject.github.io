@@ -3,6 +3,8 @@ layout: flat
 title: Snort Test Mechanism
 tags:
   - indicator
+  - ttp
+  - exploit_target
 summary: Represent how to detect an indicator using Snort.
 ---
 

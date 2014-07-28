@@ -62,14 +62,20 @@ appear in one or more sections.**
       <img src="/images/Incident.png" class="component-img" alt="Incident Icon" />
       <h3>Incident</h3>
     </div>
+
     {% include tag_list.html tag="incident" %}
-  </div>
-  <div class="col-md-6">
     <div class="idiom-header" id="indicator">
       <img src="/images/Indicator.png" class="component-img" alt="Indicator Icon" />
       <h3>Indicator</h3>
     </div>
     {% include tag_list.html tag="indicator" %}
+  </div>
+  <div class="col-md-6">
+    <div class="idiom-header" id="observable">
+      <img src="/images/Observable.png" class="component-img" alt="Observable Icon" />
+      <h3>Observable</h3>
+    </div>
+    {% include tag_list.html tag="observable" %}
 
     <div class="idiom-header" id="threat_actor">
       <img src="/images/Threat Actor.png" class="component-img" alt="Threat Actor Icon" />

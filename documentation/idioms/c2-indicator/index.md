@@ -4,10 +4,11 @@ title: Indicator for C2 IP Address
 tags:
   - c2
   - indicator
+  - ttp
 summary: This idiom walks through the very common use case where you have an indicator where the "test" is a simple IP address and the context is that the IP is being used to host a C2 server. This is often implemented via a network block to that IP address as the external firewall.
 ---
 
-One of the most common forms of [indicator](..) seen describes a pattern for TCP traffic beaconing to a specific command and control (C2, C&C) server. This idiom describes creating such an indicator in STIX.
+One of the most common forms of [indicator](../#indicator) seen describes a pattern for TCP traffic beaconing to a specific command and control (C2, C&C) server. This idiom describes creating such an indicator in STIX.
 
 ## Scenario
 

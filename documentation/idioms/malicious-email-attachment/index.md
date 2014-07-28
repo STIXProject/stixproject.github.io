@@ -3,6 +3,7 @@ layout: flat
 title: Malicious E-mail Indicator With Attachment
 tags:
   - indicator
+  - ttp
 summary: Describes an indicator for a phishing e-mail that contains a malicious attachment
 ---
 

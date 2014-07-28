@@ -3,6 +3,7 @@ layout: flat
 title: Incident with Related Observables
 tags:
   - incident
+  - observable
 summary: This idiom describes several observables that were seen in the course of an incident.
 ---
 
