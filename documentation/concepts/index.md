@@ -22,7 +22,7 @@ This page describes several central STIX concepts that cut across all of the cor
 
       <p>Describes how to use data markings to mark STIX content.</p>
 
-      <a class="btn btn-primary" href="data-marking">Go »</a>
+      <a class="btn btn-primary" href="data-markings">Go »</a>
     </div>
 
     <div class="well">
