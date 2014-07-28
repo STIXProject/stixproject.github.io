@@ -1,8 +1,8 @@
 ---
 layout: flat
 title: Documentation
-active: documentation
 ---
+
 <div class="row">
   <div class="col-md-6">
     <div class="well">

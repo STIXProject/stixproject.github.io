@@ -1,7 +1,6 @@
 ---
 layout: flat
 title: Getting Started
-active: getting-started
 ---
 
 <div class="row">

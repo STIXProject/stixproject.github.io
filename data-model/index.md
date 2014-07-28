@@ -1,7 +1,6 @@
 ---
 layout: flat
 title: Data Model Documentation
-active: data-model
 ---
 
 <div class="full-width">

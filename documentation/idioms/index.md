@@ -1,7 +1,6 @@
 ---
 layout: flat
 title: STIX Idioms
-active: idioms
 ---
 
 The idioms on this page provide guidance on how to represent common cyber threat
