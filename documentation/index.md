@@ -37,7 +37,7 @@ title: Documentation
     </div>
 
     <div class="well">
-      <h4><a href="security">Python Scripting</a></h4>
+      <h4><a href="http://stix.readthedocs.org" target="_blank">Python Scripting</a></h4>
 
       <p>The STIX Project provides an official Python library for scripting the creation, modification, and processing
 		  of STIX documents. The documentation is available online, and describes how to install and usage the library. Additionally, it provides API documentation for the library.</p>
