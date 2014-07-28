@@ -5,7 +5,7 @@ pygments: true
 copyright: The MITRE Corporation
 generate_documentation: true
 
-exclude: ['README.md', 'Gemfile', 'Gemfile.lock']
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock', "Rakefile"]
 
 current_version: 1.1.1
 
