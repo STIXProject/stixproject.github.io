@@ -1,0 +1,13 @@
+.container > h2 {
+    border-bottom: 1px solid #aaa;
+}
+
+.container > h2:nth-of-type(even) {
+    text-align: right;
+}
+
+.container > h2:nth-of-type(even) + p > img {
+    float:right;
+    margin-right: 0px;
+    margin-left: 25px;
+}

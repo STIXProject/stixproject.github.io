@@ -3,12 +3,14 @@ layout: flat
 title: Data Model Documentation
 ---
 
-<div class="full-width">
-  <input type="text" class="doc-types form-control input-lg" placeholder="Search STIX Data Model..." />
-</div>
+<link href="/css/data_model.css" rel="stylesheet"/>
 
-<p><strong>Hint:</strong>Try searching for 'Indicator'</p>
 
+## Package
+
+A STIX Package construct serves as a container for grouping sets of related content. That content might be related because it's part of the same report or it might be as simple as it's being published at the same time. The package gives that context a wrapper and allows for metadata to be described about the content as a group.
+
+One of the changes in STIX 1.1 was to allow packages to be nested in other packages, packages to have relationships to other packages, and content to be referenced back to packages. While a simple change, this allows for more expressive use cases: communicating a set of reports in a single package, communicating a package manifest with content that points to the manifest, and even a parent report with multiple "chapters".
 
 ## Campaign
 
@@ -50,12 +52,6 @@ In the STIX relationship model, incidents can be related to the threat actors in
 
 A STIX [Indicator](/data-model/{{site.current_version}}/indicator/IndicatorType) conveys specific Observable patterns combined with contextual information intended to represent artifacts and/or behaviors of interest within a cyber security context. They consist of one or more Observable patterns potentially mapped to a related TTP context and adorned with other relevant metadata on things like confidence in the indicator’s assertion, handling restrictions, valid time windows, likely impact, sightings of the indicator, structured test mechanisms for detection, related campaigns, suggested courses of action, related indicators, the source of the Indicator, etc. Recognizing limitations in current standardized approaches of representation, STIX leverages community knowledge and best practices to define a new Indicator structure for representing Indicator information. 
 
-
-## Package
-
-A STIX Package construct serves as a container for grouping sets of related content. That content might be related because it's part of the same report or it might be as simple as it's being published at the same time. The package gives that context a wrapper and allows for metadata to be described about the content as a group.
-
-One of the changes in STIX 1.1 was to allow packages to be nested in other packages, packages to have relationships to other packages, and content to be referenced back to packages. While a simple change, this allows for more expressive use cases: communicating a set of reports in a single package, communicating a package manifest with content that points to the manifest, and even a parent report with multiple "chapters".
 
 
 ## Threat Actor
