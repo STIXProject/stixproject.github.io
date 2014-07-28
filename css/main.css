@@ -6,8 +6,6 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 102px;
-  /* drop content below navbar */
-  padding-top: 50px;
 }
 
 /* Sticky footer */
