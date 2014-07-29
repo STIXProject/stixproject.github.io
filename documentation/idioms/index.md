@@ -3,89 +3,201 @@ layout: flat
 title: STIX Idioms
 ---
 
+<link href="/css/idioms.css" rel="stylesheet"/>
+
 The idioms on this page provide guidance on how to represent common cyber threat
 information in STIX. They are grouped based on the situation in which they would
-be useful, as well as by the STIX types that they use.  **The same idiom may
-appear in one or more sections.**
+be useful, as well as by the STIX types that they use.  
 
-<div class="row idiom-row">
-  <div class="col-md-6">
-    <div class="idiom-header" id="c2">
-      <h3>Command and Control (C2)</h3>
-    </div>
-    {% include tag_list.html tag="c2" %}
+<p class="alert alert-warning"><strong>Note: </strong> the same idiom may appear in one or more sections!</p>
 
-    <div class="idiom-header" id="malware">
-      <img src="/images/Malware.png" class="component-img" alt="Malware Icon">
-      <h3>Malware</h3>
-    </div>
-    {% include tag_list.html tag="malware" %}
-  </div>
-  <div class="col-md-6">
-    <div class="idiom-header" id="victim">
-      <img src="/images/Victim Targeting.png" class="component-img" alt="Victim Targeting Icon">
-      <h3>Victim Targeting</h3>
-    </div>
-    {% include tag_list.html tag="victim" %}
-
-    <div class="idiom-header" id="package">
-      <h3>Packaging</h3>
-    </div>
-    {% include tag_list.html tag="package" %}
-  </div>
-</div>
-
-<hr />
-
-<div class="row idiom-row">
-  <div class="col-md-6">
-    <div class="idiom-header" id="campaign">
-      <img src="/images/Campaign.png" class="component-img" alt="Campaign Icon" />
-      <h3>Campaign</h3>
-    </div>
-    {% include tag_list.html tag="campaign" %}
-
-    <div class="idiom-header" id="coa">
-      <img src="/images/Course of Action.png" class="component-img" alt="Course of Action Icon" />
-      <h3>Course of Action</h3>
-    </div>
-    {% include tag_list.html tag="coa" %}
-
-    <div class="idiom-header" id="exploit_target">
-      <img src="/images/Exploit Target.png" class="component-img" alt="Exploit Target Icon" />
-      <h3>Exploit Target</h3>
-    </div>
-    {% include tag_list.html tag="exploit_target" %}
-
-    <div class="idiom-header" id="incident">
-      <img src="/images/Incident.png" class="component-img" alt="Incident Icon" />
-      <h3>Incident</h3>
-    </div>
-
-    {% include tag_list.html tag="incident" %}
-    <div class="idiom-header" id="indicator">
-      <img src="/images/Indicator.png" class="component-img" alt="Indicator Icon" />
-      <h3>Indicator</h3>
-    </div>
-    {% include tag_list.html tag="indicator" %}
-  </div>
-  <div class="col-md-6">
-    <div class="idiom-header" id="observable">
-      <img src="/images/Observable.png" class="component-img" alt="Observable Icon" />
-      <h3>Observable</h3>
-    </div>
-    {% include tag_list.html tag="observable" %}
-
-    <div class="idiom-header" id="threat_actor">
-      <img src="/images/Threat Actor.png" class="component-img" alt="Threat Actor Icon" />
-      <h3>Threat Actor</h3>
-    </div>
-    {% include tag_list.html tag="threat_actor" %}
-
-    <div class="idiom-header" id="ttp">
-      <img src="/images/TTP.png" class="component-img" alt="TTP Icon" />
-      <h3 name="ttp">TTP</h3>
-    </div>
-    {% include tag_list.html tag="ttp" %}
-  </div>
+<div class="row">
+	<div class="col-md-6">
+		<div class="panel-group" id="leftAccordion">
+		  <div class="panel panel-primary">
+		    <div class="panel-heading">
+		      <h2 class="panel-title">
+				<span class="img-spacer"></span>
+		        <a data-toggle="collapse" data-parent="#leftAccordion" href="#c2">
+		          Command and Control (C2)
+		        </a>
+		      </h2>
+		    </div>
+		    <div id="c2" class="panel-collapse collapse in">
+		      <div class="panel-body">
+		    	  {% include tag_list.html tag="c2" %}
+		      </div>
+		    </div>
+		  </div>
+		  <div class="panel panel-primary">
+		    <div class="panel-heading">
+		      <h2 class="panel-title">
+      			<img src="/images/Campaign.png" width="36px" alt="Campaign Icon" />
+		        <a data-toggle="collapse" data-parent="#leftAccordion" href="#campaign">
+		          Campaign
+		        </a>
+		      </h2>
+		    </div>
+		    <div id="campaign" class="panel-collapse collapse">
+		      <div class="panel-body">
+    			  {% include tag_list.html tag="campaign" %}
+		      </div>
+		    </div>
+		  </div>
+		  <div class="panel panel-primary">
+		    <div class="panel-heading">
+		      <h2 class="panel-title">
+      			<img src="/images/Course of Action.png" width="36px" alt="Course of Action Icon" />
+		        <a data-toggle="collapse" data-parent="#leftAccordion" href="#coa">
+		          Course of Action
+		        </a>
+		      </h2>
+		    </div>
+		    <div id="coa" class="panel-collapse collapse">
+		      <div class="panel-body">
+    			  {% include tag_list.html tag="coa" %}
+		      </div>
+		    </div>
+		  </div>
+		  <div class="panel panel-primary">
+		    <div class="panel-heading">
+		      <h2 class="panel-title">
+      			<img src="/images/Exploit Target.png" width="36px" alt="Exploit Target Icon" />
+		        <a data-toggle="collapse" data-parent="#leftAccordion" href="#et">
+		          Exploit Target
+		        </a>
+		      </h2>
+		    </div>
+		    <div id="et" class="panel-collapse collapse">
+		      <div class="panel-body">
+    			  {% include tag_list.html tag="exploit_target" %}
+		      </div>
+		    </div>
+		  </div>
+		  <div class="panel panel-primary">
+		    <div class="panel-heading">
+		      <h2 class="panel-title">
+      			<img src="/images/Incident.png" width="36px" alt="Incident Icon" />
+		        <a data-toggle="collapse" data-parent="#leftAccordion" href="#incident">
+		          Incident
+		        </a>
+		      </h2>
+		    </div>
+		    <div id="incident" class="panel-collapse collapse">
+		      <div class="panel-body">
+    			  {% include tag_list.html tag="incident" %}
+		      </div>
+		    </div>
+		  </div>
+		  <div class="panel panel-primary">
+		    <div class="panel-heading">
+		      <h2 class="panel-title">
+      			<img src="/images/Indicator.png" width="36px" alt="Indicator Icon" />
+		        <a data-toggle="collapse" data-parent="#leftAccordion" href="#indicator">
+		          Indicator
+		        </a>
+		      </h2>
+		    </div>
+		    <div id="indicator" class="panel-collapse collapse">
+		      <div class="panel-body">
+    			  {% include tag_list.html tag="indicator" %}
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="panel-group" id="rightAccordion">
+		  <div class="panel panel-info">
+		    <div class="panel-heading">
+		      <h2 class="panel-title">
+				<span class="img-spacer"></span>
+		        <a data-toggle="collapse" data-parent="#rightAccordion" href="#packaging">
+				  Packaging
+		        </a>
+		      </h2>
+		    </div>
+		    <div id="packaging" class="panel-collapse collapse in">
+		      <div class="panel-body">
+		    {% include tag_list.html tag="package" %}
+		      </div>
+		    </div>
+		  </div>
+		  <div class="panel panel-info">
+		    <div class="panel-heading">
+		      <h2 class="panel-title">
+				<img src="/images/Malware.png" width="36px" alt="Malware Icon">
+		        <a data-toggle="collapse" data-parent="#rightAccordion" href="#malware">
+				  Malware
+		        </a>
+		      </h2>
+		    </div>
+		    <div id="malware" class="panel-collapse collapse">
+		      <div class="panel-body">
+		    	  {% include tag_list.html tag="malware" %}
+		      </div>
+		    </div>
+		  </div>
+		  <div class="panel panel-info">
+		    <div class="panel-heading">
+		      <h2 class="panel-title">
+				<img src="/images/Observable.png" width="36px" alt="Observable Icon">
+		        <a data-toggle="collapse" data-parent="#rightAccordion" href="#observable">
+				  Observable
+		        </a>
+		      </h2>
+		    </div>
+		    <div id="observable" class="panel-collapse collapse">
+		      <div class="panel-body">
+		    	  {% include tag_list.html tag="observable" %}
+		      </div>
+		    </div>
+		  </div>
+		  <div class="panel panel-info">
+		    <div class="panel-heading">
+		      <h2 class="panel-title">
+				<img src="/images/Threat Actor.png" width="36px" alt="Threat Actor Icon">
+		        <a data-toggle="collapse" data-parent="#rightAccordion" href="#threatactor">
+				  Threat Actor
+		        </a>
+		      </h2>
+		    </div>
+		    <div id="threatactor" class="panel-collapse collapse">
+		      <div class="panel-body">
+		    	  {% include tag_list.html tag="threat_actor" %}
+		      </div>
+		    </div>
+		  </div>
+		  <div class="panel panel-info">
+		    <div class="panel-heading">
+		      <h2 class="panel-title">
+				<img src="/images/TTP.png" width="36px" alt="TTP Icon">
+		        <a data-toggle="collapse" data-parent="#rightAccordion" href="#ttp">
+				  TTP
+		        </a>
+		      </h2>
+		    </div>
+		    <div id="ttp" class="panel-collapse collapse">
+		      <div class="panel-body">
+		    	  {% include tag_list.html tag="ttp" %}
+		      </div>
+		    </div>
+		  </div>
+		  <div class="panel panel-info">
+		    <div class="panel-heading">
+		      <h2 class="panel-title">
+				<img src="/images/Victim Targeting.png" width="36px" alt="Victim Targeting Icon">
+		        <a data-toggle="collapse" data-parent="#rightAccordion" href="#collapseThree">
+					Victim Targeting
+		        </a>
+		      </h2>
+		    </div>
+		    <div id="collapseThree" class="panel-collapse collapse">
+		      <div class="panel-body">
+		    	  {% include tag_list.html tag="victim" %}
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</div>
 </div>
