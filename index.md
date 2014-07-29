@@ -34,7 +34,7 @@ no_in_page_title: true
 
 ## Get in Touch!
 
-<p class="lead">
+<p class="lead text-center">
 	Have questions, comments, or feedback? Want to set up a teleconference or in-person meeting?
 	<br/>
 	<strong>Reach out to us at <a href="mailto:stix@mitre.org">stix@mitre.org</a>!</strong>
