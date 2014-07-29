@@ -14,91 +14,91 @@ be useful, as well as by the STIX types that they use.
 <div class="row">
 	<div class="col-md-6">
 		<div class="panel-group">
-		  <div class="panel panel-primary">
+		  <div id="c2" class="panel panel-primary">
 		    <div class="panel-heading">
 		      <h2 class="panel-title">
 				<span class="img-spacer"></span>
-		        <a data-toggle="collapse" href="#c2">
+		        <a data-toggle="collapse" href="#c2-body">
 		          Command and Control (C2)
 		        </a>
 		      </h2>
 		    </div>
-		    <div id="c2" class="panel-collapse collapse in">
+		    <div id="c2-body" class="panel-collapse collapse in">
 		      <div class="panel-body">
 		    	  {% include tag_list.html tag="c2" %}
 		      </div>
 		    </div>
 		  </div>
-		  <div class="panel panel-primary">
+		  <div id="campaign" class="panel panel-primary">
 		    <div class="panel-heading">
 		      <h2 class="panel-title">
       			<img src="/images/Campaign.png" width="36px" alt="Campaign Icon" />
-		        <a data-toggle="collapse" href="#campaign">
+		        <a data-toggle="collapse" href="#campaign-body">
 		          Campaign
 		        </a>
 		      </h2>
 		    </div>
-		    <div id="campaign" class="panel-collapse collapse in">
+		    <div id="campaign-body" class="panel-collapse collapse in">
 		      <div class="panel-body">
     			  {% include tag_list.html tag="campaign" %}
 		      </div>
 		    </div>
 		  </div>
-		  <div class="panel panel-primary">
+		  <div id="coa" class="panel panel-primary">
 		    <div class="panel-heading">
 		      <h2 class="panel-title">
       			<img src="/images/Course of Action.png" width="36px" alt="Course of Action Icon" />
-		        <a data-toggle="collapse" href="#coa">
+		        <a data-toggle="collapse" href="#coa-body">
 		          Course of Action
 		        </a>
 		      </h2>
 		    </div>
-		    <div id="coa" class="panel-collapse collapse in">
+		    <div id="coa-body" class="panel-collapse collapse in">
 		      <div class="panel-body">
     			  {% include tag_list.html tag="coa" %}
 		      </div>
 		    </div>
 		  </div>
-		  <div class="panel panel-primary">
+		  <div id="exploit-target" class="panel panel-primary">
 		    <div class="panel-heading">
 		      <h2 class="panel-title">
       			<img src="/images/Exploit Target.png" width="36px" alt="Exploit Target Icon" />
-		        <a data-toggle="collapse" href="#et">
+		        <a data-toggle="collapse" href="#exploit-target-body">
 		          Exploit Target
 		        </a>
 		      </h2>
 		    </div>
-		    <div id="et" class="panel-collapse collapse in">
+		    <div id="exploit-target-body" class="panel-collapse collapse in">
 		      <div class="panel-body">
     			  {% include tag_list.html tag="exploit_target" %}
 		      </div>
 		    </div>
 		  </div>
-		  <div class="panel panel-primary">
+		  <div id="incident" class="panel panel-primary">
 		    <div class="panel-heading">
 		      <h2 class="panel-title">
       			<img src="/images/Incident.png" width="36px" alt="Incident Icon" />
-		        <a data-toggle="collapse" href="#incident">
+		        <a data-toggle="collapse" href="#incident-body">
 		          Incident
 		        </a>
 		      </h2>
 		    </div>
-		    <div id="incident" class="panel-collapse collapse in">
+		    <div id="incident-body" class="panel-collapse collapse in">
 		      <div class="panel-body">
     			  {% include tag_list.html tag="incident" %}
 		      </div>
 		    </div>
 		  </div>
-		  <div class="panel panel-primary">
+		  <div id="indicator" class="panel panel-primary">
 		    <div class="panel-heading">
 		      <h2 class="panel-title">
       			<img src="/images/Indicator.png" width="36px" alt="Indicator Icon" />
-		        <a data-toggle="collapse" href="#indicator">
+		        <a data-toggle="collapse" href="#indicator-body">
 		          Indicator
 		        </a>
 		      </h2>
 		    </div>
-		    <div id="indicator" class="panel-collapse collapse in">
+		    <div id="indicator-body" class="panel-collapse collapse in">
 		      <div class="panel-body">
     			  {% include tag_list.html tag="indicator" %}
 		      </div>
@@ -108,91 +108,91 @@ be useful, as well as by the STIX types that they use.
 	</div>
 	<div class="col-md-6">
 		<div class="panel-group">
-		  <div class="panel panel-primary">
+		  <div id="packaging" class="panel panel-primary">
 		    <div class="panel-heading">
 		      <h2 class="panel-title">
 				<span class="img-spacer"></span>
-		        <a data-toggle="collapse" href="#packaging">
+		        <a data-toggle="collapse" href="#packaging-body">
 				  Packaging
 		        </a>
 		      </h2>
 		    </div>
-		    <div id="packaging" class="panel-collapse collapse in">
+		    <div id="packaging-body" class="panel-collapse collapse in">
 		      <div class="panel-body">
 		    {% include tag_list.html tag="package" %}
 		      </div>
 		    </div>
 		  </div>
-		  <div class="panel panel-primary">
+		  <div id="malware" class="panel panel-primary">
 		    <div class="panel-heading">
 		      <h2 class="panel-title">
 				<img src="/images/Malware.png" width="36px" alt="Malware Icon">
-		        <a data-toggle="collapse" href="#malware">
+		        <a data-toggle="collapse" href="#malware-body">
 				  Malware
 		        </a>
 		      </h2>
 		    </div>
-		    <div id="malware" class="panel-collapse collapse in">
+		    <div id="malware-body" class="panel-collapse collapse in">
 		      <div class="panel-body">
 		    	  {% include tag_list.html tag="malware" %}
 		      </div>
 		    </div>
 		  </div>
-		  <div class="panel panel-primary">
+		  <div id="observable" class="panel panel-primary">
 		    <div class="panel-heading">
 		      <h2 class="panel-title">
 				<img src="/images/Observable.png" width="36px" alt="Observable Icon">
-		        <a data-toggle="collapse" href="#observable">
+		        <a data-toggle="collapse" href="#observable-body">
 				  Observable
 		        </a>
 		      </h2>
 		    </div>
-		    <div id="observable" class="panel-collapse collapse in">
+		    <div id="observable-body" class="panel-collapse collapse in">
 		      <div class="panel-body">
 		    	  {% include tag_list.html tag="observable" %}
 		      </div>
 		    </div>
 		  </div>
-		  <div class="panel panel-primary">
+		  <div id="threat-actor" class="panel panel-primary">
 		    <div class="panel-heading">
 		      <h2 class="panel-title">
 				<img src="/images/Threat Actor.png" width="36px" alt="Threat Actor Icon">
-		        <a data-toggle="collapse" href="#threatactor">
+		        <a data-toggle="collapse" href="#threat-actor-body">
 				  Threat Actor
 		        </a>
 		      </h2>
 		    </div>
-		    <div id="threatactor" class="panel-collapse collapse in">
+		    <div id="threat-actor-body" class="panel-collapse collapse in">
 		      <div class="panel-body">
 		    	  {% include tag_list.html tag="threat_actor" %}
 		      </div>
 		    </div>
 		  </div>
-		  <div class="panel panel-primary">
+		  <div id="ttp" class="panel panel-primary">
 		    <div class="panel-heading">
 		      <h2 class="panel-title">
 				<img src="/images/TTP.png" width="36px" alt="TTP Icon">
-		        <a data-toggle="collapse" href="#ttp">
+		        <a data-toggle="collapse" href="#ttp-body">
 				  TTP
 		        </a>
 		      </h2>
 		    </div>
-		    <div id="ttp" class="panel-collapse collapse in">
+		    <div id="ttp-body" class="panel-collapse collapse in">
 		      <div class="panel-body">
 		    	  {% include tag_list.html tag="ttp" %}
 		      </div>
 		    </div>
 		  </div>
-		  <div class="panel panel-primary">
+		  <div id="victim" class="panel panel-primary">
 		    <div class="panel-heading">
 		      <h2 class="panel-title">
 				<img src="/images/Victim Targeting.png" width="36px" alt="Victim Targeting Icon">
-		        <a data-toggle="collapse" href="#collapseThree">
+		        <a data-toggle="collapse" href="#victim-body">
 					Victim Targeting
 		        </a>
 		      </h2>
 		    </div>
-		    <div id="collapseThree" class="panel-collapse collapse in">
+		    <div id="victim-body" class="panel-collapse collapse in">
 		      <div class="panel-body">
 		    	  {% include tag_list.html tag="victim" %}
 		      </div>
