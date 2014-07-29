@@ -32,8 +32,6 @@ no_in_page_title: true
 
 <hr />
 
-## Get in Touch!
-
 <p class="lead text-center">
 	Have questions, comments, or feedback? Want to set up a teleconference or in-person meeting?
 	<br/>
