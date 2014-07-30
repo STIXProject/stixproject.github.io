@@ -1,0 +1,39 @@
+---
+layout: data_model
+title: LinksType
+---
+
+<h1>LinksType<span class="subdued">Email Message Object Schema</span></h1>
+
+<p>The <a href='/data-model/1.1.1/EmailMessageObj/LinksType'>LinksType</a> captures a list of URIs, representing the links contained in the message.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Link<span class="occurrence">1..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/EmailMessageObj/LinkReferenceType">LinkReferenceType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Link field specifies a single URL link contained within the email message, via a reference to an Object included elsewhere in the document.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

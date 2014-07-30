@@ -1,0 +1,165 @@
+---
+layout: data_model
+title: WindowsKernelHookObjectType
+---
+
+<h1>WindowsKernelHookObjectType<span class="subdued">Win Kernel Hook Object Schema</span></h1>
+
+<p>The <a href='/data-model/1.1.1/WinKernelHookObj/WindowsKernelHookObjectType'>WindowsKernelHookObjectType</a> type is intended to characterize Windows kernel function hooks.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@object_reference<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>The object_reference field specifies a unique ID reference to an Object defined elsewhere. This construct allows for the re-use of the defined Properties of one Object within another, without the need to embed the full Object in the location from which it is being referenced. Thus, this ID reference is intended to resolve to the Properties of the Object that it points to.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Custom_Properties<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/CustomPropertiesType">CustomPropertiesType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Custom_Properties construct is optional and enables the specification of a set of custom Object Properties that may not be defined in existing Properties schemas.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Digital_Signature_Hooking<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/DigitalSignatureInfoType">DigitalSignatureInfoType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Digital_Signature_Hooked field is optional and specifies the digital signature of the hooking code.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Digital_Signature_Hooked<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/DigitalSignatureInfoType">DigitalSignatureInfoType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Digital_Signature_Hooked field is optional and specifies the digital signature of the hooked code.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Hooking_Address<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/UnsignedLongObjectPropertyType">UnsignedLongObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Hooking_Address field is optional and specifies the address from where the hooking occurs.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Hook_Description<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Hook_Description field is optional and provides a description of the nature of the hook.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Hooked_Function<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Hooked_Function field specifies the name of the function that is hooked.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Hooked_Module<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Hooked_Module field specifies the name of the module that is hooked.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Hooking_Module<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Hooking_Module field specifies the name of the module that is doing the hooking.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Type<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/WinKernelHookObj/KernelHookType">KernelHookType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Type field specifies the type of hook being characterized.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

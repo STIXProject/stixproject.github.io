@@ -1,0 +1,151 @@
+---
+layout: data_model
+title: YAFReverseFlowType
+---
+
+<h1>YAFReverseFlowType<span class="subdued">Network Flow Object Schema</span></h1>
+
+<p>These elements correspond to the reverse flow captured by in YAF record.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Reverse_Octet_Total_Count<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Number of octets in packets in reverse direction of flow. May be encoded in 4 octets using IPFIX reduced-length encoding.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Reverse_Packet_Total_Count<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Number of packets in reverse direction of flow.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Reverse_Payload_Entropy<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Shannon Entropy calculation of the reverse payload data. The calculation generates a real number value between 0.0 and 8.0. That number is then converted into an 8-bit integer value between 0 and 255. Roughly, numbers above 230 are generally compressed (or encrypted) and numbers centered around approximately 140 are English text. Lower numbers carry even less information content.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Reverse_Flow_Delta_Milliseconds<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>RTT of initial handshake.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>TCP_Reverse_Flow<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/NetFlowObj/YAFTCPFlowType">YAFTCPFlowType</a>
+        
+      </td>
+      <td>
+        
+          <p>The associated elements relate to the reverse packets of the flow.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Reverse_Vlan_ID_MAC_Addr<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/AddressObj/AddressObjectType">AddressObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>Reverse MAC address.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Reverse_Passive_OS_Fingerprinting<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/PlatformSpecificationType">PlatformSpecificationType</a>
+        
+      </td>
+      <td>
+        
+          <p>OS name and version of the reverse flow.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Reverse_First_Packet<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>First reverse packet IP payload.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Reverse_N_Bytes_Payload<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Initial n bytes of reverse direction of flow payload.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

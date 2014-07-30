@@ -1,0 +1,41 @@
+/*
+.container > h2 {
+    border-bottom: 1px solid #aaa;
+}
+
+.container > h2:nth-of-type(even) {
+    text-align: right;
+}
+
+.container > h2:nth-of-type(even) + p > img {
+    float:right;
+    margin-right: 0px;
+    margin-left: 25px;
+}
+*/
+
+.container > h2 {
+    border-bottom: 1px solid #aaa;
+}
+
+.container > h2:nth-of-type(even) {
+    background-color: rgba(200, 200, 200, .2);
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.container > h2:nth-of-type(even) + p {
+    margin-bottom: 0px;
+}
+
+section.data-model-section {
+    padding-left: 15px;
+}
+
+section.data-model-section:nth-of-type(even) {
+    background-color: rgba(200, 200, 200, .2);
+    padding-top: 5px;
+    padding-bottom: 25px;
+}

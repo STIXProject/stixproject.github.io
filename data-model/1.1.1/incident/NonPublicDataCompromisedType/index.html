@@ -1,0 +1,67 @@
+---
+layout: data_model
+title: NonPublicDataCompromisedType
+---
+
+<h1>NonPublicDataCompromisedType<span class="subdued">Incident Schema</span></h1>
+
+<p>This type represents whether non-public data was compromised or exposed and whether that data was encrypted or not.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@vocab_name<span class="occurrence">optional</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>The vocab_name field specifies the name of the controlled vocabulary.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@vocab_reference<span class="occurrence">optional</span></td>
+      <td>
+        
+          anyURI
+        
+      </td>
+      <td>
+        
+          <p>The vocab_reference field specifies the URI to the location of where the controlled vocabulary is defined, e.g., in an externally located XML schema file.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@data_encrypted<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>Indicates whether the data that was compromised was encrypted or not.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

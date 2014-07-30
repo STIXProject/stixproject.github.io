@@ -1,5 +1,5 @@
 ---
-layout: idiom
+layout: flat
 title: C2 Indicator
 ---
 
@@ -17,7 +17,7 @@ In this case, the "test" portion will be a simple cyber observable for an IP add
 
 ![IP Address Indicator Diagram](diagram.png)
 
-In the diagram above, the Indicator component contains the test: a CybOX [Address Object](/documentation/AddressObj/AddressObjectType/) with an `Address Value` of the IP to check for (10.0.0.0). The `Indicated TTP` then uses a [STIX Relationship](idioms/relationships) to link to a TTP that describes the indicator. Note that, besides the TTP, the indicator `Type` field is also used to give the indicator some context.
+In the diagram above, the Indicator component contains the test: a CybOX [Address Object](/data-model/{{site.current_version}}/AddressObj/AddressObjectType/) with an `Address Value` of the IP to check for (10.0.0.0). The `Indicated TTP` then uses a [STIX Relationship](idioms/relationships) to link to a TTP that describes the indicator. Note that, besides the TTP, the indicator `Type` field is also used to give the indicator some context.
 
 ## XML
 
@@ -46,5 +46,5 @@ In the diagram above, the Indicator component contains the test: a CybOX [Addres
 
 ## Further Reading
 
-* [Indicator Type](/documentation/indicator/IndicatorType)
-* [CybOX Address Object](/documentation/AddressObj/AddressObjectType)
+* [Indicator Type](/data-model/{{site.current_version}}/indicator/IndicatorType)
+* [CybOX Address Object](/data-model/{{site.current_version}}/AddressObj/AddressObjectType)

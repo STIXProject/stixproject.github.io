@@ -1,0 +1,57 @@
+---
+layout: data_model
+title: ActionArgumentType
+---
+
+<h1>ActionArgumentType<span class="subdued">CybOX Core Schema</span></h1>
+
+<p>The <a href='/data-model/1.1.1/cybox/ActionArgumentType'>ActionArgumentType</a> enables the specification of a single relevant argument/parameter for this Action.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Argument_Name<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/cyboxCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Argument_Name field is optional and utilizes a standardized controlled vocabulary to identify/characterize the specific action argument utilized.</p>
+        
+          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is ActionArgumentNameVocab in the http://cybox.mitre.org/default_vocabularies-2 namespace. This type is defined in the cybox_default_vocabularies.xsd file or at the URL http://cybox.mitre.org/XMLSchema/default_vocabularies/2.0.1/cybox_default_vocabularies.xsd.</p>
+        
+          <p>Users may also define their own vocabulary using the type extension mechanism (by specifying a vocabulary name and/or reference using the vocab_name and vocab_reference attributes, respectively) or simply use this as a string field.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Argument_Value<span class="occurrence">0..1</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>The Argument_Value field specifies the value for this action argument/parameter.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

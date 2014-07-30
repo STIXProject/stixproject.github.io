@@ -1,0 +1,119 @@
+---
+layout: data_model
+title: MarkingSpecificationType
+---
+
+<h1>MarkingSpecificationType<span class="subdued">Data Markings Schema</span></h1>
+
+
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@id<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>Specifies a unique ID for this Marking.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@idref<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>Specifies a reference to the ID of a Marking defined elsewhere.</p>
+        
+          <p>When idref is specified, the id attribute must not be specified, and any instance of this Marking should not hold content.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@version<span class="occurrence">optional</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>Specifies the relevant Data_Marking schema version for this content.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Controlled_Structure<span class="occurrence">0..1</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>This field utilizes XPath 1.0 to specify the structures for which the Marking is to be applied.</p>
+        
+          <p>The XPath expression is NOT recursive and the marking structure does NOT apply to child nodes of the selected node. Instead, the expression must explicitly select all nodes that the marking is to be applied to including elements, attributes, and text nodes.</p>
+        
+          <p>The context root of the XPath statement is this Controlled_Structure element. Any namespace prefix declarations that are available to this Controlled_Structure element are available to the XPath.</p>
+        
+          <p>Note that all Controlled_Structure elements have a scope within the document for which their XPath is valid to reference.</p>
+        
+          <p>Usages of <a href='/data-model/1.1.1/marking/MarkingType'>MarkingType</a> may specify a "marking scope". The marking scope is always recursive and specifies the set of nodes that may be selected by the XPath expression (and therefore that may have the markings applied to them). If no marking scope is specified in the schema documentation or specification where the <a href='/data-model/1.1.1/marking/MarkingType'>MarkingType</a> is used, it should be assumed that the document itself and all nodes are within scope.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Marking_Structure<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/marking/MarkingStructureType">MarkingStructureType</a>
+        
+      </td>
+      <td>
+        
+          <p>This field contains the marking information to be applied to the portions of XML content specified in the ControlledStructure field. This field is defined as <a href='/data-model/1.1.1/marking/MarkingStructureType'>MarkingStructureType</a> which is an abstract type the enables the flexibility to utilize any variety of marking structures.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Information_Source<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/stixCommon/InformationSourceType">InformationSourceType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Information_Source field details the source of this entry.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

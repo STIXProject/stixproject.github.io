@@ -1,0 +1,57 @@
+---
+layout: data_model
+title: ValidTimeType
+---
+
+<h1>ValidTimeType<span class="subdued">Indicator Schema</span></h1>
+
+<p>A basic representation of a temporal window when the thing (e.g., indicator) is valid. </p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Start_Time<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/stixCommon/DateTimeWithPrecisionType">DateTimeWithPrecisionType</a>
+        
+      </td>
+      <td>
+        
+          <p>If not present, the valid time position of the indicator does not have a lower bound (i.e., temporal window is only bounded by the end-time). </p>
+        
+          <p>In order to avoid ambiguity, it is strongly suggest that all timestamps include a specification of the timezone if it is known.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>End_Time<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/stixCommon/DateTimeWithPrecisionType">DateTimeWithPrecisionType</a>
+        
+      </td>
+      <td>
+        
+          <p>If not present, the valid time position of the indicator does not have an upper bound (i.e., temporal window is only bounded by the start-time). </p>
+        
+          <p>In order to avoid ambiguity, it is strongly suggest that all timestamps include a specification of the timezone if it is known.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

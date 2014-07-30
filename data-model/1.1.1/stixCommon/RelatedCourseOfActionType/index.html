@@ -1,0 +1,85 @@
+---
+layout: data_model
+title: RelatedCourseOfActionType
+---
+
+<h1>RelatedCourseOfActionType<span class="subdued">STIX Common Schema</span></h1>
+
+<p>Identifies or characterizes a relationship to a course of action.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Confidence<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/stixCommon/ConfidenceType">ConfidenceType</a>
+        
+      </td>
+      <td>
+        
+          <p>The confidence field specifies the level of confidence in the assertion of the relationship between the two components.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Information_Source<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/stixCommon/InformationSourceType">InformationSourceType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Information_Source field specifies the source of the information about the relationship between the two components.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Relationship<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/stixCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
+        
+      </td>
+      <td>
+        
+          <p>The relationship field characterizes the type of the relationship between the two components.</p>
+        
+          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. No default vocabulary type has been defined for STIX 1.1.1. Users may either define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a free string field.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Course_Of_Action<span class="occurrence">1..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1.1/stixCommon/CourseOfActionBaseType">CourseOfActionBaseType</a>
+        
+      </td>
+      <td>
+        
+          <p>A reference or representation of the related course of action.</p>
+        
+          <p>This field is implemented through the xsi:type extension mechanism. The default and strongly recommended type is <a href='/data-model/1.1.1/coa/CourseOfActionType'>CourseOfActionType</a> in the http://stix.mitre.org/CourseOfAction-1 namespace. This type is defined in the course_of_action.xsd file or at the URL http://stix.mitre.org/XMLSchema/course_of_action/1.1.1/course_of_action.xsd.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
