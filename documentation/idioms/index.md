@@ -45,6 +45,12 @@ be useful, as well as by the STIX types that they use.
             </h3>
           </th>
           <th>
+            <h3>Use Cases</h3>
+          </th>
+          <th>
+            <h3>Components</h3>
+          </th>
+          <th>
             <h3>Details</h3>
           </th>
         </tr>
@@ -56,23 +62,26 @@ be useful, as well as by the STIX types that they use.
               <td>
                 <h4>
                   <a href='{{page.url}}'>{{page.title}}</a>
-                  <small>
-                    <span class="tag-labels-container">
-                      {% for use_case in page.use_cases %}
-                        {% assign tag = use_case | replace:' ','-' | downcase %}
-                        <span data-tag="{{use_case}}" class="label label-{{tag}}">
-                          {{use_case}}
-                        </span>
-                      {% endfor %}
-                      {% for construct in page.constructs %}
-                        {% assign tag = construct | replace:' ','-' | downcase %}
-                        <span data-tag="{{construct}}" class="label label-{{tag}}">
-                          {{construct}}
-                        </span>
-                      {% endfor %}
-                    </span>
-                  </small>
                 </h4>
+              </td>
+              <td>
+                <span class="tag-labels-container">
+                  {% for use_case in page.use_cases %}
+                    {% assign tag = use_case | replace:' ','-' | downcase %}
+                    <span data-tag="{{use_case}}" class="label label-{{tag}}">
+                      {{use_case}}
+                    </span>
+                  {% endfor %}
+                </span>
+              </td>
+              <td>
+                {% for construct in page.constructs %}
+                {% assign tag = construct | replace:' ','-' | downcase %}
+                <span class="idiom-construct" data-tag="{{construct}}" data-toggle="tooltip"
+                    data-placement="top" title="{{construct}}">
+                  <img src="/images/{{construct}}.png" width="40px" alt="{{construct}} Icon" />
+                </span>
+                {% endfor %}
               </td>
               <td>
                 <button class="btn btn-info" data-toggle="popover" data-placement="left" data-trigger="hover" title="{{page.title}}" data-content="{{page.summary | escape}}">
