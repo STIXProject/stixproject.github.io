@@ -1,5 +1,5 @@
 ---
-layout: flat
+layout: flat_for_idioms
 title: STIX Idioms
 ---
 
