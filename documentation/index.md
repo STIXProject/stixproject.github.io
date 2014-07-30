@@ -37,6 +37,17 @@ title: Documentation
     </div>
 
     <div class="well">
+      <h4><a href="http://stix.readthedocs.org" target="_blank">Python Scripting</a></h4>
+
+      <p>The STIX Project provides an official Python library for scripting the creation, modification, and processing
+		  of STIX documents. The documentation is available online, and describes how to install and usage the library. Additionally, it provides API documentation for the library.</p>
+
+      <a class="btn btn-primary" href="http://stix.readthedocs.org" target="_blank">Go »</a>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="well">
       <h4><a href="security">Security Considerations</a></h4>
 
       <p>Security considerations are a list of security issues that might arise
@@ -46,9 +57,6 @@ title: Documentation
 
       <a class="btn btn-primary" href="security">Go »</a>
     </div>
-  </div>
-
-  <div class="col-md-6">
     <div class="well">
       <h4><a href="suggested-practices">Suggested Practices</a></h4>
 

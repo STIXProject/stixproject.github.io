@@ -102,6 +102,13 @@ h1 span.subdued {
   margin-bottom: 20px;
 }
 
+.component-img-right {
+  float: right;
+  max-width: 100px;
+  margin-left: 25px;
+  margin-bottom: 20px;
+}
+
 hr.separator {
   clear: both;
 }
@@ -192,4 +199,35 @@ a.disabled {
 .site-title {
   font-size: 63px;
   padding: 15px 0;
+}
+
+.contact-icon {
+    font-size: 3em;
+    text-align: center;
+}
+
+.contact-icon > span {
+    background-color: #428bca;
+    border-radius: 50%;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.label-command-and-control {
+    background-color: #428bca;
+}
+
+.label-packaging {
+    background-color: #d9534f;
+}
+
+.label-malware {
+    background-color: #AF5BDE;
+}
+
+.label-victim-targeting {
+    background-color: #01D3B1;
 }

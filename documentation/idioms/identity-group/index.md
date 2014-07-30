@@ -1,8 +1,8 @@
 ---
 layout: flat
 title: Identifying a Threat Actor Group
-tags:
-  - threat_actor
+constructs:
+  - Threat Actor
 summary: This idiom describes how to use the threat actor construct to represent the identity of a threat actor group. An example of this in threat intelligence is the characterization of the APT1 threat actor group by Mandiant in their 2013 APT1 report.
 ---
 

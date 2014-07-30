@@ -1,8 +1,8 @@
 ---
 layout: flat
 title: Assets Affected in an Incident
-tags:
-  - incident
+constructs:
+  - Incident
 summary: This idiom describes how an asset was affected in the course of an incident. In this case, the example used is an information asset but a similar set of constructs can be used to describe affected IT assets.
 ---
 

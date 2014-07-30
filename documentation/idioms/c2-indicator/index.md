@@ -1,10 +1,11 @@
 ---
 layout: flat
 title: Indicator for C2 IP Address
-tags:
-  - c2
-  - indicator
-  - ttp
+use_cases:
+  - Command and Control
+constructs:
+  - Indicator
+  - TTP
 summary: This idiom walks through the very common use case where you have an indicator where the "test" is a simple IP address and the context is that the IP is being used to host a C2 server. This is often implemented via a network block to that IP address as the external firewall.
 ---
 

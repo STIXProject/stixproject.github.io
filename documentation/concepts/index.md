@@ -17,7 +17,7 @@ This page describes several central STIX concepts that cut across all of the cor
     </div>
 
     <div class="well">
-      <img src="/images/Data Marking.png" class="component-img" alt="Data Marking Icon" />
+      <img src="/images/Data Marking.png" class="component-img-right" alt="Data Marking Icon" />
       <h4><a href="data-markings">Data Markings</a></h4>
 
       <p>Describes how to use data markings to mark STIX content.</p>
