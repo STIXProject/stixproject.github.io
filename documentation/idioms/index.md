@@ -15,6 +15,6 @@ be useful, as well as by the STIX types that they use.
 
 <div class="row">
   <div class="col-md-12">
-    {% include tag_list.html tag="c2 campaign coa exploit_target incident indicator package malware observable threat_actor ttp victim" %}
+    {% include tag_list.html tag="c2,campaign,coa,exploit_target,incident,indicator,package,malware,observable,threat_actor,ttp,victim" %}
   </div>
 </div>

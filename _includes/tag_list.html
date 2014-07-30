@@ -1,11 +1,28 @@
-<table class="table table-striped">
+<table id="idiom-table" class="table table-striped">
 	<thead>
 		<tr>
 			<th>
-				Idiom
+				<h3>Idiom
+					<small class="dropdown">
+						<button class="btn btn-info dropdown-toggle" type="button" id="filterMenu" data-toggle="dropdown">
+							Filter By... <span class="caret"></span>
+						</button>
+						<ul id="tag-filterer" class="dropdown-menu" role="menu" aria-labelledby="filterMenu">
+							<li role="presentation"><a class="tag-filter" role="menuitem" tabindex="-1" href="#">None</a></li>
+							<li role="presentation" class="divider"></li>
+							{% capture tag_list %}
+								{{include.tag}}
+							{% endcapture %}
+							{% assign tag_list = tag_list | split:"," | sort %}
+							{% for tag in tag_list %}
+								<li role="presentation"><a class="tag-filter" role="menuitem" tabindex="-1" href="#">{{tag}}</a></li>
+							{% endfor %}
+						</ul>
+					</small>
+				</h3>
 			</th>
 			<th>
-				Details
+				<h3>Details</h3>
 			</th>
 		</tr>
 	</thead>

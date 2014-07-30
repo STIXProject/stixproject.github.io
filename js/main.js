@@ -35,4 +35,13 @@ $(document).ready(function() {
     $('.dropdown-toggle').dropdown()
     $('.coming-soon').tooltip()
     $("button[data-toggle='popover']").popover()
+    $("#tag-filterer > li > a.tag-filter").click(function() {
+        var label = this.textContent.trim();
+        if (label === "None") {
+            $("#idiom-table > tbody > tr").show();
+        } else {
+            $("#idiom-table > tbody > tr:has('span.label-" + label + "')").show();
+            $("#idiom-table > tbody > tr:not(:has('span.label-" + label + "'))").hide();
+        }
+    })
 });

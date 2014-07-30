@@ -7,3 +7,7 @@
 span.tag-labels-container .label {
     margin-right: 3px;
 }
+
+#filterMenu {
+    padding: 1px 5px;
+}
