@@ -1,8 +1,8 @@
 ---
 layout: flat
 title: Indicator for Malicious URL
-tags:
-  - indicator
+constructs:
+  - Indicator
 summary: This idiom is an example of a malicious URL indicator that represents a URL and indicates that it's a delivery mechanism for a piece of malware.
 ---
 

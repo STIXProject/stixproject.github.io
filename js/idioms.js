@@ -2,8 +2,8 @@ function filter_idiom_table(by_tag) {
     if (by_tag === "None") {
         $("#idiom-table > tbody > tr").show();
     } else {
-        $("#idiom-table > tbody > tr:has('span.label-" + by_tag + "')").show();
-        $("#idiom-table > tbody > tr:not(:has('span.label-" + by_tag + "'))").hide();
+        $("#idiom-table > tbody > tr:has('span[data-tag=\"" + by_tag + "\"]')").show();
+        $("#idiom-table > tbody > tr:not(:has('span[data-tag=\"" + by_tag + "\"]'))").hide();
     }
 }
 

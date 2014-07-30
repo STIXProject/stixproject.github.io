@@ -216,7 +216,7 @@ a.disabled {
     color: white;
 }
 
-.label-c2 {
+.label-command-and-control {
     background-color: #428bca;
 }
 
@@ -224,11 +224,11 @@ a.disabled {
     background-color: #5bc0de;
 }
 
-.label-coa {
+.label-course-of-action {
     background-color: #777;
 }
 
-.label-exploit_target {
+.label-exploit-target {
     background-color: #5cb85c;
 }
 
@@ -240,7 +240,7 @@ a.disabled {
     background-color: #f0ad4e;
 }
 
-.label-package {
+.label-packaging {
     background-color: #d9534f;
 }
 
@@ -252,7 +252,7 @@ a.disabled {
     background-color: #EE701D;
 }
 
-.label-threat_actor {
+.label-threat-actor {
     background-color: #EE1D9A;
 }
 
@@ -260,6 +260,6 @@ a.disabled {
     background-color: #C7CF00;
 }
 
-.label-victim {
+.label-victim-targeting {
     background-color: #01D3B1;
 }
