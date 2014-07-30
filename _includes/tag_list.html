@@ -48,9 +48,10 @@
 							<a href='{{page.url}}'>{{page.title}}</a>
 							<small>
 								<span class="tag-labels-container">
-									{% for tag in page.tags %}
+									{% assign page_tags = page.tags | sort%}
+									{% for tag in page_tags %}
 										{% if include.tag contains tag %}
-											<span class="label label-{{tag}}">
+											<span data-tag="{{tag}}" class="label label-{{tag}}">
 												{{tag}}
 											</span>
 										{% endif %}
