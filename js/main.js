@@ -34,4 +34,5 @@ $('table').addClass('table'); // Makes all tables bootstrap tables
 $(document).ready(function() {
     $('.dropdown-toggle').dropdown()
     $('.coming-soon').tooltip()
+    $("button[data-toggle='popover']").popover()
 });

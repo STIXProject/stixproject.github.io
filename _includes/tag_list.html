@@ -1,4 +1,54 @@
-{% for page in site.pages %}{% for tag in page.tags %}{% if tag == include.tag %}
-  <h4><a href='{{page.url}}'>{{page.title}}</a></h4>
-  <p>{{page.summary}}</p>
-{% endif %}{% endfor %}{% endfor %}
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>
+				Idiom
+			</th>
+			<th>
+				Details
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for page in site.pages %}
+			{% assign my_tags = "" %}
+			{% assign tag_len = 0 %}
+			{% for tag in page.tags %}
+				{% if include.tag contains tag %}
+					{% capture tag_len %}{{my_tags | size}}{% endcapture %}
+					{% capture my_tags %}
+						{% if tag_len != "0" %}
+							{{my_tags}}|
+						{% endif %}
+						{{tag}}
+					{% endcapture %}
+				{% endif %}
+			{% endfor %}
+			{% if tag_len != 0 %}
+				<tr>
+					<td>
+						<h4>
+							<a href='{{page.url}}'>{{page.title}}</a>
+							<small>
+								<span class="tag-labels-container">
+									{% for tag in page.tags %}
+										{% if include.tag contains tag %}
+											<span class="label label-{{tag}}">
+												{{tag}}
+											</span>
+										{% endif %}
+									{% endfor %}
+								</span>
+							</small>
+						</h4>
+					</td>
+					<td>
+						<button class="btn btn-info" data-toggle="popover" data-placement="left" data-trigger="hover" title="{{page.title}}" data-content="{{page.summary | escape}}">
+							<span class="glyphicon glyphicon-question-sign"><span>
+						</button>
+					</td>
+				</tr>
+			{% endif %}
+		{% endfor %}
+	</tbody>
+</table>

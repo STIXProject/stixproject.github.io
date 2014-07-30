@@ -3,3 +3,7 @@
     display: inline-block;
     vertical-align: middle;
 }
+
+span.tag-labels-container .label {
+    margin-right: 3px;
+}

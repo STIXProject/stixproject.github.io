@@ -215,3 +215,51 @@ a.disabled {
     margin-bottom: 10px;
     color: white;
 }
+
+.label-c2 {
+    background-color: #428bca;
+}
+
+.label-campaign {
+    background-color: #5bc0de;
+}
+
+.label-coa {
+    background-color: #777;
+}
+
+.label-exploit_target {
+    background-color: #5cb85c;
+}
+
+.label-incident {
+    background-color: #5bc0de;
+}
+
+.label-indicator {
+    background-color: #f0ad4e;
+}
+
+.label-package {
+    background-color: #d9534f;
+}
+
+.label-malware {
+    background-color: #AF5BDE;
+}
+
+.label-observable {
+    background-color: #EE701D;
+}
+
+.label-threat_actor {
+    background-color: #EE1D9A;
+}
+
+.label-ttp {
+    background-color: #C7CF00;
+}
+
+.label-victim {
+    background-color: #01D3B1;
+}
