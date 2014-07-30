@@ -32,6 +32,6 @@ $(document).ready(function() {
     });
     
     if (window.location.hash) {
-        filter_idiom_table(window.location.hash);
+        filter_idiom_table(window.location.hash.substring(1));
     }
 });
