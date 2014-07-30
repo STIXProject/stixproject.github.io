@@ -8,7 +8,7 @@ title: STIX Idioms
 The idioms on this page provide guidance on how to represent common cyber threat
 information in STIX. They are grouped based on the situation in which they would
 be useful, as well as by the STIX types that they use.  
-
+<br/>
 <span class="alert alert-info">
 	Each idiom has labels indicating which constructs and use cases to which that idiom is adapted!
 </span>
