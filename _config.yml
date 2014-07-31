@@ -1,6 +1,6 @@
 name: STIX Docs
 markdown: redcarpet
-pygments: true
+highlighter: pygments
 
 copyright: The MITRE Corporation
 generate_documentation: true
