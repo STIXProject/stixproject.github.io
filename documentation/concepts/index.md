@@ -8,7 +8,7 @@ This page describes several central STIX concepts that cut across all of the cor
 <div class="row">
   <div class="col-md-6">
     <div class="well">
-      <h4><a href="controlled-vocabularies">Constrolled Vocabularies</a></h4>
+      <h4><a href="controlled-vocabularies">Controlled Vocabularies</a></h4>
 
       <p>Describes how to use values from a default vocabulary, define custom
       vocabularies, or use values outside of any vocabulary.</p>
