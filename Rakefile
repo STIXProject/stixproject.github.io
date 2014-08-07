@@ -42,7 +42,7 @@ def write_page(type, template, version)
       'this_version' => version,
       'versions' => StixSchemaSpy::Schema::VERSIONS.reject {|v|
         schema = StixSchemaSpy::Schema.find(type.schema.prefix, v)
-        schema && schema.find_type(type.name).nil?
+        (schema && schema.find_type(type.name)).nil?
       },
       'name' => type.name,
       'documentation' => process_documentation(type.documentation, version),
