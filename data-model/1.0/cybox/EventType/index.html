@@ -1,0 +1,162 @@
+---
+layout: data_model
+title: EventType
+this_version: 1.0
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/cybox/EventType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">EventType<span class="subdued">CybOX Core Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" >STIX 1.1</option>
+    
+      <option value="1.0.1" >STIX 1.0.1</option>
+    
+      <option value="1.0" selected="selected">STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">The <a href='/data-model/1.0/cybox/EventType'>EventType</a> is a complex type representing a cyber observable event that is dynamic in nature with specific action(s) taken against specific cyber relevant objects (e.g. a file is deleted, a registry key is created or an HTTP Get Request is received).</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@id<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>The id field specifies a unique id for this Event.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@idref<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>The idref field specifies a unique id reference to an Event defined elsewhere.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Type<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Type field uses a standardized controlled vocabulary to capture what type of Event this is.</p>
+        
+          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is EventTypeVocab in the http://cybox.mitre.org/default_vocabularies-2 namespace. This type is defined in the cybox_default_vocabularies.xsd file or at the URL http://cybox.mitre.org/XMLSchema/default_vocabularies/2.0/cybox_default_vocabularies.xsd.</p>
+        
+          <p>							Users may also define their own vocabulary using the type extension mechanism (by specifying a vocabulary name and/or reference using the vocab_name and vocab_reference attributes, respectively) or simply use this as a string field. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Description<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StructuredTextType">StructuredTextType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Description field provides a mechanism to specify a structured text description of this Event. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Observation_Method<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/MeasureSourceType">MeasureSourceType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Observation_Method field is optional and enables descriptive specification of how this Event was observed (in the case of a Cyber Observable Event instance) or could potentially be observed (in the case of a Cyber Observable Event pattern). </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Actions<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cybox/ActionsType">ActionsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Actions construct enables description/specification of one or more cyber observable actions. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Frequency<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cybox/FrequencyType">FrequencyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Frequency field conveys a targeted observation pattern of the frequency of the associated event or action.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Event<span class="occurrence">1..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cybox/EventType">EventType</a>
+        
+      </td>
+      <td>
+        
+          <p>This Event construct is included recursively to enable description/specification of composite Events.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

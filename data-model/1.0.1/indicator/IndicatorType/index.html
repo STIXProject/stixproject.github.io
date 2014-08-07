@@ -1,0 +1,352 @@
+---
+layout: data_model
+title: IndicatorType
+this_version: 1.0.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/indicator/IndicatorType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">IndicatorType<span class="subdued">Indicator Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" >STIX 1.1</option>
+    
+      <option value="1.0.1" selected="selected">STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">The <a href='/data-model/1.0.1/indicator/IndicatorType'>IndicatorType</a> characterizes a cyber threat indicator made up of a pattern identifying certain observable conditions as well as contextual information about the patterns meaning, how and when it should be acted on, etc. </p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@id<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>Specifies a unique ID for this Indicator.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@idref<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>Specifies a reference to the ID of an Indicator specified elsewhere.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@version<span class="occurrence">optional</span></td>
+      <td>
+        
+          IndicatorVersionType
+        
+      </td>
+      <td>
+        
+          <p>Specifies the relevant STIX-Indicator schema version for this content.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@negate<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The negate field applies when using an Indicator as a pattern and specifies the absence of the pattern.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Title<span class="occurrence">0..1</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>The Title field provides a simple title for this Indicator.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Type<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/stixCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
+        
+      </td>
+      <td>
+        
+          <p></p>
+        
+          <p>								Specifies the type for this Indicator.</p>
+        
+          <p>							</p>
+        
+          <p>								This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is IndicatorTypeVocabularyType in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.0.1/stix_default_vocabularies.xsd .</p>
+        
+          <p></p>
+        
+          <p>								Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.							</p>
+        
+          <p>							</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Alternative_ID<span class="occurrence">0..n</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>Specifies an alternative identifier (or alias) for the cyber threat Indicator.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Description<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/stixCommon/StructuredTextType">StructuredTextType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies a description for this Indicator.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Valid_Time_Position<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/indicator/ValidTimeType">ValidTimeType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the time window for which this Indicator is valid.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Observable<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cybox/ObservableType">ObservableType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies a relevant cyber observable for this Indicator.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Composite_Indicator_Expression<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/indicator/CompositeIndicatorExpressionType">CompositeIndicatorExpressionType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies a multipartite composite Indicator.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Indicated_TTP<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/stixCommon/RelatedTTPType">RelatedTTPType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the relevant TTP indicated by this Indicator.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Kill_Chain_Phases<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/stixCommon/KillChainPhasesReferenceType">KillChainPhasesReferenceType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies relevant kill chain phases indicated by this Indicator.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Test_Mechanisms<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/indicator/TestMechanismsType">TestMechanismsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The TestMechanisms field specifies Test Mechanisms effective at identifying the cyber Observables specified in this cyber threat Indicator.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Likely_Impact<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/stixCommon/StatementType">StatementType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the likely potential impact within the relevant context if this Indicator were to occur. This is typically local to an Indicator consumer and not typically shared. This field includes a Description of the likely potential impact within the relevant context if this Indicator were to occur and a Confidence held in the accuracy of this assertion. NOTE: This structure potentially still needs to be fleshed out more for structured characterization of impact. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Suggested_COAs<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/indicator/SuggestedCOAsType">SuggestedCOAsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Suggested_COAs field specifies suggested Courses of Action for this cyber threat Indicator.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Handling<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/marking/MarkingType">MarkingType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the relevant handling guidance for this Indicator. The valid marking scope is the nearest <a href='/data-model/1.0.1/stixCommon/IndicatorBaseType'>IndicatorBaseType</a> ancestor of this Handling element and all its descendants.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Confidence<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/stixCommon/ConfidenceType">ConfidenceType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies a level of confidence held in the accuracy of this Indicator.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Sightings<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/indicator/SightingsType">SightingsType</a>
+        
+      </td>
+      <td>
+        
+          <p>Characterizes a set of sighting reports for this Indicator.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Related_Indicators<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/indicator/RelatedIndicatorsType">RelatedIndicatorsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Related_Indicators field is optional and enables content producers to express a relationship between the enclosing indicator (i.e., the subject of the relationship) and a disparate indicator (i.e., the object side of the relationship).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Producer<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/stixCommon/InformationSourceType">InformationSourceType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Producer field details the source of this entry.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

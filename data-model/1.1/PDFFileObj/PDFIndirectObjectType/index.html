@@ -1,0 +1,116 @@
+---
+layout: data_model
+title: PDFIndirectObjectType
+this_version: 1.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/PDFFileObj/PDFIndirectObjectType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">PDFIndirectObjectType<span class="subdued">PDF File Object Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" selected="selected">STIX 1.1</option>
+    
+      <option value="1.0.1" >STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">The PDFObjectType captures the details of a PDF document indirect object, used in constructing and storing data associated with the PDF document.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@type<span class="occurrence">optional</span></td>
+      <td>
+        
+          PDFObjectTypeEnum
+        
+      </td>
+      <td>
+        
+          <p>The type field specifies the basic type of the PDF indirect object.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>ID<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/PDFFileObj/PDFIndirectObjectIDType">PDFIndirectObjectIDType</a>
+        
+      </td>
+      <td>
+        
+          <p>The ID field specifies the identifier of the PDF indirect object, consisting of an object number and generation number.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Contents<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/PDFFileObj/PDFIndirectObjectContentsType">PDFIndirectObjectContentsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Contents field captures the contents of the PDF indirect object, including non-stream and stream data.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Offset<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/PositiveIntegerObjectPropertyType">PositiveIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Offset field specifies the offset of the PDF indirect object from the beginning of the file, in bytes.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Hashes<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/HashListType">HashListType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Hashes field captures any hashes that were computed for the PDF indirect object.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

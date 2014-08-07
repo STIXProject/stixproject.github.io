@@ -1,11 +1,28 @@
 ---
 layout: data_model
 title: TLPMarkingStructureType
+this_version: 1.1.1
 ---
 
-<h1>TLPMarkingStructureType<span class="subdued">TLP Schema</span></h1>
 
-<p>The <a href='/data-model/1.1.1/tlpMarking/TLPMarkingStructureType'>TLPMarkingStructureType</a> is an implementation of the data marking schema that allows for a TLP Designation to be attached to an identified XML structure. Information about TLP is available here: http://www.us-cert.gov/tlp.
+
+<h1 class="data-model">TLPMarkingStructureType<span class="subdued">TLP Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" selected="selected">STIX 1.1.1</option>
+    
+      <option value="1.1" >STIX 1.1</option>
+    
+      <option value="1.0.1" >STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">The <a href='/data-model/1.1.1/tlpMarking/TLPMarkingStructureType'>TLPMarkingStructureType</a> is an implementation of the data marking schema that allows for a TLP Designation to be attached to an identified XML structure. Information about TLP is available here: http://www.us-cert.gov/tlp.
 Nodes may be marked by multiple TLP Marking statements. When this occurs, the node should be considered marked at the most restrictive TLP Marking of all TLP Markings that were applied to it. For example, if a node is marked both GREEN and AMBER, the node should be considered AMBER.</p>
 
 <hr />

@@ -1,9 +1,26 @@
 ---
 layout: data_model
 title: ThreatActorType
+this_version: 1.1.1
 ---
 
-<h1>ThreatActorType<span class="subdued">Threat Actor Schema</span></h1>
+
+
+<h1 class="data-model">ThreatActorType<span class="subdued">Threat Actor Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" selected="selected">STIX 1.1.1</option>
+    
+      <option value="1.1" >STIX 1.1</option>
+    
+      <option value="1.0.1" >STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
 
 
 
@@ -150,7 +167,7 @@ title: ThreatActorType
         
           <p>The Type field characterizes the type(s) of this threat actor. It may be used multiple times to capture multiple types.</p>
         
-          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is <a href='/data-model/1.1.1/stixVocabs/ThreatActorTypeVocab-1.0'>ThreatActorTypeVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
+          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is <a href='/data-model/stixVocabs/ThreatActorTypeVocab-1.0'>ThreatActorTypeVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
         
           <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
         
@@ -168,7 +185,7 @@ title: ThreatActorType
         
           <p>The Type field characterizes the motivations of this threat actor. It may be used multiple times to capture multiple motivations.</p>
         
-          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is <a href='/data-model/1.1.1/stixVocabs/MotivationVocab-1.1'>MotivationVocab-1.1</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
+          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is <a href='/data-model/stixVocabs/MotivationVocab-1.1'>MotivationVocab-1.1</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
         
           <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
         
@@ -186,7 +203,7 @@ title: ThreatActorType
         
           <p>The Sophistication field specifies the sophistication of this Threat Actor.</p>
         
-          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is <a href='/data-model/1.1.1/stixVocabs/ThreatActorSophisticationVocab-1.0'>ThreatActorSophisticationVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd .</p>
+          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is <a href='/data-model/stixVocabs/ThreatActorSophisticationVocab-1.0'>ThreatActorSophisticationVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd .</p>
         
           <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
         
@@ -204,7 +221,7 @@ title: ThreatActorType
         
           <p>The Intended_Effect field specifies the suspected intended effect for this Threat Actor.</p>
         
-          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is <a href='/data-model/1.1.1/stixVocabs/IntendedEffectVocab-1.0'>IntendedEffectVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
+          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is <a href='/data-model/stixVocabs/IntendedEffectVocab-1.0'>IntendedEffectVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
         
           <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
         
@@ -222,7 +239,7 @@ title: ThreatActorType
         
           <p>The Planning_And_Operational_Support field specifies the suspected planning and operational support performed by this threat actor.</p>
         
-          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is <a href='/data-model/1.1.1/stixVocabs/PlanningAndOperationalSupportVocab-1.0.1'>PlanningAndOperationalSupportVocab-1.0.1</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
+          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is <a href='/data-model/stixVocabs/PlanningAndOperationalSupportVocab-1.0.1'>PlanningAndOperationalSupportVocab-1.0.1</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
         
           <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
         

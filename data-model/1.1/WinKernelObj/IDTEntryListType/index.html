@@ -1,0 +1,60 @@
+---
+layout: data_model
+title: IDTEntryListType
+this_version: 1.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/WinKernelObj/IDTEntryListType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">IDTEntryListType<span class="subdued">Win Kernel Object Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" selected="selected">STIX 1.1</option>
+    
+      <option value="1.0.1" >STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">The <a href='/data-model/1.1/WinKernelObj/IDTEntryListType'>IDTEntryListType</a> type specifies a listing of the entries in the Interrupt Descriptor Table (IDT). The IDT is specific to the I386 architecture, indicating where the Protected mode Interrupt Service Routines (ISR) are located. See http://wiki.osdev.org/Interrupt_Descriptor_Table.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>IDT_Entry<span class="occurrence">1..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/WinKernelObj/IDTEntryType">IDTEntryType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies an entry in the Interrupt Descriptor Table.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

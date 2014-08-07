@@ -1,0 +1,336 @@
+---
+layout: data_model
+title: SharedResourceType
+this_version: 1.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/WinNetworkShareObj/SharedResourceType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">SharedResourceType<span class="subdued">Win Network Share Object Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" selected="selected">STIX 1.1</option>
+    
+      <option value="1.0.1" >STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">SharedResourceType specifies Windows shared resource types via a union of the SharedResourceTypeEnum type and the atomic xs:string type. Its base type is the CybOX Core BaseObjectPropertyType, for permitting complex (i.e. regular-expression based) specifications.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@id<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>The id field specifies a unique ID for this Object Property.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@idref<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>The idref field specifies a unique ID reference for this Object Property.</p>
+        
+          <p>When idref is specified, the id attribute must not be specified, and any instance of this property should not hold content unless an extension of the property allows it.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@datatype<span class="occurrence">optional</span></td>
+      <td>
+        
+          DatatypeEnum
+        
+      </td>
+      <td>
+        
+          <p>This attribute is optional and specifies the expected type for the value of the specified property.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@appears_random<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>This field is optional and conveys whether the associated object property value appears to somewhat random in nature. An object property with this field set to TRUE need not provide any further information including a value. If more is known about the particular variation of randomness, a regex value could be provided to outline what is known of the structure.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@is_obfuscated<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>This field is optional and conveys whether the associated Object property has been obfuscated.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@obfuscation_algorithm_ref<span class="occurrence">optional</span></td>
+      <td>
+        
+          anyURI
+        
+      </td>
+      <td>
+        
+          <p>This field is optional and conveys a reference to a description of the algorithm used to obfuscate this Object property.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@is_defanged<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>This field is optional and conveys whether the associated Object property has been defanged (representation changed to prevent malicious effects of handling/processing).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@defanging_algorithm_ref<span class="occurrence">optional</span></td>
+      <td>
+        
+          anyURI
+        
+      </td>
+      <td>
+        
+          <p>This field is optional and conveys a reference to a description of the algorithm used to defang (representation changed to prevent malicious effects of handling/processing) this Object property.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@refanging_transform_type<span class="occurrence">optional</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>This field is optional and specifies the type (e.g. RegEx) of refanging transform specified in the optional accompanying refangingTransform property.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@refanging_transform<span class="occurrence">optional</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>This field is optional and specifies an automated transform that can be applied to the Object property content in order to refang it to its original format.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@observed_encoding<span class="occurrence">optional</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>This field is optional and specifies the encoding of the string when it is/was observed. This may be different from the encoding used to represent the string within this element.</p>
+        
+          <p>It is strongly recommended that character set names should be taken from the IANA character set registry (https://www.iana.org/assignments/character-sets/character-sets.xhtml).</p>
+        
+          <p>This field is intended to be applicable only to fields which contain string values.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@condition<span class="occurrence">optional</span></td>
+      <td>
+        
+          ConditionTypeEnum
+        
+      </td>
+      <td>
+        
+          <p>This field is optional and defines the relevant condition to apply to the value.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@is_case_sensitive<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The is_case_sensitive field is optional and should be used when specifying the case-sensitivity of a pattern which uses an Equals, DoesNotEqual, Contains, DoesNotContain, StartsWith, EndsWith, or FitsPattern condition. The default value for this field is "true" which indicates that pattern evaluations are to be considered case-sensitive.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@apply_condition<span class="occurrence">optional</span></td>
+      <td>
+        
+          ConditionApplicationEnum
+        
+      </td>
+      <td>
+        
+          <p>This field indicates how a condition should be applied when the field body contains a list of values. (Its value is moot if the field value contains only a single value - both possible values for this field would have the same behavior.) If this field is set to ANY, then a pattern is considered to be matched if the provided condition successfully evaluates for any of the values in the field body. If the field is set to ALL, then the patern only matches if the provided condition successfully evaluates for every value in the field body.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@delimiter<span class="occurrence">optional</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>The delimiter field specifies the delimiter used when defining lists of values. The default value is "##comma##".</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@bit_mask<span class="occurrence">optional</span></td>
+      <td>
+        
+          hexBinary
+        
+      </td>
+      <td>
+        
+          <p>Used to specify a bit_mask in conjunction with one of the defined binary conditions (bitwiseAnd, bitwiseOr, and bitwiseXor). This bitmask is then uses as one operand in the indicated bitwise computation.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@pattern_type<span class="occurrence">optional</span></td>
+      <td>
+        
+          PatternTypeEnum
+        
+      </td>
+      <td>
+        
+          <p>This field is optional and defines the type of pattern used if one is specified for the field value. This is applicable only if the Condition field is set to 'FitsPattern'.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@regex_syntax<span class="occurrence">optional</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>This field is optional and defines the syntax format used for a regular expression, if one is specified for the field value. This is applicable only if the Condition field is set to 'FitsPattern'.</p>
+        
+          <p>Setting this attribute with an empty value (e.g., "") or omitting it entirely notifies CybOX consumers and pattern evaluators that the corresponding regular expression utilizes capabilities, character classes, escapes, and other lexical tokens defined by the CybOX Language Specification.</p>
+        
+          <p>Setting this attribute with a non-empty value notifies CybOX consumers and pattern evaluators that the corresponding regular expression utilizes capabilities not defined by the CybOX Language Specification. The regular expression must be evaluated through a compatible regular expression engine in this case.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@has_changed<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>This field is optional and conveys a targeted observation pattern of whether the associated field value has changed. This field would be leveraged within a pattern observable triggering on whether the value of a single field value has changed.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@trend<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>This field is optional and conveys a targeted observation pattern of the nature of any trend in the associated field value. This field would be leveraged within a pattern observable triggering on the matching of a specified trend in the value of a single specified field.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

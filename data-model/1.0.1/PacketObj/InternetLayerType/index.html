@@ -1,0 +1,102 @@
+---
+layout: data_model
+title: InternetLayerType
+this_version: 1.0.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/PacketObj/InternetLayerType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">InternetLayerType<span class="subdued">Network Packet Object Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" >STIX 1.1</option>
+    
+      <option value="1.0.1" selected="selected">STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">The Internet layer is the group of methods, protocols, and specifications that are used to transport packets from the origiating host across network boundaries. Not all protocols are currently defined, just those most commonly used: IPv4, ICMPv4, IPv6, ICMPv6. Other protocols will be added as needed. (http://en.wikipedia.org/wiki/Internet_layer)</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>IPv4<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/PacketObj/IPv4PacketType">IPv4PacketType</a>
+        
+      </td>
+      <td>
+        
+          <p>Internet Protocol version 4 (IPv4) is a connectionless protocol for use on packet-switched link layer networks (e.g., Ethernet).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>ICMPv4<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/PacketObj/ICMPv4PacketType">ICMPv4PacketType</a>
+        
+      </td>
+      <td>
+        
+          <p>ICMP is chiefly used the the operating systems of networked computers to send error messages indicating, for example, that a requested serivce is not available or that a host or router could not be reached (http://en.wikipedia.org/wiki/Internet_Control_Message_Protocol; REF: http://www.networksorcery.com/enp/protocol/icmp.htm).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>IPv6<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/PacketObj/IPv6PacketType">IPv6PacketType</a>
+        
+      </td>
+      <td>
+        
+          <p>Internet Protocol version 6 (IPv6) is intended to succeed IPv4, and like IPv4 it is a connectionless protocol for use on packet-switched link layer networks.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>ICMPv6<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/PacketObj/ICMPv6PacketType">ICMPv6PacketType</a>
+        
+      </td>
+      <td>
+        
+          <p>ICMPv6 is the implementation of the ICMP for INv6. ICMPv6 performs error reporting and diagnostic functions.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

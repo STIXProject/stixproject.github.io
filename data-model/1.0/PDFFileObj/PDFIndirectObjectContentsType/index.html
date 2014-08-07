@@ -1,0 +1,74 @@
+---
+layout: data_model
+title: PDFIndirectObjectContentsType
+this_version: 1.0
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/PDFFileObj/PDFIndirectObjectContentsType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">PDFIndirectObjectContentsType<span class="subdued">PDF File Object Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" >STIX 1.1</option>
+    
+      <option value="1.0.1" >STIX 1.0.1</option>
+    
+      <option value="1.0" selected="selected">STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">The <a href='/data-model/1.0/PDFFileObj/PDFIndirectObjectContentsType'>PDFIndirectObjectContentsType</a> captures the contents of a PDF indirect object, including both stream and non-stream portions.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Non_Stream_Contents<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Non_Stream_Contents field captures the raw contents of the PDF indirect object excluding any stream data (i.e. everything after the 'obj' keyword and before the 'endobj' keyword up to but not including anything between the 'stream' and 'endstream' keywords) as a string enclosed in an XML CDATA section.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Stream_Contents<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/PDFFileObj/PDFStreamType">PDFStreamType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Stream_Contents field captures the stream contained within in the PDF indirect object, if applicable.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

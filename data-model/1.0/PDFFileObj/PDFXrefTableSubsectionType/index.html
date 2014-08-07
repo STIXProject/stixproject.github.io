@@ -1,0 +1,88 @@
+---
+layout: data_model
+title: PDFXrefTableSubsectionType
+this_version: 1.0
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/PDFFileObj/PDFXrefTableSubsectionType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">PDFXrefTableSubsectionType<span class="subdued">PDF File Object Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" >STIX 1.1</option>
+    
+      <option value="1.0.1" >STIX 1.0.1</option>
+    
+      <option value="1.0" selected="selected">STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">The <a href='/data-model/1.0/PDFFileObj/PDFXrefTableSubsectionType'>PDFXrefTableSubsectionType</a> captures details of subsections contained within a PDF cross-reference table.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>First_Object_Number<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/NonNegativeIntegerObjectPropertyType">NonNegativeIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The First_Object_Number field captures the object number of the first object for which there is a corresponding entry in this cross-reference subsection.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Number_Of_Objects<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/NonNegativeIntegerObjectPropertyType">NonNegativeIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Number_Of_Objects field captures the number of objects for which there are corresponding entries in this cross-reference subsection.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Cross_Reference_Entries<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/PDFFileObj/PDFXrefEntryListType">PDFXrefEntryListType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Cross_Reference_Entries field specifies the cross-reference entries contained in this cross-reference subsection.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

@@ -1,0 +1,326 @@
+---
+layout: data_model
+title: DOSHeaderType
+this_version: 1.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/WinExecutableFileObj/DOSHeaderType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">DOSHeaderType<span class="subdued">Win Executable File Object Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" selected="selected">STIX 1.1</option>
+    
+      <option value="1.0.1" >STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">The <a href='/data-model/1.1/WinExecutableFileObj/DOSHeaderType'>DOSHeaderType</a> type is a container for the characteristics of the _IMAGE_DOS_HEADER structure, which can be found in Winnt.h and pe.h. See http://www.csn.ul.ie/~caolan/pub/winresdump/winresdump/doc/pefile.html for more information about the winnt.h file, and http://www.tavi.co.uk/phobos/exeformat.html for even more clarification.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>e_magic<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the magic number, specifically the Windows OS signature value, which can either take on MZ for DOS (which is, for all intensive purposes, MOST Windows executables), NE for OS2, LE for OS2 LE, or PE00 for NT.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>e_cblp<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the number of bytes actually used in the last page, with the special case of a full page being represented by a value of zero (since the last page is never empty). For example, assuming a page size of 512 bytes, this value would be 0x0000 for a 1024 byte file, and 0x0001 for a 1025 byte file (since it only contains one valid byte).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>e_cp<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the number of pages required to hold the file. For example, if the file contains 1024 bytes, and we assume the file has pages of a size of 512 bytes, this word would contain 0x0002; if the file contains 1025 bytes, this word would contain 0x0003.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>e_crlc<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the number of relocation items, i.e. the number of entries that exist in the relocation pointer table. If there are no relocation entries, this value is zero.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>e_cparhdr<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the size of the executable header in terms of paragraphs (16 byte chunks). It indicates the offset of the program's compiled/assembled and linked image (the load module) within the executable file. The size of the load module can be deduced by subtracting this value (converted to bytes) from the overall file size derived from combining the e_cp (number of file pages) and e_cblp (number of bytes in last page) values. The header always spans an even number of paragraphs.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>e_minalloc<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the minimum number of extra paragraphs needed to be allocated to begin execution. This is IN ADDITION to the memory required to hold the load module. This value normally represents the total size of any uninitialised data and/or stack segments that are linked at the end of a program. This space is not directly included in the load module, since there are no particular initializing values and it would simply waste disk space.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>e_maxalloc<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the maximum number of extra paragraphs needed to be allocated by the program before it begins execution. This indicates ADDITIONAL memory over and above that required by the load module and the value specified by MINALLOC. If the request cannot be satisfied, the program is allocated as much memory as is available.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>e_ss<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the initial SS value, which is the paragraph address of the stack segment relative to the start of the load module. At load time, this value is relocated by adding the address of the start segment of the program to it, and the resulting value is placed in the SS register before the program is started. In DOS, the start segment of the program is the first segment boundary in memory after the PSP.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>e_sp<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the initial SP value, which is the absolute value that must be loaded into the SP register before the program is given control. Since the actual stack segment is determined by the loader, and this is merely a value within that segment, it does not need to be relocated.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>e_csum<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the checksum of the contents of the executable file. It is used to ensure the integrity of the data within the file. For full details on how this checksum is calculated, see http://www.tavi.co.uk/phobos/exeformat.html#checksum.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>e_ip<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the initial IP value, which is the absolute value that should be loaded into the IP register in order to transfer control to the program. Since the actual code segment is determined by the loader, and this is merely a value within that segment, it does not need to be relocated.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>e_cs<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the pre-relocated initial CS value, relative to the start of the load module, that should be placed in the CS register in order to transfer control to the program. At load time, this value is relocated by adding the address of the start segment of the program to it, and the resulting value is placed in the CS register when control is transferred.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>e_lfarlc<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the file address of the relocation table, or more specifically, the offset from the start of the file to the relocation pointer table. This value must be used to locate the relocation pointer table (rather than assuming a fixed location) because variable-length information pertaining to program overlays can occur before this table, causing its position to vary. A value of 0x40 in this field generally indicates a different kind of executable file, not a DOS 'MZ' type.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>e_ovro<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the overlay number, which is normally set to 0x0000, because few programs actually have overlays. It changes only in files containing programs that use overlays. See http://www.tavi.co.uk/phobos/exeformat.html#overlaynote for more information about overlays.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>reserved1<span class="occurrence">0..4</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies reserved words for the program (known in winnt.h as e_res[4]), usually set to zero by the linker. In this case, just use a single reserved1 set to zero; if not zero create four reserved1 with the correct value.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>e_oemid<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the identifier for the OEM for e_oeminfo.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>e_oeminfo<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the OEM information for a specific value of e_oeminfo.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>reserved2<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies reserved words for the program (known in winnt.h as e_res[10]), usually set to zero by the linker. In this case, just use a single reserved1 set to zero; if not zero create ten reserved1 with the correct value.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>e_lfanew<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the file address of the of the new exe header. In particular, it is a 4-byte offset into the file where the PE file header is located. It is necessary to use this offset to locate the PE header in the file.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Hashes<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/HashListType">HashListType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Hashes field is used to include any hash values computed using the specified PE binary MS-DOS header as input.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

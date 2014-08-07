@@ -1,0 +1,108 @@
+---
+layout: data_model
+title: InformationSourceRoleVocab-1.0
+this_version: 1.0
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/stixVocabs/InformationSourceRoleVocab-1.0">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">InformationSourceRoleVocab-1.0<span class="subdued">STIX Vocabularies Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" >STIX 1.1</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">The InformationSourceRoleVocab is the default STIX vocabulary for characterizing roles played by given entities as information sources.</p>
+
+<hr />
+
+
+<h2>Vocabulary Items</h2>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  
+    <tr>
+      <td>Initial Author</td>
+      <td>A party acting as the initial author/creator of a set of information.</td>
+    </tr>
+  
+    <tr>
+      <td>Content Enhancer/Refiner</td>
+      <td>A party that enhances or refines a preexisting set of information.</td>
+    </tr>
+  
+    <tr>
+      <td>Aggregator</td>
+      <td>A party that aggregates multiple different sets of information into one new set of information.</td>
+    </tr>
+  
+    <tr>
+      <td>Transformer/Translator</td>
+      <td>A party that transforms or translates a preexisting set of information into a different representation (e.g., translating an unstructured prose threat analysis report into STIX).</td>
+    </tr>
+  
+  </tbody>
+</table>
+
+<h2>Fields</h2>
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@vocab_name<span class="occurrence">optional</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>The vocab_name field specifies the name of the controlled vocabulary.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@vocab_reference<span class="occurrence">optional</span></td>
+      <td>
+        
+          anyURI
+        
+      </td>
+      <td>
+        
+          <p>The vocab_reference field specifies the URI to the location of where the controlled vocabulary is defined, e.g., in an externally located XML schema file.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

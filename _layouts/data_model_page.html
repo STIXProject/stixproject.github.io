@@ -1,11 +1,26 @@
 ---
 layout: data_model
 title: {{ type.name }}
+this_version: {{type.this_version}}
 ---
 
-<h1>{{ type.name }}<span class="subdued">{{ type.schema.title }} Schema</span></h1>
+{% if type.this_version != type.latest_version %}
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX {{type.this_version}}, which is not the latest version ({{type.latest_version}}).{% if type.versions contains type.latest_version %} <a href="/data-model/{{type.latest_version}}/{{type.schema.prefix}}/{{type.name}}">View the latest!</a>{% endif %}
+</div>
+{% endif %}
 
-{% for doc in type.documentation %}<p>{{doc}}</p>{% endfor %}
+<h1 class="data-model">{{ type.name }}<span class="subdued">{{ type.schema.title }} Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    {% for version in type.versions %}
+      <option value="{{version}}" {% if version == type.this_version %}selected="selected"{% endif %}>STIX {{version}}</option>
+    {% endfor %}
+  </select>
+</form>
+
+{% for doc in type.documentation %}<p class="data-model-description">{{doc}}</p>{% endfor %}
 
 <hr />
 

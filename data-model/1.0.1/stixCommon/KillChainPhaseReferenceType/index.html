@@ -1,0 +1,116 @@
+---
+layout: data_model
+title: KillChainPhaseReferenceType
+this_version: 1.0.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/stixCommon/KillChainPhaseReferenceType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">KillChainPhaseReferenceType<span class="subdued">STIX Common Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" >STIX 1.1</option>
+    
+      <option value="1.0.1" selected="selected">STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@phase_id<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>This field specifies the ID for the relevant kill chain phase.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@name<span class="occurrence">optional</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>This field specifies the descriptive name of the relevant kill chain phase.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@ordinality<span class="occurrence">optional</span></td>
+      <td>
+        
+          int
+        
+      </td>
+      <td>
+        
+          <p>This field specifies the ordinality (e.g. 1, 2 or 3) of this phase within this kill chain definition.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@kill_chain_id<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>This field specifies the ID for the relevant defined kill chain.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@kill_chain_name<span class="occurrence">optional</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>This field specifies the descriptive name of the relevant kill chain.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

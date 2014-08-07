@@ -1,0 +1,74 @@
+---
+layout: data_model
+title: LinkLayerType
+this_version: 1.0.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/PacketObj/LinkLayerType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">LinkLayerType<span class="subdued">Network Packet Object Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" >STIX 1.1</option>
+    
+      <option value="1.0.1" selected="selected">STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">A link layer protocol is a hardware interface protocol, such as Ethernet, or a logical link routing protocol, such as ARP.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Physical_Interface<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/PacketObj/PhysicalInterfaceType">PhysicalInterfaceType</a>
+        
+      </td>
+      <td>
+        
+          <p>Physical Interface characterizes one hardware interface of a link layer connection.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Logical_Protocols<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/PacketObj/LogicalProtocolType">LogicalProtocolType</a>
+        
+      </td>
+      <td>
+        
+          <p>Logical Protocols characterizes the logical protocol of a link layer connection. One example of a logical protocol is ARP.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

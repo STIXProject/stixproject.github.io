@@ -1,0 +1,186 @@
+---
+layout: data_model
+title: ArtifactObjectType
+this_version: 1.0.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/ArtifactObj/ArtifactObjectType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">ArtifactObjectType<span class="subdued">Artifact Object Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" >STIX 1.1</option>
+    
+      <option value="1.0.1" selected="selected">STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">The <a href='/data-model/1.0.1/ArtifactObj/ArtifactObjectType'>ArtifactObjectType</a> type is intended to encapsulate and convey the content of a Raw Artifact.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@object_reference<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>The object_reference field specifies a unique ID reference to an Object defined elsewhere. This construct allows for the re-use of the defined Properties of one Object within another, without the need to embed the full Object in the location from which it is being referenced. Thus, this ID reference is intended to resolve to the Properties of the Object that it points to.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Custom_Properties<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/CustomPropertiesType">CustomPropertiesType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Custom_Properties construct is optional and enables the specification of a set of custom Object Properties that may not be defined in existing Properties schemas. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@type<span class="occurrence">optional</span></td>
+      <td>
+        
+          ArtifactTypeEnum
+        
+      </td>
+      <td>
+        
+          <p>The type field specifies the general type of the artifact contained in this Defined Object.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@content_type<span class="occurrence">optional</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>The content_type field is optional and specifies the Internet Media Type of the artifact contained in this Defined Object.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@content_type_version<span class="occurrence">optional</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>The content_type_version field is optional and specifies the content type version of the artifact contained in this Defined Object.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@suspected_malicious<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The suspected_malicious field is optional and conveys whether the content of the Raw_Artifact is believed to be malicoius.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Hashes<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HashListType">HashListType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Hashes field is optional and specifies hashes for the Raw_Artifact content.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Packaging<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/ArtifactObj/PackagingType">PackagingType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Packaging field is optional and characterizes packaging layers (e.g. compression, encryption, encoding) applied to the original content to generate the content of the Raw_Artifact field of this Object. The ordering of entries in this sequence implicitly denotes the ordering of packaging layer operations applied.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Raw_Artifact<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/ArtifactObj/RawArtifactType">RawArtifactType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Raw_Artifact field contains the raw content of a cyber artifact (rather than simply analysis of that artifact). It is conveyed within a string-based field and should be further enclosed in a CDATA section within the string-based field.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Raw_Artifact_Reference<span class="occurrence">0..1</span></td>
+      <td>
+        
+          anyURI
+        
+      </td>
+      <td>
+        
+          <p>The Raw_Artifact_Reference field contains a reference to an external instance of the raw content of a cyber artifact (rather than simply analysis of that artifact).</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

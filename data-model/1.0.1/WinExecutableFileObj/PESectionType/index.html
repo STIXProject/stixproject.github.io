@@ -1,0 +1,116 @@
+---
+layout: data_model
+title: PESectionType
+this_version: 1.0.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/WinExecutableFileObj/PESectionType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">PESectionType<span class="subdued">Win Executable File Object Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" >STIX 1.1</option>
+    
+      <option value="1.0.1" selected="selected">STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">The <a href='/data-model/1.0.1/WinExecutableFileObj/PESectionType'>PESectionType</a> type is intended as container for the properties relevant to PE binary sections. A PE Section consists of a header and data. The <a href='/data-model/1.0.1/WinExecutableFileObj/PESectionType'>PESectionType</a> contains properties that describe the Section Header and metadata computed about the section (e.g., hashes, entropy). </p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Section_Header<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/WinExecutableFileObj/PESectionHeaderStructType">PESectionHeaderStructType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Section_Header property contains characteristics of the section's section header structure.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Data_Hashes<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HashListType">HashListType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Data_Hashes field is used to include any hash values computed using the data contained in the specified PE binary section as input.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Entropy<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/WinExecutableFileObj/EntropyType">EntropyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Entropy field specifies the calculated entropy of the PE binary section. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Header_Hashes<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HashListType">HashListType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Header_Hashes field is used to include any hash values computed using the header of the specified PE binary section as input.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Type<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/WinExecutableFileObj/SectionType">SectionType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the type of the section.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

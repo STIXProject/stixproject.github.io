@@ -1,0 +1,74 @@
+---
+layout: data_model
+title: ObfuscationTechniqueType
+this_version: 1.0
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/cybox/ObfuscationTechniqueType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">ObfuscationTechniqueType<span class="subdued">CybOX Core Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" >STIX 1.1</option>
+    
+      <option value="1.0.1" >STIX 1.0.1</option>
+    
+      <option value="1.0" selected="selected">STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">The <a href='/data-model/1.0/cybox/ObfuscationTechniqueType'>ObfuscationTechniqueType</a> enables the description of a single potential technique an attacker could leverage to obfuscate the observability of this Observable. </p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Description<span class="occurrence">1..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StructuredTextType">StructuredTextType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Description field captures a structured text description of the obfuscation technique.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Observables<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cybox/ObservablesType">ObservablesType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Observables construct is optional and enables description of potential cyber observables that could indicate the use of this particular obfuscation technique.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

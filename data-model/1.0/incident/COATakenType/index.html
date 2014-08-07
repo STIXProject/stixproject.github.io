@@ -1,0 +1,96 @@
+---
+layout: data_model
+title: COATakenType
+this_version: 1.0
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/incident/COATakenType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">COATakenType<span class="subdued">Incident Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" >STIX 1.1</option>
+    
+      <option value="1.0.1" >STIX 1.0.1</option>
+    
+      <option value="1.0" selected="selected">STIX 1.0</option>
+    
+  </select>
+</form>
+
+
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Time<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/incident/COATimeType">COATimeType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Time field specifies the relative time criteria for this taken CourseOfAction.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Contributors<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/incident/ContributorsType">ContributorsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Contributors field specifies contributing actors for the CourseOfAction taken.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Course_Of_Action<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/stixCommon/CourseOfActionBaseType">CourseOfActionBaseType</a>
+        
+      </td>
+      <td>
+        
+          <p></p>
+        
+          <p>						The Course_Of_Action field specifies the actual CourseOfAction taken.</p>
+        
+          <p></p>
+        
+          <p>						This field is implemented through the xsi:type extension mechanism. The default and strongly recommended type is <a href='/data-model/1.0/coa/CourseOfActionType'>CourseOfActionType</a> in the http://stix.mitre.org/CourseOfAction-1 namespace. This type is defined in the course_of_action.xsd file or at the URL http://stix.mitre.org/XMLSchema/course_of_action/1.0/course_of_action.xsd.</p>
+        
+          <p>					</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

@@ -1,0 +1,72 @@
+---
+layout: data_model
+title: ToolsType
+this_version: 1.0
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/ttp/ToolsType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">ToolsType<span class="subdued">TTP Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" >STIX 1.1</option>
+    
+      <option value="1.0.1" >STIX 1.0.1</option>
+    
+      <option value="1.0" selected="selected">STIX 1.0</option>
+    
+  </select>
+</form>
+
+
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Tool<span class="occurrence">1..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/ToolInformationType">ToolInformationType</a>
+        
+      </td>
+      <td>
+        
+          <p></p>
+        
+          <p>						The Tool field specifies a single Tool leveraged by this TTP item.</p>
+        
+          <p>					</p>
+        
+          <p>						The Type field under this field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is <a href='/data-model/stixVocabs/AttackerToolTypeVocab-1.0'>AttackerToolTypeVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.0.0/stix_default_vocabularies.xsd .</p>
+        
+          <p></p>
+        
+          <p>						Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
+        
+          <p>					</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

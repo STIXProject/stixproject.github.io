@@ -1,0 +1,438 @@
+---
+layout: data_model
+title: WindowsSystemObjectType
+this_version: 1.0.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/WinSystemObj/WindowsSystemObjectType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">WindowsSystemObjectType<span class="subdued">Win System Object Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" >STIX 1.1</option>
+    
+      <option value="1.0.1" selected="selected">STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">The <a href='/data-model/1.0.1/WinSystemObj/WindowsSystemObjectType'>WindowsSystemObjectType</a> type is intended to characterize Windows systems.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@object_reference<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>The object_reference field specifies a unique ID reference to an Object defined elsewhere. This construct allows for the re-use of the defined Properties of one Object within another, without the need to embed the full Object in the location from which it is being referenced. Thus, this ID reference is intended to resolve to the Properties of the Object that it points to.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Custom_Properties<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/CustomPropertiesType">CustomPropertiesType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Custom_Properties construct is optional and enables the specification of a set of custom Object Properties that may not be defined in existing Properties schemas. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Available_Physical_Memory<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/UnsignedLongObjectPropertyType">UnsignedLongObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Available_Physical_Memory field specifies the amount of physical memory available on the system, in bytes.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>BIOS_Info<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/SystemObj/BIOSInfoType">BIOSInfoType</a>
+        
+      </td>
+      <td>
+        
+          <p>The BIOS_Info field specifies information about the BIOS on the system.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Date<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/DateObjectPropertyType">DateObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Date field specifies the current date on the system.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Hostname<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Hostname field specifies the hostname of the system.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Local_Time<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/TimeObjectPropertyType">TimeObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Local_Time field specifies the local time on the system.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Network_Interface_List<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/SystemObj/NetworkInterfaceListType">NetworkInterfaceListType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Network_Interface_List field specifies the list of network interfaces present on the system.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>OS<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/SystemObj/OSType">OSType</a>
+        
+      </td>
+      <td>
+        
+          <p>The OS field specifies information about the operating system installed on the system.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Processor<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Processor field specifies the name of the CPU used by the system.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Processor_Architecture<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/SystemObj/ProcessorArchType">ProcessorArchType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Processor_Architecture field specifies the specific architecture (e.g. x86) used by the CPU of the system.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>System_Time<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/TimeObjectPropertyType">TimeObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The System_Time field specifies the system, or hardware, time on the system.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Timezone_DST<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Timezone_DST field specifies the time zone used by the system, taking daylight savings time (DST) into account.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Timezone_Standard<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Timezone_Standard field specifies the time zone used by the system, wihtout taking daylight savings time (DST) into account.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Total_Physical_Memory<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/UnsignedLongObjectPropertyType">UnsignedLongObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Total_Physical_Memory field specifies the total amount of physical memory present on the system, in bytes.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Uptime<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/DurationObjectPropertyType">DurationObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Uptime field specifies the duration that represents the current amount of time that the system has been up.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Username<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Username field specifies the name of the user currently logged into the system.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Domain<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The domain that the system belongs to.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Global_Flag_List<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/WinSystemObj/GlobalFlagListType">GlobalFlagListType</a>
+        
+      </td>
+      <td>
+        
+          <p>A list of global flags. See also: http://msdn.microsoft.com/en-us/library/windows/hardware/ff549557(v=vs.85).aspx</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>NetBIOS_Name<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The NetBIOS_Name field specifies the NetBIOS (Network Basic Input/Output System) name of the Windows system. This is not the same as the host name.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Open_Handle_List<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/WinHandleObj/WindowsHandleListType">WindowsHandleListType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Open_Handle_List field specifies the list of open handles for the Windows system.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Product_ID<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Product ID. See also: http://support.microsoft.com/gp/pidwin</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Product_Name<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The ProductName of the current installation of Windows. This is typically found in HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion!ProductName </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Registered_Organization<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The organization that this copy of Windows is registered to.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Registered_Owner<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The person or organization that is the registered owner of this copy of Windows.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Windows_Directory<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Windows_Directory field specifies the fully-qualified path to the Windows install directory.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Windows_System_Directory<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Windows_System_Directory field specifies the fully-qualified path to the Windows system directory.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Windows_Temp_Directory<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Windows_Temp_Directory field specifies the fully-qualified path to the Windows temporary files directory.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

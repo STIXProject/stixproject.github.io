@@ -1,0 +1,60 @@
+---
+layout: data_model
+title: PDFXRefTableListType
+this_version: 1.0
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/PDFFileObj/PDFXRefTableListType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">PDFXRefTableListType<span class="subdued">PDF File Object Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" >STIX 1.1</option>
+    
+      <option value="1.0.1" >STIX 1.0.1</option>
+    
+      <option value="1.0" selected="selected">STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">The PDFXrefTableListType captures a list of PDF cross-reference tables.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Cross_Reference_Table<span class="occurrence">1..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/PDFFileObj/PDFXRefTableType">PDFXRefTableType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Cross_Reference_Table field captures the cross-reference table contained in the PDF file, for the random access of indirect objects contained in the file.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

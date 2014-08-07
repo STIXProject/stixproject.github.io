@@ -1,11 +1,28 @@
 ---
 layout: data_model
 title: StatementType
+this_version: 1.1.1
 ---
 
-<h1>StatementType<span class="subdued">STIX Common Schema</span></h1>
 
-<p>
+
+<h1 class="data-model">StatementType<span class="subdued">STIX Common Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" selected="selected">STIX 1.1.1</option>
+    
+      <option value="1.1" >STIX 1.1</option>
+    
+      <option value="1.0.1" >STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">
 				StatementType allows the expression of a statement with an associated value, description, source, confidence, and timestamp.
 			</p>
 
@@ -64,7 +81,7 @@ title: StatementType
         
           <p>Specifies a value characterizing the statement within some vocabulary.</p>
         
-          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary may be provided by the field using this construct. If that's the case, the schema annotations on that element will describe which vocabulary to use. If not, the default vocabulary is <a href='/data-model/1.1.1/stixVocabs/HighMediumLowVocab-1.0'>HighMediumLowVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
+          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary may be provided by the field using this construct. If that's the case, the schema annotations on that element will describe which vocabulary to use. If not, the default vocabulary is <a href='/data-model/stixVocabs/HighMediumLowVocab-1.0'>HighMediumLowVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
         
           <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
         

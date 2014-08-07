@@ -1,0 +1,186 @@
+---
+layout: data_model
+title: TCPHeaderType
+this_version: 1.0.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/PacketObj/TCPHeaderType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">TCPHeaderType<span class="subdued">Network Packet Object Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" >STIX 1.1</option>
+    
+      <option value="1.0.1" selected="selected">STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">The TCP header contains 10 mandatory fields and an optional extension field. http://en.wikipedia.org/wiki/Transmission_Control_Protocol</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Src_Port<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/PortObj/PortObjectType">PortObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>Identifies the sending port.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Dest_Port<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/PortObj/PortObjectType">PortObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>Identifies the receiveing port.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Seq_Num<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Sequence number (32-bits) has a dual role: If the SYN flag is set, then this is the initial sequence numbers. If the SYN flag is clear (see Control Bits element), then this is the accumulated sequence number of the first data byte of this packet for the current session. http://en.wikipedia.org/wiki/Transmission_Control_Protocol</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>ACK_Num<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>If the ACK flag (see Control Bits element) is set then the value of this field is the next sequence number that the receiver is expecting.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Data_Offset<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the size of the TCP header in 32-bit words.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Reserved<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>these 3 bits are reserved for future use and should be set to zero.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>TCP_Flags<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/PacketObj/TCPFlagsType">TCPFlagsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The TCP header contains 9 flags (aka Control Bits).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Window<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The size of the receive window, which specifies the number of bytes (beyond the sequence number in the acknowledgment field) that the sender of this segment is currently willing to receive. http://en.wikipedia.org/wiki/Transmission_Control_Protocol</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Checksum<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The 16-bit checksum field is used for error-checking of the header and data. http://en.wikipedia.org/wiki/Transmission_Control_Protocol </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Urg_Ptr<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>If the URG flag is set, then this 16-bit field is an offset from the sequence number indicating the last urgent data byte. http://en.wikipedia.org/wiki/Transmission_Control_Protocol </p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

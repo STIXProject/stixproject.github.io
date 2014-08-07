@@ -1,0 +1,60 @@
+---
+layout: data_model
+title: PDFIndirectObjectListType
+this_version: 1.0.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/PDFFileObj/PDFIndirectObjectListType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">PDFIndirectObjectListType<span class="subdued">PDF File Object Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" >STIX 1.1</option>
+    
+      <option value="1.0.1" selected="selected">STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">The <a href='/data-model/1.0.1/PDFFileObj/PDFIndirectObjectListType'>PDFIndirectObjectListType</a> captures a list of PDF indirect objects.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Indirect_Object<span class="occurrence">1..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/PDFFileObj/PDFIndirectObjectType">PDFIndirectObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Indirect_Object field captures a single PDF indirect object contained in the file.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

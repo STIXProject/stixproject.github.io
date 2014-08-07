@@ -1,0 +1,100 @@
+---
+layout: data_model
+title: InfrastructureType
+this_version: 1.0.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/ttp/InfrastructureType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">InfrastructureType<span class="subdued">TTP Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" >STIX 1.1</option>
+    
+      <option value="1.0.1" selected="selected">STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Type<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/stixCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
+        
+      </td>
+      <td>
+        
+          <p></p>
+        
+          <p>						The Type field represents the type of infrastructure being described.</p>
+        
+          <p>						</p>
+        
+          <p>						This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is <a href='/data-model/stixVocabs/AttackerInfrastructureTypeVocab-1.0'>AttackerInfrastructureTypeVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.0.1/stix_default_vocabularies.xsd .</p>
+        
+          <p></p>
+        
+          <p>						Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
+        
+          <p>					</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Description<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/stixCommon/StructuredTextType">StructuredTextType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Description field generally describes specific classes or instances of infrastructure utilized for cyber attack.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Observable_Characterization<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cybox/ObservablesType">ObservablesType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Observable_Characterization field provides structured characterization of the cyber observables detailing specific classes or instances of infrastructure utilized for cyber attack.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

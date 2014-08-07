@@ -1,0 +1,340 @@
+---
+layout: data_model
+title: SocketOptionsType
+this_version: 1.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/NetworkSocketObj/SocketOptionsType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">SocketOptionsType<span class="subdued">Network Socket Object Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" selected="selected">STIX 1.1</option>
+    
+      <option value="1.0.1" >STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">The <a href='/data-model/1.1/NetworkSocketObj/SocketOptionsType'>SocketOptionsType</a> specifies any particular options used by the socket. If an options is supported only by specific address families or socket types, that's indicated in parentheses.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>IP_MULTICAST_IF<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Set the interface over which outgoing multicast datagrams should be sent (AF_INET / SOCK_DGRAM or SOCK_RAW).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>IP_MULTICAST_IF2<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Set the interface over which outgoing multicast datagrams should be sent (AF_INET6 / SOCK_DGRAM or SOCK_RAW) .</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>IP_MULTICAST_LOOP<span class="occurrence">0..1</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>Specify that the sending host receives a copy of an outgoing multicast datagram (AF_INET / SOCK_DGRAM or SOCK_RAW).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>IP_TOS<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Set Type of Service (TOS) and Precedence in the IP header (AF_INET).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>SO_BROADCAST<span class="occurrence">0..1</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>Enable the socket for issuing messages to a broadcast address (AF_INET / SOCK_DGRAM or SOCK_RAW). (.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>SO_CONDITIONAL_ACCEPT<span class="occurrence">0..1</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>Allows an application to decide whether or not to accept an incoming connection on a listening socket (Windows only).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>SO_KEEPALIVE<span class="occurrence">0..1</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>Keep the connection up by sending periodic transmissions (AF_INET or AF_INET6 / SOCK_STREAM).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>SO_DONTROUTE<span class="occurrence">0..1</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>Bypass normal routing mechanisms (AF_INET or AF_INET6 ).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>SO_LINGER<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/UnsignedIntegerObjectPropertyType">UnsignedIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies if the system attempts delivery of or discards any buffered data when a close() is issued.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>SO_DONTLINGER<span class="occurrence">0..1</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>Complement of SO_LINGER.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>SO_OOBINLINE<span class="occurrence">0..1</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>Indicates whether out-of-band data is received inline with normal data (AF_INET or AF_INET6).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>SO_RCVBUF<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/UnsignedIntegerObjectPropertyType">UnsignedIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Set size of the receive buffer.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>SO_GROUP_PRIORITY<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/UnsignedIntegerObjectPropertyType">UnsignedIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Sets the relative priority for the socket in its group (Windows only).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>SO_REUSEADDR<span class="occurrence">0..1</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>Indicates if the local socket address can be reused (AF_INET or AF_INET6 / SOCK_DGRAM or SOCK_RAW).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>SO_DEBUG<span class="occurrence">0..1</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>Indicates if low-level debugging is active.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>SO_RCVTIMEO<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/UnsignedIntegerObjectPropertyType">UnsignedIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Set the receive timeout value.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>SO_SNDBUF<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/UnsignedIntegerObjectPropertyType">UnsignedIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Set size of the send buffer.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>SO_SNDTIMEO<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/UnsignedIntegerObjectPropertyType">UnsignedIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Set the send timeout value.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>SO_UPDATE_ACCEPT_CONTEXT<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/UnsignedIntegerObjectPropertyType">UnsignedIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Updates the properties of the socket which are inherited from the listening socket (Windows only).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>SO_TIMEOUT<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/UnsignedIntegerObjectPropertyType">UnsignedIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Set the socket timeout.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>TCP_NODELAY<span class="occurrence">0..1</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>When set, TCP will send data immediately instead of using the Nagle delay algorithm (AF_INET or AF_INET6 / SOCK_STREAM). (.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

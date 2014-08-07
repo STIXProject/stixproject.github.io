@@ -1,11 +1,28 @@
 ---
 layout: data_model
 title: TTPType
+this_version: 1.1.1
 ---
 
-<h1>TTPType<span class="subdued">TTP Schema</span></h1>
 
-<p>TTPType characterizes an individual adversary TTP.</p>
+
+<h1 class="data-model">TTPType<span class="subdued">TTP Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" selected="selected">STIX 1.1.1</option>
+    
+      <option value="1.1" >STIX 1.1</option>
+    
+      <option value="1.0.1" >STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">TTPType characterizes an individual adversary TTP.</p>
 
 <hr />
 
@@ -132,7 +149,7 @@ title: TTPType
         
           <p>The Intended_Effect field specifies the suspected intended effect for this TTP.</p>
         
-          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is <a href='/data-model/1.1.1/stixVocabs/IntendedEffectVocab-1.0'>IntendedEffectVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
+          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is <a href='/data-model/stixVocabs/IntendedEffectVocab-1.0'>IntendedEffectVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
         
           <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
         

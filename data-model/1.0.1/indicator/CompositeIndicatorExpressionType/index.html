@@ -1,0 +1,74 @@
+---
+layout: data_model
+title: CompositeIndicatorExpressionType
+this_version: 1.0.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/indicator/CompositeIndicatorExpressionType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">CompositeIndicatorExpressionType<span class="subdued">Indicator Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" >STIX 1.1</option>
+    
+      <option value="1.0.1" selected="selected">STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">Type for allowing content creators to create composite indicator expressions using basic boolean logic. </p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@operator<span class="occurrence">required</span></td>
+      <td>
+        
+          OperatorTypeEnum
+        
+      </td>
+      <td>
+        
+          <p>Specifies the logical composition operator for this composite cyber threat Indicator.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Indicator<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/indicator/IndicatorType">IndicatorType</a>
+        
+      </td>
+      <td>
+        
+          <p>The indicator field specifies one cyber threat indicator asserting a relationship between a cyber observable and a TTP.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

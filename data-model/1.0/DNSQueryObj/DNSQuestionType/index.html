@@ -1,0 +1,88 @@
+---
+layout: data_model
+title: DNSQuestionType
+this_version: 1.0
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/DNSQueryObj/DNSQuestionType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">DNSQuestionType<span class="subdued">DNS Query Object Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" >STIX 1.1</option>
+    
+      <option value="1.0.1" >STIX 1.0.1</option>
+    
+      <option value="1.0" selected="selected">STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">The <a href='/data-model/1.0/DNSQueryObj/DNSQuestionType'>DNSQuestionType</a> specifies the components of a DNS Question, including the domain name queried, type, and class.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>QName<span class="occurrence">1..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/URIObj/URIObjectType">URIObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>The QName field specifies the domain name being queried.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>QType<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/DNSQueryObj/DNSRecordType">DNSRecordType</a>
+        
+      </td>
+      <td>
+        
+          <p>The QType specifies the type of DNS query performed, in terms of the requested DNS record type.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>QClass<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The QClass field specifies the class of resource records being requested.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

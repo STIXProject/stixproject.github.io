@@ -1,0 +1,102 @@
+---
+layout: data_model
+title: HTTPRequestResponseType
+this_version: 1.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/HTTPSessionObj/HTTPRequestResponseType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">HTTPRequestResponseType<span class="subdued">HTTP Session Object Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" selected="selected">STIX 1.1</option>
+    
+      <option value="1.0.1" >STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">The <a href='/data-model/1.1/HTTPSessionObj/HTTPRequestResponseType'>HTTPRequestResponseType</a> captures a single HTTP request/response pair.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@ordinal_position<span class="occurrence">optional</span></td>
+      <td>
+        
+          nonNegativeInteger
+        
+      </td>
+      <td>
+        
+          <p>The ordinal_position attribute specifies the ordinal positioning of the HTTP request/response pair in the context of the HTTP session. This may be useful in certain cases for preserving observed HTTP request/response ordering.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>HTTP_Client_Request<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/HTTPSessionObj/HTTPClientRequestType">HTTPClientRequestType</a>
+        
+      </td>
+      <td>
+        
+          <p>The HTTP_Client_Request field specifies the HTTP client request portion of a single HTTP request/response pair.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>HTTP_Provisional_Server_Response<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/HTTPSessionObj/HTTPServerResponseType">HTTPServerResponseType</a>
+        
+      </td>
+      <td>
+        
+          <p>The HTTP_Provisional_Server_Response field specifies an HTTP provisional server response that was sent before the regular HTTP response (captured in the HTTP_Server_Response field).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>HTTP_Server_Response<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/HTTPSessionObj/HTTPServerResponseType">HTTPServerResponseType</a>
+        
+      </td>
+      <td>
+        
+          <p>The HTTP_Server_Response field specifies the HTTP server response portion of a single HTTP request/response pair.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

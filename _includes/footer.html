@@ -17,7 +17,8 @@
 <script src="{{site.root}}/js/typeahead.min.js"></script>
 
 <!-- autocomplete results -->
-<script src="{{site.root}}/js/autocomplete.js"></script>
+
+<script src="{{site.root}}/js/autocomplete-{% if page.this_version %}{{page.this_version}}{% else %}{{site.current_version}}{% endif %}.js"></script>
 
 <!-- Custom JS -->
 <script src="{{site.root}}/js/main.js"></script>

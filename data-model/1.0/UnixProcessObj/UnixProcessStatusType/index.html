@@ -1,0 +1,74 @@
+---
+layout: data_model
+title: UnixProcessStatusType
+this_version: 1.0
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/UnixProcessObj/UnixProcessStatusType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">UnixProcessStatusType<span class="subdued">Unix Process Object Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" >STIX 1.1</option>
+    
+      <option value="1.0.1" >STIX 1.0.1</option>
+    
+      <option value="1.0" selected="selected">STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">The <a href='/data-model/1.0/UnixProcessObj/UnixProcessStatusType'>UnixProcessStatusType</a> field specifies the current status of the running Unix process. It extends the abstract <a href='/data-model/1.0/ProcessObj/ProcessStatusType'>ProcessStatusType</a> from the CybOX Process Object.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Current_Status<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/UnixProcessObj/UnixProcessStateType">UnixProcessStateType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the current state of the Unix process, using the UnixProcessStatusEnum enumeration.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Timestamp<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies when the process started up.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

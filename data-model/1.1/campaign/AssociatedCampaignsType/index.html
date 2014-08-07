@@ -1,0 +1,74 @@
+---
+layout: data_model
+title: AssociatedCampaignsType
+this_version: 1.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/campaign/AssociatedCampaignsType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">AssociatedCampaignsType<span class="subdued">Campaign Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" selected="selected">STIX 1.1</option>
+    
+      <option value="1.0.1" >STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@scope<span class="occurrence">optional</span></td>
+      <td>
+        
+          RelationshipScopeEnum
+        
+      </td>
+      <td>
+        
+          <p>Indicates how multiple related items should be interpreted in this relationship. If "inclusive" is specified, then a single conceptual relationship is being defined between the subject and the collection of objects indicated by the related items (i.e. the relationship is not necessarily relevant for any one particular object being referenced, but for the aggregated collection of objects referenced). If "exclusive" is specified, then multiple relationships are being defined between the specific subject and each object individually. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Associated_Campaign<span class="occurrence">1..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/stixCommon/RelatedCampaignType">RelatedCampaignType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Associated_Campaign field specifies a single other cyber threat Campaign asserted to be associated with this cyber threat Campaign.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

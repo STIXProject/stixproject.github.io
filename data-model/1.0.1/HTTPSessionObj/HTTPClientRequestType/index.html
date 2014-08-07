@@ -1,0 +1,88 @@
+---
+layout: data_model
+title: HTTPClientRequestType
+this_version: 1.0.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/HTTPSessionObj/HTTPClientRequestType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">HTTPClientRequestType<span class="subdued">HTTP Session Object Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" >STIX 1.1</option>
+    
+      <option value="1.0.1" selected="selected">STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">The <a href='/data-model/1.0.1/HTTPSessionObj/HTTPClientRequestType'>HTTPClientRequestType</a> field captures the details of an HTTP client request.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>HTTP_Request_Line<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/HTTPSessionObj/HTTPRequestLineType">HTTPRequestLineType</a>
+        
+      </td>
+      <td>
+        
+          <p>The HTTP_Request_Line field specifies the HTTP request line of the HTTP client request.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>HTTP_Request_Header<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/HTTPSessionObj/HTTPRequestHeaderType">HTTPRequestHeaderType</a>
+        
+      </td>
+      <td>
+        
+          <p>The HTTP_Request_Header field specifies all of the HTTP header fields that may be found in the HTTP client request.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>HTTP_Message_Body<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/HTTPSessionObj/HTTPMessageType">HTTPMessageType</a>
+        
+      </td>
+      <td>
+        
+          <p>The HTTP_Message_Body field specifies the optional message body that may be included in the HTTP client request.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

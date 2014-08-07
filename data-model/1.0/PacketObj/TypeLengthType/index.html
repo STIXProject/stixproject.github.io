@@ -1,0 +1,74 @@
+---
+layout: data_model
+title: TypeLengthType
+this_version: 1.0
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/PacketObj/TypeLengthType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">TypeLengthType<span class="subdued">Network Packet Object Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" >STIX 1.1</option>
+    
+      <option value="1.0.1" >STIX 1.0.1</option>
+    
+      <option value="1.0" selected="selected">STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">0-1500 then it is a length field. Otherwise, it defines the protocol type of the Internet layer.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Length<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Length characterizes the length of the ethernet frame.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Internet_Layer_Type<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/PacketObj/IANAEtherType">IANAEtherType</a>
+        
+      </td>
+      <td>
+        
+          <p>two-octet field in an Ethernet frame. specifies protocol encapsulated in the payload of ethernet frame.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

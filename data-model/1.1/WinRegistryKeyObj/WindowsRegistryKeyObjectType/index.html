@@ -1,0 +1,214 @@
+---
+layout: data_model
+title: WindowsRegistryKeyObjectType
+this_version: 1.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/WinRegistryKeyObj/WindowsRegistryKeyObjectType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">WindowsRegistryKeyObjectType<span class="subdued">Win Registry Key Object Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" selected="selected">STIX 1.1</option>
+    
+      <option value="1.0.1" >STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">The WindowsRegistryObjectType type is intended to characterize Windows registry objects, including Keys and Key/Value pairs.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@object_reference<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>The object_reference field specifies a unique ID reference to an Object defined elsewhere. This construct allows for the re-use of the defined Properties of one Object within another, without the need to embed the full Object in the location from which it is being referenced. Thus, this ID reference is intended to resolve to the Properties of the Object that it points to.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Custom_Properties<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/CustomPropertiesType">CustomPropertiesType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Custom_Properties construct is optional and enables the specification of a set of custom Object Properties that may not be defined in existing Properties schemas.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Key<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Key field specifies the full key to the Windows registry object, not including the hive.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Hive<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/WinRegistryKeyObj/RegistryHiveType">RegistryHiveType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Hive field specifies the Windows registry hive to which the registry object belongs to.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Number_Values<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/UnsignedIntegerObjectPropertyType">UnsignedIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Number_Values field specifies the number of values found in the registry key.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Values<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/WinRegistryKeyObj/RegistryValuesType">RegistryValuesType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Values field specifies the values (with their name/data pairs) held within the registry key.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Modified_Time<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Modified_Time field specifies the last date/time that the registry object was modified.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Creator_Username<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Creator_Username field specifies the name of the user who created the registry object.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Handle_List<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/WinHandleObj/WindowsHandleListType">WindowsHandleListType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Handle_List field specifies a list of open Handles for this registry object.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Number_Subkeys<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/UnsignedIntegerObjectPropertyType">UnsignedIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Number_Subkeys field specifies the number of subkeys contained under the registry key.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Subkeys<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/WinRegistryKeyObj/RegistrySubkeysType">RegistrySubkeysType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Subkeys field specifies the set of subkeys contained under the registry key.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Byte_Runs<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/ByteRunsType">ByteRunsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Byte_Runs field contains a list of byte runs from the raw registry.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

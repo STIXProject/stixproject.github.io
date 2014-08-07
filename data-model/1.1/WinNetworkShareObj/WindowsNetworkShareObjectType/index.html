@@ -1,0 +1,256 @@
+---
+layout: data_model
+title: WindowsNetworkShareObjectType
+this_version: 1.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/WinNetworkShareObj/WindowsNetworkShareObjectType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">WindowsNetworkShareObjectType<span class="subdued">Win Network Share Object Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" selected="selected">STIX 1.1</option>
+    
+      <option value="1.0.1" >STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">The <a href='/data-model/1.1/WinNetworkShareObj/WindowsNetworkShareObjectType'>WindowsNetworkShareObjectType</a> type is intended to characterize Windows network shares.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@object_reference<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>The object_reference field specifies a unique ID reference to an Object defined elsewhere. This construct allows for the re-use of the defined Properties of one Object within another, without the need to embed the full Object in the location from which it is being referenced. Thus, this ID reference is intended to resolve to the Properties of the Object that it points to.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Custom_Properties<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/CustomPropertiesType">CustomPropertiesType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Custom_Properties construct is optional and enables the specification of a set of custom Object Properties that may not be defined in existing Properties schemas.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@ACCESS_READ<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The ACCESS_READ field specifies the permission to read data from a resource and, by default, to execute the resource.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@ACCESS_WRITE<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The ACCESS_WRITE field specifies the permission to write data to the resource.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@ACCESS_CREATE<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The ACCESS_CREATE field specifies the permission to create an instance of the resource (such as a file); data can be written to the resource as the resource is created.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@ACCESS_EXEC<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The ACCESS_EXEC field specifies the permission to execute the resource.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@ACCESS_DELETE<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The ACCESS_DELETE field specifies the permission to delete the resource.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@ACCESS_ATRIB<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The ACCESS_ATRIB field specifies the permission to modify the resource's attributes (such as the date and time when a file was last modified).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@ACCESS_PERM<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The ACCESS_PERM field specifies the permission to modify the permissions (read, write, create, execute, and delete) assigned to a resource for a user or application.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@ACCESS_ALL<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The ACCESS_ALL field specifies the permission to read, write, create, execute, and delete resources, and to modify their attributes and permissions.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Current_Uses<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/NonNegativeIntegerObjectPropertyType">NonNegativeIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Current_Uses field specifies the current number of uses of the network share.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Local_Path<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Local_Path field specifies the fully-qualified path on the local system to the network share.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Max_Uses<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/NonNegativeIntegerObjectPropertyType">NonNegativeIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Max_Uses field specifies the maximum number of concurrent connections to the network share.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Netname<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Netname field specifies the network name of the network share.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Type<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/WinNetworkShareObj/SharedResourceType">SharedResourceType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Type field specifies the type of the network share.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

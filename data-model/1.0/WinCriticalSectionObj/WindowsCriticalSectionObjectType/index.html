@@ -1,0 +1,102 @@
+---
+layout: data_model
+title: WindowsCriticalSectionObjectType
+this_version: 1.0
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/WinCriticalSectionObj/WindowsCriticalSectionObjectType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">WindowsCriticalSectionObjectType<span class="subdued">Win Critical Section Object Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" >STIX 1.1</option>
+    
+      <option value="1.0.1" >STIX 1.0.1</option>
+    
+      <option value="1.0" selected="selected">STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">The <a href='/data-model/1.0/WinCriticalSectionObj/WindowsCriticalSectionObjectType'>WindowsCriticalSectionObjectType</a> type is intended to characterize Windows Critical Section objects.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@object_reference<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>The object_reference field specifies a unique ID reference to an Object defined elsewhere. This construct allows for the re-use of the defined Properties of one Object within another, without the need to embed the full Object in the location from which it is being referenced. Thus, this ID reference is intended to resolve to the Properties of the Object that it points to.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Custom_Properties<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/CustomPropertiesType">CustomPropertiesType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Custom_Properties construct is optional and enables the specification of a set of custom Object Properties that may not be defined in existing Properties schemas. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Address<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Address field specifies the address of the code that crated the critical section object.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Spin_Count<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/NonNegativeIntegerObjectPropertyType">NonNegativeIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Spin_Count field specifies the spin count value for the critical section object.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

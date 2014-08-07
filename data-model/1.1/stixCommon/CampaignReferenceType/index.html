@@ -1,0 +1,90 @@
+---
+layout: data_model
+title: CampaignReferenceType
+this_version: 1.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/stixCommon/CampaignReferenceType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">CampaignReferenceType<span class="subdued">STIX Common Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" selected="selected">STIX 1.1</option>
+    
+      <option value="1.0.1" >STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">Characterizes a reference to a campaign.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@idref<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>Specifies a globally unique identifier for a cyber threat campaign defined elsewhere.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@timestamp<span class="occurrence">optional</span></td>
+      <td>
+        
+          dateTime
+        
+      </td>
+      <td>
+        
+          <p>In conjunction with the idref, this field may be used to reference a specific version of a campaign defined elsewhere.</p>
+        
+          <p>This field must only be used in conjunction with the idref field.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Names<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/stixCommon/NamesType">NamesType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies one or more campaign names for a cyber threat campaign defined elsewhere.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

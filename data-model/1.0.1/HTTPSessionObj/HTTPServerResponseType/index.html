@@ -1,0 +1,88 @@
+---
+layout: data_model
+title: HTTPServerResponseType
+this_version: 1.0.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/HTTPSessionObj/HTTPServerResponseType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">HTTPServerResponseType<span class="subdued">HTTP Session Object Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" >STIX 1.1</option>
+    
+      <option value="1.0.1" selected="selected">STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">The <a href='/data-model/1.0.1/HTTPSessionObj/HTTPServerResponseType'>HTTPServerResponseType</a> captures the details of an HTTP server response.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>HTTP_Status_Line<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/HTTPSessionObj/HTTPStatusLineType">HTTPStatusLineType</a>
+        
+      </td>
+      <td>
+        
+          <p>The HTTP_Status_Line field captures the status line returned as part of the HTTP server response.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>HTTP_Response_Header<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/HTTPSessionObj/HTTPResponseHeaderType">HTTPResponseHeaderType</a>
+        
+      </td>
+      <td>
+        
+          <p>The HTTP_Response_Header field captures the details of the HTTP Header returned as part of the HTTP server response.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>HTTP_Message_Body<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/HTTPSessionObj/HTTPMessageType">HTTPMessageType</a>
+        
+      </td>
+      <td>
+        
+          <p>The HTTP_Message_Body field captures the HTTP message body returned as part of the HTTP server response.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

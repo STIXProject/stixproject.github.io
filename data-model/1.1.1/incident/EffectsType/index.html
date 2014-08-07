@@ -1,11 +1,28 @@
 ---
 layout: data_model
 title: EffectsType
+this_version: 1.1.1
 ---
 
-<h1>EffectsType<span class="subdued">Incident Schema</span></h1>
 
-<p>Represents a list of incident effects that an incident is tagged with.</p>
+
+<h1 class="data-model">EffectsType<span class="subdued">Incident Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" selected="selected">STIX 1.1.1</option>
+    
+      <option value="1.1" >STIX 1.1</option>
+    
+      <option value="1.0.1" >STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">Represents a list of incident effects that an incident is tagged with.</p>
 
 <hr />
 
@@ -32,7 +49,7 @@ title: EffectsType
         
           <p>Represents a single effect that this incident is tagged with.</p>
         
-          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is <a href='/data-model/1.1.1/stixVocabs/IncidentEffectVocab-1.0'>IncidentEffectVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
+          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is <a href='/data-model/stixVocabs/IncidentEffectVocab-1.0'>IncidentEffectVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd.</p>
         
           <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
         

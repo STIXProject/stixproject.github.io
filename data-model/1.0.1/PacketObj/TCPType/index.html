@@ -1,0 +1,88 @@
+---
+layout: data_model
+title: TCPType
+this_version: 1.0.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/PacketObj/TCPType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">TCPType<span class="subdued">Network Packet Object Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" >STIX 1.1</option>
+    
+      <option value="1.0.1" selected="selected">STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">TCP provides reliable, ordered delivery of a stream of bytes from a prograom on one computer to another program on another computer. http://en.wikipedia.org/wiki/Transmission_Control_Protocol</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>TCP_Header<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/PacketObj/TCPHeaderType">TCPHeaderType</a>
+        
+      </td>
+      <td>
+        
+          <p>The TCP header contains 10 mandatory fields and an optional extension field. http://en.wikipedia.org/wiki/Transmission_Control_Protocol</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Options<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Options have up to three fields: Option-Kind (1 byte), Option-Length (1 byte), Option-Data (variable). This field will be further defined when required.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Data<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/DataSegmentType">DataSegmentType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Data field specifies the data payload of the TCP packet. </p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

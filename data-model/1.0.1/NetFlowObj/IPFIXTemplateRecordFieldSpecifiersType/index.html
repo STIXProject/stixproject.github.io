@@ -1,0 +1,102 @@
+---
+layout: data_model
+title: IPFIXTemplateRecordFieldSpecifiersType
+this_version: 1.0.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/NetFlowObj/IPFIXTemplateRecordFieldSpecifiersType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">IPFIXTemplateRecordFieldSpecifiersType<span class="subdued">Network Flow Object Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" >STIX 1.1</option>
+    
+      <option value="1.0.1" selected="selected">STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">Specifies the fields in a Template Record Field Specifier, as explained in RFC 5101, section 3.2.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Enterprise_Bit<span class="occurrence">0..1</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>Specifies the Enterprise bit, either 0 or 1. If this bit is zero, the Information Element Identifier identifies an IETF-specified Information Element, and the four-octet Enterprise Number field SHOULD NOT be present. If this bit is one, the Information Element identifier identifies an enterprise-specific Information Element, and the Enterprise Number filed SHOULD be present. NOTE: While it is legal to use "true" and "false" here, this value SHOULD be set to 0 or 1 for consistency with RFC 5101.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Information_Element_ID<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the 15-bit (NOT 16-bit) Information Element ID referring to the type of Information Element, as shown in RFC 5102.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Field_Length<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the 16-bit Field Length, in octets, of the corresponding encoded Information Element as defined in RFC 5102. The field length may be smaller than the definition in RFC 5102 if the reduced size encoding is used (see Section 6.2 of RFC 5101). The value 65535 is reserved for variable length Information Elements.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Enterprise_Number<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the 32-bit IANA Enterprise Number of the authority defining the Information Element identifier in this Template Record. Information Element Identifiers 1.2 and 2.1 are defined by the IETF (Enterprise bit = 0) and, therefore, do not need an Enterprise Number to identify them.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

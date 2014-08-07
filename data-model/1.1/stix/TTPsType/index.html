@@ -1,0 +1,76 @@
+---
+layout: data_model
+title: TTPsType
+this_version: 1.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/stix/TTPsType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">TTPsType<span class="subdued">STIX Core Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" selected="selected">STIX 1.1</option>
+    
+      <option value="1.0.1" >STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>TTP<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/stixCommon/TTPBaseType">TTPBaseType</a>
+        
+      </td>
+      <td>
+        
+          <p>Characterizes a single cyber threat adversary Tactic, Technique or Procedure.</p>
+        
+          <p>This field is implemented through the xsi:type extension mechanism. The default and strongly recommended type is <a href='/data-model/1.1/ttp/TTPType'>TTPType</a> in the http://stix.mitre.org/TTP-1 namespace. This type is defined in the ttp.xsd file or at the URL http://stix.mitre.org/XMLSchema/ttp/1.1/ttp.xsd.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Kill_Chains<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/stixCommon/KillChainsType">KillChainsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Kill_Chains field characterizes specific Kill Chain definitions for reference within specific TTP entries, Indicators and elsewhere.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

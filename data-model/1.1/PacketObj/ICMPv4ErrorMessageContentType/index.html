@@ -1,0 +1,74 @@
+---
+layout: data_model
+title: ICMPv4ErrorMessageContentType
+this_version: 1.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/PacketObj/ICMPv4ErrorMessageContentType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">ICMPv4ErrorMessageContentType<span class="subdued">Network Packet Object Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" selected="selected">STIX 1.1</option>
+    
+      <option value="1.0.1" >STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">Elements associated with ICMPv4 error messages (as opposed to ICMP informational messages or ICMP traceroute message).</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>IP_Header<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/PacketObj/IPv4HeaderType">IPv4HeaderType</a>
+        
+      </td>
+      <td>
+        
+          <p>IP header from the original datagram.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>First_Eight_Bytes<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>First 8 bytes of the original datagram's data.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

@@ -1,0 +1,262 @@
+---
+layout: data_model
+title: HashNameVocab-1.0
+this_version: 1.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/cyboxVocabs/HashNameVocab-1.0">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">HashNameVocab-1.0<span class="subdued">CybOX Vocabularies Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" selected="selected">STIX 1.1</option>
+    
+      <option value="1.0.1" >STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">The HashNameVocab is the default CybOX vocabulary for hashing algorithm names, used in the HashType/Type element in CybOX Common.</p>
+
+<hr />
+
+
+<h2>Vocabulary Items</h2>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  
+    <tr>
+      <td>MD5</td>
+      <td>The MD5 value specifies the MD5 hashing algorithm.</td>
+    </tr>
+  
+    <tr>
+      <td>MD6</td>
+      <td>The MD6 value specifies the MD6 hashing algorithm.</td>
+    </tr>
+  
+    <tr>
+      <td>SHA1</td>
+      <td>The SHA1 value specifies the SHA1 hashing algorithm.</td>
+    </tr>
+  
+    <tr>
+      <td>SHA224</td>
+      <td>The SHA24 value specifies the SHA224 hashing algorithm.</td>
+    </tr>
+  
+    <tr>
+      <td>SHA256</td>
+      <td>The SHA256 value specifies the SHA256 hashing algorithm.</td>
+    </tr>
+  
+    <tr>
+      <td>SHA384</td>
+      <td>The SHA384 value specifies the SHA384 hashing algorithm.</td>
+    </tr>
+  
+    <tr>
+      <td>SHA512</td>
+      <td>The SHA512 value specifies the SHA512 hashing algorithm.</td>
+    </tr>
+  
+    <tr>
+      <td>SSDEEP</td>
+      <td>The SSDEEP value specifies the SSDEEP hashing algorithm.</td>
+    </tr>
+  
+  </tbody>
+</table>
+
+<h2>Fields</h2>
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@condition<span class="occurrence">optional</span></td>
+      <td>
+        
+          ConditionTypeEnum
+        
+      </td>
+      <td>
+        
+          <p>This field is optional and defines the relevant condition to apply to the value.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@is_case_sensitive<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The is_case_sensitive field is optional and should be used when specifying the case-sensitivity of a pattern which uses an Equals, DoesNotEqual, Contains, DoesNotContain, StartsWith, EndsWith, or FitsPattern condition. The default value for this field is "true" which indicates that pattern evaluations are to be considered case-sensitive.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@apply_condition<span class="occurrence">optional</span></td>
+      <td>
+        
+          ConditionApplicationEnum
+        
+      </td>
+      <td>
+        
+          <p>This field indicates how a condition should be applied when the field body contains a list of values. (Its value is moot if the field value contains only a single value - both possible values for this field would have the same behavior.) If this field is set to ANY, then a pattern is considered to be matched if the provided condition successfully evaluates for any of the values in the field body. If the field is set to ALL, then the patern only matches if the provided condition successfully evaluates for every value in the field body.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@delimiter<span class="occurrence">optional</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>The delimiter field specifies the delimiter used when defining lists of values. The default value is "##comma##".</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@bit_mask<span class="occurrence">optional</span></td>
+      <td>
+        
+          hexBinary
+        
+      </td>
+      <td>
+        
+          <p>Used to specify a bit_mask in conjunction with one of the defined binary conditions (bitwiseAnd, bitwiseOr, and bitwiseXor). This bitmask is then uses as one operand in the indicated bitwise computation.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@pattern_type<span class="occurrence">optional</span></td>
+      <td>
+        
+          PatternTypeEnum
+        
+      </td>
+      <td>
+        
+          <p>This field is optional and defines the type of pattern used if one is specified for the field value. This is applicable only if the Condition field is set to 'FitsPattern'.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@regex_syntax<span class="occurrence">optional</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>This field is optional and defines the syntax format used for a regular expression, if one is specified for the field value. This is applicable only if the Condition field is set to 'FitsPattern'.</p>
+        
+          <p>Setting this attribute with an empty value (e.g., "") or omitting it entirely notifies CybOX consumers and pattern evaluators that the corresponding regular expression utilizes capabilities, character classes, escapes, and other lexical tokens defined by the CybOX Language Specification.</p>
+        
+          <p>Setting this attribute with a non-empty value notifies CybOX consumers and pattern evaluators that the corresponding regular expression utilizes capabilities not defined by the CybOX Language Specification. The regular expression must be evaluated through a compatible regular expression engine in this case.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@has_changed<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>This field is optional and conveys a targeted observation pattern of whether the associated field value has changed. This field would be leveraged within a pattern observable triggering on whether the value of a single field value has changed.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@trend<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>This field is optional and conveys a targeted observation pattern of the nature of any trend in the associated field value. This field would be leveraged within a pattern observable triggering on the matching of a specified trend in the value of a single specified field.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@vocab_name<span class="occurrence">optional</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>The vocab_name field specifies the name of the controlled vocabulary.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@vocab_reference<span class="occurrence">optional</span></td>
+      <td>
+        
+          anyURI
+        
+      </td>
+      <td>
+        
+          <p>The vocab_reference field specifies the URI to the location of where the controlled vocabulary is defined, e.g., in an externally located XML schema file.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

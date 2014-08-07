@@ -1,0 +1,256 @@
+---
+layout: data_model
+title: X509V3ExtensionsType
+this_version: 1.0
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/X509CertificateObj/X509V3ExtensionsType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">X509V3ExtensionsType<span class="subdued">X509 Certificate Object Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" >STIX 1.1</option>
+    
+      <option value="1.0.1" >STIX 1.0.1</option>
+    
+      <option value="1.0" selected="selected">STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">The <a href='/data-model/1.0/X509CertificateObj/X509V3ExtensionsType'>X509V3ExtensionsType</a> captures the standard X509 V3 Extensions that may be used in X509 certificates. Based on RFC 3280, "Standard Extensions": http://www.ietf.org/rfc/rfc3280.txt</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Basic_Constraints<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Basic_Constraints field captures a multi-valued extension which indicates whether a certificate is a CA certificate. The first (mandatory) name is CA followed by TRUE or FALSE. If CA is TRUE then an optional pathlen name followed by an non-negative value can be included. Also equivalent to the object ID (OID) value of 2.5.29.19.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Name_Constraints<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Name_Constraints field captures a name space within which all subject names in subsequent certificates in a certification path MUST be located. Also equivalent to the object ID (OID) value of 2.5.29.30.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Policy_Constraints<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Policy_Constraints field captures any constraints on path validation for certificates issued to CAs. Also equivalent to the object ID (OID) value of 2.5.29.36.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Key_Usage<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Key_Usage element field captures a multi-valued extension consisting of a list of names of the permitted key usages. Also equivalent to the object ID (OID) value of 2.5.29.15.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Extended_Key_Usage<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Extended_Key_Usage field captures a list of usages indicating purposes for which the certificate public key can be used for. Also equivalent to the object ID (OID) value of 2.5.29.37.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Subject_Key_Identifier<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Subject_Key_Identifier field captures the identifier that provides a means of identifying certificates that contain a particular public key. Also equivalent to the object ID (OID) value of 2.5.29.14.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Authority_Key_Identifier<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Authority_Key_Identifier field captures the identifier that provides a means of identifying the public key corresponding to the private key used to sign a certificate. Also equivalent to the object ID (OID) value of 2.5.29.35.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Subject_Alternative_Name<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Subject_Alternative_Name field captures the additional identities to be bound to the subject of the certificate. Also equivalent to the object ID (OID) value of 2.5.29.17.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Issuer_Alternative_Name<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Issuer_Alternative_Name field captures the additional identities to be bound to the issuer of the certificate. Also equivalent to the object ID (OID) value of 2.5.29.18.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Subject_Directory_Attributes<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Subject_Directory_Attributes field captures the identification attributes (e.g., nationality) of the subject. Also equivalent to the object ID (OID) value of 2.5.29.9.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>CRL_Distribution_Points<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The CRL_Distribution_Points field captures how CRL information is obtained. Also equivalent to the object ID (OID) value of 2.5.29.31.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Inhibit_Any_Policy<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/NonNegativeIntegerObjectPropertyType">NonNegativeIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Inhibit_Any_Policy field the number of additional certificates that may appear in the path before anyPolicy is no longer permitted. Also equivalent to the object ID (OID) value of 2.5.29.54.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Private_Key_Usage_Period<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/X509CertificateObj/ValidityType">ValidityType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Private_Key_Usage_Period field captures the validity period for the private key, if it is different from the validity period of the certificate. Also equivalent to the object ID (OID) value of 2.5.29.16.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Certificate_Policies<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Certificate_Policies field captures a sequence of one or more policy information terms, each of which consists of an object identifier (OID) and optional qualifiers. Also equivalent to the object ID (OID) value of 2.5.29.32.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Policy_Mappings<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Policy_Mappings field captures one or more pairs of OIDs; each pair includes an issuerDomainPolicy and a subjectDomainPolicy. The pairing indicates whether the issuing CA considers its issuerDomainPolicy equivalent to the subject CA's subjectDomainPolicy. Also equivalent to the object ID (OID) value of 2.5.29.33.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

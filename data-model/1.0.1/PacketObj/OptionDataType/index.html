@@ -1,0 +1,102 @@
+---
+layout: data_model
+title: OptionDataType
+this_version: 1.0.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/PacketObj/OptionDataType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">OptionDataType<span class="subdued">Network Packet Object Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" >STIX 1.1</option>
+    
+      <option value="1.0.1" selected="selected">STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">Defines the variable-length fields associated with IPv6 extension headers (the Hop-by-Hop Options header and the Destination Options header). Contains one or more type-length-value (TLV)-encoded options.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Option_Type<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/PacketObj/IPv6OptionType">IPv6OptionType</a>
+        
+      </td>
+      <td>
+        
+          <p>Identifies the type of option. This 8-bit Option Type identifier is internally encoded such that different bits have different meanings. These meanings are further specified in the <a href='/data-model/1.0.1/PacketObj/IPv6OptionType'>IPv6OptionType</a> type. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Option_Data_Len<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Length of the Option Data field of this option, in octets.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Pad1<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/PacketObj/Pad1Type">Pad1Type</a>
+        
+      </td>
+      <td>
+        
+          <p>The Pad1 option is used to insert one octet of padding into the Options area of a header. The Pad1 option does not have length and value fields.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>PadN<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/PacketObj/PadNType">PadNType</a>
+        
+      </td>
+      <td>
+        
+          <p>The PadN option is used to insert two or more octets of paddings into the Options area of a header.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

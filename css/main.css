@@ -231,3 +231,20 @@ a.disabled {
 .label-victim-targeting {
     background-color: #01D3B1;
 }
+
+h1.data-model {
+  float: left;
+}
+
+form#nav-version {
+  float: right;
+  margin-top: 20px;
+}
+
+form#nav-version select {
+  padding: 5px;
+}
+
+p.data-model-description {
+  clear: both;
+}

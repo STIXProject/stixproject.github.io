@@ -1,0 +1,340 @@
+---
+layout: data_model
+title: WindowsEventLogObjectType
+this_version: 1.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/WinEventLogObj/WindowsEventLogObjectType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">WindowsEventLogObjectType<span class="subdued">Win Event Log Object Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" selected="selected">STIX 1.1</option>
+    
+      <option value="1.0.1" >STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">The <a href='/data-model/1.1/WinEventLogObj/WindowsEventLogObjectType'>WindowsEventLogObjectType</a> type is intended to characterize entries in the Windows event log.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@object_reference<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>The object_reference field specifies a unique ID reference to an Object defined elsewhere. This construct allows for the re-use of the defined Properties of one Object within another, without the need to embed the full Object in the location from which it is being referenced. Thus, this ID reference is intended to resolve to the Properties of the Object that it points to.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Custom_Properties<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/CustomPropertiesType">CustomPropertiesType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Custom_Properties construct is optional and enables the specification of a set of custom Object Properties that may not be defined in existing Properties schemas.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>EID<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/LongObjectPropertyType">LongObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The EID field specifies the ID of the event for which the event log entry was created.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Type<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The event type associated with the entry in the event log, e.g., warning, information, error.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Log<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The name of the log.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Message<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The rendered message string for the event.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Category_Num<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/LongObjectPropertyType">LongObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The event entry's category number, as defined by the source.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Category<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The text associated with Category_Num.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Generation_Time<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Generation_Time field specifies the date/time the event was generated.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Source<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>What logged the event, typically the name of an application or sub-component.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Machine<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The name of the computer on which the event log entry was generated.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>User<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The name of the user (the security ID) responsible for the event.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Blob<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/Base64BinaryObjectPropertyType">Base64BinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The event data as a binary blob.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Correlation_Activity_ID<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>A globally unique identifier that identifies the current activity.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Correlation_Related_Activity_ID<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>A globally unique identifier that identifies the activity to which control was transferred to.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Execution_Process_ID<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Execution_Process_ID field specifies the Process ID (PID) of the process which created the event.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Execution_Thread_ID<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Execution_Thread_ID field specifies the Thread ID (TID) of the thread which created the event.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Index<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/LongObjectPropertyType">LongObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The index of the event entry in the log.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Reserved<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/LongObjectPropertyType">LongObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>A DWORD value that is always set to ELF_LOG_SIGNATURE (the value 0x654c664c), which is ASCII for eLfL.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Unformatted_Message_List<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/WinEventLogObj/UnformattedMessageListType">UnformattedMessageListType</a>
+        
+      </td>
+      <td>
+        
+          <p>List of unformatted messages in the event log entry.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Write_Time<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Write_Time field specifies the date/time that the entry was written into the event log.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

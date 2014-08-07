@@ -1,0 +1,102 @@
+---
+layout: data_model
+title: FragmentHeaderType
+this_version: 1.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/PacketObj/FragmentHeaderType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">FragmentHeaderType<span class="subdued">Network Packet Object Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" selected="selected">STIX 1.1</option>
+    
+      <option value="1.0.1" >STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">Each fragment has a header containing next header information, the offset of the fragment, an M flag specifying whether or not it is the last fragment, and an identification value.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Next_Header<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Identifies the type of header immediately following the Fragment header. Uses the same values as the IPv4 Protocol field.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Fragment_Offset<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>13-bit unsigned integer. The offset, in 8-octet units, of the data following this header, relative to the start of the Fragmentable Part or the original packet.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>M_Flag<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/PacketObj/MFlagType">MFlagType</a>
+        
+      </td>
+      <td>
+        
+          <p>Indicates whether this is the last fragment or whether there are more fragments.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Identification<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>For every packet that is to be fragmented, the source node generates a 32-bit Identification value.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

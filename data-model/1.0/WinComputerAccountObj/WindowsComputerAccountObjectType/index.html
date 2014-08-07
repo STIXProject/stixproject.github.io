@@ -1,0 +1,200 @@
+---
+layout: data_model
+title: WindowsComputerAccountObjectType
+this_version: 1.0
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/WinComputerAccountObj/WindowsComputerAccountObjectType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">WindowsComputerAccountObjectType<span class="subdued">Win Computer Account Object Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" >STIX 1.1</option>
+    
+      <option value="1.0.1" >STIX 1.0.1</option>
+    
+      <option value="1.0" selected="selected">STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">The WinComputerAccountObject type is intended to characterize Windows computer accounts.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@object_reference<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>The object_reference field specifies a unique ID reference to an Object defined elsewhere. This construct allows for the re-use of the defined Properties of one Object within another, without the need to embed the full Object in the location from which it is being referenced. Thus, this ID reference is intended to resolve to the Properties of the Object that it points to.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Custom_Properties<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/CustomPropertiesType">CustomPropertiesType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Custom_Properties construct is optional and enables the specification of a set of custom Object Properties that may not be defined in existing Properties schemas. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@disabled<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The disabled field specifies whether or not the account is disabled.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@locked_out<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The locked_out field specifies whether or not the account is locked out.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Description<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Description property is used for providing a description of the account, if applicable.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Domain<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Domain property is used for specifying the domain that the account belongs to.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Fully_Qualified_Name<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/WinComputerAccountObj/FullyQualifiedNameType">FullyQualifiedNameType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Fully_Qualified_Name field refers to the fully qualified name(s) of the Windows computer account.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Kerberos<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/WinComputerAccountObj/KerberosType">KerberosType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Kerberos field specifies the Kerberos authentication protocol specific Object properties for the Windows computer account.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Security_ID<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Security_ID field specifies the Security ID (SID) value assigned to the Windows computer account.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Security_Type<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/SIDType">SIDType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Security_Type field specifies the type of Security ID (SID) assigned to the Windows computer account.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Type<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Type field specifies the type of the Windows computer account.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

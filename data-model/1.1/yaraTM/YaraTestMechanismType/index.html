@@ -1,0 +1,132 @@
+---
+layout: data_model
+title: YaraTestMechanismType
+this_version: 1.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/yaraTM/YaraTestMechanismType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">YaraTestMechanismType<span class="subdued">YARA Test Mechanism Instance Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" selected="selected">STIX 1.1</option>
+    
+      <option value="1.0.1" >STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">The <a href='/data-model/1.1/yaraTM/YaraTestMechanismType'>YaraTestMechanismType</a> specifies an instantial extension from the abstract <a href='/data-model/1.1/indicator/TestMechanismType'>TestMechanismType</a> intended to support the inclusion of a YARA rule as a test mechanism content.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@id<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>Specifies a unique ID for this Test Mechanism.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@idref<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>Specifies a reference to the ID of a Test Mechanism specified elsewhere.</p>
+        
+          <p>When idref is specified, the id attribute must not be specified, and any instance of this Test Mechanism should not hold content.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Efficacy<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/stixCommon/StatementType">StatementType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Efficacy field provides an assertion of likely effectiveness of this TestMechanism to detect the targeted cyber Observables. The field includes a description of the asserted efficacy of this TestMechanism and a confidence held in the asserted efficacy of this TestMechanism to detect the targeted cyber Observables.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Producer<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/stixCommon/InformationSourceType">InformationSourceType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Producer field details the source of this entry.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Version<span class="occurrence">0..1</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>The Version of YARA that the rule was written against.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Rule<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/stixCommon/EncodedCDATAType">EncodedCDATAType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Rule field encapsulates a YARA rule in its native format within a String field. The specification should be within a CDATA construct within the String field.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

@@ -1,0 +1,60 @@
+---
+layout: data_model
+title: BidirectionalRecordType
+this_version: 1.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/NetFlowObj/BidirectionalRecordType">View the latest!</a>
+</div>
+
+
+<h1 class="data-model">BidirectionalRecordType<span class="subdued">Network Flow Object Schema</span></h1>
+
+<form id="nav-version">
+  <select>
+    
+      <option value="1.1.1" >STIX 1.1.1</option>
+    
+      <option value="1.1" selected="selected">STIX 1.1</option>
+    
+      <option value="1.0.1" >STIX 1.0.1</option>
+    
+      <option value="1.0" >STIX 1.0</option>
+    
+  </select>
+</form>
+
+<p class="data-model-description">Network record formats that capture traffic in both directions. Later, we plan to add Argus as a network flow format type. Argus supports bidirectional flows, and as such, is usually used as an alternative to NetFlow v5 analysis via SiLK (http://www.qosient.com/argus/).</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>YAF_Record<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/NetFlowObj/YAFRecordType">YAFRecordType</a>
+        
+      </td>
+      <td>
+        
+          <p>Represents flow records generated via YAF (Yet Another Flowmeter), a bidirectional network flow meter. See http://www.usenix.org/event/lisa10/tech/full_papers/Inacio.pdf or http://tools.netsa.cert.org/yaf/index.html for more information.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
