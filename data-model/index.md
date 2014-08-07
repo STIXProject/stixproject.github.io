@@ -8,7 +8,7 @@ title: Data Model Documentation
 
 ## Package
 <section class="data-model-section">
-A STIX Package construct serves as a container for grouping sets of related content. That content might be related because it's part of the same report or it might be as simple as it's being published at the same time. The package gives that context a wrapper and allows for metadata to be described about the content as a group.
+A [STIX Package](/data-model/{{site.current_version}}/stix/STIXType) construct serves as a container for grouping sets of related content. That content might be related because it's part of the same report or it might be as simple as it's being published at the same time. The package gives that context a wrapper and allows for metadata to be described about the content as a group.
 
 One of the changes in STIX 1.1 was to allow packages to be nested in other packages, packages to have relationships to other packages, and content to be referenced back to packages. While a simple change, this allows for more expressive use cases: communicating a set of reports in a single package, communicating a package manifest with content that points to the manifest, and even a parent report with multiple "chapters".
 </section>
@@ -60,7 +60,7 @@ A STIX [Indicator](/data-model/{{site.current_version}}/indicator/IndicatorType)
 <section class="data-model-section">
 <img src="/images/Threat Actor.png" class="component-img" alt="Threat Actor Icon" />
 
-A STIX Threat Actor conveys information that characterizes or identifies (or both) an adversary. The characterization consists of information like the sophistication of the threat actor, its motivations and desired effects, and historically observed behavior. In the STIX relationship model, threat actors also include information such as observed TTPs, historic (or current) campaigns, and other threat actors that appear associated with this actor.
+A STIX [Threat Actor](/data-model/{{site.current_version}}/ta/ThreatActorType) conveys information that characterizes or identifies (or both) an adversary. The characterization consists of information like the sophistication of the threat actor, its motivations and desired effects, and historically observed behavior. In the STIX relationship model, threat actors also include information such as observed TTPs, historic (or current) campaigns, and other threat actors that appear associated with this actor.
 </section>
 
 
@@ -68,5 +68,5 @@ A STIX Threat Actor conveys information that characterizes or identifies (or bot
 <section class="data-model-section">
 <img src="/images/TTP.png" class="component-img" alt="TTP Icon" />
 
-TTP is a military term that means "tactics, techniques, and procedures". In STIX it is used to represent adversarial behavior, such as what victims they target, what attack patterns and malware they use, and what resources (infrastructure, tools, personas) they leverage. Because it describes adversary behavior, which is a big part of STIX, the TTP construct is one of the most commonly used and expressive constructs. In the STIX relationship structure, TTPs are referenced from indicators to describe which TTPs an indicator indicates, from campaigns and threat actors to describe the TTPs that are leveraged in a campaign or by a threat actor, in an incident to describe which TTPs were used in the execution of an attack, and to other TTPs to describe relationships of various sorts among TTPs. TTPs also use the exploit target construct to describe which exploit targets a TTP might exploit.
+[TTP](/data-model/{{site.current_version}}/ttp/TTPType) is a military term that means "tactics, techniques, and procedures". In STIX it is used to represent adversarial behavior, such as what victims they target, what attack patterns and malware they use, and what resources (infrastructure, tools, personas) they leverage. Because it describes adversary behavior, which is a big part of STIX, the TTP construct is one of the most commonly used and expressive constructs. In the STIX relationship structure, TTPs are referenced from indicators to describe which TTPs an indicator indicates, from campaigns and threat actors to describe the TTPs that are leveraged in a campaign or by a threat actor, in an incident to describe which TTPs were used in the execution of an attack, and to other TTPs to describe relationships of various sorts among TTPs. TTPs also use the exploit target construct to describe which exploit targets a TTP might exploit.
 </section>

@@ -5,16 +5,13 @@ require 'stix_schema_spy'
 
 $destination = "data-model"
 
-desc "Clean the data model documentation folder"
-task :clean do
-  FileUtils.rm_rf($destination)
-end
-
 desc "Regenerate the data model documentation"
 task :regenerate do
-  StixSchemaSpy::Schema::VERSIONS.each do |version|
-    StixSchemaSpy::Schema.preload!(version)
 
+  # Preload all versions of all schemas first so our introspection can tell what's available
+  StixSchemaSpy::Schema::VERSIONS.each {|v| StixSchemaSpy::Schema.preload!(v)}
+
+  StixSchemaSpy::Schema::VERSIONS.each do |version|
     # Load the documentation page template
     template = File.read("_layouts/data_model_page.html")
 
