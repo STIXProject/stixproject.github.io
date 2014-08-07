@@ -112,7 +112,7 @@ end
 
 def add_internal_links(doc, version)
   doc
-    .gsub(/\S+Vocab-\d(\.\d){1,2}/) {|match| "<a href='/#{$destination}/stixVocabs/#{match}'>#{match}</a>"}
+    .gsub(/\S+Vocab-\d(\.\d){1,2}/) {|match| "<a href='/#{$destination}/#{version}/stixVocabs/#{match}'>#{match}</a>"}
     .gsub(/ \S+Type /) do |match|
       name = match.strip
       type = find_type(name)
