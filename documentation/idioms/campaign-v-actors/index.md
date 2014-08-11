@@ -5,14 +5,18 @@ constructs:
   - Campaign
   - Threat Actor
   - TTP
-summary:  Confusion reigns when the notion of a "Campaign" is conflated with a given "Actor". Lets describe what we mean by each of those terms.
+summary:  Discussion and examples on when to use the term "Campaign" vs "Actor".
 ---
 
-When a bad guy (or group) decides to join the market for intrusion services and data theft, they can be called a `Threat Actor`.  Once they actually start start stealing information or compromising systems, that activity is called a `Campaign`. Such behavior might fit along the lines of stealing financial information from banking customers or [targeting a particular business sector](../industry-sector). 
+In STIX terminology, an individual or group in the market for intrusion services and data theft is called a `Threat Actor`.  Their activity towards that end - information theft and system compromise is called a `Campaign`. Such behavior might fit along the lines of stealing financial information from banking customers or [targeting a particular business sector](../industry-sector). 
+
+A common situation is that someone will collect data on intrusion attempts, but not know the actor behind them. In this case, the preferred method is to define that activity as a `Campaign` with a placeholder `Threat Actor` identity until additional information comes to light. 
+
+For instance, if domains used in an intrusion are owned and registered by a specific organization, it may be appropriate to say they are somehow involved with `Low Confidence`. Occasionally it is possible to fingerprint an actor by the customizations made in their tools (such as language choice or debug information), which would 
 
 It is tempting to name a given `Campaign` after the malware or apparent group involved, however these methods are not very precise and prone to conflicts in naming between information sources. Imagine a situation where one organization declares that the "Netcat" malware had targeted their network, or the "Poison Ivy" actors were involved in a given intrusion.
 
-Overall, a Campaign is some time-bounded set of activity that leverages intrusion tools and methods against a set of targets, while a Threat Actor is the entity facilitating such behavior.
+Overall, a Campaign is some time-bounded activity that uses intrusion methods against a set of targets, while a Threat Actor is the entity performing such behavior.
 
 ## Data model
 
