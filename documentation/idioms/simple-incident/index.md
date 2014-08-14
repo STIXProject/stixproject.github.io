@@ -6,102 +6,153 @@ constructs:
 summary: "Just the facts, ma'am"
 ---
 
-Among many other things, one of the pieces of information that an incident report can convey is the set of assets that were affected in the course of that incident. The list allows incident responders and management to understand the impact of a particular incident on the IT assets that it affects and, by extension, the business functions that are supported by that IT asset.
 
 ## Scenario
 
-The scenario we'll work with describes an incident in which the HR database server was detected exfiltrating non-public information to an external source. The security operations team has identified an exfiltration channel originating at the HR server but does not know how it was added or the specific piece of malware that is causing it.
+In this example we will cover the basic information needed to capture a computer intrusion incident. Imagine that in early 2012 a company named "Canary Corp" had their network compromised and reported that information as a financial loss in SEC filings. 
+
+The breach was disclosed by "Sample Investigations, LLC" and included substantial details with third-party verification.
 
 ## Data model
 
-<img src="diagram.png" alt="Asset affected in an incident" class="aside-text" />
-
-As you would expect, this idiom can be completely represented using the [Incident](/data-model/{{site.current_version}}/incident/IncidentType) component. The particular focus of this idiom is on the `Affected_Assets` field of that structure, which is used to represent a list of assets that were affected in the course of an attack and related context to assist in determining the impact of those effects on the business.
+TODO rewrite prose
+[Incident](/data-model/{{site.current_version}}/incident/IncidentType) component. The particular focus of this idiom is on the `Affected_Assets` field of that structure, which is used to represent a list of assets that were affected in the course of an attack and related context to assist in determining the impact of those effects on the business.
 
 In this example, the incident will represent a single affected asset: an HR database server for an organization that is self-hosted and on-site that had information exfiltrated from it via unknown means.
 
 The ID, title, and description are all the usual fields used in STIX components to identify, name, and describe the incident. Moving along to the focus of this idiom, the data model also includes a list of assets that were affected by the incident. Each item in the list contains a description of the asset and a description of the security effect that the incident had on that asset (and, by extension, any business functions or information supported by the asset).
 
-#### Description of Asset
+## Explanation of XML
 
-The `Type` field is a controlled vocabulary field that identifies the type of asset that was affected. The default vocabulary is [AssetTypeVocab-1.0](/data-model/{{site.current_version}}/stixVocabs/AssetTypeVocab-1.0), and because in our scenario the affected asset is a database server the field is set to the "Database" value from that vocabulary. In addition to describing the type of the asset that was affected, there's a sub-field (an attribute in the XML) for the count of affected assets that are being described, which in this case is just 1.
-
-The `Description` field is, as you would expect, used to describe the asset that is affected. Note that, per the field definition in the documentation, it should be used to describe the asset -- not the impact to the asset. Similarly, the `Business Function Or Role` field describes the role that the asset plays in the organization. `Ownership Class`, `Management Class`, and `Location Class` all use controlled vocabularies to describe who owns the asset, how it's managed, and whether it's located on-site, off-site, or at a colocation facitilty. Though it isn't used in this idiom, the `Location` field can be used to give an actual address for the asset as well.
-
-In this scenario, the asset is owned and operated by the organization itself and hosts the HR database. So, the fields are filled out to reflect that: the description is set to a human-readable description of the asset itself, business function is set to a human-readable description of what the asset does (hosts the HR database), and ownership, management, and location classes are set to "Internally-Owned", "Internally-Managed", and "Internally-Located" respectively.
-
-#### Description of Security Effect on Asset
-
-The actual security effect of the incident on the asset is contained within the `Nature of Security Effect` field (using [PropertyAffectedType](/data-model/{{site.current_version}}/incident/PropertyAffectedType)). This field is simply a list of security properties that have been affected (`Property Affected`) by the incident (such as confidentiality, integrity, and availability) and how those properties were affected.
-
-Within PropertyAffectedType, the `Property` field is a controlled vocabulary and is used to name the security property that was affected. The default vocabulary, [LossPropertyVocab-1.0](/data-model/{{site.current_version}}/stixVocabs/LossPropertyVocab-1.0), contains the types of properties you would expect: Confidentiality, Integrity, Availability, Accountability, and Non-Repudiation. Because this scenario describes the exfiltration of information, a single `Property Affected` structure is used and its `Property` is set to "Confidentiality".
-
-The `Description of Effect` field in the same `Property Affected` is a simple prose description of how the property was affected. In this scenario, it's set to a short description outlining that data was exfiltrated but that it isn't yet known how. `Non-Public Data Compromised` applies specifically to confidentiality loss and is used to describe whether or not private information was leaked. It is implemented through a controlled vocabulary (default vocabulary: [SecurityCompromiseVocab-1.0](/data-model/{{site.current_version}}/stixVocabs/SecurityCompromiseVocab-1.0)) with an addition sub-field called `Data Encrypted` indicating whether or not the data that was lost was encrypted. These fields are set to "Yes" and "False" respectively because non-public data was lost and it was not encrypted.
+TODO explain why its high confidence and each element
 
 ## XML
 
 {% highlight xml linenos %}
-<stix:Incident id="example:incident-081d344b-9fae-d182-9cc7-d2d103e7c64f" xsi:type='incident:IncidentType' timestamp="2014-02-20T09:00:00.000000Z">
-    <incident:Title>Exfiltration from hr-data1.example.com</incident:Title>
-    <incident:Affected_Assets>
-        <incident:Affected_Asset>
-            <incident:Type count_affected="1">Database</incident:Type>
-            <incident:Description>Database server at hr-data1.example.com</incident:Description>
-            <incident:Business_Function_Or_Role>Hosts the database for example.com</incident:Business_Function_Or_Role>
-            <incident:Ownership_Class xsi:type="stixVocabs:OwnershipClassVocab-1.0">Internally-Owned</incident:Ownership_Class>
-            <incident:Management_Class xsi:type="stixVocabs:ManagementClassVocab-1.0">Internally-Managed</incident:Management_Class>
-            <incident:Location_Class xsi:type="stixVocabs:LocationClassVocab-1.0">Internally-Located</incident:Location_Class>
-            <incident:Nature_Of_Security_Effect>
-                <incident:Property_Affected>
-                    <incident:Property xsi:type="stixVocabs:LossPropertyVocab-1.0">Confidentiality</incident:Property>
-                        <incident:Description_Of_Effect>Data was exfiltrated, has not been determined which data or how.</incident:Description_Of_Effect>
-                        <incident:Non_Public_Data_Compromised data_encrypted="false">Yes</incident:Non_Public_Data_Compromised>
-                </incident:Property_Affected>
-            </incident:Nature_Of_Security_Effect>
-        </incident:Affected_Asset>
-    </incident:Affected_Assets>
-</stix:Incident>
+<stix:STIX_Package 
+	xmlns:cyboxCommon="http://cybox.mitre.org/common-2"
+	xmlns:example="http://example.com"
+	xmlns:incident="http://stix.mitre.org/Incident-1"
+	xmlns:stixCommon="http://stix.mitre.org/common-1"
+	xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1"
+	xmlns:stix="http://stix.mitre.org/stix-1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd
+	http://stix.mitre.org/Incident-1 http://stix.mitre.org/XMLSchema/incident/1.1.1/incident.xsd
+	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd
+	http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
+	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd" id="example:Package-3e82904d-e830-4fd6-806d-e4406c31b263" version="1.1.1" timestamp="2014-08-14T20:15:57.793887+00:00">
+    <stix:STIX_Header>
+        <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Incident</stix:Package_Intent>
+        <stix:Description>Sample breach report</stix:Description>
+        <stix:Information_Source>
+            <stixCommon:Description>The person who reported it</stixCommon:Description>
+            <stixCommon:Identity id="example:Identity-74b42822-1d2d-4996-8c66-1835ed7666a6">
+                <stixCommon:Name>Sample Investigations, LLC</stixCommon:Name>
+            </stixCommon:Identity>
+            <stixCommon:Time>
+                <cyboxCommon:Produced_Time>2014-03-11T00:00:00</cyboxCommon:Produced_Time>
+            </stixCommon:Time>
+        </stix:Information_Source>
+    </stix:STIX_Header>
+    <stix:Incidents>
+        <stix:Incident id="example:incident-15e6855a-243b-4a7f-88c3-8b199f4338bc" timestamp="2014-08-14T20:15:57.799710+00:00" xsi:type='incident:IncidentType' version="1.1.1">
+            <incident:Title>Breach of Canary Corp</incident:Title>
+            <incident:Time>
+                <incident:Incident_Discovery precision="second">2013-01-13T00:00:00</incident:Incident_Discovery>
+            </incident:Time>
+            <incident:Description>Intrusion into enterprise network</incident:Description>
+            <incident:Victim id="example:Identity-61b06876-03d6-4fa3-8fb6-5ece3551dfe7">
+                <stixCommon:Name>Canary Corp</stixCommon:Name>
+            </incident:Victim>
+            <incident:Impact_Assessment>
+                <incident:Effects>
+                    <incident:Effect xsi:type="stixVocabs:IncidentEffectVocab-1.0">Financial Loss</incident:Effect>
+                </incident:Effects>
+            </incident:Impact_Assessment>
+            <incident:Confidence timestamp="2014-08-14T20:15:57.799734+00:00">
+                <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">High</stixCommon:Value>
+            </incident:Confidence>
+        </stix:Incident>
+    </stix:Incidents>
+</stix:STIX_Package>
+
 {% endhighlight %}
 
-[Full XML](incident-with-affected-asset.xml)
+[Full XML](sample.xml)
 
 ## Python
 
 {% highlight python linenos %}
-from stix.core import STIXPackage
-from stix.incident import (Incident, RelatedObservables, AffectedAsset, PropertyAffected)
-from stix.common.related import (RelatedObservable)
-from cybox.core import Observable
-from cybox.common import Hash
-from cybox.objects.file_object import File
+#!/usr/bin/env python
 
-affected_asset = AffectedAsset()
-affected_asset.description = "Database server at hr-data1.example.com"
-affected_asset.type_ = "Database"
-affected_asset.type_.count_affected = 1
-affected_asset.business_function_or_role = "Hosts the database for example.com"
-affected_asset.ownership_class = "Internally-Owned"
-affected_asset.management_class = "Internally-Managed"
-affected_asset.location_class = "Internally-Located"
-    
-property_affected = PropertyAffected()
-property_affected.property_ = "Confidentiality"
-property_affected.description_of_effect = "Data was exfiltrated, has not been determined which data or how."
-property_affected.non_public_data_compromised = "Yes"
-property_affected.non_public_data_compromised.data_encrypted = False
-    
-affected_asset.nature_of_security_effect = property_affected
-incident = Incident(title="Exfiltration from hr-data1.example.com")
-incident.affected_assets = affected_asset
-    
-print incident.to_xml()
+from stix.core import STIXPackage, STIXHeader
+from datetime import datetime
+from cybox.common import Time
+
+from stix.incident import Incident,ImpactAssessment, AffectedAsset
+from stix.incident import Time as incidentTime # different type than common:Time
+
+from stix.common import InformationSource
+from stix.common import Confidence
+from stix.common import Identity
+
+from stix.data_marking import Marking, MarkingSpecification
+from stix.extensions.marking.simple_marking import SimpleMarkingStructure
+
+def build_stix( ):
+    # setup stix document
+    stix_package = STIXPackage()
+    stix_header = STIXHeader()
+
+    stix_header.description = "Sample breach report" 
+    stix_header.add_package_intent ("Incident")
+
+    # stamp with creator
+    stix_header.information_source = InformationSource()
+    stix_header.information_source.description = "The person who reported it"
+
+    stix_header.information_source.time = Time()
+    stix_header.information_source.time.produced_time = datetime.strptime("2014-03-11","%Y-%m-%d") # when they submitted it
+
+    stix_header.information_source.identity = Identity()
+    stix_header.information_source.identity.name = "Sample Investigations, LLC"
+
+    stix_package.stix_header = stix_header
+
+    # add incident and confidence
+    breach = Incident()
+    breach.description = "Intrusion into enterprise network"
+    breach.confidence = "High"
+
+    # incident time is a complex object with support for a bunch of different "when stuff happened" items
+    breach.time = incidentTime()
+    breach.title = "Breach of Canary Corp"
+    breach.time.incident_discovery = datetime.strptime("2013-01-13", "%Y-%m-%d") # when they submitted it
+
+    # add the impact
+    impact = ImpactAssessment()
+    impact.add_effect("Financial Loss")
+    breach.impact_assessment = impact
+
+    # add the victim
+    breach.add_victim ("Canary Corp")
+
+    stix_package.add_incident(breach)
+
+    return stix_package
+
+if __name__ == '__main__':
+    # emit STIX
+    pkg = build_stix()
+    print pkg.to_xml() 
 {% endhighlight %}
 
-[Full Python](incident-with-affected-asset.py)
+[Full Python](sample.py)
 
 ## Further Reading
 
 See the full documentation for the relevant types for further information that may be provided:
 
 * [Incident](/data-model/{{site.current_version}}/incident/IncidentType)
-* [AffectedAssetType](/data-model/{{site.current_version}}/incident/AffectedAssetType)
