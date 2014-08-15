@@ -15,16 +15,12 @@ The breach was disclosed by "Sample Investigations, LLC" and included substantia
 
 ## Data model
 
-TODO rewrite prose
-[Incident](/data-model/{{site.current_version}}/incident/IncidentType) component. The particular focus of this idiom is on the `Affected_Assets` field of that structure, which is used to represent a list of assets that were affected in the course of an attack and related context to assist in determining the impact of those effects on the business.
+We can describe this historical breach using an [Incident](/data-model/{{site.current_version}}/incident/IncidentType).
 
-In this example, the incident will represent a single affected asset: an HR database server for an organization that is self-hosted and on-site that had information exfiltrated from it via unknown means.
+The bare minimum to describe an Incident is **who** was affected, **what** type of damage was sustained, and **when** it was detected (and later reported). The organization affected is listed as the `Victim`, while the person who reported it is captured under `Information Source`. The time when they disclosed the breach (either publicly or not) is captured under `Produced Time`.  We use `Impact` to show the financial loss, and an Incident `timestamp` to pinpoint when the breach happened. 
 
-The ID, title, and description are all the usual fields used in STIX components to identify, name, and describe the incident. Moving along to the focus of this idiom, the data model also includes a list of assets that were affected by the incident. Each item in the list contains a description of the asset and a description of the security effect that the incident had on that asset (and, by extension, any business functions or information supported by the asset).
+Since the investigators were able to thoroughly validate the incident, it's safe to use a `High` Confidence rating. If the incident were unsubstantiated or in early stages of investigation, this value would instead be `Low`. 
 
-## Explanation of XML
-
-TODO explain why its high confidence and each element
 
 ## XML
 
