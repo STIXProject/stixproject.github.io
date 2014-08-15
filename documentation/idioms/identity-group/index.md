@@ -22,7 +22,7 @@ The STIX default extension for identity is [OASIS CIQ](https://www.oasis-open.or
 
 ## XML
 
-{% highlight xml linenos %}
+{% highlight xml  %}
 <stix:Threat_Actors>
     <stix:Threat_Actor xsi:type="ta:ThreatActorType" id="example:threatactor-d98aaf55-ce5b-4c2e-aa05-2e57a07e45cf" timestamp="2014-02-20T09:00:00.000000Z">
         <ta:Title>Disco Team Threat Actor Group</ta:Title>
@@ -62,7 +62,7 @@ The STIX default extension for identity is [OASIS CIQ](https://www.oasis-open.or
 
 ## Python
 
-{% highlight python linenos %}
+{% highlight python  %}
 from stix.threat_actor import ThreatActor
 from stix.extensions.identity.ciq_identity_3_0 import (CIQIdentity3_0Instance, PartyName, STIXCIQIdentity3_0, 
                                       Address, Country, Language, AdministrativeArea, OrganisationName)

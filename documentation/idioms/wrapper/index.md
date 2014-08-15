@@ -41,7 +41,7 @@ One other note about this example is the XPath used in the data markings. Becaus
 
 ## XML
 
-{% highlight xml linenos %}
+{% highlight xml  %}
 <stix:STIX_Header>
     <stix:Title>Example Plain Wrapper Around Multiple Reports</stix:Title>
     <stix:Information_Source>
@@ -86,7 +86,7 @@ One other note about this example is the XPath used in the data markings. Becaus
 
 ## Python
 
-{% highlight python linenos %}
+{% highlight python  %}
 from stix.core import STIXPackage, STIXHeader
 from stix.common import InformationSource, Identity
 from stix.data_marking import Marking, MarkingSpecification

@@ -40,7 +40,7 @@ The `Description of Effect` field in the same `Property Affected` is a simple pr
 
 ## XML
 
-{% highlight xml linenos %}
+{% highlight xml  %}
 <stix:Incident id="example:incident-081d344b-9fae-d182-9cc7-d2d103e7c64f" xsi:type='incident:IncidentType' timestamp="2014-02-20T09:00:00.000000Z">
     <incident:Title>Exfiltration from hr-data1.example.com</incident:Title>
     <incident:Affected_Assets>
@@ -67,7 +67,7 @@ The `Description of Effect` field in the same `Property Affected` is a simple pr
 
 ## Python
 
-{% highlight python linenos %}
+{% highlight python  %}
 from stix.core import STIXPackage
 from stix.incident import (Incident, RelatedObservables, AffectedAsset, PropertyAffected)
 from stix.common.related import (RelatedObservable)

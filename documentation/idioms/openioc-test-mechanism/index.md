@@ -25,7 +25,7 @@ Because OpenIOC is also an XML language, we're able to use XML schema features t
 
 ## XML
 
-{% highlight xml linenos %}
+{% highlight xml  %}
 <stix:Indicator id="example:indicator-b92194e0-da61-4a32-9034-1148123b0f7a" timestamp="2014-06-20T20:53:08.440812+00:00" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
     <indicator:Title>Zeus</indicator:Title>
     <indicator:Description>Finds Zeus variants, twexts, sdra64, ntos</indicator:Description>
@@ -67,7 +67,7 @@ Notice in both the production code and the consumption code that the OpenIOC its
 </ul>
 <div class="tab-content">
   <div class="tab-pane active" id="produce">
-{% highlight python linenos %}
+{% highlight python  %}
 ioc = etree.parse('6d2a1b03-b216-4cd8-9a9e-8827af6ebf93.ioc.xml')
 
 indicator = Indicator(title="Zeus", description="Finds Zeus variants, twexts, sdra64, ntos")
@@ -84,7 +84,7 @@ indicator.test_mechanisms = [tm]
 {% endhighlight %}
   </div>
   <div class="tab-pane" id="consume">
-{% highlight python linenos %}
+{% highlight python  %}
 stix_package = STIXPackage.from_xml('openioc-test-mechanism.xml')
 
 ttps = {}

@@ -37,7 +37,7 @@ There are a few other details to note as well:
 
 ## XML
 
-{% highlight xml linenos %}
+{% highlight xml  %}
 <stix:Indicator id="example:indicator-567b201c-4fd5-4bde-a5db-42abc340807a" timestamp="2014-06-20T15:16:56.987616+00:00" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
     <indicator:Title>Snort Signature for Heartbleed</indicator:Title>
     <indicator:Indicated_TTP>
@@ -78,7 +78,7 @@ There are a few other details to note as well:
 </ul>
 <div class="tab-content">
   <div class="tab-pane active" id="produce">
-{% highlight python linenos %}
+{% highlight python  %}
 indicator = Indicator(title = "Snort Signature for Heartbleed")
 indicator.confidence = Confidence("High")
 
@@ -93,7 +93,7 @@ indicator.test_mechanisms = [tm]
 {% endhighlight %}
   </div>
   <div class="tab-pane" id="consume">
-{% highlight python linenos %}
+{% highlight python  %}
 stix_package = STIXPackage.from_xml('snort-test-mechanism.xml')
 
 ttps = {}
