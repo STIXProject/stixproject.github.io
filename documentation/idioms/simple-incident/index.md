@@ -24,7 +24,7 @@ Since the investigators were able to thoroughly validate the incident, it's safe
 
 ## XML
 
-{% highlight xml linenos %}
+{% highlight xml  %}
 <stix:STIX_Package 
 	xmlns:cyboxCommon="http://cybox.mitre.org/common-2"
 	xmlns:example="http://example.com"
@@ -80,7 +80,7 @@ Since the investigators were able to thoroughly validate the incident, it's safe
 
 ## Python
 
-{% highlight python linenos %}
+{% highlight python %}
 #!/usr/bin/env python
 
 from stix.core import STIXPackage, STIXHeader
