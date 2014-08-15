@@ -232,13 +232,8 @@ a.disabled {
     background-color: #01D3B1;
 }
 
-h1.data-model {
-  float: left;
-}
-
-form#nav-version {
-  float: right;
-  margin-top: 20px;
+div#nav-area {
+  text-align: center
 }
 
 form#nav-version select {

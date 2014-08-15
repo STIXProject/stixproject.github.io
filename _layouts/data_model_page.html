@@ -10,15 +10,33 @@ this_version: {{type.this_version}}
 </div>
 {% endif %}
 
-<h1 class="data-model">{{ type.name }}<span class="subdued">{{ type.schema.title }} Schema</span></h1>
+<div class="row">
+  <div class="col-md-10">
+    <h1>{{ type.name }}<span class="subdued">{{ type.schema.title }} Schema</span></h1>
+  </div>
 
-<form id="nav-version">
-  <select>
-    {% for version in type.versions %}
-      <option value="{{version}}" {% if version == type.this_version %}selected="selected"{% endif %}>STIX {{version}}</option>
-    {% endfor %}
-  </select>
-</form>
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          {% for version in type.versions %}
+            <option value="{{version}}" {% if version == type.this_version %}selected="selected"{% endif %}>STIX {{version}}</option>
+          {% endfor %}
+        </select>
+      </form>
+    </p>
+
+    {% if type.this_version == type.latest_version and type.api_link %}
+    <p>
+      <a href="{{ type.api_link }}">
+        <img src="/images/python-logo.png" alt="Python" /><br />
+        API support
+      </a>
+    </p>
+    {% endif %}
+  </div>
+
+</div>
 
 {% for doc in type.documentation %}<p class="data-model-description">{{doc}}</p>{% endfor %}
 
