@@ -17,6 +17,7 @@ def main():
     indicator.add_indicator_type("IP Watchlist")
     
     addr = Address(address_value="10.0.0.0", category=Address.CAT_IPV4)
+    addr.condition = "Equals"
     indicator.add_observable(addr)
     indicator.add_indicated_ttp(TTP(idref=ttp.id_))
     
