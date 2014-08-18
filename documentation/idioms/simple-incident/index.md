@@ -17,14 +17,17 @@ The breach was disclosed by "Sample Investigations, LLC" and included substantia
 
 We can describe this historical breach using an [Incident](/data-model/{{site.current_version}}/incident/IncidentType).
 
-The bare minimum to describe an Incident is **who** was affected, **what** type of damage was sustained, and **when** it was detected (and later reported). The organization affected is listed as the `Victim`, while the person who reported it is captured under `Information Source`. The time when they disclosed the breach (either publicly or not) is captured under `Produced Time`.  We use `Impact` to show the financial loss, and an Incident `timestamp` to pinpoint when the breach happened. 
+The bare minimum to describe an Incident is **who** was affected, **what** type of damage was sustained, and **when** it was detected (and later reported). 
+  We use `Impact` to show that financial loss was sustained.
 
-Since the investigators were able to thoroughly validate the incident, it's safe to use a `High` Confidence rating. If the incident were unsubstantiated or in early stages of investigation, this value would instead be `Low`. 
+The organization affected is listed as the `Victim`, while the person who reported it is captured under `Information Source`. The time when they disclosed the breach is captured under `Incident Discovery Time`. Note that `IncidentTime` is distinct from the builtin `Time` type, and includes additional fields specific to incidents.
+
+Since the investigators were able to thoroughly validate the incident, we use a `High` Confidence rating. If the incident were unsubstantiated or in early stages of investigation, this value would instead be `Low`. 
 
 
 ## XML
 
-{% highlight xml  %}
+{% highlight xml linenos  %}
 <stix:STIX_Package 
 	xmlns:cyboxCommon="http://cybox.mitre.org/common-2"
 	xmlns:example="http://example.com"
@@ -80,7 +83,7 @@ Since the investigators were able to thoroughly validate the incident, it's safe
 
 ## Python
 
-{% highlight python %}
+{% highlight python linenos %}
 #!/usr/bin/env python
 
 from stix.core import STIXPackage, STIXHeader
