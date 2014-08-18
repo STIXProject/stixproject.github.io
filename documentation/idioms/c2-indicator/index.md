@@ -27,7 +27,7 @@ In the diagram above, the Indicator component contains the test: a CybOX [Addres
 
 ## XML
 
-{% highlight xml linenos %}
+{% highlight xml  %}
 <stix:Indicator xsi:type="indicator:IndicatorType" id="example:Indicator-33fe3b22-0201-47cf-85d0-97c02164528d" timestamp="2014-02-20T09:00:00.000000Z">
     <indicator:Title>IP Address for known C2 channel</indicator:Title>
     <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">IP Watchlist</indicator:Type>
@@ -52,7 +52,7 @@ In the diagram above, the Indicator component contains the test: a CybOX [Addres
 
 ## Python
 
-{% highlight python linenos %}
+{% highlight python  %}
 from stix.core import STIXPackage
 from stix.indicator import Indicator
 from stix.ttp import TTP

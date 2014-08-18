@@ -22,7 +22,7 @@ Because this indicator doesn't include any context (see scenario above), the ind
 
 ## XML
 
-{% highlight xml linenos %}
+{% highlight xml  %}
 <stix:Indicator id="example:Indicator-d81f86b9-975b-bc0b-775e-810c5ad45a4f" xsi:type='indicator:IndicatorType'>
     <indicator:Title>Malicious site hosting downloader</indicator:Title>
     <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.0">URL Watchlist</indicator:Type>
@@ -40,7 +40,7 @@ Because this indicator doesn't include any context (see scenario above), the ind
 
 ## Python
 
-{% highlight python linenos %}
+{% highlight python  %}
 from stix.core import STIXPackage
 from stix.indicator import Indicator
 from cybox.objects.uri_object import URI

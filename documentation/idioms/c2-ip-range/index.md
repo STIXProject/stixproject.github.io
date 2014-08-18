@@ -29,7 +29,7 @@ The actual IP addresses are represented in CybOX within the `Observable Characte
 
 ## XML
 
-{% highlight xml linenos %}
+{% highlight xml  %}
 <stix:Observables cybox_major_version="1" cybox_minor_version="1">
     <cybox:Observable id="example:observable-c8c32b6e-2ea8-51c4-6446-7f5218072f27">
         <cybox:Object id="example:object-d7fcce87-0e98-4537-81bf-1e7ca9ad3734">
@@ -74,7 +74,7 @@ The actual IP addresses are represented in CybOX within the `Observable Characte
 
 ## Python
 
-{% highlight python linenos %}
+{% highlight python  %}
 from stix.common.vocabs import VocabString
 from stix.core import STIXPackage
 from stix.indicator import Indicator

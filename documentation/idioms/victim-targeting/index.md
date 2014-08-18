@@ -25,7 +25,7 @@ The campaign is represented with just a title and a related TTP with a relations
 
 ## XML
 
-{% highlight xml linenos %}
+{% highlight xml  %}
 <stix:TTPs>
     <stix:TTP xsi:type="ttp:TTPType" id="example:ttp-4fde045a-b25f-f035-e8d0-29c9d5130cd9" timestamp="2014-02-20T09:00:00.000000Z">
         <ttp:Title>Victim Targeting: Customer PII and Financial Data</ttp:Title>
@@ -52,7 +52,7 @@ The campaign is represented with just a title and a related TTP with a relations
 
 ## Python
 
-{% highlight python linenos %}
+{% highlight python  %}
 from stix.campaign import Campaign
 from stix.common.related import RelatedTTP
 from stix.core import STIXPackage

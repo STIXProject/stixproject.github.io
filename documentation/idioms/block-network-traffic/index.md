@@ -34,7 +34,7 @@ The `Parameter Observables` field is a set of CybOX [Observables](/data-model/{{
 
 ## XML
 
-{% highlight xml linenos %}
+{% highlight xml  %}
 <stix:Course_Of_Action id="example:coa-55f57cc7-ddd5-467b-a3a2-6fd602549d9e" xsi:type="coa:CourseOfActionType" version="1.1">
     <coa:Title>Block traffic to PIVY C2 Server (10.10.10.10)</coa:Title>
     <coa:Stage xsi:type="stixVocabs:COAStageVocab-1.0">Response</coa:Stage>
@@ -71,7 +71,7 @@ The `Parameter Observables` field is a set of CybOX [Observables](/data-model/{{
 
 ## Python
 
-{% highlight python linenos %}
+{% highlight python  %}
 from stix.coa import CourseOfAction, Objective
 from stix.common import Confidence
 from stix.core import STIXPackage

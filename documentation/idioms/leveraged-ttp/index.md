@@ -37,7 +37,7 @@ Taken together, the three constructs represent the threat actor and the known ma
 
 ## XML
 
-{% highlight xml linenos %}
+{% highlight xml  %}
     <stix:TTPs>
         <stix:TTP id="example:ttp-8ac90ff3-ecf8-4835-95b8-6aea6a623df5" xsi:type='ttp:TTPType' version="1.1">
             <ttp:Title>Phishing</ttp:Title>
@@ -85,7 +85,7 @@ Taken together, the three constructs represent the threat actor and the known ma
 
 ## Python
 
-{% highlight python linenos %}
+{% highlight python  %}
 from stix.core import STIXPackage
 from stix.threat_actor import ThreatActor
 from stix.indicator import Indicator

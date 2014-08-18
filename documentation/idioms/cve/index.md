@@ -26,7 +26,7 @@ Representing the CVE ID is as easy as filling out the `CVE ID` field with a prop
 
 ## XML
 
-{% highlight xml linenos %}
+{% highlight xml  %}
 <stixCommon:Exploit_Target xsi:type="et:ExploitTargetType" id="example:et-48a276f7-a8d7-bba2-3575-e8a63fcd488" timestamp="2014-02-20T09:00:00.000000Z">
     <et:Title>Javascript vulnerability in MSIE 6-11</et:Title>
     <et:Vulnerability>
@@ -39,7 +39,7 @@ Representing the CVE ID is as easy as filling out the `CVE ID` field with a prop
 
 ## Python
 
-{% highlight python linenos %}
+{% highlight python  %}
 from stix.core import STIXPackage
 from stix.exploit_target import ExploitTarget, Vulnerability
 

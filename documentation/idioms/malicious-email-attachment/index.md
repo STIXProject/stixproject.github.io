@@ -47,7 +47,7 @@ The indicated TTP is the same as the previous indicators, while confidence is re
 
 ## XML
 
-{% highlight xml linenos %}
+{% highlight xml  %}
 <stix:Indicators>
     <stix:Indicator id="example:indicator-5cc558cc-b8fc-11e3-9a15-0800271e87d2" timestamp="2014-03-31T13:46:17.895653" xsi:type='indicator:IndicatorType'>
         <indicator:Title>Malicious E-mail</indicator:Title>
@@ -129,7 +129,7 @@ The indicated TTP is the same as the previous indicators, while confidence is re
 [Full XML](malicious-email-indicator-with-attachment.xml)
 
 ## Python
-{% highlight python linenos %}
+{% highlight python  %}
 from stix.core import STIXPackage
 from stix.common import Confidence
 from stix.indicator import Indicator, CompositeIndicatorExpression

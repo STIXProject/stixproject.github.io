@@ -30,7 +30,7 @@ Within CIQ, the specific field used is `@IndustryType` within `OrganisationInfo`
 
 ## XML
 
-{% highlight xml linenos %}
+{% highlight xml  %}
 <stix:TTPs>
     <stix:TTP timestamp="2014-02-20T09:00:00.000000Z" id="example:ttp-030d3edf-da7c-4d1f-a0b9-6c38a8af73db" xsi:type="ttp:TTPType">
         <ttp:Title>Victim Targeting: Electricity Sector and Industrial Control System Sector</ttp:Title>
@@ -49,7 +49,7 @@ Within CIQ, the specific field used is `@IndustryType` within `OrganisationInfo`
 
 ## Python
 
-{% highlight python linenos %}
+{% highlight python  %}
 from stix.ttp import TTP, Behavior, VictimTargeting
 from stix.extensions.identity.ciq_identity_3_0 import (CIQIdentity3_0Instance, STIXCIQIdentity3_0, OrganisationInfo)
 

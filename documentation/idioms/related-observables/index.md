@@ -35,7 +35,7 @@ Given the constrained scenario, the incident construct is fairly limited: it con
 
 ## XML
 
-{% highlight xml linenos %}
+{% highlight xml  %}
 <stix:Observables cybox_major_version="2" cybox_minor_version="1">
     <cybox:Observable id="example:observable-8f43e891-7de2-a17a-2853-7979a1178c95">
         <cybox:Object id="example:object-3d77c3fe-9e96-4967-bff8-1184dd82ad4a">
@@ -87,7 +87,7 @@ Given the constrained scenario, the incident construct is fairly limited: it con
 
 ## Python
 
-{% highlight python linenos %}
+{% highlight python  %}
 from stix.core import STIXPackage
 from stix.incident import (Incident, RelatedObservables)
 from stix.common.related import (RelatedObservable)
