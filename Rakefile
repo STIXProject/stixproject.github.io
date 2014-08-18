@@ -5,7 +5,6 @@ require 'stix_schema_spy'
 
 $destination = "data-model"
 
-
 $stix_prefixes = ['campaign', 'coa', 'et', 'genericStructuredCOA', 'genericTM',
                   'incident', 'indicator', 'marking', 'simpleMarking',
                   'snortTM', 'stix', 'stix-capec', 'stix-ciqaddress',
@@ -206,8 +205,17 @@ $stix_links = {
     "yaraTM:YaraTestMechanismType" => nil,
 }
 
+$practices = {
+    "indicator:IndicatorType" => "sp_indicator.md",
+    "marking:MarkingSpecificationType" => "sp_handling.md",
+    "stix:STIXHeaderType" => "sp_package.md",
+    "stix:STIXType" => "sp_package.md",
+}
+
 desc "Regenerate the data model documentation"
 task :regenerate do
+  # Make Liquid aware of the Jekyll includes directory
+  #Liquid::Template.file_system = Liquid::LocalFileSystem.new("_includes")
 
   # Preload all versions of all schemas first so our introspection can tell what's available
   StixSchemaSpy::Schema::VERSIONS.each {|v| StixSchemaSpy::Schema.preload!(v)}
@@ -252,7 +260,8 @@ def write_page(type, template, version)
       'fields?' => type.fields.length > 0,
       'fields' => fields(type, version),
       'vocab_items' => vocab_items(type),
-      'api_link' => python_link(type, version)
+      'api_link' => python_link(type, version),
+      'suggested_practices' => suggested_practices(type)
     }
   )
 
@@ -275,6 +284,10 @@ def python_link(type, version)
   else
     nil
   end
+end
+
+def suggested_practices(type)
+  $practices["#{type.schema.prefix}:#{type.name}"]
 end
 
 def fields(type, version)

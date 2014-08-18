@@ -39,7 +39,19 @@ this_version: {{type.this_version}}
 </div>
 
 {% for doc in type.documentation %}<p class="data-model-description">{{doc}}</p>{% endfor %}
+{% if type.this_version == type.latest_version and type.suggested_practices %}
 
+<hr />
+<h2>Suggested Practices</h2>
+{% comment %}
+  This is a huge hack to pass the correct syntax through the first render step
+  (using the Rakefile) to get to a point where Jekyll renders the markdown
+  correctly.
+{% endcomment %}
+{{ "{% capture practices " }}%}{{ "{% include " }}{{ type.suggested_practices }} %}{{ "{% endcapture " }}%}
+{{ "{{ practices | markdownify " }} }}
+
+{% endif %}
 <hr />
 
 {% if type.vocab? %}

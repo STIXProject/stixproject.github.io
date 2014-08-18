@@ -122,31 +122,21 @@ If you do this to add values that you think might be useful for other STIX users
 
 To remove ambiguity regarding the timezone, all times should include an explicit timezone whenever possible.
 
-# Specific Elements
 
-## STIX Header
-You should always include a STIX header whenever possible to communicate the source, intent, and other metadata about the package. In particular, it's recommended to fill out:
-* Title
-* Package_Intent
-* Information_Source
+-----
+
+
+## STIX Package
+{% include sp_package.md %}
 
 ## Indicator
-If possible, an indicator should include the following fields:
+<img src="/images/Indicator.png" class="component-img-right" alt="Indicator Icon" />
 
-* Either Observable, Observable Composition, or Indicator Composition to represent the detectable pattern
-* Title
-* Type
-* Valid_Time_Position
-* Indicated_TTP, even if pointing to a very simple TTP with just a title
-* A confidence assertion
-
-### Creating pattern observables for indicators
-When creating observables for use as patterns within indicators, you should always set the condition attribute on all possible fields to an appropriate value, even if that value is equals. Leaving off the condition attribute implies that the observable is an instance rather than a pattern.
+{% include sp_indicator.md %}
 
 ## Handling
+<img src="/images/Data Marking.png" class="component-img-right" alt="Data Marking Icon" />
 
-### Controlled Structure XPaths
+{% include sp_handling.md %}
 
-The XPath specified in a data marking controlled structure field must select all fields (elements and attributes) that the marking will be applied to. It is not sufficient to select only the root element using the `/` character. Instead, you should use the `node()` function to select relevant nodes. For example, to select the entire document you should use `//node()` while to select a parent construct (Indicator, for example), you could use `ancestor-or-self::stix:Indicator//node()`.
 
-As noted in the annotations, prefixes are valid if they are declared in scope of the Controlled_Structure element.
