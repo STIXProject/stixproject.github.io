@@ -40,28 +40,28 @@ The `Description of Effect` field in the same `Property Affected` is a simple pr
 
 ## XML
 
-{% highlight xml linenos %}
-<stix:Incident id="example:incident-081d344b-9fae-d182-9cc7-d2d103e7c64f" xsi:type='incident:IncidentType' timestamp="2014-02-20T09:00:00.000000Z">
-    <incident:Title>Exfiltration from hr-data1.example.com</incident:Title>
-    <incident:Affected_Assets>
-        <incident:Affected_Asset>
-            <incident:Type count_affected="1">Database</incident:Type>
-            <incident:Description>Database server at hr-data1.example.com</incident:Description>
-            <incident:Business_Function_Or_Role>Hosts the database for example.com</incident:Business_Function_Or_Role>
-            <incident:Ownership_Class xsi:type="stixVocabs:OwnershipClassVocab-1.0">Internally-Owned</incident:Ownership_Class>
-            <incident:Management_Class xsi:type="stixVocabs:ManagementClassVocab-1.0">Internally-Managed</incident:Management_Class>
-            <incident:Location_Class xsi:type="stixVocabs:LocationClassVocab-1.0">Internally-Located</incident:Location_Class>
-            <incident:Nature_Of_Security_Effect>
-                <incident:Property_Affected>
-                    <incident:Property xsi:type="stixVocabs:LossPropertyVocab-1.0">Confidentiality</incident:Property>
-                        <incident:Description_Of_Effect>Data was exfiltrated, has not been determined which data or how.</incident:Description_Of_Effect>
-                        <incident:Non_Public_Data_Compromised data_encrypted="false">Yes</incident:Non_Public_Data_Compromised>
-                </incident:Property_Affected>
-            </incident:Nature_Of_Security_Effect>
-        </incident:Affected_Asset>
-    </incident:Affected_Assets>
+```xml
+<stix:Incident id="example:incident-081d344b-9fae-d182-9cc7-d2d103e7c64f" xsi:type='incident:IncidentType' timestamp="2014-02-20T09:00:00.000000Z"> 
+<incident:Title>Exfiltration from hr-data1.example.com</incident:Title>
+<incident:Affected_Assets>
+<incident:Affected_Asset>
+<incident:Type count_affected="1">Database</incident:Type>
+<incident:Description>Database server at hr-data1.example.com</incident:Description>
+<incident:Business_Function_Or_Role>Hosts the database for example.com</incident:Business_Function_Or_Role>
+<incident:Ownership_Class xsi:type="stixVocabs:OwnershipClassVocab-1.0">Internally-Owned</incident:Ownership_Class>
+<incident:Management_Class xsi:type="stixVocabs:ManagementClassVocab-1.0">Internally-Managed</incident:Management_Class>
+<incident:Location_Class xsi:type="stixVocabs:LocationClassVocab-1.0">Internally-Located</incident:Location_Class>
+<incident:Nature_Of_Security_Effect>
+<incident:Property_Affected>
+<incident:Property xsi:type="stixVocabs:LossPropertyVocab-1.0">Confidentiality</incident:Property>
+<incident:Description_Of_Effect>Data was exfiltrated, has not been determined which data or how.</incident:Description_Of_Effect>
+<incident:Non_Public_Data_Compromised data_encrypted="false">Yes</incident:Non_Public_Data_Compromised>
+</incident:Property_Affected>
+</incident:Nature_Of_Security_Effect>
+</incident:Affected_Asset>
+</incident:Affected_Assets>
 </stix:Incident>
-{% endhighlight %}
+```
 
 [Full XML](incident-with-affected-asset.xml)
 

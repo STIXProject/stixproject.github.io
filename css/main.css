@@ -248,3 +248,26 @@ form#nav-version select {
 p.data-model-description {
   clear: both;
 }
+
+pre { counter-reset: listing; }
+span { counter-increment: listing; }
+pre span.nt:before { 
+content: counter(listing); 
+padding-right: 1em; /* space after numbers */
+  width: 25;
+  text-align: left;
+  opacity: 0.7;
+  display: inline-block;
+  color: #aaa;
+  background: #eee;
+  margin-right: 16px;
+  padding: 2px 10px;
+  font-size: 13px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+}
