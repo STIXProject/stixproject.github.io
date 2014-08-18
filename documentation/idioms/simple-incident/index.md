@@ -20,7 +20,7 @@ We can describe this historical breach using an [Incident](/data-model/{{site.cu
 The bare minimum to describe an Incident is **who** was affected, **what** type of damage was sustained, and **when** it was detected (and later reported). 
   We use `Impact` to show that financial loss was sustained.
 
-The organization affected is listed as the `Victim`, while the person who reported it is captured under `Information Source`. The time when they disclosed the breach is captured under `Incident Discovery Time`. Note that `IncidentTime` is distinct from the builtin `Time` type, and includes additional fields specific to incidents.
+The organization affected is listed as the `Victim`, while the person who reported it is captured under `Information Source`. The time when they initially found the breach is captured under `Incident Discovery Time`. Note that `IncidentTime` is distinct from the builtin `Time` type, and includes additional fields specific to incidents.
 
 Since the investigators were able to thoroughly validate the incident, we use a `High` Confidence rating. If the incident were unsubstantiated or in early stages of investigation, this value would instead be `Low`. 
 
