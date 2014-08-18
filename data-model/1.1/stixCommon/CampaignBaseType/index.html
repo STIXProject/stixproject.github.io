@@ -10,21 +10,32 @@ this_version: 1.1
 </div>
 
 
-<h1 class="data-model">CampaignBaseType<span class="subdued">STIX Common Schema</span></h1>
+<div class="row">
+  <div class="col-md-10">
+    <h1>CampaignBaseType<span class="subdued">STIX Common Schema</span></h1>
+  </div>
 
-<form id="nav-version">
-  <select>
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" selected="selected">STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
     
-      <option value="1.1.1" >STIX 1.1.1</option>
-    
-      <option value="1.1" selected="selected">STIX 1.1</option>
-    
-      <option value="1.0.1" >STIX 1.0.1</option>
-    
-      <option value="1.0" >STIX 1.0</option>
-    
-  </select>
-</form>
+  </div>
+
+</div>
 
 <p class="data-model-description">This type represents the STIX Campaign component. It is extended using the XML Schema Extension feature by the STIX Campaign type itself. Users of this type who wish to express a full campaign using STIX must do so using the xsi:type extension feature. The STIX-defined Campaign type is <a href='/data-model/1.1/campaign/CampaignType'>CampaignType</a> in the http://stix.mitre.org/Campaign-1 namespace. This type is defined in the campaign.xsd file or at the URL http://stix.mitre.org/XMLSchema/campaign/1.1/campaign.xsd.
 Alternatively, uses that require simply specifying an idref as a reference to a campaign defined elsewhere can do so without specifying an xsi:type.</p>

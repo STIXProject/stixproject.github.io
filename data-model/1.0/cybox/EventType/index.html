@@ -10,21 +10,32 @@ this_version: 1.0
 </div>
 
 
-<h1 class="data-model">EventType<span class="subdued">CybOX Core Schema</span></h1>
+<div class="row">
+  <div class="col-md-10">
+    <h1>EventType<span class="subdued">CybOX Core Schema</span></h1>
+  </div>
 
-<form id="nav-version">
-  <select>
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" selected="selected">STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
     
-      <option value="1.1.1" >STIX 1.1.1</option>
-    
-      <option value="1.1" >STIX 1.1</option>
-    
-      <option value="1.0.1" >STIX 1.0.1</option>
-    
-      <option value="1.0" selected="selected">STIX 1.0</option>
-    
-  </select>
-</form>
+  </div>
+
+</div>
 
 <p class="data-model-description">The <a href='/data-model/1.0/cybox/EventType'>EventType</a> is a complex type representing a cyber observable event that is dynamic in nature with specific action(s) taken against specific cyber relevant objects (e.g. a file is deleted, a registry key is created or an HTTP Get Request is received).</p>
 

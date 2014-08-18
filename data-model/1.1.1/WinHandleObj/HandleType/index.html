@@ -6,21 +6,32 @@ this_version: 1.1.1
 
 
 
-<h1 class="data-model">HandleType<span class="subdued">Win Handle Object Schema</span></h1>
+<div class="row">
+  <div class="col-md-10">
+    <h1>HandleType<span class="subdued">Win Handle Object Schema</span></h1>
+  </div>
 
-<form id="nav-version">
-  <select>
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" selected="selected">STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
     
-      <option value="1.1.1" selected="selected">STIX 1.1.1</option>
-    
-      <option value="1.1" >STIX 1.1</option>
-    
-      <option value="1.0.1" >STIX 1.0.1</option>
-    
-      <option value="1.0" >STIX 1.0</option>
-    
-  </select>
-</form>
+  </div>
+
+</div>
 
 <p class="data-model-description">HandleType specifies Windows handle types via a union of the HandleTypeEnum type and the atomic xs:string type. Its base type is the CybOX Core BaseObjectPropertyType, for permitting complex (i.e. regular-expression based) specifications.</p>
 

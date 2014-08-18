@@ -10,21 +10,32 @@ this_version: 1.1
 </div>
 
 
-<h1 class="data-model">PlatformIdentifierType<span class="subdued">CybOX Common Schema</span></h1>
+<div class="row">
+  <div class="col-md-10">
+    <h1>PlatformIdentifierType<span class="subdued">CybOX Common Schema</span></h1>
+  </div>
 
-<form id="nav-version">
-  <select>
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" selected="selected">STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
     
-      <option value="1.1.1" >STIX 1.1.1</option>
-    
-      <option value="1.1" selected="selected">STIX 1.1</option>
-    
-      <option value="1.0.1" >STIX 1.0.1</option>
-    
-      <option value="1.0" >STIX 1.0</option>
-    
-  </select>
-</form>
+  </div>
+
+</div>
 
 <p class="data-model-description">Used to specify a name for a platform using a particular naming system and also allowing a reference pointing to more information about that naming scheme. For example, one could provide a CPE (Common Platform Enumeration) name using the CPE naming format. In this case, the system value could be "CPE" while the system_ref value could be "http://scap.nist.gov/specifications/cpe/".</p>
 

@@ -6,21 +6,32 @@ this_version: 1.1.1
 
 
 
-<h1 class="data-model">IDTEntryListType<span class="subdued">Win Kernel Object Schema</span></h1>
+<div class="row">
+  <div class="col-md-10">
+    <h1>IDTEntryListType<span class="subdued">Win Kernel Object Schema</span></h1>
+  </div>
 
-<form id="nav-version">
-  <select>
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" selected="selected">STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
     
-      <option value="1.1.1" selected="selected">STIX 1.1.1</option>
-    
-      <option value="1.1" >STIX 1.1</option>
-    
-      <option value="1.0.1" >STIX 1.0.1</option>
-    
-      <option value="1.0" >STIX 1.0</option>
-    
-  </select>
-</form>
+  </div>
+
+</div>
 
 <p class="data-model-description">The <a href='/data-model/1.1.1/WinKernelObj/IDTEntryListType'>IDTEntryListType</a> type specifies a listing of the entries in the Interrupt Descriptor Table (IDT). The IDT is specific to the I386 architecture, indicating where the Protected mode Interrupt Service Routines (ISR) are located. See http://wiki.osdev.org/Interrupt_Descriptor_Table.</p>
 

@@ -10,21 +10,32 @@ this_version: 1.0.1
 </div>
 
 
-<h1 class="data-model">NeighborSolicitationType<span class="subdued">Network Packet Object Schema</span></h1>
+<div class="row">
+  <div class="col-md-10">
+    <h1>NeighborSolicitationType<span class="subdued">Network Packet Object Schema</span></h1>
+  </div>
 
-<form id="nav-version">
-  <select>
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" selected="selected">STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
     
-      <option value="1.1.1" >STIX 1.1.1</option>
-    
-      <option value="1.1" >STIX 1.1</option>
-    
-      <option value="1.0.1" selected="selected">STIX 1.0.1</option>
-    
-      <option value="1.0" >STIX 1.0</option>
-    
-  </select>
-</form>
+  </div>
+
+</div>
 
 <p class="data-model-description">Nodes send Neighbor Solicitations to request the link-layer address of a target node while also providing their own link-layer address to the target. Neighbor Solicitations are multicast when the node needs to resolve an address and unicast when the node seeks to verify the reachability of a neighbor. (type=135; code=0)</p>
 

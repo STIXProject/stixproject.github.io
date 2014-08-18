@@ -6,21 +6,39 @@ this_version: 1.1.1
 
 
 
-<h1 class="data-model">SimpleMarkingStructureType<span class="subdued">Simple Marking Instance Schema</span></h1>
+<div class="row">
+  <div class="col-md-10">
+    <h1>SimpleMarkingStructureType<span class="subdued">Simple Marking Instance Schema</span></h1>
+  </div>
 
-<form id="nav-version">
-  <select>
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" selected="selected">STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
     
-      <option value="1.1.1" selected="selected">STIX 1.1.1</option>
+    <p>
+      <a href="http://stix.readthedocs.org/en/latest/api/extensions/marking/simple_marking.html#stix.extensions.marking.simple_marking.SimpleMarkingStructure">
+        <img src="/images/python-logo.png" alt="Python" /><br />
+        API support
+      </a>
+    </p>
     
-      <option value="1.1" >STIX 1.1</option>
-    
-      <option value="1.0.1" >STIX 1.0.1</option>
-    
-      <option value="1.0" >STIX 1.0</option>
-    
-  </select>
-</form>
+  </div>
+
+</div>
 
 <p class="data-model-description">The <a href='/data-model/1.1.1/simpleMarking/SimpleMarkingStructureType'>SimpleMarkingStructureType</a> is a basic implementation of the data marking schema that allows for a string statement to be associated with the data being marked. One example might be the application of a copyright statement to some data set.
 Nodes may be marked by multiple SimpleMarking statements. When this occurs, all SimpleMarking statements applied to that node are considered valid. There is no resolution for SimpleMarking Statements that appear to conflict: the behavior is undefined at the STIX level.</p>

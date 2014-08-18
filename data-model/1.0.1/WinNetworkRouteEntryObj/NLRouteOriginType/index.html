@@ -10,21 +10,32 @@ this_version: 1.0.1
 </div>
 
 
-<h1 class="data-model">NLRouteOriginType<span class="subdued">Win Network Route Entry Object Schema</span></h1>
+<div class="row">
+  <div class="col-md-10">
+    <h1>NLRouteOriginType<span class="subdued">Win Network Route Entry Object Schema</span></h1>
+  </div>
 
-<form id="nav-version">
-  <select>
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" selected="selected">STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
     
-      <option value="1.1.1" >STIX 1.1.1</option>
-    
-      <option value="1.1" >STIX 1.1</option>
-    
-      <option value="1.0.1" selected="selected">STIX 1.0.1</option>
-    
-      <option value="1.0" >STIX 1.0</option>
-    
-  </select>
-</form>
+  </div>
+
+</div>
 
 <p class="data-model-description">NLRouteOriginType specifies Windows-centric network route origination values via a union of the RouteOriginEnum type and the atomic xs:string type. Its base type is the CybOX BaseObjectPropertyType, for permitting complex (i.e. regular-expression based) specifications.</p>
 

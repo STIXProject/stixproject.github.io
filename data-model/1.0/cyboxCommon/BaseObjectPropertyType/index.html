@@ -10,21 +10,32 @@ this_version: 1.0
 </div>
 
 
-<h1 class="data-model">BaseObjectPropertyType<span class="subdued">CybOX Common Schema</span></h1>
+<div class="row">
+  <div class="col-md-10">
+    <h1>BaseObjectPropertyType<span class="subdued">CybOX Common Schema</span></h1>
+  </div>
 
-<form id="nav-version">
-  <select>
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" selected="selected">STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
     
-      <option value="1.1.1" >STIX 1.1.1</option>
-    
-      <option value="1.1" >STIX 1.1</option>
-    
-      <option value="1.0.1" >STIX 1.0.1</option>
-    
-      <option value="1.0" selected="selected">STIX 1.0</option>
-    
-  </select>
-</form>
+  </div>
+
+</div>
 
 <p class="data-model-description">The <a href='/data-model/1.0/cyboxCommon/BaseObjectPropertyType'>BaseObjectPropertyType</a> is a type representing a common typing foundation for the specification of a single Object Property.
 Properties that use this type can express multiple values by providing them using a comma separated list. As such, a comma is a reserved character in all uses of this type. Commas in values should be expressed as &comma; (that is, ampersand-"comma"-semicolon). Such expressions should be converted back to a comma before displaying to users or handing off values to tools for processing. Note that whitespace is preserved and so, when specifying a list of values, do not include a space following a comma in a list unless the first character of the next list item should, in fact, be a space.</p>

@@ -6,21 +6,32 @@ this_version: 1.1.1
 
 
 
-<h1 class="data-model">NetflowV5FlowRecordType<span class="subdued">Network Flow Object Schema</span></h1>
+<div class="row">
+  <div class="col-md-10">
+    <h1>NetflowV5FlowRecordType<span class="subdued">Network Flow Object Schema</span></h1>
+  </div>
 
-<form id="nav-version">
-  <select>
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" selected="selected">STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
     
-      <option value="1.1.1" selected="selected">STIX 1.1.1</option>
-    
-      <option value="1.1" >STIX 1.1</option>
-    
-      <option value="1.0.1" >STIX 1.0.1</option>
-    
-      <option value="1.0" >STIX 1.0</option>
-    
-  </select>
-</form>
+  </div>
+
+</div>
 
 <p class="data-model-description">Defines elements of a Netflow v5 flow record. Recall that the seven elements that define the flow itself (e.g., source IP address) are provided in NetworkFlowLabelType. https://bto.bluecoat.com/packetguide/8.6/info/netflow5-records.htm.</p>
 

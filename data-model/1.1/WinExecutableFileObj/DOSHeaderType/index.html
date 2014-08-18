@@ -10,21 +10,32 @@ this_version: 1.1
 </div>
 
 
-<h1 class="data-model">DOSHeaderType<span class="subdued">Win Executable File Object Schema</span></h1>
+<div class="row">
+  <div class="col-md-10">
+    <h1>DOSHeaderType<span class="subdued">Win Executable File Object Schema</span></h1>
+  </div>
 
-<form id="nav-version">
-  <select>
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" selected="selected">STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
     
-      <option value="1.1.1" >STIX 1.1.1</option>
-    
-      <option value="1.1" selected="selected">STIX 1.1</option>
-    
-      <option value="1.0.1" >STIX 1.0.1</option>
-    
-      <option value="1.0" >STIX 1.0</option>
-    
-  </select>
-</form>
+  </div>
+
+</div>
 
 <p class="data-model-description">The <a href='/data-model/1.1/WinExecutableFileObj/DOSHeaderType'>DOSHeaderType</a> type is a container for the characteristics of the _IMAGE_DOS_HEADER structure, which can be found in Winnt.h and pe.h. See http://www.csn.ul.ie/~caolan/pub/winresdump/winresdump/doc/pefile.html for more information about the winnt.h file, and http://www.tavi.co.uk/phobos/exeformat.html for even more clarification.</p>
 
