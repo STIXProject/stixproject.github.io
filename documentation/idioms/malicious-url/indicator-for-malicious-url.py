@@ -16,6 +16,7 @@ def main():
     url = URI()
     url.value = "http://x4z9arb.cn/4712"
     url.type_ =  URI.TYPE_URL
+    url.value.condition = "Equals"
     
     indicator.add_observable(url)
 
