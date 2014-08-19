@@ -23,6 +23,8 @@ The time when the machine was infected is stored as `Initial Compromise Time`.
 We can store the time they found the infected computer as `Incident Discovery Time`, and when they cleaned and rebuilt it under `Restoration Achieved Time`. 
 Finally, `Incident Reported Time` is when the company disclosed the breach.
 
+Note that timestamps related to a given Incident should be stored under `incident:Time`, as these are directly related to the breach in question. Contrast with `Information_Source ` which represents the metadata for the incident report itself.
+
 
 
 {% highlight xml linenos %}
