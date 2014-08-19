@@ -61,9 +61,27 @@ The other alternative is to reference that TTP, which would be represented elsew
 
 These situations are a judgment call, but when making that judgment you should consider whether the related construct has value individually or only within the context of the parent? If it only has value in the parent, embedding it may be appropriate. Otherwise it's probably better to reference it. If you're unsure, it's generally safer to reference it.
 
-## Versioning and the timestamp attribute
 
-8 major STIX constructs are versioned:
+## Timestamps and Versions
+
+Various STIX elements can include a creation timestamp as part of the `Produced Time` of the `Information Source` element, indicating when it was initially generated. Ideally this value should be not set to later than the STIX content is made available.
+
+Typically an element has its Produced_Time set to the current time when created, as in the following code.
+
+```python
+from stix.core import STIXPackage, STIXHeader
+from stix.indicator import Indicator 
+from datetime import datetime
+from dateutil.tz import tzutc
+from stix.common import InformationSource
+ 
+stix_package = STIXPackage() 
+ind = Indicator()
+ind.producer = InformationSource() 
+ind.set_produced_time (datetime.now(tzutc()))
+```
+
+The following objects include versioning capability:
 
 * [Packages](/data-model/{{site.current_version}}/stix/STIXType) (STIXType, STIX_Package)
 * [Campaigns](/data-model/{{site.current_version}}/campaign/CampaignType)
@@ -75,6 +93,9 @@ These situations are a judgment call, but when making that judgment you should c
 * [TTPs](/data-model/{{site.current_version}}/ttp/TTPType)
 
 It is always suggested that you version these constructs by including a relevant `@id` and `@timestamp` per the [STIX versioning guide](/documentation/concepts/versioning).
+
+The only purpose of a `@timestamp` is to differentiate between two objects with the same ID, the later one is by definition the most current. 
+
 
 ## Creating References
 
