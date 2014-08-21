@@ -15,17 +15,13 @@ Take for instance an intrusion into "Cyber Tech Dynamics", comprising a maliciou
 
 ## Data model
 
-STIX uses a [rich model of time for incidents](/data-model/{{site.current_version}}/incident/TimeType) which allows an organization to define 
+STIX uses a [rich model of time for incidents](/data-model/{{site.current_version}}/incident/TimeType) which allows an organization to represent the times that various events occurred during the course of the incident. 
 
-To represent this (notional) breach, we first describe the breach as having been discovered internally, with the organization listed as the `Victim` and the internal team who reported it is captured under `Information Source`. 
+To represent this (notional) breach, we first describe the breach as having been discovered internally, with the organization listed as the `Victim` and the internal team who reported it is captured under `Information Source`.
 
-The time when the machine was infected is stored as `Initial Compromise Time`. 
-We can store the time they found the infected computer as `Incident Discovery Time`, and when they cleaned and rebuilt it under `Restoration Achieved Time`. 
-Finally, `Incident Reported Time` is when the company disclosed the breach.
+The time when the machine was infected is represented in the `Initial Compromise Time` field. The time they found the infected computer is the `Incident Discovery Time` and when they cleaned and rebuilt it is `Restoration Achieved Time`. Finally, `Incident Reported Time` is when the company disclosed the breach.
 
-Note that timestamps related to a given Incident should be stored under `incident:Time`, as these are directly related to the breach in question. Contrast with `Information_Source ` which represents the metadata for the incident report itself.
-
-
+Note that timestamps describing the incident should be represented under `incident:Time`, as these are data directly related to the breach in question. `Information_Source/Time` also allows you to represent timestamps, but rather than data about the incident they represent metadata about the incident report. For example, `Information_Source/Time/Produced_Time` represents the time the incident record was produced. Similarly, the `@timestamp` field is used to version the construct and should not be used to represent any time related to the incident itself.
 
 {% highlight xml linenos %}
 <stix:STIX_Package 
