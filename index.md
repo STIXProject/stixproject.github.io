@@ -35,7 +35,7 @@ no_in_page_title: true
 <p class="lead text-center">
 	Have questions, comments, or feedback? Want to set up a teleconference or in-person meeting?
 	<br/>
-	<strong>Reach out to us at <a href="mailto:stix@mitre.org">stix@mitre.org</a>!</strong>
+	<strong>Reach out to us at <a href="mailto:stix-taxii@hq.dhs.gov">stix-taxii@hq.dhs.gov</a>!</strong>
 </p>
 
 <div class="row">

@@ -123,4 +123,4 @@ STIX profiles are generally created through community agreement (for community p
 
 ## Questions?
 
-Profiles are a complicated topic. Please [get in touch](mailto:stix@mitre.org) with the team if you have any questions or think this documentation could be improved.
+Profiles are a complicated topic. Please [get in touch](stix-taxii@hq.dhs.gov) with the team if you have any questions or think this documentation could be improved.

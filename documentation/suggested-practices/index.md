@@ -111,6 +111,10 @@ These situations are a judgment call, but when making that judgment you should c
 
 It is always suggested that you version these constructs by including a relevant `@id` and `@timestamp` per the [STIX versioning guide](/documentation/concepts/versioning).
 
+Note that many constructs that have a `@timestamp` attribute also have an `Information_Source` field with a `Time` field inside it. The `Time` field has a field called `Produced_Time`, which can easily be confused with `@timestamp`. Though similar, these fields are not used for the same purposes. `@timestamp` is used only for versioning and represents the time that version of the versioned structure was created. `Information_Source/Time/Produced_Time` is not related to versioning and represents the time the record (not that version of the record) was created. In some ways, they can be thought of as created time and modified time but in other ways they are used for completely different purposes.
+
+See the [Versioning](/documentation/concepts/versioning) concept discussion for more information.
+
 ## Creating References
 
 There are two primary ways to create references in STIX 1.1.1: you can either create a reference to a specific version of a construct or you can create a reference to the latest version of a construct.
