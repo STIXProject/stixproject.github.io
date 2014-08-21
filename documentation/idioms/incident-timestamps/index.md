@@ -1,6 +1,6 @@
 ---
 layout: flat
-title: Life and Times of an Incident
+title: Incident Lifecycle Timestamps
 constructs:
   - Incident
 summary: STIX supports a rich set of timestamps for incidents, learn about them here.
