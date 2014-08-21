@@ -5,7 +5,7 @@ title: Security Considerations
 
 <link href="/css/security.css" rel="stylesheet"/>
 
-<p class="alert alert-danger"><strong>UNDER DEVELOPMENT:</strong> This guide is still under development. Please consider that it may be both inaccurate and/or incomplete.</p>
+<p class="alert alert-danger"><strong>UNDER DEVELOPMENT:</strong> This guide is still under development and the information below may be incomplete.</p>
 
 There are several potential avenues for attack when processing incoming STIX documents. The following list is non-exhaustive and should not take the place of a comprehensive security review that takes into account your unique technology stack and processes.
 
@@ -45,6 +45,10 @@ For obvious reasons (they get implemented at the system level), STIX indicators 
 
 STIX documents contain many processing rules that are likely applied at ingest time. If a STIX repository is capable of having documents pushed to it then it would be possible to simply send a flood of valid STIX documents to that repository to overwhelm it...documents are cheap to send but expensive to process. Therefore, the defense is of course to rate-limit senders, apply queues as appropriate, and timeout if a document takes inordinately long to process.
 
+### <span class="label label-danger">Information Source</span>
+
+STIX documents often include metadata describing the source of the package or the source of individual components. Note that this information is asserted by the creator of the package and is only valid to the extent you trust the creator. ACME Incorporated could create a package asserting to represent high-confidence indicators that came from Foobar Inc. That does not mean that the indicators actually came from FooBar Inc or that FooBar Inc. asserted that they were high confidence, it just means that ACME Incorporated said that they were from FooBar Inc. and were high confidence. The community has discussed embedded digital signatures for STIX content to allow for trust of particular portions of STIX documents but this has not yet been implemented.
+
 ### <span class="label label-info">Others?</span>
 
-These are a simple list of attacks that we came up with off the top of our heads. What are we missing?
+This list of attacks may be incomplete. What are we missing?
