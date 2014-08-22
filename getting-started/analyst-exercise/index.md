@@ -7,9 +7,7 @@ active: getting-started
 ## Setup
 Consult this [FireEye report](report) for a prose description of malicious actors from Iran targeting governments and commercial computers.
 
-Review the [STIX version of this report](output.xml), which includes the same information in a structured format.
-
-Download the [free STIXViz tool](http://dstar.kd.io/documentation/utilities/) and open the [XML file](output.xml) .
+Download the [free STIXViz tool](http://dstar.kd.io/documentation/utilities/) and open the [STIX version of the report](output.xml) .
 
 Distribution is unlimited since the **STIX Header** includes no TLP or sensitivity restrictions. 
 
