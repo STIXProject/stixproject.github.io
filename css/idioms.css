@@ -1,0 +1,13 @@
+.img-spacer {
+    width: 36px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+span.tag-labels-container .label {
+    margin-right: 3px;
+}
+
+#filterMenu {
+    padding: 1px 5px;
+}

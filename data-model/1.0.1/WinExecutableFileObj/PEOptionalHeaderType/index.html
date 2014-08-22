@@ -1,0 +1,505 @@
+---
+layout: data_model
+title: PEOptionalHeaderType
+this_version: 1.0.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/WinExecutableFileObj/PEOptionalHeaderType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>PEOptionalHeaderType<span class="subdued">Win Executable File Object Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" selected="selected">STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">The <a href='/data-model/1.0.1/WinExecutableFileObj/PEOptionalHeaderType'>PEOptionalHeaderType</a> type describes the PE Optional Header structure. Additional computed metadata, e.g., hashes of the header, are also included.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Magic<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the unsigned integer that indicates the type of executable file.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Major_Linker_Version<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the linker major version number.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Minor_Linker_Version<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the linker minor version number.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Size_Of_Code<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the size of the code (text) section. If there are multiple sections, size is the sum of the sizes if each.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Size_Of_Initialized_Data<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the size of the initialized data section. If there are multiple sections, size is the sum of the sizes if each.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Size_Of_Uninitialized_Data<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the size of the uninitialized (bss) data section. If there are multiple sections, size is the sum of the sizes if each.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Address_Of_Entry_Point<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the address of the entry point relative to the image base when the executable is loaded into memory. When there is no entry point (e.g., optional for DLLs), the value should be 0.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Base_Of_Code<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the address that is relative to the image base of the beginning-of-code section when it is loaded into memory.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Base_Of_Data<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the address that is relative to the image base of the beginning-of-data section when it is loaded into memory.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Image_Base<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the preferred address of the first byte of image when loaded into memory; must be a multiple of 64 K. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Section_Alignment<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the alignment (in bytes) of sections when they are loaded into memory. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>File_Alignment<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the factor (in bytes) that is used to align the raw data of sections in the image file. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Major_OS_Version<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the major version number of the required operating system.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Minor_OS_Version<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the minor version number of the required operating system.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Major_Image_Version<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the major version number of the image.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Minor_Image_Version<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the minor version number of the image.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Major_Subsystem_Version<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the major version number of the subsystem.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Minor_Subsystem_Version<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the minor version number of the subsystem.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Win32_Version_Value<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Reserved; must be 0.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Size_Of_Image<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the size (in bytes) of the image, including all headers, as the image is loaded in memory.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Size_Of_Headers<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the combined size of the MS DOS header, PE header, and section headers rounded up to a multiple of FileAlignment.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Checksum<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the checksum of the PE file.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Subsystem<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the subsystem (e.g., GUI, device driver) that is required to run this image. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>DLL_Characteristics<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies flags that characterize the PE file.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Size_Of_Stack_Reserve<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the size of the stack to reserve.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Size_Of_Stack_Commit<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the size of the stack to commit.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Size_Of_Heap_Reserve<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the size of the local heap space to reserve.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Size_Of_Heap_Commit<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the size of the local heap space to commit.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Loader_Flags<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Reserved; must be 0.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Number_Of_Rva_And_Sizes<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifieshe number of data-directory entries in the remainder of the optional header.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Data_Directory<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/WinExecutableFileObj/DataDirectoryType">DataDirectoryType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the data directories in the remainder in the optional header. This field will be repeated for each data directory.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Hashes<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HashListType">HashListType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Hashes field is used to include any hash values computed using the specified PE binary optional header as input.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

@@ -1,0 +1,85 @@
+---
+layout: data_model
+title: AttributionType
+this_version: 1.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/campaign/AttributionType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>AttributionType<span class="subdued">Campaign Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" selected="selected">STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">AttributionType specifies suspected Threat Actors attributed to a given Campaign.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@scope<span class="occurrence">optional</span></td>
+      <td>
+        
+          RelationshipScopeEnum
+        
+      </td>
+      <td>
+        
+          <p>Indicates how multiple related items should be interpreted in this relationship. If "inclusive" is specified, then a single conceptual relationship is being defined between the subject and the collection of objects indicated by the related items (i.e. the relationship is not necessarily relevant for any one particular object being referenced, but for the aggregated collection of objects referenced). If "exclusive" is specified, then multiple relationships are being defined between the specific subject and each object individually. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Attributed_Threat_Actor<span class="occurrence">1..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/stixCommon/RelatedThreatActorType">RelatedThreatActorType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Attributed_Threat_Actor field specifies a Threat Actor asserted to be attributed for a Campaign. The specification of multiple ThreatActor entries for a single Attribution entry would be interpreted as a logical AND composition of the set of specified ThreatActors with a shared Confidence and Information Source. This would be used to assert attribution to a combined set of ThreatActors.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

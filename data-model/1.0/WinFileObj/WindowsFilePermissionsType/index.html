@@ -1,0 +1,127 @@
+---
+layout: data_model
+title: WindowsFilePermissionsType
+this_version: 1.0
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/WinFileObj/WindowsFilePermissionsType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>WindowsFilePermissionsType<span class="subdued">Win File Object Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" selected="selected">STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">The <a href='/data-model/1.0/WinFileObj/WindowsFilePermissionsType'>WindowsFilePermissionsType</a> type specifies Windows file permissions. It imports and extends the <a href='/data-model/1.0/FileObj/FilePermissionsType'>FilePermissionsType</a> from the CybOX File Object.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Full_Control<span class="occurrence">0..1</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The Full_Control field specifies whether reading, writing, changing and deleting of the file is perfmitted.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Modify<span class="occurrence">0..1</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The Modify field specifies whether reading and writing or deletion of the file is permitted.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Read<span class="occurrence">0..1</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The Read field specifies whether viewing or accessing of the file's contents is permitted.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Read_And_Execute<span class="occurrence">0..1</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The Read_And_Execute field specifies whether viewing and accessing of the file's contents as well as executing of the file is permitted.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Write<span class="occurrence">0..1</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The Write field specifies whether writing to the file is permitted.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

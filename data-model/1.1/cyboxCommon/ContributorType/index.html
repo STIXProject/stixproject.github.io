@@ -1,0 +1,155 @@
+---
+layout: data_model
+title: ContributorType
+this_version: 1.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/cyboxCommon/ContributorType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>ContributorType<span class="subdued">CybOX Common Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" selected="selected">STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">The <a href='/data-model/1.1/cyboxCommon/ContributorType'>ContributorType</a> represents a description of an individual who contributed as a source of cyber observation data.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Role<span class="occurrence">0..1</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>This field describes the role played by this contributor.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Name<span class="occurrence">0..1</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>This field contains the name of this contributor.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Email<span class="occurrence">0..1</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>This field contains the email of this contributor.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Phone<span class="occurrence">0..1</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>This field contains a telephone number of this contributor.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Organization<span class="occurrence">0..1</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>This field contains the organization name of this contributor.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Date<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/DateRangeType">DateRangeType</a>
+        
+      </td>
+      <td>
+        
+          <p>This field contains a description (bounding) of the timing of this contributor's involvement.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Contribution_Location<span class="occurrence">0..1</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>This field contains information describing the location at which the contributory activity occured.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

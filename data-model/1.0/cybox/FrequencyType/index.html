@@ -1,0 +1,113 @@
+---
+layout: data_model
+title: FrequencyType
+this_version: 1.0
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/cybox/FrequencyType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>FrequencyType<span class="subdued">CybOX Core Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" selected="selected">STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">The <a href='/data-model/1.0/cybox/FrequencyType'>FrequencyType</a> is a type representing the specification of a frequency for a given action or event.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@rate<span class="occurrence">required</span></td>
+      <td>
+        
+          float
+        
+      </td>
+      <td>
+        
+          <p>This field specifies the rate for this defined frequency.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@units<span class="occurrence">required</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>This field specifies the units for this defined frequency.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@scale<span class="occurrence">required</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>This field specifies the time scale for this defined frequency.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@trend<span class="occurrence">optional</span></td>
+      <td>
+        
+          TrendEnum
+        
+      </td>
+      <td>
+        
+          <p>This field is optional and conveys a targeted observation pattern of the nature of any trend in the frequency of the associated event or action. This field would be leveraged within an event or action pattern observable triggering on the matching of a specified trend in the frequency of an event or action.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

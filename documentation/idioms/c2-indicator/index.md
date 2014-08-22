@@ -1,13 +1,15 @@
 ---
 layout: flat
 title: Indicator for C2 IP Address
-tags:
-  - c2
-  - indicator
+use_cases:
+  - Command and Control
+constructs:
+  - Indicator
+  - TTP
 summary: This idiom walks through the very common use case where you have an indicator where the "test" is a simple IP address and the context is that the IP is being used to host a C2 server. This is often implemented via a network block to that IP address as the external firewall.
 ---
 
-One of the most common forms of [indicator](..) seen describes a pattern for TCP traffic beaconing to a specific command and control (C2, C&C) server. This idiom describes creating such an indicator in STIX.
+One of the most common forms of [indicator](../#indicator) seen describes a pattern for TCP traffic beaconing to a specific command and control (C2, C&C) server. This idiom describes creating such an indicator in STIX.
 
 ## Scenario
 
@@ -59,17 +61,18 @@ from cybox.objects.address_object import Address
 
 stix_package = STIXPackage()
 ttp = TTP(title="C2 Behavior")
-   
+
 indicator = Indicator(title="IP Address for known C2 Channel")
 indicator.add_indicator_type("IP Watchlist")
-  
+
 addr = Address(address_value="10.0.0.0", category=Address.CAT_IPV4)
+addr.condition = "Equals"
 indicator.add_observable(addr)
 indicator.add_indicated_ttp(TTP(idref=ttp.id_))
-    
+
 stix_package.add_indicator(indicator)
 stix_package.add_ttp(ttp)
-    
+
 print stix_package.to_xml()
 {% endhighlight %}
 

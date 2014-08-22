@@ -1,0 +1,99 @@
+---
+layout: data_model
+title: IPFIXSetType
+this_version: 1.0
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/NetFlowObj/IPFIXSetType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>IPFIXSetType<span class="subdued">Network Flow Object Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" selected="selected">STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">Represents the possible sets of records that can be represented in an IPFIX message. See RFC 5101 and look for the terms "Template Set", "Options Template Set", and "Data Set", for more information.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Template_Set<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/NetFlowObj/IPFIXTemplateSetType">IPFIXTemplateSetType</a>
+        
+      </td>
+      <td>
+        
+          <p>Indicates a collection of one or more Template Records that have been grouped together in an IPFIX message.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Options_Template_Set<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/NetFlowObj/IPFIXOptionsTemplateSetType">IPFIXOptionsTemplateSetType</a>
+        
+      </td>
+      <td>
+        
+          <p>Indicates a collection of one or more Options Template Records that have been grouped together in an IPFIX message.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Data_Set<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/NetFlowObj/IPFIXDataSetType">IPFIXDataSetType</a>
+        
+      </td>
+      <td>
+        
+          <p>Indicates one or more Data Records, of the same type, that have been grouped together in an IPFIX message. Each Data Record is previously defined by a Template Record or an Options Template Record.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

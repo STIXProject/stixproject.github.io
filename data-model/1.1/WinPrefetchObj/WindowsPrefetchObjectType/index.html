@@ -1,0 +1,197 @@
+---
+layout: data_model
+title: WindowsPrefetchObjectType
+this_version: 1.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/WinPrefetchObj/WindowsPrefetchObjectType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>WindowsPrefetchObjectType<span class="subdued">Win Prefetch Object Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" selected="selected">STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">The <a href='/data-model/1.1/WinPrefetchObj/WindowsPrefetchObjectType'>WindowsPrefetchObjectType</a> type is intended to characterize entries in the Windows prefetch files. Starting with Windows XP, prefetching was introduced to speed up application startup. The prefetch object draws upon the descriptions and XML sample at http://www.forensicswiki.org/wiki/Prefetch_XML.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@object_reference<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>The object_reference field specifies a unique ID reference to an Object defined elsewhere. This construct allows for the re-use of the defined Properties of one Object within another, without the need to embed the full Object in the location from which it is being referenced. Thus, this ID reference is intended to resolve to the Properties of the Object that it points to.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Custom_Properties<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/CustomPropertiesType">CustomPropertiesType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Custom_Properties construct is optional and enables the specification of a set of custom Object Properties that may not be defined in existing Properties schemas.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Application_File_Name<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Name of the executable of the prefetch file.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Prefetch_Hash<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>An eight character hash of the location from which the application was run.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Times_Executed<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/LongObjectPropertyType">LongObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The number of times the prefetch application has executed.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>First_Run<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Timestamp of when the prefetch application was first run.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Last_Run<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Timestamp of when the prefetch application was last run.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Volume<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/WinPrefetchObj/VolumeType">VolumeType</a>
+        
+      </td>
+      <td>
+        
+          <p>The volume from which the prefetch application was run. If the applicatin was run from multiple volumes, there will be a separate prefetch file for each.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Accessed_File_List<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/WinPrefetchObj/AccessedFileListType">AccessedFileListType</a>
+        
+      </td>
+      <td>
+        
+          <p>Files (e.g., DLLs and other support files) used by the application during startup.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Accessed_Directory_List<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/WinPrefetchObj/AccessedDirectoryListType">AccessedDirectoryListType</a>
+        
+      </td>
+      <td>
+        
+          <p>Directories accessed by the prefetch application during startup.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

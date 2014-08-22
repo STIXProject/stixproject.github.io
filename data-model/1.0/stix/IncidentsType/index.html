@@ -1,0 +1,79 @@
+---
+layout: data_model
+title: IncidentsType
+this_version: 1.0
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/stix/IncidentsType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>IncidentsType<span class="subdued">STIX Core Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" selected="selected">STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Incident<span class="occurrence">1..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/stixCommon/IncidentBaseType">IncidentBaseType</a>
+        
+      </td>
+      <td>
+        
+          <p></p>
+        
+          <p>						Identifies or characterizes a single cyber threat Incident.</p>
+        
+          <p></p>
+        
+          <p>						This field is implemented through the xsi:type extension mechanism. The default and strongly recommended type is <a href='/data-model/1.0/incident/IncidentType'>IncidentType</a> in the http://stix.mitre.org/Incident-1 namespace. This type is defined in the incident.xsd file or at the URL http://stix.mitre.org/XMLSchema/incident/1.0/incident.xsd.</p>
+        
+          <p>					</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

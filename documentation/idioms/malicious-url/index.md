@@ -1,8 +1,8 @@
 ---
 layout: flat
 title: Indicator for Malicious URL
-tags:
-  - indicator
+constructs:
+  - Indicator
 summary: This idiom is an example of a malicious URL indicator that represents a URL and indicates that it's a delivery mechanism for a piece of malware.
 ---
 
@@ -53,6 +53,7 @@ indicator.add_indicator_type("URL Watchlist")
 url = URI()
 url.value = "http://x4z9arb.cn/4712"
 url.type_ =  URI.TYPE_URL
+url.condition = "Equals"
     
 indicator.add_observable(url)
 print indicator.to_xml()

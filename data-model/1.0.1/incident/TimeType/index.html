@@ -1,0 +1,183 @@
+---
+layout: data_model
+title: TimeType
+this_version: 1.0.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/incident/TimeType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>TimeType<span class="subdued">Incident Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" selected="selected">STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>First_Malicious_Action<span class="occurrence">0..1</span></td>
+      <td>
+        
+          dateTime
+        
+      </td>
+      <td>
+        
+          <p>The First_Malicious_Action field specifies the time that the first malicious action related to this Incident occured.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Initial_Compromise<span class="occurrence">0..1</span></td>
+      <td>
+        
+          dateTime
+        
+      </td>
+      <td>
+        
+          <p>The Initial_Compromise field specifies the time that the initial compromise occured for this Incident.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>First_Data_Exfiltration<span class="occurrence">0..1</span></td>
+      <td>
+        
+          dateTime
+        
+      </td>
+      <td>
+        
+          <p>The First_Data_Exfiltration field specifies the first time at which non-public data was taken from the victim environment</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Incident_Discovery<span class="occurrence">0..1</span></td>
+      <td>
+        
+          dateTime
+        
+      </td>
+      <td>
+        
+          <p>The Incident_Discovery field specifies the first time at which the organization learned the incident had occurred.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Incident_Opened<span class="occurrence">0..1</span></td>
+      <td>
+        
+          dateTime
+        
+      </td>
+      <td>
+        
+          <p>The Incident_Opened field specifies the time at which the Incident was officially opened.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Containment_Achieved<span class="occurrence">0..1</span></td>
+      <td>
+        
+          dateTime
+        
+      </td>
+      <td>
+        
+          <p>The Containment_Achieved field specifies the first time at which the incident is contained (e.g., the “bleeding is stopped”).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Restoration_Achieved<span class="occurrence">0..1</span></td>
+      <td>
+        
+          dateTime
+        
+      </td>
+      <td>
+        
+          <p>The Restoration_Achieved field specifies the first time at which the incident's assets are restored (e.g., fully functional)”.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Incident_Reported<span class="occurrence">0..1</span></td>
+      <td>
+        
+          dateTime
+        
+      </td>
+      <td>
+        
+          <p>The Incident_Reported field specifies the time at which the Incident was reported.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Incident_Closed<span class="occurrence">0..1</span></td>
+      <td>
+        
+          dateTime
+        
+      </td>
+      <td>
+        
+          <p>The Incident_Closed field specifies the time at which the Incident was officially closed.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

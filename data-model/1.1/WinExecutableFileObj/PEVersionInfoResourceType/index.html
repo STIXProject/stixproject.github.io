@@ -1,0 +1,351 @@
+---
+layout: data_model
+title: PEVersionInfoResourceType
+this_version: 1.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/WinExecutableFileObj/PEVersionInfoResourceType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>PEVersionInfoResourceType<span class="subdued">Win Executable File Object Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" selected="selected">STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">The <a href='/data-model/1.1/WinExecutableFileObj/PEVersionInfoResourceType'>PEVersionInfoResourceType</a> characterizes the special VERSIONINFO resource type. For more information please see: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381058(v=vs.85).aspx.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Type<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/WinExecutableFileObj/PEResourceContentType">PEResourceContentType</a>
+        
+      </td>
+      <td>
+        
+          <p>This field refers to the type of data referred to by this resource.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Name<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Name field specifies the name of the resource used by the PE binary.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Size<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/PositiveIntegerObjectPropertyType">PositiveIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Size field specifies the size of the resource, in bytes.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Virtual_Address<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Virtual_Address field specifies the relative virtual address (RVA) of the resource data.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Language<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Language field specifies the name of the language (LANG) defined for the resource, if applicable.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Sub_Language<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Sub_Language field specifies the name of the sub language (SUBLANG) defined for the resource, if applicable.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Hashes<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/HashListType">HashListType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Hashes field is used to include any hash values computed using the specified PE binary resource as input.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Data<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Data field captures the actual data contained in the resource, most commonly as a base64-encoded string encapsulated in a CDATA () section.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Comments<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Comments field captures any additional information that should be displayed for diagnostic purposes.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>CompanyName<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The CompanyName field captures the company that produced the file - for example, "Microsoft Corporation" or "Standard Microsystems Corporation, Inc.".</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>FileDescription<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The FileDescription field captures the file description to be presented to users. This string may be displayed in a list box when the user is choosing files to install - for example, "Keyboard Driver for AT-Style Keyboards".</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>FileVersion<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The FileVersion field captures the version number of the file - for example, "3.10" or "5.00.RC2".</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>InternalName<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The InternalName field captures the internal name of the file, if one exists - for example, a module name if the file is a dynamic-link library. If the file has no internal name, this string should be the original filename, without extension.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>LangID<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The LangID field captures the localization language identifier specified in the version-information resource.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>LegalCopyright<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The LegalCopyright field captures the copyright notices that apply to the file. This should include the full text of all notices, legal symbols, copyright dates, and so on.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>LegalTrademarks<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The LegalTrademarks field captures the trademarks and registered trademarks that apply to the file. This should include the full text of all notices, legal symbols, trademark numbers, and so on.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>OriginalFilename<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The OriginalFilename field captures the original name of the file, not including a path. This information enables an application to determine whether a file has been renamed by a user. The format of the name depends on the file system for which the file was created.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>PrivateBuild<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The PrivateBuild field captures the information about a private version of the file - for example, "Built by TESTER1 on \TESTBED". This string should be present only if VS_FF_PRIVATEBUILD is specified in the fileflags parameter of the root block.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>ProductName<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The ProductName field captures the name of the product with which the file is distributed. This string is required.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>ProductVersion<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The ProductVersion field captures the version of the product with which the file is distributed - for example, "3.10" or "5.00.RC2".</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>SpecialBuild<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The SpecialBuild field captures the text that indicates how this version of the file differs from the standard version - for example, "Private build for TESTER1 solving mouse problems on M250 and M250E computers". This string should be present only if VS_FF_SPECIALBUILD is specified in the fileflags parameter of the root block.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

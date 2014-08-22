@@ -1,0 +1,85 @@
+---
+layout: data_model
+title: RelatedIndicatorsType
+this_version: 1.0
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/campaign/RelatedIndicatorsType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>RelatedIndicatorsType<span class="subdued">Campaign Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" selected="selected">STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@scope<span class="occurrence">optional</span></td>
+      <td>
+        
+          RelationshipScopeEnum
+        
+      </td>
+      <td>
+        
+          <p>Indicates how multiple related items should be interpreted in this relationship. If "inclusive" is specified, then a single conceptual relationship is being defined between the subject and the collection of objects indicated by the related items (i.e. the relationship is not necessarily relevant for any one particular object being referenced, but for the aggregated collection of objects referenced). If "exclusive" is specified, then multiple relationships are being defined between the specific subject and each object individually. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Related_Indicator<span class="occurrence">1..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/stixCommon/RelatedIndicatorType">RelatedIndicatorType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Related_Indicator field identifies or characterizes a cyber threat Indicator related to this Campaign. Such loose associations between Campaigns and Indicators are typically part of the early phases of Campaign identification and characterization. As the Campaign characterization matures these associations are often used to identify relevant TTPs and/or Incidents associated with the Campaign.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

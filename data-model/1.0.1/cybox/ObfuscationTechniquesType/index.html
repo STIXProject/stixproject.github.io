@@ -1,0 +1,71 @@
+---
+layout: data_model
+title: ObfuscationTechniquesType
+this_version: 1.0.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/cybox/ObfuscationTechniquesType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>ObfuscationTechniquesType<span class="subdued">CybOX Core Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" selected="selected">STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">The <a href='/data-model/1.0.1/cybox/ObfuscationTechniquesType'>ObfuscationTechniquesType</a> enables the description of a set of potential techniques an attacker could leverage to obfuscate the observability of this Observable. </p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Obfuscation_Technique<span class="occurrence">1..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cybox/ObfuscationTechniqueType">ObfuscationTechniqueType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Obfuscation_Technique field is optional and enables the description of a single potential technique an attacker could leverage to obfuscate the observability of this Observable. </p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

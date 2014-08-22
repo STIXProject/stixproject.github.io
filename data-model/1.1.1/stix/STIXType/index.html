@@ -1,11 +1,54 @@
 ---
 layout: data_model
 title: STIXType
+this_version: 1.1.1
 ---
 
-<h1>STIXType<span class="subdued">STIX Core Schema</span></h1>
 
-<p>STIXType defines a bundle of information characterized in the Structured Threat Information eXpression (STIX) language.</p>
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>STIXType<span class="subdued">STIX Core Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" selected="selected">STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+    <p>
+      <a href="http://stix.readthedocs.org/en/latest/api/core/stix_package.html#stix.core.stix_package.STIXPackage">
+        <img src="/images/python-logo.png" alt="Python" /><br />
+        API support
+      </a>
+    </p>
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">STIXType defines a bundle of information characterized in the Structured Threat Information eXpression (STIX) language.</p>
+
+
+<hr />
+<h2>Suggested Practices</h2>
+
+{% capture practices %}{% include sp_package.md %}{% endcapture %}
+{{ practices | markdownify  }}
+
 
 <hr />
 

@@ -1,0 +1,323 @@
+---
+layout: data_model
+title: UserAccountObjectType
+this_version: 1.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/UserAccountObj/UserAccountObjectType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>UserAccountObjectType<span class="subdued">User Account Object Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" selected="selected">STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">The <a href='/data-model/1.1/UserAccountObj/UserAccountObjectType'>UserAccountObjectType</a> type is intended to characterize generic user accounts.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@object_reference<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>The object_reference field specifies a unique ID reference to an Object defined elsewhere. This construct allows for the re-use of the defined Properties of one Object within another, without the need to embed the full Object in the location from which it is being referenced. Thus, this ID reference is intended to resolve to the Properties of the Object that it points to.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Custom_Properties<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/CustomPropertiesType">CustomPropertiesType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Custom_Properties construct is optional and enables the specification of a set of custom Object Properties that may not be defined in existing Properties schemas.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@disabled<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The disabled field specifies whether or not the account is disabled.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@locked_out<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The locked_out field specifies whether or not the account is locked out.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Description<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Description field is used for providing a description of the account, if applicable.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Domain<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Domain field is used for specifying the domain that the account belongs to.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Authentication<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/AccountObj/AuthenticationType">AuthenticationType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Authentication field specifies authentication information associated with this account.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Creation_Date<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Creation_Date field specifies the date and time that the account was created.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Modified_Date<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Modified_Date field specifies the date and time that the account was last modified.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Last_Accessed_Time<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Last_Accessed_Time field specifies the date and time that the account was last accessed.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@password_required<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The password_required field specifies whether a password is required for this user account.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Full_Name<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Full_Name field specifies the full name of the user for which this account was created.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Group_List<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/UserAccountObj/GroupListType">GroupListType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Group_List field specifies the list of groups to which the user account belongs to.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Home_Directory<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Home_Directory field specifies the fully-qualified path to the home directory of the user account.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Last_Login<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Last_Login field specifies the date/time that the user account was last logged into.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Privilege_List<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/UserAccountObj/PrivilegeListType">PrivilegeListType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Privilege_List field specifies the privileges that the user account has.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Script_Path<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Script_Path field specifies the fully-qualified path to the directory where the logon script for the user account resides.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Username<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Username field specifies the particular username of the user account.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>User_Password_Age<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/DurationObjectPropertyType">DurationObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The User_Password_Age field specifies the current age of the user account's password.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

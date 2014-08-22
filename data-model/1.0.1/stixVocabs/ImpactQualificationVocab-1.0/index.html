@@ -1,0 +1,133 @@
+---
+layout: data_model
+title: ImpactQualificationVocab-1.0
+this_version: 1.0.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/stixVocabs/ImpactQualificationVocab-1.0">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>ImpactQualificationVocab-1.0<span class="subdued">STIX Vocabularies Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" selected="selected">STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">The ImpactQualificationVocab is the default STIX vocabulary for expressing the subjective level of impact of an incident.</p>
+
+<hr />
+
+
+<h2>Vocabulary Items</h2>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  
+    <tr>
+      <td>Insignificant</td>
+      <td>The impact is absorbed by normal activities.</td>
+    </tr>
+  
+    <tr>
+      <td>Distracting</td>
+      <td>There are limited “hard costs”, but the impact is felt through having to deal with the incident rather than conducting normal duties.</td>
+    </tr>
+  
+    <tr>
+      <td>Painful</td>
+      <td>Real, somewhat serious effect on the "bottom line".</td>
+    </tr>
+  
+    <tr>
+      <td>Damaging</td>
+      <td>Real and serious effect on the “bottom line” and/or long-term ability to generate revenue.</td>
+    </tr>
+  
+    <tr>
+      <td>Catastrophic</td>
+      <td>A business-ending event.</td>
+    </tr>
+  
+    <tr>
+      <td>Unknown</td>
+      <td>The impact qualification is unknown.</td>
+    </tr>
+  
+  </tbody>
+</table>
+
+<h2>Fields</h2>
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@vocab_name<span class="occurrence">optional</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>The vocab_name field specifies the name of the controlled vocabulary.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@vocab_reference<span class="occurrence">optional</span></td>
+      <td>
+        
+          anyURI
+        
+      </td>
+      <td>
+        
+          <p>The vocab_reference field specifies the URI to the location of where the controlled vocabulary is defined, e.g., in an externally located XML schema file.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

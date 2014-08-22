@@ -1,0 +1,99 @@
+---
+layout: data_model
+title: PEChecksumType
+this_version: 1.0
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/WinExecutableFileObj/PEChecksumType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>PEChecksumType<span class="subdued">Win Executable File Object Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" selected="selected">STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">The PECheckSumType records the checksum of the PE file, both as found in the file and computed.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>PE_Computed_API<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/LongObjectPropertyType">LongObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>PE_Computed_API specifies a checksum computed by an external algorithm.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>PE_File_API<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/LongObjectPropertyType">LongObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>PE_File_API specifed the checksum computed by IMAGHELP.DLL.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>PE_File_Raw<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/LongObjectPropertyType">LongObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>PE_File_Raw specifies the checksum found in the PE file (in the Optional Header).</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

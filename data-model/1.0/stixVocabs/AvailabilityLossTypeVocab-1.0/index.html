@@ -1,0 +1,138 @@
+---
+layout: data_model
+title: AvailabilityLossTypeVocab-1.0
+this_version: 1.0
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/stixVocabs/AvailabilityLossTypeVocab-1.0">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>AvailabilityLossTypeVocab-1.0<span class="subdued">STIX Vocabularies Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" selected="selected">STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">The AvailabilityLossTypeVocabType is the default STIX vocabulary for expressing the type of availability that was lost due to an incident.</p>
+
+<hr />
+
+
+<h2>Vocabulary Items</h2>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  
+    <tr>
+      <td>Destruction</td>
+      <td>The information was destroyed or wiped.</td>
+    </tr>
+  
+    <tr>
+      <td>Loss</td>
+      <td>Availability to the information was lost.</td>
+    </tr>
+  
+    <tr>
+      <td>Interruption</td>
+      <td>Availability to the information was interrupted.</td>
+    </tr>
+  
+    <tr>
+      <td>Degredation</td>
+      <td>Availability to the information was degraded.</td>
+    </tr>
+  
+    <tr>
+      <td>Acceleration</td>
+      <td>Availability loss type is acceleration.</td>
+    </tr>
+  
+    <tr>
+      <td>Obscuration</td>
+      <td>Availability to the information is obscured.</td>
+    </tr>
+  
+    <tr>
+      <td>Unknown</td>
+      <td>The availability loss type is not known.</td>
+    </tr>
+  
+  </tbody>
+</table>
+
+<h2>Fields</h2>
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@vocab_name<span class="occurrence">optional</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>The vocab_name field specifies the name of the controlled vocabulary.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@vocab_reference<span class="occurrence">optional</span></td>
+      <td>
+        
+          anyURI
+        
+      </td>
+      <td>
+        
+          <p>The vocab_reference field specifies the URI to the location of where the controlled vocabulary is defined, e.g., in an externally located XML schema file.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

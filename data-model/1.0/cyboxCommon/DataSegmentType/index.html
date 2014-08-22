@@ -1,0 +1,155 @@
+---
+layout: data_model
+title: DataSegmentType
+this_version: 1.0
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/cyboxCommon/DataSegmentType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>DataSegmentType<span class="subdued">CybOX Common Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" selected="selected">STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">The <a href='/data-model/1.0/cyboxCommon/DataSegmentType'>DataSegmentType</a> is intended to provide a relatively abstract way of characterizing data segments that may be written/read/transmitted or otherwise utilized in actions or behaviors. </p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@id<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>The id field specifies a unique id for this data segment.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Data_Format<span class="occurrence">0..1</span></td>
+      <td>
+        
+          DataFormatEnum
+        
+      </td>
+      <td>
+        
+          <p>The Data_Format field refers to the type of data contained in the Data_Segment element. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Data_Size<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/DataSizeType">DataSizeType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Data_Size field contains the size of the data contained in this element.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Data_Segment<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Data_Segment field contains the actual segment of data being characterized.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Offset<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Offset field allows for the specification of where to start searching for the specified data segment in an object, in bytes.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Search_Distance<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Search_Distance field specifies how far into an object should be ignored, in bytes, before starting to search for the specified data segment relative to the end of the previous data segment.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Search_Within<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Search_Within field specifies that at most N bytes are between data segments in related objects.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

@@ -1,0 +1,219 @@
+---
+layout: data_model
+title: RelatedObjectType
+this_version: 1.0
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/cybox/RelatedObjectType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>RelatedObjectType<span class="subdued">CybOX Core Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" selected="selected">STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">The <a href='/data-model/1.0/cybox/RelatedObjectType'>RelatedObjectType</a> enables the identification and/or specification of an Object with a relevant relationship with this Object.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@id<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>The id field specifies a unique id for this Object.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@idref<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>The idref field specifies a unique id reference to an Object defined elsewhere.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@has_changed<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The has_changed field is optional and conveys a targeted observation pattern of whether the associated object specified has changed. This field would be leveraged within a pattern observable triggering on whether the value of an object specification has changed.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>State<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
+        
+      </td>
+      <td>
+        
+          <p>The State field enables the description of the current state of the object, through a standardized controlled vocabulary.</p>
+        
+          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is ObjectStateVocab in the http://cybox.mitre.org/default_vocabularies-2 namespace. This type is defined in the cybox_default_vocabularies.xsd file or at the URL http://cybox.mitre.org/XMLSchema/default_vocabularies/2.0/cybox_default_vocabularies.xsd.</p>
+        
+          <p>						Users may also define their own vocabulary using the type extension mechanism (by specifying a vocabulary name and/or reference using the vocab_name and vocab_reference attributes, respectively) or simply use this as a string field. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Description<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StructuredTextType">StructuredTextType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Description field provides a mechanism to specify a structured text description of this Object. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Properties<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/ObjectPropertiesType">ObjectPropertiesType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Properties construct is an abstract placeholder for various predefined Object type schemas (e.g. File, Process or System) that can be instantiated in its place through extension of the ObjectPropertiesType. This mechanism enables the specification of a broad range of Object types with consistent Object Property naming and structure. The set of Properties schemas are maintained independent of the core CybOX schema.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Domain_Specific_Object_Properties<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cybox/DomainSpecificObjectPropertiesType">DomainSpecificObjectPropertiesType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Domain_Specific_Object_Properties construct is of an Abstract type placeholder within the CybOX schema enabling the inclusion of domain-specific metadata for an object through the use of a custom type defined as an extension of this base Abstract type. This enables domains utilizing CybOX such as malware analysis or forensics to incorporate non-generalized object metadata from their domains into CybOX objects.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Related_Objects<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cybox/RelatedObjectsType">RelatedObjectsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Related_Objects construct is optional and enables the identification and/or specification of Objects with relevant relationships with this Object.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Defined_Effect<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cybox/DefinedEffectType">DefinedEffectType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Defined_Effect construct is an abstract placeholder for various predefined Object Effect types (e.g. DataReadEffect, ValuesEnumeratedEffect or StateChangeEffect) that can be instantiated in its place through extension of the DefinedEffectType. This mechanism enables the specification of a broad range of types of potential complex action effects on Objects. The set of Defined_Effect types (extending the DefeinedEffectType) are maintained as part of the core CybOX schema.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Discovery_Method<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/MeasureSourceType">MeasureSourceType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Discovery_Method field is optional and enables descriptive specification of how this Object was observed (in the case of a Cyber Observable Object instance) or could potentially be observed (in the case of a Cyber Observable Object pattern). </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Relationship<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Relationship field uses a standardized controlled vocabulary to capture the nature of the relationship between this Object and the Related_Object.</p>
+        
+          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is ObjectRelationshipVocab in the http://cybox.mitre.org/default_vocabularies-2 namespace. This type is defined in the cybox_default_vocabularies.xsd file or at the URL http://cybox.mitre.org/XMLSchema/default_vocabularies/2.0/cybox_default_vocabularies.xsd.</p>
+        
+          <p>								Users may also define their own vocabulary using the type extension mechanism (by specifying a vocabulary name and/or reference using the vocab_name and vocab_reference attributes, respectively) or simply use this as a string field. </p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

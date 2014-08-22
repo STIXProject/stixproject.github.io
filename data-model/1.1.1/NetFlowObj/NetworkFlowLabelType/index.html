@@ -1,11 +1,39 @@
 ---
 layout: data_model
 title: NetworkFlowLabelType
+this_version: 1.1.1
 ---
 
-<h1>NetworkFlowLabelType<span class="subdued">Network Flow Object Schema</span></h1>
 
-<p>The <a href='/data-model/1.1.1/NetFlowObj/NetworkFlowLabelType'>NetworkFlowLabelType</a> contains elements that are common to all flow record formats. It builds off of network layer information (a 5-tuple that commonly defines a flow) and includes ingress and egress interface indexes and IP protocol information (not present if all flow record formats). Egress information is usually not thought of as part of the extended 7-tuple, but we include it for organizational purposes. Because these fields are defined here, they are excluded from the fields associated directly with each different flow record format type.</p>
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>NetworkFlowLabelType<span class="subdued">Network Flow Object Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" selected="selected">STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">The <a href='/data-model/1.1.1/NetFlowObj/NetworkFlowLabelType'>NetworkFlowLabelType</a> contains elements that are common to all flow record formats. It builds off of network layer information (a 5-tuple that commonly defines a flow) and includes ingress and egress interface indexes and IP protocol information (not present if all flow record formats). Egress information is usually not thought of as part of the extended 7-tuple, but we include it for organizational purposes. Because these fields are defined here, they are excluded from the fields associated directly with each different flow record format type.</p>
 
 <hr />
 

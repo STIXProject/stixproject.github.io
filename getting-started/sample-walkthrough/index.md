@@ -1,7 +1,6 @@
 ---
 layout: flat
 title: Sample Walkthrough
-active: getting-started
 ---
 
 This walkthrough will look at a simple STIX document and look through it piece by piece to help describe basic STIX concepts. Specifically, we'll look at a watchlist for IP addresses to see how STIX can be used to describe indicators of malicious activity.

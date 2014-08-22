@@ -1,0 +1,589 @@
+---
+layout: data_model
+title: HTTPResponseHeaderFieldsType
+this_version: 1.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/HTTPSessionObj/HTTPResponseHeaderFieldsType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>HTTPResponseHeaderFieldsType<span class="subdued">HTTP Session Object Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" selected="selected">STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">The <a href='/data-model/1.1/HTTPSessionObj/HTTPRequestHeaderFieldsType'>HTTPRequestHeaderFieldsType</a> captures parsed HTTP request header fields.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Access_Control_Allow_Origin<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Access-Control-Allow-Origin field specifies the HTTP Response Access-Control-Allow-Origin header field, which defines which web sites can participate in cross-origin resource sharing.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Accept_Ranges<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Accept-Ranges field specifies the HTTP Response Accept-Ranges header field, which defines the partial content range types this server supports.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Age<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Age field specifies the HTTP Response Authorization header field, which defines the age the object has been in a proxy cache, in seconds.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Cache_Control<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Cache-Control field specifies the HTTP Response Cache-Control header field, which tells all caching mechanisms from server to client whether they may cache this object.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Connection<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Connection field specifies the HTTP Response Connection header field, which specifies the options that are desired for the connection.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Content_Encoding<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Content-Encoding field specifies the HTTP Response Content-Encoding header field, which defines the type of encoding used on the data.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Content_Language<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Content-Language field specifies the HTTP Response Content-Language header field, which defines the language the content is in.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Content_Length<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Content-Length field specifies the HTTP Response Content-Length header field, which defines the length of the request body in octets.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Content_Location<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Content-Location field specifies the HTTP Response Content-Location header field, which defines an alternate location for the returned data.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Content_MD5<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Content-MD5 field specifies the HTTP Response Content-MD5 header field, which defines the base64-encoded binary MD5 sum of the content of the response.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Content_Disposition<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Content-Disposition field specifies the HTTP Response Content-Disposition header field, which provides a means for the origin server to suggest a default filename if the user requests that the content is saved to a file.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Content_Range<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Content-Range field specifies the HTTP Response Content-Range header field, which defines where in a full body message the partial message belongs.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Content_Type<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Content-Type field specifies the HTTP Response Content-Type header field, which defines the MIME type of the content.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Date<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Date field specifies the HTTP Request Date header field, which defines the date and time that the message was sent.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>ETag<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The ETag field specifies the HTTP Response ETag header field, which defines an identifier for a specific version of a resource, often a message digest.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Expires<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Expires field specifies the HTTP Response Expires header field, which defines the date/time after which the response is considered stale.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Last_Modified<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Last-Modified field specifies the HTTP Response Last-Modified header field, which defines the date/time for the requested object, in RFC 2822 format.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Link<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Link field specifies the HTTP Response Link header field, which defines a typed relationship with another resource, where the relation type is defined by RFC 5988.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Location<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/URIObj/URIObjectType">URIObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Location field specifies the HTTP Response Location header field, which defines the location used in redirection, or when a new resource has been created.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>P3P<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The P3P field specifies the HTTP Response P3P header field, which sets P3P policy to be used by the browser.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Pragma<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Pragma field specifies the HTTP Response Pragma header field, which defines any implementation-specific values that may have various anywhere along the request-response chain.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Proxy_Authenticate<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Proxy-Authenticate field specifies the HTTP Response Proxy-Authenticate header field, which defines the type of authentication necessary to access the proxy.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Refresh<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Refresh field specifies the HTTP Response Refresh header field, which specifies a given interval, in seconds, after which the current page should be refreshed.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Retry_After<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Retry-After field specifies the HTTP Response Retry-After header field, which defines the period, in seconds, after which the client should try again if an entity is temporarily unavailable.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Server<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Server field specifies the HTTP Response Server field, which defines a name for the responding server.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Set_Cookie<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Set-Cookie field specifies the HTTP Response Set-Cookie field, which defines an HTTP cookie.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Strict_Transport_Security<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Strict-Transport-Security field specifies the HTTP response Strict-Transport-Security field, which defines the HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Trailer<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Trailer field specifies the HTTP Response Trailer field, which indicates that the given set of header fields is present in the trailer of a message encoded with chunked transfer-coding.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Transfer_Encoding<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Transfer-Encoding field specifies the HTTP Response Transfer-Encoding field, which defines the form of encoding used to safely transfer the entity to the user.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Vary<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Vary field specifies the HTTP Response Vary field, which informs downstream proxies on how to match future request headers to decide whether the cached response can be used rather than requested a fresh one from the origin server.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Via<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Via field specifies the HTTP Response Via field, which informs the client of proxies through which the response was sent.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Warning<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Warning field specifies the HTTP Response Warning field, which defines any general warnings about possible problems with the entity body.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>WWW_Authenticate<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The WWW-Authenticate field specifies the HTTP Response WWW-Authenticate field, which defines the authentication scheme that should be used to access the requested entity.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>X_Frame_Options<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The X-Frame-Options field specifies the non-standard HTTP Response X-Frame-Options field, which is used as a form of clickjacking protection, supporting no rendering within a frame and no rendering if origin mismatch.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>X_XSS_Protection<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The X-XSS-Protection field specifies the non-standard HTTP Response X-XSS-Protection field, which is used as a cross-site scripting (XSS) filter.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>X_Content_Type_Options<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The X-Content-Type-Options field specifies the non-standard HTTP Response X-Content-Type-Options field, which supports the 'nosniff' parameter to prevent the MIME-sniffing of a response away from the declared content type.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>X_Powered_By<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The X-Powered-By field specifies the non-standard HTTP Response X-Powered-By field, which specifies the technology supporting the web application running on the server.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>X_UA_Compatible<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The X-UA-Compatible field specifies the non-standard HTTP Response X-UA-Compatible field, which is used to recommend the preferred rendering engine to use to display the content.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

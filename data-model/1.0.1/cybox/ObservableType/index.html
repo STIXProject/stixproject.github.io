@@ -1,0 +1,211 @@
+---
+layout: data_model
+title: ObservableType
+this_version: 1.0.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/cybox/ObservableType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>ObservableType<span class="subdued">CybOX Core Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" selected="selected">STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">The <a href='/data-model/1.0.1/cybox/ObservableType'>ObservableType</a> is a type representing a description of a single cyber observable.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@id<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>The id field specifies a unique id for this Observable.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@idref<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>The idref field specifies a unique id reference to an Observable defined elsewhere.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@negate<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The negate field, when set to true, indicates the absence (rather than the presence) of the given Observable in a CybOX pattern.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Title<span class="occurrence">0..1</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>The Title field provides a mechanism to specify a short title or description for this Observable</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Description<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/StructuredTextType">StructuredTextType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Description field provides a mechanism to specify a structured text description of this Observable. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Keywords<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cybox/KeywordsType">KeywordsType</a>
+        
+      </td>
+      <td>
+        
+          <p>Keywords enables capture of relevant keywords for this cyber observable.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Observable_Source<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/MeasureSourceType">MeasureSourceType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Observable_Source field is optional and enables descriptive specification of how this Observable was identified and specified. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Object<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cybox/ObjectType">ObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Object construct identifies and specificies the characteristics of a specific cyber-relevant object (e.g. a file, a registry key or a process). </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Event<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cybox/EventType">EventType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Event construct enables specification of a cyber observable event that is dynamic in nature with specific action(s) taken against specific cyber relevant objects (e.g. a file is deleted, a registry key is created or an HTTP Get Request is received).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Observable_Composition<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cybox/ObservableCompositionType">ObservableCompositionType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Observable_Composition construct enables specification of composite observables made up of logical constructions of atomic observables or other composite observables (e.g. Obs5 = (Obs1 OR Obs2) AND (Obs3 OR Obs4)).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Pattern_Fidelity<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cybox/PatternFidelityType">PatternFidelityType</a>
+        
+      </td>
+      <td>
+        
+          <p>Pattern_Fidelity contains elements that enable the characterization of the fidelity of this pattern to its purpose.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

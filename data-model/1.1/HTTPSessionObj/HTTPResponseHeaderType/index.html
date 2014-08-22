@@ -1,0 +1,85 @@
+---
+layout: data_model
+title: HTTPResponseHeaderType
+this_version: 1.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/HTTPSessionObj/HTTPResponseHeaderType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>HTTPResponseHeaderType<span class="subdued">HTTP Session Object Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" selected="selected">STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">The <a href='/data-model/1.1/HTTPSessionObj/HTTPResponseHeaderType'>HTTPResponseHeaderType</a> captures the raw or parsed header of an HTTP response.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Raw_Header<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Raw_Header field captures the HTTP response header as a raw, unparsed string.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Parsed_Header<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/HTTPSessionObj/HTTPResponseHeaderFieldsType">HTTPResponseHeaderFieldsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Parsed_Header field captures the HTTP response header as a set of parsed HTTP header fields.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

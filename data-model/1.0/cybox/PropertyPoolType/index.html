@@ -1,0 +1,71 @@
+---
+layout: data_model
+title: PropertyPoolType
+this_version: 1.0
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/cybox/PropertyPoolType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>PropertyPoolType<span class="subdued">CybOX Core Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" selected="selected">STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">The <a href='/data-model/1.0/cybox/PropertyPoolType'>PropertyPoolType</a> enables the description of CybOX Properties in a space-efficient pooled manner with the actual Observable structures defined in the CybOX schema containing references to the pooled Properties elements. This reduces redundancy caused when identical Properties occur multiple times within a set of defined Observables.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Property<span class="occurrence">1..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/PropertyType">PropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Property construct enables the specification of a single Object Property.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

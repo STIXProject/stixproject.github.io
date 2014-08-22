@@ -1,0 +1,85 @@
+---
+layout: data_model
+title: UDPType
+this_version: 1.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/PacketObj/UDPType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>UDPType<span class="subdued">Network Packet Object Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" selected="selected">STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">UDP uses a simple transmission model without implicit handshaking dialogues for providing reliability, ordering, or data integrity. Thus, UDP provides an unreliable service and datagrams may arrive out of order, appear duplicated, or go missing without notice. http://en.wikipedia.org/wiki/User_Datagram_Protocol.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>UDP_Header<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/PacketObj/UDPHeaderType">UDPHeaderType</a>
+        
+      </td>
+      <td>
+        
+          <p>The UDP header consists of four fields, which are defined here.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Data<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/DataSegmentType">DataSegmentType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Data field specifies the data payload of the UDP packet.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

@@ -1,11 +1,35 @@
 ---
 layout: data_model
 title: DateTimeWithPrecisionType
+this_version: 1.1.1
 ---
 
-<h1>DateTimeWithPrecisionType<span class="subdued">CybOX Common Schema</span></h1>
 
-<p>This type is used as a replacement for the standard xs:dateTime type but allows for the representation of the precision of the dateTime.  If the precision is given, consumers must ignore the portions of this field that is more precise than the given precision. Producers should zero-out (fill with zeros) digits in the dateTime that are required by the xs:dateTime datatype but are beyond the specified precision.
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>DateTimeWithPrecisionType<span class="subdued">CybOX Common Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" selected="selected">STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">This type is used as a replacement for the standard xs:dateTime type but allows for the representation of the precision of the dateTime.  If the precision is given, consumers must ignore the portions of this field that is more precise than the given precision. Producers should zero-out (fill with zeros) digits in the dateTime that are required by the xs:dateTime datatype but are beyond the specified precision.
 In order to avoid ambiguity, it is strongly suggested that all dateTimes include a specification of the timezone if it is known.</p>
 
 <hr />

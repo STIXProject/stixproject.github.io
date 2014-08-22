@@ -1,8 +1,0 @@
-<ul>
-  {% for page in site.pages %}{% for tag in page.tags %}{% if tag == include.tag %}
-  <li>
-    <h4><a href='{{page.url}}'>{{page.title}}</a></h4>
-    <p>{{page.summary}}</p>
-  </li>
-  {% endif %}{% endfor %}{% endfor %}
-</ul>

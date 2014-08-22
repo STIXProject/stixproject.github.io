@@ -1,0 +1,113 @@
+---
+layout: data_model
+title: ExecutionEnvironmentType
+this_version: 1.0.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/cyboxCommon/ExecutionEnvironmentType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>ExecutionEnvironmentType<span class="subdued">CybOX Common Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" selected="selected">STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">The <a href='/data-model/1.0.1/cyboxCommon/ExecutionEnvironmentType'>ExecutionEnvironmentType</a> contains information describing the execution environment of the tool.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>System<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/ObjectPropertiesType">ObjectPropertiesType</a>
+        
+      </td>
+      <td>
+        
+          <p>This field contains information describing the system on which the tool was executed. System should be of type SystemObj:SystemObjectType.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>User_Account_Info<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/ObjectPropertiesType">ObjectPropertiesType</a>
+        
+      </td>
+      <td>
+        
+          <p>This field contains information describing the user account that executed the tool. User_Account_Info should be of type UserAccountObj:UserAccountObjectType.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Command_Line<span class="occurrence">0..1</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>This field specifies the command line string used to run the tool.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Start_Time<span class="occurrence">0..1</span></td>
+      <td>
+        
+          dateTime
+        
+      </td>
+      <td>
+        
+          <p>Thie field specifies when the tool was run.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

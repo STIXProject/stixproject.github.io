@@ -1,0 +1,155 @@
+---
+layout: data_model
+title: ICMPv6DestinationUnreachableType
+this_version: 1.0.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/PacketObj/ICMPv6DestinationUnreachableType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>ICMPv6DestinationUnreachableType<span class="subdued">Network Packet Object Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" selected="selected">STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">Destination unreachable error message; ICMP v6 type=1.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>No_Route<span class="occurrence">0..1</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>No route to destination (ICMP v6 code=0).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Comm_Prohibited<span class="occurrence">0..1</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>Communication with destination administratively prohibited (ICMP v6 code=1).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Beyond_Scope<span class="occurrence">0..1</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>Beyond scope of source address (ICMP v6 code =2).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Address_Unreachable<span class="occurrence">0..1</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>Address is unreachable (ICMP v6 code=3).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Port_Unreachable<span class="occurrence">0..1</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>Port is unreachable (ICMP v6 code=4).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Src_Addr_Failed_Policy<span class="occurrence">0..1</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>Source address failed ingress/egress policy (ICMP v6 code=5).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Reject_Route<span class="occurrence">0..1</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>Reject route to destination (ICMP v6 code=6).</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

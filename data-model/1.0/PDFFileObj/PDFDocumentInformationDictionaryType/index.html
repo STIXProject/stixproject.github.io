@@ -1,0 +1,183 @@
+---
+layout: data_model
+title: PDFDocumentInformationDictionaryType
+this_version: 1.0
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/PDFFileObj/PDFDocumentInformationDictionaryType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>PDFDocumentInformationDictionaryType<span class="subdued">PDF File Object Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" selected="selected">STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">The <a href='/data-model/1.0/PDFFileObj/PDFDocumentInformationDictionaryType'>PDFDocumentInformationDictionaryType</a> captures details of the PDF Document Information Dictionary, used for storing metadata associated with the PDF document.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Title<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Title field captures the title of the PDF document.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Author<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Author field captures the name of the person who created the PDF document.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Subject<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Subject field captures the subject of the PDF document.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Keywords<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Keywords field captures the keywords associated with the PDF document.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Creator<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Creator field captures the name of the application that created the original document, for cases where the original document was then converted to PDF.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Producer<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Producer field captures the name of the application that converted the document to PDF, for cases where the original document was then converted to PDF.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>CreationDate<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The CreationDate field captures the date and time that the document was created.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>ModDate<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The ModDate field captures the date and time that the document was most recently modified.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Trapped<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Trapped field captures a name object indicating whether the document has been modified to included trapping information.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

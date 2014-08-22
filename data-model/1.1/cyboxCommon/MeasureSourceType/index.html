@@ -1,0 +1,283 @@
+---
+layout: data_model
+title: MeasureSourceType
+this_version: 1.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/cyboxCommon/MeasureSourceType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>MeasureSourceType<span class="subdued">CybOX Common Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" selected="selected">STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">The <a href='/data-model/1.1/cyboxCommon/MeasureSourceType'>MeasureSourceType</a> is a type representing a description of a single cyber observation source.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@class<span class="occurrence">optional</span></td>
+      <td>
+        
+          SourceClassTypeEnum
+        
+      </td>
+      <td>
+        
+          <p>The class field is optional and enables identification of the high-level class of this cyber observation source.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@source_type<span class="occurrence">optional</span></td>
+      <td>
+        
+          SourceTypeEnum
+        
+      </td>
+      <td>
+        
+          <p>The source_type field is optional and enables identification of the broad type of this cyber observation source.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@name<span class="occurrence">optional</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>The name field is optional and enables the assignment of a relevant name to this Discovery Method.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@sighting_count<span class="occurrence">optional</span></td>
+      <td>
+        
+          positiveInteger
+        
+      </td>
+      <td>
+        
+          <p>The sighting_count field specifies how many different identical instances of a given Observable may have been seen/sighted by the observation source.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Information_Source_Type<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Information_Source_Type field is optional and utilizes a standardized controlled vocabulary to identify the type of information source leveraged for this cyber observation source.</p>
+        
+          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is InformationSourceTypeVocab in the http://cybox.mitre.org/default_vocabularies-2 namespace. This type is defined in the cybox_default_vocabularies.xsd file or at the URL http://cybox.mitre.org/XMLSchema/default_vocabularies/2.0.1/cybox_default_vocabularies.xsd.</p>
+        
+          <p>Users may also define their own vocabulary using the type extension mechanism (by specifying a vocabulary name and/or reference using the vocab_name and vocab_reference attributes, respectively) or simply use this as a string field.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Tool_Type<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Tool_Type field is optional and (when tools are used) enables identification of the type of tool leveraged as part of this cyber observation source, via a standardized controlled vocabulary.</p>
+        
+          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is ToolTypeVocab in the http://cybox.mitre.org/default_vocabularies-2 namespace. This type is defined in the cybox_default_vocabularies.xsd file or at the URL http://cybox.mitre.org/XMLSchema/default_vocabularies/2.0.1/cybox_default_vocabularies.xsd.</p>
+        
+          <p>Users may also define their own vocabulary using the type extension mechanism (by specifying a vocabulary name and/or reference using the vocab_name and vocab_reference attributes, respectively) or simply use this as a string field.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Description<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StructuredTextType">StructuredTextType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Description field is optional and enables a generalized but structured description of this syber observation source.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Contributors<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/PersonnelType">PersonnelType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Contributors field is optional and enables description of the individual contributors involved in this cyber observation source.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Time<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/TimeType">TimeType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Time field is optional and enables description of various time-related properties for this cyber observation source instance.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Observation_Location<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/LocationType">LocationType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Observation_Location field specifies a relevant physical location for the observation measurement of the associated Observable.</p>
+        
+          <p>This field is implemented through the xsi:type extension mechanism. The default type is CIQAddressInstanceType in the http://cybox.mitre.org/extensions/Identity#CIQAddress-1 namespace. This type is defined in the extensions/location/ciq_address_3.0.xsd file or at the URL http://cybox.mitre.org/XMLSchema/extensions/location/ciq_address/1.0/ciq_address_3.0.xsd.</p>
+        
+          <p>Those who wish to express a simple name may also do so by not specifying an xsi:type and using the Name field.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Tools<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/ToolsInformationType">ToolsInformationType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Tools field is optional and enables description of the tools utilized for this cyber observation source.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Platform<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/PlatformSpecificationType">PlatformSpecificationType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Platform field is optional and enables a formal, standardized specification of the platform for this cyber observation source.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>System<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/ObjectPropertiesType">ObjectPropertiesType</a>
+        
+      </td>
+      <td>
+        
+          <p>The System field is optional and enables characterization of the system on which the mechanism of cyber observation executed. System should be an object of type SystemObj:SystemObjectType.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Instance<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/ObjectPropertiesType">ObjectPropertiesType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Instance field is optional and enables characterization of the process instance in which the mechanism of cyber observation executed. Instance should be of type ProcessObj:ProcessObjectType.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Observable_Location<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/LocationType">LocationType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Observable_Location field specifies a relevant physical location for the associated Observable.</p>
+        
+          <p>This field is implemented through the xsi:type extension mechanism. The default type is CIQAddressInstanceType in the http://cybox.mitre.org/extensions/Identity#CIQAddress-1 namespace. This type is defined in the extensions/location/ciq_address_3.0.xsd file or at the URL http://cybox.mitre.org/XMLSchema/extensions/location/ciq_address/1.0/ciq_address_3.0.xsd.</p>
+        
+          <p>Those who wish to express a simple name may also do so by not specifying an xsi:type and using the Name field.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

@@ -1,0 +1,85 @@
+---
+layout: data_model
+title: LogicalProtocolType
+this_version: 1.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/PacketObj/LogicalProtocolType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>LogicalProtocolType<span class="subdued">Network Packet Object Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" selected="selected">STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">Logical Protocols characterizes the logical protocol of a link layer connection. One example of a logical protocol is ARP.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>ARP_RARP<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/PacketObj/ARPType">ARPType</a>
+        
+      </td>
+      <td>
+        
+          <p>ARP is a logical protocol used for resolution of network layer addresses (e.g., IP addresses) into link layer addresses (e.g., MAC addresses). RARP is a logical protocol used by a host computer to request its network layer address when it has its link layer address.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>NDP<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/PacketObj/NDPType">NDPType</a>
+        
+      </td>
+      <td>
+        
+          <p>Neighbor Discovery Protocol (NDP) is used with IPv6 to determine the link-layer addresses for neighbors. Corresponds to combination of IPv4 protocols: ARP, ICMP Router Discovery, and ICMP Redirect.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

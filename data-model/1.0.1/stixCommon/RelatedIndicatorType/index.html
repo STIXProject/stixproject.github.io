@@ -1,0 +1,129 @@
+---
+layout: data_model
+title: RelatedIndicatorType
+this_version: 1.0.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/stixCommon/RelatedIndicatorType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>RelatedIndicatorType<span class="subdued">STIX Common Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" selected="selected">STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">Identifies or characterizes a relationship to an indicator.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Confidence<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/stixCommon/ConfidenceType">ConfidenceType</a>
+        
+      </td>
+      <td>
+        
+          <p>The confidence field specifies the level of confidence in the assertion of the relationship between the two components.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Information_Source<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/stixCommon/InformationSourceType">InformationSourceType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Information_Source field specifies the source of the information about the relationship between the two components.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Relationship<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/stixCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
+        
+      </td>
+      <td>
+        
+          <p></p>
+        
+          <p>						The relationship field characterizes the type of the relationship between the two components.</p>
+        
+          <p>					</p>
+        
+          <p>						This field is implemented through the xsi:type controlled vocabulary extension mechanism. No default vocabulary type has been defined for STIX 1.0. Users may either define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a free string field.</p>
+        
+          <p>					</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Indicator<span class="occurrence">1..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/stixCommon/IndicatorBaseType">IndicatorBaseType</a>
+        
+      </td>
+      <td>
+        
+          <p></p>
+        
+          <p>								A reference to or representation of the related indicator.</p>
+        
+          <p></p>
+        
+          <p>								This field is implemented through the xsi:type extension mechanism. The default and strongly recommended type is <a href='/data-model/1.0.1/indicator/IndicatorType'>IndicatorType</a> in the http://stix.mitre.org/Indicator-2 namespace. This type is defined in the indicator.xsd file or at the URL http://stix.mitre.org/XMLSchema/indicator/2.0/indicator.xsd.</p>
+        
+          <p>							</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

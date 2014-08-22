@@ -1,8 +1,8 @@
 ---
 layout: flat
 title: Yara Test Mechanism
-tags:
-  - indicator
+constructs:
+  - Indicator
 summary: Represent how to detect an indicator using Yara.
 ---
 

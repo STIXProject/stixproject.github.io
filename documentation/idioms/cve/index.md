@@ -1,8 +1,8 @@
 ---
 layout: flat
 title: CVE in an Exploit Target
-tags:
-  - exploit_target
+constructs:
+  - Exploit Target
 summary: This idiom describes how to represent a disclosed vulnerability identified by a CVE using the Exploit Target construct.
 ---
 

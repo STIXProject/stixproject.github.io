@@ -1,0 +1,365 @@
+---
+layout: data_model
+title: WindowsTaskObjectType
+this_version: 1.0
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/WinTaskObj/WindowsTaskObjectType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>WindowsTaskObjectType<span class="subdued">Win Task Object Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" selected="selected">STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">The <a href='/data-model/1.0/WinTaskObj/WindowsTaskObjectType'>WindowsTaskObjectType</a> type is intended to characterize Windows task scheduler tasks. See Also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381311(v=vs.85).aspx</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@object_reference<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>The object_reference field specifies a unique ID reference to an Object defined elsewhere. This construct allows for the re-use of the defined Properties of one Object within another, without the need to embed the full Object in the location from which it is being referenced. Thus, this ID reference is intended to resolve to the Properties of the Object that it points to.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Custom_Properties<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/CustomPropertiesType">CustomPropertiesType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Custom_Properties construct is optional and enables the specification of a set of custom Object Properties that may not be defined in existing Properties schemas. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Status<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/WinTaskObj/TaskStatusType">TaskStatusType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Status field specifies the current status of the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381263(v=vs.85).aspx</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Priority<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/WinTaskObj/TaskPriorityType">TaskPriorityType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Priority field specifies the priority of the scheduled task. This can either be a free-form string or one the values in the TaskPriorityEnum enumeration. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381876(v=vs.85).aspx</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Name<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Name field specifies the image name for the task.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Application_Name<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Application_Name specifies the application name associated with the task.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Parameters<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Parameters field specifies the command line parameters used to launch the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381875(v=vs.85).aspx</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Flags<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/WinTaskObj/TaskFlagType">TaskFlagType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Flags field specifies any flags that modify the behavior of the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381248(v=vs.85).aspx</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Account_Name<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Account_Name field specifies the name of the account used to run the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381228(v=vs.85).aspx</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Account_Run_Level<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Account_Run_Level field specifies the permission level of the account that the task will be run at.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Account_Logon_Type<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Account_Logon_Type field specifies the security logon method required to run the tasks associated with the account. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383013(v=vs.85).aspx</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Creator<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Creator field specifies the name of the creator of the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381235(v=vs.85).aspx</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Creation_Date<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Creation_Date field specifies the date and time that the task was registered. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa382623(v=vs.85).aspx</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Most_Recent_Run_Time<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Most_Recent_Run_Time field specifies the most recent run date/time of this scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381254(v=vs.85).aspx</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Exit_Code<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/LongObjectPropertyType">LongObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Exit_Code field specifies the last exit code of the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381245(v=vs.85).aspx</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Max_Run_Time<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/UnsignedLongObjectPropertyType">UnsignedLongObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Max_Run_Time field specifies the maximum run time of the scheduled task before terminating, in milliseconds. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381874(v=vs.85).aspx</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Next_Run_Time<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Next_Run_Time field specifies the next run date/time of the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381257(v=vs.85).aspx</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Action_List<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/WinTaskObj/TaskActionListType">TaskActionListType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Action_List field specifies a list of actions to be performed by the scheduled task.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Trigger_List<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/WinTaskObj/TriggerListType">TriggerListType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Trigger_List field specifies a set of triggers used by the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383264(v=vs.85).aspx</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Comment<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Comment field specifies a comment for the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381232(v=vs.85).aspx</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Working_Directory<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Working_Directory field specifies the working directory for the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381878(v=vs.85).aspx</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Work_Item_Data<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/Base64BinaryObjectPropertyType">Base64BinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Work_Item_Data field specifies application defined data associated with the scheduled task. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381271(v=vs.85).aspx</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

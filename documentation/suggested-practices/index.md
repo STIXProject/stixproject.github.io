@@ -31,6 +31,41 @@ In order to use this approach, you will need to define that namespace prefix in 
 
 This format provides high assurance that IDs will be both unique and meaningful, because the producer namespace denotes who's producing it, the construct name denotes what it is, and the overall ID including the GUID lends a high degree of confidence in its uniqueness.
 
+## Assigning IDs
+
+STIX has several constructs with the potential to assign IDs to them such that they can be unambiguously referenced from elsewhere.
+
+Technically the decision to specify an ID on a given construct is optional based on the specifics of the usage context.
+
+As a simple general rule specifying IDs on particular instances of constructs enables clear referencing, relating and pivoting.
+
+This supports several very common STIX use cases such as:
+
+* enabling individual portions of content to be externally referenced unambiguously (e.g. a report talking about a specific Campaign or Threat Actor)
+* enabling the sharing/resharing of portions of STIX content (e.g. PartyB resharing 2 of a set of 100 Indicators received from PartyA)
+* enabling versioning of content
+* enabling the specification of potentially complex webs of interconnection and correlation between portions of STIX content (e.g. connecting particular TTPs and Indicators to specific Campaigns over time)
+* enabling analysis pivoting on content with multiple contexts (e.g. the same IP Address seen in multiple Incidents and with connections to multiple TTPs and Indicators)
+
+
+For these reasons, it is suggested that IDs be specified for the following commonly referenced and/or reused constructs unless there is clear reason not to:
+
+* [Package](/data-model/{{site.current_version}}/stix/STIXType)
+* [Indicator](/data-model/{{site.current_version}}/indicator/IndicatorType)
+* [Incident](/data-model/{{site.current_version}}/incident/IncidentType)
+* [TTP](/data-model/{{site.current_version}}/ttp/TTPType)
+* [Threat_Actor](/data-model/{{site.current_version}}/ta/ThreatActorType)
+* [Campaign](/data-model/{{site.current_version}}/campaign/CampaignType)
+* [Exploit_Target](/data-model/{{site.current_version}}/et/ExploitTargetType)
+* [Course_Of_Action](/data-model/{{site.current_version}}/coa/CourseOfActionType)
+* [Observable](/data-model/{{site.current_version}}/cybox/ObservableType)
+* [Object](/data-model/{{site.current_version}}/cybox/ObjectType)
+* [Action](/data-model/{{site.current_version}}/cybox/ActionType)
+* [Event](/data-model/{{site.current_version}}/cybox/EventType)
+
+As a simple general rule specifying IDs is not suggested for constructs embedded within other constructs (e.g. a CybOX Object containing the embedded specification of another CybOX Related_Object) where the embedded constructs are really only relevant/valid/important within the context of the enclosing construct. In other words they provide contextual characterization for the enclosing construct but would not be of interest on their own. 
+The upside of this is slightly less complexity of IDs on everything. The downside is that it would not be possible to reference or pivot on the embedded constructs.
+
 ## Referencing vs. Embedding
 
 In many cases, you'll have an option to either include a component within the parent component or to reference the component by ID to a representation in a global location.
@@ -75,6 +110,10 @@ These situations are a judgment call, but when making that judgment you should c
 * [TTPs](/data-model/{{site.current_version}}/ttp/TTPType)
 
 It is always suggested that you version these constructs by including a relevant `@id` and `@timestamp` per the [STIX versioning guide](/documentation/concepts/versioning).
+
+Note that many constructs that have a `@timestamp` attribute also have an `Information_Source` field with a `Time` field inside it. The `Time` field has a field called `Produced_Time`, which can easily be confused with `@timestamp`. Though similar, these fields are not used for the same purposes. `@timestamp` is used only for versioning and represents the time that version of the versioned structure was created. `Information_Source/Time/Produced_Time` is not related to versioning and represents the time the record (not that version of the record) was created. In some ways, they can be thought of as created time and modified time but in other ways they are used for completely different purposes.
+
+See the [Versioning](/documentation/concepts/versioning) concept discussion for more information.
 
 ## Creating References
 
@@ -122,31 +161,21 @@ If you do this to add values that you think might be useful for other STIX users
 
 To remove ambiguity regarding the timezone, all times should include an explicit timezone whenever possible.
 
-# Specific Elements
 
-## STIX Header
-You should always include a STIX header whenever possible to communicate the source, intent, and other metadata about the package. In particular, it's recommended to fill out:
-* Title
-* Package_Intent
-* Information_Source
+-----
+
+
+## STIX Package
+{% include sp_package.md %}
 
 ## Indicator
-If possible, an indicator should include the following fields:
+<img src="/images/Indicator.png" class="component-img-right" alt="Indicator Icon" />
 
-* Either Observable, Observable Composition, or Indicator Composition to represent the detectable pattern
-* Title
-* Type
-* Valid_Time_Position
-* Indicated_TTP, even if pointing to a very simple TTP with just a title
-* A confidence assertion
-
-### Creating pattern observables for indicators
-When creating observables for use as patterns within indicators, you should always set the condition attribute on all possible fields to an appropriate value, even if that value is equals. Leaving off the condition attribute implies that the observable is an instance rather than a pattern.
+{% include sp_indicator.md %}
 
 ## Handling
+<img src="/images/Data Marking.png" class="component-img-right" alt="Data Marking Icon" />
 
-### Controlled Structure XPaths
+{% include sp_handling.md %}
 
-The XPath specified in a data marking controlled structure field must select all fields (elements and attributes) that the marking will be applied to. It is not sufficient to select only the root element using the `/` character. Instead, you should use the `node()` function to select relevant nodes. For example, to select the entire document you should use `//node()` while to select a parent construct (Indicator, for example), you could use `ancestor-or-self::stix:Indicator//node()`.
 
-As noted in the annotations, prefixes are valid if they are declared in scope of the Controlled_Structure element.

@@ -1,0 +1,113 @@
+---
+layout: data_model
+title: EthernetHeaderType
+this_version: 1.0.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/PacketObj/EthernetHeaderType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>EthernetHeaderType<span class="subdued">Network Packet Object Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" selected="selected">STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">Ethernet header characterizes and ethernet header and includes information such as source MAC address, destination MAC address, and more.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Destination_MAC_Addr<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/AddressObj/AddressObjectType">AddressObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>Destination MAC Addr characterizes the destination MAC Address of the ethernet frame.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Source_MAC_Addr<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/AddressObj/AddressObjectType">AddressObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>Source MAC Addr characterizes the source MAC Address of the ethernet frame.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Type_Or_Length<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/PacketObj/TypeLengthType">TypeLengthType</a>
+        
+      </td>
+      <td>
+        
+          <p>Type or Length characterizes either the length of the ethernet frame or the protocol type of the network layer.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Checksum<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Checksum characterizes the Frame Check sequence of an ethernet frame.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

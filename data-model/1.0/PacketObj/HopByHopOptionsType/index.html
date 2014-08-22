@@ -1,0 +1,99 @@
+---
+layout: data_model
+title: HopByHopOptionsType
+this_version: 1.0
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/PacketObj/HopByHopOptionsType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>HopByHopOptionsType<span class="subdued">Network Packet Object Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" selected="selected">STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">Defines fields for the IPv6 Hop-by-Hop Options header which is used to carry optional information that must be examined by every node along a packet's delivery path.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Next_Header<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/PacketObj/IANAAssignedIPNumbersType">IANAAssignedIPNumbersType</a>
+        
+      </td>
+      <td>
+        
+          <p>Identifies the type of header immediately following the Hop-by-Hop Options header. Uses the same values as the IPv4 Protocol field.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Header_Ext_Len<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Length of the Hop-by-Hop Options header in 8-octet units, not including the first 8 octets.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Option_Data<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/PacketObj/OptionDataType">OptionDataType</a>
+        
+      </td>
+      <td>
+        
+          <p>Variable-length field, of length such that the complete Hop-by-Hop Options header is an integer multiple of 8 octets long. Contains one or more type-length-value (TLV)-encoded options.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

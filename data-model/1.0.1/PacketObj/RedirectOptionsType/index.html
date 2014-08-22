@@ -1,0 +1,85 @@
+---
+layout: data_model
+title: RedirectOptionsType
+this_version: 1.0.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/PacketObj/RedirectOptionsType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>RedirectOptionsType<span class="subdued">Network Packet Object Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" selected="selected">STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">Redirect messages include zero or more options, some of which may appear multiple times in the same message.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Target_Link_Addr<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/PacketObj/NDPTargetLinkAddrType">NDPTargetLinkAddrType</a>
+        
+      </td>
+      <td>
+        
+          <p>The linnk-layer address for the target.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Redirected_Header<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/PacketObj/NDPRedirectedHeaderType">NDPRedirectedHeaderType</a>
+        
+      </td>
+      <td>
+        
+          <p>As much as possible of the IP packet that triggered the sending of the Redirect message without making the redirect packet exceed the minimum MTU specified in the IPv6 protocol.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

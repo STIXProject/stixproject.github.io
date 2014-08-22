@@ -1,0 +1,113 @@
+---
+layout: data_model
+title: PEExportsType
+this_version: 1.0
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/WinExecutableFileObj/PEExportsType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>PEExportsType<span class="subdued">Win Executable File Object Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" selected="selected">STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">PEExportsType specifies the PE File exports data section. The exports data section contains information about symbols exported by the PE File (a DLL) which can be dynamically loaded by other executables. This type abstracts, and its components, abstract the Windows structures.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Exported_Functions<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/WinExecutableFileObj/PEExportedFunctionsType">PEExportedFunctionsType</a>
+        
+      </td>
+      <td>
+        
+          <p>A list of the exported functions in this section.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Exports_Time_Stamp<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The date and time the export data was created.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Number_Of_Addresses<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/LongObjectPropertyType">LongObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The number of addresses in the export data section's address table.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Number_Of_Names<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/LongObjectPropertyType">LongObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The number of names in the export data section's name table.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

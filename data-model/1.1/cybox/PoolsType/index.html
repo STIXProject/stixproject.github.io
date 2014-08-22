@@ -1,0 +1,113 @@
+---
+layout: data_model
+title: PoolsType
+this_version: 1.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/cybox/PoolsType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>PoolsType<span class="subdued">CybOX Core Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" selected="selected">STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">The <a href='/data-model/1.1/cybox/PoolsType'>PoolsType</a> enables the description of Events, Actions, Objects and Properties in a space-efficient pooled manner with the actual Observable structures defined in the CybOX schema containing references to the pooled elements. This reduces redundancy caused when identical observable elements occur multiple times within a set of defined Observables.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Event_Pool<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cybox/EventPoolType">EventPoolType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Event_Pool construct enables the description of CybOX Events in a space-efficient pooled manner with the actual Observable structures defined in the CybOX schema containing references to the pooled Event elements. This reduces redundancy caused when identical Events occur multiple times within a set of defined Observables.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Action_Pool<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cybox/ActionPoolType">ActionPoolType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Action_Pool construct enables the description of CybOX Actions in a space-efficient pooled manner with the actual Observable structures defined in the CybOX schema containing references to the pooled Action elements. This reduces redundancy caused when identical Actions occur multiple times within a set of defined Observables.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Object_Pool<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cybox/ObjectPoolType">ObjectPoolType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Object_Pool construct enables the description of CybOX Objects in a space-efficient pooled manner with the actual Observable structures defined in the CybOX schema containing references to the pooled Object elements. This reduces redundancy caused when identical Objects occur multiple times within a set of defined Observables.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Property_Pool<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cybox/PropertyPoolType">PropertyPoolType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Property_Pool construct enables the description of CybOX Properties in a space-efficient pooled manner with the actual Observable structures defined in the CybOX schema containing references to the pooled Properties elements. This reduces redundancy caused when identical Properties occur multiple times within a set of defined Observables.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

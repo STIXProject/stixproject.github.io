@@ -1,8 +1,9 @@
 ---
 layout: flat
 title: OpenIOC Test Mechanism
-tags:
-  - indicator
+constructs:
+  - Indicator
+  - TTP
 summary: Represent how to detect an indicator using OpenIOC.
 ---
 

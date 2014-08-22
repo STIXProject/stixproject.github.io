@@ -1,0 +1,207 @@
+---
+layout: data_model
+title: ReferenceType
+this_version: 1.0.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0.1, which is not the latest version (1.1.1).
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>ReferenceType<span class="subdued">CybOX Common Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.0.1" selected="selected">STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">The ReferenceType is a type representing a single reference to a source of information.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@reference_id<span class="occurrence">optional</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p> The id field is optional and is used as a mechanism for citing text in the entry. If an id is provided, it is placed between brackets and precedes this reference and the matching id should be used inside of the text for the entry itself where this reference is applicable. All reference ids assigned within an entry must be unique. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Reference_Description<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/StructuredTextType">StructuredTextType</a>
+        
+      </td>
+      <td>
+        
+          <p>This field provides a description of the reference.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Reference_Author<span class="occurrence">0..n</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p> This field identifies an individual author of the material being referenced. It is not required, but may be repeated sequentially in order to identify multiple authors for a single piece of material.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Reference_Title<span class="occurrence">0..1</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p> This field identifies the title of the material being referenced. It is not required if the material does not have a title.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Reference_Section<span class="occurrence">0..1</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p> This field is intended to provide a means of identifying the exact location of the material inside of the publication source, such as the relevant pages of a research paper, the appropriate chapters from a book, etc. This is useful for both book references and internet references.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Reference_Edition<span class="occurrence">0..1</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p> This field identifies the edition of the material being referenced in the event that multiple editions of the material exist. This will usually only be useful for book references. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Reference_Publication<span class="occurrence">0..1</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p> This field identifies the publication source of the reference material, if one exists. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Reference_Publisher<span class="occurrence">0..1</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p> This field identifies the publisher of the reference material, if one exists. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Reference_Date<span class="occurrence">0..1</span></td>
+      <td>
+        
+          date
+        
+      </td>
+      <td>
+        
+          <p> This field identifies the date when the reference was included in the entry. This provides the reader with a time line for when the material in the reference, usually the link, was valid. The date should be of the format YYYY-MM-DD. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Reference_PubDate<span class="occurrence">0..1</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p> This field describes the date when the reference was published YYYY. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Reference_Link<span class="occurrence">0..1</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p> This field should hold the URL for the material being referenced, if one exists. This should always be used for web references, and may optionally be used for book and other publication references.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

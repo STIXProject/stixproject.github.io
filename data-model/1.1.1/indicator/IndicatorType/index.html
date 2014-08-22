@@ -1,11 +1,54 @@
 ---
 layout: data_model
 title: IndicatorType
+this_version: 1.1.1
 ---
 
-<h1>IndicatorType<span class="subdued">Indicator Schema</span></h1>
 
-<p>The <a href='/data-model/1.1.1/indicator/IndicatorType'>IndicatorType</a> characterizes a cyber threat indicator made up of a pattern identifying certain observable conditions as well as contextual information about the patterns meaning, how and when it should be acted on, etc.</p>
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>IndicatorType<span class="subdued">Indicator Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" selected="selected">STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+    <p>
+      <a href="http://stix.readthedocs.org/en/latest/api/indicator/indicator.html#stix.indicator.indicator.Indicator">
+        <img src="/images/python-logo.png" alt="Python" /><br />
+        API support
+      </a>
+    </p>
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">The <a href='/data-model/1.1.1/indicator/IndicatorType'>IndicatorType</a> characterizes a cyber threat indicator made up of a pattern identifying certain observable conditions as well as contextual information about the patterns meaning, how and when it should be acted on, etc.</p>
+
+
+<hr />
+<h2>Suggested Practices</h2>
+
+{% capture practices %}{% include sp_indicator.md %}{% endcapture %}
+{{ practices | markdownify  }}
+
 
 <hr />
 

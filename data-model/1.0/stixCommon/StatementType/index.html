@@ -1,0 +1,149 @@
+---
+layout: data_model
+title: StatementType
+this_version: 1.0
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/stixCommon/StatementType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>StatementType<span class="subdued">STIX Common Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" selected="selected">STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">
+				StatementType allows the expression of a statement with an associated value, description, source, confidence, and timestamp.
+			</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@timestamp<span class="occurrence">optional</span></td>
+      <td>
+        
+          dateTime
+        
+      </td>
+      <td>
+        
+          <p>Specifies the time this statement was asserted.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Value<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/stixCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
+        
+      </td>
+      <td>
+        
+          <p></p>
+        
+          <p>						Specifies a value characterizing the statement within some vocabulary.</p>
+        
+          <p>					</p>
+        
+          <p>						This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary may be provided by the field using this construct. If that's the case, the schema annotations on that element will describe which vocabulary to use. If not, the default vocabulary is <a href='/data-model/1.0/stixVocabs/HighMediumLowVocab-1.0'>HighMediumLowVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.0.0/stix_default_vocabularies.xsd .</p>
+        
+          <p></p>
+        
+          <p>						Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
+        
+          <p>					</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Description<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/stixCommon/StructuredTextType">StructuredTextType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies a prose description of the statement.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Source<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/stixCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
+        
+      </td>
+      <td>
+        
+          <p></p>
+        
+          <p>						The Source field captures the source of this statement. An optional vocabulary name and reference allows the expression of the source name in some given vocabulary context.</p>
+        
+          <p>					</p>
+        
+          <p>						This field is implemented through the xsi:type controlled vocabulary extension mechanism. No default vocabulary type has been defined for STIX 1.0. Users may either define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a free string field.					</p>
+        
+          <p>					</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Confidence<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/stixCommon/ConfidenceType">ConfidenceType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Confidence field characterizes the level of confidence held in the statement.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

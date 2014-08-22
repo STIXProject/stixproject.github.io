@@ -1,0 +1,183 @@
+---
+layout: data_model
+title: TCPFlagsType
+this_version: 1.0.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/PacketObj/TCPFlagsType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>TCPFlagsType<span class="subdued">Network Packet Object Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" selected="selected">STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">Defines the 9 different flags in the TCP header.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@ns<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>ECN-nonce concealment protection.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@cwr<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>Congestion Window Reduced (CWR) flag is set by the sending host to indicate that it received a TCP segment with the ECE flag set and had responded in congestion control mechanism. http://en.wikipedia.org/wiki/Transmission_Control_Protocol</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@ece<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>ECN-Echo indicates: if the SYN flag is set, that the TCP peer is ECN capable; if the SYN flag is clear, that a packet with Congestion Experienced flag in IP header set is received during normal transmission. http://en.wikipedia.org/wiki/Transmission_Control_Protocol</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@urg<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>Indicates that the Urgent point field is significant.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@ack<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>indicates that the Acknowledgment field is significant. All packets after the initial SYN packet sent by the client should have this flag set. http://en.wikipedia.org/wiki/Transmission_Control_Protocol</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@psh<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>Push functions. asks to push the buffered dtata to the receiving application. http://en.wikipedia.org/wiki/Transmission_Control_Protocol</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@rst<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>Reset the connection.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@syn<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>Synchronize sequence numbers. Only the first packet sent from each end should have this flag set. http://en.wikipedia.org/wiki/Transmission_Control_Protocol</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@fin<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>If this flag is set, it means there is no more data from sender.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

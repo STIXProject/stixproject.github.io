@@ -1,0 +1,127 @@
+---
+layout: data_model
+title: PEImportedFunctionType
+this_version: 1.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/WinExecutableFileObj/PEImportedFunctionType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>PEImportedFunctionType<span class="subdued">Win Executable File Object Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" selected="selected">STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">The <a href='/data-model/1.1/WinExecutableFileObj/PEImportedFunctionType'>PEImportedFunctionType</a> specifies the type describing imported functions.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Function_Name<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Function_Name field specifies the name of the function from the specified library that the PE binary imports.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Hint<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Hint field specifies the index into the export table of the library that the function is found in.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Ordinal<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/NonNegativeIntegerObjectPropertyType">NonNegativeIntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Ordinal field specifies the ordinal value (index) of the function in the library that is found in.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Bound<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Bound field specifies the precomputed address if the imported function is bound.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Virtual_Address<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Virtual_Address field specifies the relative virtual address (RVA) of the PE binary library imported function.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

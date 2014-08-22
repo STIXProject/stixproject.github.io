@@ -1,0 +1,317 @@
+---
+layout: data_model
+title: TTPType
+this_version: 1.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/ttp/TTPType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>TTPType<span class="subdued">TTP Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" selected="selected">STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">TTPType characterizes an individual adversary TTP.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@id<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>Specifies a globally unique identifier for this TTP item. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@idref<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>Specifies a globally unique identifier of a TTP item specified elsewhere.</p>
+        
+          <p>When idref is specified, the id attribute must not be specified, and any instance of this TTP item should not hold content.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@timestamp<span class="occurrence">optional</span></td>
+      <td>
+        
+          dateTime
+        
+      </td>
+      <td>
+        
+          <p>Specifies a timestamp for the definition of a specific version of a TTP item. When used in conjunction with the id, this field is specifying the definition time for the specific version of the TTP item. When used in conjunction with the idref, this field is specifying a reference to a specific version of a TTP item defined elsewhere. This field has no defined semantic meaning if used in the absence of either the id or idref fields.</p>
+        
+          <p>This field must only be used in conjunction with the idref field.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@version<span class="occurrence">optional</span></td>
+      <td>
+        
+          TTPVersionType
+        
+      </td>
+      <td>
+        
+          <p>Specifies the relevant STIX-TTP schema version for this content.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Title<span class="occurrence">0..1</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>The Title field provides a simple title for this TTP.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Description<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/stixCommon/StructuredTextType">StructuredTextType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Description field is optional and provides an unstructured, text description of this TTP.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Short_Description<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/stixCommon/StructuredTextType">StructuredTextType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Short_Description field is optional and provides a short, unstructured, text description of this TTP.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Intended_Effect<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/stixCommon/StatementType">StatementType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Intended_Effect field specifies the suspected intended effect for this TTP.</p>
+        
+          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is <a href='/data-model/1.1/stixVocabs/IntendedEffectVocab-1.0'>IntendedEffectVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.0/stix_default_vocabularies.xsd.</p>
+        
+          <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Behavior<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/ttp/BehaviorType">BehaviorType</a>
+        
+      </td>
+      <td>
+        
+          <p>Behavior describes the attack patterns, malware, or exploits that the attacker leverages to execute this TTP.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Resources<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/ttp/ResourceType">ResourceType</a>
+        
+      </td>
+      <td>
+        
+          <p> Resources describe the infrastructure or tools that the adversary uses to execute this TTP. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Victim_Targeting<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/ttp/VictimTargetingType">VictimTargetingType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Victim_Targeting field characterizes the people, organizations, information or access being targeted.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Exploit_Targets<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/ttp/ExploitTargetsType">ExploitTargetsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Exploit_Targets field characterizes potential vulnerability, weakness or configuration targets for exploitation by this TTP.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Related_TTPs<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/ttp/RelatedTTPsType">RelatedTTPsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Related_TTPs field specifies other TTPs asserted to be related to this cyber threat TTP.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Kill_Chain_Phases<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/stixCommon/KillChainPhasesReferenceType">KillChainPhasesReferenceType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Kill_Chain_Phases field specifies one or more Kill Chain phases associated with this TTP item.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Information_Source<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/stixCommon/InformationSourceType">InformationSourceType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Information_Source field details the source of this entry.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Kill_Chains<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/stixCommon/KillChainsType">KillChainsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Kill_Chains field characterizes specific Kill Chain definitions for reference within specific TTP entries, Indicators and elsewhere.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Handling<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/marking/MarkingType">MarkingType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the relevant handling guidance for this TTP. The valid marking scope is the nearest <a href='/data-model/1.1/stixCommon/TTPBaseType'>TTPBaseType</a> ancestor of this Handling element and all its descendants.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Related_Packages<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/stixCommon/RelatedPackageRefsType">RelatedPackageRefsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Related_Packages field identifies or characterizes relationships to set of related Packages.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

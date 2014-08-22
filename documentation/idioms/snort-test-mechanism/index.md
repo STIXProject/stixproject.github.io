@@ -1,8 +1,10 @@
 ---
 layout: flat
 title: Snort Test Mechanism
-tags:
-  - indicator
+constructs:
+  - Exploit Target
+  - Indicator
+  - TTP
 summary: Represent how to detect an indicator using Snort.
 ---
 

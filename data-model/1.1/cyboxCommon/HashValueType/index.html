@@ -1,0 +1,85 @@
+---
+layout: data_model
+title: HashValueType
+this_version: 1.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/cyboxCommon/HashValueType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>HashValueType<span class="subdued">CybOX Common Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" selected="selected">STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">The <a href='/data-model/1.1/cyboxCommon/HashValueType'>HashValueType</a> is used for specifying the resulting value from a hash calculation.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Simple_Hash_Value<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/SimpleHashValueType">SimpleHashValueType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Simple_Hash_Value field specifies a single result value of a basic cryptograhic hash function outputting a single hexbinary hash value.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Fuzzy_Hash_Value<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.1/cyboxCommon/FuzzyHashValueType">FuzzyHashValueType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Fuzzy_Hash_Value field specifies a single result value of a cryptograhic fuzzy hash function outputting a single complex string based hash value. (e.g. SSDEEP's Block1hash:Block2hash format).</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

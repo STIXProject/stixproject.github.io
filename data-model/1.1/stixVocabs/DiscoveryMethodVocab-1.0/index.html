@@ -1,0 +1,193 @@
+---
+layout: data_model
+title: DiscoveryMethodVocab-1.0
+this_version: 1.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/stixVocabs/DiscoveryMethodVocab-1.0">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>DiscoveryMethodVocab-1.0<span class="subdued">STIX Vocabularies Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" selected="selected">STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">The DiscoveryMethodVocab is the default STIX vocabulary for expressing how an incident was discovered.</p>
+
+<hr />
+
+
+<h2>Vocabulary Items</h2>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  
+    <tr>
+      <td>Agent Disclosure</td>
+      <td>This incident was disclosed by the threat agent (e.g. public brag, private blackmail).</td>
+    </tr>
+  
+    <tr>
+      <td>Fraud Detection</td>
+      <td>This incident was discovered through external fraud detection means (e.g. CPP).</td>
+    </tr>
+  
+    <tr>
+      <td>Monitoring Service</td>
+      <td>This incident was reported by a managed security event monitoring service.</td>
+    </tr>
+  
+    <tr>
+      <td>Law Enforcement</td>
+      <td>This incident was reported by law enforcement.</td>
+    </tr>
+  
+    <tr>
+      <td>Customer</td>
+      <td>This incident was reported by a customer or partner affected by the incident.</td>
+    </tr>
+  
+    <tr>
+      <td>Unrelated Party</td>
+      <td>This incident was reported by an unrelated third party.</td>
+    </tr>
+  
+    <tr>
+      <td>Audit</td>
+      <td>This incident was discovered during an external security audit or scan.</td>
+    </tr>
+  
+    <tr>
+      <td>Antivirus</td>
+      <td>This incident was discovered by an antivirus system.</td>
+    </tr>
+  
+    <tr>
+      <td>Incident Response</td>
+      <td>This incident was discovered in the course of investigating a separate incident.</td>
+    </tr>
+  
+    <tr>
+      <td>Financial Audit</td>
+      <td>This incident was discovered in the course of a financial audit and/or reconciliation process.</td>
+    </tr>
+  
+    <tr>
+      <td>Fraud Detection</td>
+      <td>This incident was discovered through internal fraud detection means.</td>
+    </tr>
+  
+    <tr>
+      <td>HIPS</td>
+      <td>This incident was discovered a host-based IDS or file integrity monitoring.</td>
+    </tr>
+  
+    <tr>
+      <td>IT Audit</td>
+      <td>This incident was discovered by an internal IT audit or scan.</td>
+    </tr>
+  
+    <tr>
+      <td>Log Review</td>
+      <td>This incident was discovered during a log review process or by a SIEM.</td>
+    </tr>
+  
+    <tr>
+      <td>NIDS</td>
+      <td>This incident was discovered by a network-based intrustion detection/prevention system.</td>
+    </tr>
+  
+    <tr>
+      <td>Security Alarm</td>
+      <td>This incident was discovered by a physical security alarm.</td>
+    </tr>
+  
+    <tr>
+      <td>User</td>
+      <td>This incident was reported by a user.</td>
+    </tr>
+  
+    <tr>
+      <td>Unknown</td>
+      <td>It is not known how this incident was discovered.</td>
+    </tr>
+  
+  </tbody>
+</table>
+
+<h2>Fields</h2>
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@vocab_name<span class="occurrence">optional</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>The vocab_name field specifies the name of the controlled vocabulary.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@vocab_reference<span class="occurrence">optional</span></td>
+      <td>
+        
+          anyURI
+        
+      </td>
+      <td>
+        
+          <p>The vocab_reference field specifies the URI to the location of where the controlled vocabulary is defined, e.g., in an externally located XML schema file.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

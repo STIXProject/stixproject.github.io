@@ -1,0 +1,141 @@
+---
+layout: data_model
+title: EmailReceivedLineType
+this_version: 1.0.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/EmailMessageObj/EmailReceivedLineType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>EmailReceivedLineType<span class="subdued">Email Message Object Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" selected="selected">STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">The <a href='/data-model/1.0.1/EmailMessageObj/EmailReceivedLineType'>EmailReceivedLineType</a> captures a single 'Received' line in an email message header.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>From<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The From field captures the 'from' portion of the Received line, if applicable.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>By<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The By field captures the 'by' portion of the Received line, if applicable.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>With<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The With field captures the 'with' portion of the Received line, if applicable.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>For<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The For field captures the 'for' portion of the Received line, if applicable.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>ID<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The ID field captures the 'id' portion of the Received line, if applicable.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Timestamp<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Timestamp field captures the timestamp portion of the Received line, if applicable.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

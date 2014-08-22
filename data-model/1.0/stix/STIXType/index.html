@@ -1,0 +1,225 @@
+---
+layout: data_model
+title: STIXType
+this_version: 1.0
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/stix/STIXType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>STIXType<span class="subdued">STIX Core Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" selected="selected">STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">STIXType defines a bundle of information characterized in the Structured Threat Information eXpression (STIX) language.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@id<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>Specifies a globally unique identifier for this STIX Package. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@idref<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>Specifies a globally unique identifier of a STIX Package specified elsewhere.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@version<span class="occurrence">optional</span></td>
+      <td>
+        
+          STIXPackageVersionEnum
+        
+      </td>
+      <td>
+        
+          <p>Specifies the relevant STIX schema version for this content.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>STIX_Header<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/stix/STIXHeaderType">STIXHeaderType</a>
+        
+      </td>
+      <td>
+        
+          <p>The STIX_Header field provides information characterizing this package of STIX content.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Observables<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cybox/ObservablesType">ObservablesType</a>
+        
+      </td>
+      <td>
+        
+          <p>Characterizes one or more cyber observables.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Indicators<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/stix/IndicatorsType">IndicatorsType</a>
+        
+      </td>
+      <td>
+        
+          <p>Characterizes one or more cyber threat Indicators.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>TTPs<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/stix/TTPsType">TTPsType</a>
+        
+      </td>
+      <td>
+        
+          <p>Characterizes one or more cyber threat adversary Tactics, Techniques or Procedures.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Exploit_Targets<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/stixCommon/ExploitTargetsType">ExploitTargetsType</a>
+        
+      </td>
+      <td>
+        
+          <p>Characterizes one or more potential targets for exploitation.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Incidents<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/stix/IncidentsType">IncidentsType</a>
+        
+      </td>
+      <td>
+        
+          <p>Characterizes one or more cyber threat Incidents.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Courses_Of_Action<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/stix/CoursesOfActionType">CoursesOfActionType</a>
+        
+      </td>
+      <td>
+        
+          <p>Characterizes Courses of Action to be taken in regards to one of more cyber threats.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Campaigns<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/stix/CampaignsType">CampaignsType</a>
+        
+      </td>
+      <td>
+        
+          <p>Characterizes one or more cyber threat Campaigns.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Threat_Actors<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/stix/ThreatActorsType">ThreatActorsType</a>
+        
+      </td>
+      <td>
+        
+          <p>Characterizes one or more cyber Threat Actors.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

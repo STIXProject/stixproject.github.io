@@ -1,0 +1,85 @@
+---
+layout: data_model
+title: Layer7ConnectionsType
+this_version: 1.0
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/NetworkConnectionObj/Layer7ConnectionsType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>Layer7ConnectionsType<span class="subdued">Network Connection Object Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" selected="selected">STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">The <a href='/data-model/1.0/NetworkConnectionObj/Layer7ConnectionsType'>Layer7ConnectionsType</a> specifies the different types of application (layer 7 in the OSI model) connections that may be initiated as part of the network connection.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>HTTP_Session<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/HTTPSessionObj/HTTPSessionObjectType">HTTPSessionObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>The HTTP Session field specifies a single HTTP session initiated between source and destination IP addresses/ports, and includes 1-n HTTP Request/Response pairs.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>DNS_Query<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/DNSQueryObj/DNSQueryObjectType">DNSQueryObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>The DNS_Query field specifies a single DNS query/answer pair initiated between source and destination IP addresses/ports.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

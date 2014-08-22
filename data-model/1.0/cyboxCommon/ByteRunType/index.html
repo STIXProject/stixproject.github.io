@@ -1,0 +1,141 @@
+---
+layout: data_model
+title: ByteRunType
+this_version: 1.0
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/cyboxCommon/ByteRunType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>ByteRunType<span class="subdued">CybOX Common Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" selected="selected">STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">The <a href='/data-model/1.0/cyboxCommon/ByteRunType'>ByteRunType</a> is used for representing a single byte run from within a raw object.</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Offset<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Offset field specifies the offset of the beginning of the byte run as measured from the beginning of the object.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>File_System_Offset<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The File_System_Offset field is relevant only for byte runs of files in forensic analysis.It specifies the offset of the beginning of the byte run as measured from the beginning of the relevant file system.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Image_Offset<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Image_Offset field is provided for forensic analysis purposes and specifies the offset of the beginning of the byte run as measured from the beginning of the relevant forensic image.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Length<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Length field specifies the number of bytes in the byte run.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Hashes<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/cyboxCommon/HashListType">HashListType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Hashes field contains computed hash values for this the data in this byte run.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Byte_Run_Data<span class="occurrence">0..1</span></td>
+      <td>
+        
+          anyType
+        
+      </td>
+      <td>
+        
+          <p>The Byte_Run_Data field contains a raw dump of the byte run data, typically enclosed within an XML CDATA section.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

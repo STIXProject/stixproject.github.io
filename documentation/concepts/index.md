@@ -3,12 +3,54 @@ layout: flat
 title: STIX Concepts
 ---
 
-This page describes several central STIX concepts that cut across all of the core STIX data types
+This page describes several central STIX concepts that cut across all of the core STIX data types.
 
-* [Controlled Vocabularies](controlled-vocabularies) - Describes how to use
-    values from a default vocabulary, define custom vocabularies, or use values
-    outside of any vocabulary.
-* [Data Markings](data-markings) - Describes how to use data markings to mark STIX content.
-* [Relationships](relationships) - Describes how to use STIX relationships.
-* [Versioning](versioning) - Describes a few different versioning scenarios and how those are handled in STIX.
-* [xsi:type](xsi-type) - Describes the STIX usage of xsi:type for core components, extension points, and controlled vocabularies.
+<div class="row">
+  <div class="col-md-6">
+    <div class="well">
+      <h4><a href="controlled-vocabularies">Controlled Vocabularies</a></h4>
+
+      <p>Describes how to use values from a default vocabulary, define custom
+      vocabularies, or use values outside of any vocabulary.</p>
+
+      <a class="btn btn-primary" href="controlled-vocabularies">Go »</a>
+    </div>
+
+    <div class="well">
+      <img src="/images/Data Marking.png" class="component-img-right" alt="Data Marking Icon" />
+      <h4><a href="data-markings">Data Markings</a></h4>
+
+      <p>Describes how to use data markings to mark STIX content.</p>
+
+      <a class="btn btn-primary" href="data-markings">Go »</a>
+    </div>
+
+    <div class="well">
+      <h4><a href="relationships">Relationships</a></h4>
+
+      <p>Describes how to use STIX relationships.</p>
+
+      <a class="btn btn-primary" href="relationships">Go »</a>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="well">
+      <h4><a href="versioning">Versioning</a></h4>
+
+      <p>Describes a few different versioning scenarios and how those are
+      handled in STIX.</p>
+
+      <a class="btn btn-primary" href="versioning">Go »</a>
+    </div>
+
+    <div class="well">
+      <h4><a href="xsi-type">xsi:type</a></h4>
+
+      <p>Describes the STIX usage of xsi:type for core components, extension
+      points, and controlled vocabularies.</p>
+
+      <a class="btn btn-primary" href="xsi-type">Go »</a>
+    </div>
+  </div>
+</div>

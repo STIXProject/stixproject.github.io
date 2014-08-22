@@ -1,0 +1,183 @@
+---
+layout: data_model
+title: NetflowV5FlowHeaderType
+this_version: 1.0.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0.1, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/NetFlowObj/NetflowV5FlowHeaderType">View the latest!</a>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>NetflowV5FlowHeaderType<span class="subdued">Network Flow Object Schema</span></h1>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" selected="selected">STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+<p class="data-model-description">Defines elements of a netflow v5 header. http://netflow.caligare.com/netflow_v5.htm</p>
+
+<hr />
+
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Version<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the NetFlow export format version number, which defaults to 5 in this case.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Count<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the number of flows exported in the packet (1-30).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Sys_Up_Time<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the current time in milliseconds since the export device booted.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Unix_Secs<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the current time in milliseconds since 0000 UTC 1970.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Unix_Nsecs<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the residual in nanoseconds since 0000 UTC 1970.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Flow_Sequence<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the sequence counter of total flows seen.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Engine_Type<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the type of flow-switching engine.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Engine_ID<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the slot number of the flow-switching engine.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Sampling_Interval<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the sampling interval field, which consists of the first two bits holding the sampling mode, with the remaining 14 bits holding the value of the sampling interval.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
