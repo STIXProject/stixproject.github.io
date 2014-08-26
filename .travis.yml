@@ -7,4 +7,4 @@ before_install:
 install:
   - pip install -q stix
 
-script: test_idioms.sh
+script: ./test_idioms.sh
