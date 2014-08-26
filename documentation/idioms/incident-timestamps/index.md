@@ -134,7 +134,9 @@ stix_package.add_incident(breach)
 print pkg.to_xml() 
 {% endhighlight %}
 
-[Full Python](sample.py)
+[Full Python](incident-timestamps_produce.py)
+
+Code to parse the resulting output [is here](incident-timestamps_consume.py)
 
 ## Further Reading
 
