@@ -10,7 +10,7 @@ constructs:
 summary: You have a list of IP addresses (or hashes, or URLs, etc) and want to convert it to STIX. Should you use incidents, indicators, or both?
 ---
 
-Many threat intel feeds that are available today and not already formatted as STIX are flat lists of "bad things": IPs that are known to be malware C2, malicious URLs, malware file hashes. When considering how to convert these to STIX (either as the original producer or as an intermediary) a common question that comes up is whether they should be converted to a list of indicators, a list of incidents, or maybe both. This idiom looks at several different examples and explains when to use one approach vs. another.
+Many threat intel feeds that are available today and not already formatted as STIX are flat lists of "bad things": IPs that are known to be malware C2, malicious URLs, malware file hashes. When considering how to convert these to STIX (either as the original producer or as an intermediary) a common question that comes up is whether they should be converted to a list of **indicators**, a list of **incidents**, or maybe **both**. This idiom looks at several different examples and explains when to use one approach vs. another.
 
 ## Background
 
@@ -18,21 +18,21 @@ In STIX, an [Indicator](/data-model/{{site.current_version}}/indicator/Indicator
 
 An [Incident](/data-model/{{site.current_version}}/incident/IncidentType), on the other hand, captures information about something that already happened. As an example, "I saw 192.168.1.1 in my network traffic and here's how it affected me".
 
-Notice that those are two different statements and yet both describe the detection of 192.168.1.1 in network traffic. But, the indicator conveys information about something that might happen and how to find out while the incident conveys a description of something already happened.
+Notice that those are two different statements and yet both describe the detection of 192.168.1.1 in network traffic. But, the indicator conveys information about something that might happen and how to find it, while the incident conveys a description of something already happened.
 
-Data providers often do not make this explicit distinction. Many open source intelligence feeds just give a list of IP addresses, potentially with an associated timestamp and maybe some bot name. Often the data is called "IPs of Interest" or "Botnet IPs". It's never really made clear whether the producer is suggesting that consumers should use the IPs in their detection tools or whether the producer is just indicating that they saw them.
+Data providers often do not make this explicit distinction. Many open source intelligence feeds just give a list of IP addresses, potentially with an associated timestamp and maybe some bot name. Often the data is called "IPs of Interest" or "Botnet IPs". It is often not really made clear whether the producer is suggesting that consumers should use the IPs in their detection tools or whether the producer is just indicating that they saw them.
 
-When mapping this to STIX or producing similar content directly to STIX you're forced to resolve this ambiguity by choosing between an incident and an indicator.
+When mapping this to STIX or producing similar content directly to STIX, you're forced to resolve this ambiguity by choosing between an incident and an indicator.
 
 ## Considerations
 
 When deciding whether to create indicators or incidents (or both), consider the following question: *Am I conveying what was observed at some point in time, something to look for going forward, or both?*
 
-* Use **Incident** if you're describing something that was observed at a point in time for use in analysis or to track history over time.
-* Use **Indicator** if you're conveying detection guidance (things to look for and potentially alert on). In some cases, the data will be sourced from something that you observed at a point in time but if your intent in conveying it is to say "look for these things" you should still use indicator instead of incident.
+* Use an **Incident** if you're describing something that was observed at a point in time for use in analysis or to track history over time.
+* Use an **Indicator** if you're conveying detection guidance (things to look for and potentially alert on). In some cases, the data will be sourced from something that you observed at a point in time but if your intent in conveying it is to say "look for these things" you should still use an indicator instead of an incident.
 * Also note that you could do both: convey both detection guidance and the historical data that is the basis for this detection guidance.
 
-To summarize: use indicators, unless you explicitly want to convey data for analysis rather than detection guidance
+To summarize: use indicators, unless you explicitly want to convey data for analysis rather than detection guidance.
 
 ### Example - IP List
 
@@ -46,7 +46,7 @@ IP Address|First Seen|Bot Name
 
 ### As Indicators
 
-One option in converting this data to STIX is to convert it to indicators: the IP address is the CybOX `Observable` pattern, the first seen time goes into a `Sighting` (or if it's seen as unimportant can be ignored), and the Bot Name is the `Indicated_TTP`. This indicates that you should look for these IP addresses in your own network traffic and, if you see it, it indicates a potential bot infection.
+One option in converting this data to STIX is to convert it to indicators: the **IP address** is the CybOX `Observable` pattern, the **First Seen** time goes into a `Sighting` (which can be ignored if this information is unimportant), and the **Bot Name** is the `Indicated_TTP`. This indicates that you should look for the given IP addresses in your own network traffic and, if you see it, it indicates a potential bot infection.
 
 <ul class="nav nav-tabs">
   <li class="active"><a href="#indicator-xml" data-toggle="tab">XML</a></li>
@@ -130,7 +130,7 @@ print data
 
 ### As Incidents
 
-The other approach would be to convert it to incidents: the IP is a related observable, the first seen is the incident's `First_Malicious_Action`, and the Bot Name is a `Leveraged_TTP`. This conveys that the IP addresses were seen in network traffic at that time and were linked to the bot in the leveraged TTP.
+The other approach would be to convert it to incidents: the **IP Address** is a `Related_Observable`, the **First Seen** time is the incident's `First_Malicious_Action`, and the **Bot Name** is a `Leveraged_TTP`. This conveys that the IP addresses were seen in network traffic at that time and were linked to the bot in the leveraged TTP.
 
 <ul class="nav nav-tabs">
   <li class="active"><a href="#incident-xml" data-toggle="tab">XML</a></li>
@@ -242,7 +242,7 @@ print data
 
 ### Both Indicators and Incidents
 
-Finally, both indicators and incidents could be created and they could be linked together. This would convey both that the indicators were observed in an environment linked to that bot and that you should also look for them in your environment.
+Finally, both an indicator and an incident could be created for each row, and linked together. This would convey both that traffic to the IP address was observed in the producer's environment linked to that bot, and also that the consumer should also look for them in their environment.
 
 <ul class="nav nav-tabs">
   <li class="active"><a href="#combined-xml" data-toggle="tab">XML</a></li>
@@ -394,11 +394,11 @@ print data
 
 ## Summary
 
-Note that these options are not an example of STIX allowing you to describe the same thing in different ways: they make very different types of statements about the data and how consumers should interpret it. The one you pick isn't arbitrary but is dependent on what the producer wants to communicate. While in general it's likely that the answer is indicators this is not a hard and fast rule.
+Note that these options are **not** different ways to describe the same thing.  Although the underlying data is the same, STIX allows a more expressive context on what the data represents and how consumers should interpret it. The choice between Indicator and Incident is not arbitrary, but depends on what the producer wants to communicate. While in general it's likely that the answer is indicators, this is not a hard and fast rule.
 
 Also, keep in mind that although this example talks about IP addresses the same concepts can be applied to other types of data. Always think "what do I want to describe" instead of "how/where can I fit this data into STIX".
 
 ## Further Reading
 
 * The [Indicator C2 idiom](../c2-indicator) describes many of these same concepts but with more of a focus on how to represent the data when you know it's an indicator.
-* Similarly, the [Incident Related Observables idiom](../related-observables) describes these concepts in the context of an indicator
+* Similarly, the [Incident Related Observables idiom](../related-observables) describes these concepts in the context of an indicator.
