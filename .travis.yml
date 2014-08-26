@@ -1,0 +1,10 @@
+language: python
+
+before_install: 
+  - sudo apt-get update
+  - sudo apt-get install python-dev python-pip libxml2-dev libxslt-dev zlib1g-dev
+
+install:
+  - pip install -q stix
+
+script: test_idioms.sh
