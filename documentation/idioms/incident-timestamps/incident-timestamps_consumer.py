@@ -4,7 +4,7 @@ import sys
 from stix.core import STIXPackage, STIXHeader
 
 def parse_stix( pkg ):
-    print "==="
+    print "== INDICATOR =="
     print "Package: " + str(pkg.stix_header.description)
     print "Submitter: " + pkg.stix_header.information_source.identity.name
     for inc in pkg.incidents:
