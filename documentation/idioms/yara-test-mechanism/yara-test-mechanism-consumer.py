@@ -19,8 +19,7 @@ def main():
 
         for tm in indicator.test_mechanisms:
             print "Producer: " + tm.producer.identity.name
-            for rule in tm.rules:
-                print "Rule: " + rule.value
+            print "Rule: %s" % tm.rule
     
 if __name__ == '__main__':
     main()
