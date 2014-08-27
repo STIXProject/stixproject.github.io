@@ -1,0 +1,82 @@
+<stix:STIX_Package 
+	xmlns:cyboxCommon="http://cybox.mitre.org/common-2"
+	xmlns:cybox="http://cybox.mitre.org/cybox-2"
+	xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2"
+	xmlns:AddressObj="http://cybox.mitre.org/objects#AddressObject-2"
+	xmlns:example="http://example.com"
+	xmlns:incident="http://stix.mitre.org/Incident-1"
+	xmlns:indicator="http://stix.mitre.org/Indicator-2"
+	xmlns:ttp="http://stix.mitre.org/TTP-1"
+	xmlns:stixCommon="http://stix.mitre.org/common-1"
+	xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1"
+	xmlns:stix="http://stix.mitre.org/stix-1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd
+	http://cybox.mitre.org/cybox-2 http://cybox.mitre.org/XMLSchema/core/2.1/cybox_core.xsd
+	http://cybox.mitre.org/default_vocabularies-2 http://cybox.mitre.org/XMLSchema/default_vocabularies/2.1/cybox_default_vocabularies.xsd
+	http://cybox.mitre.org/objects#AddressObject-2 http://cybox.mitre.org/XMLSchema/objects/Address/2.1/Address_Object.xsd
+	http://stix.mitre.org/Incident-1 http://stix.mitre.org/XMLSchema/incident/1.1.1/incident.xsd
+	http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.1.1/indicator.xsd
+	http://stix.mitre.org/TTP-1 http://stix.mitre.org/XMLSchema/ttp/1.1.1/ttp.xsd
+	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd
+	http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
+	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd" id="example:Package-58d4989b-33f3-411a-b524-02e40f1a115d" version="1.1.1" timestamp="2014-08-22T20:17:38.959000+00:00">
+    <stix:STIX_Header>
+        <stix:Title>IP Indicators</stix:Title>
+        <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Indicators - Watchlist</stix:Package_Intent>
+    </stix:STIX_Header>
+    <stix:Indicators>
+        <stix:Indicator id="example:indicator-0756a255-6623-4226-8356-015396918b38" timestamp="2014-08-22T20:17:38.959000+00:00" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
+            <indicator:Title>192.168.1.1</indicator:Title>
+            <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">IP Watchlist</indicator:Type>
+            <indicator:Observable id="example:Observable-c46356e0-9d93-408b-ad2b-3aa2b561cfe9">
+                <cybox:Object id="example:Address-d1482a44-e95b-4ebc-abba-0486e0df7ea9">
+                    <cybox:Properties xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                        <AddressObj:Address_Value condition="Equals">192.168.1.1</AddressObj:Address_Value>
+                    </cybox:Properties>
+                </cybox:Object>
+            </indicator:Observable>
+            <indicator:Indicated_TTP>
+                <stixCommon:TTP idref="example:ttp-d6b60324-a1b8-4d51-8c26-3aef6351371d" xsi:type='ttp:TTPType' version="1.1.1"/>
+            </indicator:Indicated_TTP>
+        </stix:Indicator>
+        <stix:Indicator id="example:indicator-d8ab6472-53da-4153-89f5-1c6aa10af6d7" timestamp="2014-08-22T20:17:38.960000+00:00" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
+            <indicator:Title>192.168.1.3</indicator:Title>
+            <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">IP Watchlist</indicator:Type>
+            <indicator:Observable id="example:Observable-631d7e05-1541-4bcd-9a10-8c83c9612e90">
+                <cybox:Object id="example:Address-2070d6e9-399f-4a52-ab5e-0fb0fee93799">
+                    <cybox:Properties xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                        <AddressObj:Address_Value condition="Equals">192.168.1.3</AddressObj:Address_Value>
+                    </cybox:Properties>
+                </cybox:Object>
+            </indicator:Observable>
+            <indicator:Indicated_TTP>
+                <stixCommon:TTP idref="example:ttp-d6b60324-a1b8-4d51-8c26-3aef6351371d" xsi:type='ttp:TTPType' version="1.1.1"/>
+            </indicator:Indicated_TTP>
+        </stix:Indicator>
+        <stix:Indicator id="example:indicator-120639b8-71a7-42f4-97d2-8ae4447b6305" timestamp="2014-08-22T20:17:38.961000+00:00" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
+            <indicator:Title>192.168.1.2</indicator:Title>
+            <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">IP Watchlist</indicator:Type>
+            <indicator:Observable id="example:Observable-627dd84c-c1f5-49ee-9c4c-8e8a0b6a17e5">
+                <cybox:Object id="example:Address-8da21f2c-e605-4b45-9c72-5ebd857665af">
+                    <cybox:Properties xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+                        <AddressObj:Address_Value condition="Equals">192.168.1.2</AddressObj:Address_Value>
+                    </cybox:Properties>
+                </cybox:Object>
+            </indicator:Observable>
+            <indicator:Indicated_TTP>
+                <stixCommon:TTP idref="example:ttp-b3f3da5c-376c-486f-8c7c-79b1bf2620e4" xsi:type='ttp:TTPType' version="1.1.1"/>
+            </indicator:Indicated_TTP>
+        </stix:Indicator>
+    </stix:Indicators>
+    <stix:TTPs>
+        <stix:TTP id="example:ttp-d6b60324-a1b8-4d51-8c26-3aef6351371d" timestamp="2014-08-22T20:17:38.959000+00:00" xsi:type='ttp:TTPType' version="1.1.1">
+            <ttp:Title>zbot</ttp:Title>
+        </stix:TTP>
+        <stix:TTP id="example:ttp-b3f3da5c-376c-486f-8c7c-79b1bf2620e4" timestamp="2014-08-22T20:17:38.961000+00:00" xsi:type='ttp:TTPType' version="1.1.1">
+            <ttp:Title>iSpy2</ttp:Title>
+        </stix:TTP>
+    </stix:TTPs>
+</stix:STIX_Package>
+

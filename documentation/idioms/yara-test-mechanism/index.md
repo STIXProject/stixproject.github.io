@@ -97,7 +97,7 @@ rule silent_banker : banker
 indicator = Indicator(title="silent_banker", description="This is just an example")
 
 tm = YaraTestMechanism()
-tm.rules = [rule]
+tm.rule = rule
 tm.efficacy = "Low"
 tm.producer = InformationSource(identity=Identity(name="Yara"))
 tm.producer.references = ["http://plusvic.github.io/yara/"]
@@ -116,8 +116,7 @@ for indicator in stix_package.indicators:
     for tm in indicator.test_mechanisms:
         print "Producer: " + tm.producer.identity.name
         print "Efficacy: " + tm.efficacy.value.value
-        for rule in tm.rules:
-            print "Rule: " + rule.value
+        print "Rule: %s" % tm.rule
 {% endhighlight %}
   </div>
 </div>
