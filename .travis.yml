@@ -8,3 +8,7 @@ install:
   - pip install -q stix
 
 script: ./test_idioms.sh
+
+notifications:
+  email:
+    - stix-commits-list@lists.mitre.org
