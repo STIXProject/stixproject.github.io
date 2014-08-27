@@ -116,7 +116,7 @@ breach.confidence = "High"
 # set incident-specific timestamps
 breach.time = incidentTime()
 breach.title = "Breach of Cyber Tech Dynamics"
-breach.time.initial_compromise = datetime.strptime("2012-01-30", "%Y-%m-%d") 
+breach.time.initial_compromise = datetime.strptime("2012-01-30", "%Y-%m-%d")  
 breach.time.incident_discovery = datetime.strptime("2012-05-10", "%Y-%m-%d") 
 breach.time.restoration_achieved = datetime.strptime("2012-08-10", "%Y-%m-%d") 
 breach.time.incident_reported = datetime.strptime("2012-12-10", "%Y-%m-%d") 
@@ -134,7 +134,9 @@ stix_package.add_incident(breach)
 print pkg.to_xml() 
 {% endhighlight %}
 
-[Full Python](sample.py)
+[Production Python](incident-timestamps_producer.py) | [Consumption Python](incident-timestamps_consumer.py)
+
+Code to parse the resulting output [is here](incident-timestamps_consume.py)
 
 ## Further Reading
 
