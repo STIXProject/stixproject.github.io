@@ -136,8 +136,6 @@ print pkg.to_xml()
 
 [Production Python](incident-timestamps_producer.py) | [Consumption Python](incident-timestamps_consumer.py)
 
-Code to parse the resulting output [is here](incident-timestamps_consume.py)
-
 ## Further Reading
 
 See the full documentation for the relevant types for further information that may be provided:
