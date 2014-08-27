@@ -9,21 +9,19 @@ summary: "Just the facts, ma'am"
 
 ## Scenario
 
-In this example we will cover the basic information needed to capture a computer intrusion incident. Imagine that in early 2012 a company named "Canary Corp" had their network compromised and reported that information as a financial loss in SEC filings. 
+In this example we will cover the basic information needed to capture a computer intrusion incident using STIX.
 
-The breach was disclosed by "Sample Investigations, LLC" and included substantial details with third-party verification.
+Imagine that in early 2012 a company named "Canary Corp" had their network compromised and reported that information as a financial loss in SEC filings. The breach was disclosed by "Sample Investigations, LLC" and included substantial details with third-party verification.
 
 ## Data model
 
-We can describe this historical breach using an [Incident](/data-model/{{site.current_version}}/incident/IncidentType).
+Historical incidents (breaches) are describing using the [Incident](/data-model/{{site.current_version}}/incident/IncidentType) structure. The bare minimum to describe an Incident is **who** was affected, **what** type of damage was sustained, and **when** it was detected (and later reported).
 
-The bare minimum to describe an Incident is **who** was affected, **what** type of damage was sustained, and **when** it was detected (and later reported). 
-  We use `Impact` to show that financial loss was sustained.
+**WHO:** The organization affected (Canary Corp) is listed as the `Victim` using [IdentityType](/data-model/{{site.current_version}}/stixCommon/IdentityType/). In this case just the name is used but you could also characterize more detailed information (addresses, organizational hierarchies, etc.) via the [CIQ extension](/data-model/{{site.current_version}}/stix-ciqidentity/CIQIdentity3.0InstanceType/). The person or organization who reports the incident is captured under while the person who reported it is captured under `Reporter`. As with Victim, the Reporter field can use either a simple name or the CIQ extension.
 
-The organization affected is listed as the `Victim`, while the person who reported it is captured under `Information Source`. The time when they initially found the breach is captured under `Incident Discovery Time`. Note that `IncidentTime` is distinct from the builtin `Time` type, and includes additional fields specific to incidents.
+**WHAT:** The `Impact_Assessment` field is used to convey a list of impacts that the incident caused using the [IncidentEffectVocab](/data-model/{{site.current_version}}/stixVocabs/IncidentEffectVocab-1.0/). In this case, a single effect is added corresponding to financial impact. Additionally, since the investigators were able to thoroughly validate the incident the `Confidence` field is set to "High". If the incident were unsubstantiated or in early stages of investigation, this value would instead be `Low`.
 
-Since the investigators were able to thoroughly validate the incident, we use a `High` Confidence rating. If the incident were unsubstantiated or in early stages of investigation, this value would instead be `Low`. 
-
+**WHEN:** Timestamps related to the incident itself are all represented in the `Time` field using [TimeType](data-model/{{site.current_version}/incident/TimeType/). In this case, only the discovery time is known so the `Incident_Discovery` field is populated with that time. One gotcha with incident timestamps is that time fields related to the incident itself all go in `Time` while timestamps related to the STIX data construct go into `Information_Source/Time`.
 
 ## XML
 
