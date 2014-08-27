@@ -3,7 +3,7 @@
 for dir in ./documentation/idioms/*; do
     if [ -d $dir ] 
     then
-        pushd $dir  #change to idiom directory
+        pushd $dir > /dev/null  #change to idiom directory
 
         for producer in ./*producer.py ; do
         if [ -e $producer ]
@@ -35,7 +35,7 @@ for dir in ./documentation/idioms/*; do
         fi
         done
 
-        popd #return to root dir
+        popd > /dev/null #return to root dir
     fi
 done;
 
