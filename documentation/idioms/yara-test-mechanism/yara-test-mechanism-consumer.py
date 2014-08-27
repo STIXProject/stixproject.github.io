@@ -6,6 +6,7 @@
 The following code requires python-stix v1.1.1.0 or greater installed.
 For installation instructions, please refer to https://github.com/STIXProject/python-stix.
 '''
+from stix.extensions.test_mechanism.yara_test_mechanism import YaraTestMechanism
 
 from stix.core import STIXPackage
 
