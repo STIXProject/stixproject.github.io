@@ -18,7 +18,7 @@ In STIX, an [Indicator](/data-model/{{site.current_version}}/indicator/Indicator
 
 An [Incident](/data-model/{{site.current_version}}/incident/IncidentType), on the other hand, captures information about something that already happened. As an example, "I saw 192.168.1.1 in my network traffic and here's how it affected me".
 
-Notice that those are two different statements and yet both describe the detection of 192.168.1.1 in network traffic. But, the indicator conveys information about something that might happen and how to find it, while the incident conveys a description of something already happened.
+Notice that those are two different statements and yet both describe the detection of 192.168.1.1 in network traffic. But, the indicator conveys information about something that might happen and how to find it, while the incident conveys a description of something that already happened.
 
 Data providers often do not make this explicit distinction. Many open source intelligence feeds just give a list of IP addresses, potentially with an associated timestamp and maybe some bot name. Often the data is called "IPs of Interest" or "Botnet IPs". It is often not really made clear whether the producer is suggesting that consumers should use the IPs in their detection tools or whether the producer is just indicating that they saw them.
 
@@ -43,6 +43,8 @@ IP Address|First Seen|Bot Name
 192.168.1.1|2014-01-01T09:23:23Z|ZBot
 192.168.1.2|2014-01-01T11:21:27Z|iSpy2
 192.168.1.3|2014-01-01T17:45:54Z|ZBot
+
+**NOTE**: The XML examples below contain the representation of just the first row in the above table. 
 
 ### As Indicators
 
@@ -394,7 +396,7 @@ print data
 
 ## Summary
 
-Note that these options are **not** different ways to describe the same thing.  Although the underlying data is the same, STIX allows a more expressive context on what the data represents and how consumers should interpret it. The choice between Indicator and Incident is not arbitrary, but depends on what the producer wants to communicate. While in general it's likely that the answer is indicators, this is not a hard and fast rule.
+Note that these options are not different ways to describe the same thing.  Although the underlying data is the same, STIX allows a more expressive context on what the data represents and how consumers should interpret it. The choice between Indicator and Incident is not arbitrary, but depends on what the producer wants to communicate. While in general it's likely that the answer is indicators, this is not a hard and fast rule.
 
 Also, keep in mind that although this example talks about IP addresses the same concepts can be applied to other types of data. Always think "what do I want to describe" instead of "how/where can I fit this data into STIX".
 
