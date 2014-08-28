@@ -22,22 +22,23 @@ def build_stix( ):
     stix_header.description = "Sample breach report" 
     stix_header.add_package_intent ("Incident")
 
-    # stamp with creator
-    stix_header.information_source = InformationSource()
-    stix_header.information_source.description = "The person who reported it"
-
-    stix_header.information_source.time = Time()
-    stix_header.information_source.time.produced_time = datetime.strptime("2014-03-11","%Y-%m-%d") # when they submitted it
-
-    stix_header.information_source.identity = Identity()
-    stix_header.information_source.identity.name = "Sample Investigations, LLC"
-
     stix_package.stix_header = stix_header
 
     # add incident and confidence
     breach = Incident()
     breach.description = "Intrusion into enterprise network"
     breach.confidence = "High"
+
+    # stamp with reporter
+    breach.reporter = InformationSource()
+    breach.reporter.description = "The person who reported it"
+
+    breach.reporter.time = Time()
+    breach.reporter.time.produced_time = datetime.strptime("2014-03-11","%Y-%m-%d") # when they submitted it
+
+    breach.reporter.identity = Identity()
+    breach.reporter.identity.name = "Sample Investigations, LLC"
+
 
     # incident time is a complex object with support for a bunch of different "when stuff happened" items
     breach.time = incidentTime()

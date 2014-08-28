@@ -39,28 +39,28 @@ Historical incidents (breaches) are describing using the [Incident](/data-model/
 	http://stix.mitre.org/Incident-1 http://stix.mitre.org/XMLSchema/incident/1.1.1/incident.xsd
 	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd
 	http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
-	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd" id="example:Package-3e82904d-e830-4fd6-806d-e4406c31b263" version="1.1.1" timestamp="2014-08-14T20:15:57.793887+00:00">
+	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd" id="example:Package-fba447a0-7c5b-4329-98a3-1324080101d4" version="1.1.1" timestamp="2014-08-28T16:42:52.859307+00:00">
     <stix:STIX_Header>
         <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Incident</stix:Package_Intent>
         <stix:Description>Sample breach report</stix:Description>
-        <stix:Information_Source>
-            <stixCommon:Description>The person who reported it</stixCommon:Description>
-            <stixCommon:Identity id="example:Identity-74b42822-1d2d-4996-8c66-1835ed7666a6">
-                <stixCommon:Name>Sample Investigations, LLC</stixCommon:Name>
-            </stixCommon:Identity>
-            <stixCommon:Time>
-                <cyboxCommon:Produced_Time>2014-03-11T00:00:00</cyboxCommon:Produced_Time>
-            </stixCommon:Time>
-        </stix:Information_Source>
     </stix:STIX_Header>
     <stix:Incidents>
-        <stix:Incident id="example:incident-15e6855a-243b-4a7f-88c3-8b199f4338bc" timestamp="2014-08-14T20:15:57.799710+00:00" xsi:type='incident:IncidentType' version="1.1.1">
+        <stix:Incident id="example:incident-fd56fb34-af59-47b3-95cf-7baaaa53fe93" timestamp="2014-08-28T16:42:52.859547+00:00" xsi:type='incident:IncidentType' version="1.1.1">
             <incident:Title>Breach of Canary Corp</incident:Title>
             <incident:Time>
                 <incident:Incident_Discovery precision="second">2013-01-13T00:00:00</incident:Incident_Discovery>
             </incident:Time>
             <incident:Description>Intrusion into enterprise network</incident:Description>
-            <incident:Victim id="example:Identity-61b06876-03d6-4fa3-8fb6-5ece3551dfe7">
+            <incident:Reporter>
+                <stixCommon:Description>The person who reported it</stixCommon:Description>
+                <stixCommon:Identity id="example:Identity-5db269cf-e603-4df9-ae8c-51ff295abfaa">
+                    <stixCommon:Name>Sample Investigations, LLC</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2014-03-11T00:00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </incident:Reporter>
+            <incident:Victim id="example:Identity-c85082f3-bc04-43c8-a000-e0c1d0f2c045">
                 <stixCommon:Name>Canary Corp</stixCommon:Name>
             </incident:Victim>
             <incident:Impact_Assessment>
@@ -68,12 +68,13 @@ Historical incidents (breaches) are describing using the [Incident](/data-model/
                     <incident:Effect xsi:type="stixVocabs:IncidentEffectVocab-1.0">Financial Loss</incident:Effect>
                 </incident:Effects>
             </incident:Impact_Assessment>
-            <incident:Confidence timestamp="2014-08-14T20:15:57.799734+00:00">
+            <incident:Confidence timestamp="2014-08-28T16:42:52.859570+00:00">
                 <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">High</stixCommon:Value>
             </incident:Confidence>
         </stix:Incident>
     </stix:Incidents>
 </stix:STIX_Package>
+
 
 {% endhighlight %}
 
