@@ -147,7 +147,7 @@ if __name__ == '__main__':
     print pkg.to_xml() 
 {% endhighlight %}
 
-[Full Python](sample.py)
+[Production Python](simple-incident_producer.py) | [Consumption Python](simple-incident_consumer.py) 
 
 ## Further Reading
 
