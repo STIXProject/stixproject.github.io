@@ -8,29 +8,26 @@ For installation instructions, please refer to https://github.com/STIXProject/py
 '''
 
 def main():
-    from stix.campaign import Campaign
-    from stix.common.related import RelatedTTP
+    from stix.campaign import Campaign, Attribution
+    from stix.threat_actor import ThreatActor
     from stix.core import STIXPackage
     from stix.ttp import TTP, VictimTargeting
 
     ttp = TTP()
     ttp.title = "Victim Targeting: Customer PII and Financial Data"
     ttp.victim_targeting = VictimTargeting()
-    ttp.victim_targeting.add_targeted_information("Information Assets - Customer PII")
     ttp.victim_targeting.add_targeted_information("Information Assets - Financial Data")
 
-    ttp_ref = TTP()
-    ttp_ref.idref = ttp.id_
-    related_ttp = RelatedTTP(ttp_ref)
-    related_ttp.relationship = "Targets"
+    actor = ThreatActor()
+    actor.title = "People behind the intrusion"
 
     c = Campaign()
-    c.title = "Operation Alpha"
-    c.related_ttps.append(related_ttp)
+    c.attribution.append(actor)
+    c.title = "Compromise of ATM Machines"
+    c.related_ttps.append(ttp)
 
     pkg = STIXPackage()
     pkg.add_campaign(c)
-    pkg.add_ttp(ttp)
 
     print pkg.to_xml()
 
