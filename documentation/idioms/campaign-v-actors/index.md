@@ -10,9 +10,11 @@ summary:  Discussion and examples on when to use the term "Campaign" vs "Actor".
 
 In STIX terminology, an individual or group in the market for intrusion services and data theft is called a `Threat Actor`.  Their activity towards that end - information theft and system compromise is called a `Campaign`. Such behavior might fit along the lines of stealing financial information from banking customers or [targeting a particular business sector](../industry-sector). 
 
-A common situation is that someone will collect data on intrusion attempts, but not know the actor behind them. In this case, the preferred method is to define that activity as a `Campaign` with a placeholder `Threat Actor` identity until additional information comes to light. 
+When data is collected on intrusion attempts, it may not include attribution on the actor causing them. In this case, the preferred method is to define that activity as a `Campaign` with a placeholder `Threat Actor` identity until additional information comes to light. 
 
-For instance, if domains used in an intrusion are owned and registered by a specific organization, it may be appropriate to say they are somehow involved with `Low Confidence`. Occasionally it is possible to fingerprint an actor by the customizations made in their tools (such as language choice or debug information), which would 
+As an example, if domains used in an intrusion are owned and registered by a single persona, they would be given `Low Confidence` in relation to the incident.  If the persona is known to be used by a professional intrusion team, it could be related to that larger group.  Occasionally it is possible to fingerprint an actor by the customizations made in their tools (such as language choice or debug information), which would further increase `Confidence` in the actor being involved.
+
+When an actor is known but cannot be linked to existing intrusions, they can be created as a `Threat Actor` with their `Identity` information filled out with their handles, location, known tools and network infrastructure. If those markers are observed in a new incident or correlated with historical data, the `Actor` can be related according to its confidence rating.
 
 It is tempting to name a given `Campaign` after the malware or apparent group involved, however these methods are not very precise and prone to conflicts in naming between information sources. Imagine a situation where one organization declares that the "Netcat" malware had targeted their network, or the "Poison Ivy" actors were involved in a given intrusion.
 
