@@ -21,7 +21,7 @@ Historical incidents (breaches) are describing using the [Incident](/data-model/
 
 **WHAT:** The `Impact_Assessment` field is used to convey a list of impacts that the incident caused using the [IncidentEffectVocab](/data-model/{{site.current_version}}/stixVocabs/IncidentEffectVocab-1.0/). In this case, a single effect is added corresponding to financial impact. Additionally, since the investigators were able to thoroughly validate the incident the `Confidence` field is set to "High". If the incident were unsubstantiated or in early stages of investigation, this value would instead be `Low`.
 
-**WHEN:** Timestamps related to the incident itself are all represented in the `Time` field using [TimeType](data-model/{{site.current_version}/incident/TimeType/). In this case, only the discovery time is known so the `Incident_Discovery` field is populated with that time. One gotcha with incident timestamps is that time fields related to the incident itself all go in `Time` while timestamps related to the STIX data construct go into `Information_Source/Time`.
+**WHEN:** Timestamps related to the incident itself are all represented in the `Time` field using [TimeType](data-model/{{site.current_version}}/incident/TimeType/). In this case, only the discovery time is known so the `Incident_Discovery` field is populated with that time. One gotcha with incident timestamps is that time fields related to the incident itself all go in `Time` while timestamps related to the STIX data construct go into `Information_Source/Time`.
 
 ## XML
 
