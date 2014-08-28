@@ -8,9 +8,9 @@ from stix.core import STIXPackage, STIXHeader
 def parse_stix( pkg ):
     print "== INDICATOR =="
     print "Package: " + str(pkg.stix_header.description)
-    print "Submitter: " + pkg.stix_header.information_source.identity.name
     for inc in pkg.incidents:
         print "---"
+        print "Reporter: " + inc.reporter.identity.name
         print "Incident: "+ inc.title
         print "Description: "+ str(inc.description)
         print "Confidence: "+ str(inc.confidence.value)
