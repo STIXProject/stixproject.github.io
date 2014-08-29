@@ -52,7 +52,7 @@ et.add_vulnerability(vuln)
 print et.to_xml()
 {% endhighlight %}
 
-[Full Python](cve-in-exploit-target.py)
+[Production Python](cve-in-exploit-target_producer.py)[Consumption Python](cve-in-exploit-target_producer.py)
 
 ## Further Reading
 
