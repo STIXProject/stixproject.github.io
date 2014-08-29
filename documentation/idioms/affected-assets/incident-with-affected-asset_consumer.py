@@ -21,7 +21,7 @@ def parse_stix( pkg ):
             print "Location: " +str(asset.location_class )
 
             for effect in asset.nature_of_security_effect:
-                    print "---"
+                print "---"
                 print "Lost:" + str(effect.property_ )
                 print "Effect:" + str(effect.description_of_effect )
                 print "Was private data stolen?: " + str(effect.non_public_data_compromised )
