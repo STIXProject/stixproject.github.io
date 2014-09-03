@@ -90,7 +90,7 @@ representation in a global location (referencing).
 
 Relationships via embedded definition are achieved when a relationship from one component (source) to another (sink) is asserted by defining/specifying the sink from within the source. If an id is specified for the sink it can be referenced from other components as well.
 
-[Insert block diagram here]
+<img src="diagram2.png" alt="Relationship via Reference"/>
 
 **Example:**
 
@@ -139,7 +139,7 @@ Relationships via embedded definition are achieved when a relationship from one 
 Relationships via reference are achieved when a relationship from one component (source) to another (sink) is asserted by including a reference within the source in the form of an 
 idref referencing the defined id for the sink. 
 
-[Insert block diagram here]
+<img src="diagram1.png" alt="Relationship via Reference"/>
 
 **Example:**
 {% highlight xml %}
