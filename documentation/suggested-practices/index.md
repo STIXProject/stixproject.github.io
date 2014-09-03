@@ -84,131 +84,141 @@ representation in a global location (referencing).
 
 
 
-###Approach #2: Relationship via embedded definition
+###Approach #1: Relationship via embedded definition
 
 **What is it?**
+
 Relationships via embedded definition are achieved when a relationship from one component (source) to another (sink) is asserted by defining/specifying the sink from within the source. If an id is specified for the sink it can be referenced from other components as well.
 
 [Insert block diagram here]
 
-Example:
+**Example:**
 
-```xml <stix:STIX_Header]]>
-        <stix:Title]]>Example watchlist that contains domain information.</stix:Title]]>
-        <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Indicators - Watchlist</stix:Package_Intent]]>
-    </stix:STIX_Header><stix:Indicators]]>
+{% highlight xml %}
+<stix:STIX_Header>
+    <stix:Title>Example watchlist that contains domain information.</stix:Title>
+    <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Indicators - Watchlist</stix:Package_Intent>
+</stix:STIX_Header>
+<stix:Indicators>
     <stix:Indicator xsi:type="indicator:IndicatorType" id="example:Indicator-2e20c5b2-56fa-46cd-9662-8f199c69d2c9" timestamp="2014-05-08T09:00:00.000000Z">
-        <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type]]>
-        <indicator:Description]]>Sample domain Indicator for this watchlist</indicator:Description]]>
+        <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+        <indicator:Description>Sample domain Indicator for this watchlist</indicator:Description>
         <indicator:Observable id="example:Observable-87c9a5bb-d005-4b3e-8081-99f720fad62b">
             <cybox:Object id="example:Object-12c760ba-cd2c-4f5d-a37d-18212eac7928">
                 <cybox:Properties xsi:type="DomainNameObj:DomainNameObjectType" type="FQDN">
-                    <DomainNameObj:Value condition="Equals" apply_condition="ANY">malicious1.example.com##comma##malicious2.example.com##comma##malicious3.example.com</DomainNameObj:Value]]>
-                </cybox:Properties]]>
-            </cybox:Object]]>
-        </indicator:Observable]]>
-        <indicator:Indicated_TTP]]>
-<stixCommon:TTP xsi:type="ttp:TTPType" id="example:TTP-4f5db5e2-7ed2-4bfd-9df8-fa8253fcb2fe">
-<ttp:Title]]>Drive-by Download</ttp:Title]]>
-</stixCommon:TTP]]>
-</indicator:Indicated_TTP]]>
-        <indicator:Suggested_COAs]]>
-<indicator:Suggested_COA]]>
-<stixCommon:Course_Of_Action xsi:type="coa:CourseOfActionType" id="example:COA-2493dce9-1b2b-4396-9660-cfc19b8a6b38">
-<coa:Title]]>Block Downloads from Malicious Domain</coa:Title]]>
-</stixCommon:Course_Of_Action]]>
-</indicator:Suggested_COA]]>
-</indicator:Suggested_COAs]]>
-    </stix:Indicator]]>
-</stix:Indicators]]> ```
+                    <DomainNameObj:Value condition="Equals" apply_condition="ANY">malicious1.example.com##comma##malicious2.example.com##comma##malicious3.example.com</DomainNameObj:Value>
+                </cybox:Properties>
+            </cybox:Object>
+        </indicator:Observable>
+        <indicator:Indicated_TTP>
+			<stixCommon:TTP xsi:type="ttp:TTPType" id="example:TTP-4f5db5e2-7ed2-4bfd-9df8-fa8253fcb2fe">
+				<ttp:Title>Drive-by Download</ttp:Title>
+			</stixCommon:TTP>
+		</indicator:Indicated_TTP>
+        <indicator:Suggested_COAs>
+			<indicator:Suggested_COA>
+				<stixCommon:Course_Of_Action xsi:type="coa:CourseOfActionType" id="example:COA-2493dce9-1b2b-4396-9660-cfc19b8a6b38">
+					<coa:Title>Block Downloads from Malicious Domain</coa:Title>
+				</stixCommon:Course_Of_Action>
+			</indicator:Suggested_COA>
+		</indicator:Suggested_COAs>
+    </stix:Indicator>
+</stix:Indicators>
+{% endhighlight %}
 
-NOTE: Embedding the definition of a component within another component does not limit its relevancy to only the embedding component. As noted in the suggested practices for [Assigning IDs], for situations where the embedded component is really only relevant/valid/important within the context of the embedding component it is suggested practice to not specify an ID for it. This explicitly denotes its local-only relevance and prevents it from participating in relationships to components other than the embedding one. For situations where the simplicity, brevity and readability of relationship via embedded definition is desirable but the embedded content may be relevant/valid/important outside the context of only the embedding component, an ID can be specified for it and it can participate in relationships to components other than the embedding one.
+**NOTE:** Embedding the definition of a component within another component does not limit its relevancy to only the embedding component. As noted in the suggested practices for [Assigning IDs], for situations where the embedded component is really only relevant/valid/important within the context of the embedding component it is suggested practice to not specify an ID for it. This explicitly denotes its local-only relevance and prevents it from participating in relationships to components other than the embedding one. For situations where the simplicity, brevity and readability of relationship via embedded definition is desirable but the embedded content may be relevant/valid/important outside the context of only the embedding component, an ID can be specified for it and it can participate in relationships to components other than the embedding one.
 
-Relationship via embedded definition is desirable when simplicity, brevity and readability of the content is of concern or the content is very localized in context and less likely that portions will be interrelated with other content.
+**Relationship via embedded definition is desirable when simplicity, brevity and readability of the content is of concern or the content is very localized in context and less likely that portions will be interrelated with other content.**
 
 
 
-###Approach #1: Relationship via reference
+###Approach #2: Relationship via reference
 
 **What is it?**
+
 Relationships via reference are achieved when a relationship from one component (source) to another (sink) is asserted by including a reference within the source in the form of an 
 idref referencing the defined id for the sink. 
 
 [Insert block diagram here]
 
-Example:
- ```xml <stix:STIX_Header]]>
-        <stix:Title]]>Example watchlist that contains domain information.</stix:Title]]>
-        <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Indicators - Watchlist</stix:Package_Intent]]>
-    </stix:STIX_Header]]>
+**Example:**
+{% highlight xml %}
+<stix:STIX_Header>
+    <stix:Title>Example watchlist that contains domain information.</stix:Title>
+    <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Indicators - Watchlist</stix:Package_Intent>
+</stix:STIX_Header>
 <stix:Observables cybox_major_version="2" cybox_minor_version="1">
     <cybox:Observable id="example:Observable-87c9a5bb-d005-4b3e-8081-99f720fad62b">
         <cybox:Object id="example:Object-12c760ba-cd2c-4f5d-a37d-18212eac7928">
             <cybox:Properties xsi:type="DomainNameObj:DomainNameObjectType" type="FQDN">
-                <DomainNameObj:Value condition="Equals" apply_condition="ANY">malicious1.example.com##comma##malicious2.example.com##comma##malicious3.example.com</DomainNameObj:Value]]>
-            </cybox:Properties]]>
-        </cybox:Object]]>
-    </cybox:Observable]]>
-</stix:Observables]]>
-<stix:Indicators]]>
+                <DomainNameObj:Value condition="Equals" apply_condition="ANY">malicious1.example.com##comma##malicious2.example.com##comma##malicious3.example.com</DomainNameObj:Value>
+            </cybox:Properties>
+        </cybox:Object>
+    </cybox:Observable>
+</stix:Observables>
+<stix:Indicators>
     <stix:Indicator xsi:type="indicator:IndicatorType" id="example:Indicator-2e20c5b2-56fa-46cd-9662-8f199c69d2c9" timestamp="2014-05-08T09:00:00.000000Z">
-        <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type]]>
-        <indicator:Description]]>Sample domain Indicator for this watchlist</indicator:Description]]>
+        <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+        <indicator:Description>Sample domain Indicator for this watchlist</indicator:Description>
         <indicator:Observable idref="example:Observable-87c9a5bb-d005-4b3e-8081-99f720fad62b" />
-        <indicator:Indicated_TTP]]>
+        <indicator:Indicated_TTP>
 <stixCommon:TTP xsi:type="ttp:TTPType" idref="example:TTP-4f5db5e2-7ed2-4bfd-9df8-fa8253fcb2fe"/>
-</indicator:Indicated_TTP]]>
-<indicator:Suggested_COAs]]>
-<indicator:Suggested_COA]]>
-<stixCommon:Course_Of_Action xsi:type="coa:CourseOfActionType" idref="example:COA-2493dce9-1b2b-4396-9660-cfc19b8a6b38"/>
-</indicator:Suggested_COA]]>
-</indicator:Suggested_COAs]]>
-    </stix:Indicator]]>
-</stix:Indicators]]>
-<stix:TTPs]]>
-<stix:TTP xsi:type="ttp:TTPType" id="example:TTP-4f5db5e2-7ed2-4bfd-9df8-fa8253fcb2fe">
-<ttp:Title]]>Drive-by Download</ttp:Title]]>
-</stix:TTP]]>
-</stix:TTPs]]>
-<stix:Courses_Of_Action]]>
-<stix:Course_Of_Action xsi:type="coa:CourseOfActionType" id="example:COA-2493dce9-1b2b-4396-9660-cfc19b8a6b38">
-<coa:Title]]>Block Downloads from Malicious Domain</coa:Title]]>
-</stix:Course_Of_Action]]>
-</stix:Courses_Of_Action]]> ```
+</indicator:Indicated_TTP>
+		<indicator:Suggested_COAs>
+			<indicator:Suggested_COA>
+				<stixCommon:Course_Of_Action xsi:type="coa:CourseOfActionType" idref="example:COA-2493dce9-1b2b-4396-9660-cfc19b8a6b38"/>
+			</indicator:Suggested_COA>
+		</indicator:Suggested_COAs>
+    </stix:Indicator>
+</stix:Indicators>
+<stix:TTPs>
+	<stix:TTP xsi:type="ttp:TTPType" id="example:TTP-4f5db5e2-7ed2-4bfd-9df8-fa8253fcb2fe">
+		<ttp:Title>Drive-by Download</ttp:Title>
+	</stix:TTP>
+</stix:TTPs>
+<stix:Courses_Of_Action>
+	<stix:Course_Of_Action xsi:type="coa:CourseOfActionType" id="example:COA-2493dce9-1b2b-4396-9660-cfc19b8a6b38">
+		<coa:Title>Block Downloads from Malicious Domain</coa:Title>
+	</stix:Course_Of_Action>
+</stix:Courses_Of_Action>
+{% endhighlight %}
 
-Relationship via reference is desirable when flexibility, potential reuse and correlation of the content is a key concern or when part of a larger body of highly interrelated content.
+**Relationship via reference is desirable when flexibility, potential reuse and correlation of the content is a key concern or when part of a larger body of highly interrelated content.**
 
 
-**Versioning implications for differing approaches**
+###Versioning implications for differing approaches
 
-* scenario 1: Condition: embedded content with no id; Action: embedded content updated
-** Implication: enclosing content version must be increased
-* scenario 2: Condition: embedded content with no id; Action: enclosing content updated
-** Implication: enclosing content version must be increased
-* scenario 3: Condition: embedded content with no id; Action: embedded content revoked
-** Implication: not possible
-* scenario 4: Condition: embedded content with no id; Action: enclosing content revoked
-** Implication: embedded content gets revoked with enclosing content
-* scenario 5: Condition: embedded content with id; Action: embedded content updated
-** Implication: embedded content version must be increased; enclosing content version must be increased
-* scenario 6: Condition: embedded content with id; Action: enclosing content updated
-** Implication: enclosing content version must be increased; embedded content version does NOT need to be increased
-* scenario 7: Condition: embedded content with id; Action: embedded content revoked
-** Implication: embedded content becomes invalid; enclosing content must either increase version (with embedded content removed) or be revoked or left as is but would contain explicitly revoked content
-* scenario 8: Condition: embedded content with id; Action: enclosing content revoked
-** Implication: enclosing content becomes invalid; embedded content is still valid on its own
-* scenario 9: Condition: referenced content; Action: referenced content updated
-** Implication: referenced content version must be increased; enclosing content version must be increased and referenced ID/timestamp updated
-* scenario 10: Condition: referenced content; Action: enclosing content updated
-** Implication: enclosing content version must be increased; referenced content version does NOT need to be increased
-* scenario 11: Condition: referenced content; Action: referenced content revoked
-** Implication: referenced content becomes invalid; enclosing content must either increase version (with referenced content removed) or be revoked or left as is but would contain (by reference) explicitly revoked content
-* scenario 12: Condition: referenced content; Action: enclosing content revoked
-** Implication: enclosing content becomes invalid; referenced content is still valid on its own
+* scenario 1: **Condition:** embedded content with no id; **Action:** embedded content updated
+ * **Implication:** enclosing content version must be increased
+* scenario 2: **Condition:** embedded content with no id; **Action:** enclosing content updated
+ * **Implication:** enclosing content version must be increased
+* scenario 3: **Condition:** embedded content with no id; **Action:** embedded content revoked
+ * **Implication:** not possible
+* scenario 4: **Condition:** embedded content with no id; **Action:** enclosing content revoked
+ * **Implication:** embedded content gets revoked with enclosing content
+* scenario 5: **Condition:** embedded content with id; **Action:**: embedded content updated
+ * **Implication:** embedded content version must be increased; enclosing content version must be increased
+* scenario 6: **Condition:** embedded content with id; **Action:** enclosing content updated
+ * **Implication:** enclosing content version must be increased; embedded content version does NOT need to be increased
+* scenario 7: **Condition:** embedded content with id; **Action:** embedded content revoked
+ * **Implication:** embedded content becomes invalid; enclosing content must either increase version (with embedded content removed) or be revoked or left as is but would contain explicitly revoked content
+* scenario 8: **Condition:** embedded content with id; **Action:** enclosing content revoked
+ * **Implication:** enclosing content becomes invalid; embedded content is still valid on its own
+* scenario 9: **Condition:** referenced content; **Action:** referenced content updated
+ * **Implication:** referenced content version must be increased; enclosing content version must be increased and referenced ID/timestamp updated
+* scenario 10: **Condition:** referenced content; **Action:** enclosing content updated
+ * **Implication:** enclosing content version must be increased; referenced content version does NOT need to be increased
+* scenario 11: **Condition:** referenced content; **Action:** referenced content revoked
+ * **Implication:** referenced content becomes invalid; enclosing content must either increase version (with referenced content removed) or be revoked or left as is but would contain (by reference) explicitly revoked content
+* scenario 12: **Condition:** referenced content; **Action:** enclosing content revoked
+ * **Implication:** enclosing content becomes invalid; referenced content is still valid on its own
+
+###Guidance
 
 These situations are a judgment call, but when making that judgment you should consider whether the related construct has value individually
 or only within the context of the parent? **If it only has value in the parent, embedding it may be appropriate. Otherwise it's probably
-better to reference it. If you're unsure, it's generally safer to reference it.**
+better to reference it. 
+If you're unsure, it's generally safer to reference it.**
 
 ## Versioning and the timestamp attribute
  
