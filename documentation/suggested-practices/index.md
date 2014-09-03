@@ -1,4 +1,7 @@
---- layout: flat title: Suggested Practices ---
+--- 
+layout: flat title: 
+Suggested Practices 
+---
 
 This page contains suggested practices (sometimes called best practices) for producing and consuming STIX content. Following these practices
 will ensure the best conformance with the design goals of STIX and the best compatibility with other STIX tools. These are not requirements,
@@ -6,11 +9,11 @@ however: in some cases, technical or business requirements will mean you can't c
 this way unless you have a good reason not to".
 
 ## General Practices
-## 
+ 
 General practices apply across STIX (and sometimes CybOX).
 
 ## Formatting IDs
-## 
+
 STIX IDs are [XML QNames](http://en.wikipedia.org/wiki/QName). Each ID includes both a namespace portion (optional) and an ID portion
 (required) separated by a colon (:). The recommend approach to creating STIX IDs is to define a producer namespace and namespace prefix,
 then use the form:
@@ -32,7 +35,7 @@ This format provides high assurance that IDs will be both unique and meaningful,
 the construct name denotes what it is, and the overall ID including the GUID lends a high degree of confidence in its uniqueness.
 
 ## Assigning IDs
-## 
+
 STIX has several constructs with the potential to assign IDs to them such that they can be unambiguously referenced from elsewhere.
 
 Technically the decision to specify an ID on a given construct is optional based on the specifics of the usage context.
@@ -42,23 +45,31 @@ As a simple general rule specifying IDs on particular instances of constructs en
 This supports several very common STIX use cases such as:
 
 * enabling individual portions of content to be externally referenced unambiguously (e.g. a report talking about a specific Campaign or
-Threat Actor) * enabling the sharing/resharing of portions of STIX content (e.g. PartyB resharing 2 of a set of 100 Indicators received from
-PartyA) * enabling versioning of content * enabling the specification of potentially complex webs of interconnection and correlation between
-portions of STIX content (e.g. connecting particular TTPs and Indicators to specific Campaigns over time) * enabling analysis pivoting on
+Threat Actor) 
+* enabling the sharing/resharing of portions of STIX content (e.g. PartyB resharing 2 of a set of 100 Indicators received from
+PartyA) 
+* enabling versioning of content 
+* enabling the specification of potentially complex webs of interconnection and correlation between
+portions of STIX content (e.g. connecting particular TTPs and Indicators to specific Campaigns over time) 
+* enabling analysis pivoting on
 content with multiple contexts (e.g. the same IP Address seen in multiple Incidents and with connections to multiple TTPs and Indicators)
 
 
 For these reasons, it is suggested that IDs be specified for the following commonly referenced and/or reused constructs unless there is
 clear reason not to:
 
-* [Package](/data-model/{{site.current_version}}/stix/STIXType) * [Indicator](/data-model/{{site.current_version}}/indicator/IndicatorType)
-* [Incident](/data-model/{{site.current_version}}/incident/IncidentType) * [TTP](/data-model/{{site.current_version}}/ttp/TTPType) *
-[Threat_Actor](/data-model/{{site.current_version}}/ta/ThreatActorType) *
-[Campaign](/data-model/{{site.current_version}}/campaign/CampaignType) *
-[Exploit_Target](/data-model/{{site.current_version}}/et/ExploitTargetType) *
-[Course_Of_Action](/data-model/{{site.current_version}}/coa/CourseOfActionType) *
-[Observable](/data-model/{{site.current_version}}/cybox/ObservableType) * [Object](/data-model/{{site.current_version}}/cybox/ObjectType) *
-[Action](/data-model/{{site.current_version}}/cybox/ActionType) * [Event](/data-model/{{site.current_version}}/cybox/EventType)
+* [Package](/data-model/{{site.current_version}}/stix/STIXType) 
+* [Indicator](/data-model/{{site.current_version}}/indicator/IndicatorType)
+* [Incident](/data-model/{{site.current_version}}/incident/IncidentType) 
+* [TTP](/data-model/{{site.current_version}}/ttp/TTPType) 
+* [Threat_Actor](/data-model/{{site.current_version}}/ta/ThreatActorType) 
+* [Campaign](/data-model/{{site.current_version}}/campaign/CampaignType) 
+* [Exploit_Target](/data-model/{{site.current_version}}/et/ExploitTargetType) 
+* [Course_Of_Action](/data-model/{{site.current_version}}/coa/CourseOfActionType) 
+* [Observable](/data-model/{{site.current_version}}/cybox/ObservableType) 
+* [Object](/data-model/{{site.current_version}}/cybox/ObjectType) 
+* [Action](/data-model/{{site.current_version}}/cybox/ActionType) 
+* [Event](/data-model/{{site.current_version}}/cybox/EventType)
 
 As a simple general rule specifying IDs is not suggested for constructs embedded within other constructs (e.g. a CybOX Object containing the
 embedded specification of another CybOX Related_Object) where the embedded constructs are really only relevant/valid/important within the
@@ -67,7 +78,7 @@ interest on their own. The upside of this is slightly less complexity of IDs on 
 reference or pivot on the embedded constructs.
 
 ## Referencing vs. Embedding
-## 
+
 In many cases, you'll have an option to define a component relationship by one of two approaches: either including the related component within the parent component (embedding) or by referencing the related component by ID to a
 representation in a global location (referencing).
 
@@ -200,16 +211,16 @@ or only within the context of the parent? **If it only has value in the parent, 
 better to reference it. If you're unsure, it's generally safer to reference it.**
 
 ## Versioning and the timestamp attribute
-## 
+ 
 8 major STIX constructs are versioned:
 
-* [Packages](/data-model/{{site.current_version}}/stix/STIXType) (STIXType, STIX_Package) *
-[Campaigns](/data-model/{{site.current_version}}/campaign/CampaignType) * [Courses of
-Action](/data-model/{{site.current_version}}/coa/CourseOfActionType) * [Exploit
-Targets](/data-model/{{site.current_version}}/et/ExploitTargetType) *
-[Indicators](/data-model/{{site.current_version}}/indicator/IndicatorType) *
-[Incidents](/data-model/{{site.current_version}}/incident/IncidentType) * [Threat
-Actors](/data-model/{{site.current_version}}/ta/ThreatActorType) * [TTPs](/data-model/{{site.current_version}}/ttp/TTPType)
+* [Packages](/data-model/{{site.current_version}}/stix/STIXType) (STIXType, STIX_Package) * [Campaigns](/data-model/{{site.current_version}}/campaign/CampaignType) 
+* [Courses of Action](/data-model/{{site.current_version}}/coa/CourseOfActionType) 
+* [Exploit Targets](/data-model/{{site.current_version}}/et/ExploitTargetType) 
+* [Indicators](/data-model/{{site.current_version}}/indicator/IndicatorType) 
+* [Incidents](/data-model/{{site.current_version}}/incident/IncidentType) 
+* [Threat Actors](/data-model/{{site.current_version}}/ta/ThreatActorType) 
+* [TTPs](/data-model/{{site.current_version}}/ttp/TTPType)
 
 It is always suggested that you version these constructs by including a relevant `@id` and `@timestamp` per the [STIX versioning
 guide](/documentation/concepts/versioning).
@@ -224,7 +235,7 @@ purposes.
 See the [Versioning](/documentation/concepts/versioning) concept discussion for more information.
 
 ## Creating References
-## 
+ 
 There are two primary ways to create references in STIX 1.1.1: you can either create a reference to a specific version of a construct or you
 can create a reference to the latest version of a construct.
 
@@ -244,7 +255,7 @@ construct despite any changes that might occur.
 References to non-versioned constructs (anything with an id/idref but not a timestamp) implicitly use the latter form.
 
 ## Creating documents for human consumption
-## 
+
 These suggestions only apply when you're creating documents you intend to be human-readable. They simply make the document more readable and
 easy to validate by XML editors but are not important for automated processing.
 
@@ -259,7 +270,7 @@ To ease validation in XML editors:
 schemas, include them with the bundle and include that reference in the schemaLocation attribute
 
 ## Using Vocabularies
-## 
+ 
 Many places in STIX use controlled vocabularies to represent data. When possible, you should use the vocabularies included in the STIX
 defaults. If necessary you can use your own vocabulary or even use strings outside of any vocabularies.
 
@@ -267,7 +278,7 @@ If you do this to add values that you think might be useful for other STIX users
 know](https://github.com/STIXProject/schemas/wiki#feedback) so we can consider adding it to the default vocabulary.
 
 ## Creating Timestamps
-## 
+ 
 To remove ambiguity regarding the timezone, all times should include an explicit timezone whenever possible.
 
 
