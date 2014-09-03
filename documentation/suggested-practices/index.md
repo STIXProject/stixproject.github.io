@@ -135,6 +135,207 @@ In general you should use the version-specific reference if you're concerned tha
 
 References to non-versioned constructs (anything with an id/idref but not a timestamp) implicitly use the latter form.
 
+
+##Observable Instances vs Observable Patterns
+
+
+As described in [Concept: Observable Instances vs Observable Patterns](../concepts/observable-patterns-vs-instances), there are two different forms of “Observables” possible in STIX: **observable instances** and **observable patterns**.
+Each form has its own purposes to represent various relevant information in STIX.
+
+Some basic guidance is provided below on which forms of observables are appropriate for which purposes in STIX.
+
+###When to use observable instances
+
+
+####Use case: When you want to simply convey a cyber observation without any other specific context.
+
+* For example, an outgoing network connection to a particular IP that occurred at a specific time.
+* **Suggested practice: This would be conveyed using an instance of the Observable core component.**
+* Example:
+
+{% highlight xml linenos %}
+
+{% endhighlight %}
+
+####Use case: When you want to report a sighting of a given Indicator and wish to specify what was actually observed in the sighting that matched the Indicator’s observable pattern.
+
+* For example, an Indicator specifies a set of three domains used for malware C2 and you wish to report a sighting specifying which of the three you observed.
+* **Suggested practice: This would be conveyed using an instance of the Incident/Sightings/Sighting/Related_Observable construct.**
+* Example:
+
+{% highlight xml linenos %}
+<stix:Indicator xsi:type="indicator:IndicatorType" id="example:Indicator-2e20c5b2-56fa-46cd-9662-8f199c69d2c9" timestamp="2014-05-08T09:00:00.000000Z">
+    <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+    <indicator:Observable id="example:Observable-87c9a5bb-d005-4b3e-8081-99f720fad62b">
+        <cybox:Object id="example:Object-12c760ba-cd2c-4f5d-a37d-18212eac7928">
+            <cybox:Properties xsi:type="DomainNameObj:DomainNameObjectType" type="FQDN">
+                <DomainNameObj:Value condition="Equals" apply_condition="ANY">malicious1.example.com##comma##malicious2.example.com##comma##malicious3.example.com</DomainNameObj:Value>
+            </cybox:Properties>
+        </cybox:Object>
+    </indicator:Observable>
+    <indicator:Sightings>
+		<indicator:Sighting>
+			<indicator:Source><stixCommon:Identity><stixCommon:Name>FooBar Inc.</stixCommon:Name></stixCommon:Identity></indicator:Source>
+			<indicator:Related_Observables>
+				<indicator:Related_Observable>
+					<stixCommon:Observable  id="example:Observable-45b3acdf-1888-4bcc-89a9-6d9f8116fede">
+						<cybox:Object id="example:Object-a3d36250-42fa-4653-9172-87b87598390c">
+							<cybox:Properties xsi:type="DomainNameObj:DomainNameObjectType" type="FQDN">
+								<DomainNameObj:Value>malicious2.example.com</DomainNameObj:Value>
+							</cybox:Properties>
+						</cybox:Object>
+					</stixCommon:Observable>
+				</indicator:Related_Observable>
+			</indicator:Related_Observables>
+		</indicator:Sighting>
+    </indicator:Sightings>
+</stix:Indicator>
+{% endhighlight %}
+
+####Use case: When you want to characterize specific cyber observations relevant to a specific set of security-relevant cyber activity (Incident).
+
+* For example, the basic details of a phishing email received as part of an attack.
+* **Suggested practice: This would be conveyed using instances of the Incident/Related_Observables construct.**
+* Example:
+
+{% highlight xml linenos %}
+<stix:Incident xsi:type="incident:IncidentType" id="example:Incident-91d2d63c-ac96-4660-ae4a-20119c43b318" timestamp="2014-05-11T12:00:00Z">
+	<incident:Related_Observables>
+		<incident:Related_Observable>
+			<indicator:Observable id="example:Observable-Pattern-5f1dedd3-ece3-4007-94cd-7d52784c1474">
+				<cybox:Object id="example:Object-3a7aa9db-d082-447c-a422-293b78e24238">
+					<cybox:Properties xsi:type="EmailMessageObj:EmailMessageObjectType">
+						<EmailMessageObj:Header>
+							<EmailMessageObj:From category="e-mail">
+								<AddressObj:Address_Value>Rerun@state.gov</AddressObj:Address_Value>
+							</EmailMessageObj:From>
+							<EmailMessageObj:Subject>SkyNet Architecture Review</EmailMessageObj:Subject>
+						</EmailMessageObj:Header>
+					</cybox:Properties>
+					<cybox:Related_Objects>
+						<cybox:Related_Object>
+							<cybox:Properties xsi:type="FileObj:FileObjectType">
+								<FileObj:File_Extension>pdf</FileObj:File_Extension>
+								<FileObj:Size_In_Bytes>87022</FileObj:Size_In_Bytes>
+								<FileObj:Hashes>
+									<cyboxCommon:Hash>
+										<cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+										<cyboxCommon:Simple_Hash_Value>cf2b3ad32a8a4cfb05e9dfc45875bd70</cyboxCommon:Simple_Hash_Value>
+									</cyboxCommon:Hash>
+								</FileObj:Hashes>
+							</cybox:Properties>
+							<cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.0">Contains</cybox:Relationship>
+						</cybox:Related_Object>
+					</cybox:Related_Objects>
+				</cybox:Object>
+			</indicator:Observable>
+		</incident:Related_Observable>
+	</incident:Related_Observables>
+</stix:Incident>
+{% endhighlight %}
+
+####Use case: When you want to characterize specific technical assets that were affected as part of a specific set of security-relevant cyber activity (Incident).
+
+* For example, details of a particular laptop infected with malware (including manufacturer, model, serial number, OS, etc.)
+* **Suggested practice: This would be conveyed using instances of the Incident/Affected_Asset/Structured_Description structure.**
+* Example:
+
+{% highlight xml linenos %}
+<incident:Affected_Assets>
+	<incident:Affected_Asset>
+		<incident:Type xsi:type="incident:AssetTypeType">Laptop</incident:Type>
+		<incident:Ownership_Class xsi:type="stixVocabs:OwnershipClassVocab-1.0">Internally-Owned</incident:Ownership_Class>
+		<incident:Management_Class xsi:type="stixVocabs:ManagementClassVocab-1.0">Internally-Managed</incident:Management_Class>
+		<incident:Location_Class xsi:type="stixVocabs:LocationClassVocab-1.0">Internally-Located</incident:Location_Class>
+		<incident:Nature_Of_Security_Effect>
+			<incident:Property_Affected>
+				<incident:Property xsi:type="stixVocabs:LossPropertyVocab-1.0">Confidentiality</incident:Property>
+			</incident:Property_Affected>
+			<incident:Property_Affected>
+				<incident:Property xsi:type="stixVocabs:LossPropertyVocab-1.0">Integrity</incident:Property>
+			</incident:Property_Affected>
+		</incident:Nature_Of_Security_Effect>
+		<incident:Structured_Description cybox_major_version="2" cybox_minor_version="1">
+			<cybox:Observable>
+				<cybox:Object>
+					<cybox:Properties xsi:type="ProductObj:ProductObjectType">
+						<ProductObj:Vendor>Dell</ProductObj:Vendor>
+						<ProductObj:Device_Details xsi:type="DeviceObj:DeviceObjectType">
+							<cyboxCommon:Custom_Properties>
+								<cyboxCommon:Property name="Inventory Tracking Number">MM343287</cyboxCommon:Property>
+							</cyboxCommon:Custom_Properties>
+							<DeviceObj:Manufacturer>Dell</DeviceObj:Manufacturer>
+							<DeviceObj:Model>E6500</DeviceObj:Model>
+							<DeviceObj:Serial_Number>JZNZ12S</DeviceObj:Serial_Number>
+							<DeviceObj:Firmware_Version>A27</DeviceObj:Firmware_Version>
+							<DeviceObj:System_Details xsi:type="SystemObj:SystemObjectType">
+								<SystemObj:OS><cyboxCommon:Description>Windows 7</cyboxCommon:Description></SystemObj:OS>
+								<SystemObj:Processor>Intel Core 2 Duo P9500 2.53 GHz / nVIDIA Quadro NVS 160M</SystemObj:Processor>
+								<SystemObj:Total_Physical_Memory></SystemObj:Total_Physical_Memory>
+							</DeviceObj:System_Details>
+						</ProductObj:Device_Details>
+					</cybox:Properties>
+				</cybox:Object>
+			</cybox:Observable>
+		</incident:Structured_Description>
+	</incident:Affected_Asset>
+</incident:Affected_Assets>
+{% endhighlight %}
+
+###When to use observable patterns
+
+
+####Use case: When you want to specify particular conditions to look for that may indicate particular TTP activity may be occurring or has occurred. 
+* For example, a specific registry key with a specific value.
+* **Suggested practice: This would be conveyed using instances of the Indicator/Observable.**
+* Example:
+
+{% highlight xml linenos %}
+
+{% endhighlight %}
+
+####Use case: When you want to specify particular structured technical details for explicit characterization of a suggested course of action.
+
+* For example, block outgoing network connections to a particular IP/Port pairing.
+* **Suggested practice: This would be conveyed using instances of the COA/Parameter_Observables.**
+* Example:
+
+{% highlight xml linenos %}
+
+{% endhighlight %}
+
+####Use case: When you want to specify what software is known to be affected by a given vulnerability.
+
+* For example, 
+* **Suggested practice: This would be conveyed using instances of the Exploit_Target/Vulnerability/Affected_Software.**
+* Example:
+
+{% highlight xml linenos %}
+
+{% endhighlight %}
+
+####Use case: When you want to characterize specific technical infrastructure utilized for cyber attack.
+
+* For example, a particular set of domains used for Zeus malware command and control (C2)
+* **Suggested practice: This would be conveyed using instances of the TTP/Resources/Infrastructure/Observable_Characterization.**
+* Example:
+
+{% highlight xml linenos %}
+
+{% endhighlight %}
+      
+####Use case: When you want to characterize specific victim technical context details being targeted by an attacker.
+
+* For example, post-2012 MacBook Pro Retina laptops running OSX Mavericks and Parallels 9
+* **Suggested practice: This would be conveyed using instances of the TTP/Victim_Targeting/Targeted_Technical_Details.**
+* Example:
+
+{% highlight xml linenos %}
+
+{% endhighlight %}
+
+
+
 ## Creating documents for human consumption
 
 These suggestions only apply when you're creating documents you intend to be human-readable. They simply make the document more readable and easy to validate by XML editors but are not important for automated processing.
