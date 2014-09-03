@@ -75,8 +75,11 @@ representation in a global location (referencing).
 
 ###Approach #2: Relationship via embedded definition
 
-What is it?
+**What is it?**
 Relationships via embedded definition are achieved when a relationship from one component (source) to another (sink) is asserted by defining/specifying the sink from within the source. If an id is specified for the sink it can be referenced from other components as well.
+
+[Insert block diagram here]
+
 Example:
 
 ```xml <stix:STIX_Header]]>
@@ -116,8 +119,13 @@ Relationship via embedded definition is desirable when simplicity, brevity and r
 
 ###Approach #1: Relationship via reference
 
-What is it?
-Relationships via reference are achieved when a relationship from one component (source) to another (sink) is asserted by including a reference within the source in the form of an Example:
+**What is it?**
+Relationships via reference are achieved when a relationship from one component (source) to another (sink) is asserted by including a reference within the source in the form of an 
+idref referencing the defined id for the sink. 
+
+[Insert block diagram here]
+
+Example:
  ```xml <stix:STIX_Header]]>
         <stix:Title]]>Example watchlist that contains domain information.</stix:Title]]>
         <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Indicators - Watchlist</stix:Package_Intent]]>
