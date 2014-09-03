@@ -1,6 +1,6 @@
---- 
-layout: flat title: 
-Suggested Practices 
+---
+layout: flat
+title: Suggested Practices 
 ---
 
 This page contains suggested practices (sometimes called best practices) for producing and consuming STIX content. Following these practices

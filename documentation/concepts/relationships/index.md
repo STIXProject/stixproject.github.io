@@ -1,4 +1,7 @@
---- layout: flat title: STIX Relationships ---
+---
+layout: flat
+title: STIX Relationships
+---
 
 Relationships are one of the features of STIX that make it so powerful for expressing cyber threat intelligence (CTI) when compared to other
 options. Although each of the major components is valuable on its own and can be used independently of the others in order to express those
