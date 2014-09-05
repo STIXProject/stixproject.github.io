@@ -120,24 +120,24 @@ Given the above guidelines, it's likely that STIX identity information will fall
       <img src="only-base.png" alt="Only base IdentityType" />
     </div>
     <div class="tab-pane" id="header-identity-xml">
-  {% highlight xml linenos %}
-  <stixCommon:Identity>
-    <stixCommon:Name>John Smith</stixCommon:Name>
-  </stixCommon:Identity>
-  {% endhighlight %}
+{% highlight xml linenos %}
+<stixCommon:Identity>
+  <stixCommon:Name>John Smith</stixCommon:Name>
+</stixCommon:Identity>
+{% endhighlight %}
     </div>
     <div class="tab-pane" id="header-identity-produce">
-  {% highlight python linenos %}
-  from stix.common import Identity
+{% highlight python linenos %}
+from stix.common import Identity
 
-  identity = Identity()
-  identity.name = "John Smith"
-  {% endhighlight %}
+identity = Identity()
+identity.name = "John Smith"
+{% endhighlight %}
     </div>
     <div class="tab-pane" id="header-identity-consume">
-  {% highlight python linenos %}
-  print identity.name # "John Smith"
-  {% endhighlight %}
+{% highlight python linenos %}
+print identity.name # "John Smith"
+{% endhighlight %}
     </div>
   </div>
 </div>
@@ -156,28 +156,28 @@ Given the above guidelines, it's likely that STIX identity information will fall
       <img src="only-ciq.png" alt="Only CIQ fields" />
     </div>
     <div class="tab-pane" id="header-ciq-xml">
-  {% highlight xml linenos %}
-  <stixCommon:Identity xsi:type="stixCIQIdentity:CIQIdentity3.0InstanceType">
-    <stixCIQIdentity:Specification>
-      <xpil:OrganisationInfo xpil:IndustryType="Defense Industrial Base"/>
-    </stixCIQIdentity:Specification>
-  </stixCommon:Identity>
-  {% endhighlight %}
+{% highlight xml linenos %}
+<stixCommon:Identity xsi:type="stixCIQIdentity:CIQIdentity3.0InstanceType">
+  <stixCIQIdentity:Specification>
+    <xpil:OrganisationInfo xpil:IndustryType="Defense Industrial Base"/>
+  </stixCIQIdentity:Specification>
+</stixCommon:Identity>
+{% endhighlight %}
     </div>
     <div class="tab-pane" id="header-ciq-produce">
-  {% highlight python linenos %}
-  from stix.extensions.identity.ciq_identity_3_0 import (CIQIdentity3_0Instance, STIXCIQIdentity3_0, OrganisationInfo)
+{% highlight python linenos %}
+from stix.extensions.identity.ciq_identity_3_0 import (CIQIdentity3_0Instance, STIXCIQIdentity3_0, OrganisationInfo)
 
-  ciq_identity = CIQIdentity3_0Instance()
-  identity_spec = STIXCIQIdentity3_0()
-  identity_spec.organisation_info = OrganisationInfo(industry_type="Defense Industrial Base")
-  ciq_identity.specification = identity_spec
-  {% endhighlight %}
+ciq_identity = CIQIdentity3_0Instance()
+identity_spec = STIXCIQIdentity3_0()
+identity_spec.organisation_info = OrganisationInfo(industry_type="Defense Industrial Base")
+ciq_identity.specification = identity_spec
+{% endhighlight %}
     </div>
     <div class="tab-pane" id="header-ciq-consume">
-  {% highlight python linenos %}
-  print identity.specification.organisation_info.industry_type # Defense Industrial Base
-  {% endhighlight %}
+{% highlight python linenos %}
+print identity.specification.organisation_info.industry_type # Defense Industrial Base
+{% endhighlight %}
     </div>
   </div>
 </div>
@@ -189,8 +189,6 @@ Given the above guidelines, it's likely that STIX identity information will fall
 </div>
 
 ### Using both IdentityType and CIQ
-
-<img src="both.png" alt="Only CIQ fields" class="aside-text" />
 
 <div class="tab-container">
   <ul class="nav nav-tabs">
