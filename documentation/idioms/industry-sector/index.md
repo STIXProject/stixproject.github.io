@@ -65,7 +65,7 @@ ttp.victim_targeting.identity = ciq_identity
 print ttp.to_xml()
 {% endhighlight %}
 
-[Full Python](victim-targeting-sector.py)
+[Production Python](victim-targeting-sector_producer.py) | [Consumption Python](victim-targeting-sector_consumer.py)
 
 ## Further Reading
 
