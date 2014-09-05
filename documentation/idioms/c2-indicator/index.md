@@ -76,7 +76,7 @@ stix_package.add_ttp(ttp)
 print stix_package.to_xml()
 {% endhighlight %}
 
-[Full Python](indicator-for-c2-ip-address.py)
+[Producer Python](indicator-for-c2-ip-address_producer.py)[Consumer Python](indicator-for-c2-ip-address_consumer.py)
 
 ## Further Reading
 
