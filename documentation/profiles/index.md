@@ -19,7 +19,7 @@ STIX profiles are the formalization of this concept: a particular subset of STIX
   <p class="caption">Indicator, observable, and TTP are in-scope but campaign, course of action, exploit target, incident, and threat actor are out-of-scope. The full example of that profile can be downloaded from the STIX <a href="http://stix.mitre.org/language/profiles.html">profile page</a>.</p>
 </div>
 
-Profiles can be thought of a second compatability level for STIX content: STIX content can be valid STIX but if it doesn't conform to the rules outlined in the profile it is not compliant with a profile or tools that only support that profile. In fact, the [spreadsheet profile representation](representation) even allows for automated validation of STIX instance content against it.
+Profiles can be thought of a second compatibility level for STIX content: STIX content can be valid STIX but if it doesn't conform to the rules outlined in the profile it is not compliant with a profile or tools that only support that profile. In fact, the [spreadsheet profile representation](representation) even allows for automated validation of STIX instance content against it.
 
 ## Profile rules
 
@@ -87,10 +87,10 @@ If a consumer profile is a parent (superset) of either a producer or community p
 
 For consumer profiles, the consumer should develop the profile to ensure that it is accurate. They should consider whether fields are required, supported, not supported, or will throw an error: 
 
-* **Required**: Fields that **must** be present in a STIX document for this consumer to consume the document without errors. For consumer profiles, this should likely only be ID or other very basic elements.
-* **Suggested (Supported)**: Fields that may be present in a STIX document and that will be properly handled by any business logic.
-* **Optional (Not Supported)**: Fields that may be present in a STIX document but will be ignored.
-* **Prohibited (Error)**: Fields that will cause an error in the consuming tool if present. These should be kept to an absolute minimum.
+* **Required** : Fields that **must** be present in a STIX document for this consumer to consume the document without errors. For consumer profiles, this should likely only be ID or other very basic elements. 
+* **Suggested** : Fields that may be present in a STIX document and that will be properly handled by any business logic.
+* **Optional** : Fields that may be present in a STIX document but will be ignored.
+* **Prohibited **: Fields that will cause an error in the consuming tool if present. These should be kept to an absolute minimum.
 
 ## Layering profiles
 
@@ -120,6 +120,16 @@ Though profiles are most useful in the development period for users and develope
 ## Authoring profiles
 
 STIX profiles are generally created through community agreement (for community profiles) or by a product manager or developer documenting what their product will support. An [authoring guide](authoring) is available for those who will be performing the technical work of creating the Excel-formatted spreadsheet.
+
+## Alternative Terms
+You may also use terms compliant with [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt) to indicate profile coverage. These terms cannot be intermingled, and are  supported in validation tools as of STIX 1.1.1.1
+
+Term|RFC Term
+-----------------
+Required|MUST 
+Suggested|SHOULD or SHOULD NOT
+Optional | MAY
+Prohibited|MUST NOT
 
 ## Questions?
 

@@ -78,6 +78,16 @@ Profile rules are specified in the Occurrence, Implementation, Value(s), and Not
   </tbody>
 </table>
 
+## Alternative Terms
+You may also use terms compliant with [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt) to indicate profile coverage. These terms cannot be intermingled, and are  supported in validation tools as of STIX 1.1.1.1
+
+Term|RFC Term
+-----------------
+Required|MUST 
+Suggested|SHOULD or SHOULD NOT
+Optional | MAY
+Prohibited|MUST NOT
+
 ## Understanding profiles
 
 STIX profiles are based defining rules for how STIX types may be used. For example, the top-level of any STIX document is `STIX_Package`, which is an instance of [STIXType](/data-model/{{site.current_version}}/stix/STIXType) in the STIX Core schema. Therefore, the rules that define how STIX_Package must be used can be found in the `STIXType` section of the `STIX Core` profile tab. That tab lists each field and the rules for that field.
