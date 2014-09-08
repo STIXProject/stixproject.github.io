@@ -125,7 +125,7 @@ STIX profiles are generally created through community agreement (for community p
 You may also use terms compliant with [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt) to indicate profile coverage. These terms cannot be intermingled, and are  supported in validation tools as of STIX 1.1.1.1
 
 Term|RFC Term
------------------
+--------|---------
 Required|MUST 
 Suggested|SHOULD or SHOULD NOT
 Optional | MAY
