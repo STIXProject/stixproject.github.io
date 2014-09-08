@@ -10,24 +10,24 @@ The STIX [Identity](/data-model/{{site.current_version}}/stixCommon/IdentityType
 
 * To specify the identity of the source of STIX content (via [InformationSourceType](/data-model/{{site.current_version}}/stixCommon/InformationSourceType))
 * To describe identifying characteristics or specific identities of victims of an incident (via [IncidentType](/data-model/{{site.current_version}}/incident/IncidentType))
-* To describe identifying characteristics of those targeted by a specific adversary (via [TTPType](/data-model/{{site.current_version}}/ttp/TTPType) [VictimTargetingType](/data-model/{{site.current_version}}/ttp/VictimTargetingType))
+* To describe identifying characteristics of those targeted by a threat (via [TTPType](/data-model/{{site.current_version}}/ttp/TTPType) [VictimTargetingType](/data-model/{{site.current_version}}/ttp/VictimTargetingType))
 * To describe identifying characteristics or specific identities of threat actors (via [ThreatActorType](/data-model/{{site.current_version}}/ta/ThreatActorType))
 
 Across all of these usages you'll notice that there are two primary types of identities: those that describe specific identities (usually names), and those that simply give identifying characteristics (nationality, language, etc.).
 
-STIX identity is an [xsi:type extension point](/documentation/concepts/xsi-type). The base [IdentityType](/data-model/{{site.current_version}}/stixCommon/IdentityType) can be used to express simple names and the default extension [CIQ Identity Type](/data-model/{{site.current_version}}/stixCiq/STIXCiqIdentity3.0InstanceType) allows you to specify extensive information via the use of OASIS CIQ.
+STIX identity is an [xsi:type extension point](/documentation/concepts/xsi-type). The base [IdentityType](/data-model/{{site.current_version}}/stixCommon/IdentityType) can be used to express simple names and the default extension [CIQ Identity Type](/data-model/{{site.current_version}}/stix-ciqidentity/CIQIdentity3.0InstanceType) allows you to specify extensive information via the use of [OASIS CIQ](https://www.oasis-open.org/committees/ciq/).
 
 ## Which should I support?
 
-When representing identity information the first decision to make is whether to support the base [IdentityType](/data-model/{{site.current_version}}/stixCommon/IdentityType) or the more flexible (but also more complex) [CIQ Identity Type](/data-model/{{site.current_version}}/stixCiq/STIXCiqIdentity3.0InstanceType).
+When representing identity information the first decision to make is whether to support the base [IdentityType](/data-model/{{site.current_version}}/stixCommon/IdentityType) or the more flexible (but also more complex) [CIQ Identity Type](/data-model/{{site.current_version}}/stix-ciqidentity/CIQIdentity3.0InstanceType).
 
 ### As a producer
 
 The following guidelines will help:
 
 1. First, determine if you're complying with a profile that makes the decision for you. Some profiles will only allow the basic type while others will allow both or only the richer CIQ type.
-2. If the profile doesn't help decide, consider whether your data will now and forever only consist of a name. If so, use just the Name field in IdentityType. This case is most common when identifying the source of information of STIX constructs: often you'll just want to specify your organization's name as the source.
-3. If you have name information but also other data (address, nationality, etc.) that you want to express then you should use BOTH the name field in IdentityType as well as the CIQ fields. This may mean duplicating some information, but it will allow less full-featured consumers to see the name while those that understand the CIQ extension can use that.
+2. If the profile doesn't help decide, consider whether your data will now and forever only consist of an unstructured name (like "ACME, Inc."). If so, use just the Name field in IdentityType. This case is most common when identifying the source of information of STIX constructs: often you'll just want to specify your organization's name as the source.
+3. If you have name information but also other data (address, nationality, etc.) that you want to express or you want to break name information up into subfields (e.g. first name, last name) then you should use BOTH the name field in IdentityType as well as the CIQ fields. This may mean duplicating some information, but it will allow less full-featured consumers to see the name while those that understand the CIQ extension can use that.
 4. If you don't have name information and only have other identifying data, then the only option is to characterize it using CIQ.
 
 ### As a consumer
@@ -249,3 +249,11 @@ print identity.specification.organisation_info.industry_type # Defense Industria
     </div>
   </div>
 </div>
+
+## Using a Non-CIQ Identity Structure
+
+Because IdentityType is an extension point in STIX it's possible to use third-party identity structures that are not CIQ. This would allow you to use those third-party structures in any of the places that you can currently use the basic STIX IdentityType or CIQ extension. In order to do this, you would need to implement an extension for that third-party structure. The [CIQ extension](http://stix.mitre.org/XMLSchema/extensions/identity/ciq_3.0/1.1.1/ciq_3.0_identity.xsd) can be used as an example for how to do this.
+
+There is of course a compatibility cost to using external extensions. Other STIX tools would not necessarily support the extension and so interoperability with those tools in the identity model would not be possible. Any time you go outside the bounds of what's included in a STIX release there's a compatibility cost and using external identity models is no exception.
+
+Also, note that not all STIX profiles would allow for the use of identity structures other than CIQ or the base IdentityType.
