@@ -1,12 +1,12 @@
 ---
 layout: flat
-title: Command and Control IP Range
+title: Command and Control IP List
 use_cases:
   - Command and Control
 constructs:
   - Observable
   - TTP
-summary: Adversary infrastructure is also represented in STIX using the TTP structure. This idiom describes using the TTP structure to represent an adversary's command and control infrastructure by characterizing its IP range.
+summary: Adversary infrastructure is also represented in STIX using the TTP structure. This idiom describes using the TTP structure to represent an adversary's command and control infrastructure by characterizing its IP List.
 ---
 
 <img src="/images/Infrastructure.png" class="component-img" alt="Infrastructure Icon" />
@@ -19,7 +19,7 @@ This scenario represents a set of 3 IP addresses that are known C2 for an advers
 
 ## Data model
 
-<img src="diagram.png" alt="Command and Control IP Range" />
+<img src="diagram.png" alt="Command and Control IP List" />
 
 Adversary infrastructure is represented using the [InfrastructureType](/data-model/{{site.current_version}}/ttp/InfrastructureType) subcomponent of [TTP](/data-model/{{site.current_version}}/ttp/TTPType). It allows you to describe infastructure using a combination of some metadata fields in STIX (such as infrastructure type, title, and description) and CybOX [Observables](/data-model/{{site.current_version}}/cybox/ObservableType) to represent the technical information about the infrastructure.
 
@@ -70,7 +70,7 @@ The actual IP addresses are represented in CybOX within the `Observable Characte
 </stix:TTPs> 
 {% endhighlight %}
 
-[Full XML](command-and-control-ip-range.xml)
+[Full XML](command-and-control-ip-list.xml)
 
 ## Python
 
@@ -122,11 +122,11 @@ stix_package.add_ttp(ttp)
 print stix_package.to_xml()
 {% endhighlight %}
 
-[Full Python](command-and-control-ip-range.py)
+[Full Python](command-and-control-ip-list.py)
 
 ## Further Reading
 
 * [TTP Component](/data-model/{{site.current_version}}/ttp/TTPType)
 * [InfrastructureType](/data-model/{{site.current_version}}/ttp/InfrastructureType)
 
-This idiom can be composed with the [C2 indicator](../c2-indicator) idiom to represent both the C2 infrastructure itself (as here) and the set of indicators for that infrastructure. Simply replace the TTP in that idiom, which only has a title, with something similar to the TTP in this idiom that includes a structured description of the C2 range.
+This idiom can be composed with the [C2 indicator](../c2-indicator) idiom to represent both the C2 infrastructure itself (as here) and the set of indicators for that infrastructure. Simply replace the TTP in that idiom, which only has a title, with something similar to the TTP in this idiom that includes a structured description of the C2 list.
