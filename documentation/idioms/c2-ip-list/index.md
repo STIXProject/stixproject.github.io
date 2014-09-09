@@ -122,7 +122,7 @@ stix_package.add_ttp(ttp)
 print stix_package.to_xml()
 {% endhighlight %}
 
-[Full Python](command-and-control-ip-list.py)
+[Producer Python](command-and-control-ip-list_producer.py)[Consumer Python](command-and-control-ip-list_consumer.py)
 
 ## Further Reading
 
