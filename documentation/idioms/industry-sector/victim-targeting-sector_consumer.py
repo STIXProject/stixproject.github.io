@@ -7,7 +7,6 @@ from stix.core import STIXPackage, STIXHeader
 
 def parse_stix( pkg ):
     print "== TTP =="
-    print "Package Title: " + str(pkg.stix_header.title)
     for thing in pkg.ttps:
         print "---"
         print "TTP: " + thing.title
