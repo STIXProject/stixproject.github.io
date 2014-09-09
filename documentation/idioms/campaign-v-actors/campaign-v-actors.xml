@@ -27,10 +27,17 @@
                     </stixCommon:TTP>
                 </campaign:Related_TTP>
             </campaign:Related_TTPs>
+            <campaign:Related_Incidents>
+				<campaign:Related_Incident><stixCommon:Incident idref="example:incident-229ab6ba-0eb2-415b-bdf2-079e6b42f51e"/></campaign:Related_Incident>
+				<campaign:Related_Incident><stixCommon:Incident idref="example:incident-517cf274-038d-4ed4-a3ec-3ac18ad9db8a"/></campaign:Related_Incident>
+				<campaign:Related_Incident><stixCommon:Incident idref="example:incident-7d8cf96f-91cb-42d0-a1e0-bfa38ea08621"/></campaign:Related_Incident>
+			</campaign:Related_Incidents>
             <campaign:Attribution>
-                <stixCommon:Threat_Actor id="example:threatactor-56f3f0db-b5d5-431c-ae56-c18f02caf500" timestamp="2014-08-08T15:50:10.983629+00:00" xsi:type='ta:ThreatActorType' version="1.1.1">
+				<campaign:Attributed_Threat_Actor>
+					<stixCommon:Threat_Actor id="example:threatactor-56f3f0db-b5d5-431c-ae56-c18f02caf500" timestamp="2014-08-08T15:50:10.983629+00:00" xsi:type='ta:ThreatActorType' version="1.1.1">
                     <ta:Title>People behind the intrusion</ta:Title>
                 </stixCommon:Threat_Actor>
+				</campaign:Attributed_Threat_Actor>
             </campaign:Attribution>
         </stix:Campaign>
     </stix:Campaigns>
