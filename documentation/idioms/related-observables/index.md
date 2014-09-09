@@ -117,7 +117,7 @@ incident.related_observables.append(related_observable2)
 print incident.to_xml()
 {% endhighlight %}
 
-[Full Python](incident-with-related-observables.py)
+[Producer Python](incident-with-related-observables_producer.py)[Consumer Python](incident-with-related-observables_consumer.py)
 
 ## Further Reading
 
