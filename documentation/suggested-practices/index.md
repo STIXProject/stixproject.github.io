@@ -137,7 +137,7 @@ References to non-versioned constructs (anything with an id/idref but not a time
 
 ## CybOX Object selection
 
-Suggested practices for [CybOX Object selection](https://cyboxproject.github.io/documentation/suggested-practices/cybox-object-selection)
+Suggested practices for [CybOX Object selection](https://cyboxproject.github.io/documentation/suggested-practices/#cybox-object-selection)
 
 
 ## Creating documents for human consumption
