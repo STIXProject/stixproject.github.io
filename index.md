@@ -55,7 +55,6 @@ no_in_page_title: true
 		  </span>
 	  </div>
       <p>Prefer an in-person meeting? We can meet with you in person for any of the purposes we would also cover via teleconference. Send us an email to schedule a meeting.</p>
-      <p class="text-center"><strong>Available in the Washington, DC and Boston, MA areas <em>only</em>.</strong></p>
     </div>
     <div class="col-md-4">
       <h3 class="text-center">Training Sessions</h3>
