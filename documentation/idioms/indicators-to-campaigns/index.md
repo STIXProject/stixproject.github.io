@@ -9,9 +9,9 @@ constructs:
 summary: You want to relate some indicators to a campaign but it looks like there's two ways. Which do you use?
 ---
 
-One of the relationships supported by the STIX data model is the relationship between campaigns and indicators. It allows for indicators to be directly linked to the campaigns that may leverage the things that they detect. This allows network defenders to better understand the pattern of behavior behind detected attacks and link it to other related data (victim targeting, previous incidents, attributed threat actors, etc.)
+One of the relationships supported by the STIX data model is the relationship between campaigns and indicators. It allows for indicators to be directly linked to any campaigns of activity that the indicator is considered to be a member of. This allows network defenders to better understand the pattern of behavior behind detected attacks and link it to other related data (victim targeting, previous incidents, attributed threat actors, etc.)
 
-In STIX 1.1, the directionality of this relationship was changed. While previously the Campaign structure contained standard STIX relationships to Indicators (meaning they could be embedded or referenced) in STIX 1.1 (including 1.1.1) the Indicator construct instead contains references (but does not allow embedding) to Campaigns. Because this was done in a minor release, however, the "old" style was deprecated and so still exists in the data model.
+Prior to STIX 1.1, the Campaign structure contained relationships to Indicators.  In STIX 1.1, the directionality of this relationship was changed so that Indicators could now contain relationships to Campaigns; furthermore the "old" style Campaign to Indicator relationship construct was deprecated.  Because this was done in a minor release, however, the "old" style still exists in the data model even though it has been deprecated.  Support for the "old" style will be removed in the next major release of STIX.
 
 ## Deprecated, Old-Style Approach (Campaign => Indicator)
 
