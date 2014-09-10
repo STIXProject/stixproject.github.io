@@ -137,29 +137,8 @@ References to non-versioned constructs (anything with an id/idref but not a time
 
 ## CybOX Object selection
 
-CybOX Objects schemas define sets of properties for common cyber objects. 
+Suggested practices for [CybOX Object selection](https://cyboxproject.github.io/documentation/suggested-practices/cybox-object-selection)
 
-To support practical use, CybOX provides and extensive set of Object property specifications by default.
-
-This predefined set includes a broad range of object types across the cyber domain (network, host, files, memory, devices, etc.) as well as objects of varying levels of specificity/abstraction intended for differing use cases.
-
-The approach to [defining Objects](https://cyboxproject.github.io/documentation/creating-objects/) (especially those across varying levels of specificity/abstraction) is intended to pursue architectural consistency and reuse by having more complex or specific variations on Objects leverage other more abstract existing Objects for sets of properties.
-
-There are two primary variations of this:
-
-* Objects that derive from other Objects of the same basic type along a spectrum of abstract to more specific.
- * For example, **File -> Win File -> Win EXE File** where CybOX defines a basic [File Object] (/data-model/{{site.current_version}}/FileObj/FileObjectType) with general file properties applicable across platforms, a more specific [Win_File Object] (/data-model/{{site.current_version}}/WinFileObj/WindowsFileObjectType) that extends the general File Object and adds Windows-specific file properties, and an even more specific [Win_Executable_File Object] (/data-model/{{site.current_version}}/WinExecutableFileObj/WindowsExecutableFileObjectType) which extends the Win_File Object and adds properties for executable files under Windows.
-* Objects that leverage other Objects to define more specific properties for differing and more specialized use cases.
-  * For example, the set of Objects specified that can contain an **IP Address**.
-    * [Address Object] (/data-model/{{site.current_version}}/AddressObj/AddressObjectType) enables the specification of a particular IP Address (or other type of address) value and its type (e.g. ipv4-addr) without any other context. This can be used when you desire to characterize an IP Address but not to assert any given context for where you might find it (e.g. it may appear in any of a wide variety of logs). This Object also provides consistent specification of address properties for its use on its own or by more specific Objects that need to characterize addresses within more specific contexts.
-    * [Socket_Address Object] (/data-model/{{site.current_version}}/SocketAddressObj/SocketAddressObjectType) enables the specification of a particular IP Address (or Hostname) and Port pairing. This obviously lets you characterize a more specific context for an IP Address but still leverages the AddressObjectType for its IP Address structure yielding consistency across the two Objects.
-    * [Network_Connection Object] (/data-model/{{site.current_version}}/NetworkConnectionObj/NetworkConnectionObjectType) enables the specification of properties related to a network connection including Layer3, Layer4 and Layer7 details as well as details of the source socket and destination socket of the connection. This object leverages the SocketAddressType for its source and destination socket structures. This enables the characterization of very specific contextual details around an IP Address.
-
-The fact that a given construct like IP Address can show up as a property in multiple different Objects may lead to confusion for some. 
-
-**It is suggested practice to always utilize whichever CybOX Object provides the most specific context possible for the context you are looking to convey.**
-
-* For example, if you know you are looking to describe a situation of network traffic to a particular IP Address, use the Network_Connection Object but if all you know is that an IP Address was seen or might be seen but you have no further context, use the Address Object. This also applies to the use of platform-agnostic Objects (e.g. File) and their derived platform-specifc Objects (e.g. Win_File). If you need to characterize properties from a more specific variation of an Object, utilize that Object otherwise use the simplest version available that supports the properties you need to characterize.
 
 ## Creating documents for human consumption
 
