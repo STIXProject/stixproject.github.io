@@ -467,7 +467,7 @@ Some basic guidance is provided below on which forms of observables are appropri
 						<DeviceObj:Model condition="Equals">15-inch MacBook Pro with Retina Display</DeviceObj:Model>
 						<DeviceObj:System_Details xsi:type="SystemObj:SystemObjectType">
 							<SystemObj:OS>
-								<cyboxCommon:Description>OSX Mavericks 10.9.2</cyboxCommon:Description>
+								<cyboxCommon:Description condition="Equals">OSX Mavericks 10.9.2</cyboxCommon:Description>
 								<cyboxCommon:Identifier condition="Equals">cpe:/o:apple:mac_os_x:10.9.2</cyboxCommon:Identifier>
 							</SystemObj:OS>
 							<SystemObj:Processor condition="Equals">2.2GHz Quad-core Intel Core i7</SystemObj:Processor>
