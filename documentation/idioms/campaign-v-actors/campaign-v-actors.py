@@ -20,9 +20,12 @@ def main():
 
     actor = ThreatActor()
     actor.title = "People behind the intrusion"
+    attrib = Attribution()
+    attrib.append(actor)
 
     c = Campaign()
-    c.attribution.append(actor)
+    c.attribution = []
+    c.attribution.append(attrib)
     c.title = "Compromise of ATM Machines"
     c.related_ttps.append(ttp)
 
