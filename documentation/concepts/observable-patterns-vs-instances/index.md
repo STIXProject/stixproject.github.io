@@ -18,7 +18,7 @@ Observable instances in STIX are specified using the CybOX language and may cont
 
 Observable patterns in STIX are specified by default using the CybOX language and may contain any combination of events, actions or objects **with specific pattern conditions defined on object properties using the @condition attribute (and potentially a range of other patterning attributes)**. Observable patterns may also be specified using the CybOX facility to define **logical compositions of other observable patterns**.
 
-In addition to the default use of CybOX, STIX offers an extension mechanism (Test_Mechanism) for alternative representations of observable patterns within STIX Indicators.
+In addition to the default use of CybOX, STIX offers an extension mechanism (`Test_Mechanism`) for alternative ways of defining the detection pattern within STIX Indicators.
 
 
 ##Examples
