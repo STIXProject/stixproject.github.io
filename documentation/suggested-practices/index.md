@@ -135,6 +135,11 @@ In general you should use the version-specific reference if you're concerned tha
 
 References to non-versioned constructs (anything with an id/idref but not a timestamp) implicitly use the latter form.
 
+## CybOX Object selection
+
+Suggested practices for [CybOX Object selection](https://cyboxproject.github.io/documentation/suggested-practices/#cybox-object-selection)
+
+
 ## Creating documents for human consumption
 
 These suggestions only apply when you're creating documents you intend to be human-readable. They simply make the document more readable and easy to validate by XML editors but are not important for automated processing.
