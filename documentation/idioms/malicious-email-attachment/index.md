@@ -199,7 +199,8 @@ stix_package.indicators = [combined_indicator, email_subject_indicator, indicato
 print stix_package.to_xml()
 {% endhighlight %}
 
-[Full Python](malicious-email-indicator-with-attachment.py)
+[Production Python](malicious-email-indicator-with-attachment_producer.py)[Consumption Python](malicious-email-indicator-with-attachment_consumer.py)
+
 
 ## Further Reading
 
