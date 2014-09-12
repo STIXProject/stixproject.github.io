@@ -59,7 +59,8 @@ indicator.add_observable(url)
 print indicator.to_xml()
 {% endhighlight %}
 
-[Full Python](indicator-for-malicious-url.py)
+[Production Python](indicator-for-malicious-url_producer.py)[Consumption Python](indicator-for-malicious-url_consumer.py)
+
 
 ## Further Reading
 
