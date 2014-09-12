@@ -32,29 +32,40 @@ The example below shows a VERY simple initial `Campaign` defined to correlate a 
 
 ## XML
 {% highlight xml linenos %}
-<stix:Campaign id="example:Campaign-e5268b6e-4931-42f1-b379-87f48eb41b1e" timestamp="2014-08-08T15:50:10.983728+00:00" xsi:type='campaign:CampaignType' version="1.1.1">
+<stix:Campaign id="example:Campaign-e5268b6e-4931-42f1-b379-87f48eb41b1e" timestamp="2014-08-08T15:50:10.983728+00:00" 
+        xsi:type='campaign:CampaignType' version="1.1.1">
     <campaign:Title>Compromise of ATM Machines</campaign:Title>
     <campaign:Related_TTPs>
         <campaign:Related_TTP>
-            <stixCommon:TTP id="example:ttp-2d1c6ab3-5e4e-48ac-a32b-f0c01c2836a8" timestamp="2014-08-08T15:50:10.983464+00:00" xsi:type='ttp:TTPType' version="1.1.1">
+            <stixCommon:TTP id="example:ttp-2d1c6ab3-5e4e-48ac-a32b-f0c01c2836a8" timestamp="2014-08-08T15:50:10.983464+00:00" 
+                    xsi:type='ttp:TTPType' version="1.1.1">
                 <ttp:Title>Victim Targeting: Customer PII and Financial Data</ttp:Title>
                 <ttp:Victim_Targeting>
-                    <ttp:Targeted_Information xsi:type="stixVocabs:InformationTypeVocab-1.0">Information Assets - Financial Data</ttp:Targeted_Information>
+                    <ttp:Targeted_Information xsi:type="stixVocabs:InformationTypeVocab-1.0">
+                        Information Assets - Financial Data
+                    </ttp:Targeted_Information>
                 </ttp:Victim_Targeting>
             </stixCommon:TTP>
         </campaign:Related_TTP>
     </campaign:Related_TTPs>
     <campaign:Related_Incidents>
-		<campaign:Related_Incident><stixCommon:Incident idref="example:incident-229ab6ba-0eb2-415b-bdf2-079e6b42f51e"/></campaign:Related_Incident>
-		<campaign:Related_Incident><stixCommon:Incident idref="example:incident-517cf274-038d-4ed4-a3ec-3ac18ad9db8a"/></campaign:Related_Incident>
-		<campaign:Related_Incident><stixCommon:Incident idref="example:incident-7d8cf96f-91cb-42d0-a1e0-bfa38ea08621"/></campaign:Related_Incident>
-	</campaign:Related_Incidents>
+        <campaign:Related_Incident>
+            <stixCommon:Incident idref="example:incident-229ab6ba-0eb2-415b-bdf2-079e6b42f51e"/>
+        </campaign:Related_Incident>
+        <campaign:Related_Incident>
+            <stixCommon:Incident idref="example:incident-517cf274-038d-4ed4-a3ec-3ac18ad9db8a"/>
+        </campaign:Related_Incident>
+        <campaign:Related_Incident>
+            <stixCommon:Incident idref="example:incident-7d8cf96f-91cb-42d0-a1e0-bfa38ea08621"/>
+        </campaign:Related_Incident>
+    </campaign:Related_Incidents>
     <campaign:Attribution>
-		<campaign:Attributed_Threat_Actor>
-			<stixCommon:Threat_Actor id="example:threatactor-56f3f0db-b5d5-431c-ae56-c18f02caf500" timestamp="2014-08-08T15:50:10.983629+00:00" xsi:type='ta:ThreatActorType' version="1.1.1">
+        <campaign:Attributed_Threat_Actor>
+            <stixCommon:Threat_Actor id="example:threatactor-56f3f0db-b5d5-431c-ae56-c18f02caf500" 
+                    timestamp="2014-08-08T15:50:10.983629+00:00" xsi:type='ta:ThreatActorType' version="1.1.1">
             <ta:Title>People behind the intrusion</ta:Title>
         </stixCommon:Threat_Actor>
-		</campaign:Attributed_Threat_Actor>
+        </campaign:Attributed_Threat_Actor>
     </campaign:Attribution>
 </stix:Campaign>
 {% endhighlight %}
