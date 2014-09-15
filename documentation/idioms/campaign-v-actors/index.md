@@ -41,9 +41,7 @@ The example below shows a VERY simple initial `Campaign` defined to correlate a 
                     xsi:type='ttp:TTPType' version="1.1.1">
                 <ttp:Title>Victim Targeting: Customer PII and Financial Data</ttp:Title>
                 <ttp:Victim_Targeting>
-                    <ttp:Targeted_Information xsi:type="stixVocabs:InformationTypeVocab-1.0">
-                        Information Assets - Financial Data
-                    </ttp:Targeted_Information>
+                    <ttp:Targeted_Information xsi:type="stixVocabs:InformationTypeVocab-1.0">Information Assets - Financial Data</ttp:Targeted_Information>
                 </ttp:Victim_Targeting>
             </stixCommon:TTP>
         </campaign:Related_TTP>
