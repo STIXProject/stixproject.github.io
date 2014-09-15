@@ -11,11 +11,9 @@ def parse_stix( pkg ):
         print "Title: " + inc.title
         for obs in inc.related_observables:
             print "Relation: " + str(obs.relationship)
-    
-        for obs in pkg.observables.observables:
-            print "Observable: " + str(obs.object_.properties.file_name)
-            print "Filesize: " + str(obs.object_.properties.size_in_bytes)
-            print "SHA256 Digest: " + str(obs.object_.properties.hashes[0].simple_hash_value)
+            print "File Name: " + str(obs.item.object_.properties.file_name)
+            print "Filesize: " + str(obs.item.object_.properties.size_in_bytes)
+            print "SHA256 Digest: " + str(obs.item.object_.properties.hashes[0].simple_hash_value)
           
     return 0
 
