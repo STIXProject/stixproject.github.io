@@ -57,7 +57,7 @@ which they are applicable, as well as by which STIX types that they use.
             <tr>
               <td>
                 <h4>
-                  <a href='{{page.url}}'>{{page.title}}</a>
+                  <a href='{{page.url | remove: "/index.html"}}'>{{page.title}}</a>
                 </h4>
               </td>
               <td>

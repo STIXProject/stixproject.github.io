@@ -243,3 +243,11 @@ form#nav-version select {
 p.data-model-description {
   clear: both;
 }
+
+.tab-container {
+  clear: both;
+}
+
+.tab-pane.active > img {
+  margin: 15px;
+}

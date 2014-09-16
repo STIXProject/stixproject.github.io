@@ -138,7 +138,6 @@ References to non-versioned constructs (anything with an id/idref but not a time
 
 ##Observable Instances vs Observable Patterns
 
-
 As described in [Concept: Observable Instances vs Observable Patterns](../concepts/observable-patterns-vs-instances), there are two different forms of “Observables” possible in STIX: **observable instances** and **observable patterns**.
 Each form has its own purposes to represent various relevant information in STIX.
 
@@ -481,6 +480,9 @@ Some basic guidance is provided below on which forms of observables are appropri
 </stix:TTP>
 {% endhighlight %}
 
+## CybOX Object selection
+
+Suggested practices for [CybOX Object selection](https://cyboxproject.github.io/documentation/suggested-practices/#cybox-object-selection)
 
 
 ## Creating documents for human consumption
