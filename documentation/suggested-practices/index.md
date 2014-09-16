@@ -90,6 +90,8 @@ representation in a global location (referencing).
 
 Relationships via embedded definition are achieved when a relationship from one component (source) to another (sink) is asserted by defining/specifying the sink from within the source. If an id is specified for the sink it can be referenced from other components as well.
 
+**NOTE:** Embedding the definition of a component within another component does not imply a hard parent-child relationship limiting its relevancy to only the embedding component. As noted in the suggested practices for [Assigning IDs], for situations where the embedded component is really only relevant/valid/important within the context of the embedding component it is suggested practice to not specify an ID for it. This explicitly denotes its local-only relevance and prevents it from participating in relationships to components other than the embedding one. For situations where the simplicity, brevity and readability of relationship via embedded definition is desirable but the embedded content may be relevant/valid/important outside the context of only the embedding component, an ID can be specified for it and it can participate in relationships to components other than the embedding one.
+
 <img src="diagram2.png" alt="Relationship via Reference"/>
 
 **Example:**
@@ -125,8 +127,6 @@ Relationships via embedded definition are achieved when a relationship from one 
     </stix:Indicator>
 </stix:Indicators>
 {% endhighlight %}
-
-**NOTE:** Embedding the definition of a component within another component does not limit its relevancy to only the embedding component. As noted in the suggested practices for [Assigning IDs], for situations where the embedded component is really only relevant/valid/important within the context of the embedding component it is suggested practice to not specify an ID for it. This explicitly denotes its local-only relevance and prevents it from participating in relationships to components other than the embedding one. For situations where the simplicity, brevity and readability of relationship via embedded definition is desirable but the embedded content may be relevant/valid/important outside the context of only the embedding component, an ID can be specified for it and it can participate in relationships to components other than the embedding one.
 
 **Relationship via embedded definition is desirable when simplicity, brevity and readability of the content is of concern or the content is very localized in context and less likely that portions will be interrelated with other content.**
 
