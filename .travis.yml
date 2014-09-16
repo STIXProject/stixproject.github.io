@@ -13,3 +13,7 @@ install:
   - pip install -q xlrd lxml
 
 script: ./test_idioms.sh
+
+notifications:		
+  email:		
+    - stix-commits-list@lists.mitre.org
