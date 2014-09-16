@@ -52,5 +52,14 @@ This page describes several central STIX concepts that cut across all of the cor
 
       <a class="btn btn-primary" href="xsi-type">Go »</a>
     </div>
+    
+    <div class="well">
+      <img src="/images/Observable.png" class="component-img-right" alt="Observable Icon" />
+      <h4><a href="xsi-type">Observable Instances vs Observable Patterns</a></h4>
+
+      <p>Describes the two primary forms of Observables leveraged in STIX.</p>
+
+      <a class="btn btn-primary" href="observable-patterns-vs-instances">Go »</a>
+    </div>
   </div>
 </div>
