@@ -20,7 +20,11 @@ It should be noted that not all relationships in STIX are about simply conveying
 * **Association** (related to) relationships relate two independent components of CTI content (e.g. ThreatActor_A and TTP_B) that are associated with each other due to some contextual detail or shared affinity. Association relationships should be considered as bidirectional and there is no hard dependency on either of the components associated (i.e. any conveyance of either of the associated components would not require inclusion of the association relationship).
 * **Composition** (includes as part of) relationships relate two components of CTI content (e.g. Indicator_X and Observable_Y) that are related to each other by the fact that one can be considered an inherent property of the other. This does not mean that the “property” component is necessarily only relevant within the enclosing component, is owned and controlled by the enclosing component, or is barred from being a property of other content as well (through referencing). It simply means that consideration of the enclosing component would be contextually incomplete without consideration of the “property” component as part of it. Composition relationships should be considered bidirectional but imply an inclusion dependency for the enclosing component (i.e. for contextual completeness if you convey Indicator_X you would also need to include its related Observable_Y).
    
-In STIX, relationships of both flavors are specified from within the primary component of the relationship (for composition relationships this is the enclosing component). This is in order to lend clarity to composition relationships, to encourage specification of particular relationships that are semantically important for the context of a component, and to localize information to where it is most relevant in order to minimize the complexities of unknown dependencies. In other words, if you convey a component, you have conveyed its full context and don't need to chase down and convey a bunch of related content it is dependent on. 
+In STIX, relationships of both flavors are specified from within the primary component of the relationship (for composition relationships this is the enclosing component). This is in order to lend clarity to composition relationships, to encourage specification of particular relationships that are semantically important for the context of a component, and to localize information to where it is most relevant in order to minimize the complexities of unknown dependencies. In other words, if you convey a component, you have conveyed its full context and don't need to chase down and convey a bunch of related content it is dependent on.
+
+When a relationship is specified within the primary component, the related component can typically be defined either embedded inline within the primary component or via a reference to a definition elsewhere. It is important to note that a relationship's nature (Association vs Composition) can typically be considered orthagonal to and independent of its specification approach (referencing vs embedding). Most association relationships (e.g. a Threat_Actor with a related TTP) can be specified either via embedding (e.g. defining the TTP inline within the Threat_Actor/Observed_TTPs structure) or via referencing. The same can be said of composition relationships. There are a small number of relationships in STIX (e.g. Related_Campaigns within Indicators) that are exceptions to this rule and can only be specified via reference due to their pure association nature.
+
+While a relationship's nature is inherent in the form of information it represents, its specification approach is a choice to be made with varying tradeoffs. For more information on relevant suggested practices see [Suggested Practices: Referencing vs. Embedding](../../suggested-practices).
 
 ## Concept
 ## 
@@ -28,12 +32,7 @@ Almost all relationships in STIX are implemented using a similar structure to en
 for representation of the relationship itself (of course), a label to further describe the semantics of the relationship, a confidence in
 the assertion of a relationship, and an information source for the relationship assertion. These fields mean that not only can STIX
 components be related together, they can be related together in a semantically meaningful way that preserves the confidence and provenance
-of the relationship assertion.
-
-While all relationships in STIX allow for the information above, there are two general types of relationships. The first type is a full
-relationship (the large majority of STIX relationships are this type) which allows for either embedding the full related component inside
-the relationship or to reference the other component via an idref. The second type is a reference relationship which only allows
-relationship by reference, not by embedding it. For more information on relevant suggested practices see [Suggested Practices: Referencing vs. Embedding](../../suggested-practices). 
+of the relationship assertion. 
 
 ## Data Model
 ## 

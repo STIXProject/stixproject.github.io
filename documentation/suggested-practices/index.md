@@ -90,12 +90,13 @@ representation in a global location (referencing).
 
 Relationships via embedded definition are achieved when a relationship from one component (source) to another (sink) is asserted by defining/specifying the sink from within the source. If an id is specified for the sink it can be referenced from other components as well.
 
-**NOTE:** Embedding the definition of a component within another component does not imply a hard parent-child relationship limiting its relevancy to only the embedding component. As noted in the suggested practices for [Assigning IDs], for situations where the embedded component is really only relevant/valid/important within the context of the embedding component it is suggested practice to not specify an ID for it. This explicitly denotes its local-only relevance and prevents it from participating in relationships to components other than the embedding one. For situations where the simplicity, brevity and readability of relationship via embedded definition is desirable but the embedded content may be relevant/valid/important outside the context of only the embedding component, an ID can be specified for it and it can participate in relationships to components other than the embedding one.
+**NOTE:** Embedding the definition of a component within another component does not imply a hard parent-child relationship limiting its relevancy to only the embedding component. As noted in the suggested practices for [Assigning IDs], **for situations where the embedded component is really only relevant/valid/important within the context of the embedding component it is suggested practice to not specify an ID for it**. This explicitly denotes its local-only relevance and prevents it from participating in relationships to components other than the embedding one. **For situations where the simplicity, brevity and readability of relationship via embedded definition is desirable but the embedded content may be relevant/valid/important outside the context of only the embedding component, an ID can be specified for it and it can participate in relationships to components other than the embedding one.**
 
-<img src="diagram2.png" alt="Relationship via Reference"/>
-
-**Example:**
-
+>
+**Example with IDs on embedded content (related TTP and COA content is general enough to be relevant outside the context of the Indicator):**
+>
+<img src="diagram2.png" alt="Relationship via Embedding w ids"/>
+>
 {% highlight xml %}
 <stix:STIX_Header>
     <stix:Title>Example watchlist that contains domain information.</stix:Title>
@@ -127,7 +128,45 @@ Relationships via embedded definition are achieved when a relationship from one 
     </stix:Indicator>
 </stix:Indicators>
 {% endhighlight %}
+ 
+> 
+**Example without IDs on embedded content (related TTP content is general enough to be relevant outside the context of the Indicator but related COA content is not):**
+>
+<img src="diagram3.png" alt="Relationship via Embedding w/o ids"/>
 
+{% highlight xml %}
+<stix:STIX_Header>
+    <stix:Title>Indicators for Teufelhund malware dropsite.</stix:Title>
+    <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Indicators - Watchlist</stix:Package_Intent>
+</stix:STIX_Header>
+<stix:Indicators>
+    <stix:Indicator xsi:type="indicator:IndicatorType" id="example:Indicator-aedba5fa-1a30-4c59-9264-a930b99536f9" timestamp="2014-05-08T09:00:00.000000Z">
+        <indicator:Title>Indicator for Teufelhund malware dropsite domain.</indicator:Title>
+        <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+        <indicator:Observable id="example:Observable-82de1cdf-7cf0-4f9a-9b98-5c40235a70a5">
+            <cybox:Object id="example:Object-f8fb1238-ec28-4ddd-9f37-35b31d718db7">
+                <cybox:Properties xsi:type="DomainNameObj:DomainNameObjectType" type="FQDN">
+                    <DomainNameObj:Value condition="Equals">yolohipster.com</DomainNameObj:Value>
+                </cybox:Properties>
+            </cybox:Object>
+        </indicator:Observable>
+        <indicator:Indicated_TTP>
+            <stixCommon:TTP xsi:type="ttp:TTPType" id="example:TTP-2b6bf957-bc5b-4aa1-a604-691baeb63e3d">
+                <ttp:Title>Teufelhund malware</ttp:Title>
+            </stixCommon:TTP>
+        </indicator:Indicated_TTP>
+        <indicator:Suggested_COAs>
+            <indicator:Suggested_COA>
+                <stixCommon:Course_Of_Action xsi:type="coa:CourseOfActionType">  <!-- NOTE: no @id specified for this Course_Of_Action as it is VERY specific to this Indicator-->
+                    <coa:Title>Redirect requests for yolohipster.com to quarantine.acme.com</coa:Title>
+                </stixCommon:Course_Of_Action>
+            </indicator:Suggested_COA>
+        </indicator:Suggested_COAs>
+    </stix:Indicator>
+</stix:Indicators>
+{% endhighlight %}
+ 
+ 
 **Relationship via embedded definition is desirable when simplicity, brevity and readability of the content is of concern or the content is very localized in context and less likely that portions will be interrelated with other content.**
 
 
@@ -139,9 +178,11 @@ Relationships via embedded definition are achieved when a relationship from one 
 Relationships via reference are achieved when a relationship from one component (source) to another (sink) is asserted by including a reference within the source in the form of an 
 idref referencing the defined id for the sink. 
 
+>
+**Example:**
+>
 <img src="diagram1.png" alt="Relationship via Reference"/>
 
-**Example:**
 {% highlight xml %}
 <stix:STIX_Header>
     <stix:Title>Example watchlist that contains domain information.</stix:Title>
@@ -182,36 +223,33 @@ idref referencing the defined id for the sink.
 	</stix:Course_Of_Action>
 </stix:Courses_Of_Action>
 {% endhighlight %}
-
+ 
+  
 **Relationship via reference is desirable when flexibility, potential reuse and correlation of the content is a key concern or when part of a larger body of highly interrelated content.**
 
 
 ###Versioning implications for differing approaches
 
-* scenario 1: **Condition:** embedded content with no id; **Action:** embedded content updated
- * **Implication:** enclosing content version must be increased
-* scenario 2: **Condition:** embedded content with no id; **Action:** enclosing content updated
- * **Implication:** enclosing content version must be increased
-* scenario 3: **Condition:** embedded content with no id; **Action:** embedded content revoked
- * **Implication:** not possible
-* scenario 4: **Condition:** embedded content with no id; **Action:** enclosing content revoked
- * **Implication:** embedded content gets revoked with enclosing content
-* scenario 5: **Condition:** embedded content with id; **Action:**: embedded content updated
- * **Implication:** embedded content version must be increased; enclosing content version must be increased
-* scenario 6: **Condition:** embedded content with id; **Action:** enclosing content updated
- * **Implication:** enclosing content version must be increased; embedded content version does NOT need to be increased
-* scenario 7: **Condition:** embedded content with id; **Action:** embedded content revoked
- * **Implication:** embedded content becomes invalid; enclosing content must either increase version (with embedded content removed) or be revoked or left as is but would contain explicitly revoked content
-* scenario 8: **Condition:** embedded content with id; **Action:** enclosing content revoked
- * **Implication:** enclosing content becomes invalid; embedded content is still valid on its own
-* scenario 9: **Condition:** referenced content; **Action:** referenced content updated
- * **Implication:** referenced content version must be increased; enclosing content version must be increased and referenced ID/timestamp updated
-* scenario 10: **Condition:** referenced content; **Action:** enclosing content updated
- * **Implication:** enclosing content version must be increased; referenced content version does NOT need to be increased
-* scenario 11: **Condition:** referenced content; **Action:** referenced content revoked
- * **Implication:** referenced content becomes invalid; enclosing content must either increase version (with referenced content removed) or be revoked or left as is but would contain (by reference) explicitly revoked content
-* scenario 12: **Condition:** referenced content; **Action:** enclosing content revoked
- * **Implication:** enclosing content becomes invalid; referenced content is still valid on its own
+Embedded content with no id:
+
+* **Action:** embedded content updated :: **Implication:** enclosing content version must be increased
+* **Action:** enclosing content updated :: **Implication:** enclosing content version must be increased
+* **Action:** embedded content revoked :: **Implication:** not possible
+* **Action:** enclosing content revoked :: **Implication:** embedded content gets revoked with enclosing content
+ 
+ Embedded content with id:
+ 
+* **Action:**: embedded content updated :: **Implication:** embedded content version must be increased; enclosing content version must be increased
+* **Action:** enclosing content updated :: **Implication:** enclosing content version must be increased; embedded content version does NOT need to be increased
+* **Action:** embedded content revoked :: **Implication:** embedded content becomes invalid; enclosing content must either increase version (with embedded content removed) or be revoked or left as is but would contain explicitly revoked content
+* **Action:** enclosing content revoked :: **Implication:** enclosing content becomes invalid; embedded content is still valid on its own
+ 
+ Referenced content:
+ 
+* **Action:** referenced content updated :: **Implication:** referenced content version must be increased; enclosing content version must be increased and referenced ID/timestamp updated
+* **Action:** enclosing content updated :: **Implication:** enclosing content version must be increased; referenced content version does NOT need to be increased
+* **Action:** referenced content revoked :: **Implication:** referenced content becomes invalid; enclosing content must either increase version (with referenced content removed) or be revoked or left as is but would contain (by reference) explicitly revoked content
+* **Action:** enclosing content revoked :: **Implication:** enclosing content becomes invalid; referenced content is still valid on its own
 
 ###Guidance
 
@@ -219,6 +257,8 @@ These situations are a judgment call, but when making that judgment you should c
 or only within the context of the parent? **If it only has value in the parent, embedding it may be appropriate. Otherwise it's probably
 better to reference it. 
 If you're unsure, it's generally safer to reference it.**
+
+<img src="decision flow.png" alt="decision flow chart"/>
 
 ## Versioning and the timestamp attribute
  
