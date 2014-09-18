@@ -108,54 +108,32 @@ Given the above guidelines, it's likely that STIX identity information will fall
 
 ### Using only STIX IdentityType
 
-<div class="tab-container">
-  <ul class="nav nav-tabs">
-    <li class="active"><a href="#header-identity-diagram" data-toggle="tab">Diagram</a></li>
-    <li><a href="#header-identity-xml" data-toggle="tab">XML</a></li>
-    <li><a href="#header-identity-produce" data-toggle="tab">Production Python</a></li>
-    <li><a href="#header-identity-consume" data-toggle="tab">Consumption Python</a></li>
-  </ul>
-  <div class="tab-content">
-    <div class="tab-pane active" id="header-identity-diagram">
-      <img src="only-base.png" alt="Only base IdentityType" />
-    </div>
-    <div class="tab-pane" id="header-identity-xml">
-{% highlight xml linenos %}
+{% include tabbed_container_start.html tabs="Diagram|XML|Production Python|Consumption Python" name="only-base" %}
+  <img src="only-base.png" alt="Only base IdentityType" />
+{% include tabbed_content_separator.html %}
+  {% highlight xml linenos %}
 <stixCommon:Identity>
   <stixCommon:Name>John Smith</stixCommon:Name>
 </stixCommon:Identity>
-{% endhighlight %}
-    </div>
-    <div class="tab-pane" id="header-identity-produce">
-{% highlight python linenos %}
+  {% endhighlight %}
+{% include tabbed_content_separator.html %}
+  {% highlight python linenos %}
 from stix.common import Identity
 
 identity = Identity()
 identity.name = "John Smith"
-{% endhighlight %}
-    </div>
-    <div class="tab-pane" id="header-identity-consume">
-{% highlight python linenos %}
+  {% endhighlight %}
+{% include tabbed_content_separator.html %}
+  {% highlight python linenos %}
 print identity.name # "John Smith"
-{% endhighlight %}
-    </div>
-  </div>
-</div>
+  {% endhighlight %}
+{% include tabbed_container_end.html %}
 
 ### Using only CIQ
 
-<div class="tab-container">
-  <ul class="nav nav-tabs">
-    <li class="active"><a href="#header-ciq-diagram" data-toggle="tab">Diagram</a></li>
-    <li><a href="#header-ciq-xml" data-toggle="tab">XML</a></li>
-    <li><a href="#header-ciq-produce" data-toggle="tab">Production Python</a></li>
-    <li><a href="#header-ciq-consume" data-toggle="tab">Consumption Python</a></li>
-  </ul>
-  <div class="tab-content">
-    <div class="tab-pane active" id="header-ciq-diagram">
-      <img src="only-ciq.png" alt="Only CIQ fields" />
-    </div>
-    <div class="tab-pane" id="header-ciq-xml">
+{% include tabbed_container_start.html tabs="Diagram|XML|Production Python|Consumption Python" name="ciq" %}
+  <img src="only-ciq.png" alt="Only CIQ fields" />
+{% include tabbed_content_separator.html %}
 {% highlight xml linenos %}
 <stixCommon:Identity xsi:type="stixCIQIdentity:CIQIdentity3.0InstanceType">
   <stixCIQIdentity:Specification>
@@ -163,8 +141,7 @@ print identity.name # "John Smith"
   </stixCIQIdentity:Specification>
 </stixCommon:Identity>
 {% endhighlight %}
-    </div>
-    <div class="tab-pane" id="header-ciq-produce">
+{% include tabbed_content_separator.html %}
 {% highlight python linenos %}
 from stix.extensions.identity.ciq_identity_3_0 import (CIQIdentity3_0Instance, STIXCIQIdentity3_0, OrganisationInfo)
 
@@ -173,14 +150,11 @@ identity_spec = STIXCIQIdentity3_0()
 identity_spec.organisation_info = OrganisationInfo(industry_type="Defense Industrial Base")
 ciq_identity.specification = identity_spec
 {% endhighlight %}
-    </div>
-    <div class="tab-pane" id="header-ciq-consume">
+{% include tabbed_content_separator.html %}
 {% highlight python linenos %}
 print identity.specification.organisation_info.industry_type # Defense Industrial Base
 {% endhighlight %}
-    </div>
-  </div>
-</div>
+{% include tabbed_container_end.html %}
 
 <div class="alert alert-warning">
   <img src="only-ciq-bad.png" alt="Bad example of CIQ" class="aside-text" />
@@ -190,18 +164,9 @@ print identity.specification.organisation_info.industry_type # Defense Industria
 
 ### Using both IdentityType and CIQ
 
-<div class="tab-container">
-  <ul class="nav nav-tabs">
-    <li class="active"><a href="#header-both-diagram" data-toggle="tab">Diagram</a></li>
-    <li><a href="#header-both-xml" data-toggle="tab">XML</a></li>
-    <li><a href="#header-both-produce" data-toggle="tab">Production Python</a></li>
-    <li><a href="#header-both-consume" data-toggle="tab">Consumption Python</a></li>
-  </ul>
-  <div class="tab-content">
-    <div class="tab-pane active" id="header-both-diagram">
-      <img src="both.png" alt="Only CIQ fields" />
-    </div>
-    <div class="tab-pane" id="header-both-xml">
+{% include tabbed_container_start.html tabs="Diagram|XML|Production Python|Consumption Python" name="both" %}
+  <img src="both.png" alt="Only CIQ fields" />
+{% include tabbed_content_separator.html %}
   {% highlight xml linenos %}
   <stixCommon:Identity xsi:type="stixCIQIdentity:CIQIdentity3.0InstanceType">
     <stixCommon:Name>John Smith</stixCommon:Name>
@@ -215,8 +180,7 @@ print identity.specification.organisation_info.industry_type # Defense Industria
     </stixCiqIdentity:Specification>
   </stixCommon:Identity>
   {% endhighlight %}
-    </div>
-    <div class="tab-pane" id="header-both-produce">
+{% include tabbed_content_separator.html %}
   {% highlight python linenos %}
   from stix.extensions.identity.ciq_identity_3_0 import (CIQIdentity3_0Instance, STIXCIQIdentity3_0, PartyName, NameLine)
 
@@ -236,8 +200,7 @@ print identity.specification.organisation_info.industry_type # Defense Industria
   identity.name = "John Smith"
   identity.specification = identity_spec
   {% endhighlight %}
-    </div>
-    <div class="tab-pane" id="header-both-consume">
+{% include tabbed_content_separator.html %}
   {% highlight python linenos %}
   for name_line in identity.specification.party_name.name_lines:
     print name_line.type # LastName or FirstName
@@ -246,9 +209,7 @@ print identity.specification.organisation_info.industry_type # Defense Industria
   # Or, simpler consumers may do
   print identity.name # John Smith
   {% endhighlight %}
-    </div>
-  </div>
-</div>
+{% include tabbed_container_end.html %}
 
 ## Using a Non-CIQ Identity Structure
 
