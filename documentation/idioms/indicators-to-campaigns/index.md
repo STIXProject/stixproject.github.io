@@ -24,18 +24,9 @@ During the 1.1 release the community determined that this approach had several m
 
 Because this was done as a minor release, however, the previous capability remains in the schema. Its use is permitted but discouraged by the specification.
 
-<div class="tab-container">
-  <ul class="nav nav-tabs">
-    <li class="active"><a href="#old-diagram" data-toggle="tab">Diagram</a></li>
-    <li><a href="#old-xml" data-toggle="tab">XML</a></li>
-    <li><a href="#old-produce" data-toggle="tab">Production Python</a></li>
-    <li><a href="#old-consume" data-toggle="tab">Consumption Python</a></li>
-  </ul>
-  <div class="tab-content">
-    <div class="tab-pane active" id="old-diagram">
-      <img src="old-style.png" alt="Old Style" />
-    </div>
-    <div class="tab-pane" id="old-xml">
+{% include start_tabs.html tabs="Diagram|XML|Production Python|Consumption Python" name="old" %}
+  <img src="old-style.png" alt="Old Style" />
+{% include tab_separator.html %}
 {% highlight xml linenos %}
 <stix:Indicators>
     <stix:Indicator id="example:indicator-c43a0a05-e8d2-4f64-ae37-3f3fb153f8d9" timestamp="2014-09-09T19:58:39.608000+00:00" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
@@ -61,8 +52,7 @@ Because this was done as a minor release, however, the previous capability remai
     </stix:Campaign>
 </stix:Campaigns>
 {% endhighlight %}
-    </div>
-    <div class="tab-pane" id="old-produce">
+{% include tab_separator.html %}
 {% highlight python linenos %}
 package = STIXPackage()
 
@@ -82,8 +72,7 @@ package.add_campaign(campaign)
 # Link the campaign to the indicator
 campaign.related_indicators.append(RelatedIndicator(item=Indicator(idref=indicator.id_)))
 {% endhighlight %}
-    </div>
-    <div class="tab-pane" id="old-consume">
+{% include tab_separator.html %}
 {% highlight python linenos %}
 # Collect indicators by ID
 indicators = {}
@@ -97,9 +86,7 @@ for campaign in pkg.campaigns:
   for indicator in campaign.related_indicators:
     print "  - Related To: " + indicators[indicator.item.idref].title
 {% endhighlight %}
-    </div>
-  </div>
-</div>
+{% include end_tabs.html %}
 
 ## New Style (Indicator => Campaign)
 
@@ -109,20 +96,13 @@ The new structure is similar to the old one, with two exceptions:
 
 This new approach is encouraged for all versions of STIX in which it is valid (1.1 and beyond).
 
-<p class="alert alert-danger"><strong>Warning!</strong>The current version of python-stix (v1.1.1.1) does not support this structure. This is tracked via issue <a href="https://github.com/STIXProject/python-stix/issues/192">#192</a></p>
+{% capture alert_text %}
+**Warning!** The current version of python-stix (v1.1.1.1) does not support this structure. This is tracked via issue [#192](https://github.com/STIXProject/python-stix/issues/192)
+{% endcapture %}{% include alert.html type="danger" %}
 
-<div class="tab-container">
-  <ul class="nav nav-tabs">
-    <li class="active"><a href="#header-identity-diagram" data-toggle="tab">Diagram</a></li>
-    <li><a href="#header-identity-xml" data-toggle="tab">XML</a></li>
-    <li><a href="#header-identity-produce" data-toggle="tab">Production Python</a></li>
-    <li><a href="#header-identity-consume" data-toggle="tab">Consumption Python</a></li>
-  </ul>
-  <div class="tab-content">
-    <div class="tab-pane active" id="header-identity-diagram">
-      <img src="new-style.png" alt="New Style" />
-    </div>
-    <div class="tab-pane" id="header-identity-xml">
+{% include start_tabs.html tabs="Diagram|XML|Production Python|Consumption Python" name="new" %}
+  <img src="new-style.png" alt="New Style" />
+{% include tab_separator.html %}
 {% highlight xml linenos %}
 <stix:Indicators>
     <stix:Indicator id="example:indicator-c43a0a05-e8d2-4f64-ae37-3f3fb153f8d9" timestamp="2014-09-09T19:58:39.608000+00:00" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
@@ -148,8 +128,7 @@ This new approach is encouraged for all versions of STIX in which it is valid (1
     </stix:Campaign>
 </stix:Campaigns>
 {% endhighlight %}
-      </div>
-      <div class="tab-pane" id="header-identity-produce">
+{% include tab_separator.html %}
 {% highlight python linenos %}
 package = STIXPackage()
 
@@ -170,8 +149,7 @@ package.add_campaign(campaign)
 # TODO: Broken, see #192
 # indicator.related_campaigns.append(RelatedCampaign(item=Campaign(idref=campaign.id_)))
 {% endhighlight %}
-      </div>
-      <div class="tab-pane" id="header-identity-consume">
+{% include tab_separator.html %}
 {% highlight python linenos %}
 # Collect campaigns by ID
 campaigns = {}
@@ -186,9 +164,8 @@ for indicator in pkg.indicators:
   # for campaign in indicator.related_campaigns:
   #   print "  - Related To: " + campaigns[campaign.item.idref].title
 {% endhighlight %}
-    </div>
-  </div>
-</div>
+{% include end_tabs.html %}
+
 
 ## Do I need to support the old capability?
 
