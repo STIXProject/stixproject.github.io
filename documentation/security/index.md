@@ -5,7 +5,9 @@ title: Security Considerations
 
 <link href="/css/security.css" rel="stylesheet"/>
 
-<p class="alert alert-danger"><strong>UNDER DEVELOPMENT:</strong> This guide is still under development and the information below may be incomplete.</p>
+{% capture alert_text %}
+**UNDER DEVELOPMENT:** This guide is still under development and the information below may be incomplete.
+{% endcapture %}{% include alert.html type="danger" %}
 
 There are several potential avenues for attack when processing incoming STIX documents. The following list is non-exhaustive and should not take the place of a comprehensive security review that takes into account your unique technology stack and processes.
 
