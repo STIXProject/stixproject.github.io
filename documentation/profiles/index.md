@@ -36,8 +36,9 @@ Terms compliant with [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt) are used t
 Legacy Terms|RFC Terms
 --------|---------
 Required|MUST 
-Suggested|SHOULD or SHOULD NOT
+Suggested|SHOULD 
 Optional | MAY
+(none) | SHOULD NOT
 Prohibited|MUST NOT
 
 
