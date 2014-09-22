@@ -143,46 +143,38 @@ Each form has its own purposes to represent various relevant information in STIX
 
 Some basic guidance is provided below on which forms of observables are appropriate for which purposes in STIX.
 
-###When to use observable instances
+### Use an instance to...
 
-
-####Use case: When you want to simply convey a cyber observation without any other specific context.
-
-* For example, an outgoing network connection to a particular IP that occurred at a specific time.
-* **Suggested practice: This would be conveyed using an instance of the Observable core component structure.**
-* Example:
-
+  * Convey a cyber observation without any context via an [Observable](/data-model/{{site.current_version}}/cybox/ObservableType/) on its own. {% include expand_link.html text="Example »" section="observation" %}
+{% capture expandable %}
+**Outgoing network connection to a particular IP that occurred at a specific time**
 {% highlight xml linenos %}
 <stix:STIX_Package id="example:STIXPackage-f61cd874-494d-4194-a3e6-6b487dbb6d6e" timestamp="2014-05-08T09:00:00.000000Z" version="1.1.1">
-	<stix:STIX_Header>
-    	<stix:Title>Malicious network connection observation</stix:Title>
-    	<stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Observations</stix:Package_Intent>
+  <stix:STIX_Header>
+      <stix:Title>Malicious network connection observation</stix:Title>
+      <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Observations</stix:Package_Intent>
     </stix:STIX_Header>
     <stix:Observables cybox_major_version="2" cybox_minor_version="1">
-		<cybox:Observable id="example:Observable-1d44cf4b-2cf9-4749-b93f-c8608cf21928">
-			<cybox:Observable_Source>
-				<cyboxCommon:Time><cyboxCommon:Start_Time>2014-05-08T09:00:00.000000Z</cyboxCommon:Start_Time></cyboxCommon:Time>
-			</cybox:Observable_Source>
-			<cybox:Object  id="example:Object-3f21459c-6b15-4d7d-afc4-5c1912623e7d">
-				<cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
-					<NetworkConnectionObj:Destination_Socket_Address>
-						<SocketAddressObj:IP_Address category="ipv4-addr">
-							<AddressObj:Address_Value>116.010.191.223</AddressObj:Address_Value>
-						</SocketAddressObj:IP_Address>
-					</NetworkConnectionObj:Destination_Socket_Address>
-				</cybox:Properties>
-			</cybox:Object>
-		</cybox:Observable>
+    <cybox:Observable id="example:Observable-1d44cf4b-2cf9-4749-b93f-c8608cf21928">
+      <cybox:Observable_Source>
+        <cyboxCommon:Time><cyboxCommon:Start_Time>2014-05-08T09:00:00.000000Z</cyboxCommon:Start_Time></cyboxCommon:Time>
+      </cybox:Observable_Source>
+      <cybox:Object  id="example:Object-3f21459c-6b15-4d7d-afc4-5c1912623e7d">
+        <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+          <NetworkConnectionObj:Destination_Socket_Address>
+            <SocketAddressObj:IP_Address category="ipv4-addr">
+              <AddressObj:Address_Value>116.010.191.223</AddressObj:Address_Value>
+            </SocketAddressObj:IP_Address>
+          </NetworkConnectionObj:Destination_Socket_Address>
+        </cybox:Properties>
+      </cybox:Object>
+    </cybox:Observable>
     </stix:Observables>
 </stix:STIX_Package>
-{% endhighlight %}
-
-####Use case: When you want to report a sighting of a given Indicator and wish to specify what was actually observed in the sighting that matched the Indicator’s observable pattern.
-
-* For example, an Indicator specifies a set of three domains used for malware C2 and you wish to report a sighting specifying which of the three you observed.
-* **Suggested practice: This would be conveyed using an instance of the Incident/Sightings/Sighting/Related_Observable structure.**
-* Example:
-
+{% endhighlight %}{% endcapture %}{% include expander.html section="observation" %}
+  * Report a sighting of a given Indicator specify what was actually observed in the sighting that matched the Indicator's pattern via a [Sighting](/data-model/{{site.current_version}}/indicator/SightingType/)'s Related Observable. {% include expand_link.html text="Example »" section="sighting" %}
+{% capture expandable %}
+**An Indicator specifies a set of three domains used for malware C2 and you wish to report a sighting specifying which of the three you observed**
 {% highlight xml linenos %}
 <stix:Indicator xsi:type="indicator:IndicatorType" id="example:Indicator-2e20c5b2-56fa-46cd-9662-8f199c69d2c9" timestamp="2014-05-08T09:00:00.000000Z">
     <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
@@ -194,72 +186,64 @@ Some basic guidance is provided below on which forms of observables are appropri
         </cybox:Object>
     </indicator:Observable>
     <indicator:Sightings>
-		<indicator:Sighting>
-			<indicator:Source><stixCommon:Identity><stixCommon:Name>FooBar Inc.</stixCommon:Name></stixCommon:Identity></indicator:Source>
-			<indicator:Related_Observables>
-				<indicator:Related_Observable>
-					<stixCommon:Observable  id="example:Observable-45b3acdf-1888-4bcc-89a9-6d9f8116fede">
-						<cybox:Object id="example:Object-a3d36250-42fa-4653-9172-87b87598390c">
-							<cybox:Properties xsi:type="DomainNameObj:DomainNameObjectType" type="FQDN">
-								<DomainNameObj:Value>malicious2.example.com</DomainNameObj:Value>
-							</cybox:Properties>
-						</cybox:Object>
-					</stixCommon:Observable>
-				</indicator:Related_Observable>
-			</indicator:Related_Observables>
-		</indicator:Sighting>
+    <indicator:Sighting>
+      <indicator:Source><stixCommon:Identity><stixCommon:Name>FooBar Inc.</stixCommon:Name></stixCommon:Identity></indicator:Source>
+      <indicator:Related_Observables>
+        <indicator:Related_Observable>
+          <stixCommon:Observable  id="example:Observable-45b3acdf-1888-4bcc-89a9-6d9f8116fede">
+            <cybox:Object id="example:Object-a3d36250-42fa-4653-9172-87b87598390c">
+              <cybox:Properties xsi:type="DomainNameObj:DomainNameObjectType" type="FQDN">
+                <DomainNameObj:Value>malicious2.example.com</DomainNameObj:Value>
+              </cybox:Properties>
+            </cybox:Object>
+          </stixCommon:Observable>
+        </indicator:Related_Observable>
+      </indicator:Related_Observables>
+    </indicator:Sighting>
     </indicator:Sightings>
 </stix:Indicator>
-{% endhighlight %}
-
-####Use case: When you want to characterize specific cyber observations relevant to a specific set of security-relevant cyber activity (Incident).
-
-* For example, the basic details of a phishing email received as part of an attack.
-* **Suggested practice: This would be conveyed using instances of the Incident/Related_Observables structure.**
-* Example:
-
+{% endhighlight %}{% endcapture %}{% include expander.html section="sighting" %}
+  * Characterize specific cyber observations relevant to an Incident via its [RelatedObservables](/data-model/{{site.current_version}}/incident/RelatedObservablesType/) field. {% include expand_link.html text="Example »" section="incident" %}
+{% capture expandable %}
+**The basic details of a phishing email received as part of an attack**
 {% highlight xml linenos %}
 <stix:Incident xsi:type="incident:IncidentType" id="example:Incident-91d2d63c-ac96-4660-ae4a-20119c43b318" timestamp="2014-05-11T12:00:00Z">
-	<incident:Related_Observables>
-		<incident:Related_Observable>
-			<indicator:Observable id="example:Observable-Pattern-5f1dedd3-ece3-4007-94cd-7d52784c1474">
-				<cybox:Object id="example:Object-3a7aa9db-d082-447c-a422-293b78e24238">
-					<cybox:Properties xsi:type="EmailMessageObj:EmailMessageObjectType">
-						<EmailMessageObj:Header>
-							<EmailMessageObj:From category="e-mail">
-								<AddressObj:Address_Value>Rerun@state.gov</AddressObj:Address_Value>
-							</EmailMessageObj:From>
-							<EmailMessageObj:Subject>SkyNet Architecture Review</EmailMessageObj:Subject>
-						</EmailMessageObj:Header>
-					</cybox:Properties>
-					<cybox:Related_Objects>
-						<cybox:Related_Object>
-							<cybox:Properties xsi:type="FileObj:FileObjectType">
-								<FileObj:File_Extension>pdf</FileObj:File_Extension>
-								<FileObj:Size_In_Bytes>87022</FileObj:Size_In_Bytes>
-								<FileObj:Hashes>
-									<cyboxCommon:Hash>
-										<cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
-										<cyboxCommon:Simple_Hash_Value>cf2b3ad32a8a4cfb05e9dfc45875bd70</cyboxCommon:Simple_Hash_Value>
-									</cyboxCommon:Hash>
-								</FileObj:Hashes>
-							</cybox:Properties>
-							<cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.0">Contains</cybox:Relationship>
-						</cybox:Related_Object>
-					</cybox:Related_Objects>
-				</cybox:Object>
-			</indicator:Observable>
-		</incident:Related_Observable>
-	</incident:Related_Observables>
+  <incident:Related_Observables>
+    <incident:Related_Observable>
+      <indicator:Observable id="example:Observable-Pattern-5f1dedd3-ece3-4007-94cd-7d52784c1474">
+        <cybox:Object id="example:Object-3a7aa9db-d082-447c-a422-293b78e24238">
+          <cybox:Properties xsi:type="EmailMessageObj:EmailMessageObjectType">
+            <EmailMessageObj:Header>
+              <EmailMessageObj:From category="e-mail">
+                <AddressObj:Address_Value>Rerun@state.gov</AddressObj:Address_Value>
+              </EmailMessageObj:From>
+              <EmailMessageObj:Subject>SkyNet Architecture Review</EmailMessageObj:Subject>
+            </EmailMessageObj:Header>
+          </cybox:Properties>
+          <cybox:Related_Objects>
+            <cybox:Related_Object>
+              <cybox:Properties xsi:type="FileObj:FileObjectType">
+                <FileObj:File_Extension>pdf</FileObj:File_Extension>
+                <FileObj:Size_In_Bytes>87022</FileObj:Size_In_Bytes>
+                <FileObj:Hashes>
+                  <cyboxCommon:Hash>
+                    <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                    <cyboxCommon:Simple_Hash_Value>cf2b3ad32a8a4cfb05e9dfc45875bd70</cyboxCommon:Simple_Hash_Value>
+                  </cyboxCommon:Hash>
+                </FileObj:Hashes>
+              </cybox:Properties>
+              <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.0">Contains</cybox:Relationship>
+            </cybox:Related_Object>
+          </cybox:Related_Objects>
+        </cybox:Object>
+      </indicator:Observable>
+    </incident:Related_Observable>
+  </incident:Related_Observables>
 </stix:Incident>
-{% endhighlight %}
-
-####Use case: When you want to characterize specific technical assets that were affected as part of a specific set of security-relevant cyber activity (Incident).
-
-* For example, details of a particular laptop infected with malware (including manufacturer, model, serial number, OS, etc.)
-* **Suggested practice: This would be conveyed using instances of the Incident/Affected_Asset/Structured_Description structure.**
-* Example:
-
+{% endhighlight %}{% endcapture %}{% include expander.html section="incident" %}
+  * Characterize specific technical assets that were affected as part of an Incident inside the [AffectedAsset](/data-model/{{site.current_version}}/incident/AffectedAssetType/)'s Structured Description. {% include expand_link.html text="Example »" section="affected-asset" %}
+{% capture expandable %}
+**Details of a particular laptop infected with malware**
 {% highlight xml linenos %}
 <incident:Affected_Assets>
 	<incident:Affected_Asset>
@@ -300,16 +284,13 @@ Some basic guidance is provided below on which forms of observables are appropri
 		</incident:Structured_Description>
 	</incident:Affected_Asset>
 </incident:Affected_Assets>
-{% endhighlight %}
+{% endhighlight %}{% endcapture %}{% include expander.html section="affected-asset" %}
 
-###When to use observable patterns
+### Use a pattern to...
 
-
-####Use case: When you want to specify particular conditions to look for that may indicate particular TTP activity may be occurring or has occurred. 
-* For example, a specific registry key with a specific value.
-* **Suggested practice: This would be conveyed using instances of the Indicator/Observable structure.**
-* Example:
-
+  * Specify conditions to look for that may indicate particular TTP activity is occurring or has occurred as part of the Indicator's Observable structure. {% include expand_link.html text="Example »" section="indicator-pattern" %}
+{% capture expandable %}
+**A specific registry key with a specific value**
 {% highlight xml linenos %}
 <stix:Indicator xsi:type="indicator:IndicatorType" id="example:Indicator-b5325352-a178-4bd9-b203-278c01083f9b">
 	<indicator:Observable id="example:observable-503abed0-b00b-4f4e-94fe-9ebc6abaffdd">
@@ -329,14 +310,10 @@ Some basic guidance is provided below on which forms of observables are appropri
 		<stixCommon:TTP xsi:type="ttp:TTPType"><ttp:Title>Zaphod Malware</ttp:Title></stixCommon:TTP>
     </indicator:Indicated_TTP>
 </stix:Indicator>
-{% endhighlight %}
-
-####Use case: When you want to specify particular structured technical details for explicit characterization of a suggested course of action.
-
-* For example, block traffic to a particular IP addresss.
-* **Suggested practice: This would be conveyed using instances of the COA/Parameter_Observables.**
-* Example:
-
+{% endhighlight %}{% endcapture %}{% include expander.html section="indicator-pattern" %}
+  * Specify particular structured technical details for explicit characterization of a [Course of Action](/data-model/{{site.current_version}}/coa/CourseOfActionType)'s Parameter Observables. {% include expand_link.html text="Example »" section="coa-pattern" %}
+{% capture expandable %}
+**Block traffic to a particular IP address**
 {% highlight xml linenos %}
 <stix:Course_Of_Action id="example:coa-55f57cc7-ddd5-467b-a3a2-6fd602549d9e" xsi:type="coa:CourseOfActionType" version="1.1">
     <coa:Title>Block traffic to PIVY C2 Server (10.10.10.10)</coa:Title>
@@ -368,14 +345,10 @@ Some basic guidance is provided below on which forms of observables are appropri
         <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">High</stixCommon:Value>
     </coa:Efficacy>
 </stix:Course_Of_Action>
-{% endhighlight %}
-
-####Use case: When you want to specify what software is known to be affected by a given vulnerability.
-
-* For example, the Heartbleed vulnerability (CVE-2014-0160) affects a specific set of versions of openssl
-* **Suggested practice: This would be conveyed using instances of the Exploit_Target/Vulnerability/Affected_Software structure.**
-* Example:
-
+{% endhighlight %}{% endcapture %}{% include expander.html section="coa-pattern" %}
+  * Specify what software is known to be affected by a given vulnerability via the Exploit Target [AffectedSoftware](/data-model/{{site.current_version}}/et/AffectedSoftwareType/)'s Observable characterization. {% include expand_link.html text="Example »" section="vulnerability" %}
+{% capture expandable %}
+**The Heartbleed vulnerability (CVE-2014-0160) affects a specific set of versions of openssl**
 {% highlight xml linenos %}
 <stixCommon:Exploit_Target xsi:type="et:ExploitTargetType">
 	<et:Vulnerability>
@@ -400,14 +373,10 @@ Some basic guidance is provided below on which forms of observables are appropri
 		</et:Affected_Software>
 	</et:Vulnerability>
 </stixCommon:Exploit_Target>
-{% endhighlight %}
-
-####Use case: When you want to characterize specific technical infrastructure utilized for cyber attack.
-
-* For example, a particular set of IPs used for Zeus malware command and control (C2)
-* **Suggested practice: This would be conveyed using instances of the TTP/Resources/Infrastructure/Observable_Characterization structure.**
-* Example:
-
+{% endhighlight %}{% endcapture %}{% include expander.html section="vulnerability" %}
+  * Characterize specific technical infrastructure utilized for cyber attack via a TTP [Infrastructure](/data-model/{{site.current_version}}/ttp/InfrastructureType/)'s Observable Characterization. {% include expand_link.html text="Example »" section="ttp" %}
+{% capture expandable %}
+**A particular set of IPs used for Zeus malware command and control**
 {% highlight xml linenos %}
 <stix:Observables cybox_major_version="1" cybox_minor_version="1">
     <cybox:Observable id="example:observable-c8c32b6e-2ea8-51c4-6446-7f5218072f27">
@@ -447,14 +416,10 @@ Some basic guidance is provided below on which forms of observables are appropri
         </ttp:Resources>
     </stix:TTP>
 </stix:TTPs>
-{% endhighlight %}
-      
-####Use case: When you want to characterize specific victim technical context details being targeted by an attacker.
-
-* For example, attackers are targeting victims with 15-inch MacBook Pro Retina laptops with a particular CPU and memory configuration and running OSX Mavericks 10.9.2
-* **Suggested practice: This would be conveyed using instances of the TTP/Victim_Targeting/Targeted_Technical_Details structure.**
-* Example:
-
+{% endhighlight %}{% endcapture %}{% include expander.html section="ttp" %}
+  * Characterize specific victim technical context details being targeted by an attacker in instances of TTP [VictimTargeting](/data-model/{{site.current_version}}/ttp/VictimTargetingType/)'s Technical Targeting Details. {% include expand_link.html text="Example »" section="ttp-technical-targeting" %}
+{% capture expandable %}
+**Attackers are targeting victims with 15-inch MacBook Pro Retina laptops with a particular CPU and memory configuration and running OSX Mavericks 10.9.2**
 {% highlight xml linenos %}
 <stix:TTP xsi:type="ttp:TTPType" id="example:ttp-1173cf17-709a-4427-bf60-7f5828c7bbcf">
 	<ttp:Victim_Targeting>
@@ -478,12 +443,11 @@ Some basic guidance is provided below on which forms of observables are appropri
 		</ttp:Targeted_Technical_Details>
 	</ttp:Victim_Targeting>
 </stix:TTP>
-{% endhighlight %}
+{% endhighlight %}{% endcapture %}{% include expander.html section="ttp-technical-targeting" %}
 
 ## CybOX Object selection
 
 Suggested practices for [CybOX Object selection](https://cyboxproject.github.io/documentation/suggested-practices/#cybox-object-selection)
-
 
 ## Creating documents for human consumption
 
