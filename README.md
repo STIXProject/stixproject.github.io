@@ -12,11 +12,11 @@ This is the STIX documentation source code repository. Note: this is not the STI
 1. Run the server with `jekyll server` or a static build with `jekyll build`
 
 Note: Jekyll has some "issues" on Windows. See: [Jekyll on Windows](http://jekyllrb.com/docs/windows/#installation) for instructions. The issues I encountered (other than those covered in those instructions) were:
-* You'll need to install jekyll version 1.4.2:
+* You'll need to install jekyll version 2.3.0:
 
 ```
 gem uninstall jekyll # If you already installed it
-gem install jekyll --version "=1.4.2"
+gem install jekyll --version "=2.3.0"
 ```
 
 * You'll need to install pygments version 0.5.0:
