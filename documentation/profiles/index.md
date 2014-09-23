@@ -26,20 +26,20 @@ Profiles can be thought of a second compatibility level for STIX content: STIX c
 
 Profiles outline several types of rules:
 
-1. **Presence** rules indicate whether fields and constructs are supported by the profile
+1. **Presence** rules indicate whether fields and constructs can appear in instance documents via [RFC2119](https://www.ietf.org/rfc/rfc2119.txt) keywords
 2. **Implementation** rules indicate that extension points (implemented through [xsi:type](/documentation/concepts/xsi-type)) must have specific implementations
 3. **Value** rules indicate that fields have to have a certain set of values
 4. **Miscellaneous** rules indicate other requirements that don't fall into the above categories. For example, they might say that if the indicator type field is "IP Watchlist", the contained object must be an address object. These rules are not generally automatically testable but can be included in profiles for human consumption.
 
-Terms compliant with [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt) are used to indicate presence rules. These terms cannot be intermingled with legacy terms, and are  supported in validation tools as of STIX 1.1.1.1
+Terms compliant with [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt) are used to indicate presence rules. Older versions of STIX profiles used custom terms as indicated below. These terms are still valid for older profiles but those creating new profiles should use the formal RFC2119 terms.
 
-Legacy Terms|RFC Terms
+RFC Term|Legacy Term
 --------|---------
-Required|MUST 
-Suggested|SHOULD 
-Optional | MAY
-(none) | SHOULD NOT
-Prohibited|MUST NOT
+MUST | Required
+SHOULD | Suggested
+MAY | Optional
+SHOULD NOT | (none)
+MUST NOT | Prohibited
 
 
 ## Why are profiles used?
@@ -71,10 +71,11 @@ Community profiles describe how a particular sharing community (an industry coll
 These profiles should be developed with participation from most or all members of the community to ensure that they aren't too focused on any one technical implementation or one organization's biases. 
 
 Presence rules are created as follows:
-* **MUST**: All STIX documents **must** include this element to conform to the profile. This should be used only if all community members agree that they can and should populate this field for all content.
-* **SHOULD**: STIX documents **should** include this element to conform to the profile. This can be used for fields that the community thinks are very useful but may not be available all of the time.
-* **MAY**: STIX documents **may** include this element and conform to the profile. This can be used for fields that are useful in some, but not all, situations or for some, but not all, community members.
-* **MUST NOT**: STIX documents **must not** include this element to conform to the profile. This should be used for all fields that the community feels are not useful. Developers can assume that the fields will not be present and do not have to develop to them.
+* **MUST**: All STIX documents **MUST** include this element to conform to the profile. This should be used only if all community members agree that they can and should populate this field for all content.
+* **SHOULD**: STIX documents **SHOULD** include this element to conform to the profile. This can be used for fields that the community thinks are very useful but may not be available all of the time.
+* **MAY**: STIX documents **MAY** include this element and conform to the profile. This can be used for fields that are useful in some, but not all, situations or for some, but not all, community members.
+* **SHOULD NOT**: STIX documents **SHOULD NOT** include this element to conform to the profile. This can be used for fields that are not recommended but may be necessary in some situations.
+* **MUST NOT**: STIX documents **MUST NOT** include this element to conform to the profile. This should be used for all fields that the community feels are not useful. Developers can assume that the fields will not be present and do not have to develop to them.
 
 ## Producer Profiles
 
@@ -101,7 +102,8 @@ If a consumer profile is a parent (superset) of either a producer or community p
 Consumers base compatibility with the ability to parse certain fields from an incoming STIX document. 
 * **MUST** : Fields that **must** be present in a STIX document for this consumer to consume the document without errors. For consumer profiles, this should likely only be ID or other very basic elements. 
 * **SHOULD** : Fields that may be present in a STIX document and that will be properly handled by any business logic.
-* **MAY** : Fields that may be present in a STIX document but will be ignored.
+* **MAY** : Fields that may be present in a STIX document but are not as integrated into business logic (may simply be displayed or passed on).
+* **SHOULD NOT**: Fields that may be present in a STIX document and will not throw an error but will be ignored.
 * **MUST NOT **: Fields that will cause an error in the consuming tool if present. These should be kept to an absolute minimum.
 
 ## Layering profiles
@@ -114,8 +116,8 @@ Considering the sharing use case for example, a broad “threat sharing” profi
 
 This means that a child profile may:
 
-1. Prohibit fields that were suggested or optional in the parent.
-2. Require fields that were suggested or optional in the parent.
+1. Mark fields MUST NOT that were either marked SHOULD, MAY, or SHOULD NOT in the parent
+2. Mark fields MUST that were either marked SHOULD, MAY, or SHOULD NOT in the parent
 3. Further restrict (but not expand) the allowed types or values defined in the parent.
 
 The key is that a child profile is always a further constraint of the parent profile and is never a loosening or expansion.

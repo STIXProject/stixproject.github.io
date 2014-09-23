@@ -58,7 +58,7 @@ Profile rules are specified in the Occurrence, Implementation, Value(s), and Not
     <tr>
       <td>Occurrence</td>
       <td>Indicates whether a particular field are allowed. The value of this field also determines the color of the entire row.</td>
-      <td>Single Word: MUST, SHOULD, MAY, MUST NOT.</td>
+      <td>Single Term: MUST, SHOULD, MAY, SHOULD NOT, MUST NOT.</td>
     </tr>
     <tr>
       <td>Implementation</td>

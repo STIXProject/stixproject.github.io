@@ -47,7 +47,7 @@ Starting with the STIX Core tab, STIXType type, follow this process:
 
 3. Rinse and repeat steps 1-2 until you finish all types.
 
-4. Types that are completely unused (i.e. are not going to appear in instance documents because all instances are prohibited) can be hidden or deleted.
+4. Types that are completely unused (i.e. are not going to appear in instance documents because all instances are marked MUST NOT) can be hidden or deleted.
 
 <img src="flowchart.png" alt="flowchart" />
 
