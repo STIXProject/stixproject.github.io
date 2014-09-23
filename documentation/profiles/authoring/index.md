@@ -34,20 +34,20 @@ Similarly, if you plan to use CybOX objects those tabs will need to be copied fr
 Starting with the STIX Core tab, STIXType type, follow this process:
 
 1. Iterate through each field in the type, setting the values appropriately:
-  a. Mark the field's occurrence to required, suggested, optional, or prohibited
+  a. Mark the field's occurrence to MUST, SHOULD, MAY, or MUST NOT
   b. If the field is a controlled vocabulary or extension point and you want to restrict the allowable implementations, fill in the fully-qualified xsi:types for the allowable values in the Implementation column, separated by commas. For example, to restrict a field to either TLP marking or simple marking use: "simpleMarking:SimpleMarkingStructureType, tlpMarking:TLPMarkingStructureType". The allowable namespace prefixes are listed in the "Namespaces" tab.
   c. For simple value types, if you want to restrict the value of the field fill in the allowable values in the Values column, once again separated by commas.
   d. Enter any notes or other miscellaneous validation requirements in the Notes column.
 
 2. Any type that is permitted in your profile (i.e. might potentially appear in instance documents) will need to be coded. These types fall into the categories of:
-  a. Types for fields that you've marked as optional, suggested, or required.
-  b. xsi:types that are permitted (not necessarily required, just permitted) for fields that are marked as optional, suggested, or required
+  a. Types for fields that you've marked as MUST, SHOULD, or MAY.
+  b. xsi:types that are permitted for fields that are marked as optional, suggested, or required
   c. As a special case, make sure to cover all CybOX objects you might use.
   d. You can skip controlled vocabularies as long as you encode the parent type, since the child types don't have any extra fields on top of those.
 
 3. Rinse and repeat steps 1-2 until you finish all types.
 
-4. Types that are completely unused (i.e. are not going to appear in instance documents because all instances are prohibited) can be hidden or deleted.
+4. Types that are completely unused (i.e. are not going to appear in instance documents because all instances are marked MUST NOT) can be hidden or deleted.
 
 <img src="flowchart.png" alt="flowchart" />
 

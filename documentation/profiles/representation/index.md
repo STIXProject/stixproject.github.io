@@ -26,7 +26,7 @@ The overview sheet is used to give people reading the profile a high-level under
 
 * **Profile Information** gives basic information on the profile and **Description** gives a high-level description.
 * **Legend** explains what each color means, using terms appropriate for community profiles.
-* **Summary** explains a set of capabilities provided by STIX/CybOX and indicates whether each is prohibited, optional, suggested, or required.
+* **Summary** explains a set of capabilities provided by STIX/CybOX and whether each of them is supported.
 
 <br class="clearfix" />
 
@@ -38,7 +38,7 @@ The **Namespaces** and **Instance Mapping** tabs are used only to support automa
 
 <img class="aside-text" alt="Profile data tab overview" src="data-tab.png" style="width: 500px;" /> 
 
-The data tabs contain the actual profile content. Each tab contains all types for a particular STIX or CybOX namespace and indicates how those types may be used. Not all namespaces will be visible in most profiles: profile authors typically hide tabs that are entirely excluded (prohibited) from the profile in order to cut down on noise. For example, an indicator sharing profile likely will not have tabs for Exploit Target or Threat Actor because they're completely prohibited.
+The data tabs contain the actual profile content. Each tab contains all types for a particular STIX or CybOX namespace and indicates how those types may be used. Not all namespaces will be visible in most profiles: profile authors typically hide tabs that are entirely excluded from the profile in order to cut down on noise. For example, an indicator sharing profile likely will not have tabs for Exploit Target or Threat Actor because they're disallowed.
 
 <br class="clearfix" />
 
@@ -57,8 +57,8 @@ Profile rules are specified in the Occurrence, Implementation, Value(s), and Not
   <tbody>
     <tr>
       <td>Occurrence</td>
-      <td>Indicates whether a particular field is prohibited, optional, suggested, or required. Prohibited fields must not be present in instance content, optional or suggested fields may be present, and required fields must be present. These terms apply to community profiles, but substitute never present, sometimes present, usually present, or always present for equivalent rules from a producer profile perspective. The value of this field also determines the color of the entire row.</td>
-      <td>Single Word: Prohibited, Optional, Suggested, Required.</td>
+      <td>Indicates whether a particular field are allowed. The value of this field also determines the color of the entire row.</td>
+      <td>Single Term: MUST, SHOULD, MAY, SHOULD NOT, MUST NOT.</td>
     </tr>
     <tr>
       <td>Implementation</td>
@@ -67,7 +67,7 @@ Profile rules are specified in the Occurrence, Implementation, Value(s), and Not
     </tr>
     <tr>
       <td>Value(s)</td>
-      <td>Indicates a set of values, one of which is required to be set in the field if the field is present. Note that if the field is marked as optional or suggested, it's also permissible for this field to be absent. If it is present however, it must be set to one of the listed values. This field is only applicable to simple value types, not structured content (i.e. you can't define a set value for a structured field).</td>
+      <td>Indicates a set of values, one of which is required to be set in the field if the field is present. Note that if the field is marked MAY, it's also permissible for this field to be absent. If it is present however, it must be set to one of the listed values. This field is only applicable to simple value types, not structured content (i.e. you can't define a set value for a structured field).</td>
       <td>Comma-separated list of possible values</td>
     </tr>
     <tr>
@@ -78,23 +78,13 @@ Profile rules are specified in the Occurrence, Implementation, Value(s), and Not
   </tbody>
 </table>
 
-## Alternative Terms
-You may also use terms compliant with [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt) to indicate profile coverage. These terms cannot be intermingled, and are  supported in validation tools as of STIX 1.1.1.1
-
-Term|RFC Term
---------|---------
-Required|MUST 
-Suggested|SHOULD or SHOULD NOT
-Optional | MAY
-Prohibited|MUST NOT
-
 ## Understanding profiles
 
 STIX profiles are based defining rules for how STIX types may be used. For example, the top-level of any STIX document is `STIX_Package`, which is an instance of [STIXType](/data-model/{{site.current_version}}/stix/STIXType) in the STIX Core schema. Therefore, the rules that define how STIX_Package must be used can be found in the `STIXType` section of the `STIX Core` profile tab. That tab lists each field and the rules for that field.
 
-For each field that is permitted in the profile (required, suggested, or optional) the type that defines that field will also be present, with two exceptions: simple types (strings, numbers, text, etc.) without structure don't need to be defined and are not present, and types in external schemas may not be present. Other types, however, will be present in their corresponding tab and will also be fully defined.
+For each field that is permitted in the profile, the type that defines that field will also be present, with two exceptions: simple types (strings, numbers, text, etc.) without structure don't need to be defined and are not present, and types in external schemas may not be present. Other types, however, will be present in their corresponding tab and will also be fully defined.
 
-Types that are not referenced from anywhere else (i.e. types whose only instantiations are marked prohibited) are generally hidden by profile authors because they're inaccessible in instance documents. They're considered completely prohibited by proxy because all the places they may be used are prohibited.
+Types that are not referenced from anywhere else (i.e. types whose only instantiations are marked MUST NOT) are generally hidden by profile authors because they're inaccessible in instance documents. They're considered disallowed by proxy because all the places they may be used are as well.
 
 ## Questions?
 
