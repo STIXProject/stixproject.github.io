@@ -66,6 +66,18 @@ For these reasons, it is suggested that IDs be specified for the following commo
 As a simple general rule specifying IDs is not suggested for constructs embedded within other constructs (e.g. a CybOX Object containing the embedded specification of another CybOX Related_Object) where the embedded constructs are really only relevant/valid/important within the context of the enclosing construct. In other words they provide contextual characterization for the enclosing construct but would not be of interest on their own. 
 The upside of this is slightly less complexity of IDs on everything. The downside is that it would not be possible to reference or pivot on the embedded constructs.
 
+### Title, Description, and Short_Description
+
+The top-level STIX components as well as other important constructs ([VulnerabilityType](/data-model/{{site.current_version}}/et/VulnerabilityType/), for example) each have fields for Title, Description, and Short_Description:
+
+* The `Title` field is recommended for all constructs and should be short enough that a consumer can use it in a heading.
+* The `Description` field is the primary description field and should be used rather than `Short_Description` if only one set of descriptive text is given. Any length of text is fine and this field supports optional formatting via the `@structuring_format` field.
+* The `Short_Description` field is the secondary description and should only be used if the `Description` field is already populated and another, shorter, description is available.
+
+The intent of the `Short_Description` field is to serve as an *additional* short description. Consumers should not have to guess whether the primary description is contained in `Description` or `Short_Description` and so producers should always populate `Description` first before populating `Short_Description`.
+
+Also note that some types have additional name fields beyond `Title`. For example, [MalwareInstanceType](/data-model/{{site.current_version}}/ttp/MalwareInstanceType/) has a `Name` field and [CampaignType](/data-model/{{site.current_version}}/campaign/CampaignType/) has a list of `Names`. These fields are more formal names/titles for the objects being described (vs. the generic STIX title concept) and can be used in conjunction with a title: often, the `Title` field can simply be populated with either the single `Name` or with the primary `Name`. There may also be edge cases where the STIX construct should be named differently than the object it's describing but these should be relatively rare.
+
 ### Referencing vs. Embedding
 
 In many cases, you'll have an option to either include a component within the parent component or to reference the component by ID to a representation in a global location.
