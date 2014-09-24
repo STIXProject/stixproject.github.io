@@ -1,8 +1,8 @@
-# STIX Documentation
+# stixproject.github.io
 
-This is the STIX documentation source code repository. Note: this is not the STIX documentation meant for users! If you're looking to browse the STIX documentation, please visit the [getting started page](https://github.com/STIXProject/schemas/wiki/Getting-Started-(1.1)).
+This repository is used to build http://stixproject.github.io. If you're looking for documentation about STIX, you should head over there now, or go straight to the [Getting Started page](http://stixproject.github.io/getting-started/).
 
-**Work in progress:** The STIX documentation is a work in progress and will be available shortly. For the time being, please see the above getting started documentation.
+If you're looking for information about editing the content on the site, you're in the right place!
 
 ## Installation
 
