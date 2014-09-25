@@ -28,6 +28,24 @@ gem install pygments.rb --version "=0.5.0"
 
 If you run into any problems on other platforms, see the [Jekyll Installation Docs](http://jekyllrb.com/docs/installation/). In particular, you'll need to be able to compile native code so on OS X you'll need the Xcode Command Line tools and on Linux you'll need the appropriate build packages (build-essential on Ubuntu, etc). As with most other STIX projects, you'll also need the libxml development libraries installed.
 
+## Running the data model regeneration
+
+In order to run the data model regeneration you'll need to initialize the submodule with the latest version of the STIX schemas in it. To do so:
+
+```
+git submodule init
+git submodule update
+cd _schemas/stix
+git submodule init
+git submodule update
+```
+
+From there, you can run the regeneration via a rake task:
+
+```
+rake regenerate
+```
+
 ## Contributing
 
 The STIX Project welcomes contributions to our documentation repository. If you have a change you want to make:

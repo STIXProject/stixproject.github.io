@@ -1,0 +1,123 @@
+---
+layout: data_model
+title: CVRF1.1InstanceType
+this_version: 1.0.1
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0.1, which is not the latest version (1.1.1).
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>CVRF1.1InstanceType<span class="subdued"> Schema</span></h1>
+    <p class="data-model-description"></p><p class="data-model-description">                The <a href='/data-model/1.0.1/stix-cvrf/CVRF1.1InstanceType'>CVRF1.1InstanceType</a> provides an extension to the <a href='/data-model/1.0.1/et/VulnerabilityType'>VulnerabilityType</a> which imports and leverages the CVRF schema for structured characterization of Vulnerabilities. This could include characterization of 0-days or other vulnerabilities that do not have a CVE or OSVDB ID.</p><p class="data-model-description">            </p>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.0.1" selected="selected">STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+
+<hr />
+
+
+<h2>Fields</h2>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Description<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/stixCommon/StructuredTextType">StructuredTextType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Description element is optional and enables a generalized description of this Vulnerability.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>CVE_ID<span class="occurrence">0..1</span></td>
+      <td>
+        
+          CVE_IDInlineType
+        
+      </td>
+      <td>
+        
+          <p>The CVE_ID field is optional and specifies a CVE identifier for a particular vulnerability.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>OSVDB_ID<span class="occurrence">0..1</span></td>
+      <td>
+        
+          positiveInteger
+        
+      </td>
+      <td>
+        
+          <p>The OSVDB_ID field is optional and specifies an OSVDB identifier for a particular vulnerability.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>CVSS_Score<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0.1/et/CVSSVectorType">CVSSVectorType</a>
+        
+      </td>
+      <td>
+        
+          <p>The CVSS_Score field captures the full CVSS v2.0 base, temporal, and environmental vectors in their string format.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>cvrfdoc<span class="occurrence">1..1</span></td>
+      <td>
+        
+          cvrfdoc
+        
+      </td>
+      <td>
+        
+          <p>The CVRF field contains the structured characterization of Vulnerabilities utilizing the CVRF schema.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
