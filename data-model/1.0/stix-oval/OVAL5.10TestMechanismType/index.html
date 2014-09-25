@@ -1,15 +1,19 @@
 ---
 layout: data_model
-title: OpenIOC2010TestMechanismType
-this_version: 1.1.1
+title: OVAL5.10TestMechanismType
+this_version: 1.0
 ---
 
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0, which is not the latest version (1.1.1). <a href="/data-model/1.1.1/stix-oval/OVAL5.10TestMechanismType">View the latest!</a>
+</div>
 
 
 <div class="row">
   <div class="col-md-10">
-    <h1>OpenIOC2010TestMechanismType<span class="subdued">Open IOC Test Mechanism Instance Schema</span></h1>
-    <p class="data-model-description">The <a href='/data-model/1.1.1/stix-openioc/OpenIOC2010TestMechanismType'>OpenIOC2010TestMechanismType</a> provides an extension to the <a href='/data-model/1.1.1/indicator/TestMechanismType'>TestMechanismType</a> which imports and leverages the 2010 Open IOC schema in order to include OpenIOC elements as the test mechanism.</p>
+    <h1>OVAL5.10TestMechanismType<span class="subdued"> Schema</span></h1>
+    <p class="data-model-description">The OVALTestMechanismType provides an extension to the <a href='/data-model/1.0/indicator/TestMechanismType'>TestMechanismType</a> which imports and leverages the OVAL schema in order to include OVAL Definitions as the test mechanism.</p>
   </div>
 
   <div id="nav-area" class="col-md-2">
@@ -17,25 +21,18 @@ this_version: 1.1.1
       <form id="nav-version">
         <select>
           
-            <option value="1.1.1" selected="selected">STIX 1.1.1</option>
+            <option value="1.1.1" >STIX 1.1.1</option>
           
             <option value="1.1" >STIX 1.1</option>
           
             <option value="1.0.1" >STIX 1.0.1</option>
           
-            <option value="1.0" >STIX 1.0</option>
+            <option value="1.0" selected="selected">STIX 1.0</option>
           
         </select>
       </form>
     </p>
 
-    
-    <p>
-      <a href="http://stix.readthedocs.org/en/latest/api/extensions/test_mechanism/open_ioc_2010_test_mechanism.html#stix.extensions.test_mechanism.open_ioc_2010_test_mechanism.OpenIOCTestMechanism">
-        <img src="/images/python-logo.png" alt="Python" /><br />
-        API support
-      </a>
-    </p>
     
   </div>
 
@@ -81,8 +78,6 @@ this_version: 1.1.1
         
           <p>Specifies a reference to the ID of a Test Mechanism specified elsewhere.</p>
         
-          <p>When idref is specified, the id attribute must not be specified, and any instance of this Test Mechanism should not hold content.</p>
-        
       </td>
     </tr>
   
@@ -90,7 +85,7 @@ this_version: 1.1.1
       <td>Efficacy<span class="occurrence">0..1</span></td>
       <td>
         
-          <a href="/data-model/1.1.1/stixCommon/StatementType">StatementType</a>
+          <a href="/data-model/1.0/stixCommon/StatementType">StatementType</a>
         
       </td>
       <td>
@@ -104,7 +99,7 @@ this_version: 1.1.1
       <td>Producer<span class="occurrence">0..1</span></td>
       <td>
         
-          <a href="/data-model/1.1.1/stixCommon/InformationSourceType">InformationSourceType</a>
+          <a href="/data-model/1.0/stixCommon/InformationSourceType">InformationSourceType</a>
         
       </td>
       <td>
@@ -115,15 +110,29 @@ this_version: 1.1.1
     </tr>
   
     <tr>
-      <td>ioc<span class="occurrence">1..1</span></td>
+      <td>oval_definitions<span class="occurrence">1..1</span></td>
       <td>
         
-          IndicatorOfCompromise
+          oval_definitions
         
       </td>
       <td>
         
-          <p>The ioc field contains the structured specification of the OpenIOC test mechanism.</p>
+          <p>The oval_definitions field contains the structured specification of the OVAL test mechanism. When including OVAL Definition documents it is expected that at least one valid OVAL Definition Definition is included.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>oval_variables<span class="occurrence">0..1</span></td>
+      <td>
+        
+          oval_variables
+        
+      </td>
+      <td>
+        
+          <p>The oval_variables field contains a valid OVAL Variables document and should only be used to supply external variable values needed by this OVAL Test Mechanism's OVAL Definitions.</p>
         
       </td>
     </tr>
