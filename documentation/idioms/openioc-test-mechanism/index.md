@@ -57,17 +57,9 @@ Because OpenIOC is also an XML language, we're able to use XML schema features t
 
 <h2>Python</h2>
 
-<p class="alert alert-danger"><strong>Notice</strong> The current version of python-stix, 1.1.1.0, has a bug (<a href="https://github.com/STIXProject/python-stix/issues/148">#148</a>) in its handling of the OpenIOC test mechanism that causes it to create invalid content.</p>
-
 Notice in both the production code and the consumption code that the OpenIOC itself is accessed via an lxml ElementTree. That way you can work with it as normal XML...though if you need to extract it in order to send it off to a tool that can process it you can always use the `tostring` method to do so.
 
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#produce" data-toggle="tab">Produce</a></li>
-  <li><a href="#consume" data-toggle="tab">Consume</a></li>
-</ul>
-<div class="tab-content">
-  <div class="tab-pane active" id="produce">
-{% highlight python linenos %}
+{% include start_tabs.html tabs="Produce|Consume" name="openioc" %}{% highlight python linenos %}
 ioc = etree.parse('6d2a1b03-b216-4cd8-9a9e-8827af6ebf93.ioc.xml')
 
 indicator = Indicator(title="Zeus", description="Finds Zeus variants, twexts, sdra64, ntos")
@@ -80,11 +72,7 @@ time.produced_time = "0001-01-01T00:00:00"
 tm.producer.time = time
 tm.producer.references = ["http://openioc.org/iocs/6d2a1b03-b216-4cd8-9a9e-8827af6ebf93.ioc"]
 indicator.test_mechanisms = [tm]
-
-{% endhighlight %}
-  </div>
-  <div class="tab-pane" id="consume">
-{% highlight python linenos %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 stix_package = STIXPackage.from_xml('openioc-test-mechanism.xml')
 
 ttps = {}
@@ -105,9 +93,7 @@ for indicator in stix_package.indicators:
         print "== IOC =="
         print etree.tostring(tm.ioc)
         print "== ENDIOC =="
-{% endhighlight %}
-  </div>
-</div>
+{% endhighlight %}{% include end_tabs.html %}
 
 [Production Python](openioc-test-mechanism-producer.py) | [Consumption Python](openioc-test-mechanism-consumer.py)
 
