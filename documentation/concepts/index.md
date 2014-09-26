@@ -32,6 +32,16 @@ This page describes several central STIX concepts that cut across all of the cor
 
       <a class="btn btn-primary" href="relationships">Go »</a>
     </div>
+    
+    <div class="well">
+      <img src="/images/Indicator.png" class="component-img-right" alt="Indicator Icon" />
+      <img src="/images/Observable.png" class="component-img-right" alt="Observable Icon" />
+      <h4><a href="composition">Composition of Observables-Indicators</a></h4>
+
+      <p>Describes STIX/CybOX mechanisms for characterizing/specifying composite Observables and Indicators.</p>
+
+      <a class="btn btn-primary" href="composition">Go »</a>
+    </div>
   </div>
 
   <div class="col-md-6">
