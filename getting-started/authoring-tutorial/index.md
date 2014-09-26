@@ -5,7 +5,9 @@ title: Authoring Tutorial
 
 This authoring tutorial will walk you through how to create a simple STIX indicator that looks for a file hash and, if that file hash is found, points to a piece of malware that might be present. You can think of it as a correlary to the [sample walkthrough](../sample-walkthrough): while that takes an existing piece of content and explains what it means, this will walk through how to actually author content.
 
-<p class="alert alert-info">This guide covers authoring content by hand or with languages/tools other than the <a href="http://stix.readthedocs.org">python-stix API</a>. If you're using the Python API, the <a href="http://stix.readthedocs.org/en/latest/getting_started.html#your-first-stix-application">Your First STIX Application</a> guide in the API docs is recommended.</p>
+{% capture alert_text %}
+This guide covers authoring content by hand or with languages/tools other than the [python-stix API](http://stix.readthedocs.org). If you're using the Python API, the [Your First STIX Application](http://stix.readthedocs.org/en/latest/getting_started.html#your-first-stix-application) guide in the API docs is recommended.
+{% endcapture %}{% include alert.html type="info" %}
 
 ## Prerequisites
 
@@ -184,7 +186,9 @@ As with STIX_Header, we'll also check suggested practices to see also look at th
 
 Basic indicator data includes a human-readable `Title` and the indicator's `Type` (similar to `Title` and `Package_Intent` on `STIX_Package`).
 
-<p class="alert alert-warning">If you're following along, at this point it might be worth seeing if you can add these yourself before looking to see how I did it. Specifically, make sure you can identify the fact that <pre>Type</pre> is a controlled vocabulary field and, from there, figure out which vocabulary to use.</p>
+{% capture alert_text %}
+If you're following along, at this point it might be worth seeing if you can add these yourself before looking to see how I did it. Specifically, make sure you can identify the fact that `Type` is a controlled vocabulary field and, from there, figure out which vocabulary to use.
+{% endcapture %}{% include alert.html type="warning" %}
 
 ```xml
 <stix:Indicator xsi:type="indicator:IndicatorType" id="example:indicator-3c3885fe-a350-4a5c-aae3-6f014df36975">
@@ -286,7 +290,9 @@ These fields are fairly standard STIX, so let's just look at the end result. Alt
 </stix:Indicator>
 ```
 
-<p class="alert alert-info"><strong>Quiz:</strong> If you tried this yourself, did you catch the controlled vocabulary for Confidence/Value and remember to add the timezone for the valid time position?</p>
+{% capture alert_text %}
+**Quiz:** If you tried this yourself, did you catch the controlled vocabulary for Confidence/Value and remember to add the timezone for the valid time position?
+{% endcapture %}{% include alert.html type="info" %}
 
 ## Add the TTP
 

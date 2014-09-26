@@ -67,15 +67,7 @@ $a or $b or $c
 
 <h2>Python</h2>
 
-<p class="alert alert-danger"><strong>Notice</strong> The current version of python-stix, 1.1.1.0, does not support the Yara test mechanism, so this code will not work.</p>
-
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#produce" data-toggle="tab">Produce</a></li>
-  <li><a href="#consume" data-toggle="tab">Consume</a></li>
-</ul>
-<div class="tab-content">
-  <div class="tab-pane active" id="produce">
-{% highlight python linenos %}
+{% include start_tabs.html tabs="Produce|Consume" name="yara" %}{% highlight python linenos %}
 rule = """
 rule silent_banker : banker
 {
@@ -102,10 +94,7 @@ tm.efficacy = "Low"
 tm.producer = InformationSource(identity=Identity(name="Yara"))
 tm.producer.references = ["http://plusvic.github.io/yara/"]
 indicator.test_mechanisms = [tm]
-{% endhighlight %}
-  </div>
-  <div class="tab-pane" id="consume">
-{% highlight python linenos %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 stix_package = STIXPackage.from_xml('yara-test-mechanism.xml')
 
 for indicator in stix_package.indicators:
@@ -117,9 +106,7 @@ for indicator in stix_package.indicators:
         print "Producer: " + tm.producer.identity.name
         print "Efficacy: " + tm.efficacy.value.value
         print "Rule: %s" % tm.rule
-{% endhighlight %}
-  </div>
-</div>
+{% endhighlight %}{% include end_tabs.html %}
 
 [Production Python](yara-test-mechanism-producer.py) | [Consumption Python](yara-test-mechanism-consumer.py)
 

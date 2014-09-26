@@ -50,14 +50,7 @@ IP Address|First Seen|Bot Name
 
 One option in converting this data to STIX is to convert it to indicators: the **IP address** is the CybOX `Observable` pattern, the **First Seen** time goes into a `Sighting` (which can be ignored if this information is unimportant), and the **Bot Name** is the `Indicated_TTP`. This indicates that you should look for the given IP addresses in your own network traffic and, if you see it, it indicates a potential bot infection.
 
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#indicator-xml" data-toggle="tab">XML</a></li>
-  <li><a href="#indicator-python-producer" data-toggle="tab">Python Producer</a></li>
-  <li><a href="#indicator-python-consumer" data-toggle="tab">Python Consumer</a></li>
-</ul>
-<div class="tab-content">
-  <div class="tab-pane active" id="indicator-xml">
-{% highlight xml linenos %}
+{% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="indicator" %}{% highlight xml linenos %}
 <stix:Indicators>
     <stix:Indicator id="example:indicator-0756a255-6623-4226-8356-015396918b38" timestamp="2014-08-22T20:17:38.959000+00:00" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
         <indicator:Title>192.168.1.1</indicator:Title>
@@ -79,10 +72,7 @@ One option in converting this data to STIX is to convert it to indicators: the *
         <ttp:Title>zbot</ttp:Title>
     </stix:TTP>
 </stix:TTPs>
-{% endhighlight %}
-  </div>
-  <div class="tab-pane" id="indicator-python-producer">
-{% highlight python linenos %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 data = json.load(open("data.json"))
 
 stix_package = STIXPackage(stix_header=STIXHeader(title=data['title'], package_intents='Indicators - Watchlist'))
@@ -103,10 +93,7 @@ for info in data['ips']:
   indicator.add_indicated_ttp(TTP(idref=ttps[info['bot']].id_))
 
   stix_package.add_indicator(indicator)
-{% endhighlight %}
-  </div>
-  <div class="tab-pane" id="indicator-python-consumer">
-{% highlight python linenos %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 stix_package = STIXPackage.from_xml('sample-indicators.xml')
 
 data = {
@@ -126,22 +113,13 @@ for indicator in stix_package.indicators:
   data['indicators'][ttp.title].append(ip)
 
 print data
-{% endhighlight %}
-  </div>
-</div>
+{% endhighlight %}{% include end_tabs.html %}
 
 ### As Incidents
 
 The other approach would be to convert it to incidents: the **IP Address** is a `Related_Observable`, the **First Seen** time is the incident's `First_Malicious_Action`, and the **Bot Name** is a `Leveraged_TTP`. This conveys that the IP addresses were seen in network traffic at that time and were linked to the bot in the leveraged TTP.
 
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#incident-xml" data-toggle="tab">XML</a></li>
-  <li><a href="#incident-python-producer" data-toggle="tab">Python Producer</a></li>
-  <li><a href="#incident-python-consumer" data-toggle="tab">Python Consumer</a></li>
-</ul>
-<div class="tab-content">
-  <div class="tab-pane active" id="incident-xml">
-{% highlight xml linenos %}
+{% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="incident" %}{% highlight xml linenos %}
 <stix:Observables cybox_major_version="2" cybox_minor_version="1" cybox_update_version="0">
     <cybox:Observable id="example:Observable-57501ad9-3b55-44aa-a084-eb55b1a84301">
         <cybox:Object id="example:Address-cbff060f-0010-4f36-9e45-48df756871e1">
@@ -176,10 +154,7 @@ The other approach would be to convert it to incidents: the **IP Address** is a 
         </incident:Leveraged_TTPs>
     </stix:Incident>
 </stix:Incidents>
-{% endhighlight %}
-  </div>
-  <div class="tab-pane" id="incident-python-producer">
-{% highlight python linenos %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 data = json.load(open("data.json"))
 
 stix_package = STIXPackage(stix_header=STIXHeader(title=data['title'], package_intents='Incident'))
@@ -206,10 +181,7 @@ for info in data['ips']:
   incident.related_observables.append(related_observable)
 
   stix_package.add_incident(incident)
-{% endhighlight %}
-  </div>
-  <div class="tab-pane" id="incident-python-consumer">
-{% highlight python linenos %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 stix_package = STIXPackage.from_xml('sample-incidents.xml')
 
 data = {
@@ -238,22 +210,13 @@ for incident in stix_package.incidents:
   })
 
 print data
-{% endhighlight %}
-  </div>
-</div>
+{% endhighlight %}{% include end_tabs.html %}
 
 ### Both Indicators and Incidents
 
 Finally, both an indicator and an incident could be created for each row, and linked together. This would convey both that traffic to the IP address was observed in the producer's environment linked to that bot, and also that the consumer should also look for them in their environment.
 
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#combined-xml" data-toggle="tab">XML</a></li>
-  <li><a href="#combined-python-producer" data-toggle="tab">Python Producer</a></li>
-  <li><a href="#combined-python-consumer" data-toggle="tab">Python Consumer</a></li>
-</ul>
-<div class="tab-content">
-  <div class="tab-pane active" id="combined-xml">
-{% highlight xml linenos %}
+{% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="both" %}{% highlight xml linenos %}
 <stix:Observables cybox_major_version="2" cybox_minor_version="1" cybox_update_version="0">
     <cybox:Observable id="example:Observable-6a93879e-58b9-47b0-a44a-77fdb0cf1bb7">
         <cybox:Object id="example:Address-7e4f44b8-a0f9-4940-9de4-da313b6a2827">
@@ -308,10 +271,7 @@ Finally, both an indicator and an incident could be created for each row, and li
         </incident:Leveraged_TTPs>
     </stix:Incident>
 </stix:Incidents>
-{% endhighlight %}
-  </div>
-  <div class="tab-pane" id="combined-python-producer">
-{% highlight python linenos %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 data = json.load(open("data.json"))
 
 stix_package = STIXPackage(stix_header=STIXHeader(title=data['title'], package_intents='Incident'))
@@ -352,10 +312,7 @@ for info in data['ips']:
   incident.related_indicators.append(related_indicator)
 
   stix_package.add_incident(incident)
-{% endhighlight %}
-  </div>
-  <div class="tab-pane" id="combined-python-consumer">
-{% highlight python linenos %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 stix_package = STIXPackage.from_xml('sample-combined.xml')
 
 data = {
@@ -390,9 +347,7 @@ for incident in stix_package.incidents:
   })
 
 print data
-{% endhighlight %}
-  </div>
-</div>
+{% endhighlight %}{% include end_tabs.html %}
 
 ## Summary
 
