@@ -70,13 +70,22 @@ The upside of this is slightly less complexity of IDs on everything. The downsid
 
 The top-level STIX components as well as other important constructs ([VulnerabilityType](/data-model/{{site.current_version}}/et/VulnerabilityType/), for example) each have fields for Title, Description, and Short_Description:
 
-* The `Title` field is recommended for all constructs and should be short enough that a consumer can use it in a heading.
-* The `Description` field is the primary description field and should be used rather than `Short_Description` if only one set of descriptive text is given. Any length of text is fine and this field supports optional formatting via the `@structuring_format` field.
+* The `Title` field is recommended for all constructs and should be short enough that a consumer can use it as or in a heading.
+* The `Description` field is the primary descriptive field. Any length of text is fine and this field supports optional formatting via the `@structuring_format` field.
 * The `Short_Description` field is the secondary description and should only be used if the `Description` field is already populated and another, shorter, description is available.
 
-The intent of the `Short_Description` field is to serve as an *additional* short description. Consumers should not have to guess whether the primary description is contained in `Description` or `Short_Description` and so producers should always populate `Description` first before populating `Short_Description`.
+The intent of the `Short_Description` field is to contain an abbreviated version of the content in the `Description` field when such abbreviated content is available. Consumers should not have to guess whether the primary description is contained in `Description` or `Short_Description` and so producers should always populate `Description` first before populating `Short_Description`.
 
-Also note that some types have additional name fields beyond `Title`. For example, [MalwareInstanceType](/data-model/{{site.current_version}}/ttp/MalwareInstanceType/) has a `Name` field and [CampaignType](/data-model/{{site.current_version}}/campaign/CampaignType/) has a list of `Names`. These fields are more formal names/titles for the objects being described (vs. the generic STIX title concept) and can be used in conjunction with a title: often, the `Title` field can simply be populated with either the single `Name` or with the primary `Name`. There may also be edge cases where the STIX construct should be named differently than the object it's describing but these should be relatively rare.
+Also note that some types have additional name fields beyond `Title`. For example, [MalwareInstanceType](/data-model/{{site.current_version}}/ttp/MalwareInstanceType/) has a `Name` field and [CampaignType](/data-model/{{site.current_version}}/campaign/CampaignType/) has a list of `Names`. Though similar, these fields have slightly different purposes: the `Title` field is used to give a title to the STIX construct while the `Name` field is used to give the name of the thing that the STIX construct describes. The easiest way to see the differences is via an example:
+
+Scenario | Title | Name
+-------|-------|-------
+Representing the general concept of SpyEye | TTP Title = "SpyEye" | Malware Name = "SpyEye"
+Representing a specific analysis of the SpyEye Malware | TTP Title = "Analysis of SpyEye Performed with Cuckoo" | Malware Name = "SpyEye"
+
+In the first example the STIX TTP is representing the general concept of SpyEye and therefore the TTP Title and Malware Name are the same. There's no more specific context that the STIX TTP conveys beyond the malware and therefore duplicating the name is perfectly fine. This probably covers the majority of cases.
+
+In the second example a specific analysis of SpyEye and therefore the TTP Title is more specific than just SpyEye. In cases like this where the STIX construct conveys a more particular analysis, viewpoint, or characterization of the general concept then it's appropriate to give it a more specific title indicating that.
 
 ### Referencing vs. Embedding
 
