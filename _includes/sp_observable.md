@@ -1,9 +1,11 @@
+### Observable Instance or Observable Pattern?
+
 As described in [Concept: Observable Instances vs Observable Patterns](../concepts/observable-patterns-vs-instances), there are two different forms of "Observables" possible in STIX: **observable instances** and **observable patterns**.
 Each form has its own purposes to represent various relevant information in STIX.
 
 Some basic guidance is provided below on which forms of observables are appropriate for which purposes in STIX.
 
-### Use an instance to...
+#### Use an instance to...
 
   * Convey a cyber observation without any context via an [Observable](/data-model/{{site.current_version}}/cybox/ObservableType/) on its own. {% include expand_link.html text="Example »" section="observation" %}
 {% capture expandable %}
@@ -146,7 +148,7 @@ Some basic guidance is provided below on which forms of observables are appropri
 </incident:Affected_Assets>
 {% endhighlight %}{% endcapture %}{% include expander.html section="affected-asset" %}
 
-### Use a pattern to...
+#### Use a pattern to...
 
   * Specify conditions to look for that may indicate particular TTP activity is occurring or has occurred as part of the Indicator's Observable structure. {% include expand_link.html text="Example »" section="indicator-pattern" %}
 {% capture expandable %}
@@ -304,6 +306,19 @@ Some basic guidance is provided below on which forms of observables are appropri
   </ttp:Victim_Targeting>
 </stix:TTP>
 {% endhighlight %}{% endcapture %}{% include expander.html section="ttp-technical-targeting" %}
+
+###Selecting level of detail for observable composition
+
+[Concepts: Composition of Observables-Indicators](../concepts/composition) provides more information characterizing the potential levels of detail for observable composition in STIX/CybOX.
+
+Use case|Suggested level of detail
+--------|---------
+If you only need to talk about a single property.|[Observable with single Object and single Property](../concepts/composition/#observable-with-single-object-and-single-property)
+If you only need to talk about a single object but need to talk about more than one of its properties.|[Observable with single Object and multiple Properties](../concepts/composition/#observable-with-single-object-and-multiple-properties)
+If you need to talk about specific properties across specific sets of specifically related objects. That was a lot of “specific” but it is intended to emphasize that this level of detail when used for observable patterns is semantically an AND across all of its component pieces.|[Observable with multiple related Objects (often referred to as "relational composition")](../concepts/composition/#observable-with-multiple-related-objects)
+If you need to talk about logical (AND/OR) combinations of other observable patterns.|[Observable Composition through explicit use of the Observable_Composition structure (often referred to as “logical composition”)](../concepts/composition/#observable-composition-through-explicit-use-of-the-observable_Composition-structure)
+If you need to talk about a logical (AND/OR) combination of observable patterns on a single property of a single object (e.g. an IP watch list) and you want to specify this in the most compact and concise form available.|[Observable with single Object and single Property with multiple values (list)](../concepts/composition/#)
+If you need to describe the context for and/or detect separately a sub-portion of a particular detection context or you want to specify a new compound detection context based on preexisting Indicators.|[Indicator composition](../concepts/composition/#)
 
 ### CybOX Object Selection
 
