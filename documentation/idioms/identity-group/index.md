@@ -103,6 +103,8 @@ def main():
 if __name__ == '__main__':
     main()
 
+{% endhighlight %}
+
 [Production Python](identifying-a-threat-actor-group_producer.py)[Consumption Python](identifying-a-threat-actor-group_consumer.py)
 ## Further Reading
 
