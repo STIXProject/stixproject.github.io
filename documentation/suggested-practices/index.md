@@ -87,6 +87,20 @@ In the first example the STIX TTP is representing the general concept of SpyEye 
 
 In the second example a specific analysis of SpyEye and therefore the TTP Title is more specific than just SpyEye. In cases like this where the STIX construct conveys a more particular analysis, viewpoint, or characterization of the general concept then it's appropriate to give it a more specific title indicating that.
 
+### Information Source
+
+[InformationSourceType](/data-model/{{site.current_version}}/stixCommon/InformationSourceType) is used to describe the who, what, and when of the production of the information in the containing construct. Among other things it's used to describe who produced the information, when it was produced, what tools were used to produce it and what it was derived from.
+
+Information source is applied at several layers of the data model and at each of these layers it applies to that content and all content nested inside of it except when overriden (see below) by a more localized source. For example:
+
+* At `STIX_Header`, it applies to the package/report itself as well as individually to all constructs.
+* At a construct level, such as an `Indicator`, it applies to the construct itself (always overriding any `Information_Source` set at the package level) and individually to any contained relationships or statements.
+* At the [statement](/data-model/{{site.current_version}}/stixCommon/StatementType/) or [relationship](/data-model/{{site.current_version}}/stixCommon/GenericRelationshipType/) level (or anywhere else it appears) it applies individually to that construct and overrides the source set at the construct or package level.
+
+For the purposes of Information Source override means "completely replaces".
+
+Note that on [Indicator](/data-model/{{site.current_version}}/indicator/IndicatorType/) the information source field is called `Producer`. On [Observable](/data-model/{{site.current_version}}/cybox/ObservableType/), it's called `Observable_Source` uses the semantics and structure of the CybOX [MeasureSourceType](/data-model/{{site.current_version}}/cyboxCommon/MeasureSourceType/).
+
 ### Referencing vs. Embedding
 
 In many cases, you'll have an option to either include a component within the parent component or to reference the component by ID to a representation in a global location.
