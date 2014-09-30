@@ -99,7 +99,7 @@ Information source is applied at several layers of the data model and at each of
 
 For the purposes of Information Source override means "completely replaces".
 
-Note that on [Indicator](/data-model/{{site.current_version}}/indicator/IndicatorType/) the information source field is called `Producer`. On [Observable](/data-model/{{site.current_version}}/cybox/ObservableType/), it's called `Observable_Source` uses the semantics and structure of the CybOX [MeasureSourceType](/data-model/{{site.current_version}}/cyboxCommon/MeasureSourceType/).
+Note that on [Indicator](/data-model/{{site.current_version}}/indicator/IndicatorType/) the information source field is called `Producer`. On [Observable](/data-model/{{site.current_version}}/cybox/ObservableType/), it's called `Observable_Source` and uses the semantics and structure of the CybOX [MeasureSourceType](/data-model/{{site.current_version}}/cyboxCommon/MeasureSourceType/).
 
 ### Referencing vs. Embedding
 
