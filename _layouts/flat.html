@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html>
   {% include header.html %}
-  <body>
+  <body{% if page.toc %} data-spy="scroll" data-target="#toc" style="position: relative; margin-bottom: 0;"{% endif %}>
 
     {% include nav.html %}
 
     <div class="container">
-      {% unless page.no_in_page_title %}<h1>{{ page.title }}</h1>{% endunless %}
-      {{ content }}
+      {% if page.toc %}
+        <div class="col-md-10">
+          {% unless page.no_in_page_title %}<h1>{{ page.title }}</h1>{% endunless %}
+          {{ content }}
+        </div>
+        <div class="col-md-2">
+          <div id="toc" class="well pull-right hidden-sm affix">
+            {% include {{page.toc}} %}
+          </div>
+        </div>
+      {% else %}
+        {% unless page.no_in_page_title %}<h1>{{ page.title }}</h1>{% endunless %}
+        {{ content }}
+      {% endif %}
     </div>
 
     {% include footer.html %}
