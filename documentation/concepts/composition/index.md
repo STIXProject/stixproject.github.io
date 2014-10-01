@@ -13,7 +13,7 @@ Whether you are characterizing instances or patterns, the types of observables y
 ###Observable with single Object and single Property
 
    * Use for: characterize a single property
-   * As an observable instance this very simply characterizes a single property value of a single instance object that was observed (e.g. a file with the name “foo.exe”) {% include expand_link.html text="Example »" section="composition1" %}
+   * As an observable instance this very simply characterizes a single property value of a single instance object that was observed (e.g. a file with the name “foo.exe”) {% include expand_link.html section="composition1" %}
 {% capture expandable %}
 {% highlight xml linenos %}
 <indicator:Observable id="example:Observable-c9ca84dc-4542-4292-af54-3c5c914ccbbc">
@@ -24,7 +24,7 @@ Whether you are characterizing instances or patterns, the types of observables y
   </cybox:Object>
 </indicator:Observable>
 {% endhighlight %}{% endcapture %}{% include expander.html section="composition1" %}
-   * As an observable pattern this very simply characterizes a condition where any object of the given type has a property value matching the specified pattern. {% include expand_link.html text="Example »" section="composition2" %}
+   * As an observable pattern this very simply characterizes a condition where any object of the given type has a property value matching the specified pattern. {% include expand_link.html section="composition2" %}
 {% capture expandable %}
 {% highlight xml linenos %}
 <indicator:Observable id="example:Observable-c9ca84dc-4542-4292-af54-3c5c914ccbbc">
@@ -41,7 +41,7 @@ Whether you are characterizing instances or patterns, the types of observables y
 ###Observable with single Object and multiple Properties
 
    * Use for: characterize multiple properties of a single instance object (e.g. a file with the name “foo.exe” and a size of 1896Kb)
-   * As an observable instance this simply characterizes multiple property values of a single instance object that was observed {% include expand_link.html text="Example »" section="composition3" %}
+   * As an observable instance this simply characterizes multiple property values of a single instance object that was observed {% include expand_link.html section="composition3" %}
 {% capture expandable %}
 {% highlight xml linenos %}
 <indicator:Observable id="example:Observable-c9ca84dc-4542-4292-af54-3c5c914ccbbc">
@@ -53,7 +53,7 @@ Whether you are characterizing instances or patterns, the types of observables y
   </cybox:Object>
 </indicator:Observable>
 {% endhighlight %}{% endcapture %}{% include expander.html section="composition3" %}
-   * As an observable pattern this characterizes a condition where any object of the given type has property values matching all of the specified property field patterns. In other words, it is defining a logical AND across the set of property value patterns specified on the object. {% include expand_link.html text="Example »" section="composition4" %}
+   * As an observable pattern this characterizes a condition where any object of the given type has property values matching all of the specified property field patterns. In other words, it is defining a logical AND across the set of property value patterns specified on the object. {% include expand_link.html section="composition4" %}
 {% capture expandable %}
 {% highlight xml linenos %}
 <indicator:Observable id="example:Observable-c9ca84dc-4542-4292-af54-3c5c914ccbbc">
@@ -72,7 +72,7 @@ Whether you are characterizing instances or patterns, the types of observables y
 **(often referred to as "relational composition")**
 
    * Use for: characterize a more complex situation involving multiple related objects (e.g. an email with a Subject of “Syria strategic plans leaked” and an attached file with File_Name of “bombISIS.pdf”)
-   * As an observable instance this characterizes a more complex observation involving a set of related objects each with specific properties {% include expand_link.html text="Example »" section="composition5" %}
+   * As an observable instance this characterizes a more complex observation involving a set of related objects each with specific properties {% include expand_link.html section="composition5" %}
 {% capture expandable %}
 {% highlight xml linenos %}
 <cybox:Observable id="example:Observable-db066ea1-925b-43df-a341-f513ece3ae94">
@@ -93,7 +93,7 @@ Whether you are characterizing instances or patterns, the types of observables y
   </cybox:Object>
 </cybox:Observable>
 {% endhighlight %}{% endcapture %}{% include expander.html section="composition5" %}
-   * As an observable pattern this characterizes a condition where any full combination exists of the types of objects, the specific relationships and the specific property field patterns. In other words, it is defining a logical AND across not only the set of property value patterns specified on each object but also across the relationships between objects. {% include expand_link.html text="Example »" section="composition6" %}
+   * As an observable pattern this characterizes a condition where any full combination exists of the types of objects, the specific relationships and the specific property field patterns. In other words, it is defining a logical AND across not only the set of property value patterns specified on each object but also across the relationships between objects. {% include expand_link.html section="composition6" %}
 {% capture expandable %}
 {% highlight xml linenos %}
 <cybox:Observable id="example:Observable-db066ea1-925b-43df-a341-f513ece3ae94">
@@ -123,7 +123,7 @@ Whether you are characterizing instances or patterns, the types of observables y
 **NOTE: Observables of this form are only valid as patterns and never as instances.**
 
    * Use for:  specifying compound observable conditions made up of logical combinations (AND/OR) of other observable conditions (patterns). The components of these compound conditions can be observable patterns of any level of detail including other observable compositions.
-   * For example, a condition ((A OR B) AND C) where a system ((contains a mutex=“foo” | contains a file named “barfoobar”) & an outgoing network connection to 46.123.99.25). {% include expand_link.html text="Example »" section="composition7" %}
+   * For example, a condition ((A OR B) AND C) where a system ((contains a mutex=“foo” | contains a file named “barfoobar”) & an outgoing network connection to 46.123.99.25). {% include expand_link.html section="composition7" %}
 {% capture expandable %}
 {% highlight xml linenos %}
 <indicator:Observable id="example:Observable-5e7f46ab-5934-4327-aa8c-3a9635b41544">
@@ -168,7 +168,7 @@ Whether you are characterizing instances or patterns, the types of observables y
 **NOTE: Observables of this form are only valid as patterns and never as instances.**
 
    * Use for: specifying compound observable conditions made up of logical combinations (AND/OR) of patterns on a single object property
-   * Mechanism: specified through the use of the `condition` and [apply_condition](/data-model/{{site.current_version}}/cyboxCommon/PatternFieldGroup) attributes on the property field and the inclusion of a delimiter (by default the delimiter is "##comma##” but can be overridden) separated list of values within the property field body. {% include expand_link.html text="Example »" section="composition8" %}
+   * Mechanism: specified through the use of the `condition` and [apply_condition](/data-model/{{site.current_version}}/cyboxCommon/PatternFieldGroup) attributes on the property field and the inclusion of a delimiter (by default the delimiter is "##comma##” but can be overridden) separated list of values within the property field body. {% include expand_link.html section="composition8" %}
 {% capture expandable %}
 {% highlight xml linenos %}
 <indicator:Observable  id="example:Observable-1c798262-a4cd-434d-a958-884d6980c459">
@@ -193,7 +193,7 @@ Indicators are about characterizing the **context for a given potential pattern 
 A mechanism for Indicator composition is provided in STIX to support three primary use cases that cannot be effectively addressed through direct observable composition in CybOX:
 
 
-   * **The ability to characterize a context for an aggregate pattern where one of more of its parts may have their own relevant contexts that need to be specified.** For example, a single Indicator with an observable pattern for a particular file hash has the context of indicating a particular form of malware in broad use by various threat actors. This context is useful in and of itself and may be desired to be used for detection. Another single Indicator may exist with an observable pattern for network connections to a particular IP address known to be used as C2 infrastructure by a particular threat actor. Again, this context is useful in and of itself and may be desired to be used for detection. However, it may also be useful to detect the combination (AND) of these two patterns at the same time as being indicative of a particular campaign. The entire observable pattern composition could be duplicated in the new aggregate Indicator but that would be far less efficient, effective or consistent than simply allowing a logical composition of the two independent Indicators and specifying a new context for the aggregation. {% include expand_link.html text="Example »" section="composition9" %}
+   * **The ability to characterize a context for an aggregate pattern where one of more of its parts may have their own relevant contexts that need to be specified.** For example, a single Indicator with an observable pattern for a particular file hash has the context of indicating a particular form of malware in broad use by various threat actors. This context is useful in and of itself and may be desired to be used for detection. Another single Indicator may exist with an observable pattern for network connections to a particular IP address known to be used as C2 infrastructure by a particular threat actor. Again, this context is useful in and of itself and may be desired to be used for detection. However, it may also be useful to detect the combination (AND) of these two patterns at the same time as being indicative of a particular campaign. The entire observable pattern composition could be duplicated in the new aggregate Indicator but that would be far less efficient, effective or consistent than simply allowing a logical composition of the two independent Indicators and specifying a new context for the aggregation. {% include expand_link.html section="composition9" %}
 {% capture expandable %}
 {% highlight xml linenos %}
 <stix:STIX_Package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stix="http://stix.mitre.org/stix-1" xmlns:stixCommon="http://stix.mitre.org/common-1" xmlns:indicator="http://stix.mitre.org/Indicator-2" xmlns:ttp="http://stix.mitre.org/TTP-1" xmlns:ta="http://stix.mitre.org/ThreatActor-1" xmlns:campaign="http://stix.mitre.org/Campaign-1" xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1" xmlns:FileObj="http://cybox.mitre.org/objects#FileObject-2" xmlns:MutexObj="http://cybox.mitre.org/objects#MutexObject-2" xmlns:NetworkConnectionObj="http://cybox.mitre.org/objects#NetworkConnectionObject-2" xmlns:SocketAddressObj="http://cybox.mitre.org/objects#SocketAddressObject-1" xmlns:AddressObj="http://cybox.mitre.org/objects#AddressObject-2" xmlns:cybox="http://cybox.mitre.org/cybox-2" xmlns:cyboxCommon="http://cybox.mitre.org/common-2" xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2" xmlns:example="http://example.com/" 
@@ -303,7 +303,7 @@ A mechanism for Indicator composition is provided in STIX to support three prima
 </stix:STIX_Package>
 {% endhighlight %}{% endcapture %}{% include expander.html section="composition9" %} 
 
-   * **The ability to do "partial matching” on an aggregate pattern such that you can detect not only that the aggregate is true/false but also potential portions of the aggregate.** For example, a single Indicator with a single observable pattern for an IP watch list of three values would only be able to evaluate whether any one of those values was observed but not whether any particular one of those three were seen. An indicator composition OR’ing three independently defined  indicators (one for each IP value) would be able to evaluate to true/false if ANY of the IPs were seen but each individual Indicator could also be used to evaluate which particular IPs were seen. {% include expand_link.html text="Example »" section="composition10" %}
+   * **The ability to do "partial matching” on an aggregate pattern such that you can detect not only that the aggregate is true/false but also potential portions of the aggregate.** For example, a single Indicator with a single observable pattern for an IP watch list of three values would only be able to evaluate whether any one of those values was observed but not whether any particular one of those three were seen. An indicator composition OR’ing three independently defined  indicators (one for each IP value) would be able to evaluate to true/false if ANY of the IPs were seen but each individual Indicator could also be used to evaluate which particular IPs were seen. {% include expand_link.html section="composition10" %}
 {% capture expandable %}
 {% highlight xml linenos %}
 <stix:Indicator xsi:type="indicator:IndicatorType" id="example:Indicator-e35c5023-0a11-434c-a812-963793b45cec">
@@ -363,7 +363,7 @@ A mechanism for Indicator composition is provided in STIX to support three prima
 </stix:Indicator>
 {% endhighlight %}{% endcapture %}{% include expander.html section="composition10" %}
 
-   * **The ability to specify new compound detection contexts (Indicators) as appropriate from other preexisting Indicators (potentially created and shared by other players) in a way that yields new levels of contextual understanding but still maintains consistency and practical usefulness with the source Indicators of the composition.** {% include expand_link.html text="Example »" section="composition11" %}
+   * **The ability to specify new compound detection contexts (Indicators) as appropriate from other preexisting Indicators (potentially created and shared by other players) in a way that yields new levels of contextual understanding but still maintains consistency and practical usefulness with the source Indicators of the composition.** {% include expand_link.html section="composition11" %}
 {% capture expandable %}
 {% highlight xml linenos %}
 <stix:Indicator xsi:type="indicator:IndicatorType" id="example:Indicator-e35c5023-0a11-434c-a812-963793b45cec"
