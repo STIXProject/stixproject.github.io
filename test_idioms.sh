@@ -42,7 +42,7 @@ for dir in ./documentation/idioms/*; do
         if [ -e $xmlfile ]
         then
             echo Checking $xmlfile for well-formedness
-            `$validator $xmlfile | grep INVALID`
+            $($validator $xmlfile | grep INVALID)
             if [[ $? -eq 0 ]]
             # the file had validation errors
             then
