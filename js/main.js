@@ -42,3 +42,5 @@ $(document).ready(function() {
     $('.coming-soon').tooltip()
     $('.idiom-construct').tooltip()
 });
+
+$('#expand-all').click(function() { $('.collapse').collapse('show'); });

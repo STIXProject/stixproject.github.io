@@ -10,6 +10,8 @@ As described in [Concept: Observable Instances vs Observable Patterns](../observ
 
 Whether you are characterizing instances or patterns, the types of observables you may wish to characterize can vary widely from the very simple to the complex depending on what you are trying to convey.
 
+<button class="btn btn-primary" id="expand-all">Show all Examples</button>
+
 ###Observable with single Object and single Property
 
    * Use for: characterize a single property
