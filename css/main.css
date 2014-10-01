@@ -251,3 +251,35 @@ p.data-model-description {
 .tab-pane.active > img {
   margin: 15px;
 }
+
+#toc li.header {
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+#toc .nav>li>a {
+  padding: 0;
+}
+
+#toc .nav>li.active>a {
+  border-left: 2px solid #aaa;
+  position: relative;
+  padding-left: 5px;
+  left: -7px;
+}
+
+
+#toc li.header:first-child {
+  margin-top: 0;
+}
+
+#toc ul {
+  padding-left: 5px;
+  
+}
+
+#toc li {
+  list-style-type: none;
+  font-size: 12px;
+}

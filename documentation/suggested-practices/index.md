@@ -1,6 +1,7 @@
 ---
 layout: flat
 title: Suggested Practices
+toc: sp_toc.html
 ---
 
 This page contains suggested practices (sometimes called best practices) for producing and consuming STIX content. Following these practices will ensure the best conformance with the design goals of STIX and the best compatibility with other STIX tools. These are not requirements, however: in some cases, technical or business requirements will mean you can't comply with them and that's fine. Think of them as "do it this way unless you have a good reason not to".
@@ -66,7 +67,7 @@ For these reasons, it is suggested that IDs be specified for the following commo
 As a simple general rule specifying IDs is not suggested for constructs embedded within other constructs (e.g. a CybOX Object containing the embedded specification of another CybOX Related_Object) where the embedded constructs are really only relevant/valid/important within the context of the enclosing construct. In other words they provide contextual characterization for the enclosing construct but would not be of interest on their own. 
 The upside of this is slightly less complexity of IDs on everything. The downside is that it would not be possible to reference or pivot on the embedded constructs.
 
-### Title, Description, and Short_Description
+### Titles and Descriptions
 
 The top-level STIX components as well as other important constructs ([VulnerabilityType](/data-model/{{site.current_version}}/et/VulnerabilityType/), for example) each have fields for Title, Description, and Short_Description:
 
@@ -101,7 +102,7 @@ For the purposes of Information Source override means "completely replaces".
 
 Note that on [Indicator](/data-model/{{site.current_version}}/indicator/IndicatorType/) the information source field is called `Producer`. On [Observable](/data-model/{{site.current_version}}/cybox/ObservableType/), it's called `Observable_Source` and uses the semantics and structure of the CybOX [MeasureSourceType](/data-model/{{site.current_version}}/cyboxCommon/MeasureSourceType/).
 
-### Referencing vs. Embedding
+### Referencing vs Embedding
 
 In many cases, you'll have an option to either include a component within the parent component or to reference the component by ID to a representation in a global location.
 
@@ -131,7 +132,7 @@ The other alternative is to reference that TTP, which would be represented elsew
 
 These situations are a judgment call, but when making that judgment you should consider whether the related construct has value individually or only within the context of the parent? If it only has value in the parent, embedding it may be appropriate. Otherwise it's probably better to reference it. If you're unsure, it's generally safer to reference it.
 
-### Versioning and the timestamp attribute
+### Versioning
 
 8 major STIX constructs are versioned:
 
