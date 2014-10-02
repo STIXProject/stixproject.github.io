@@ -128,7 +128,7 @@ stix_package.add_threat_actor(ta_bravo)
 print stix_package.to_xml()
 {% endhighlight %}
 
-[Full Python](threat-actor-leveraging-attack-patterns-and-malware.py)
+[Producer Python](threat-actor-leveraging-attack-patterns-and-malware_producer.py)[Consumer Python](threat-actor-leveraging-attack-patterns-and-malware_consumer.py)
 
 ## Further Reading
 

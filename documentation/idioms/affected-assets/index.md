@@ -97,7 +97,7 @@ incident.affected_assets = affected_asset
 print incident.to_xml()
 {% endhighlight %}
 
-[Full Python](incident-with-affected-asset.py)
+[Production Python](incident-with-affected-asset_producer.py) | [Consumption Python](incident-with-affected-asset_consumer.py)
 
 ## Further Reading
 
