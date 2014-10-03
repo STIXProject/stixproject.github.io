@@ -43,26 +43,34 @@ $(document).ready(function() {
     $('.idiom-construct').tooltip()
 });
 
+
 $('#expand-all').click(function() { 
     var me = $(this);
     if ("collapsed" === me.data("allState")) {
-        //$('.collapsible').collapse('show');
         me.data("allState", "expanded");
         me.text("Hide all Examples");
+        $(".toggleLink.collapsed").click();
     } else {
-        //$('.collapsible').collapse('hide');
         me.data("allState", "collapsed");
         me.text("Show all Examples");
+        $(".toggleLink:not(.collapsed)").click();
     }
-    $(".toggleLink").click();
 });
 
-$(".toggleLink").click(function() {
-    var me = $(this);
-    var nextState = me.data("nextStateText");
-    if (nextState) {
-        var oldState = me.text();
-        me.text(nextState);
-        me.data("nextStateText", oldState);
+$(".collapsible").on('hide.bs.collapse', changeText);
+$(".collapsible").on('show.bs.collapse', changeText);
+
+function changeText() {
+    var me = $("[data-toggle='collapse'][href='#" + this.id + "']");
+    var disabledText = me.data("disabledText");
+    var enabledText = me.data("enabledText");
+    if (disabledText) {
+        me.data("disabledText", "");
+        me.data("enabledText", me.text());
+        me.text(disabledText);
+    } else if (enabledText) {
+        me.data("enabledText", "");
+        me.data("disabledText", me.text());
+        me.text(enabledText);
     }
-});
+}
