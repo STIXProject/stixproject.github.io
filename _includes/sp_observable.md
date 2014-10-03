@@ -7,7 +7,7 @@ Some basic guidance is provided below on which forms of observables are appropri
 
 #### Use an instance to...
 
-  * Convey a cyber observation without any context via an [Observable](/data-model/{{site.current_version}}/cybox/ObservableType/) on its own. {% include expand_link.html text="Example »" section="observation" %}
+  * Convey a cyber observation without any context via an [Observable](/data-model/{{site.current_version}}/cybox/ObservableType/) on its own. {% include expand_link.html disabledText="Hide Example »" text="Example »" section="observation" %}
 {% capture expandable %}
 **Outgoing network connection to a particular IP that occurred at a specific time**
 {% highlight xml linenos %}

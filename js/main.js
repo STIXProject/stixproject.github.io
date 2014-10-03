@@ -43,4 +43,26 @@ $(document).ready(function() {
     $('.idiom-construct').tooltip()
 });
 
-$('#expand-all').click(function() { $('.collapse').collapse('show'); });
+$('#expand-all').click(function() { 
+    var me = $(this);
+    if ("collapsed" === me.data("allState")) {
+        //$('.collapsible').collapse('show');
+        me.data("allState", "expanded");
+        me.text("Hide all Examples");
+    } else {
+        //$('.collapsible').collapse('hide');
+        me.data("allState", "collapsed");
+        me.text("Show all Examples");
+    }
+    $(".toggleLink").click();
+});
+
+$(".toggleLink").click(function() {
+    var me = $(this);
+    var nextState = me.data("nextStateText");
+    if (nextState) {
+        var oldState = me.text();
+        me.text(nextState);
+        me.data("nextStateText", oldState);
+    }
+});

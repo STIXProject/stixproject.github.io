@@ -251,3 +251,7 @@ p.data-model-description {
 .tab-pane.active > img {
   margin: 15px;
 }
+
+.toggleLink {
+    font-weight: bolder;
+}
