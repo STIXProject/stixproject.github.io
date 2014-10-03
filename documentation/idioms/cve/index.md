@@ -38,8 +38,8 @@ Representing the CVE ID is as easy as filling out the `CVE ID` field with a prop
 [Full XML](cve-in-exploit-target.xml)
 
 ## Python
+{% include start_tabs.html tabs="Produce|Consume" name="cve" %}{% highlight python linenos %}
 
-{% highlight python linenos %}
 from stix.core import STIXPackage
 from stix.exploit_target import ExploitTarget, Vulnerability
 
@@ -50,8 +50,15 @@ et = ExploitTarget(title="Javascript vulnerability in MSIE 6-11")
 et.add_vulnerability(vuln)
     
 print et.to_xml()
-{% endhighlight %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
+print "== VULNERABILITY =="
+for target in pkg.exploit_targets:
+    print "---"
+    print "Title : " + target.title
+    for vuln in target.vulnerabilities:
+        print "CVE: " + vuln.cve_id
 
+{% endhighlight %}{% include end_tabs.html %}
 [Production Python](cve-in-exploit-target_producer.py)[Consumption Python](cve-in-exploit-target_producer.py)
 
 ## Further Reading

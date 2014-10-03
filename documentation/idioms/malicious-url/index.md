@@ -39,11 +39,7 @@ Because this indicator doesn't include any context (see scenario above), the ind
 [Full XML](indicator-for-malicious-url.xml)
 
 ## Python
-
-{% highlight python linenos %}
-from stix.core import STIXPackage
-from stix.indicator import Indicator
-from cybox.objects.uri_object import URI
+{% include start_tabs.html tabs="Produce|Consume" name="malicious-url" %}{% highlight python linenos %}
 
 indicator = Indicator()
 indicator.id_ = "example:package-382ded87-52c9-4644-bab0-ad3168cbad50"
@@ -57,7 +53,21 @@ url.condition = "Equals"
     
 indicator.add_observable(url)
 print indicator.to_xml()
-{% endhighlight %}
+
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
+
+print "== MALWARE =="
+for ind in pkg.indicators:
+    print "---"
+    print "Title : " + ind.title
+    print "ID : " + ind.id_
+    for ind_type in ind.indicator_types:
+        print "Type: " + str(ind_type)
+
+    for obs in ind.observables:
+        print "URL : " + str(obs.object_.properties.value)
+
+{% endhighlight %}{% include end_tabs.html %}
 
 [Production Python](indicator-for-malicious-url_producer.py)[Consumption Python](indicator-for-malicious-url_consumer.py)
 

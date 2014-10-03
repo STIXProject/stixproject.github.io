@@ -65,45 +65,46 @@ The STIX default extension for identity is [OASIS CIQ](https://www.oasis-open.or
 
 ## Python
 
-{% highlight python linenos %}
+{% include start_tabs.html tabs="Produce|Consume" name="identity-group" %}{% highlight python linenos %}
 
-from stix.core import STIXPackage
-from stix.threat_actor import ThreatActor
-from stix.extensions.identity.ciq_identity_3_0 import (CIQIdentity3_0Instance, PartyName, STIXCIQIdentity3_0, 
-                                      Address, Country, Language, AdministrativeArea, OrganisationName)
+stix_package = STIXPackage()
+ta = ThreatActor()
+ta.title = "Disco Team Threat Actor Group"
 
+ta.identity = CIQIdentity3_0Instance()
+identity_spec = STIXCIQIdentity3_0()
 
-def main():
-    stix_package = STIXPackage()
-    ta = ThreatActor()
-    ta.title = "Disco Team Threat Actor Group"
-    
-    ta.identity = CIQIdentity3_0Instance()
-    identity_spec = STIXCIQIdentity3_0()
-    
-    identity_spec.party_name = PartyName()
-    identity_spec.party_name.add_organisation_name(OrganisationName("Disco Tean", type_="CommonUse"))
-    identity_spec.party_name.add_organisation_name(OrganisationName("Equipo del Discoteca", type_="UnofficialName"))
-    
-    identity_spec.add_language("Spanish")
-    
-    address = Address()
-    address.country = Country()
-    address.country.add_name_element("United States")
-    address.administrative_area = AdministrativeArea()
-    address.administrative_area.add_name_element("California")    
-    identity_spec.add_address(address)
-    
-    identity_spec.add_electronic_address_identifier("disco-team@stealthemail.com")
-    
-    ta.identity.specification = identity_spec
-    stix_package.add_threat_actor(ta)
-    print stix_package.to_xml()
-    
-if __name__ == '__main__':
-    main()
+identity_spec.party_name = PartyName()
+identity_spec.party_name.add_organisation_name(OrganisationName("Disco Tean", type_="CommonUse"))
+identity_spec.party_name.add_organisation_name(OrganisationName("Equipo del Discoteca", type_="UnofficialName"))
 
-{% endhighlight %}
+identity_spec.add_language("Spanish")
+
+address = Address()
+address.country = Country()
+address.country.add_name_element("United States")
+address.administrative_area = AdministrativeArea()
+address.administrative_area.add_name_element("California")    
+identity_spec.add_address(address)
+
+identity_spec.add_electronic_address_identifier("disco-team@stealthemail.com")
+
+ta.identity.specification = identity_spec
+stix_package.add_threat_actor(ta)
+print stix_package.to_xml()
+
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
+print "== ACTOR =="
+for actor in pkg.threat_actors:
+    print "Actor: " + actor.title
+    for name in actor.identity.specification.party_name.organisation_names:
+        print "AKA: "+ str(name.name_elements[0].value)
+    print "Language: " + actor.identity.specification.languages[0].value
+    print "Country: " + str(actor.identity.specification.addresses[0].country.name_elements[0].value)
+    print "Area: " + str(actor.identity.specification.addresses[0].administrative_area.name_elements[0].value)
+    print "Email: " + str(actor.identity.specification.electronic_address_identifiers[0].value)
+
+{% endhighlight %}{% include end_tabs.html %}
 
 [Production Python](identifying-a-threat-actor-group_producer.py)[Consumption Python](identifying-a-threat-actor-group_consumer.py)
 ## Further Reading

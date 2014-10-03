@@ -81,71 +81,64 @@ Historical incidents (breaches) are describing using the [Incident](/data-model/
 [Full XML](sample.xml)
 
 ## Python
+{% include start_tabs.html tabs="Produce|Consume" name="simple-incident" %}{% highlight python linenos %}
+# setup stix document
+stix_package = STIXPackage()
+stix_header = STIXHeader()
 
-{% highlight python linenos %}
-#!/usr/bin/env python
+stix_header.description = "Sample breach report" 
+stix_header.add_package_intent ("Incident")
 
-from stix.core import STIXPackage, STIXHeader
-from datetime import datetime
-from cybox.common import Time
+# stamp with creator
+stix_header.information_source = InformationSource()
+stix_header.information_source.description = "The person who reported it"
 
-from stix.incident import Incident,ImpactAssessment, AffectedAsset
-from stix.incident import Time as incidentTime # different type than common:Time
+stix_header.information_source.time = Time()
+stix_header.information_source.time.produced_time = datetime.strptime("2014-03-11","%Y-%m-%d") # when they submitted it
 
-from stix.common import InformationSource
-from stix.common import Confidence
-from stix.common import Identity
+stix_header.information_source.identity = Identity()
+stix_header.information_source.identity.name = "Sample Investigations, LLC"
 
-from stix.data_marking import Marking, MarkingSpecification
-from stix.extensions.marking.simple_marking import SimpleMarkingStructure
+stix_package.stix_header = stix_header
 
-def build_stix( ):
-    # setup stix document
-    stix_package = STIXPackage()
-    stix_header = STIXHeader()
+# add incident and confidence
+breach = Incident()
+breach.description = "Intrusion into enterprise network"
+breach.confidence = "High"
 
-    stix_header.description = "Sample breach report" 
-    stix_header.add_package_intent ("Incident")
+# incident time is a complex object with support for a bunch of different "when stuff happened" items
+breach.time = incidentTime()
+breach.title = "Breach of Canary Corp"
+breach.time.incident_discovery = datetime.strptime("2013-01-13", "%Y-%m-%d") # when they submitted it
 
-    # stamp with creator
-    stix_header.information_source = InformationSource()
-    stix_header.information_source.description = "The person who reported it"
+# add the impact
+impact = ImpactAssessment()
+impact.add_effect("Financial Loss")
+breach.impact_assessment = impact
 
-    stix_header.information_source.time = Time()
-    stix_header.information_source.time.produced_time = datetime.strptime("2014-03-11","%Y-%m-%d") # when they submitted it
+# add the victim
+breach.add_victim ("Canary Corp")
 
-    stix_header.information_source.identity = Identity()
-    stix_header.information_source.identity.name = "Sample Investigations, LLC"
+stix_package.add_incident(breach)
 
-    stix_package.stix_header = stix_header
+print stix_package
 
-    # add incident and confidence
-    breach = Incident()
-    breach.description = "Intrusion into enterprise network"
-    breach.confidence = "High"
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
+print "== INCIDENT =="
+print "Package: " + str(pkg.stix_header.description)
+for inc in pkg.incidents:
+    print "---"
+    print "Reporter: " + inc.reporter.identity.name
+    print "Title: "+ inc.title
+    print "Description: "+ str(inc.description)
+    print "Confidence: "+ str(inc.confidence.value)
+    for impact in inc.impact_assessment.effects:
+        print "Impact: "+ str(impact)
+    print "Incident Discovery: "+ str(inc.time.incident_discovery.value)
 
-    # incident time is a complex object with support for a bunch of different "when stuff happened" items
-    breach.time = incidentTime()
-    breach.title = "Breach of Canary Corp"
-    breach.time.incident_discovery = datetime.strptime("2013-01-13", "%Y-%m-%d") # when they submitted it
-
-    # add the impact
-    impact = ImpactAssessment()
-    impact.add_effect("Financial Loss")
-    breach.impact_assessment = impact
-
-    # add the victim
-    breach.add_victim ("Canary Corp")
-
-    stix_package.add_incident(breach)
-
-    return stix_package
-
-if __name__ == '__main__':
-    # emit STIX
-    pkg = build_stix()
-    print pkg.to_xml() 
-{% endhighlight %}
+    for victim in inc.victims:
+        print "Victim: "+ str(victim.name)
+{% endhighlight %}{% include end_tabs.html %}
 
 [Production Python](simple-incident_producer.py) | [Consumption Python](simple-incident_consumer.py) 
 

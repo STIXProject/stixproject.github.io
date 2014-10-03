@@ -48,10 +48,7 @@ Within CIQ, the specific field used is `@IndustryType` within `OrganisationInfo`
 [Full XML](victim-targeting-sector.xml)
 
 ## Python
-
-{% highlight python linenos %}
-from stix.ttp import TTP, Behavior, VictimTargeting
-from stix.extensions.identity.ciq_identity_3_0 import (CIQIdentity3_0Instance, STIXCIQIdentity3_0, OrganisationInfo)
+{% include start_tabs.html tabs="Produce|Consume" name="industry-sector" %}{% highlight python linenos %}
 
 ciq_identity = CIQIdentity3_0Instance()
 identity_spec = STIXCIQIdentity3_0()
@@ -63,7 +60,14 @@ ttp.victim_targeting = VictimTargeting()
 ttp.victim_targeting.identity = ciq_identity
 
 print ttp.to_xml()
-{% endhighlight %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
+
+print "== TTP =="
+for thing in pkg.ttps:
+    print "---"
+    print "TTP: " + thing.title
+    print "Victim: "+ str(thing.victim_targeting.identity.specification.organisation_info.industry_type)
+{% endhighlight %}{% include end_tabs.html %}
 
 [Production Python](victim-targeting-sector_producer.py) | [Consumption Python](victim-targeting-sector_consumer.py)
 

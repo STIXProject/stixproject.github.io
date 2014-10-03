@@ -52,11 +52,7 @@ The campaign is represented with just a title and a related TTP with a relations
 
 ## Python
 
-{% highlight python linenos %}
-from stix.campaign import Campaign
-from stix.common.related import RelatedTTP
-from stix.core import STIXPackage
-from stix.ttp import TTP
+{% include start_tabs.html tabs="Produce|Consume" name="victim-targeting" %}{% highlight python linenos %}
 
 ttp = TTP()
 ttp.title = "Victim Targeting: Customer PII and Financial Data"
@@ -78,8 +74,26 @@ pkg.add_campaign(c)
 pkg.add_ttp(ttp)
 
 print pkg.to_xml()
-{% endhighlight %}
 
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
+
+ttp_list = {}
+for tactic in pkg.ttps:
+    ttp_list[tactic.id_] = tactic
+
+
+print "== Campaign =="
+for camp in pkg.campaigns:
+    print "---"
+    print "Campaign: " + str(camp.title)
+    
+    for tactic in camp.related_ttps:
+        print "RelatedTTP: " + ttp_list[tactic.item.idref].title
+        print "Relationship: " + str(tactic.relationship)
+        for target in ttp_list[tactic.item.idref].victim_targeting.targeted_information:
+            print "Target: " + str(target)
+
+{% endhighlight %}{% include end_tabs.html %}
 [Full Python](victim-targeting.py)
 
 ## Further Reading

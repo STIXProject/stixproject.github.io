@@ -79,17 +79,7 @@ Note that timestamps describing the incident should be represented under `incide
 ## Python
 
 Note that `IncidentTime` is distinct from the builtin `Time` type in the following code:
-{% highlight python linenos %}
-from stix.core import STIXPackage, STIXHeader
-from datetime import datetime
-from cybox.common import Time
-
-from stix.incident import Incident,ImpactAssessment, AffectedAsset
-from stix.incident import Time as incidentTime # different type than common:Time
-
-from stix.common import InformationSource
-from stix.common import Confidence
-from stix.common import Identity
+{% include start_tabs.html tabs="Produce|Consume" name="incident-timestamp" %}{% highlight python linenos %}
 
 
 # setup stix document
@@ -131,8 +121,29 @@ breach.add_victim ("Cyber Tech Dynamics")
 
 stix_package.add_incident(breach)
 
-print pkg.to_xml() 
-{% endhighlight %}
+print pkg.to_xml()
+
+
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
+print "== INDICATOR =="
+print "Package: " + str(pkg.stix_header.description)
+for inc in pkg.incidents:
+print "---"
+print "Reporter: " + inc.reporter.identity.name
+print "Title: "+ inc.title
+print "Description: "+ str(inc.description)
+print "Confidence: "+ str(inc.confidence.value)
+for impact in inc.impact_assessment.effects:
+    print "Impact: "+ str(impact)
+print "Initial Compromise: "+ str(inc.time.initial_compromise.value)
+print "Incident Discovery: "+ str(inc.time.incident_discovery.value)
+print "Restoration Achieved: "+ str(inc.time.restoration_achieved.value)
+print "Incident Reported: "+ str(inc.time.incident_reported.value)
+
+for victim in inc.victims:
+    print "Victim: "+ str(victim.name)
+
+{% endhighlight %}{% include end_tabs.html %}
 
 [Production Python](incident-timestamps_producer.py) | [Consumption Python](incident-timestamps_consumer.py)
 

@@ -73,16 +73,7 @@ The actual IP addresses are represented in CybOX within the `Observable Characte
 [Full XML](command-and-control-ip-list.xml)
 
 ## Python
-
-{% highlight python linenos %}
-from stix.common.vocabs import VocabString
-from stix.core import STIXPackage
-from stix.indicator import Indicator
-from stix.ttp import TTP
-from stix.ttp.infrastructure import Infrastructure
-from stix.ttp.resource import Resource
-from cybox.core import Observables, Observable, Object
-from cybox.objects.address_object import Address
+{% include start_tabs.html tabs="Produce|Consume" name="c2-ip" %}{% highlight python linenos %}
 
 stix_package = STIXPackage()
     
@@ -120,7 +111,15 @@ ttp.resources = resource
 
 stix_package.add_ttp(ttp)
 print stix_package.to_xml()
-{% endhighlight %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
+
+print "== TTP =="
+for thing in pkg.ttps:
+    print "Title: "+ str(thing.title)
+    print "Resource: " + str(thing.resources.infrastructure.types[0])
+    for obs in pkg.observables.observables:
+        print "Observable: " + str(obs.object_.properties)
+{% endhighlight %}{% include end_tabs.html %}  
 
 [Producer Python](command-and-control-ip-list_producer.py)[Consumer Python](command-and-control-ip-list_consumer.py)
 

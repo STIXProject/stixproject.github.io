@@ -52,12 +52,7 @@ In the diagram above, the Indicator component contains the test: a CybOX [Addres
 
 ## Python
 
-{% highlight python linenos %}
-from stix.core import STIXPackage
-from stix.indicator import Indicator
-from stix.ttp import TTP
-from cybox.core import Observable
-from cybox.objects.address_object import Address
+{% include start_tabs.html tabs="Produce|Consume" name="c2-indicator" %}{% highlight python linenos %}
 
 stix_package = STIXPackage()
 ttp = TTP(title="C2 Behavior")
@@ -74,9 +69,23 @@ stix_package.add_indicator(indicator)
 stix_package.add_ttp(ttp)
 
 print stix_package.to_xml()
-{% endhighlight %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 
-[Producer Python](indicator-for-c2-ip-address_producer.py)[Consumer Python](indicator-for-c2-ip-address_consumer.py)
+stix_package = STIXPackage.from_xml('indicator-for-c2-ip-address.xml')
+
+print "Title: " + stix_package.stix_header.title,
+
+
+for indicator in stix_package.indicators:
+  print "--INDICATOR--"
+  ip = indicator.observable.object_.properties.address_value.value
+  print "IP: " + ip
+  for ttp in stix_package.ttps:
+    print "TTP: " + ttp.title
+
+{% endhighlight %}{% include end_tabs.html %}
+
+[Producer Python](indicator-for-c2-ip-address_producer.py) | [Consumer Python](indicator-for-c2-ip-address_consumer.py)
 
 ## Further Reading
 

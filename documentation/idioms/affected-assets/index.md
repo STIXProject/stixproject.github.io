@@ -67,13 +67,7 @@ The `Description of Effect` field in the same `Property Affected` is a simple pr
 
 ## Python
 
-{% highlight python linenos %}
-from stix.core import STIXPackage
-from stix.incident import (Incident, RelatedObservables, AffectedAsset, PropertyAffected)
-from stix.common.related import (RelatedObservable)
-from cybox.core import Observable
-from cybox.common import Hash
-from cybox.objects.file_object import File
+{% include start_tabs.html tabs="Produce|Consume" name="affected_assets" %}{% highlight python linenos %}
 
 affected_asset = AffectedAsset()
 affected_asset.description = "Database server at hr-data1.example.com"
@@ -95,7 +89,30 @@ incident = Incident(title="Exfiltration from hr-data1.example.com")
 incident.affected_assets = affected_asset
     
 print incident.to_xml()
-{% endhighlight %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
+print "== INCIDENT Assets Impacted =="
+for inc in pkg.incidents:
+    print "---"
+    print "Title: "+ inc.title
+    for asset in inc.affected_assets:
+        print "---"
+        print "Description: "+ str(asset.description)
+        print "Type: "+ str(asset.type_)
+        print "How many: "+ str(asset.type_.count_affected)
+        print "Role: " + str(asset.business_function_or_role )
+        print "Owner: " +str(asset.ownership_class ) 
+        print "Manager: " +str(asset.management_class )
+        print "Location: " +str(asset.location_class )
+
+        for effect in asset.nature_of_security_effect:
+            print "---"
+            print "Lost:" + str(effect.property_ )
+            print "Effect:" + str(effect.description_of_effect )
+            print "Was private data stolen?: " + str(effect.non_public_data_compromised )
+            print "Was it encrypted?: " + str(effect.non_public_data_compromised.data_encrypted )
+
+{% endhighlight %}{% include end_tabs.html %}
+
 
 [Production Python](incident-with-affected-asset_producer.py) | [Consumption Python](incident-with-affected-asset_consumer.py)
 

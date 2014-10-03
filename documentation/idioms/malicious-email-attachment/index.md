@@ -129,16 +129,7 @@ The indicated TTP is the same as the previous indicators, while confidence is re
 [Full XML](malicious-email-indicator-with-attachment.xml)
 
 ## Python
-{% highlight python linenos %}
-from stix.core import STIXPackage
-from stix.common import Confidence
-from stix.indicator import Indicator, CompositeIndicatorExpression
-from stix.ttp import TTP
-from cybox.core import Observable
-from cybox.objects.file_object import File
-from cybox.objects.email_message_object import (EmailMessage, EmailHeader,
-                                                Attachments, AttachmentReference)
-
+{% include start_tabs.html tabs="Produce|Consume" name="malicious-email" %}{% highlight python linenos %}
 stix_package = STIXPackage()
 ttp = TTP(title="Phishing")
 stix_package.add_ttp(ttp)
@@ -197,7 +188,39 @@ combined_indicator.add_indicated_ttp(TTP(idref=ttp.id_))
 
 stix_package.indicators = [combined_indicator, email_subject_indicator, indicator_attachment]
 print stix_package.to_xml()
-{% endhighlight %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
+ttp_list = {}
+for thing in pkg.ttps:
+    ttp_list[thing.id_] = thing.title
+
+print "== EMAIL =="
+for ind in pkg.indicators:
+    print "---"
+    print "Title : " + ind.title
+    print "ID : " + ind.id_
+    for ind_type in ind.indicator_types:
+        print "Type: " + str(ind_type)
+        
+    print "Confidence: " + str(ind.confidence.value)
+    
+    # look up ttp from list in package
+    for ref_ttp in ind.indicated_ttps:
+        print "TTP: " + ttp_list[ref_ttp.item.idref]
+    
+    for obs in ind.observables:
+        if obs.object_.related_objects:
+            #  attachment is inline
+            print "Attachment ID: " + str(obs.object_.id_)
+            print "Attachment Filename: " + str(obs.object_.related_objects[0].properties.file_name)
+            print "Attachment File extension: " + str(obs.object_.related_objects[0].properties.file_extension)
+            print "Relationship: " + str(obs.object_.related_objects[0].relationship)
+        elif obs.object_.properties.header:
+            print "Subject : " + str(obs.object_.properties.header.subject)
+            if obs.object_.properties.attachments:
+                print "Attachment -> : " + str(obs.object_.properties.attachments[0].object_reference)
+
+
+{% endhighlight %}{% include end_tabs.html %}
 
 [Production Python](malicious-email-indicator-with-attachment_producer.py)[Consumption Python](malicious-email-indicator-with-attachment_consumer.py)
 

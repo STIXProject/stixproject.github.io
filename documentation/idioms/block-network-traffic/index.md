@@ -70,13 +70,7 @@ The `Parameter Observables` field is a set of CybOX [Observables](/data-model/{{
 [Full XML](block-network-traffic.xml)
 
 ## Python
-
-{% highlight python linenos %}
-from stix.coa import CourseOfAction, Objective
-from stix.common import Confidence
-from stix.core import STIXPackage
-from cybox.core import Observables
-from cybox.objects.address_object import Address
+{% include start_tabs.html tabs="Produce|Consume" name="block-network" %}{% highlight python linenos %}
 
 pkg = STIXPackage()
 coa = CourseOfAction()
@@ -100,8 +94,28 @@ coa.parameter_observables=Observables(addr)
 pkg.add_course_of_action(coa)
 
 print pkg.to_xml()
-{% endhighlight %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
+print "== COA =="
+for coa in pkg.courses_of_action:
+    print "---"
+    print "COA: " + coa.title
+    print "Stage: "+ str(coa.stage)
+    print "Type: "+ str(coa.type_)
+    for obs in coa.parameter_observables.observables:
+        print "Observable: " + str(obs.object_.properties.address_value)
+    
+    print "---"
+    print "Objective: "+ str(coa.objective.description)
+    print "Confidence: "+ str(coa.objective.applicability_confidence.value)
+    print "---"
+    print "Impact: "+ str(coa.impact.value)
+    print "Description: "+ str(coa.impact.description)
+    print "---"
+    print "Cost: "+ str(coa.cost.value)
+    print "Efficacy: "+ str(coa.efficacy.value)
 
+{% endhighlight %}{% include end_tabs.html %}
+        
 [Producer Python](block-network-traffic_producer.py) [Consumer Python](block-network-traffic_consumer.py)
 
 ## Further Reading

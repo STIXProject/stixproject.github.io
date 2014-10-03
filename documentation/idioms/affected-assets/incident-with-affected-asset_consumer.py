@@ -16,7 +16,7 @@ def parse_stix( pkg ):
             print "Type: "+ str(asset.type_)
             print "How many: "+ str(asset.type_.count_affected)
             print "Role: " + str(asset.business_function_or_role )
-            print "Owner: " +str(asset.owernship_class ) # typo since py-stix master has bug as of 8-29
+            print "Owner: " +str(asset.ownership_class )
             print "Manager: " +str(asset.management_class )
             print "Location: " +str(asset.location_class )
 
