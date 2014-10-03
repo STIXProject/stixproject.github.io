@@ -7,7 +7,7 @@ Some basic guidance is provided below on which forms of observables are appropri
 
 #### Use an instance to...
 
-  * Convey a cyber observation without any context via an [Observable](/data-model/{{site.current_version}}/cybox/ObservableType/) on its own. {% include expand_link.html text="Example »" section="observation" %}
+  * Convey a cyber observation without any context via an [Observable](/data-model/{{site.current_version}}/cybox/ObservableType/) on its own. {% include expand_link.html disabledText="Hide Example »" text="Example »" section="observation" %}
 {% capture expandable %}
 **Outgoing network connection to a particular IP that occurred at a specific time**
 {% highlight xml linenos %}
@@ -34,7 +34,7 @@ Some basic guidance is provided below on which forms of observables are appropri
     </stix:Observables>
 </stix:STIX_Package>
 {% endhighlight %}{% endcapture %}{% include expander.html section="observation" %}
-  * Report a sighting of a given Indicator specify what was actually observed in the sighting that matched the Indicator's pattern via a [Sighting](/data-model/{{site.current_version}}/indicator/SightingType/)'s Related Observable. {% include expand_link.html text="Example »" section="sighting" %}
+  * Report a sighting of a given Indicator specify what was actually observed in the sighting that matched the Indicator's pattern via a [Sighting](/data-model/{{site.current_version}}/indicator/SightingType/)'s Related Observable. {% include expand_link.html disabledText="Hide Example »" text="Example »" section="sighting" %}
 {% capture expandable %}
 **An Indicator specifies a set of three domains used for malware C2 and you wish to report a sighting specifying which of the three you observed**
 {% highlight xml linenos %}
@@ -65,7 +65,7 @@ Some basic guidance is provided below on which forms of observables are appropri
     </indicator:Sightings>
 </stix:Indicator>
 {% endhighlight %}{% endcapture %}{% include expander.html section="sighting" %}
-  * Characterize specific cyber observations relevant to an Incident via its [RelatedObservables](/data-model/{{site.current_version}}/incident/RelatedObservablesType/) field. {% include expand_link.html text="Example »" section="incident" %}
+  * Characterize specific cyber observations relevant to an Incident via its [RelatedObservables](/data-model/{{site.current_version}}/incident/RelatedObservablesType/) field. {% include expand_link.html disabledText="Hide Example »" text="Example »" section="incident" %}
 {% capture expandable %}
 **The basic details of a phishing email received as part of an attack**
 {% highlight xml linenos %}
@@ -103,7 +103,7 @@ Some basic guidance is provided below on which forms of observables are appropri
   </incident:Related_Observables>
 </stix:Incident>
 {% endhighlight %}{% endcapture %}{% include expander.html section="incident" %}
-  * Characterize specific technical assets that were affected as part of an Incident inside the [AffectedAsset](/data-model/{{site.current_version}}/incident/AffectedAssetType/)'s Structured Description. {% include expand_link.html text="Example »" section="affected-asset" %}
+  * Characterize specific technical assets that were affected as part of an Incident inside the [AffectedAsset](/data-model/{{site.current_version}}/incident/AffectedAssetType/)'s Structured Description. {% include expand_link.html disabledText="Hide Example »" text="Example »" section="affected-asset" %}
 {% capture expandable %}
 **Details of a particular laptop infected with malware**
 {% highlight xml linenos %}
@@ -150,7 +150,7 @@ Some basic guidance is provided below on which forms of observables are appropri
 
 #### Use a pattern to...
 
-  * Specify conditions to look for that may indicate particular TTP activity is occurring or has occurred as part of the Indicator's Observable structure. {% include expand_link.html text="Example »" section="indicator-pattern" %}
+  * Specify conditions to look for that may indicate particular TTP activity is occurring or has occurred as part of the Indicator's Observable structure. {% include expand_link.html disabledText="Hide Example »" text="Example »" section="indicator-pattern" %}
 {% capture expandable %}
 **A specific registry key with a specific value**
 {% highlight xml linenos %}
@@ -173,7 +173,7 @@ Some basic guidance is provided below on which forms of observables are appropri
     </indicator:Indicated_TTP>
 </stix:Indicator>
 {% endhighlight %}{% endcapture %}{% include expander.html section="indicator-pattern" %}
-  * Specify particular structured technical details for explicit characterization of a [Course of Action](/data-model/{{site.current_version}}/coa/CourseOfActionType)'s Parameter Observables. {% include expand_link.html text="Example »" section="coa-pattern" %}
+  * Specify particular structured technical details for explicit characterization of a [Course of Action](/data-model/{{site.current_version}}/coa/CourseOfActionType)'s Parameter Observables. {% include expand_link.html disabledText="Hide Example »" text="Example »" section="coa-pattern" %}
 {% capture expandable %}
 **Block traffic to a particular IP address**
 {% highlight xml linenos %}
@@ -208,7 +208,7 @@ Some basic guidance is provided below on which forms of observables are appropri
     </coa:Efficacy>
 </stix:Course_Of_Action>
 {% endhighlight %}{% endcapture %}{% include expander.html section="coa-pattern" %}
-  * Specify what software is known to be affected by a given vulnerability via the Exploit Target [AffectedSoftware](/data-model/{{site.current_version}}/et/AffectedSoftwareType/)'s Observable characterization. {% include expand_link.html text="Example »" section="vulnerability" %}
+  * Specify what software is known to be affected by a given vulnerability via the Exploit Target [AffectedSoftware](/data-model/{{site.current_version}}/et/AffectedSoftwareType/)'s Observable characterization. {% include expand_link.html text="Example »" disabledText="Hide Example »" section="vulnerability" %}
 {% capture expandable %}
 **The Heartbleed vulnerability (CVE-2014-0160) affects a specific set of versions of openssl**
 {% highlight xml linenos %}
@@ -236,7 +236,7 @@ Some basic guidance is provided below on which forms of observables are appropri
   </et:Vulnerability>
 </stixCommon:Exploit_Target>
 {% endhighlight %}{% endcapture %}{% include expander.html section="vulnerability" %}
-  * Characterize specific technical infrastructure utilized for cyber attack via a TTP [Infrastructure](/data-model/{{site.current_version}}/ttp/InfrastructureType/)'s Observable Characterization. {% include expand_link.html text="Example »" section="ttp" %}
+  * Characterize specific technical infrastructure utilized for cyber attack via a TTP [Infrastructure](/data-model/{{site.current_version}}/ttp/InfrastructureType/)'s Observable Characterization. {% include expand_link.html text="Example »" disabledText="Hide Example »" section="ttp" %}
 {% capture expandable %}
 **A particular set of IPs used for Zeus malware command and control**
 {% highlight xml linenos %}
@@ -279,7 +279,7 @@ Some basic guidance is provided below on which forms of observables are appropri
     </stix:TTP>
 </stix:TTPs>
 {% endhighlight %}{% endcapture %}{% include expander.html section="ttp" %}
-  * Characterize specific victim technical context details being targeted by an attacker in instances of TTP [VictimTargeting](/data-model/{{site.current_version}}/ttp/VictimTargetingType/)'s Technical Targeting Details. {% include expand_link.html text="Example »" section="ttp-technical-targeting" %}
+  * Characterize specific victim technical context details being targeted by an attacker in instances of TTP [VictimTargeting](/data-model/{{site.current_version}}/ttp/VictimTargetingType/)'s Technical Targeting Details. {% include expand_link.html text="Example »" disabledText="Hide Example »" section="ttp-technical-targeting" %}
 {% capture expandable %}
 **Attackers are targeting victims with 15-inch MacBook Pro Retina laptops with a particular CPU and memory configuration and running OSX Mavericks 10.9.2**
 {% highlight xml linenos %}
