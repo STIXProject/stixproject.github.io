@@ -27,9 +27,9 @@ The infrastructure `Type` is a controlled vocabulary field. In this case the def
 
 The actual IP addresses are represented in CybOX within the `Observable Characterization` field. Because these are instance observables (i.e. instances of IP addresses, not patterns) separate observables are used rather than using the `Apply Condition` field. 3 observables are created, with 3 objects, with 3 properties for [Address Objects](/data-model/{{site.current_version}}/AddressObj/AddressObjectType). Each set of properties includes the `Address Value` field set to the IP address and the `Category` field set to IPV4 address.
 
-## XML
+## Implementation
 
-{% highlight xml linenos %}
+{% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="c2-ip" %}{% highlight xml linenos %}
 <stix:Observables cybox_major_version="1" cybox_minor_version="1">
     <cybox:Observable id="example:observable-c8c32b6e-2ea8-51c4-6446-7f5218072f27">
         <cybox:Object id="example:object-d7fcce87-0e98-4537-81bf-1e7ca9ad3734">
@@ -68,21 +68,7 @@ The actual IP addresses are represented in CybOX within the `Observable Characte
         </ttp:Resources>
     </stix:TTP>
 </stix:TTPs> 
-{% endhighlight %}
-
-[Full XML](command-and-control-ip-list.xml)
-
-## Python
-
-{% highlight python linenos %}
-from stix.common.vocabs import VocabString
-from stix.core import STIXPackage
-from stix.indicator import Indicator
-from stix.ttp import TTP
-from stix.ttp.infrastructure import Infrastructure
-from stix.ttp.resource import Resource
-from cybox.core import Observables, Observable, Object
-from cybox.objects.address_object import Address
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 
 stix_package = STIXPackage()
     
@@ -120,9 +106,17 @@ ttp.resources = resource
 
 stix_package.add_ttp(ttp)
 print stix_package.to_xml()
-{% endhighlight %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 
-[Full Python](command-and-control-ip-list.py)
+print "== TTP =="
+for thing in pkg.ttps:
+    print "Title: "+ str(thing.title)
+    print "Resource: " + str(thing.resources.infrastructure.types[0])
+    for obs in pkg.observables.observables:
+        print "Observable: " + str(obs.object_.properties)
+{% endhighlight %}{% include end_tabs.html %}  
+
+[Full XML](command-and-control-ip-list.xml) | [Python Producer](command-and-control-ip-list_producer.py) | [Python Consumer](command-and-control-ip-list_consumer.py)
 
 ## Further Reading
 

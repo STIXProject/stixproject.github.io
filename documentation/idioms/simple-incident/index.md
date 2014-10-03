@@ -23,23 +23,23 @@ Historical incidents (breaches) are describing using the [Incident](/data-model/
 
 **WHEN:** Timestamps related to the incident itself are all represented in the `Time` field using [TimeType](data-model/{{site.current_version}}/incident/TimeType/). In this case, only the discovery time is known so the `Incident_Discovery` field is populated with that time. One gotcha with incident timestamps is that time fields related to the incident itself all go in `Time` while timestamps related to the STIX data construct go into `Information_Source/Time`.
 
-## XML
+## Implementation
 
-{% highlight xml linenos  %}
+{% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="simple-incident" %}{% highlight xml linenos  %}
 <stix:STIX_Package 
-	xmlns:cyboxCommon="http://cybox.mitre.org/common-2"
-	xmlns:example="http://example.com"
-	xmlns:incident="http://stix.mitre.org/Incident-1"
-	xmlns:stixCommon="http://stix.mitre.org/common-1"
-	xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1"
-	xmlns:stix="http://stix.mitre.org/stix-1"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="
-	http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd
-	http://stix.mitre.org/Incident-1 http://stix.mitre.org/XMLSchema/incident/1.1.1/incident.xsd
-	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd
-	http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
-	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd" id="example:Package-fba447a0-7c5b-4329-98a3-1324080101d4" version="1.1.1" timestamp="2014-08-28T16:42:52.859307+00:00">
+    xmlns:cyboxCommon="http://cybox.mitre.org/common-2"
+    xmlns:example="http://example.com"
+    xmlns:incident="http://stix.mitre.org/Incident-1"
+    xmlns:stixCommon="http://stix.mitre.org/common-1"
+    xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1"
+    xmlns:stix="http://stix.mitre.org/stix-1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+    http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd
+    http://stix.mitre.org/Incident-1 http://stix.mitre.org/XMLSchema/incident/1.1.1/incident.xsd
+    http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd
+    http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
+    http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd" id="example:Package-fba447a0-7c5b-4329-98a3-1324080101d4" version="1.1.1" timestamp="2014-08-28T16:42:52.859307+00:00">
     <stix:STIX_Header>
         <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Incident</stix:Package_Intent>
         <stix:Description>Sample breach report</stix:Description>
@@ -74,80 +74,66 @@ Historical incidents (breaches) are describing using the [Incident](/data-model/
         </stix:Incident>
     </stix:Incidents>
 </stix:STIX_Package>
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
+# setup stix document
+stix_package = STIXPackage()
+stix_header = STIXHeader()
 
+stix_header.description = "Sample breach report" 
+stix_header.add_package_intent ("Incident")
 
-{% endhighlight %}
+# stamp with creator
+stix_header.information_source = InformationSource()
+stix_header.information_source.description = "The person who reported it"
 
-[Full XML](sample.xml)
+stix_header.information_source.time = Time()
+stix_header.information_source.time.produced_time = datetime.strptime("2014-03-11","%Y-%m-%d") # when they submitted it
 
-## Python
+stix_header.information_source.identity = Identity()
+stix_header.information_source.identity.name = "Sample Investigations, LLC"
 
-{% highlight python linenos %}
-#!/usr/bin/env python
+stix_package.stix_header = stix_header
 
-from stix.core import STIXPackage, STIXHeader
-from datetime import datetime
-from cybox.common import Time
+# add incident and confidence
+breach = Incident()
+breach.description = "Intrusion into enterprise network"
+breach.confidence = "High"
 
-from stix.incident import Incident,ImpactAssessment, AffectedAsset
-from stix.incident import Time as incidentTime # different type than common:Time
+# incident time is a complex object with support for a bunch of different "when stuff happened" items
+breach.time = incidentTime()
+breach.title = "Breach of Canary Corp"
+breach.time.incident_discovery = datetime.strptime("2013-01-13", "%Y-%m-%d") # when they submitted it
 
-from stix.common import InformationSource
-from stix.common import Confidence
-from stix.common import Identity
+# add the impact
+impact = ImpactAssessment()
+impact.add_effect("Financial Loss")
+breach.impact_assessment = impact
 
-from stix.data_marking import Marking, MarkingSpecification
-from stix.extensions.marking.simple_marking import SimpleMarkingStructure
+# add the victim
+breach.add_victim ("Canary Corp")
 
-def build_stix( ):
-    # setup stix document
-    stix_package = STIXPackage()
-    stix_header = STIXHeader()
+stix_package.add_incident(breach)
 
-    stix_header.description = "Sample breach report" 
-    stix_header.add_package_intent ("Incident")
+print stix_package
 
-    # stamp with creator
-    stix_header.information_source = InformationSource()
-    stix_header.information_source.description = "The person who reported it"
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
+print "== INCIDENT =="
+print "Package: " + str(pkg.stix_header.description)
+for inc in pkg.incidents:
+    print "---"
+    print "Reporter: " + inc.reporter.identity.name
+    print "Title: "+ inc.title
+    print "Description: "+ str(inc.description)
+    print "Confidence: "+ str(inc.confidence.value)
+    for impact in inc.impact_assessment.effects:
+        print "Impact: "+ str(impact)
+    print "Incident Discovery: "+ str(inc.time.incident_discovery.value)
 
-    stix_header.information_source.time = Time()
-    stix_header.information_source.time.produced_time = datetime.strptime("2014-03-11","%Y-%m-%d") # when they submitted it
+    for victim in inc.victims:
+        print "Victim: "+ str(victim.name)
+{% endhighlight %}{% include end_tabs.html %}
 
-    stix_header.information_source.identity = Identity()
-    stix_header.information_source.identity.name = "Sample Investigations, LLC"
-
-    stix_package.stix_header = stix_header
-
-    # add incident and confidence
-    breach = Incident()
-    breach.description = "Intrusion into enterprise network"
-    breach.confidence = "High"
-
-    # incident time is a complex object with support for a bunch of different "when stuff happened" items
-    breach.time = incidentTime()
-    breach.title = "Breach of Canary Corp"
-    breach.time.incident_discovery = datetime.strptime("2013-01-13", "%Y-%m-%d") # when they submitted it
-
-    # add the impact
-    impact = ImpactAssessment()
-    impact.add_effect("Financial Loss")
-    breach.impact_assessment = impact
-
-    # add the victim
-    breach.add_victim ("Canary Corp")
-
-    stix_package.add_incident(breach)
-
-    return stix_package
-
-if __name__ == '__main__':
-    # emit STIX
-    pkg = build_stix()
-    print pkg.to_xml() 
-{% endhighlight %}
-
-[Full Python](sample.py)
+[Full XML](sample.xml) | [Python Producer](simple-incident_producer.py) | [Python Consumer](simple-incident_consumer.py) 
 
 ## Further Reading
 

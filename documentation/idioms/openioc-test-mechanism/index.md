@@ -23,9 +23,11 @@ Because OpenIOC is also an XML language, we're able to use XML schema features t
 
 <img src="diagram.png" alt="OpenIOC Test Mechanism" />
 
-## XML
+## Implementation
 
-{% highlight xml linenos %}
+Notice in both the production code and the consumption code that the OpenIOC itself is accessed via an lxml ElementTree. That way you can work with it as normal XML...though if you need to extract it in order to send it off to a tool that can process it you can always use the `tostring` method to do so.
+
+{% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="openioc" %}{% highlight xml linenos %}
 <stix:Indicator id="example:indicator-b92194e0-da61-4a32-9034-1148123b0f7a" timestamp="2014-06-20T20:53:08.440812+00:00" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
     <indicator:Title>Zeus</indicator:Title>
     <indicator:Description>Finds Zeus variants, twexts, sdra64, ntos</indicator:Description>
@@ -51,15 +53,7 @@ Because OpenIOC is also an XML language, we're able to use XML schema features t
         </indicator:Test_Mechanism>
     </indicator:Test_Mechanisms>
 </stix:Indicator>
-{% endhighlight %}
-
-<a href="openioc-test-mechanism.xml">Full XML</a>
-
-<h2>Python</h2>
-
-Notice in both the production code and the consumption code that the OpenIOC itself is accessed via an lxml ElementTree. That way you can work with it as normal XML...though if you need to extract it in order to send it off to a tool that can process it you can always use the `tostring` method to do so.
-
-{% include start_tabs.html tabs="Produce|Consume" name="openioc" %}{% highlight python linenos %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 ioc = etree.parse('6d2a1b03-b216-4cd8-9a9e-8827af6ebf93.ioc.xml')
 
 indicator = Indicator(title="Zeus", description="Finds Zeus variants, twexts, sdra64, ntos")
@@ -95,7 +89,7 @@ for indicator in stix_package.indicators:
         print "== ENDIOC =="
 {% endhighlight %}{% include end_tabs.html %}
 
-[Production Python](openioc-test-mechanism-producer.py) | [Consumption Python](openioc-test-mechanism-consumer.py)
+[Full XML](openioc-test-mechanism.xml) | [Python Producer](openioc-test-mechanism-producer.py) | [Python Consumer](openioc-test-mechanism-consumer.py)
 
 ## Further Reading
 

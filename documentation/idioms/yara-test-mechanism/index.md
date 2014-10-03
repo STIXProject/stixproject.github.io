@@ -25,9 +25,9 @@ There are a few other details to note as well:
 * The `Producer` field is set to provide a reference back to the original information source (blog entry) from Yara.
 * The rule is wrapped in CDATA to ensure that any tags or things like that won't break the XML structure and don't need to be escaped.
 
-## XML
+## Implementation
 
-{% highlight xml linenos %}
+{% include start_tabs.html tabs="XML|Production Python|Consumption Python" name="yara" %}{% highlight xml linenos %}
 <stix:Indicator id="example:indicator-567b201c-4fd5-4bde-a5db-42abc340807a" timestamp="2014-06-20T15:16:56.987616+00:00" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
     <indicator:Title>silent_banker</indicator:Title>
     <indicator:Description>This is just an example.</indicator:Description>
@@ -61,13 +61,7 @@ $a or $b or $c
         </indicator:Test_Mechanism>
     </indicator:Test_Mechanisms>
 </stix:Indicator>
-{% endhighlight %}
-
-<a href="yara-test-mechanism.xml">Full XML</a>
-
-<h2>Python</h2>
-
-{% include start_tabs.html tabs="Produce|Consume" name="yara" %}{% highlight python linenos %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 rule = """
 rule silent_banker : banker
 {
@@ -108,7 +102,7 @@ for indicator in stix_package.indicators:
         print "Rule: %s" % tm.rule
 {% endhighlight %}{% include end_tabs.html %}
 
-[Production Python](yara-test-mechanism-producer.py) | [Consumption Python](yara-test-mechanism-consumer.py)
+[Full XML](yara-test-mechanism.xml) | [Python Producer](yara-test-mechanism-producer.py) | [Python Consumer](yara-test-mechanism-consumer.py)
 
 ## Further Reading
 
