@@ -33,9 +33,9 @@ For simplicity sake of this idiom, the Observable structures were kept to a mini
 
 Given the constrained scenario, the incident construct is fairly limited: it contains a `Title` to identify the incident and a set of `Related Observables`. The observable references point to the individual observables defined above each relationship is characterized as "Malicious Artifact Detected".
 
-## XML
+## Implementation
 
-{% highlight xml linenos %}
+{% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="related-observables" %}{% highlight xml linenos %}
 <stix:STIX_Package >
     <stix:Incidents>
         <stix:Incident id="example:incident-84d86106-d801-489b-87b6-d56bac58e6c1" timestamp="2014-09-15T14:37:54.297669+00:00" xsi:type='incident:IncidentType' version="1.1.1">
@@ -80,12 +80,7 @@ Given the constrained scenario, the incident construct is fairly limited: it con
     </stix:Incidents>
 </stix:STIX_Package>
 
-{% endhighlight %}
-
-[Full XML](incident-with-related-observables.xml)
-
-## Python
-{% include start_tabs.html tabs="Produce|Consume" name="related-observables" %}{% highlight python linenos %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 
 file_object1 = File()
 file_object1.file_name = "readme.doc.exe"
@@ -120,7 +115,7 @@ for inc in pkg.incidents:
 
 {% endhighlight %}{% include end_tabs.html %}
 
-[Producer Python](incident-with-related-observables_producer.py)[Consumer Python](incident-with-related-observables_consumer.py)
+[Full XML](incident-with-related-observables.xml) | [Python Producer](incident-with-related-observables_producer.py) | [Python Consumer](incident-with-related-observables_consumer.py)
 
 ## Further Reading
 

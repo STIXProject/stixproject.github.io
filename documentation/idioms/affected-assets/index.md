@@ -38,9 +38,9 @@ Within PropertyAffectedType, the `Property` field is a controlled vocabulary and
 
 The `Description of Effect` field in the same `Property Affected` is a simple prose description of how the property was affected. In this scenario, it's set to a short description outlining that data was exfiltrated but that it isn't yet known how. `Non-Public Data Compromised` applies specifically to confidentiality loss and is used to describe whether or not private information was leaked. It is implemented through a controlled vocabulary (default vocabulary: [SecurityCompromiseVocab-1.0](/data-model/{{site.current_version}}/stixVocabs/SecurityCompromiseVocab-1.0)) with an addition sub-field called `Data Encrypted` indicating whether or not the data that was lost was encrypted. These fields are set to "Yes" and "False" respectively because non-public data was lost and it was not encrypted.
 
-## XML
+## Implementation
 
-{% highlight xml linenos %}
+{% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="affected_assets" %}{% highlight xml linenos %}
 <stix:Incident id="example:incident-081d344b-9fae-d182-9cc7-d2d103e7c64f" xsi:type='incident:IncidentType' timestamp="2014-02-20T09:00:00.000000Z">
     <incident:Title>Exfiltration from hr-data1.example.com</incident:Title>
     <incident:Affected_Assets>
@@ -61,14 +61,7 @@ The `Description of Effect` field in the same `Property Affected` is a simple pr
         </incident:Affected_Asset>
     </incident:Affected_Assets>
 </stix:Incident>
-{% endhighlight %}
-
-[Full XML](incident-with-affected-asset.xml)
-
-## Python
-
-{% include start_tabs.html tabs="Produce|Consume" name="affected_assets" %}{% highlight python linenos %}
-
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 affected_asset = AffectedAsset()
 affected_asset.description = "Database server at hr-data1.example.com"
 affected_asset.type_ = "Database"
@@ -114,7 +107,7 @@ for inc in pkg.incidents:
 {% endhighlight %}{% include end_tabs.html %}
 
 
-[Production Python](incident-with-affected-asset_producer.py) | [Consumption Python](incident-with-affected-asset_consumer.py)
+[Full XML](incident-with-affected-asset.xml) | [Python Producer](incident-with-affected-asset_producer.py) | [Python Consumer](incident-with-affected-asset_consumer.py)
 
 ## Further Reading
 

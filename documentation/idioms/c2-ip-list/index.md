@@ -27,9 +27,9 @@ The infrastructure `Type` is a controlled vocabulary field. In this case the def
 
 The actual IP addresses are represented in CybOX within the `Observable Characterization` field. Because these are instance observables (i.e. instances of IP addresses, not patterns) separate observables are used rather than using the `Apply Condition` field. 3 observables are created, with 3 objects, with 3 properties for [Address Objects](/data-model/{{site.current_version}}/AddressObj/AddressObjectType). Each set of properties includes the `Address Value` field set to the IP address and the `Category` field set to IPV4 address.
 
-## XML
+## Implementation
 
-{% highlight xml linenos %}
+{% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="c2-ip" %}{% highlight xml linenos %}
 <stix:Observables cybox_major_version="1" cybox_minor_version="1">
     <cybox:Observable id="example:observable-c8c32b6e-2ea8-51c4-6446-7f5218072f27">
         <cybox:Object id="example:object-d7fcce87-0e98-4537-81bf-1e7ca9ad3734">
@@ -68,12 +68,7 @@ The actual IP addresses are represented in CybOX within the `Observable Characte
         </ttp:Resources>
     </stix:TTP>
 </stix:TTPs> 
-{% endhighlight %}
-
-[Full XML](command-and-control-ip-list.xml)
-
-## Python
-{% include start_tabs.html tabs="Produce|Consume" name="c2-ip" %}{% highlight python linenos %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 
 stix_package = STIXPackage()
     
@@ -121,7 +116,7 @@ for thing in pkg.ttps:
         print "Observable: " + str(obs.object_.properties)
 {% endhighlight %}{% include end_tabs.html %}  
 
-[Producer Python](command-and-control-ip-list_producer.py)[Consumer Python](command-and-control-ip-list_consumer.py)
+[Full XML](command-and-control-ip-list.xml) | [Python Producer](command-and-control-ip-list_producer.py) | [Python Consumer](command-and-control-ip-list_consumer.py)
 
 ## Further Reading
 

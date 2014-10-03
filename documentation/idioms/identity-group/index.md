@@ -20,9 +20,9 @@ Threat actor identification is, as you would expect, represented using the STIX 
 
 The STIX default extension for identity is [OASIS CIQ](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=ciq) implemented via the [CIQIdentity3.0InstanceType](/data-model/{{site.current_version}}/stix-ciqidentity/CIQIdentity3.0InstanceType). Using this extension point, the threat actor identity is characterized in CIQ within the `Specification` field.
 
-## XML
+## Implementation
 
-{% highlight xml linenos %}
+{% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="identity-group" %}{% highlight xml linenos %}
 <stix:STIX_Package >
  <stix:Threat_Actors>
         <stix:Threat_Actor id="example:threatactor-e4a839d7-a15f-41c8-b81f-7107f8602437" timestamp="2014-09-12T20:14:27.864337+00:00" xsi:type='ta:ThreatActorType' version="1.1.1">
@@ -58,14 +58,7 @@ The STIX default extension for identity is [OASIS CIQ](https://www.oasis-open.or
         </stix:Threat_Actor>
     </stix:Threat_Actors>
 </stix:STIX_Package>
-
-{% endhighlight %}
-
-[Full XML](identifying-a-threat-actor-group.xml)
-
-## Python
-
-{% include start_tabs.html tabs="Produce|Consume" name="identity-group" %}{% highlight python linenos %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 
 stix_package = STIXPackage()
 ta = ThreatActor()
@@ -106,7 +99,7 @@ for actor in pkg.threat_actors:
 
 {% endhighlight %}{% include end_tabs.html %}
 
-[Production Python](identifying-a-threat-actor-group_producer.py)[Consumption Python](identifying-a-threat-actor-group_consumer.py)
+[Full XML](identifying-a-threat-actor-group.xml) | [Python Producer](identifying-a-threat-actor-group_producer.py) | [Python Consumer](identifying-a-threat-actor-group_consumer.py)
 ## Further Reading
 
 * [Threat Actor Component](/data-model/{{site.current_version}}/ta/ThreatActorType)

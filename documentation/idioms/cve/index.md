@@ -24,21 +24,16 @@ The `Vulnerability` field is used to represent the vulnerability itself. This fi
 
 Representing the CVE ID is as easy as filling out the `CVE ID` field with a property-formatted CVE identifier.
 
-## XML
+## Implementation
 
-{% highlight xml linenos %}
+{% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="cve" %}{% highlight xml linenos %}
 <stixCommon:Exploit_Target xsi:type="et:ExploitTargetType" id="example:et-48a276f7-a8d7-bba2-3575-e8a63fcd488" timestamp="2014-02-20T09:00:00.000000Z">
     <et:Title>Javascript vulnerability in MSIE 6-11</et:Title>
     <et:Vulnerability>
         <et:CVE_ID>CVE-2013-3893</et:CVE_ID>
     </et:Vulnerability>
 </stixCommon:Exploit_Target>
-{% endhighlight %}
-
-[Full XML](cve-in-exploit-target.xml)
-
-## Python
-{% include start_tabs.html tabs="Produce|Consume" name="cve" %}{% highlight python linenos %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 
 from stix.core import STIXPackage
 from stix.exploit_target import ExploitTarget, Vulnerability
@@ -59,7 +54,7 @@ for target in pkg.exploit_targets:
         print "CVE: " + vuln.cve_id
 
 {% endhighlight %}{% include end_tabs.html %}
-[Production Python](cve-in-exploit-target_producer.py)[Consumption Python](cve-in-exploit-target_producer.py)
+[Full XML](cve-in-exploit-target.xml) | [Python Producer](cve-in-exploit-target_producer.py) | [Python Consumer](cve-in-exploit-target_producer.py)
 
 ## Further Reading
 

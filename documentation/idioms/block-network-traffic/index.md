@@ -32,9 +32,9 @@ Similarly, the `Cost` field is a [StatementType](/data-model/{{site.current_vers
 
 The `Parameter Observables` field is a set of CybOX [Observables](/data-model/{{site.current_version}}/cybox/ObservablesType) that describe the technical parameters to the course of action. In combination with the `Type` field, these could be used to automatically convert the course of action into something actionable in a security tool. Alternatively, they can simply be displayed in a structured fashion to the end user. In this case, the CybOX [AddressObject](/data-model/{{site.current_version}}/AddressObj/AddressObjectType/) is used to represent the IP address that should be blocked.
 
-## XML
+## Implementation
 
-{% highlight xml linenos %}
+{% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="block-network" %}{% highlight xml linenos %}
 <stix:Course_Of_Action id="example:coa-55f57cc7-ddd5-467b-a3a2-6fd602549d9e" xsi:type="coa:CourseOfActionType" version="1.1">
     <coa:Title>Block traffic to PIVY C2 Server (10.10.10.10)</coa:Title>
     <coa:Stage xsi:type="stixVocabs:COAStageVocab-1.0">Response</coa:Stage>
@@ -65,12 +65,7 @@ The `Parameter Observables` field is a set of CybOX [Observables](/data-model/{{
         <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">High</stixCommon:Value>
     </coa:Efficacy>
 </stix:Course_Of_Action>
-{% endhighlight %}
-
-[Full XML](block-network-traffic.xml)
-
-## Python
-{% include start_tabs.html tabs="Produce|Consume" name="block-network" %}{% highlight python linenos %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 
 pkg = STIXPackage()
 coa = CourseOfAction()
@@ -116,7 +111,7 @@ for coa in pkg.courses_of_action:
 
 {% endhighlight %}{% include end_tabs.html %}
         
-[Producer Python](block-network-traffic_producer.py) [Consumer Python](block-network-traffic_consumer.py)
+[Full XML](block-network-traffic.xml) | [Python Producer](block-network-traffic_producer.py) | [Python Consumer](block-network-traffic_consumer.py)
 
 ## Further Reading
 

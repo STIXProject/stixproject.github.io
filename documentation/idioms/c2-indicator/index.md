@@ -25,9 +25,9 @@ In this case, the "test" portion will be a simple cyber observable for an IP add
 
 In the diagram above, the Indicator component contains the test: a CybOX [Address Object](/data-model/{{site.current_version}}/AddressObj/AddressObjectType/) with an `Address Value` of the IP to check for (10.0.0.0). The `Indicated TTP` then uses a [STIX Relationship](/documentation/concepts/relationships) to link to a TTP that gives context as to why the test is relevant. In this case, that context is that the indicator indicates "C2 Behavior". Note that, besides the TTP, the indicator `Type` field is also used to give the indicator some context.
 
-## XML
+## Implementation
 
-{% highlight xml linenos %}
+{% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="c2-indicator" %}{% highlight xml linenos %}
 <stix:Indicator xsi:type="indicator:IndicatorType" id="example:Indicator-33fe3b22-0201-47cf-85d0-97c02164528d" timestamp="2014-02-20T09:00:00.000000Z">
     <indicator:Title>IP Address for known C2 channel</indicator:Title>
     <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">IP Watchlist</indicator:Type>
@@ -46,13 +46,7 @@ In the diagram above, the Indicator component contains the test: a CybOX [Addres
 <stix:TTP xsi:type="ttp:TTPType" id="example:TTP-bc66360d-a7d1-4d8c-ad1a-ea3a13d62da9" timestamp="2014-02-20T09:00:00.000000Z">
     <ttp:Title>C2 Behavior</ttp:Title>
 </stix:TTP>
-{% endhighlight %}
-
-[Full XML](indicator-for-c2-ip-address.xml)
-
-## Python
-
-{% include start_tabs.html tabs="Produce|Consume" name="c2-indicator" %}{% highlight python linenos %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 
 stix_package = STIXPackage()
 ttp = TTP(title="C2 Behavior")
@@ -85,7 +79,7 @@ for indicator in stix_package.indicators:
 
 {% endhighlight %}{% include end_tabs.html %}
 
-[Producer Python](indicator-for-c2-ip-address_producer.py) | [Consumer Python](indicator-for-c2-ip-address_consumer.py)
+[Full XML](indicator-for-c2-ip-address.xml) | [Python Producer](indicator-for-c2-ip-address_producer.py) | [Python Consumer](indicator-for-c2-ip-address_consumer.py)
 
 ## Further Reading
 

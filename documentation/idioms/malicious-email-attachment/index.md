@@ -45,9 +45,9 @@ The combined indicator essentially takes both data points (e-mail subject and at
 
 The indicated TTP is the same as the previous indicators, while confidence is represented the same but is set to "High" for this combined indicator because a match against both subject and attachment is more likely to be accurate than a match against one or the other.
 
-## XML
+## Implementation
 
-{% highlight xml linenos %}
+{% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="malicious-email" %}{% highlight xml linenos %}
 <stix:Indicators>
     <stix:Indicator id="example:indicator-5cc558cc-b8fc-11e3-9a15-0800271e87d2" timestamp="2014-03-31T13:46:17.895653" xsi:type='indicator:IndicatorType'>
         <indicator:Title>Malicious E-mail</indicator:Title>
@@ -124,12 +124,7 @@ The indicated TTP is the same as the previous indicators, while confidence is re
         <ttp:Title>Phishing</ttp:Title>
     </stix:TTP>
 </stix:TTPs>
-{% endhighlight %}
-
-[Full XML](malicious-email-indicator-with-attachment.xml)
-
-## Python
-{% include start_tabs.html tabs="Produce|Consume" name="malicious-email" %}{% highlight python linenos %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 stix_package = STIXPackage()
 ttp = TTP(title="Phishing")
 stix_package.add_ttp(ttp)
@@ -222,7 +217,7 @@ for ind in pkg.indicators:
 
 {% endhighlight %}{% include end_tabs.html %}
 
-[Production Python](malicious-email-indicator-with-attachment_producer.py)[Consumption Python](malicious-email-indicator-with-attachment_consumer.py)
+[Full XML](malicious-email-indicator-with-attachment.xml) | [Python Producer](malicious-email-indicator-with-attachment_producer.py) | [Python Consumer](malicious-email-indicator-with-attachment_consumer.py)
 
 
 ## Further Reading

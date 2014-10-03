@@ -23,23 +23,23 @@ Historical incidents (breaches) are describing using the [Incident](/data-model/
 
 **WHEN:** Timestamps related to the incident itself are all represented in the `Time` field using [TimeType](data-model/{{site.current_version}}/incident/TimeType/). In this case, only the discovery time is known so the `Incident_Discovery` field is populated with that time. One gotcha with incident timestamps is that time fields related to the incident itself all go in `Time` while timestamps related to the STIX data construct go into `Information_Source/Time`.
 
-## XML
+## Implementation
 
-{% highlight xml linenos  %}
+{% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="simple-incident" %}{% highlight xml linenos  %}
 <stix:STIX_Package 
-	xmlns:cyboxCommon="http://cybox.mitre.org/common-2"
-	xmlns:example="http://example.com"
-	xmlns:incident="http://stix.mitre.org/Incident-1"
-	xmlns:stixCommon="http://stix.mitre.org/common-1"
-	xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1"
-	xmlns:stix="http://stix.mitre.org/stix-1"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="
-	http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd
-	http://stix.mitre.org/Incident-1 http://stix.mitre.org/XMLSchema/incident/1.1.1/incident.xsd
-	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd
-	http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
-	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd" id="example:Package-fba447a0-7c5b-4329-98a3-1324080101d4" version="1.1.1" timestamp="2014-08-28T16:42:52.859307+00:00">
+    xmlns:cyboxCommon="http://cybox.mitre.org/common-2"
+    xmlns:example="http://example.com"
+    xmlns:incident="http://stix.mitre.org/Incident-1"
+    xmlns:stixCommon="http://stix.mitre.org/common-1"
+    xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1"
+    xmlns:stix="http://stix.mitre.org/stix-1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+    http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd
+    http://stix.mitre.org/Incident-1 http://stix.mitre.org/XMLSchema/incident/1.1.1/incident.xsd
+    http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd
+    http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
+    http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd" id="example:Package-fba447a0-7c5b-4329-98a3-1324080101d4" version="1.1.1" timestamp="2014-08-28T16:42:52.859307+00:00">
     <stix:STIX_Header>
         <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Incident</stix:Package_Intent>
         <stix:Description>Sample breach report</stix:Description>
@@ -74,14 +74,7 @@ Historical incidents (breaches) are describing using the [Incident](/data-model/
         </stix:Incident>
     </stix:Incidents>
 </stix:STIX_Package>
-
-
-{% endhighlight %}
-
-[Full XML](sample.xml)
-
-## Python
-{% include start_tabs.html tabs="Produce|Consume" name="simple-incident" %}{% highlight python linenos %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 # setup stix document
 stix_package = STIXPackage()
 stix_header = STIXHeader()
@@ -140,7 +133,7 @@ for inc in pkg.incidents:
         print "Victim: "+ str(victim.name)
 {% endhighlight %}{% include end_tabs.html %}
 
-[Production Python](simple-incident_producer.py) | [Consumption Python](simple-incident_consumer.py) 
+[Full XML](sample.xml) | [Python Producer](simple-incident_producer.py) | [Python Consumer](simple-incident_consumer.py) 
 
 ## Further Reading
 

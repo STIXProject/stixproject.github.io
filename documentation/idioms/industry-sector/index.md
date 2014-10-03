@@ -28,9 +28,9 @@ Within CIQ, the specific field used is `@IndustryType` within `OrganisationInfo`
 
 ![TTP Targeting Sector Diagram](diagram.png)
 
-## XML
+## Implementation
 
-{% highlight xml linenos %}
+{% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="industry-sector" %}{% highlight xml linenos %}
 <stix:TTPs>
     <stix:TTP timestamp="2014-02-20T09:00:00.000000Z" id="example:ttp-030d3edf-da7c-4d1f-a0b9-6c38a8af73db" xsi:type="ttp:TTPType">
         <ttp:Title>Victim Targeting: Electricity Sector and Industrial Control System Sector</ttp:Title>
@@ -43,12 +43,7 @@ Within CIQ, the specific field used is `@IndustryType` within `OrganisationInfo`
         </ttp:Victim_Targeting>
     </stix:TTP>
 </stix:TTPs>
-{% endhighlight %}
-
-[Full XML](victim-targeting-sector.xml)
-
-## Python
-{% include start_tabs.html tabs="Produce|Consume" name="industry-sector" %}{% highlight python linenos %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 
 ciq_identity = CIQIdentity3_0Instance()
 identity_spec = STIXCIQIdentity3_0()
@@ -69,7 +64,7 @@ for thing in pkg.ttps:
     print "Victim: "+ str(thing.victim_targeting.identity.specification.organisation_info.industry_type)
 {% endhighlight %}{% include end_tabs.html %}
 
-[Production Python](victim-targeting-sector_producer.py) | [Consumption Python](victim-targeting-sector_consumer.py)
+[Full XML](victim-targeting-sector.xml) | [Python Producer](victim-targeting-sector_producer.py) | [Python Consumer](victim-targeting-sector_consumer.py)
 
 ## Further Reading
 
