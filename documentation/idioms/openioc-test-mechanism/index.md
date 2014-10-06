@@ -68,7 +68,7 @@ Notice in both the production code and the consumption code that the OpenIOC its
 <div class="tab-content">
   <div class="tab-pane active" id="produce">
 {% highlight python linenos %}
-ioc = etree.parse('6d2a1b03-b216-4cd8-9a9e-8827af6ebf93.ioc.xml')
+ioc = etree.parse('6d2a1b03-b216-4cd8-9a9e-8827af6ebf93.ioc')
 
 indicator = Indicator(title="Zeus", description="Finds Zeus variants, twexts, sdra64, ntos")
 
