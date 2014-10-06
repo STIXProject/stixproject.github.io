@@ -20,9 +20,9 @@ Because this indicator doesn't include any context (see scenario above), the ind
 
 
 
-## XML
+## Implementation
 
-{% highlight xml linenos %}
+{% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="malicious-url" %}{% highlight xml linenos %}
 <stix:Indicator id="example:Indicator-d81f86b9-975b-bc0b-775e-810c5ad45a4f" xsi:type='indicator:IndicatorType'>
     <indicator:Title>Malicious site hosting downloader</indicator:Title>
     <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.0">URL Watchlist</indicator:Type>
@@ -34,16 +34,7 @@ Because this indicator doesn't include any context (see scenario above), the ind
         </cybox:Object>
     </indicator:Observable>
 </stix:Indicator>
-{% endhighlight %}
-
-[Full XML](indicator-for-malicious-url.xml)
-
-## Python
-
-{% highlight python linenos %}
-from stix.core import STIXPackage
-from stix.indicator import Indicator
-from cybox.objects.uri_object import URI
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 
 indicator = Indicator()
 indicator.id_ = "example:package-382ded87-52c9-4644-bab0-ad3168cbad50"
@@ -57,9 +48,24 @@ url.condition = "Equals"
     
 indicator.add_observable(url)
 print indicator.to_xml()
-{% endhighlight %}
 
-[Full Python](indicator-for-malicious-url.py)
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
+
+print "== MALWARE =="
+for ind in pkg.indicators:
+    print "---"
+    print "Title : " + ind.title
+    print "ID : " + ind.id_
+    for ind_type in ind.indicator_types:
+        print "Type: " + str(ind_type)
+
+    for obs in ind.observables:
+        print "URL : " + str(obs.object_.properties.value)
+
+{% endhighlight %}{% include end_tabs.html %}
+
+[Full XML](indicator-for-malicious-url.xml) | [Python Producer](indicator-for-malicious-url_producer.py) | [Python Consumer](indicator-for-malicious-url_consumer.py)
+
 
 ## Further Reading
 

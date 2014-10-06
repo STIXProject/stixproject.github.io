@@ -3,7 +3,7 @@ layout: flat
 title: COA to Block Network Traffic
 constructs:
   - Course of Action
-summary: One response to malware activity on a network is to block the malware's command and control server traffic at an external firewall. This idiom describes a course of action to implement such a block.
+summary: One response to malware activity on a network is to block command and control server traffic at an external firewall. This idiom describes a course of action to implement such a block.
 ---
 
 One potential course of action in response to an attack is to block network traffic associated with that attack. This idiom describes how that course of action can be represented in STIX.
@@ -32,9 +32,9 @@ Similarly, the `Cost` field is a [StatementType](/data-model/{{site.current_vers
 
 The `Parameter Observables` field is a set of CybOX [Observables](/data-model/{{site.current_version}}/cybox/ObservablesType) that describe the technical parameters to the course of action. In combination with the `Type` field, these could be used to automatically convert the course of action into something actionable in a security tool. Alternatively, they can simply be displayed in a structured fashion to the end user. In this case, the CybOX [AddressObject](/data-model/{{site.current_version}}/AddressObj/AddressObjectType/) is used to represent the IP address that should be blocked.
 
-## XML
+## Implementation
 
-{% highlight xml linenos %}
+{% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="block-network" %}{% highlight xml linenos %}
 <stix:Course_Of_Action id="example:coa-55f57cc7-ddd5-467b-a3a2-6fd602549d9e" xsi:type="coa:CourseOfActionType" version="1.1">
     <coa:Title>Block traffic to PIVY C2 Server (10.10.10.10)</coa:Title>
     <coa:Stage xsi:type="stixVocabs:COAStageVocab-1.0">Response</coa:Stage>
@@ -65,18 +65,7 @@ The `Parameter Observables` field is a set of CybOX [Observables](/data-model/{{
         <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">High</stixCommon:Value>
     </coa:Efficacy>
 </stix:Course_Of_Action>
-{% endhighlight %}
-
-[Full XML](block-network-traffic.xml)
-
-## Python
-
-{% highlight python linenos %}
-from stix.coa import CourseOfAction, Objective
-from stix.common import Confidence
-from stix.core import STIXPackage
-from cybox.core import Observables
-from cybox.objects.address_object import Address
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 
 pkg = STIXPackage()
 coa = CourseOfAction()
@@ -100,9 +89,29 @@ coa.parameter_observables=Observables(addr)
 pkg.add_course_of_action(coa)
 
 print pkg.to_xml()
-{% endhighlight %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
+print "== COA =="
+for coa in pkg.courses_of_action:
+    print "---"
+    print "COA: " + coa.title
+    print "Stage: "+ str(coa.stage)
+    print "Type: "+ str(coa.type_)
+    for obs in coa.parameter_observables.observables:
+        print "Observable: " + str(obs.object_.properties.address_value)
+    
+    print "---"
+    print "Objective: "+ str(coa.objective.description)
+    print "Confidence: "+ str(coa.objective.applicability_confidence.value)
+    print "---"
+    print "Impact: "+ str(coa.impact.value)
+    print "Description: "+ str(coa.impact.description)
+    print "---"
+    print "Cost: "+ str(coa.cost.value)
+    print "Efficacy: "+ str(coa.efficacy.value)
 
-[Full Python](block-network-traffic.py)
+{% endhighlight %}{% include end_tabs.html %}
+        
+[Full XML](block-network-traffic.xml) | [Python Producer](block-network-traffic_producer.py) | [Python Consumer](block-network-traffic_consumer.py)
 
 ## Further Reading
 

@@ -35,9 +35,9 @@ Finally, the `Observed TTP` list inside the threat actor is used to relate the t
 
 Taken together, the three constructs represent the threat actor and the known malware/attack patterns leveraged by that actor.
 
-## XML
+## Implementation
 
-{% highlight xml linenos %}
+{% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="leveraged-ttp" %}{% highlight xml linenos %}
     <stix:TTPs>
         <stix:TTP id="example:ttp-8ac90ff3-ecf8-4835-95b8-6aea6a623df5" xsi:type='ttp:TTPType' version="1.1">
             <ttp:Title>Phishing</ttp:Title>
@@ -79,20 +79,7 @@ Taken together, the three constructs represent the threat actor and the known ma
             </ta:Observed_TTPs>
         </stix:Threat_Actor>
     </stix:Threat_Actors>
-{% endhighlight %}
-
-[Full XML](threat-actor-leveraging-attack-patterns-and-malware.xml)
-
-## Python
-
-{% highlight python linenos %}
-from stix.core import STIXPackage
-from stix.threat_actor import ThreatActor
-from stix.indicator import Indicator
-from stix.common import Identity
-from stix.common.related import RelatedTTP
-from stix.ttp import TTP, Behavior
-from stix.ttp.behavior import MalwareInstance, AttackPattern
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 
 stix_package = STIXPackage()
 ttp_phishing = TTP(title="Phishing")
@@ -126,9 +113,41 @@ stix_package.add_ttp(ttp_pivy)
 stix_package.add_threat_actor(ta_bravo)
 
 print stix_package.to_xml()
-{% endhighlight %}
 
-[Full Python](threat-actor-leveraging-attack-patterns-and-malware.py)
+
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
+
+
+ttp_list = {}
+for tactic in pkg.ttps:
+    ttp_list[tactic.id_] = tactic.title
+
+print "== MALWARE =="    
+for tactic in pkg.ttps:
+    print "---"
+    print "Title : " + tactic.title
+    for behave in tactic.behavior.attack_patterns:
+
+        print "CAPEC: " + str(behave.capec_id)
+        print "Description: " + str(behave.description)
+        
+    for sample in tactic.behavior.malware_instances:
+
+        print "Sample: " + str(sample.names[0]) 
+        print "Type: " + str(sample.types[0])
+        
+print "== ACTOR =="
+for actor in pkg.threat_actors:
+    for obs in actor.observed_ttps:
+        print "RelatedTTP: " + str(ttp_list[obs.item.idref])
+        print "Relationship: " + str(obs.relationship)
+    print "Title: " + str(actor.title)
+    print "Name: " + str(actor.identity.name)
+
+
+{% endhighlight %}{% include end_tabs.html %}
+
+[Full XML](threat-actor-leveraging-attack-patterns-and-malware.xml) | [Python Producer](threat-actor-leveraging-attack-patterns-and-malware_producer.py) | [Python Consumer](threat-actor-leveraging-attack-patterns-and-malware_consumer.py)
 
 ## Further Reading
 
