@@ -26,8 +26,7 @@ Because this was done as a minor release, however, the previous capability remai
 
 {% include start_tabs.html tabs="Diagram|XML|Production Python|Consumption Python" name="old" %}
   <img src="old-style.png" alt="Old Style" />
-{% include tab_separator.html %}
-{% highlight xml linenos %}
+{% include tab_separator.html %}{% highlight xml linenos %}
 <stix:Indicators>
     <stix:Indicator id="example:indicator-c43a0a05-e8d2-4f64-ae37-3f3fb153f8d9" timestamp="2014-09-09T19:58:39.608000+00:00" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
         <indicator:Title>IP Address for known C2 Channel</indicator:Title>
@@ -43,7 +42,7 @@ Because this was done as a minor release, however, the previous capability remai
 </stix:Indicators>
 <stix:Campaigns>
     <stix:Campaign id="example:Campaign-b549a58c-afd9-4847-85c3-5be13d56d3cc" timestamp="2014-09-09T19:58:39.609000+00:00" xsi:type='campaign:CampaignType' version="1.1.1">
-        <campaign:Title>Operation Omega</campaign:Title>
+      <campaign:Title>Operation Omega</campaign:Title>
         <campaign:Related_Indicators>
             <campaign:Related_Indicator>
                 <stixCommon:Indicator idref="example:indicator-c43a0a05-e8d2-4f64-ae37-3f3fb153f8d9" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1"/>
@@ -51,9 +50,7 @@ Because this was done as a minor release, however, the previous capability remai
         </campaign:Related_Indicators>
     </stix:Campaign>
 </stix:Campaigns>
-{% endhighlight %}
-{% include tab_separator.html %}
-{% highlight python linenos %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 package = STIXPackage()
 
 # Create the indicator
@@ -85,16 +82,17 @@ for campaign in pkg.campaigns:
   # And list relationships to indicators
   for indicator in campaign.related_indicators:
     print "  - Related To: " + indicators[indicator.item.idref].title
-{% endhighlight %}
-{% include end_tabs.html %}
+{% endhighlight %}{% include end_tabs.html %}
 
-## New Style (Indicator => Campaign)
+<h2>New Style (Indicator => Campaign)</h2>
 
-The new structure is similar to the old one, with two exceptions:
-1. It goes in the other direction, so indicators point to campaigns rather than the other way around
-2. It only allows for references (via @idref) to campaigns.
+<p>The new structure is similar to the old one, with two exceptions:</p>
+<ol>
+  <li>It goes in the other direction, so indicators point to campaigns rather than the other way around.</li>
+  <li>It only allows for references (via @idref) to campaigns.</li>
+</ol>
 
-This new approach is encouraged for all versions of STIX in which it is valid (1.1 and beyond).
+<p>This new approach is encouraged for all versions of STIX in which it is valid (1.1 and beyond).</p>
 
 {% capture alert_text %}
 **Warning!** The current version of python-stix (v1.1.1.1) does not support this structure. This is tracked via issue [#192](https://github.com/STIXProject/python-stix/issues/192)

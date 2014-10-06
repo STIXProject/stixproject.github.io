@@ -1,6 +1,7 @@
 ---
 layout: flat
 title: Suggested Practices
+toc: sp_toc.html
 ---
 
 This page contains suggested practices (sometimes called best practices) for producing and consuming STIX content. Following these practices will ensure the best conformance with the design goals of STIX and the best compatibility with other STIX tools. These are not requirements, however: in some cases, technical or business requirements will mean you can't comply with them and that's fine. Think of them as "do it this way unless you have a good reason not to".
@@ -66,19 +67,42 @@ For these reasons, it is suggested that IDs be specified for the following commo
 As a simple general rule specifying IDs is not suggested for constructs embedded within other constructs (e.g. a CybOX Object containing the embedded specification of another CybOX Related_Object) where the embedded constructs are really only relevant/valid/important within the context of the enclosing construct. In other words they provide contextual characterization for the enclosing construct but would not be of interest on their own. 
 The upside of this is slightly less complexity of IDs on everything. The downside is that it would not be possible to reference or pivot on the embedded constructs.
 
-### Title, Description, and Short_Description
+### Titles and Descriptions
 
 The top-level STIX components as well as other important constructs ([VulnerabilityType](/data-model/{{site.current_version}}/et/VulnerabilityType/), for example) each have fields for Title, Description, and Short_Description:
 
-* The `Title` field is recommended for all constructs and should be short enough that a consumer can use it in a heading.
-* The `Description` field is the primary description field and should be used rather than `Short_Description` if only one set of descriptive text is given. Any length of text is fine and this field supports optional formatting via the `@structuring_format` field.
+* The `Title` field is recommended for all constructs and should be short enough that a consumer can use it as or in a heading.
+* The `Description` field is the primary descriptive field. Any length of text is fine and this field supports optional formatting via the `@structuring_format` field.
 * The `Short_Description` field is the secondary description and should only be used if the `Description` field is already populated and another, shorter, description is available.
 
-The intent of the `Short_Description` field is to serve as an *additional* short description. Consumers should not have to guess whether the primary description is contained in `Description` or `Short_Description` and so producers should always populate `Description` first before populating `Short_Description`.
+The intent of the `Short_Description` field is to contain an abbreviated version of the content in the `Description` field when such abbreviated content is available. Consumers should not have to guess whether the primary description is contained in `Description` or `Short_Description` and so producers should always populate `Description` first before populating `Short_Description`.
 
-Also note that some types have additional name fields beyond `Title`. For example, [MalwareInstanceType](/data-model/{{site.current_version}}/ttp/MalwareInstanceType/) has a `Name` field and [CampaignType](/data-model/{{site.current_version}}/campaign/CampaignType/) has a list of `Names`. These fields are more formal names/titles for the objects being described (vs. the generic STIX title concept) and can be used in conjunction with a title: often, the `Title` field can simply be populated with either the single `Name` or with the primary `Name`. There may also be edge cases where the STIX construct should be named differently than the object it's describing but these should be relatively rare.
+Also note that some types have additional name fields beyond `Title`. For example, [MalwareInstanceType](/data-model/{{site.current_version}}/ttp/MalwareInstanceType/) has a `Name` field and [CampaignType](/data-model/{{site.current_version}}/campaign/CampaignType/) has a list of `Names`. Though similar, these fields have slightly different purposes: the `Title` field is used to give a title to the STIX construct while the `Name` field is used to give the name of the thing that the STIX construct describes. The easiest way to see the differences is via an example:
 
-### Referencing vs. Embedding
+Scenario | Title | Name
+-------|-------|-------
+Representing the general concept of SpyEye | TTP Title = "SpyEye" | Malware Name = "SpyEye"
+Representing a specific analysis of the SpyEye Malware | TTP Title = "Analysis of SpyEye Performed with Cuckoo" | Malware Name = "SpyEye"
+
+In the first example the STIX TTP is representing the general concept of SpyEye and therefore the TTP Title and Malware Name are the same. There's no more specific context that the STIX TTP conveys beyond the malware and therefore duplicating the name is perfectly fine. This probably covers the majority of cases.
+
+In the second example a specific analysis of SpyEye and therefore the TTP Title is more specific than just SpyEye. In cases like this where the STIX construct conveys a more particular analysis, viewpoint, or characterization of the general concept then it's appropriate to give it a more specific title indicating that.
+
+### Information Source
+
+[InformationSourceType](/data-model/{{site.current_version}}/stixCommon/InformationSourceType) is used to describe the who, what, and when of the production of the information in the containing construct. Among other things it's used to describe who produced the information, when it was produced, what tools were used to produce it and what it was derived from.
+
+Information source is applied at several layers of the data model and at each of these layers it applies to that content and all content nested inside of it except when overriden (see below) by a more localized source. For example:
+
+* At `STIX_Header`, it applies to the package/report itself as well as individually to all constructs.
+* At a construct level, such as an `Indicator`, it applies to the construct itself (always overriding any `Information_Source` set at the package level) and individually to any contained relationships or statements.
+* At the [statement](/data-model/{{site.current_version}}/stixCommon/StatementType/) or [relationship](/data-model/{{site.current_version}}/stixCommon/GenericRelationshipType/) level (or anywhere else it appears) it applies individually to that construct and overrides the source set at the construct or package level.
+
+For the purposes of Information Source override means "completely replaces".
+
+Note that on [Indicator](/data-model/{{site.current_version}}/indicator/IndicatorType/) the information source field is called `Producer`. On [Observable](/data-model/{{site.current_version}}/cybox/ObservableType/), it's called `Observable_Source` and uses the semantics and structure of the CybOX [MeasureSourceType](/data-model/{{site.current_version}}/cyboxCommon/MeasureSourceType/).
+
+### Referencing vs Embedding
 
 In many cases, you'll have an option to either include a component within the parent component or to reference the component by ID to a representation in a global location.
 
@@ -108,7 +132,7 @@ The other alternative is to reference that TTP, which would be represented elsew
 
 These situations are a judgment call, but when making that judgment you should consider whether the related construct has value individually or only within the context of the parent? If it only has value in the parent, embedding it may be appropriate. Otherwise it's probably better to reference it. If you're unsure, it's generally safer to reference it.
 
-### Versioning and the timestamp attribute
+### Versioning
 
 8 major STIX constructs are versioned:
 
