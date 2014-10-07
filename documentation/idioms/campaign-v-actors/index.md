@@ -31,7 +31,8 @@ In this case, a `Campaign` has an identified `ThreatActor` and constrained victi
 The example below shows a VERY simple initial `Campaign` defined to correlate a specific set of activity (three referenced `Incidents`) with a particular victim targeting profile believed to be carried out by the same unknown actor (characterized initially by a placeholder `Threat Actor` entry). 
 
 ## XML
-{% highlight xml linenos %}
+
+{% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="campaign" %}{% highlight xml linenos %}
 <stix:Campaign id="example:Campaign-e5268b6e-4931-42f1-b379-87f48eb41b1e" timestamp="2014-08-08T15:50:10.983728+00:00" 
         xsi:type='campaign:CampaignType' version="1.1.1">
     <campaign:Title>Compromise of ATM Machines</campaign:Title>
@@ -73,7 +74,7 @@ The example below shows a VERY simple initial `Campaign` defined to correlate a 
 
 ## Python
 
-{% highlight python linenos %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 #!/usr/bin/env python
 # Copyright (c) 2014, The MITRE Corporation. All rights reserved.
 # See LICENSE.txt for complete terms.
@@ -117,10 +118,14 @@ def main():
 
 if __name__ == '__main__':
     main()
+    
 
-{% endhighlight %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
+TODO consumer python c/p here w/o imports and main
 
-[Full Python](campaign-v-actors.py)
+{% endhighlight %}{% include end_tabs.html %}
+[Full XML](campaign-v-actors.xml) | [Python Producer](campaign-v-actors_producer.py) | [Python Consumer](campaign-v-actors_consumer.py)
+
 
 ## Further Reading
 
