@@ -14,7 +14,7 @@ Many threat intel feeds that are available today and not already formatted as ST
 
 ## Background
 
-In STIX, an [Indicator](/data-model/{{site.current_version}}/indicator/IndicatorType) is used to represent detection guidance: it captures how to detect something (i.e. a pattern of what to look for) and what it means if you find it. For example, "If you see 192.168.1.1 in your network traffic it means you might have detected C2 traffic from a ZeuS trojan."
+In STIX, an [Indicator](/data-model/{{site.current_version}}/indicator/IndicatorType) represents data that can be used to detect malicious activity.  For example, "If you see 192.168.1.1 in your network traffic it means you might have detected C2 traffic from a ZeuS trojan." The IP address itself would be the `instance` of an Indicator, while its `pattern` describes how to match it.
 
 An [Incident](/data-model/{{site.current_version}}/incident/IncidentType), on the other hand, captures information about something that already happened. As an example, "I saw 192.168.1.1 in my network traffic and here's how it affected me".
 
@@ -48,7 +48,7 @@ IP Address|First Seen|Bot Name
 
 ### As Indicators
 
-One option in converting this data to STIX is to convert it to indicators: the **IP address** is the CybOX `Observable` pattern, the **First Seen** time goes into a `Sighting` (which can be ignored if this information is unimportant), and the **Bot Name** is the `Indicated_TTP`. This indicates that you should look for the given IP addresses in your own network traffic and, if you see it, it indicates a potential bot infection.
+If creating a standalone Indicator, create aCybOX `Observable` pattern for the  **IP address** with  **Bot Name** as the `Indicated_TTP`. A successful match on an Indicator in security logs [can optionally be captured as a Sighting](/data-model/{{site.current_version}}/indicator/SightingType/) and includes other fields such as  **First Seen ** time.
 
 {% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="indicator" %}{% highlight xml linenos %}
 <stix:Indicators>
@@ -114,6 +114,8 @@ for indicator in stix_package.indicators:
 
 print data
 {% endhighlight %}{% include end_tabs.html %}
+
+[Full XML](sample-indicators.xml) | [Python Producer](indicator-producer.py) | [Python Consumer](indicator-consumer.py)
 
 ### As Incidents
 
@@ -211,6 +213,8 @@ for incident in stix_package.incidents:
 
 print data
 {% endhighlight %}{% include end_tabs.html %}
+
+[Full XML](sample-incidents.xml) | [Python Producer](incident-producer.py) | [Python Consumer](incident-consumer.py)
 
 ### Both Indicators and Incidents
 
@@ -348,6 +352,8 @@ for incident in stix_package.incidents:
 
 print data
 {% endhighlight %}{% include end_tabs.html %}
+
+[Full XML](sample-combined.xml) | [Python Producer](combined-producer.py) | [Python Consumer](combined-consumer.py)
 
 ## Summary
 
