@@ -30,8 +30,9 @@ In this case, a `Campaign` has an identified `ThreatActor` and constrained victi
 
 The example below shows a VERY simple initial `Campaign` defined to correlate a specific set of activity (three referenced `Incidents`) with a particular victim targeting profile believed to be carried out by the same unknown actor (characterized initially by a placeholder `Threat Actor` entry). 
 
-## XML
-{% highlight xml linenos %}
+## Implementation
+
+{% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="campaign" %}{% highlight xml linenos %}
 <stix:Campaign id="example:Campaign-e5268b6e-4931-42f1-b379-87f48eb41b1e" timestamp="2014-08-08T15:50:10.983728+00:00" 
         xsi:type='campaign:CampaignType' version="1.1.1">
     <campaign:Title>Compromise of ATM Machines</campaign:Title>
@@ -66,61 +67,53 @@ The example below shows a VERY simple initial `Campaign` defined to correlate a 
         </campaign:Attributed_Threat_Actor>
     </campaign:Attribution>
 </stix:Campaign>
-{% endhighlight %}
 
 
-[Full XML](campaign-v-actors.xml)
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
+ttp = TTP()
+ttp.title = "Victim Targeting: Customer PII and Financial Data"
+ttp.victim_targeting = VictimTargeting()
+ttp.victim_targeting.add_targeted_information("Information Assets - Financial Data")
 
-## Python
+actor = ThreatActor()
+actor.title = "People behind the intrusion"
+attrib = Attribution()
+attrib.append(actor)
 
-{% highlight python linenos %}
-#!/usr/bin/env python
-# Copyright (c) 2014, The MITRE Corporation. All rights reserved.
-# See LICENSE.txt for complete terms.
+c = Campaign()
+c.attribution = []
+c.attribution.append(attrib)
+c.title = "Compromise of ATM Machines"
+c.related_ttps.append(ttp)
 
-'''
-The following code requires python-stix v1.1.1.1 or greater installed.
-For installation instructions, please refer to https://stix.readthedocs.org.
-'''
+c.related_incidents.append(Incident(idref="example:incident-229ab6ba-0eb2-415b-bdf2-079e6b42f51e"))
+c.related_incidents.append(Incident(idref="example:incident-517cf274-038d-4ed4-a3ec-3ac18ad9db8a"))
+c.related_incidents.append(Incident(idref="example:incident-7d8cf96f-91cb-42d0-a1e0-bfa38ea08621"))
 
-def main():
-    from stix.campaign import Campaign, Attribution
-    from stix.threat_actor import ThreatActor
-    from stix.incident import Incident
-    from stix.core import STIXPackage
-    from stix.ttp import TTP, VictimTargeting
+pkg = STIXPackage()
+pkg.add_campaign(c)
 
-    ttp = TTP()
-    ttp.title = "Victim Targeting: Customer PII and Financial Data"
-    ttp.victim_targeting = VictimTargeting()
-    ttp.victim_targeting.add_targeted_information("Information Assets - Financial Data")
+print pkg.to_xml()
 
-    actor = ThreatActor()
-    actor.title = "People behind the intrusion"
-    attrib = Attribution()
-    attrib.append(actor)
 
-    c = Campaign()
-    c.attribution = []
-    c.attribution.append(attrib)
-    c.title = "Compromise of ATM Machines"
-    c.related_ttps.append(ttp)
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 
-    c.related_incidents.append(Incident(idref="example:incident-229ab6ba-0eb2-415b-bdf2-079e6b42f51e"))
-    c.related_incidents.append(Incident(idref="example:incident-517cf274-038d-4ed4-a3ec-3ac18ad9db8a"))
-    c.related_incidents.append(Incident(idref="example:incident-7d8cf96f-91cb-42d0-a1e0-bfa38ea08621"))
+for camp in pkg.campaigns:
+    print "== CAMPAIGN =="
+    print "Campaign Name: " + str(camp.title)
+    
+    for tactic in camp.related_ttps:
+        print "TTP: " + tactic.item.title
+        
+    for attrib in camp.attribution:
+        print "Actor: " + attrib[0].item.title
+    
+    for rel in camp.related_incidents:
+        print "Related Incident ID: " + str(rel.item.idref)
 
-    pkg = STIXPackage()
-    pkg.add_campaign(c)
+{% endhighlight %}{% include end_tabs.html %}
+[Full XML](campaign-v-actors.xml) | [Python Producer](campaign-v-actors_producer.py) | [Python Consumer](campaign-v-actors_consumer.py)
 
-    print pkg.to_xml()
-
-if __name__ == '__main__':
-    main()
-
-{% endhighlight %}
-
-[Full Python](campaign-v-actors.py)
 
 ## Further Reading
 

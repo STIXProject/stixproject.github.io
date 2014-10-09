@@ -54,7 +54,7 @@ for target in pkg.exploit_targets:
         print "CVE: " + vuln.cve_id
 
 {% endhighlight %}{% include end_tabs.html %}
-[Full XML](cve-in-exploit-target.xml) | [Python Producer](cve-in-exploit-target_producer.py) | [Python Consumer](cve-in-exploit-target_producer.py)
+[Full XML](cve-in-exploit-target.xml) | [Python Producer](cve-in-exploit-target_producer.py) | [Python Consumer](cve-in-exploit-target_consumer.py)
 
 ## Further Reading
 
