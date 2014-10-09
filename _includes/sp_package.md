@@ -1,8 +1,3 @@
-You should always include a STIX_Header whenever possible to communicate the source, intent, and other metadata about the package. 
+It is *strongly* suggested to include the content version of the STIX Package using the `@version` attribute (i.e. {{site.current_version}} )
 
-The following are *strongly* suggested:
-
-* Title
-* Version
-* Package_Intent
-* Information_Source
+We also suggest including a  `Title` , `Package_Intent` and `Information_Source` elements in the STIX Header.
