@@ -18,7 +18,7 @@ In addition, Lockheed Martin has published a version of their "kill chain" conce
 Since this model is so popular, there are a static set of ID values used to refer to it - defined at creation time.
 
 ## Data model
-Kill chains are captured under the [TTP object](https://stixproject.github.io/data-model/{{site.current_version}}/ttp/TTPType/) and contain a [number of phases[(https://stixproject.github.io/data-model/{{site.current_version}}/stixCommon/KillChainPhaseType/)
+Kill chains are captured under the [TTP object](https://stixproject.github.io/data-model/{{site.current_version}}/ttp/TTPType/) and contain a [number of phases](https://stixproject.github.io/data-model/{{site.current_version}}/stixCommon/KillChainPhaseType/)
 
 ## Implementation
 
