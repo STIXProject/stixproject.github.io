@@ -26,11 +26,20 @@ def main():
     control = KillChainPhase(phase_id="stix:TTP-d6dc32b9-2538-4951-8733-3cb9ef1daae2", name="Command and Control", ordinality="6")
     action = KillChainPhase(phase_id="stix:TTP-786ca8f9-2d9a-4213-b38e-399af4a2e5d6", name="Actions on Objectives", ordinality="7")
     
-    chain = KillChain(id_="stix:TTP-af3e707f-2fb9-49e5-8c37-14026ca0a5ff", name="LM Cyber Kill Chain")
-    chain.definer = "LMCO"
+    lmchain = KillChain(id_="stix:TTP-af3e707f-2fb9-49e5-8c37-14026ca0a5ff", name="LM Cyber Kill Chain")
+    lmchain.definer = "LMCO"
 
-    chain.kill_chain_phases = [recon,weapon,deliver,exploit,install,control,action]
-    stix_pkg.ttps.kill_chains.append(chain)
+    lmchain.kill_chain_phases = [recon,weapon,deliver,exploit,install,control,action]
+    stix_pkg.ttps.kill_chains.append(lmchain)
+
+    infect = KillChainPhase(name="Infect Machine")
+    exfil = KillChainPhase(name="Exfiltrate Data")
+    
+    mychain = KillChain(name="Organization-specific Kill Chain")
+    mychain.definer = "Myself"
+
+    mychain.kill_chain_phases = [infect, exfil]
+    stix_pkg.ttps.kill_chains.append(mychain)
 
     print stix_pkg.to_xml() 
 

@@ -3,23 +3,37 @@ layout: flat
 title: Defining a Kill Chain
 constructs:
   - TTP
-summary: Learn how to represent the phases of an intrusion in a chain of actions.
+summary: Learn how to represent the phases of an intrusion as a chain of actions.
 ---
 
 ## Scenario
-Network intrusions can be seen as a series of actions taken in sequence, each relying on the success of the last. These can be seen as stages of the intrusion - starting with initial reconaissance and ending in compromise of sensitive data.
-These concepts are useful in coordinating defensive measures and defining malicious actors in how they perform intrusions.
-For instance, a financially motivated intruder may appear similar to an espionage-motivated one, until the final stage where they execute actions to steal their preferred type of information from the target. 
-Lockheed Martin published a version of their "kill chain" concept which became the de facto standard for this purpose.
+Network intrusions can be seen as a series of actions taken in sequence, each relying on the success of the last. Stages of the intrusion progress linearly - starting with initial reconaissance and ending in compromise of sensitive data.
+These concepts are useful in coordinating defensive measures and defining the behavior of malicious actors.
+For instance, the behavior of a financially motivated intruder may appear similar to an espionage-motivated one until the final stage where they execute actions to steal their preferred type of information from the target. 
+
+Users may define their own kill chain using the builtin STIX `KillChain` element, with any number of phases. These can be unordered or follow each other using the `ordinality` attribute.
+Our example below defines a two-phase model and allows ID values to be set automatically.
+
+In addition, Lockheed Martin has published a version of their "kill chain" concept which became the de facto standard for this purpose.
+Since this model is so popular, there are a static set of ID values used to refer to it - defined at creation time.
 
 ## Data model
 Kill chains are captured under the [TTP object](https://stixproject.github.io/data-model/{{site.current_version}}/ttp/TTPType/) and contain a [number of phases[(https://stixproject.github.io/data-model/{{site.current_version}}/stixCommon/KillChainPhaseType/)
 
 ## Implementation
 
-{% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="identity-group" %}{% highlight xml linenos %}
-<stix:STIX_Package >
-	<stix:STIX_Header>
+{% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="kill-chain" %}{% highlight xml linenos %}
+<stix:STIX_Package 
+	xmlns:example="http://example.com"
+	xmlns:stixCommon="http://stix.mitre.org/common-1"
+	xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1"
+	xmlns:stix="http://stix.mitre.org/stix-1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd
+	http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
+	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd" id="example:Package-031f336e-165a-4560-8d13-08f5fe68fee0" version="1.1.1" timestamp="2014-10-09T16:46:29.109109+00:00">
+    <stix:STIX_Header>
         <stix:Title>Kill Chain Definition</stix:Title>
     </stix:STIX_Header>
     <stix:TTPs>
@@ -33,9 +47,14 @@ Kill chains are captured under the [TTP object](https://stixproject.github.io/da
                 <stixCommon:Kill_Chain_Phase ordinality="6" name="Command and Control" phase_id="stix:TTP-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/>
                 <stixCommon:Kill_Chain_Phase ordinality="7" name="Actions on Objectives" phase_id="stix:TTP-786ca8f9-2d9a-4213-b38e-399af4a2e5d6"/>
             </stixCommon:Kill_Chain>
+            <stixCommon:Kill_Chain id="example:killchain-3c868a49-241c-4fb6-9895-76cea4c8cf0b" definer="Myself" name="Organization-specific Kill Chain">
+                <stixCommon:Kill_Chain_Phase name="Infect Machine" phase_id="example:killchainphase-86b94dd5-2ece-415e-bff8-861e1ddeab88"/>
+                <stixCommon:Kill_Chain_Phase name="Exfiltrate Data" phase_id="example:killchainphase-f959a6c0-540b-4b5a-b44f-8ad6406b2c85"/>
+            </stixCommon:Kill_Chain>
         </stix:Kill_Chains>
     </stix:TTPs>
 </stix:STIX_Package>
+
 
 
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
@@ -56,17 +75,27 @@ install = KillChainPhase(phase_id="stix:TTP-e1e4e3f7-be3b-4b39-b80a-a593cfd99a4f
 control = KillChainPhase(phase_id="stix:TTP-d6dc32b9-2538-4951-8733-3cb9ef1daae2", name="Command and Control", ordinality="6")
 action = KillChainPhase(phase_id="stix:TTP-786ca8f9-2d9a-4213-b38e-399af4a2e5d6", name="Actions on Objectives", ordinality="7")
 
-chain = KillChain(id_="stix:TTP-af3e707f-2fb9-49e5-8c37-14026ca0a5ff", name="LM Cyber Kill Chain")
-chain.definer = "LMCO"
+lmchain = KillChain(id_="stix:TTP-af3e707f-2fb9-49e5-8c37-14026ca0a5ff", name="LM Cyber Kill Chain")
+lmchain.definer = "LMCO"
 
-chain.kill_chain_phases = [recon,weapon,deliver,exploit,install,control,action]
-stix_pkg.ttps.kill_chains.append(chain)
+lmchain.kill_chain_phases = [recon,weapon,deliver,exploit,install,control,action]
+stix_pkg.ttps.kill_chains.append(lmchain)
+
+infect = KillChainPhase(name="Infect Machine")
+exfil = KillChainPhase(name="Exfiltrate Data")
+
+mychain = KillChain(name="Organization-specific Kill Chain")
+mychain.definer = "Myself"
+
+mychain.kill_chain_phases = [infect, exfil]
+stix_pkg.ttps.kill_chains.append(mychain)
 
 print stix_pkg.to_xml() 
 
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 print "== TTP =="
 for chain in pkg.ttps.kill_chains:
+    print "--"
     print "Name: " + chain.name
     print "Definer: " + chain.definer
     

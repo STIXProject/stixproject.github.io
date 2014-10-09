@@ -7,7 +7,7 @@
 	xsi:schemaLocation="
 	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd
 	http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
-	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd" id="example:Package-18e8b47e-e91a-45cf-bb5a-6a6bfdccd678" version="1.1.1" timestamp="2014-10-08T17:20:14.572041+00:00">
+	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd" id="example:Package-031f336e-165a-4560-8d13-08f5fe68fee0" version="1.1.1" timestamp="2014-10-09T16:46:29.109109+00:00">
     <stix:STIX_Header>
         <stix:Title>Kill Chain Definition</stix:Title>
     </stix:STIX_Header>
@@ -21,6 +21,10 @@
                 <stixCommon:Kill_Chain_Phase ordinality="5" name="Installation" phase_id="stix:TTP-e1e4e3f7-be3b-4b39-b80a-a593cfd99a4f"/>
                 <stixCommon:Kill_Chain_Phase ordinality="6" name="Command and Control" phase_id="stix:TTP-d6dc32b9-2538-4951-8733-3cb9ef1daae2"/>
                 <stixCommon:Kill_Chain_Phase ordinality="7" name="Actions on Objectives" phase_id="stix:TTP-786ca8f9-2d9a-4213-b38e-399af4a2e5d6"/>
+            </stixCommon:Kill_Chain>
+            <stixCommon:Kill_Chain id="example:killchain-3c868a49-241c-4fb6-9895-76cea4c8cf0b" definer="Myself" name="Organization-specific Kill Chain">
+                <stixCommon:Kill_Chain_Phase name="Infect Machine" phase_id="example:killchainphase-86b94dd5-2ece-415e-bff8-861e1ddeab88"/>
+                <stixCommon:Kill_Chain_Phase name="Exfiltrate Data" phase_id="example:killchainphase-f959a6c0-540b-4b5a-b44f-8ad6406b2c85"/>
             </stixCommon:Kill_Chain>
         </stix:Kill_Chains>
     </stix:TTPs>

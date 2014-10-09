@@ -8,6 +8,7 @@ from stix.core import STIXPackage, STIXHeader
 def parse_stix( pkg ):
     print "== TTP =="
     for chain in pkg.ttps.kill_chains:
+        print "--"
         print "Name: " + chain.name
         print "Definer: " + chain.definer
         
