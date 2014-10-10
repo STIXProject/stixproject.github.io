@@ -14,6 +14,7 @@ Whether you are characterizing instances or patterns, the types of observables y
 
 <button class="btn btn-primary" id="expand-all" data-all-state="collapsed">Show all Examples</button>
 
+[Python code to generate Observable examples](observable_composition.py)
 
 
 ###Single Objects
@@ -240,6 +241,7 @@ There is also a “shorthand” form of composition of observable patterns for t
 
 
 ###Composition of Indicators
+[Python code to generate Indicator examples](indicator_composition.py)
 
 While the above capabilities exist to specify observable patterns of varying complexity and detail, as “observables” they are all only specifying “factual” patterns without any context for interpretation. This additional context for the observable pattern that gives it meaning (what does it mean if the pattern evaluates “true”?) is provided by the STIX Indicator component. Similar to cases that require the more complex matching logic of composite observable patterns there are also cases that require logical composition of not only observable pattern matching logic but also of the contexts that go with individual observable patterns. To support the need for this sort of composition STIX provides the [Composite_Indicator_Expression](/data-model/{{site.current_version}}/indicator/CompositeIndicatorExpressionType/) structure. It mirrors the same structural approach as the Observable_Composition structure with a logical (AND | OR) operator but enables the specification of composite Indicators such that: 
 
