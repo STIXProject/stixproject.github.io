@@ -118,6 +118,7 @@ def main():
     print pkg1.to_xml() 
 
 
+
 #  USE CASE: Indicator with partial matching
     
     pkg2 = STIXPackage()
@@ -157,6 +158,7 @@ def main():
 
 
     #  USE CASE: Indicator with compound detection
+
     pkg3 = STIXPackage()
     pkg3.title="Example of Indicator Composition for compound detection"
     

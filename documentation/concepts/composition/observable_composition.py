@@ -96,7 +96,6 @@ def main():
 
     print pkg.to_xml() 
    
-#    print pkg.to_xml(include_namespaces=False) 
 
 if __name__ == '__main__':
     main()
