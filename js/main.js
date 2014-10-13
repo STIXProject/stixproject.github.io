@@ -41,4 +41,5 @@ $(document).ready(function() {
     $('.dropdown-toggle').dropdown()
     $('.coming-soon').tooltip()
     $('.idiom-construct').tooltip()
+    $('#globe').tooltip()
 });
