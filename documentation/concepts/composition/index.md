@@ -96,12 +96,11 @@ Unlike some other approaches that treat all object properties as flat fields ind
 ###Multiple objects
 You may also wish to convey observable information that is not limited to the properties of a single instance object (e.g. an email message with a file attachment). STIX/CybOX enables this through the use of a Related_Objects structure available on any given Object that allows you to assert a relationship to another Object and to characterize the nature of the relationship with a label (e.g. “Contained_Within”). You can specify property patterns on any property fields of any of the related Objects. Similar to the semantics of multiple property patterns on a single Object (described above), property patterns on multiple Objects would evaluate as
 equivalent to a logical AND of those patterns but specifically as applied to a single instance of each Object and considering the specified inter-object relationships. In other words, for the pattern to be true all of the individual property patterns and specified relationships must be true.
-This approach to composing more complex observables through related objects is often referred to as “relational composition”.
+This approach to composing more complex observables through related objects is often referred to as “**relational composition**”.
 {% include expand_link.html text="More detail on mechanism and use >>" section="multiple-objects" %}
 {% capture expandable %}
 
 ####Observable with multiple related Objects
-**(often referred to as "relational composition")**
 
    * Use for: characterize a more complex situation involving multiple related objects (e.g. an email with a Subject of “Syria strategic plans leaked” and an attached file with File_Name of “bombISIS.pdf”)
    * As an observable instance this characterizes a more complex observation involving a set of related objects each with specific properties {% include expand_link.html section="composition5" disabledText="Hide Example" %}
@@ -155,7 +154,7 @@ This approach to composing more complex observables through related objects is o
 
 ###Composition of observable patterns
 
-There are also use cases requiring more complex matching logic that may call for the ability to specify patterns that are logical combinations of other observable patterns. STIX/CybOX support this capability through the [Observable_Composition](/data-model/{{site.current_version}}/cybox/ObservableCompositionType/) structure. Utilizing this structure, you can specify observable patterns that use a logical operator (AND | OR) to compose other observable patterns whether the the component patterns are simple single objects, multiple objects or even other Observable_Compositions themselves (supporting whatever level of composition needed). The evaluation of such patterns follows the explicit operator logic specified and the rules outlined above for object property and relationship patterns. This approach to composing more complex observables through logical combination is often referred to as “logical composition”.
+There are also use cases requiring more complex matching logic that may call for the ability to specify patterns that are logical combinations of other observable patterns. STIX/CybOX support this capability through the [Observable_Composition](/data-model/{{site.current_version}}/cybox/ObservableCompositionType/) structure. Utilizing this structure, you can specify observable patterns that use a logical operator (AND | OR) to compose other observable patterns whether the the component patterns are simple single objects, multiple objects or even other Observable_Compositions themselves (supporting whatever level of composition needed). The evaluation of such patterns follows the explicit operator logic specified and the rules outlined above for object property and relationship patterns. This approach to composing more complex observables through logical combination is often referred to as “**logical composition**”.
    {% include expand_link.html text="More detail on mechanism and use >>" section="observable-composition" %}
 {% capture expandable %}
 

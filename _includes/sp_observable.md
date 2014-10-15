@@ -13,46 +13,52 @@ Some basic guidance is provided below on which forms of observables are appropri
 {% highlight xml linenos %}
 <stix:STIX_Package id="example:STIXPackage-f61cd874-494d-4194-a3e6-6b487dbb6d6e" timestamp="2014-05-08T09:00:00.000000Z" version="1.1.1">
   <stix:STIX_Header>
-      <stix:Title>Malicious network connection observation</stix:Title>
-      <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Observations</stix:Package_Intent>
-    </stix:STIX_Header>
-    <stix:Observables cybox_major_version="2" cybox_minor_version="1">
-    <cybox:Observable id="example:Observable-1d44cf4b-2cf9-4749-b93f-c8608cf21928">
-      <cybox:Observable_Source>
-        <cyboxCommon:Time><cyboxCommon:Start_Time>2014-05-08T09:00:00.000000Z</cyboxCommon:Start_Time></cyboxCommon:Time>
-      </cybox:Observable_Source>
-      <cybox:Object  id="example:Object-3f21459c-6b15-4d7d-afc4-5c1912623e7d">
-        <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
-          <NetworkConnectionObj:Destination_Socket_Address>
-            <SocketAddressObj:IP_Address category="ipv4-addr">
-              <AddressObj:Address_Value>116.010.191.223</AddressObj:Address_Value>
-            </SocketAddressObj:IP_Address>
-          </NetworkConnectionObj:Destination_Socket_Address>
-        </cybox:Properties>
-      </cybox:Object>
-    </cybox:Observable>
-    </stix:Observables>
+    <stix:Title>Malicious network connection observation</stix:Title>
+    <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Observations</stix:Package_Intent>
+  </stix:STIX_Header>
+  <stix:Observables cybox_major_version="2" cybox_minor_version="1">
+  <cybox:Observable id="example:Observable-1d44cf4b-2cf9-4749-b93f-c8608cf21928">
+    <cybox:Observable_Source>
+      <cyboxCommon:Time>
+        <cyboxCommon:Start_Time>2014-05-08T09:00:00.000000Z</cyboxCommon:Start_Time>
+      </cyboxCommon:Time>
+    </cybox:Observable_Source>
+    <cybox:Object id="example:Object-3f21459c-6b15-4d7d-afc4-5c1912623e7d">
+      <cybox:Properties xsi:type="NetworkConnectionObj:NetworkConnectionObjectType">
+        <NetworkConnectionObj:Destination_Socket_Address>
+          <SocketAddressObj:IP_Address category="ipv4-addr">
+            <AddressObj:Address_Value>116.010.191.223</AddressObj:Address_Value>
+          </SocketAddressObj:IP_Address>
+        </NetworkConnectionObj:Destination_Socket_Address>
+      </cybox:Properties>
+    </cybox:Object>
+  </cybox:Observable>
+  </stix:Observables>
 </stix:STIX_Package>
 {% endhighlight %}{% endcapture %}{% include expander.html section="observation" %}
-  * Report a sighting of a given Indicator specify what was actually observed in the sighting that matched the Indicator's pattern via a [Sighting](/data-model/{{site.current_version}}/indicator/SightingType/)'s Related Observable. {% include expand_link.html disabledText="Hide Example »" text="Example »" section="sighting" %}
+  * Report a [sighting](/data-model/{{site.current_version}}/indicator/SightingType/) of a given Indicator, and specify what was actually observed in the sighting that matched the Indicator's pattern via `Related_Observable` on a `Sighting`. {% include expand_link.html disabledText="Hide Example »" text="Example »" section="sighting" %}
 {% capture expandable %}
 **An Indicator specifies a set of three domains used for malware C2 and you wish to report a sighting specifying which of the three you observed**
 {% highlight xml linenos %}
 <stix:Indicator xsi:type="indicator:IndicatorType" id="example:Indicator-2e20c5b2-56fa-46cd-9662-8f199c69d2c9" timestamp="2014-05-08T09:00:00.000000Z">
-    <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
-    <indicator:Observable id="example:Observable-87c9a5bb-d005-4b3e-8081-99f720fad62b">
-        <cybox:Object id="example:Object-12c760ba-cd2c-4f5d-a37d-18212eac7928">
-            <cybox:Properties xsi:type="DomainNameObj:DomainNameObjectType" type="FQDN">
-                <DomainNameObj:Value condition="Equals" apply_condition="ANY">malicious1.example.com##comma##malicious2.example.com##comma##malicious3.example.com</DomainNameObj:Value>
-            </cybox:Properties>
-        </cybox:Object>
-    </indicator:Observable>
-    <indicator:Sightings>
+  <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+  <indicator:Observable id="example:Observable-87c9a5bb-d005-4b3e-8081-99f720fad62b">
+      <cybox:Object id="example:Object-12c760ba-cd2c-4f5d-a37d-18212eac7928">
+          <cybox:Properties xsi:type="DomainNameObj:DomainNameObjectType" type="FQDN">
+              <DomainNameObj:Value condition="Equals" apply_condition="ANY">malicious1.example.com##comma##malicious2.example.com##comma##malicious3.example.com</DomainNameObj:Value>
+          </cybox:Properties>
+      </cybox:Object>
+  </indicator:Observable>
+  <indicator:Sightings>
     <indicator:Sighting>
-      <indicator:Source><stixCommon:Identity><stixCommon:Name>FooBar Inc.</stixCommon:Name></stixCommon:Identity></indicator:Source>
+      <indicator:Source>
+        <stixCommon:Identity>
+          <stixCommon:Name>FooBar Inc.</stixCommon:Name>
+        </stixCommon:Identity>
+      </indicator:Source>
       <indicator:Related_Observables>
         <indicator:Related_Observable>
-          <stixCommon:Observable  id="example:Observable-45b3acdf-1888-4bcc-89a9-6d9f8116fede">
+          <stixCommon:Observable id="example:Observable-45b3acdf-1888-4bcc-89a9-6d9f8116fede">
             <cybox:Object id="example:Object-a3d36250-42fa-4653-9172-87b87598390c">
               <cybox:Properties xsi:type="DomainNameObj:DomainNameObjectType" type="FQDN">
                 <DomainNameObj:Value>malicious2.example.com</DomainNameObj:Value>
@@ -62,7 +68,7 @@ Some basic guidance is provided below on which forms of observables are appropri
         </indicator:Related_Observable>
       </indicator:Related_Observables>
     </indicator:Sighting>
-    </indicator:Sightings>
+  </indicator:Sightings>
 </stix:Indicator>
 {% endhighlight %}{% endcapture %}{% include expander.html section="sighting" %}
   * Characterize specific cyber observations relevant to an Incident via its [RelatedObservables](/data-model/{{site.current_version}}/incident/RelatedObservablesType/) field. {% include expand_link.html disabledText="Hide Example »" text="Example »" section="incident" %}
@@ -156,21 +162,23 @@ Some basic guidance is provided below on which forms of observables are appropri
 {% highlight xml linenos %}
 <stix:Indicator xsi:type="indicator:IndicatorType" id="example:Indicator-b5325352-a178-4bd9-b203-278c01083f9b">
   <indicator:Observable id="example:observable-503abed0-b00b-4f4e-94fe-9ebc6abaffdd">
-        <cybox:Object id="example:object-acee05cf-9a37-4c6b-9c90-83caf01604d2">
-            <cybox:Properties xsi:type="WinRegistryKeyObj:WindowsRegistryKeyObjectType">
-                <WinRegistryKeyObj:Key condition="Contains">Microsoft\Windows\CurrentVersion\Run\load</WinRegistryKeyObj:Key>
-                <WinRegistryKeyObj:Hive condition="Equals">Software</WinRegistryKeyObj:Hive>
-                <WinRegistryKeyObj:Values>
-                    <WinRegistryKeyObj:Value>
-                        <WinRegistryKeyObj:Data condition="Contains">acrord32.exe</WinRegistryKeyObj:Data>
-                    </WinRegistryKeyObj:Value>
-                </WinRegistryKeyObj:Values>
-            </cybox:Properties>
-        </cybox:Object>
-    </indicator:Observable>
-    <indicator:Indicated_TTP>
-    <stixCommon:TTP xsi:type="ttp:TTPType"><ttp:Title>Zaphod Malware</ttp:Title></stixCommon:TTP>
-    </indicator:Indicated_TTP>
+    <cybox:Object id="example:object-acee05cf-9a37-4c6b-9c90-83caf01604d2">
+      <cybox:Properties xsi:type="WinRegistryKeyObj:WindowsRegistryKeyObjectType">
+        <WinRegistryKeyObj:Key condition="Contains">Microsoft\Windows\CurrentVersion\Run\load</WinRegistryKeyObj:Key>
+        <WinRegistryKeyObj:Hive condition="Equals">Software</WinRegistryKeyObj:Hive>
+        <WinRegistryKeyObj:Values>
+          <WinRegistryKeyObj:Value>
+            <WinRegistryKeyObj:Data condition="Contains">acrord32.exe</WinRegistryKeyObj:Data>
+          </WinRegistryKeyObj:Value>
+        </WinRegistryKeyObj:Values>
+      </cybox:Properties>
+    </cybox:Object>
+  </indicator:Observable>
+  <indicator:Indicated_TTP>
+    <stixCommon:TTP xsi:type="ttp:TTPType">
+      <ttp:Title>Zaphod Malware</ttp:Title>
+    </stixCommon:TTP>
+  </indicator:Indicated_TTP>
 </stix:Indicator>
 {% endhighlight %}{% endcapture %}{% include expander.html section="indicator-pattern" %}
   * Specify particular structured technical details for explicit characterization of a [Course of Action](/data-model/{{site.current_version}}/coa/CourseOfActionType)'s Parameter Observables. {% include expand_link.html disabledText="Hide Example »" text="Example »" section="coa-pattern" %}
@@ -178,34 +186,34 @@ Some basic guidance is provided below on which forms of observables are appropri
 **Block traffic to a particular IP address**
 {% highlight xml linenos %}
 <stix:Course_Of_Action id="example:coa-55f57cc7-ddd5-467b-a3a2-6fd602549d9e" xsi:type="coa:CourseOfActionType" version="1.1">
-    <coa:Title>Block traffic to PIVY C2 Server (10.10.10.10)</coa:Title>
-    <coa:Stage xsi:type="stixVocabs:COAStageVocab-1.0">Response</coa:Stage>
-    <coa:Type xsi:type="stixVocabs:CourseOfActionTypeVocab-1.0">Perimeter Blocking</coa:Type>
-    <coa:Objective>
-        <coa:Description>Block communication between the PIVY agents and the C2 Server</coa:Description>
-        <coa:Applicability_Confidence>
-            <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">High</stixCommon:Value>
-        </coa:Applicability_Confidence>
-    </coa:Objective>
-    <coa:Parameter_Observables cybox_major_version="2" cybox_minor_version="1" cybox_update_version="0">
-        <cybox:Observable id="example:Observable-e04425e4-60a2-4d91-a9f9-0ca956f19edb">
-            <cybox:Object id="example:Address-d5bc7186-319d-44e0-85f4-0b65f59034a3">
-                <cybox:Properties xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
-                    <AddressObj:Address_Value condition="Equals">10.10.10.10</AddressObj:Address_Value>
-                </cybox:Properties>
-            </cybox:Object>
-        </cybox:Observable>
-    </coa:Parameter_Observables>
-    <coa:Impact>
-        <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">Low</stixCommon:Value>
-        <stixCommon:Description>This IP address is not used for legitimate hosting so there should be no operational impact.</stixCommon:Description>
-    </coa:Impact>
-    <coa:Cost>
-        <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">Low</stixCommon:Value>
-    </coa:Cost>
-    <coa:Efficacy>
-        <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">High</stixCommon:Value>
-    </coa:Efficacy>
+  <coa:Title>Block traffic to PIVY C2 Server (10.10.10.10)</coa:Title>
+  <coa:Stage xsi:type="stixVocabs:COAStageVocab-1.0">Response</coa:Stage>
+  <coa:Type xsi:type="stixVocabs:CourseOfActionTypeVocab-1.0">Perimeter Blocking</coa:Type>
+  <coa:Objective>
+    <coa:Description>Block communication between the PIVY agents and the C2 Server</coa:Description>
+    <coa:Applicability_Confidence>
+      <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">High</stixCommon:Value>
+    </coa:Applicability_Confidence>
+  </coa:Objective>
+  <coa:Parameter_Observables cybox_major_version="2" cybox_minor_version="1" cybox_update_version="0">
+    <cybox:Observable id="example:Observable-e04425e4-60a2-4d91-a9f9-0ca956f19edb">
+      <cybox:Object id="example:Address-d5bc7186-319d-44e0-85f4-0b65f59034a3">
+        <cybox:Properties xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
+          <AddressObj:Address_Value condition="Equals">10.10.10.10</AddressObj:Address_Value>
+        </cybox:Properties>
+      </cybox:Object>
+    </cybox:Observable>
+  </coa:Parameter_Observables>
+  <coa:Impact>
+    <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">Low</stixCommon:Value>
+    <stixCommon:Description>This IP address is not used for legitimate hosting so there should be no operational impact.</stixCommon:Description>
+  </coa:Impact>
+  <coa:Cost>
+    <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">Low</stixCommon:Value>
+  </coa:Cost>
+  <coa:Efficacy>
+    <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">High</stixCommon:Value>
+  </coa:Efficacy>
 </stix:Course_Of_Action>
 {% endhighlight %}{% endcapture %}{% include expander.html section="coa-pattern" %}
   * Specify what software is known to be affected by a given vulnerability via the Exploit Target [AffectedSoftware](/data-model/{{site.current_version}}/et/AffectedSoftwareType/)'s Observable characterization. {% include expand_link.html text="Example »" disabledText="Hide Example »" section="vulnerability" %}
@@ -241,42 +249,42 @@ Some basic guidance is provided below on which forms of observables are appropri
 **A particular set of IPs used for Zeus malware command and control**
 {% highlight xml linenos %}
 <stix:Observables cybox_major_version="1" cybox_minor_version="1">
-    <cybox:Observable id="example:observable-c8c32b6e-2ea8-51c4-6446-7f5218072f27">
-        <cybox:Object id="example:object-d7fcce87-0e98-4537-81bf-1e7ca9ad3734">
-            <cybox:Properties xsi:type="AddressObject:AddressObjectType" category="ipv4-addr">
-                <AddressObject:Address_Value condition="Equals">198.51.100.2</AddressObject:Address_Value>
-            </cybox:Properties>
-        </cybox:Object>
-    </cybox:Observable>
-    <cybox:Observable id="example:observable-b57aa65f-9598-04fb-a9d1-5094c36d5dc4">
-        <cybox:Object id="example:object-f4fac80a-1239-47cc-b0e6-771b1a73f817">
-            <cybox:Properties xsi:type="AddressObject:AddressObjectType" category="ipv4-addr">
-                <AddressObject:Address_Value condition="Equals">198.51.100.17</AddressObject:Address_Value>
-            </cybox:Properties>
-        </cybox:Object>
-    </cybox:Observable>
-    <cybox:Observable id="example:observable-19c16346-0eb4-99e2-00bb-4ec3ed174cac">
-        <cybox:Object id="example:object-174bf9a3-f163-4919-9119-b52598f97ce3">
-            <cybox:Properties xsi:type="AddressObject:AddressObjectType" category="ipv4-addr">
-                <AddressObject:Address_Value condition="Equals">203.0.113.19</AddressObject:Address_Value>
-            </cybox:Properties>
-        </cybox:Object>
-    </cybox:Observable>
+  <cybox:Observable id="example:observable-c8c32b6e-2ea8-51c4-6446-7f5218072f27">
+    <cybox:Object id="example:object-d7fcce87-0e98-4537-81bf-1e7ca9ad3734">
+      <cybox:Properties xsi:type="AddressObject:AddressObjectType" category="ipv4-addr">
+        <AddressObject:Address_Value condition="Equals">198.51.100.2</AddressObject:Address_Value>
+      </cybox:Properties>
+    </cybox:Object>
+  </cybox:Observable>
+  <cybox:Observable id="example:observable-b57aa65f-9598-04fb-a9d1-5094c36d5dc4">
+    <cybox:Object id="example:object-f4fac80a-1239-47cc-b0e6-771b1a73f817">
+      <cybox:Properties xsi:type="AddressObject:AddressObjectType" category="ipv4-addr">
+        <AddressObject:Address_Value condition="Equals">198.51.100.17</AddressObject:Address_Value>
+      </cybox:Properties>
+    </cybox:Object>
+  </cybox:Observable>
+  <cybox:Observable id="example:observable-19c16346-0eb4-99e2-00bb-4ec3ed174cac">
+    <cybox:Object id="example:object-174bf9a3-f163-4919-9119-b52598f97ce3">
+      <cybox:Properties xsi:type="AddressObject:AddressObjectType" category="ipv4-addr">
+        <AddressObject:Address_Value condition="Equals">203.0.113.19</AddressObject:Address_Value>
+      </cybox:Properties>
+    </cybox:Object>
+  </cybox:Observable>
 </stix:Observables>
 <stix:TTPs>
-    <stix:TTP xsi:type="ttp:TTPType" id="example:ttp-dd955e08-16d0-6f08-5064-50d9e7a3104d" timestamp="2014-02-20T09:00:00.000000Z">
-        <ttp:Title>Zeus Malware C2 Channel</ttp:Title>
-        <ttp:Resources>
-            <ttp:Infrastructure>
-                <ttp:Type>Malware C2</ttp:Type>
-                <ttp:Observable_Characterization cybox_major_version="2" cybox_minor_version="1">
-                    <cybox:Observable idref="example:observable-c8c32b6e-2ea8-51c4-6446-7f5218072f27"/>
-                    <cybox:Observable idref="example:observable-b57aa65f-9598-04fb-a9d1-5094c36d5dc4"/>
-                    <cybox:Observable idref="example:observable-19c16346-0eb4-99e2-00bb-4ec3ed174cac"/>
-                </ttp:Observable_Characterization>
-            </ttp:Infrastructure>
-        </ttp:Resources>
-    </stix:TTP>
+  <stix:TTP xsi:type="ttp:TTPType" id="example:ttp-dd955e08-16d0-6f08-5064-50d9e7a3104d" timestamp="2014-02-20T09:00:00.000000Z">
+    <ttp:Title>Zeus Malware C2 Channel</ttp:Title>
+    <ttp:Resources>
+      <ttp:Infrastructure>
+        <ttp:Type>Malware C2</ttp:Type>
+        <ttp:Observable_Characterization cybox_major_version="2" cybox_minor_version="1">
+          <cybox:Observable idref="example:observable-c8c32b6e-2ea8-51c4-6446-7f5218072f27"/>
+          <cybox:Observable idref="example:observable-b57aa65f-9598-04fb-a9d1-5094c36d5dc4"/>
+          <cybox:Observable idref="example:observable-19c16346-0eb4-99e2-00bb-4ec3ed174cac"/>
+        </ttp:Observable_Characterization>
+      </ttp:Infrastructure>
+    </ttp:Resources>
+  </stix:TTP>
 </stix:TTPs>
 {% endhighlight %}{% endcapture %}{% include expander.html section="ttp" %}
   * Characterize specific victim technical context details being targeted by an attacker in instances of TTP [VictimTargeting](/data-model/{{site.current_version}}/ttp/VictimTargetingType/)'s Technical Targeting Details. {% include expand_link.html text="Example »" disabledText="Hide Example »" section="ttp-technical-targeting" %}
@@ -319,8 +327,8 @@ Use case|Example|Suggested level of detail
 --------|--------|------------------------
 If you need to talk about a single property.|A file with name="foo.exe"|[Single Object with single Property](../concepts/composition/#single-objects)
 If you need to talk about multiple properties of a single object.|A file with name="foo.exe" and size="1896Kb"|[Single Object with multiple Properties](../concepts/composition/#single-objects)
-If you need to talk about specific properties of multiple related objects.|An email with a subject=“Syria strategic plans leaked” and an attached file with name=“bombISIS.pdf”|[Multiple related Objects (often referred to as "relational composition")](../concepts/composition/#multiple-objects)
-If you need to talk about logical (AND/OR) combinations of other observable patterns.|A file with name="barfoobar" exists AND an outgoing network connection occurs to "46.123.99.25"|[Composition of observable patterns (often referred to as “logical composition”)](../concepts/composition/#composition-of-observable-patterns)
+If you need to talk about specific properties of multiple related objects.|An email with a subject=“Syria strategic plans leaked” and an attached file with name=“bombISIS.pdf”|[Multiple related Objects](../concepts/composition/#multiple-objects)
+If you need to talk about logical (AND/OR) combinations of other observable patterns.|A file with name="barfoobar" exists AND an outgoing network connection occurs to "46.123.99.25"|[Composition of observable patterns](../concepts/composition/#composition-of-observable-patterns)
 If you need to talk about a logical (AND/OR) combination of observable patterns on a single property of a single object (e.g. an IP watch list) and you want to specify this in the most compact and concise form available.|An IP watchlist for "10.0.0.0, 10.0.0.1, 10.0.0.3"|[Composition of observable patterns - shorthand list form](../concepts/composition/#composition-of-observable-patterns)
 If you need to define an Indicator (including context info) logically composed of other potentially preexisting Indicators for which you wish to detect their contexts separately.|A file with a specific hash indicating a particular malware variant AND an outgoing network connection to a specific IP address indicating known C2, together indicating a particular campaign combining the two.|[Composition of Indicators](../concepts/composition/#composition-of-indicators)
 
