@@ -17,7 +17,7 @@ from cybox.common import Time
 from lxml import etree
 
 def main():
-    ioc = etree.parse('6d2a1b03-b216-4cd8-9a9e-8827af6ebf93.ioc.xml')
+    ioc = etree.parse('6d2a1b03-b216-4cd8-9a9e-8827af6ebf93.ioc')
 
     stix_package = STIXPackage()
 

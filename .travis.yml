@@ -3,9 +3,14 @@ language: python
 before_install: 
   - sudo apt-get update
   - sudo apt-get install python-dev python-pip libxml2-dev libxslt-dev zlib1g-dev
+  
+  # setup validator
+  - git clone https://github.com/STIXProject/stix-validator.git
 
 install:
-  - pip install -q stix
+  - pip install -q stix==1.1.1.2
+  # setup validator
+  - pip install -q xlrd lxml
 
 script: ./test_idioms.sh
 

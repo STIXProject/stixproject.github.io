@@ -1,5 +1,11 @@
 #!/bin/bash
 #iterate directories to find ones with .py files
+
+validator=$PWD/stix-validator/sdv.py
+
+function realpath { echo $(cd $(dirname $1); pwd)/$(basename $1); }
+
+RETVAL=0
 for dir in ./documentation/idioms/*; do
     if [ -d $dir ] 
     then
@@ -8,14 +14,14 @@ for dir in ./documentation/idioms/*; do
         for producer in ./*producer.py ; do
         if [ -e $producer ]
         then
-            echo Running $producer
             `python $producer > out.xml 2>/dev/null`
             if [[ -e out.xml && $? -eq 0 ]]
             then
-                echo "."
+                echo -n "."
             else
-                echo "error in $producer"
-                exit 1
+                echo -e "\nERROR running $(realpath $producer)"
+                RETVAL=1
+                continue
             fi
         fi
         done
@@ -23,14 +29,30 @@ for dir in ./documentation/idioms/*; do
         for consumer in ./*consumer.py ; do
         if [ -e $consumer ]
         then
-            echo Running $consumer
             `python $consumer out.xml > out.parsed 2>/dev/null`
             if [[ -e out.parsed && $? -eq 0 ]]
             then
-                echo "."
+                echo -n "."
             else
-                echo "error in $consumer"
-                exit 1
+                echo -e "\nERROR running $(realpath $consumer)"
+                RETVAL=1
+                continue
+            fi
+        fi
+        done
+
+        for xmlfile in ./*xml ; do
+        if [ -e $xmlfile ]
+        then
+            $($validator $xmlfile | grep -q INVALID)
+            if [ $? -eq 0 ]
+            # the file had validation errors
+            then
+                echo -e "\nERROR: $(realpath $xmlfile) had validation errors"
+                RETVAL=1
+                continue
+            else
+                echo -n "."
             fi
         fi
         done
@@ -39,4 +61,5 @@ for dir in ./documentation/idioms/*; do
     fi
 done;
 
-exit 0
+echo -e "\nDone!"
+exit $RETVAL
