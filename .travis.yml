@@ -8,7 +8,7 @@ before_install:
   - git clone https://github.com/STIXProject/stix-validator.git
 
 install:
-  - pip install -q stix
+  - pip install -q stix==1.1.1.2
   # setup validator
   - pip install -q xlrd lxml
 
