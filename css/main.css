@@ -283,3 +283,7 @@ p.data-model-description {
   list-style-type: none;
   font-size: 12px;
 }
+
+.toggleLink {
+  font-weight: bolder;
+}
