@@ -29,7 +29,7 @@ Given this, something simple like a filename can easily be expressed using the F
    * Use for: characterize a single property
    * As an observable instance this very simply characterizes a single property value of a single instance object that was observed (e.g. a file with the name “foo.exe”) {% include expand_link.html section="composition1" disabledText="Hide Example" %}
 {% capture expandable %}
-{% highlight xml linenos %}
+{% include start_tabs.html tabs="XML|Python" name="comp99" %}{% highlight xml %}
 <indicator:Observable id="example:Observable-c9ca84dc-4542-4292-af54-3c5c914ccbbc">
   <cybox:Object id="example:Object-c670b175-bfa3-48e9-a218-aa7c55f1f884">
     <cybox:Properties xsi:type="FileObj:FileObjectType">
@@ -37,7 +37,16 @@ Given this, something simple like a filename can easily be expressed using the F
     </cybox:Properties>
   </cybox:Object>
 </indicator:Observable>
-{% endhighlight %}{% endcapture %}{% include expander.html section="composition1" %}
+{% endhighlight %}
+
+{% include tab_separator.html %}{% highlight python %}
+obs = File()
+obs.file_name = "foo.exe"
+pkg.add_observable(obs)
+{% endhighlight %}{% include end_tabs.html %}
+
+
+{% endcapture %}{% include expander.html section="composition1" %}
    * As an observable pattern this very simply characterizes a condition where any object of the given type has a property value matching the specified pattern. {% include expand_link.html section="composition2" disabledText="Hide Example" %}
 {% capture expandable %}
 
@@ -74,7 +83,7 @@ Unlike some other approaches that treat all object properties as flat fields ind
    * Use for: characterize multiple properties of a single instance object (e.g. a file with the name “foo.exe” and a size of 1896Kb)
    * As an observable instance this simply characterizes multiple property values of a single instance object that was observed {% include expand_link.html section="composition3" disabledText="Hide Example" %}
 {% capture expandable %}
-{% highlight xml linenos %}
+{% include start_tabs.html tabs="XML|Python" name="comp98" %}{% highlight xml %}
 <indicator:Observable id="example:Observable-c9ca84dc-4542-4292-af54-3c5c914ccbbc">
   <cybox:Object id="example:Object-c670b175-bfa3-48e9-a218-aa7c55f1f884">
      <cybox:Properties xsi:type="FileObj:FileObjectType">
@@ -83,7 +92,16 @@ Unlike some other approaches that treat all object properties as flat fields ind
     </cybox:Properties>
   </cybox:Object>
 </indicator:Observable>
-{% endhighlight %}{% endcapture %}{% include expander.html section="composition3" %}
+{% endhighlight %}
+{% include tab_separator.html %}{% highlight python %}
+obs = File()
+obs.file_name = "foo"
+obs.size_in_bytes = '1896000'
+pkg.add_observable(obs)
+{% endhighlight %}
+{% include end_tabs.html %}
+
+{% endcapture %}{% include expander.html section="composition3" %}
    * As an observable pattern this characterizes a condition where any object of the given type has property values matching all of the specified property field patterns. In other words, it is defining a logical AND across the set of property value patterns specified on the object. {% include expand_link.html section="composition4" disabledText="Hide Example" %}
 {% capture expandable %}
 
@@ -128,7 +146,7 @@ This approach to composing more complex observables through related objects is o
    * Use for: characterize a more complex situation involving multiple related objects (e.g. an email with a Subject of “Syria strategic plans leaked” and an attached file with File_Name of “bombISIS.pdf”)
    * As an observable instance this characterizes a more complex observation involving a set of related objects each with specific properties {% include expand_link.html section="composition5" disabledText="Hide Example" %}
 {% capture expandable %}
-{% highlight xml linenos %}
+{% include start_tabs.html tabs="XML|Python" name="comp97" %}{% highlight xml %}
 <cybox:Observable id="example:Observable-db066ea1-925b-43df-a341-f513ece3ae94">
   <cybox:Object id="example:Object-e0e87eef-6315-410f-8025-086968129f41">
     <cybox:Properties xsi:type="EmailMessageObj:EmailMessageObjectType">
@@ -147,6 +165,17 @@ This approach to composing more complex observables through related objects is o
   </cybox:Object>
 </cybox:Observable>
 {% endhighlight %}
+
+{% include tab_separator.html %}{% highlight python %}
+obs = EmailMessage()
+obs.subject = "Syria strategic plans leaked"
+file_obj = File()
+file_obj.file_name = "bombISIS.pdf"
+obs.add_related(file_obj, "Contains")
+pkg.add_observable(obs)
+{% endhighlight %}
+{% include end_tabs.html %}
+
 
 {% endcapture %}{% include expander.html section="composition5" %}
    * As an observable pattern this characterizes a condition where any full combination exists of the types of objects, the specific relationships and the specific property field patterns. In other words, it is defining a logical AND across not only the set of property value patterns specified on each object but also across the relationships between objects. {% include expand_link.html section="composition6" disabledText="Hide Example" %}
