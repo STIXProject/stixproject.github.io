@@ -5,8 +5,10 @@ from stix.ttp import TTP
 from stix.core import STIXPackage, STIXHeader
 from stix.common import (InformationSource, Identity, RelatedObservable,
                          VocabString)
+from stix.indicator import Indicator
+from stix.ttp import TTP
                          
-from stix.common.kill_chains import KillChainPhase, KillChain, KillChainPhaseReference
+from stix.common.kill_chains import KillChainPhase, KillChain, KillChainPhaseReference, KillChainPhasesReference
 
 def main():
     stix_pkg = STIXPackage()
@@ -40,6 +42,13 @@ def main():
 
     mychain.kill_chain_phases = [infect, exfil]
     stix_pkg.ttps.kill_chains.append(mychain)
+
+    indicator = Indicator()
+    indicator.kill_chain_phases = KillChainPhasesReference([
+        KillChainPhaseReference(phase_id=exfil.phase_id,kill_chain_id=mychain.id_),
+        KillChainPhaseReference(phase_id=action.phase_id,kill_chain_id=lmchain.id_)
+    ])
+    stix_pkg.add_indicator(indicator)
 
     print stix_pkg.to_xml() 
 
