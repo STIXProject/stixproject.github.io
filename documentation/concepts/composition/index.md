@@ -4,14 +4,22 @@ title: Composition of Observables and Indicators
 ---
 
 
-##Composition of Observables
-
-In the parlance of STIX/CybOX, an observable is one or more events or stateful properties that are observable in the operational cyber domain.
+Observables in STIX represent stateful properties or measurable events pertinent to the operation of computers and networks.
 
 As described in [Concept: Observable Instances vs Observable Patterns](../observable-patterns-vs-instances), there are two different forms of "Observables" possible in STIX: **observable instances** and **observable patterns**. Each form has its own purposes to represent various relevant information in STIX.
 
-Whether you are characterizing instances or patterns, the types of observables you may wish to characterize can vary widely from the very simple to the complex depending on what you are trying to convey.
+Whether you are characterizing instances or patterns, the types of observables (and indicators based on them) you may wish to characterize can vary widely from the very simple to the complex depending on what you are trying to convey.
 
+The content below characterizes the different levels of observable/indicator complexity possible in STIX.
+
+ * [Single object (single property)](#single-objects)
+ * [Single object (multiple properties)](#single-objects)
+ * [Multiple related objects (relational composition)](#multiple-objects)
+ * [Composition of observable patterns (logical composition)](#composition-of-observable-patterns)
+ * [Observable with single object and single property with multiple values (list)](#composition-of-observable-patterns)
+ * [Composition of indicators (logical composition)](#composition-of-indicators)
+
+</br>
 <button class="btn btn-primary" id="expand-all" data-all-state="collapsed">Show all Examples</button>
 
 [Python code to generate Observable examples](observable_composition.py)
