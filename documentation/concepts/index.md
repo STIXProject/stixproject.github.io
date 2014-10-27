@@ -71,5 +71,15 @@ This page describes several central STIX concepts that cut across all of the cor
 
       <a class="btn btn-primary" href="observable-patterns-vs-instances">Go »</a>
     </div>
+    
+        <div class="well">
+      <img src="/images/Indicator.png" class="component-img-right" alt="Indicator Icon" />
+      <img src="/images/TTP.png" class="component-img-right" alt="TTP Icon" />
+      <h4><a href="xsi-type">TTP vs Indicator: A simple usage overview</a></h4>
+
+      <p>Describes the basic intent of the TTP and Indicator components and when to use which one.</p>
+
+      <a class="btn btn-primary" href="ttp-vs-indicator">Go »</a>
+    </div>
   </div>
 </div>
