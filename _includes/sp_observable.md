@@ -1,6 +1,6 @@
 ### Observable Instance or Observable Pattern?
 
-As described in [Concept: Observable Instances vs Observable Patterns](../concepts/observable-patterns-vs-instances), there are two different forms of "Observables" possible in STIX: **observable instances** and **observable patterns**.
+As described in [Concept: Observable Instances vs Observable Patterns](/documentation/concepts/observable-patterns-vs-instances), there are two different forms of "Observables" possible in STIX: **observable instances** and **observable patterns**.
 Each form has its own purposes to represent various relevant information in STIX.
 
 Some basic guidance is provided below on which forms of observables are appropriate for which purposes in STIX.
@@ -318,19 +318,19 @@ Some basic guidance is provided below on which forms of observables are appropri
 ###Selecting level of detail for observable composition
 
 Whether you are characterizing instances or patterns, the types of observables you may wish to characterize in STIX/CybOX can vary widely from the very simple to the complex depending on what you are trying to 
-[Concepts: Composition of Observables and Indicators](../concepts/composition) provides more information characterizing the potential levels of detail for observable composition in STIX/CybOX.
+[Concepts: Composition of Observables and Indicators](/documentation/concepts/composition) provides more information characterizing the potential levels of detail for observable composition in STIX/CybOX.
 
 The table below gives guidance on the suggested level of detail to use for a range of common use cases.
 
 
 Use case|Example|Suggested level of detail
 --------|--------|------------------------
-If you need to talk about a single property.|A file with name="foo.exe"|[Single Object with single Property](../concepts/composition/#single-objects)
-If you need to talk about multiple properties of a single object.|A file with name="foo.exe" and size="1896Kb"|[Single Object with multiple Properties](../concepts/composition/#single-objects)
-If you need to talk about specific properties of multiple related objects.|An email with a subject=“Syria strategic plans leaked” and an attached file with name=“bombISIS.pdf”|[Multiple related Objects](../concepts/composition/#multiple-objects)
-If you need to talk about logical (AND/OR) combinations of other observable patterns.|A file with name="barfoobar" exists AND an outgoing network connection occurs to "46.123.99.25"|[Composition of observable patterns](../concepts/composition/#composition-of-observable-patterns)
-If you need to talk about a logical (AND/OR) combination of observable patterns on a single property of a single object (e.g. an IP watch list) and you want to specify this in the most compact and concise form available.|An IP watchlist for "10.0.0.0, 10.0.0.1, 10.0.0.3"|[Composition of observable patterns - shorthand list form](../concepts/composition/#composition-of-observable-patterns)
-If you need to define an Indicator (including context info) logically composed of other potentially preexisting Indicators for which you wish to detect their contexts separately.|A file with a specific hash indicating a particular malware variant AND an outgoing network connection to a specific IP address indicating known C2, together indicating a particular campaign combining the two.|[Composition of Indicators](../concepts/composition/#composition-of-indicators)
+If you need to talk about a single property.|A file with name="foo.exe"|[Single Object with single Property](/documentation/concepts/composition/#single-objects)
+If you need to talk about multiple properties of a single object.|A file with name="foo.exe" and size="1896Kb"|[Single Object with multiple Properties](/documentation/concepts/composition/#single-objects)
+If you need to talk about specific properties of multiple related objects.|An email with a subject=“Syria strategic plans leaked” and an attached file with name=“bombISIS.pdf”|[Multiple related Objects](/documentation/concepts/composition/#multiple-objects)
+If you need to talk about logical (AND/OR) combinations of other observable patterns.|A file with name="barfoobar" exists AND an outgoing network connection occurs to "46.123.99.25"|[Composition of observable patterns](/documentation/concepts/composition/#composition-of-observable-patterns)
+If you need to talk about a logical (AND/OR) combination of observable patterns on a single property of a single object (e.g. an IP watch list) and you want to specify this in the most compact and concise form available.|An IP watchlist for "10.0.0.0, 10.0.0.1, 10.0.0.3"|[Composition of observable patterns - shorthand list form](/documentation/concepts/composition/#composition-of-observable-patterns)
+If you need to define an Indicator (including context info) logically composed of other potentially preexisting Indicators for which you wish to detect their contexts separately.|A file with a specific hash indicating a particular malware variant AND an outgoing network connection to a specific IP address indicating known C2, together indicating a particular campaign combining the two.|[Composition of Indicators](/documentation/concepts/composition/#composition-of-indicators)
 
 ### CybOX Object Selection
 
