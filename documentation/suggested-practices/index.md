@@ -1,6 +1,7 @@
 ---
 layout: flat
-title: Suggested Practices 
+title: Suggested Practices
+toc: sp_toc.html
 ---
 
 This page contains suggested practices (sometimes called best practices) for producing and consuming STIX content. Following these practices will ensure the best conformance with the design goals of STIX and the best compatibility with other STIX tools. These are not requirements, however: in some cases, technical or business requirements will mean you can't comply with them and that's fine. Think of them as "do it this way unless you have a good reason not to".
@@ -9,7 +10,7 @@ This page contains suggested practices (sometimes called best practices) for pro
 
 General practices apply across STIX (and sometimes CybOX).
 
-## Formatting IDs
+### Formatting IDs
 
 STIX IDs are [XML QNames](http://en.wikipedia.org/wiki/QName). Each ID includes both a namespace portion (optional) and an ID portion (required) separated by a colon (:). The recommend approach to creating STIX IDs is to define a producer namespace and namespace prefix, then use the form:
 
@@ -31,7 +32,7 @@ In order to use this approach, you will need to define that namespace prefix in 
 
 This format provides high assurance that IDs will be both unique and meaningful, because the producer namespace denotes who's producing it, the construct name denotes what it is, and the overall ID including the GUID lends a high degree of confidence in its uniqueness.
 
-## Assigning IDs
+### Assigning IDs
 
 STIX has several constructs with the potential to assign IDs to them such that they can be unambiguously referenced from elsewhere.
 
@@ -66,7 +67,42 @@ For these reasons, it is suggested that IDs be specified for the following commo
 As a simple general rule specifying IDs is not suggested for constructs embedded within other constructs (e.g. a CybOX Object containing the embedded specification of another CybOX Related_Object) where the embedded constructs are really only relevant/valid/important within the context of the enclosing construct. In other words they provide contextual characterization for the enclosing construct but would not be of interest on their own.
 The upside of this is slightly less complexity of IDs on everything. The downside is that it would not be possible to reference or pivot on the embedded constructs.
 
-## Referencing vs. Embedding
+### Titles and Descriptions
+
+The top-level STIX components as well as other important constructs ([VulnerabilityType](/data-model/{{site.current_version}}/et/VulnerabilityType/), for example) each have fields for Title, Description, and Short_Description:
+
+* The `Title` field is recommended for all constructs and should be short enough that a consumer can use it as or in a heading.
+* The `Description` field is the primary descriptive field. Any length of text is fine and this field supports optional formatting via the `@structuring_format` field.
+* The `Short_Description` field is the secondary description and should only be used if the `Description` field is already populated and another, shorter, description is available.
+
+The intent of the `Short_Description` field is to contain an abbreviated version of the content in the `Description` field when such abbreviated content is available. Consumers should not have to guess whether the primary description is contained in `Description` or `Short_Description` and so producers should always populate `Description` first before populating `Short_Description`.
+
+Also note that some types have additional name fields beyond `Title`. For example, [MalwareInstanceType](/data-model/{{site.current_version}}/ttp/MalwareInstanceType/) has a `Name` field and [CampaignType](/data-model/{{site.current_version}}/campaign/CampaignType/) has a list of `Names`. Though similar, these fields have slightly different purposes: the `Title` field is used to give a title to the STIX construct while the `Name` field is used to give the name of the thing that the STIX construct describes. The easiest way to see the differences is via an example:
+
+Scenario | Title | Name
+-------|-------|-------
+Representing the general concept of SpyEye | TTP Title = "SpyEye" | Malware Name = "SpyEye"
+Representing a specific analysis of the SpyEye Malware | TTP Title = "Analysis of SpyEye Performed with Cuckoo" | Malware Name = "SpyEye"
+
+In the first example the STIX TTP is representing the general concept of SpyEye and therefore the TTP Title and Malware Name are the same. There's no more specific context that the STIX TTP conveys beyond the malware and therefore duplicating the name is perfectly fine. This probably covers the majority of cases.
+
+In the second example a specific analysis of SpyEye and therefore the TTP Title is more specific than just SpyEye. In cases like this where the STIX construct conveys a more particular analysis, viewpoint, or characterization of the general concept then it's appropriate to give it a more specific title indicating that.
+
+### Information Source
+
+[InformationSourceType](/data-model/{{site.current_version}}/stixCommon/InformationSourceType) is used to describe the who, what, and when of the production of the information in the containing construct. Among other things it's used to describe who produced the information, when it was produced, what tools were used to produce it and what it was derived from.
+
+Information source is applied at several layers of the data model and at each of these layers it applies to that content and all content nested inside of it except when overriden (see below) by a more localized source. For example:
+
+* At `STIX_Header`, it applies to the package/report itself as well as individually to all constructs.
+* At a construct level, such as an `Indicator`, it applies to the construct itself (always overriding any `Information_Source` set at the package level) and individually to any contained relationships or statements.
+* At the [statement](/data-model/{{site.current_version}}/stixCommon/StatementType/) or [relationship](/data-model/{{site.current_version}}/stixCommon/GenericRelationshipType/) level (or anywhere else it appears) it applies individually to that construct and overrides the source set at the construct or package level.
+
+For the purposes of Information Source override means "completely replaces".
+
+Note that on [Indicator](/data-model/{{site.current_version}}/indicator/IndicatorType/) the information source field is called `Producer`. On [Observable](/data-model/{{site.current_version}}/cybox/ObservableType/), it's called `Observable_Source` and uses the semantics and structure of the CybOX [MeasureSourceType](/data-model/{{site.current_version}}/cyboxCommon/MeasureSourceType/).
+
+### Referencing vs Embedding
 
 In many cases, you'll have an option to define a component relationship by one of two approaches: either including the related component within the parent component (embedding) or by referencing the related component by ID to a representation in a global location (referencing).
 
@@ -76,13 +112,15 @@ In many cases, you'll have an option to define a component relationship by one o
 
 Relationships via embedded definition are achieved when a relationship from one component (source) to another (sink) is asserted by defining/specifying the sink from within the source. If an id is specified for the sink it can be referenced from other components as well.
 
-**NOTE:** Embedding the definition of a component within another component does not imply a hard parent-child relationship limiting its relevancy to only the embedding component. As noted in the suggested practices for [Assigning IDs], **for situations where the embedded component is really only relevant/valid/important within the context of the embedding component it is suggested practice to not specify an ID for it**. This explicitly denotes its local-only relevance and prevents it from participating in relationships to components other than the embedding one. **For situations where the simplicity, brevity and readability of relationship via embedded definition is desirable but the embedded content may be relevant/valid/important outside the context of only the embedding component, an ID can be specified for it and it can participate in relationships to components other than the embedding one.**
+**NOTE:** Embedding the definition of a component within another component does not imply a hard parent-child relationship limiting its relevancy to only the embedding component. As noted in the suggested practices for [Assigning IDs](), **for situations where the embedded component is really only relevant/valid/important within the context of the embedding component it is suggested practice to not specify an ID for it.** This explicitly denotes its local-only relevance and prevents it from participating in relationships to components other than the embedding one. **For situations where the simplicity, brevity and readability of relationship via embedded definition is desirable but the embedded content may be relevant/valid/important outside the context of only the embedding component, an ID can be specified for it and it can participate in relationships to components other than the embedding one.**
 
+
+foo
 
 **Example with IDs on embedded content (related TTP and COA content is general enough to be relevant outside the context of the Indicator):**
->
+
 <img src="diagram2.png" alt="Relationship via Embedding w ids"/>
->
+
 {% highlight xml %}
 <stix:STIX_Header>
     <stix:Title>Example watchlist that contains domain information.</stix:Title>
@@ -114,7 +152,6 @@ Relationships via embedded definition are achieved when a relationship from one 
     </stix:Indicator>
 </stix:Indicators>
 {% endhighlight %}
-
 
 **Example without IDs on embedded content (related TTP content is general enough to be relevant outside the context of the Indicator but related COA content is not):**
 
@@ -241,8 +278,8 @@ These situations are a judgment call, but when making that judgment you should c
 
 <img src="decision flow.png" alt="decision flow chart"/>
 
-## Versioning and the timestamp attribute
- 
+### Versioning
+
 8 major STIX constructs are versioned:
 
 * [Packages](/data-model/{{site.current_version}}/stix/STIXType) (STIXType, STIX_Package)
@@ -260,7 +297,7 @@ Note that many constructs that have a `@timestamp` attribute also have an `Infor
 
 See the [Versioning](/documentation/concepts/versioning) concept discussion for more information.
 
-## Creating References
+#### Versioning and References
 
 There are two primary ways to create references in STIX 1.1.1: you can either create a reference to a specific version of a construct or you can create a reference to the latest version of a construct.
 
@@ -280,7 +317,17 @@ In general you should use the version-specific reference if you're concerned tha
 
 References to non-versioned constructs (anything with an id/idref but not a timestamp) implicitly use the latter form.
 
-## Creating documents for human consumption
+### Using Vocabularies
+
+Many places in STIX use controlled vocabularies to represent data. When possible, you should use the vocabularies included in the STIX defaults. If necessary you can use your own vocabulary or even use strings outside of any vocabularies.
+
+If you do this to add values that you think might be useful for other STIX users, you should [let us know](https://github.com/STIXProject/schemas/wiki#feedback) so we can consider adding it to the default vocabulary.
+
+### Creating Timestamps
+
+To remove ambiguity regarding the timezone, all times should include an explicit timezone whenever possible.
+
+### Creating documents for human consumption
 
 These suggestions only apply when you're creating documents you intend to be human-readable. They simply make the document more readable and easy to validate by XML editors but are not important for automated processing.
 
@@ -296,29 +343,25 @@ To ease validation in XML editors:
 * Include schemaLocation attributes to the hosted versions of the STIX schemas
 * If you include any non-standard extension or marking schemas, include them with the bundle and include that reference in the schemaLocation attribute.
 
-## Using Vocabularies
-
-Many places in STIX use controlled vocabularies to represent data. When possible, you should use the vocabularies included in the STIX defaults. If necessary you can use your own vocabulary or even use strings outside of any vocabularies.
-
-If you do this to add values that you think might be useful for other STIX users, you should [let us know](https://github.com/STIXProject/schemas/wiki#feedback) so we can consider adding it to the default vocabulary.
-
-## Creating Timestamps
-
-To remove ambiguity regarding the timezone, all times should include an explicit timezone whenever possible.
-
-
 -----
-
 
 ## STIX Package
 {% include sp_package.md %}
 
 ## Indicator
+
 <img src="/images/Indicator.png" class="component-img-right" alt="Indicator Icon" />
 
 {% include sp_indicator.md %}
 
+## Observable
+
+<img src="/images/Observable.png" class="component-img-right" alt="Observable Icon" />
+
+{% include sp_observable.md %}
+
 ## Handling
+
 <img src="/images/Data Marking.png" class="component-img-right" alt="Data Marking Icon" />
 
 {% include sp_handling.md %}

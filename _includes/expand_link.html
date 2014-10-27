@@ -1,0 +1,1 @@
+<a {% if include.disabledText %}data-disabled-text="{{include.disabledText}}" data-enabled-text=""{% endif %} class="toggleLink collapsed" data-toggle="collapse" href="#collapse-{{include.section}}">{% if include.text %}{{include.text}}{% else %}<strong>Show Example</strong>{% endif %}</a>

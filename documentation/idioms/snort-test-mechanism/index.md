@@ -35,9 +35,9 @@ There are a few other details to note as well:
 * The `Producer` field is set to provide a reference back to the original information source (blog entry) from FOX IT.
 * The rules themselves are wrapped in CDATA to ensure that any tags or things like that won't break the XML structure and don't need to be escaped.
 
-## XML
+## Implementation
 
-{% highlight xml linenos %}
+{% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="snort" %}{% highlight xml linenos %}
 <stix:Indicator id="example:indicator-567b201c-4fd5-4bde-a5db-42abc340807a" timestamp="2014-06-20T15:16:56.987616+00:00" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
     <indicator:Title>Snort Signature for Heartbleed</indicator:Title>
     <indicator:Indicated_TTP>
@@ -64,21 +64,7 @@ There are a few other details to note as well:
         <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">High</stixCommon:Value>
     </indicator:Confidence>
 </stix:Indicator>
-{% endhighlight %}
-
-<a href="snort-test-mechanism.xml">Full XML</a>
-
-<h2>Python</h2>
-
-<p class="alert alert-danger"><strong>Notice</strong> The current version of python-stix, 1.1.1.0, has a bug (<a href="https://github.com/STIXProject/python-stix/issues/148">#148</a>) in its handling of the Snort test mechanism that causes it to create invalid content.</p>
-
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#produce" data-toggle="tab">Produce</a></li>
-  <li><a href="#consume" data-toggle="tab">Consume</a></li>
-</ul>
-<div class="tab-content">
-  <div class="tab-pane active" id="produce">
-{% highlight python linenos %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 indicator = Indicator(title = "Snort Signature for Heartbleed")
 indicator.confidence = Confidence("High")
 
@@ -90,10 +76,7 @@ tm.rules = [
 tm.efficacy = "Low"
 tm.producer = InformationSource(identity=Identity(name="FOX IT"))
 indicator.test_mechanisms = [tm]
-{% endhighlight %}
-  </div>
-  <div class="tab-pane" id="consume">
-{% highlight python linenos %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 stix_package = STIXPackage.from_xml('snort-test-mechanism.xml')
 
 ttps = {}
@@ -119,11 +102,9 @@ for indicator in stix_package.indicators:
         print "Efficacy: " + tm.efficacy.value.value
         for rule in tm.rules:
             print "Rule: " + rule.value
-{% endhighlight %}
-  </div>
-</div>
+{% endhighlight %}{% include end_tabs.html %}
 
-[Production Python](snort-test-mechanism-producer.py) | [Consumption Python](snort-test-mechanism-consumer.py)
+[Full XML](snort-test-mechanism.xml) | [Python Producer](snort-test-mechanism-producer.py) | [Python Consumer](snort-test-mechanism-consumer.py)
 
 ## Further Reading
 

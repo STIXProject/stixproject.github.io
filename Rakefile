@@ -210,6 +210,7 @@ $practices = {
     "marking:MarkingSpecificationType" => "sp_handling.md",
     "stix:STIXHeaderType" => "sp_package.md",
     "stix:STIXType" => "sp_package.md",
+    "cybox:ObservableType" => "sp_observable.md"
 }
 
 desc "Regenerate the data model documentation"
@@ -218,7 +219,13 @@ task :regenerate do
   #Liquid::Template.file_system = Liquid::LocalFileSystem.new("_includes")
 
   # Preload all versions of all schemas first so our introspection can tell what's available
-  StixSchemaSpy::Schema::VERSIONS.each {|v| StixSchemaSpy::Schema.preload!(v)}
+  StixSchemaSpy::Schema::VERSIONS.each do |v|
+    if v == StixSchemaSpy::Schema.latest_version
+      StixSchemaSpy::Schema.preload!(v, "_schemas/stix") # For the current version use the included submodule schemas, which may have doc updates
+    else
+      StixSchemaSpy::Schema.preload!(v)
+    end
+  end
 
   StixSchemaSpy::Schema::VERSIONS.each do |version|
     # Load the documentation page template
@@ -251,7 +258,7 @@ def write_page(type, template, version)
         (schema && schema.find_type(type.name)).nil?
       },
       'name' => type.name,
-      'documentation' => process_documentation(type.documentation, version),
+      'documentation' => process_documentation(type.documentation.split("\n"), version),
       'schema' => {
         'title' => type.schema.title,
         'prefix' => type.schema.prefix

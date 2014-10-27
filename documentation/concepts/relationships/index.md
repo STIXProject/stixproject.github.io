@@ -61,13 +61,7 @@ If using that field as a reference, the `idref` field is used to point to the `i
 
 For example:
 
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#ms-xml" data-toggle="tab">XML</a></li>
-  <li><a href="#ms-python" data-toggle="tab">Python</a></li>
-</ul>
-<div class="tab-content">
-  <div class="tab-pane active" id="ms-xml">
-{% highlight xml linenos %}
+{% include start_tabs.html tabs="XML|Python" name="ref" %}{% highlight xml linenos %}
 <stix:Indicators>
   <stix:Indicator id="example:indicator-8837a4b4-b682-11e3-b0f3-0800271e87d2" xsi:type='indicator:IndicatorType' timestamp="2014-03-31T00:00:00.000000Z">
     <indicator:Indicated_TTP>
@@ -78,10 +72,7 @@ For example:
 <stix:TTPs>
   <stix:TTP id="example:ttp-883730f6-b682-11e3-b0f3-0800271e87d2" xsi:type='ttp:TTPType' timestamp="2014-03-31T00:00:00.000000Z"/>
 </stix:TTPs>
-{% endhighlight %}
-  </div>
-  <div class="tab-pane" id="ms-python">
-{% highlight python linenos %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 from stix.core import STIXPackage
 from stix.indicator import Indicator
 from stix.ttp import TTP
@@ -96,21 +87,13 @@ stix_package.add_indicator(indicator)
 stix_package.add_ttp(ttp)
 
 print stix_package.to_xml()
-{% endhighlight %}
-  </div>
-</div>
+{% endhighlight %}{% include end_tabs.html %}
 
 In the example above, a reference is created by setting the `idref` of the relationship TTP to the `id` of the TTP related itself. Note that while the TTP definition requires the `xsi:type`, the TTP reference does not because it only uses the `idref` field. It could also have added a `timestamp` set to exactly "2014-03-31T00:00:00.000000Z" to indicate that the relationship applies to that specific version of the TTP.
 
 Assuming that you're using a full relationship structure, you can also choose to embed the related component:
 
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#ms-xml" data-toggle="tab">XML</a></li>
-  <li><a href="#embed-python" data-toggle="tab">Python</a></li>
-</ul>
-<div class="tab-content">
-  <div class="tab-pane active" id="ms-xml">
-{% highlight xml linenos %}
+{% include start_tabs.html tabs="XML|Python" name="embed" %}{% highlight xml linenos %}
 <stix:Indicators>
   <stix:Indicator id="example:indicator-3cdff264-b682-11e3-ab3e-0800271e87d2" timestamp="2014-03-31T00:00:00.000000Z" xsi:type="indicator:IndicatorType">
     <indicator:Indicated_TTP>
@@ -120,10 +103,7 @@ Assuming that you're using a full relationship structure, you can also choose to
     </indicator:Indicated_TTP>
   </stix:Indicator>
 </stix:Indicators>
-{% endhighlight %}
-  </div>
-  <div class="tab-pane" id="embed-python">
-{% highlight python linenos %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 from stix.core import STIXPackage
 from stix.indicator import Indicator
 from stix.ttp import TTP
@@ -136,9 +116,7 @@ indicator.add_indicated_ttp(ttp)
 
 stix_package.add_indicator(indicator)
 print stix_package.to_xml()
-{% endhighlight %}
-  </div>
-</div>
+{% endhighlight %}{% include end_tabs.html %}
 
 In this case the TTP is not defined separately at the top level, it is included in full inside the Indicated TTP. When embedding another component it does require using the `xsi:type` (because the full TTP model is being used) and allows (but does not require) the use of `id` and `timestamp` to give the construct and ID.
 
@@ -147,13 +125,7 @@ In this case the TTP is not defined separately at the top level, it is included 
 
 #### Minimal Embed
 
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#e-xml" data-toggle="tab">XML</a></li>
-  <li><a href="#e-python" data-toggle="tab">Python</a></li>
-</ul>
-<div class="tab-content">
-  <div class="tab-pane active" id="e-xml">
-{% highlight xml linenos %}
+{% include start_tabs.html tabs="XML|Python" name="min-embed" %}{% highlight xml linenos %}
 <stix:Indicators>
   <stix:Indicator id="example:indicator-3cdff264-b682-11e3-ab3e-0800271e87d2" timestamp="2014-03-31T00:00:00.000000Z" xsi:type="indicator:IndicatorType">
     <indicator:Indicated_TTP>
@@ -163,10 +135,7 @@ In this case the TTP is not defined separately at the top level, it is included 
     </indicator:Indicated_TTP>
   </stix:Indicator>
 </stix:Indicators>
-{% endhighlight %}
-  </div>
-  <div class="tab-pane" id="e-python">
-{% highlight python linenos %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 from stix.core import STIXPackage
 from stix.indicator import Indicator
 from stix.ttp import TTP
@@ -179,19 +148,11 @@ indicator.add_indicated_ttp(ttp)
 
 stix_package.add_indicator(indicator)
 print stix_package.to_xml()
-{% endhighlight %}
-  </div>
-</div>
+{% endhighlight %}{% include end_tabs.html %}
 
 #### Minimal Reference
 
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#r-xml" data-toggle="tab">XML</a></li>
-  <li><a href="#r-python" data-toggle="tab">Python</a></li>
-</ul>
-<div class="tab-content">
-  <div class="tab-pane active" id="r-xml">
-{% highlight xml linenos %}
+{% include start_tabs.html tabs="XML|Python" name="min-ref" %}{% highlight xml linenos %}
 <stix:Indicators>
   <stix:Indicator id="example:indicator-8837a4b4-b682-11e3-b0f3-0800271e87d2" xsi:type='indicator:IndicatorType' timestamp="2014-03-31T00:00:00.000000Z">
     <indicator:Indicated_TTP>
@@ -202,10 +163,7 @@ print stix_package.to_xml()
 <stix:TTPs>
   <stix:TTP id="example:ttp-883730f6-b682-11e3-b0f3-0800271e87d2" xsi:type='ttp:TTPType' timestamp="2014-03-31T00:00:00.000000Z"/>
 </stix:TTPs>
-{% endhighlight %}
-  </div>
-  <div class="tab-pane" id="r-python">
-{% highlight python linenos %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 from stix.core import STIXPackage
 from stix.indicator import Indicator
 from stix.ttp import TTP
@@ -220,19 +178,11 @@ stix_package.add_indicator(indicator)
 stix_package.add_ttp(ttp)
 
 print stix_package.to_xml()
-{% endhighlight %}
-  </div>
-</div>
+{% endhighlight %}{% include end_tabs.html %}
 
 #### Use of Relationship Field
 
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#ex-r-xml" data-toggle="tab">XML</a></li>
-  <li><a href="#ex-r-python" data-toggle="tab">Python</a></li>
-</ul>
-<div class="tab-content">
-  <div class="tab-pane active" id="ex-r-xml">
-{% highlight xml linenos %}
+{% include start_tabs.html tabs="XML|Python" name="rel" %}{% highlight xml linenos %}
 <stix:Indicators>
   <stix:Indicator id="example:indicator-7f7b073e-b683-11e3-b79d-0800271e87d2" xsi:type='indicator:IndicatorType' timestamp="2014-03-31T00:00:00.000000Z">
     <indicator:Indicated_TTP>
@@ -244,10 +194,7 @@ print stix_package.to_xml()
 <stix:TTPs>
   <stix:TTP id="example:ttp-7f7a4ede-b683-11e3-b79d-0800271e87d2" xsi:type='ttp:TTPType' timestamp="2014-03-31T00:00:00.000000Z"/>
 </stix:TTPs>
-{% endhighlight %}
-  </div>
-  <div class="tab-pane" id="ex-r-python">
-{% highlight python linenos %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 from stix.core import STIXPackage
 from stix.indicator import Indicator
 from stix.ttp import TTP
@@ -264,19 +211,11 @@ stix_package.add_indicator(indicator)
 stix_package.add_ttp(ttp)
 
 print stix_package.to_xml()
-{% endhighlight %}
-  </div>
-</div>
+{% endhighlight %}{% include end_tabs.html %}
 
 #### Use of Confidence and Information Source
 
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#ex-c-xml" data-toggle="tab">XML</a></li>
-  <li><a href="#ex-c-python" data-toggle="tab">Python</a></li>
-</ul>
-<div class="tab-content">
-  <div class="tab-pane active" id="ex-c-xml">
-{% highlight xml linenos %}
+{% include start_tabs.html tabs="XML|Python" name="conf" %}{% highlight xml linenos %}
 <stix:Indicators>
   <stix:Indicator id="example:indicator-50787664-b684-11e3-9149-0800271e87d2" xsi:type='indicator:IndicatorType' timestamp="2014-03-31T00:00:00.000000Z">
     <indicator:Indicated_TTP>
@@ -296,10 +235,7 @@ print stix_package.to_xml()
 <stix:TTPs>
   <stix:TTP id="example:ttp-5077da92-b684-11e3-9149-0800271e87d2" xsi:type='ttp:TTPType' timestamp="2014-03-31T00:00:00.000000Z"/>
 </stix:TTPs>
-{% endhighlight %}
-  </div>
-  <div class="tab-pane" id="ex-c-python">
-{% highlight python linenos %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 from stix.core import STIXPackage
 from stix.indicator import Indicator
 from stix.ttp import TTP
@@ -320,9 +256,7 @@ stix_package.add_indicator(indicator)
 stix_package.add_ttp(ttp)
 
 print stix_package.to_xml()
-{% endhighlight %}
-  </div>
-</div>
+{% endhighlight %}{% include end_tabs.html %}
 
 ## Further Reading
 

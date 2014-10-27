@@ -1,5 +1,6 @@
 <div class="navbar navbar-inverse navbar-static-top" role="navigation">
   <div class="container">
+    {% include multisitenav.html %}
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
@@ -7,6 +8,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+      <a class="navbar-brand" href="#" data-toggle="collapse" data-target="#multi-site-nav">
+        <small><span id="globe" class="glyphicon glyphicon-globe" data-toggle="tooltip" data-placement="right" title="Other sites"></span></small>
+      </a>
       <a class="navbar-brand" href="{{ site.root }}/">{{ site.name }}</a>
     </div>
     <div class="collapse navbar-collapse">

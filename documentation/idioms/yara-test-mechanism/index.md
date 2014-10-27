@@ -25,9 +25,9 @@ There are a few other details to note as well:
 * The `Producer` field is set to provide a reference back to the original information source (blog entry) from Yara.
 * The rule is wrapped in CDATA to ensure that any tags or things like that won't break the XML structure and don't need to be escaped.
 
-## XML
+## Implementation
 
-{% highlight xml linenos %}
+{% include start_tabs.html tabs="XML|Production Python|Consumption Python" name="yara" %}{% highlight xml linenos %}
 <stix:Indicator id="example:indicator-567b201c-4fd5-4bde-a5db-42abc340807a" timestamp="2014-06-20T15:16:56.987616+00:00" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
     <indicator:Title>silent_banker</indicator:Title>
     <indicator:Description>This is just an example.</indicator:Description>
@@ -61,21 +61,7 @@ $a or $b or $c
         </indicator:Test_Mechanism>
     </indicator:Test_Mechanisms>
 </stix:Indicator>
-{% endhighlight %}
-
-<a href="yara-test-mechanism.xml">Full XML</a>
-
-<h2>Python</h2>
-
-<p class="alert alert-danger"><strong>Notice</strong> The current version of python-stix, 1.1.1.0, does not support the Yara test mechanism, so this code will not work.</p>
-
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#produce" data-toggle="tab">Produce</a></li>
-  <li><a href="#consume" data-toggle="tab">Consume</a></li>
-</ul>
-<div class="tab-content">
-  <div class="tab-pane active" id="produce">
-{% highlight python linenos %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 rule = """
 rule silent_banker : banker
 {
@@ -102,10 +88,7 @@ tm.efficacy = "Low"
 tm.producer = InformationSource(identity=Identity(name="Yara"))
 tm.producer.references = ["http://plusvic.github.io/yara/"]
 indicator.test_mechanisms = [tm]
-{% endhighlight %}
-  </div>
-  <div class="tab-pane" id="consume">
-{% highlight python linenos %}
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 stix_package = STIXPackage.from_xml('yara-test-mechanism.xml')
 
 for indicator in stix_package.indicators:
@@ -117,11 +100,9 @@ for indicator in stix_package.indicators:
         print "Producer: " + tm.producer.identity.name
         print "Efficacy: " + tm.efficacy.value.value
         print "Rule: %s" % tm.rule
-{% endhighlight %}
-  </div>
-</div>
+{% endhighlight %}{% include end_tabs.html %}
 
-[Production Python](yara-test-mechanism-producer.py) | [Consumption Python](yara-test-mechanism-consumer.py)
+[Full XML](yara-test-mechanism.xml) | [Python Producer](yara-test-mechanism-producer.py) | [Python Consumer](yara-test-mechanism-consumer.py)
 
 ## Further Reading
 

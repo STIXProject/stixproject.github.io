@@ -1,0 +1,129 @@
+---
+layout: data_model
+title: MAEC4.0InstanceType
+this_version: 1.0
+---
+
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.0, which is not the latest version (1.1.1).
+</div>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>MAEC4.0InstanceType<span class="subdued"> Schema</span></h1>
+    <p class="data-model-description">The MAEC4.0InstanceType provides an extension to <a href='/data-model/1.0/ttp/MalwareInstanceType'>MalwareInstanceType</a> which imports and leverages the MAEC 4.0 schema for structured characterization of Malware.</p>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" selected="selected">STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+
+<hr />
+
+
+<h2>Fields</h2>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Type<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/stixCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
+        
+      </td>
+      <td>
+        
+          <p></p>
+        
+          <p>						The Type field provides a characterization of what type of malware this MalwareInstance is.</p>
+        
+          <p>					</p>
+        
+          <p>						This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is <a href='/data-model/1.0/stixVocabs/MalwareTypeVocab-1.0'>MalwareTypeVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.0.0/stix_default_vocabularies.xsd .</p>
+        
+          <p></p>
+        
+          <p>						Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
+        
+          <p>					</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Name<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/stixCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
+        
+      </td>
+      <td>
+        
+          <p></p>
+        
+          <p>						The Name field specifies a name associated with this MalwareInstance.</p>
+        
+          <p>					</p>
+        
+          <p>						This field is implemented through the xsi:type controlled vocabulary extension mechanism. No default vocabulary type has been defined for STIX 1.0. Users may either define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a free string field.</p>
+        
+          <p>					</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Description<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.0/stixCommon/StructuredTextType">StructuredTextType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Description field provides an unstructured description of an individual Malware instance.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>MAEC<span class="occurrence">1..1</span></td>
+      <td>
+        
+          PackageType
+        
+      </td>
+      <td>
+        
+          <p>The MAEC field contains the structured characterization of instances of Malware utilizing the MAEC Package schema.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

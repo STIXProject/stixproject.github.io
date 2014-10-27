@@ -23,19 +23,21 @@ The time when the machine was infected is represented in the `Initial Compromise
 
 Note that timestamps describing the incident should be represented under `incident:Time`, as these are data directly related to the breach in question. `Information_Source/Time` also allows you to represent timestamps, but rather than data about the incident they represent metadata about the incident report. For example, `Information_Source/Time/Produced_Time` represents the time the incident record was produced. Similarly, the `@timestamp` field is used to version the construct and should not be used to represent any time related to the incident itself.
 
-{% highlight xml linenos %}
+## Implementation
+
+{% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="incident-timestamp" %}{% highlight xml linenos %}
 <stix:STIX_Package 
-	xmlns:example="http://example.com"
-	xmlns:incident="http://stix.mitre.org/Incident-1"
-	xmlns:stixCommon="http://stix.mitre.org/common-1"
-	xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1"
-	xmlns:stix="http://stix.mitre.org/stix-1"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="
-	http://stix.mitre.org/Incident-1 http://stix.mitre.org/XMLSchema/incident/1.1.1/incident.xsd
-	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd
-	http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
-	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd" id="example:Package-069c859b-b9ab-48b5-ab24-e026f8dfb499" version="1.1.1" timestamp="2014-08-18T20:27:39.238685+00:00">
+    xmlns:example="http://example.com"
+    xmlns:incident="http://stix.mitre.org/Incident-1"
+    xmlns:stixCommon="http://stix.mitre.org/common-1"
+    xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1"
+    xmlns:stix="http://stix.mitre.org/stix-1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+    http://stix.mitre.org/Incident-1 http://stix.mitre.org/XMLSchema/incident/1.1.1/incident.xsd
+    http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd
+    http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
+    http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd" id="example:Package-069c859b-b9ab-48b5-ab24-e026f8dfb499" version="1.1.1" timestamp="2014-08-18T20:27:39.238685+00:00">
     <stix:STIX_Header>
         <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Incident</stix:Package_Intent>
         <stix:Description>Sample breach report</stix:Description>
@@ -70,28 +72,7 @@ Note that timestamps describing the incident should be represented under `incide
         </stix:Incident>
     </stix:Incidents>
 </stix:STIX_Package>
-
-
-{% endhighlight %}
-
-[Full XML](sample.xml)
-
-## Python
-
-Note that `IncidentTime` is distinct from the builtin `Time` type in the following code:
-{% highlight python linenos %}
-from stix.core import STIXPackage, STIXHeader
-from datetime import datetime
-from cybox.common import Time
-
-from stix.incident import Incident,ImpactAssessment, AffectedAsset
-from stix.incident import Time as incidentTime # different type than common:Time
-
-from stix.common import InformationSource
-from stix.common import Confidence
-from stix.common import Identity
-
-
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 # setup stix document
 stix_package = STIXPackage()
 stix_header = STIXHeader()
@@ -131,10 +112,31 @@ breach.add_victim ("Cyber Tech Dynamics")
 
 stix_package.add_incident(breach)
 
-print pkg.to_xml() 
-{% endhighlight %}
+print pkg.to_xml()
 
-[Production Python](incident-timestamps_producer.py) | [Consumption Python](incident-timestamps_consumer.py)
+
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
+print "== INDICATOR =="
+print "Package: " + str(pkg.stix_header.description)
+for inc in pkg.incidents:
+print "---"
+print "Reporter: " + inc.reporter.identity.name
+print "Title: "+ inc.title
+print "Description: "+ str(inc.description)
+print "Confidence: "+ str(inc.confidence.value)
+for impact in inc.impact_assessment.effects:
+    print "Impact: "+ str(impact)
+print "Initial Compromise: "+ str(inc.time.initial_compromise.value)
+print "Incident Discovery: "+ str(inc.time.incident_discovery.value)
+print "Restoration Achieved: "+ str(inc.time.restoration_achieved.value)
+print "Incident Reported: "+ str(inc.time.incident_reported.value)
+
+for victim in inc.victims:
+    print "Victim: "+ str(victim.name)
+
+{% endhighlight %}{% include end_tabs.html %}
+
+[Full XML](sample.xml) | [Python Producer](incident-timestamps_producer.py) | [Python Consumer](incident-timestamps_consumer.py)
 
 ## Further Reading
 

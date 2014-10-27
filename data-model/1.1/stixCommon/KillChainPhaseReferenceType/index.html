@@ -13,6 +13,7 @@ this_version: 1.1
 <div class="row">
   <div class="col-md-10">
     <h1>KillChainPhaseReferenceType<span class="subdued">STIX Common Schema</span></h1>
+    <p class="data-model-description">The <a href='/data-model/1.1/stixCommon/KillChainPhaseReferenceType'>KillChainPhaseReferenceType</a> is used to reference kill chains that are defined elsewhere.</p><p class="data-model-description">This type extends from stixCommon:KillChainPhaseType and contains several attributes that are redundant to the original kill chain definition: @kill_chain_name, @ordinality, and @name. These attributes should not be used to redefine attributes in the referenced kill chain. Instead, it is strongly suggested that they either be omitted or, if they are present, they must contain the same values as the kill chain definition. This ensures data consistency across the kill chain itself and all references to it.</p>
   </div>
 
   <div id="nav-area" class="col-md-2">
@@ -37,13 +38,11 @@ this_version: 1.1
 
 </div>
 
-<p class="data-model-description">The <a href='/data-model/1.1/stixCommon/KillChainPhaseReferenceType'>KillChainPhaseReferenceType</a> is used to reference kill chains that are defined elsewhere.
-This type extends from stixCommon:KillChainPhaseType and contains several attributes that are redundant to the original kill chain definition: @kill_chain_name, @ordinality, and @name. These attributes should not be used to redefine attributes in the referenced kill chain. Instead, it is strongly suggested that they either be omitted or, if they are present, they must contain the same values as the kill chain definition. This ensures data consistency across the kill chain itself and all references to it.</p>
 
 <hr />
 
 
-
+<h2>Fields</h2>
 <table class="table table-striped table-hover">
   <thead>
     <tr>

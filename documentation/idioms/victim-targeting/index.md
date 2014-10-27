@@ -23,9 +23,9 @@ There are two main pieces of information that need to be communicated in this id
 
 The campaign is represented with just a title and a related TTP with a relationship name of "Targets". The TTP leverages the victim targeting constructs to represent the types of information that are targeted. For targeting of a specific type of information, the `Targeted Information` field is used, leveraging the controlled vocabulary for information types, [InformationTypeVocab-1.0](/data-model/{{site.current_version}}/stixVocabs/InformationTypeVocab-1.0/).
 
-## XML
+## Implementation
 
-{% highlight xml linenos %}
+{% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="victim-targeting" %}{% highlight xml linenos %}
 <stix:TTPs>
     <stix:TTP xsi:type="ttp:TTPType" id="example:ttp-4fde045a-b25f-f035-e8d0-29c9d5130cd9" timestamp="2014-02-20T09:00:00.000000Z">
         <ttp:Title>Victim Targeting: Customer PII and Financial Data</ttp:Title>
@@ -46,17 +46,7 @@ The campaign is represented with just a title and a related TTP with a relations
         </campaign:Related_TTPs>
     </stix:Campaign>
 </stix:Campaigns>
-{% endhighlight %}
-
-[Full XML](victim-targeting.xml)
-
-## Python
-
-{% highlight python linenos %}
-from stix.campaign import Campaign
-from stix.common.related import RelatedTTP
-from stix.core import STIXPackage
-from stix.ttp import TTP
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 
 ttp = TTP()
 ttp.title = "Victim Targeting: Customer PII and Financial Data"
@@ -78,9 +68,27 @@ pkg.add_campaign(c)
 pkg.add_ttp(ttp)
 
 print pkg.to_xml()
-{% endhighlight %}
 
-[Full Python](victim-targeting.py)
+{% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
+
+ttp_list = {}
+for tactic in pkg.ttps:
+    ttp_list[tactic.id_] = tactic
+
+
+print "== Campaign =="
+for camp in pkg.campaigns:
+    print "---"
+    print "Campaign: " + str(camp.title)
+    
+    for tactic in camp.related_ttps:
+        print "RelatedTTP: " + ttp_list[tactic.item.idref].title
+        print "Relationship: " + str(tactic.relationship)
+        for target in ttp_list[tactic.item.idref].victim_targeting.targeted_information:
+            print "Target: " + str(target)
+
+{% endhighlight %}{% include end_tabs.html %}
+[Full XML](victim-targeting.xml) | [Python Producer](victim-targeting_producer.py) | [Python Consumer](victim-targeting_consumer.py)
 
 ## Further Reading
 

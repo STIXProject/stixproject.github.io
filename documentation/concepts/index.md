@@ -32,6 +32,16 @@ This page describes several central STIX concepts that cut across all of the cor
 
       <a class="btn btn-primary" href="relationships">Go »</a>
     </div>
+    
+    <div class="well">
+      <img src="/images/Indicator.png" class="component-img-right" alt="Indicator Icon" />
+      <img src="/images/Observable.png" class="component-img-right" alt="Observable Icon" />
+      <h4><a href="composition">Composition of Observables and Indicators</a></h4>
+
+      <p>Describes STIX/CybOX mechanisms for characterizing/specifying composite Observables and Indicators.</p>
+
+      <a class="btn btn-primary" href="composition">Go »</a>
+    </div>
   </div>
 
   <div class="col-md-6">
@@ -51,6 +61,15 @@ This page describes several central STIX concepts that cut across all of the cor
       points, and controlled vocabularies.</p>
 
       <a class="btn btn-primary" href="xsi-type">Go »</a>
+    </div>
+    
+    <div class="well">
+      <img src="/images/Observable.png" class="component-img-right" alt="Observable Icon" />
+      <h4><a href="xsi-type">Observable Instances vs Observable Patterns</a></h4>
+
+      <p>Describes the two primary forms of Observables leveraged in STIX.</p>
+
+      <a class="btn btn-primary" href="observable-patterns-vs-instances">Go »</a>
     </div>
   </div>
 </div>
