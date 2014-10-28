@@ -121,6 +121,7 @@ foo
 
 <img src="diagram2.png" alt="Relationship via Embedding w ids"/>
 
+<div>
 {% highlight xml %}
 <stix:STIX_Header>
     <stix:Title>Example watchlist that contains domain information.</stix:Title>
@@ -152,11 +153,13 @@ foo
     </stix:Indicator>
 </stix:Indicators>
 {% endhighlight %}
+</div>
 
 **Example without IDs on embedded content (related TTP content is general enough to be relevant outside the context of the Indicator but related COA content is not):**
 
 <img src="diagram3.png" alt="Relationship via Embedding w/o ids"/>
 
+<div>
 {% highlight xml %}
 <stix:STIX_Header>
     <stix:Title>Indicators for Teufelhund malware dropsite.</stix:Title>
@@ -188,6 +191,7 @@ foo
     </stix:Indicator>
 </stix:Indicators>
 {% endhighlight %}
+</div>
 
 **Relationship via embedded definition is desirable when simplicity, brevity and readability of the content is of concern or the content is very localized in context and less likely that portions will be interrelated with other content.**
 
@@ -204,6 +208,7 @@ idref referencing the defined id for the sink.
 
 <img src="diagram1.png" alt="Relationship via Reference"/>
 
+<div>
 {% highlight xml %}
 <stix:STIX_Header>
     <stix:Title>Example watchlist that contains domain information.</stix:Title>
@@ -244,6 +249,7 @@ idref referencing the defined id for the sink.
     </stix:Course_Of_Action>
 </stix:Courses_Of_Action>
 {% endhighlight %}
+</div>
 
 
 **Relationship via reference is desirable when flexibility, potential reuse and correlation of the content is a key concern or when part of a larger body of highly interrelated content.**
