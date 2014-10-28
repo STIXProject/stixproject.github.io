@@ -43,9 +43,9 @@ As a simple general rule specifying IDs on particular instances of constructs en
 This supports several very common STIX use cases such as:
 
 * enabling individual portions of content to be externally referenced unambiguously (e.g. a report talking about a specific Campaign or Threat Actor)
-* enabling the sharing/resharing of portions of STIX content (e.g. PartyB resharing 2 of a set of 100 Indicators received from PartyA)
-* enabling versioning of content
-* enabling the specification of potentially complex webs of interconnection and correlation between portions of STIX content (e.g. connecting particular TTPs and Indicators to specific Campaigns over time)
+* enabling the sharing/resharing of portions of STIX content (e.g. PartyB resharing 2 of a set of 100 Indicators received from PartyA) 
+* enabling versioning of content 
+* enabling the specification of potentially complex webs of interconnection and correlation between portions of STIX content (e.g. connecting particular TTPs and Indicators to specific Campaigns over time) 
 * enabling analysis pivoting on content with multiple contexts (e.g. the same IP Address seen in multiple Incidents and with connections to multiple TTPs and Indicators)
 
 
@@ -64,7 +64,7 @@ For these reasons, it is suggested that IDs be specified for the following commo
 * [Action](/data-model/{{site.current_version}}/cybox/ActionType)
 * [Event](/data-model/{{site.current_version}}/cybox/EventType)
 
-As a simple general rule specifying IDs is not suggested for constructs embedded within other constructs (e.g. a CybOX Object containing the embedded specification of another CybOX Related_Object) where the embedded constructs are really only relevant/valid/important within the context of the enclosing construct. In other words they provide contextual characterization for the enclosing construct but would not be of interest on their own. 
+As a simple general rule specifying IDs is not suggested for constructs embedded within other constructs (e.g. a CybOX Object containing the embedded specification of another CybOX Related_Object) where the embedded constructs are really only relevant/valid/important within the context of the enclosing construct. In other words they provide contextual characterization for the enclosing construct but would not be of interest on their own.
 The upside of this is slightly less complexity of IDs on everything. The downside is that it would not be possible to reference or pivot on the embedded constructs.
 
 ### Titles and Descriptions
@@ -104,33 +104,185 @@ Note that on [Indicator](/data-model/{{site.current_version}}/indicator/Indicato
 
 ### Referencing vs Embedding
 
-In many cases, you'll have an option to either include a component within the parent component or to reference the component by ID to a representation in a global location.
+In many cases, you'll have an option to define a component relationship by one of two approaches: either including the related component within the parent component (embedding) or by referencing the related component by ID to a representation in a global location (referencing).
 
-For example, an Indicator can include Indicated TTPs. One way of doing this is to include the Indicated_TTP inline in the Indicator:
+### Approach #1: Relationship via embedded definition
 
-```xml
-<stix:Indicator id="example:indicator-65b13502-8eee-427d-a9a4-13c32f259410" timestamp="2014-02-20T09:00:00.000000" xsi:type="indicator:IndicatorType">
-  <!-- SNIP -->
-  <indicator:Indicated_TTP>
-    <stixCommon:TTP xsi:type="ttp:TTPType" id="example:ttp-cc250866-cde4-4029-bf37-4b65bf712cb9">
-        <ttp:Title>Malware C2</ttp:Title>
-    </stixCommon:TTP>
-  </indicator:Indicated_TTP>
-</stix:Indicator>
-```
+**What is it?**
 
-The other alternative is to reference that TTP, which would be represented elsewhere:
+Relationships via embedded definition are achieved when a relationship from one component (source) to another (sink) is asserted by defining/specifying the sink from within the source. If an id is specified for the sink it can be referenced from other components as well.
 
-```xml
-<stix:Indicator id="example:indicator-65b13502-8eee-427d-a9a4-13c32f259410" timestamp="2014-02-20T09:00:00.000000" xsi:type="indicator:IndicatorType">
-  <!-- SNIP -->
-  <indicator:Indicated_TTP>
-    <stixCommon:TTP idref="example:ttp-cc250866-cde4-4029-bf37-4b65bf712cb9" />
-  </indicator:Indicated_TTP>
-</stix:Indicator>
-```
+**NOTE:** Embedding the definition of a component within another component does not imply a hard parent-child relationship limiting its relevancy to only the embedding component. As noted in the suggested practices for [Assigning IDs](), **for situations where the embedded component is really only relevant/valid/important within the context of the embedding component it is suggested practice to not specify an ID for it.** This explicitly denotes its local-only relevance and prevents it from participating in relationships to components other than the embedding one. **For situations where the simplicity, brevity and readability of relationship via embedded definition is desirable but the embedded content may be relevant/valid/important outside the context of only the embedding component, an ID can be specified for it and it can participate in relationships to components other than the embedding one.**
 
-These situations are a judgment call, but when making that judgment you should consider whether the related construct has value individually or only within the context of the parent? If it only has value in the parent, embedding it may be appropriate. Otherwise it's probably better to reference it. If you're unsure, it's generally safer to reference it.
+
+foo
+
+**Example with IDs on embedded content (related TTP and COA content is general enough to be relevant outside the context of the Indicator):**
+
+<img src="diagram2.png" alt="Relationship via Embedding w ids"/>
+
+<div>
+{% highlight xml %}
+<stix:STIX_Header>
+    <stix:Title>Example watchlist that contains domain information.</stix:Title>
+    <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Indicators - Watchlist</stix:Package_Intent>
+</stix:STIX_Header>
+<stix:Indicators>
+    <stix:Indicator xsi:type="indicator:IndicatorType" id="example:Indicator-2e20c5b2-56fa-46cd-9662-8f199c69d2c9" timestamp="2014-05-08T09:00:00.000000Z">
+        <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+        <indicator:Description>Sample domain Indicator for this watchlist</indicator:Description>
+        <indicator:Observable id="example:Observable-87c9a5bb-d005-4b3e-8081-99f720fad62b">
+            <cybox:Object id="example:Object-12c760ba-cd2c-4f5d-a37d-18212eac7928">
+                <cybox:Properties xsi:type="DomainNameObj:DomainNameObjectType" type="FQDN">
+                    <DomainNameObj:Value condition="Equals" apply_condition="ANY">malicious1.example.com##comma##malicious2.example.com##comma##malicious3.example.com</DomainNameObj:Value>
+                </cybox:Properties>
+            </cybox:Object>
+        </indicator:Observable>
+        <indicator:Indicated_TTP>
+            <stixCommon:TTP xsi:type="ttp:TTPType" id="example:TTP-4f5db5e2-7ed2-4bfd-9df8-fa8253fcb2fe">
+                <ttp:Title>Drive-by Download</ttp:Title>
+            </stixCommon:TTP>
+        </indicator:Indicated_TTP>
+        <indicator:Suggested_COAs>
+            <indicator:Suggested_COA>
+                <stixCommon:Course_Of_Action xsi:type="coa:CourseOfActionType" id="example:COA-2493dce9-1b2b-4396-9660-cfc19b8a6b38">
+                    <coa:Title>Block Downloads from Malicious Domain</coa:Title>
+                </stixCommon:Course_Of_Action>
+            </indicator:Suggested_COA>
+        </indicator:Suggested_COAs>
+    </stix:Indicator>
+</stix:Indicators>
+{% endhighlight %}
+</div>
+
+**Example without IDs on embedded content (related TTP content is general enough to be relevant outside the context of the Indicator but related COA content is not):**
+
+<img src="diagram3.png" alt="Relationship via Embedding w/o ids"/>
+
+<div>
+{% highlight xml %}
+<stix:STIX_Header>
+    <stix:Title>Indicators for Teufelhund malware dropsite.</stix:Title>
+    <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Indicators - Watchlist</stix:Package_Intent>
+</stix:STIX_Header>
+<stix:Indicators>
+    <stix:Indicator xsi:type="indicator:IndicatorType" id="example:Indicator-aedba5fa-1a30-4c59-9264-a930b99536f9" timestamp="2014-05-08T09:00:00.000000Z">
+        <indicator:Title>Indicator for Teufelhund malware dropsite domain.</indicator:Title>
+        <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+        <indicator:Observable id="example:Observable-82de1cdf-7cf0-4f9a-9b98-5c40235a70a5">
+            <cybox:Object id="example:Object-f8fb1238-ec28-4ddd-9f37-35b31d718db7">
+                <cybox:Properties xsi:type="DomainNameObj:DomainNameObjectType" type="FQDN">
+                    <DomainNameObj:Value condition="Equals">yolohipster.com</DomainNameObj:Value>
+                </cybox:Properties>
+            </cybox:Object>
+        </indicator:Observable>
+        <indicator:Indicated_TTP>
+            <stixCommon:TTP xsi:type="ttp:TTPType" id="example:TTP-2b6bf957-bc5b-4aa1-a604-691baeb63e3d">
+                <ttp:Title>Teufelhund malware</ttp:Title>
+            </stixCommon:TTP>
+        </indicator:Indicated_TTP>
+        <indicator:Suggested_COAs>
+            <indicator:Suggested_COA>
+                <stixCommon:Course_Of_Action xsi:type="coa:CourseOfActionType">  <!-- NOTE: no @id specified for this Course_Of_Action as it is VERY specific to this Indicator-->
+                    <coa:Title>Redirect requests for yolohipster.com to quarantine.acme.com</coa:Title>
+                </stixCommon:Course_Of_Action>
+            </indicator:Suggested_COA>
+        </indicator:Suggested_COAs>
+    </stix:Indicator>
+</stix:Indicators>
+{% endhighlight %}
+</div>
+
+**Relationship via embedded definition is desirable when simplicity, brevity and readability of the content is of concern or the content is very localized in context and less likely that portions will be interrelated with other content.**
+
+
+###Approach #2: Relationship via reference
+
+**What is it?**
+
+Relationships via reference are achieved when a relationship from one component (source) to another (sink) is asserted by including a reference within the source in the form of an 
+idref referencing the defined id for the sink. 
+
+
+**Example:**
+
+<img src="diagram1.png" alt="Relationship via Reference"/>
+
+<div>
+{% highlight xml %}
+<stix:STIX_Header>
+    <stix:Title>Example watchlist that contains domain information.</stix:Title>
+    <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Indicators - Watchlist</stix:Package_Intent>
+</stix:STIX_Header>
+<stix:Observables cybox_major_version="2" cybox_minor_version="1">
+    <cybox:Observable id="example:Observable-87c9a5bb-d005-4b3e-8081-99f720fad62b">
+        <cybox:Object id="example:Object-12c760ba-cd2c-4f5d-a37d-18212eac7928">
+            <cybox:Properties xsi:type="DomainNameObj:DomainNameObjectType" type="FQDN">
+                <DomainNameObj:Value condition="Equals" apply_condition="ANY">malicious1.example.com##comma##malicious2.example.com##comma##malicious3.example.com</DomainNameObj:Value>
+            </cybox:Properties>
+        </cybox:Object>
+    </cybox:Observable>
+</stix:Observables>
+<stix:Indicators>
+    <stix:Indicator xsi:type="indicator:IndicatorType" id="example:Indicator-2e20c5b2-56fa-46cd-9662-8f199c69d2c9" timestamp="2014-05-08T09:00:00.000000Z">
+        <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Domain Watchlist</indicator:Type>
+        <indicator:Description>Sample domain Indicator for this watchlist</indicator:Description>
+        <indicator:Observable idref="example:Observable-87c9a5bb-d005-4b3e-8081-99f720fad62b" />
+        <indicator:Indicated_TTP>
+<stixCommon:TTP xsi:type="ttp:TTPType" idref="example:TTP-4f5db5e2-7ed2-4bfd-9df8-fa8253fcb2fe"/>
+</indicator:Indicated_TTP>
+        <indicator:Suggested_COAs>
+            <indicator:Suggested_COA>
+                <stixCommon:Course_Of_Action xsi:type="coa:CourseOfActionType" idref="example:COA-2493dce9-1b2b-4396-9660-cfc19b8a6b38"/>
+            </indicator:Suggested_COA>
+        </indicator:Suggested_COAs>
+    </stix:Indicator>
+</stix:Indicators>
+<stix:TTPs>
+    <stix:TTP xsi:type="ttp:TTPType" id="example:TTP-4f5db5e2-7ed2-4bfd-9df8-fa8253fcb2fe">
+        <ttp:Title>Drive-by Download</ttp:Title>
+    </stix:TTP>
+</stix:TTPs>
+<stix:Courses_Of_Action>
+    <stix:Course_Of_Action xsi:type="coa:CourseOfActionType" id="example:COA-2493dce9-1b2b-4396-9660-cfc19b8a6b38">
+        <coa:Title>Block Downloads from Malicious Domain</coa:Title>
+    </stix:Course_Of_Action>
+</stix:Courses_Of_Action>
+{% endhighlight %}
+</div>
+
+
+**Relationship via reference is desirable when flexibility, potential reuse and correlation of the content is a key concern or when part of a larger body of highly interrelated content.**
+
+
+### Versioning implications for differing approaches
+
+Embedded content with no id:
+
+* **Action:** embedded content updated :: **Implication:** enclosing content version must be increased
+* **Action:** enclosing content updated :: **Implication:** enclosing content version must be increased
+* **Action:** embedded content revoked :: **Implication:** not possible
+* **Action:** enclosing content revoked :: **Implication:** embedded content gets revoked with enclosing content
+
+ Embedded content with id:
+
+* **Action:**: embedded content updated :: **Implication:** embedded content version must be increased; enclosing content version must be increased
+* **Action:** enclosing content updated :: **Implication:** enclosing content version must be increased; embedded content version does NOT need to be increased
+* **Action:** embedded content revoked :: **Implication:** embedded content becomes invalid; enclosing content must either increase version (with embedded content removed) or be revoked or left as is but would contain explicitly revoked content
+* **Action:** enclosing content revoked :: **Implication:** enclosing content becomes invalid; embedded content is still valid on its own
+
+ Referenced content:
+
+* **Action:** referenced content updated :: **Implication:** referenced content version must be increased; enclosing content version must be increased and referenced ID/timestamp updated
+* **Action:** enclosing content updated :: **Implication:** enclosing content version must be increased; referenced content version does NOT need to be increased
+* **Action:** referenced content revoked :: **Implication:** referenced content becomes invalid; enclosing content must either increase version (with referenced content removed) or be revoked or left as is but would contain (by reference) explicitly revoked content
+* **Action:** enclosing content revoked :: **Implication:** enclosing content becomes invalid; referenced content is still valid on its own
+
+### Guidance
+
+These situations are a judgment call, but when making that judgment you should consider whether the related construct has value individually or only within the context of the parent? **If it only has value in the parent, embedding it may be appropriate. Otherwise it's probably better to reference it.  If you're unsure, it's generally safer to reference it.**
+
+<img src="decision flow.png" alt="decision flow chart"/>
 
 ### Versioning
 
@@ -147,7 +299,7 @@ These situations are a judgment call, but when making that judgment you should c
 
 It is always suggested that you version these constructs by including a relevant `@id` and `@timestamp` per the [STIX versioning guide](/documentation/concepts/versioning).
 
-Note that many constructs that have a `@timestamp` attribute also have an `Information_Source` field with a `Time` field inside it. The `Time` field has a field called `Produced_Time`, which can easily be confused with `@timestamp`. Though similar, these fields are not used for the same purposes. `@timestamp` is used only for versioning and represents the time that version of the versioned structure was created. `Information_Source/Time/Produced_Time` is not related to versioning and represents the time the record (not that version of the record) was created. In some ways, they can be thought of as created time and modified time but in other ways they are used for completely different purposes.
+Note that many constructs that have a `@timestamp` attribute also have an `Information_Source` field with a `Time` field inside it. The `Time` field has a field called `Produced_Time`, which can easily be confused with `@timestamp`. Though similar, these fields are not used for the same purposes. `@timestamp` is used only for versioning and represents the time that version of the versioned structure was created.  `Information_Source/Time/Produced_Time` is not related to versioning and represents the time the record (not that version of the record) was created. In some ways, they can be thought of as created time and modified time but in other ways they are used for completely different purposes.
 
 See the [Versioning](/documentation/concepts/versioning) concept discussion for more information.
 
@@ -195,7 +347,7 @@ For best readability:
 To ease validation in XML editors:
 
 * Include schemaLocation attributes to the hosted versions of the STIX schemas
-* If you include any non-standard extension or marking schemas, include them with the bundle and include that reference in the schemaLocation attribute
+* If you include any non-standard extension or marking schemas, include them with the bundle and include that reference in the schemaLocation attribute.
 
 -----
 
