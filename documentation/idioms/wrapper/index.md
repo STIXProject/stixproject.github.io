@@ -58,7 +58,7 @@ One other note about this example is the XPath used in the data markings. Becaus
                 <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Campaign Characterization</stix:Package_Intent>
                 <stix:Handling>
                     <markings:Marking>
-                        <markings:Controlled_Structure>../../../../node()</markings:Controlled_Structure>
+                        <markings:Controlled_Structure>../../../../descendant-or-self::node()()</markings:Controlled_Structure>
                         <markings:Marking_Structure xsi:type="tlpMarking:TLPMarkingStructureType" color="AMBER"/>
                     </markings:Marking>
                 </stix:Handling>
@@ -72,7 +72,7 @@ One other note about this example is the XPath used in the data markings. Becaus
                 <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Indicators - Malware Artifacts</stix:Package_Intent>
                 <stix:Handling>
                     <markings:Marking>
-                        <markings:Controlled_Structure>../../../../node()</markings:Controlled_Structure>
+                        <markings:Controlled_Structure>../../../../descendant-or-self::node()()</markings:Controlled_Structure>
                         <markings:Marking_Structure xsi:type="tlpMarking:TLPMarkingStructureType" color="RED"/>
                     </markings:Marking>
                 </stix:Handling>
@@ -99,7 +99,7 @@ rat_package.stix_header.package_intents = "Campaign Characterization"
 alpha_package.stix_header.handling = Marking()
 
 alpha_marking = MarkingSpecification()
-alpha_marking.controlled_structure = "../../../../node()"
+alpha_marking.controlled_structure = "../../../../descendant-or-self::node()()"
 alpha_tlp_marking = TLPMarkingStructure()
 alpha_tlp_marking.color = "AMBER"
 alpha_marking.marking_structures.append(alpha_tlp_marking)
@@ -112,7 +112,7 @@ rat_package.stix_header.package_intents = "Indicators - Malware Artifacts"
 rat_package.stix_header.handling = Marking()
 
 bravo_marking = MarkingSpecification()
-bravo_marking.controlled_structure = "../../../../node()"
+bravo_marking.controlled_structure = "../../../../descendant-or-self::node()()"
 bravo_tlp_marking = TLPMarkingStructure()
 bravo_tlp_marking.color = "RED"
 alpha_marking.marking_structures.append(bravo_tlp_marking)
