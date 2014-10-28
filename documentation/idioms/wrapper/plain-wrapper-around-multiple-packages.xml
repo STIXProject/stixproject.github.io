@@ -33,7 +33,7 @@
                     <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Campaign Characterization</stix:Package_Intent>
                     <stix:Handling>
                         <markings:Marking>
-                            <markings:Controlled_Structure>../../../../descendant-or-self::node()()</markings:Controlled_Structure>
+                            <markings:Controlled_Structure>../../../../descendant-or-self::node()</markings:Controlled_Structure>
                             <markings:Marking_Structure xsi:type="tlpMarking:TLPMarkingStructureType" color="AMBER"/>
                         </markings:Marking>
                     </stix:Handling>
@@ -47,7 +47,7 @@
                     <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Indicators - Malware Artifacts</stix:Package_Intent>
                     <stix:Handling>
                         <markings:Marking>
-                            <markings:Controlled_Structure>../../../../descendant-or-self::node()()</markings:Controlled_Structure>
+                            <markings:Controlled_Structure>../../../../descendant-or-self::node()</markings:Controlled_Structure>
                             <markings:Marking_Structure xsi:type="tlpMarking:TLPMarkingStructureType" color="RED"/>
                         </markings:Marking>
                     </stix:Handling>

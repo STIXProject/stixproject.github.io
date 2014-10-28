@@ -19,7 +19,7 @@ def main():
     alpha_package.stix_header.handling = Marking()
 
     alpha_marking = MarkingSpecification()
-    alpha_marking.controlled_structure = "../../../../descendant-or-self::node()()"
+    alpha_marking.controlled_structure = "../../../../descendant-or-self::node()"
     alpha_tlp_marking = TLPMarkingStructure()
     alpha_tlp_marking.color = "AMBER"
     alpha_marking.marking_structures.append(alpha_tlp_marking)
@@ -32,7 +32,7 @@ def main():
     rat_package.stix_header.handling = Marking()
 
     rat_marking = MarkingSpecification()
-    rat_marking.controlled_structure = "../../../../descendant-or-self::node()()"
+    rat_marking.controlled_structure = "../../../../descendant-or-self::node()"
     rat_tlp_marking = TLPMarkingStructure()
     rat_tlp_marking.color = "RED"
     alpha_marking.marking_structures.append(rat_tlp_marking)
