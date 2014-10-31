@@ -45,7 +45,7 @@ def main():
     attached_file_object.file_extension.condition = "Equals"
 
     file_attachment_object.add_related(attached_file_object, "Contains", inline=True)
-    file_attachment_object.attachments.append(file_attachment_object.parent.id_)
+    file_attachment_object.attachments.append(attached_file_object.parent.id_)
     
     indicator_attachment = Indicator()
     indicator_attachment.title = "Malicious E-mail Attachment"
@@ -58,7 +58,7 @@ def main():
     full_email_object.attachments = Attachments()
 
     # Add the previously referenced file as another reference rather than define it again:
-    full_email_object.attachments.append(file_attachment_object.parent.id_)
+    full_email_object.attachments.append(attached_file_object.parent.id_)
 
     full_email_object.header = EmailHeader()
     full_email_object.header.subject = "[IMPORTANT] Please Review Before"
