@@ -5,13 +5,10 @@ tagline: User and developer documentation for STIX
 no_in_page_title: true
 ---
 
-<h1 class="site-title">STIX Project Documentation</h1>
-
 <div class="jumbotron">
-  <h2><strong>Start here if you're new to STIX!</strong></h2>
-  <p>Regardless of whether you're an analyst, developer, or manager, we have tutorials, walkthroughs, and exercises to help you become familiar
-  with STIX.</p>
-  <p><a class="btn btn-primary btn-lg" role="button" href="/getting-started">Get Started »</a></p>
+  <h2><strong>Whip your data into shape</strong></h2>
+  <p>STIX gives structure to security events and reports.
+  <p><a class="btn btn-primary btn-lg" role="button" href="/getting-started"> How Does it Work?</a></p>
 </div>
 
 <div class="row">
