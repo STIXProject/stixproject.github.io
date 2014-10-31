@@ -5,38 +5,47 @@ tagline: User and developer documentation for STIX
 no_in_page_title: true
 ---
 
-<h1 class="site-title">STIX Project Documentation</h1>
+<div class="row">
 
-<div class="jumbotron">
-  <h2><strong>Start here if you're new to STIX!</strong></h2>
-  <p>Regardless of whether you're an analyst, developer, or manager, we have tutorials, walkthroughs, and exercises to help you become familiar
-  with STIX.</p>
-  <p><a class="btn btn-primary btn-lg" role="button" href="/getting-started">Get Started »</a></p>
+  <div class="col-md-6">
+  <img src="http://stix.mitre.org/images/stix-logo.gif" class="img-responsive" alt="hotlinked logo">
+  <h2>The language of security.</h2>
+  
+  </div>
+
+  <div class="col-md-6">
+  <h3>Leading companies use STIX to share intelligence on intrusions </h3>
+  <h3>The United States Government has chosen STIX for <a href="http://www.soltra.com/"> collective defense efforts</h3>
+  
+  <p><a class="btn btn-primary btn-lg" role="button" href="http://stix.mitre.org/community/registration.html"> Join the Conversation</a></p>
+  
+  </div>
+  
+</div>
+
+<hr />
+<div class="container">
+TODO example w/ stixviz and APT1 incident report
+
+  <p><a class="btn btn-primary btn-lg" role="button" href="/getting-started"> Get Started</a></p>
+  
 </div>
 
 <div class="row">
   <div class="col-md-6">
-    <h2>Documentation</h2>
-    <p>Now that you have an idea of what STIX is and how it can be used,
-    learn about tools that support STIX, suggested practices, and other in-depth
-    documentation.</p>
-    <p><a class="btn btn-primary btn-lg" role="button" href="/documentation">Documentation »</a></p>
+  
+    <h1><a class="btn btn-default btn-lg btn-block" role="button" href="/documentation/idioms">More Examples</a></h1>
   </div>
+  
+
   <div class="col-md-6">
-    <h2>Idioms</h2>
-    <p>You can also see examples of common design patterns in STIX and
-    learn how to create and understand idiomatic STIX content.</p>
-    <p><a class="btn btn-primary btn-lg" role="button" href="/documentation/idioms">Idioms »</a></p>
-  </div>
-</div>
+    <h1><a class="btn btn-default btn-lg btn-block" role="button" href="/documentation">Read Documentation</a></h1>
+  </div>  
+</div>  
+  
 
 <hr />
 
-<p class="lead text-center">
-	Have questions, comments, or feedback? Want to set up a teleconference or in-person meeting?
-	<br/>
-	<strong>Reach out to us at <a href="mailto:stix-taxii@hq.dhs.gov">stix-taxii@hq.dhs.gov</a>!</strong>
-</p>
 
 <div class="row">
     <div class="col-md-4">
@@ -65,3 +74,8 @@ no_in_page_title: true
 	  <p>We host occasional training sessions that are free and open to the public. Information on these can be found on the <a href="http://stix.mitre.org/training/index.html">training</a> page.</p>
     </div>
 </div>
+
+
+<p class="lead text-center">
+	<strong> <a href="mailto:stix-taxii@hq.dhs.gov">Submit bug reports and feedback</a></strong>
+</p>
