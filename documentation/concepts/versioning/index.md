@@ -15,12 +15,12 @@ In order to support the versioning of a construct, the following baseline requir
 
 * The construct must be a versionable type, which includes the 7 core STIX components and STIX Package. Note that Observable is not included, as it is defined in CybOX and does not have the required versioning fields.
 * The construct must be given an `id` when it is created
-* The construct must be given a `timestamp` when it is created, which is set to the current time. It's strongly suggested that the timestamp go to six decimal places in the seconds: "01-01-2014T01:01:01.000000Z". As with all STIX timestamps, you should also indicate the timezone if at all possible.
+* The construct must be given a `timestamp` when it is created, which is set to the current time. It's strongly suggested that the timestamp go to six decimal places in the seconds: "2014-01-01T01:01:01.000000Z". As with all STIX timestamps, you should also indicate the timezone if at all possible.
 
 By meeting those three requirements when initially creating a construct, you can ensure that you can version the construct later. As an example:
 
 {% highlight xml %}
-<stix:TTP xsi:type="ttp:TTPType" id="1" timestamp="01-04-2014T04:23:57.409238Z" />
+<stix:TTP xsi:type="ttp:TTPType" id="1" timestamp="2014-01-04T04:23:57.409238Z" />
 {% endhighlight %}
 
 ## Incremental Update
@@ -30,7 +30,7 @@ Incremental updates can be used when the basic nature of the construct isn't cha
 As an example, the following TTP is an update of the previous TTP:
 
 {% highlight xml %}
-<stix:TTP xsi:type="ttp:TTPType" id="1" timestamp="01-04-2014T07:52:25.937584Z" />
+<stix:TTP xsi:type="ttp:TTPType" id="1" timestamp="2014-01-04T07:52:25.937584Z" />
 {% endhighlight %}
 
 ## Major Update
@@ -38,7 +38,7 @@ As an example, the following TTP is an update of the previous TTP:
 To perform a major update, the component should be given a new `id`, a new `timestamp`, and a relationship back to the previous version:
 
 {% highlight xml linenos %}
-<stix:TTP xsi:type="ttp:TTPType" id="2" timestamp="01-04-2014T09:21:35.369431ZS">
+<stix:TTP xsi:type="ttp:TTPType" id="2" timestamp="2014-01-04T09:21:35.369431ZS">
   <ttp:Related_TTPs>
     <ttp:Related_TTP>
       <stixCommon:Relationship>Supersedes</stixCommon:Relationship>
@@ -65,11 +65,11 @@ Major updates, on the other hand, are suggested for anything that changes the in
 Revocation of content is addressed as a major update with the relationship descriptor denoting the component "revokes" a previous version of the component. If a `timestamp` is specified for the previous version then just that version is to be revoked. If no `timestamp` is specified and only an `id` is specified then all versions of content with the specified `id` are to be revoked. This new version should not contain any content other than the relationships.
 
 {% highlight xml linenos %}
-<stix:TTP xsi:type="ttp:TTPType" id="3" timestamp="01-04-2014T15:53:47.832653">
+<stix:TTP xsi:type="ttp:TTPType" id="3" timestamp="2014-01-04T15:53:47.832653">
   <ttp:Related_TTPs>
     <ttp:Related_TTP>
       <stixCommon:Relationship>Revokes</stixCommon:Relationship>
-      <stixCommon:TTP idref="2" timestamp="01-04-2014T09:21:35.369431ZS" />
+      <stixCommon:TTP idref="2" timestamp="2014-01-04T09:21:35.369431ZS" />
     </ttp:Related_TTP>
   </ttp:Related_TTPs>
 </stix:TTP>
