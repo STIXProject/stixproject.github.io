@@ -14,7 +14,7 @@ no_in_page_title: true
   </div>
 <div class="col-md-6">
   <h3>The United States Government uses STIX for collective defense efforts</a> </h3>
-  <h3>Leading security companies use STIX to share intelligence on current threats </h3>
+  <h3>Leading companies share intelligence on current threats with STIX </h3>
   <p class="text-center"><a class="btn btn-primary btn-lg" role="button" href="http://stix.mitre.org/community/registration.html"> Join the Conversation</a></p>
   
   </div>
@@ -36,7 +36,7 @@ no_in_page_title: true
 </div>
 
 <div class="col-md-6">
-<img src="/images/sample.png" class="img-responsive" style="width:420px;height:2800px":>
+<img src="/images/sample.png" class="img-responsive" style="width:420px;height:280px":>
 </div>
 
 
