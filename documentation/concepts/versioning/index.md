@@ -42,7 +42,7 @@ To perform a major update, the component should be given a new `id`, a new `time
   <ttp:Related_TTPs>
     <ttp:Related_TTP>
       <stixCommon:Relationship>Supersedes</stixCommon:Relationship>
-      <stixCommon:TTP id="1" />
+      <stixCommon:TTP idref="1" />
     </ttp:Related_TTP>
   </ttp:Related_TTPs>
 </stix:TTP>
