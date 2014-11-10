@@ -299,3 +299,18 @@ p.data-model-description {
 .front-matter h2:first-child {
   margin-top: 0;
 }
+
+h1#logo {
+  text-indent: 100%;
+  background: url(/images/stix.gif) 0 0 no-repeat;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 287px;
+  height: 97px;
+  margin: 0 auto 30px;
+}
+
+#screenshot {
+  display: block;
+  margin: auto;
+}

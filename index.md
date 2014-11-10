@@ -7,14 +7,13 @@ no_in_page_title: true
 
 <div class="row">
   <div class="col-md-5">
-    <img src="/images/stix.gif" class="img-responsive" alt="stix logo" />
-    <h2>The language of threat.</h2>
-    <img src="/images/sample.png" alt="example document" />
+    <h1 id="logo">STIX <img src="/images/stix.gif" alt="STIX Logo" /></h1>
+    <img id="screenshot" src="/images/sample.png" alt="example document" />
   </div>
   <div class="col-md-7 front-matter">
     <h2>What is STIX?</h2>
     <p>STIX (Structured Threat Information eXpression) is a structured language for describing cyber threat intelligence.</p>
-    <a class="btn btn-primary btn-lg" href="http://stix.mitre.org/language/version1.1.1/">Download</a>
+    <a class="btn btn-primary btn-lg" href="http://stix.mitre.org/language/version1.1.1/">Download Latest Release</a>
     <h2>Who is STIX?</h2>
     <p>You are. STIX is an open, community-driven effort sponsored by DHS.</p>
     <a class="btn btn-primary btn-lg" href="http://stix.mitre.org/community/registration.html">Join the Conversation</a>
@@ -28,7 +27,7 @@ no_in_page_title: true
     <h3>Tutorials</h3>
     <p>Follow along with our guided tutorials to learn about the STIX data model
        and how to use it.</p>
-    <p><a class="btn btn-primary btn-lg" role="button" href="/documentation">Documentation »</a></p>
+    <p><a class="btn btn-primary btn-lg" role="button" href="/getting-started">Documentation »</a></p>
   </div>
   <div class="col-md-4">
     <h3>Examples and Patterns</h3>
