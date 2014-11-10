@@ -287,3 +287,15 @@ p.data-model-description {
 .toggleLink {
   font-weight: bolder;
 }
+
+.front-matter p {
+  font-size: 1.3em;
+}
+
+.front-matter h2 {
+  margin-top: 50px;
+}
+
+.front-matter h2:first-child {
+  margin-top: 0;
+}

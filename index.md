@@ -5,28 +5,42 @@ tagline: User and developer documentation for STIX
 no_in_page_title: true
 ---
 
-<h1 class="site-title">STIX Project Documentation</h1>
-
-<div class="jumbotron">
-  <h2><strong>Start here if you're new to STIX!</strong></h2>
-  <p>Regardless of whether you're an analyst, developer, or manager, we have tutorials, walkthroughs, and exercises to help you become familiar
-  with STIX.</p>
-  <p><a class="btn btn-primary btn-lg" role="button" href="/getting-started">Get Started »</a></p>
+<div class="row">
+  <div class="col-md-5">
+    <img src="/images/stix.gif" class="img-responsive" alt="stix logo" />
+    <h2>The language of threat.</h2>
+    <img src="/images/sample.png" alt="example document" />
+  </div>
+  <div class="col-md-7 front-matter">
+    <h2>What is STIX?</h2>
+    <p>STIX (Structured Threat Information eXpression) is a structured language for describing cyber threat intelligence.</p>
+    <a class="btn btn-primary btn-lg" href="http://stix.mitre.org/language/version1.1.1/">Download</a>
+    <h2>Who is STIX?</h2>
+    <p>You are. STIX is an open, community-driven effort sponsored by DHS.</p>
+    <a class="btn btn-primary btn-lg" href="http://stix.mitre.org/community/registration.html">Join the Conversation</a>
+  </div>
 </div>
 
+<hr />
+
 <div class="row">
-  <div class="col-md-6">
-    <h2>Documentation</h2>
-    <p>Now that you have an idea of what STIX is and how it can be used,
-    learn about tools that support STIX, suggested practices, and other in-depth
-    documentation.</p>
+  <div class="col-md-4">
+    <h3>Tutorials</h3>
+    <p>Follow along with our guided tutorials to learn about the STIX data model
+       and how to use it.</p>
     <p><a class="btn btn-primary btn-lg" role="button" href="/documentation">Documentation »</a></p>
   </div>
-  <div class="col-md-6">
-    <h2>Idioms</h2>
-    <p>You can also see examples of common design patterns in STIX and
+  <div class="col-md-4">
+    <h3>Examples and Patterns</h3>
+    <p>See examples of common design patterns in STIX and
     learn how to create and understand idiomatic STIX content.</p>
     <p><a class="btn btn-primary btn-lg" role="button" href="/documentation/idioms">Idioms »</a></p>
+  </div>
+  <div class="col-md-4">
+    <h3>Documentation</h3>
+    <p>Learn about tools that support STIX, suggested practices for using STIX, and other in-depth
+    documentation.</p>
+    <p><a class="btn btn-primary btn-lg" role="button" href="/documentation">Documentation »</a></p>
   </div>
 </div>
 
