@@ -333,22 +333,6 @@ If you do this to add values that you think might be useful for other STIX users
 
 To remove ambiguity regarding the timezone, all times should include an explicit timezone whenever possible.
 
-### Creating documents for human consumption
-
-These suggestions only apply when you're creating documents you intend to be human-readable. They simply make the document more readable and easy to validate by XML editors but are not important for automated processing.
-
-For best readability:
-
-* Only include necessary namespaces
-* Use the namespace prefixes as defined in the schemas
-* Affinity-group or alphabetize namespaces
-* Do not include attributes that have default attributes if you're simply setting the attribute to the default (i.e. @negate on indicators).
-
-To ease validation in XML editors:
-
-* Include schemaLocation attributes to the hosted versions of the STIX schemas
-* If you include any non-standard extension or marking schemas, include them with the bundle and include that reference in the schemaLocation attribute.
-
 -----
 
 ## STIX Package
