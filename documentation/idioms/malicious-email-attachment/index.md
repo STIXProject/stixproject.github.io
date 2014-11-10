@@ -48,83 +48,87 @@ The indicated TTP is the same as the previous indicators, while confidence is re
 ## Implementation
 
 {% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="malicious-email" %}{% highlight xml linenos %}
-<stix:STIX_Package> 
-<stix:Indicators>
-        <stix:Indicator id="example:indicator-8cf9236f-1b96-493d-98be-0c1c1e8b62d7" timestamp="2014-10-31T15:52:13.127931+00:00" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
-            <indicator:Title>Malicious E-mail</indicator:Title>
-            <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Malicious E-mail</indicator:Type>
-            <indicator:Observable id="example:Observable-437f0c20-ab26-4400-9f6a-fc395da3ddd9">
-                <cybox:Object id="example:EmailMessage-0dc3478e-153a-412f-8718-7e9ee65b8084">
-                    <cybox:Properties xsi:type="EmailMessageObj:EmailMessageObjectType">
-                        <EmailMessageObj:Header>
-                            <EmailMessageObj:Subject condition="StartsWith">[IMPORTANT] Please Review Before</EmailMessageObj:Subject>
-                        </EmailMessageObj:Header>
-                        <EmailMessageObj:Attachments>
-                            <EmailMessageObj:File object_reference="example:File-c182bcb6-8023-44a8-b340-157295abc8a6"/>
-                        </EmailMessageObj:Attachments>
-                    </cybox:Properties>
-                </cybox:Object>
-            </indicator:Observable>
-            <indicator:Indicated_TTP>
-                <stixCommon:TTP idref="example:ttp-d7b066aa-4091-4276-a142-29d5d81c3484" xsi:type='ttp:TTPType' version="1.1.1"/>
-            </indicator:Indicated_TTP>
-            <indicator:Confidence timestamp="2014-10-31T15:52:13.127950+00:00">
-                <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">High</stixCommon:Value>
-            </indicator:Confidence>
-        </stix:Indicator>
-        <stix:Indicator id="example:indicator-b06b0eb7-61dd-4338-a094-0290c380fbd8" timestamp="2014-10-31T15:52:13.126999+00:00" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
-            <indicator:Title>Malicious E-mail Subject Line</indicator:Title>
-            <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Malicious E-mail</indicator:Type>
-            <indicator:Observable id="example:Observable-e9926796-6b52-463c-8be1-0ab66e9adb1c">
-                <cybox:Object id="example:EmailMessage-38afa5c9-ef26-4948-928b-0230521c67b7">
-                    <cybox:Properties xsi:type="EmailMessageObj:EmailMessageObjectType">
-                        <EmailMessageObj:Header>
-                            <EmailMessageObj:Subject condition="StartsWith">[IMPORTANT] Please Review Before</EmailMessageObj:Subject>
-                        </EmailMessageObj:Header>
-                    </cybox:Properties>
-                </cybox:Object>
-            </indicator:Observable>
-            <indicator:Indicated_TTP>
-                <stixCommon:TTP idref="example:ttp-d7b066aa-4091-4276-a142-29d5d81c3484" xsi:type='ttp:TTPType' version="1.1.1"/>
-            </indicator:Indicated_TTP>
-            <indicator:Confidence timestamp="2014-10-31T15:52:13.127225+00:00">
-                <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">Low</stixCommon:Value>
-            </indicator:Confidence>
-        </stix:Indicator>
-        <stix:Indicator id="example:indicator-2e17f6fe-3a4d-438a-911a-e509ba1b9933" timestamp="2014-10-31T15:52:13.127668+00:00" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
-            <indicator:Title>Malicious E-mail Attachment</indicator:Title>
-            <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Malicious E-mail</indicator:Type>
-            <indicator:Observable id="example:Observable-9c9869a2-f822-4682-bda4-e89d31b18704">
-                <cybox:Object id="example:EmailMessage-9d56af8e-5588-4ed3-affd-bd769ddd7fe2">
-                    <cybox:Properties xsi:type="EmailMessageObj:EmailMessageObjectType">
-                        <EmailMessageObj:Attachments>
-                            <EmailMessageObj:File object_reference="example:File-c182bcb6-8023-44a8-b340-157295abc8a6"/>
-                        </EmailMessageObj:Attachments>
-                    </cybox:Properties>
-                    <cybox:Related_Objects>
-                        <cybox:Related_Object id="example:File-c182bcb6-8023-44a8-b340-157295abc8a6">
-                            <cybox:Properties xsi:type="FileObj:FileObjectType">
-                                <FileObj:File_Name condition="StartsWith">Final Report</FileObj:File_Name>
-                                <FileObj:File_Extension condition="Equals">doc.exe</FileObj:File_Extension>
-                            </cybox:Properties>
-                            <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Contains</cybox:Relationship>
-                        </cybox:Related_Object>
-                    </cybox:Related_Objects>
-                </cybox:Object>
-            </indicator:Observable>
-            <indicator:Indicated_TTP>
-                <stixCommon:TTP idref="example:ttp-d7b066aa-4091-4276-a142-29d5d81c3484" xsi:type='ttp:TTPType' version="1.1.1"/>
-            </indicator:Indicated_TTP>
-            <indicator:Confidence timestamp="2014-10-31T15:52:13.127775+00:00">
-                <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">Low</stixCommon:Value>
-            </indicator:Confidence>
-        </stix:Indicator>
-    </stix:Indicators>
-    <stix:TTPs>
-        <stix:TTP id="example:ttp-d7b066aa-4091-4276-a142-29d5d81c3484" timestamp="2014-10-31T15:52:13.126765+00:00" xsi:type='ttp:TTPType' version="1.1.1">
-            <ttp:Title>Phishing</ttp:Title>
-        </stix:TTP>
-    </stix:TTPs>
+<stix:STIX_Package>
+  <stix:Indicators>
+    <stix:Indicator id="example:indicator-8cf9236f-1b96-493d-98be-0c1c1e8b62d7" timestamp="2014-10-31T15:52:13.127931+00:00"
+        xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
+      <indicator:Title>Malicious E-mail</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Malicious E-mail</indicator:Type>
+      <indicator:Observable id="example:Observable-437f0c20-ab26-4400-9f6a-fc395da3ddd9">
+        <cybox:Object id="example:EmailMessage-0dc3478e-153a-412f-8718-7e9ee65b8084">
+          <cybox:Properties xsi:type="EmailMessageObj:EmailMessageObjectType">
+            <EmailMessageObj:Header>
+              <EmailMessageObj:Subject condition="StartsWith">[IMPORTANT] Please Review Before</EmailMessageObj:Subject>
+            </EmailMessageObj:Header>
+            <EmailMessageObj:Attachments>
+              <EmailMessageObj:File object_reference="example:File-c182bcb6-8023-44a8-b340-157295abc8a6"/>
+            </EmailMessageObj:Attachments>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Indicated_TTP>
+        <stixCommon:TTP idref="example:ttp-d7b066aa-4091-4276-a142-29d5d81c3484" xsi:type='ttp:TTPType' version="1.1.1"/>
+      </indicator:Indicated_TTP>
+      <indicator:Confidence timestamp="2014-10-31T15:52:13.127950+00:00">
+        <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">High</stixCommon:Value>
+      </indicator:Confidence>
+    </stix:Indicator>
+    <stix:Indicator id="example:indicator-b06b0eb7-61dd-4338-a094-0290c380fbd8" timestamp="2014-10-31T15:52:13.126999+00:00"
+        xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
+      <indicator:Title>Malicious E-mail Subject Line</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Malicious E-mail</indicator:Type>
+      <indicator:Observable id="example:Observable-e9926796-6b52-463c-8be1-0ab66e9adb1c">
+        <cybox:Object id="example:EmailMessage-38afa5c9-ef26-4948-928b-0230521c67b7">
+          <cybox:Properties xsi:type="EmailMessageObj:EmailMessageObjectType">
+            <EmailMessageObj:Header>
+              <EmailMessageObj:Subject condition="StartsWith">[IMPORTANT] Please Review Before</EmailMessageObj:Subject>
+            </EmailMessageObj:Header>
+          </cybox:Properties>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Indicated_TTP>
+        <stixCommon:TTP idref="example:ttp-d7b066aa-4091-4276-a142-29d5d81c3484" xsi:type='ttp:TTPType' version="1.1.1"/>
+      </indicator:Indicated_TTP>
+      <indicator:Confidence timestamp="2014-10-31T15:52:13.127225+00:00">
+        <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">Low</stixCommon:Value>
+      </indicator:Confidence>
+    </stix:Indicator>
+    <stix:Indicator id="example:indicator-2e17f6fe-3a4d-438a-911a-e509ba1b9933" timestamp="2014-10-31T15:52:13.127668+00:00"
+        xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
+      <indicator:Title>Malicious E-mail Attachment</indicator:Title>
+      <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">Malicious E-mail</indicator:Type>
+      <indicator:Observable id="example:Observable-9c9869a2-f822-4682-bda4-e89d31b18704">
+        <cybox:Object id="example:EmailMessage-9d56af8e-5588-4ed3-affd-bd769ddd7fe2">
+          <cybox:Properties xsi:type="EmailMessageObj:EmailMessageObjectType">
+            <EmailMessageObj:Attachments>
+              <EmailMessageObj:File object_reference="example:File-c182bcb6-8023-44a8-b340-157295abc8a6"/>
+            </EmailMessageObj:Attachments>
+          </cybox:Properties>
+          <cybox:Related_Objects>
+            <cybox:Related_Object id="example:File-c182bcb6-8023-44a8-b340-157295abc8a6">
+              <cybox:Properties xsi:type="FileObj:FileObjectType">
+                <FileObj:File_Name condition="StartsWith">Final Report</FileObj:File_Name>
+                <FileObj:File_Extension condition="Equals">doc.exe</FileObj:File_Extension>
+              </cybox:Properties>
+              <cybox:Relationship xsi:type="cyboxVocabs:ObjectRelationshipVocab-1.1">Contains</cybox:Relationship>
+            </cybox:Related_Object>
+          </cybox:Related_Objects>
+        </cybox:Object>
+      </indicator:Observable>
+      <indicator:Indicated_TTP>
+        <stixCommon:TTP idref="example:ttp-d7b066aa-4091-4276-a142-29d5d81c3484" xsi:type='ttp:TTPType' version="1.1.1"/>
+      </indicator:Indicated_TTP>
+      <indicator:Confidence timestamp="2014-10-31T15:52:13.127775+00:00">
+        <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">Low</stixCommon:Value>
+      </indicator:Confidence>
+    </stix:Indicator>
+  </stix:Indicators>
+  <stix:TTPs>
+    <stix:TTP id="example:ttp-d7b066aa-4091-4276-a142-29d5d81c3484" timestamp="2014-10-31T15:52:13.126765+00:00"
+        xsi:type='ttp:TTPType' version="1.1.1">
+      <ttp:Title>Phishing</ttp:Title>
+    </stix:TTP>
+  </stix:TTPs>
 </stix:STIX_Package>
 
 
