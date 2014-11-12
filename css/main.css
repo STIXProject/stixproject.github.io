@@ -293,11 +293,16 @@ p.data-model-description {
 }
 
 .front-matter h2 {
-  margin-top: 50px;
+  margin-top: 75px;
 }
 
 .front-matter h2:first-child {
   margin-top: 0;
+}
+
+#fold {
+  margin-top: 50px;
+  margin-bottom: 20px;
 }
 
 h1#logo {
@@ -310,7 +315,30 @@ h1#logo {
   margin: 0 auto 30px;
 }
 
-#screenshot {
-  display: block;
-  margin: auto;
+#carousel {
+  margin-top: 50px;
+  font-size: 1.2em;
+}
+
+#carousel img {
+  float: left;
+  margin-right: 20px;
+}
+
+#carousel .carousel-inner>.item>a>img, #carousel .carousel-inner>.item>img{
+  width: 150px;
+  padding-bottom: 70px;
+}
+
+ol.carousel-indicators li {
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+
+.carousel-indicators {
+  bottom: -20px;
+}
+
+.carousel-inner {
+  height: 175px;
 }
