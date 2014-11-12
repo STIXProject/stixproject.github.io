@@ -1,0 +1,13 @@
+
+<stix:Indicator id="the-indicator">
+<indicator:Sightings>
+                <indicator:Sighting>
+                    <indicator:Related_Observables>
+                        <indicator:Related_Observable>
+                            <stixCommon:Observable idref="ip_you_saw">
+                            </stixCommon:Observable>
+                        </indicator:Related_Observable>
+                    </indicator:Related_Observables>
+                </indicator:Sighting>
+            </indicator:Sightings>
+</stix:Indicator>
