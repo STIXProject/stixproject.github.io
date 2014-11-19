@@ -542,7 +542,7 @@ potentially gullible individuals, craft a convincing socially engineered email
 and document, create malware/exploit that will bypass current antivirus
 detection, establish a command and control server by registering a domain
 called mychasebank.org, and send mail to victims from a Gmail account called
-accounts-mychasebank@gmail.com.
+`accounts-mychasebank@gmail.com`.
 
 TTPs consist of the specific adversary behavior (attack patterns, malware,
 exploits) exhibited, resources leveraged (tools, infrastructure, personas),
