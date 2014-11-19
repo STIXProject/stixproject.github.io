@@ -3,34 +3,30 @@ layout: flat
 title: Incident Essentials - Who, What, When
 constructs:
   - Incident
-summary: Example of an incident containing a minimum amount of information
+summary: Example of a basic incident
 ---
 
 ## Scenario
 
-STIX can represent computer intrusions along with details on the victim, reporter, and timeline.
+STIX can represent computer intrusions along with details on the victim, reporter, and timeline using the [Incident](/data-model/{{site.current_version}}/incident/IncidentType) construct. This example outlines a basic incident report - data in the wild may include or omit these fields and others.
 
-This example outlines an incident report with a minimum level of detail for demonstration purposes - data in the wild may include or omit these fields and others.
+Suppose a company named  "CyberTech Dynamics" had their network compromised in early 2012, discovered by security staff in May of the same year, later cleaned up and reported by security company "Sample Investigations, LLC".  Their investigation would have produced:
 
-Suppose a company named  "CyberTech Dynamics" had their network compromised in early 2012, discovered by security staff in May of the same year, later cleaned up and reported by security company "Sample Investigations, LLC" .  
-
-Their investigation would have produced multiple timestamps, such as "when did the initial breach happen?" and "when did we clean it up?"
-
-An estimate of the cost to the victim wold have been calculated from the damage caused by information theft or outages.
-
-Demographic information about the victim would need to be stored as well.
+* Multiple timestamps, such as "when did the initial breach happen?" and "when did we clean it up?"
+* An estimate of the cost to the victim, calculated based on the damage caused by information theft, outages, or other effects.
+* Demographic information about the victim
 
 ## Data model
 
-The [Incident](/data-model/{{site.current_version}}/incident/IncidentType) structure is used to describe this type of event. 
-The bare minimum to describe an Incident is **who** was affected, **what** type of damage was sustained, and **when** it was detected (and later reported).
+The [Incident](/data-model/{{site.current_version}}/incident/IncidentType) structure is used to describe this type of event. The minimum amount of data that is usually considered useful to describe an Incident is **who** was affected, **what** type of damage was sustained, and **when** it was detected (and later reported).
+
+Note that in addition to confirmed incidents, many users of the STIX data model use the Incident construct to represent unconfirmed events and other analysis activities. As such, use of the incident construct it itself does not necessariliy mean that any particular legal or reporting barriers have been met.
 
 **WHO:** The organization affected is listed as the `Victim` using [IdentityType](/data-model/{{site.current_version}}/stixCommon/IdentityType/). In this case just the name is used but you could also characterize more detailed information (addresses, organizational hierarchies, etc.) via the [CIQ extension](/data-model/{{site.current_version}}/stix-ciqidentity/CIQIdentity3.0InstanceType/). The person or organization who reported it is captured under `Reporter`. As with Victim, the Reporter field can use either a simple name or the CIQ extension.
 
 **WHAT:** The `Impact_Assessment` field is used to convey a list of impacts that the incident caused using the [IncidentEffectVocab](/data-model/{{site.current_version}}/stixVocabs/IncidentEffectVocab-1.0/). In this case, a single effect is added corresponding to financial impact. Additionally, since the investigators were able to thoroughly validate the incident the `Confidence` field is set to "High". If the incident were unsubstantiated or in early stages of investigation, this value would instead be `Low`.
 
-**WHEN:** Timestamps related to the incident itself are all represented in the `Time` field using [TimeType](data-model/{{site.current_version}}/incident/TimeType/). In this case, only the discovery time is known so the `Incident_Discovery` field is populated with that time. One gotcha with incident timestamps is that time fields related to the incident itself all go in `Time` while timestamps related to the STIX data construct go into `Information_Source/Time`.
-STIX uses a [rich model of time for incidents](/data-model/{{site.current_version}}/incident/TimeType) which allows an organization to represent the times that various events occurred during the course of the incident. 
+**WHEN:** Timestamps related to the incident itself are all represented in the `Time` field using [TimeType](data-model/{{site.current_version}}/incident/TimeType/). In this case, only the discovery time is known so the `Incident_Discovery` field is populated with that time. One gotcha with incident timestamps is that time fields related to the incident itself all go in `Time` while timestamps related to the STIX data construct go into `Information_Source/Time`. STIX uses a [rich model of time for incidents](/data-model/{{site.current_version}}/incident/TimeType) which allows an organization to represent the times that various events occurred during the course of the incident. 
 
 To represent this (notional) breach, we first describe the breach as having been discovered internally, with the organization listed as the `Victim` and the internal team who reported it is captured under `Information Source`.
 
