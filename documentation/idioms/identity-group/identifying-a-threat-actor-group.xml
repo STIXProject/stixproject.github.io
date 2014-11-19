@@ -1,57 +1,56 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<stix:STIX_Package
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:stix="http://stix.mitre.org/stix-1"
-    xmlns:stixCommon="http://stix.mitre.org/common-1"
-    xmlns:ta="http://stix.mitre.org/ThreatActor-1"
-    xmlns:ciq="urn:oasis:names:tc:ciq:xpil:3"
-    xmlns:xpil="urn:oasis:names:tc:ciq:xpil:3"
-    xmlns:stixCIQIdentity="http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1"
-    xmlns:xnl="urn:oasis:names:tc:ciq:xnl:3"
-    xmlns:example="http://example.com/"
-    xsi:schemaLocation="
-    http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd
-    http://stix.mitre.org/ThreatActor-1 http://stix.mitre.org/XMLSchema/threat_actor/1.1.1/threat_actor.xsd
-    http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1 http://stix.mitre.org/XMLSchema/extensions/identity/ciq_3.0/1.1.1/ciq_3.0_identity.xsd
-    urn:oasis:names:tc:ciq:xpil:3 http://stix.mitre.org/XMLSchema/external/oasis_ciq_3.0/xPIL.xsd"
-    id="example:STIXPackage-f12a0fa4-4342-419b-a92a-a51f365fc43f"
-    timestamp="2014-05-08T09:00:00.000000Z"
-    version="1.1.1"
-    >
-    <stix:STIX_Header>
-        <stix:Title>Example Identifying a Threat Actor Group</stix:Title>
-    </stix:STIX_Header>
+<stix:STIX_Package 
+	xmlns:example="http://example.com"
+	xmlns:ta="http://stix.mitre.org/ThreatActor-1"
+	xmlns:stixCommon="http://stix.mitre.org/common-1"
+	xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1"
+	xmlns:stix-ciqidentity="http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1"
+	xmlns:stix="http://stix.mitre.org/stix-1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xal="urn:oasis:names:tc:ciq:xal:3"
+	xmlns:xnl="urn:oasis:names:tc:ciq:xnl:3"
+	xmlns:xpil="urn:oasis:names:tc:ciq:xpil:3"
+	xsi:schemaLocation="
+	http://stix.mitre.org/ThreatActor-1 http://stix.mitre.org/XMLSchema/threat_actor/1.1.1/threat_actor.xsd
+	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd
+	http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
+	http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1 http://stix.mitre.org/XMLSchema/extensions/identity/ciq_3.0/1.1.1/ciq_3.0_identity.xsd
+	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd
+	urn:oasis:names:tc:ciq:xal:3 http://stix.mitre.org/XMLSchema/external/oasis_ciq_3.0/xAL.xsd
+	urn:oasis:names:tc:ciq:xnl:3 http://stix.mitre.org/XMLSchema/external/oasis_ciq_3.0/xNL.xsd
+	urn:oasis:names:tc:ciq:xpil:3 http://stix.mitre.org/XMLSchema/external/oasis_ciq_3.0/xPIL.xsd" id="example:Package-c9567f73-3803-415c-b06e-2b0622830e5d" version="1.1.1" timestamp="2014-11-19T23:39:03.893235+00:00">
     <stix:Threat_Actors>
-        <stix:Threat_Actor xsi:type="ta:ThreatActorType" id="example:threatactor-d98aaf55-ce5b-4c2e-aa05-2e57a07e45cf" timestamp="2014-05-08T09:00:00.000000Z">
+        <stix:Threat_Actor id="example:threatactor-dfaa8d77-07e2-4e28-b2c8-92e9f7b04428" timestamp="2014-11-19T23:39:03.893348+00:00" xsi:type='ta:ThreatActorType' version="1.1.1">
             <ta:Title>Disco Team Threat Actor Group</ta:Title>
-            <ta:Identity xsi:type="stixCIQIdentity:CIQIdentity3.0InstanceType" id="example:identity-5855111c-8cf4-4803-8236-efc74b2441be">
-                <stixCIQIdentity:Specification>
-                    <ciq:PartyName>
-                        <OrganisationName xmlns="urn:oasis:names:tc:ciq:xnl:3" xnl:Type="CommonUse">
-                            <NameElement>Disco Team</NameElement>
-                        </OrganisationName>
-                        <OrganisationName xmlns="urn:oasis:names:tc:ciq:xnl:3" xnl:Type="UnofficialName">
-                            <NameElement >Equipo del Discoteca</NameElement>
-                        </OrganisationName>
-                    </ciq:PartyName>
-                    <ciq:Addresses>
-                        <ciq:Address>
-                            <Country xmlns="urn:oasis:names:tc:ciq:xal:3">
-                                <NameElement>United States</NameElement>
-                            </Country>
-                            <AdministrativeArea xmlns="urn:oasis:names:tc:ciq:xal:3">
-                                <NameElement>California</NameElement>
-                            </AdministrativeArea>
-                        </ciq:Address>
-                    </ciq:Addresses>
-                    <xpil:ElectronicAddressIdentifiers>
-						<xpil:ElectronicAddressIdentifier xpil:Type="EMAIL">disco-team@stealthemail.com</xpil:ElectronicAddressIdentifier>
-					</xpil:ElectronicAddressIdentifiers>
-                    <ciq:Languages>
-                        <ciq:Language>Spanish</ciq:Language>
-                    </ciq:Languages>
-                </stixCIQIdentity:Specification>
+            <ta:Identity id="example:Identity-733c5838-34d9-4fbf-949c-62aba761184c" xsi:type='stix-ciqidentity:CIQIdentity3.0InstanceType'>
+                <ExtSch:Specification xmlns:ExtSch="http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1">
+  <xpil:PartyName xmlns:xpil="urn:oasis:names:tc:ciq:xpil:3">
+    <xnl:OrganisationName xmlns:xnl="urn:oasis:names:tc:ciq:xnl:3" xnl:Type="CommonUse">
+      <xnl:NameElement>Disco Tean</xnl:NameElement>
+    </xnl:OrganisationName>
+    <xnl:OrganisationName xmlns:xnl="urn:oasis:names:tc:ciq:xnl:3" xnl:Type="UnofficialName">
+      <xnl:NameElement>Equipo del Discoteca</xnl:NameElement>
+    </xnl:OrganisationName>
+  </xpil:PartyName>
+  <xpil:Addresses xmlns:xpil="urn:oasis:names:tc:ciq:xpil:3">
+    <xpil:Address>
+      <xal:Country xmlns:xal="urn:oasis:names:tc:ciq:xal:3">
+        <xal:NameElement>United States</xal:NameElement>
+      </xal:Country>
+      <xal:AdministrativeArea xmlns:xal="urn:oasis:names:tc:ciq:xal:3">
+        <xal:NameElement>California</xal:NameElement>
+      </xal:AdministrativeArea>
+    </xpil:Address>
+  </xpil:Addresses>
+  <xpil:ElectronicAddressIdentifiers xmlns:xpil="urn:oasis:names:tc:ciq:xpil:3">
+    <xpil:ElectronicAddressIdentifier>disco-team@stealthemail.com</xpil:ElectronicAddressIdentifier>
+    <xpil:ElectronicAddressIdentifier>facebook.com/thediscoteam</xpil:ElectronicAddressIdentifier>
+  </xpil:ElectronicAddressIdentifiers>
+  <xpil:Languages xmlns:xpil="urn:oasis:names:tc:ciq:xpil:3">
+    <xpil:Language>Spanish</xpil:Language>
+  </xpil:Languages>
+</ExtSch:Specification>
             </ta:Identity>
         </stix:Threat_Actor>
     </stix:Threat_Actors>
 </stix:STIX_Package>
+

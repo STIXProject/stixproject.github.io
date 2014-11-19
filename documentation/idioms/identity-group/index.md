@@ -1,12 +1,12 @@
 ---
 layout: flat
-title: Identifying a Threat Actor Group
+title: Identifying a Threat Actor Profile
 constructs:
   - Threat Actor
-summary: This idiom describes how to use the threat actor construct to represent the identity of a threat actor group. An example of this in threat intelligence is the characterization of the APT1 threat actor group by Mandiant in their 2013 APT1 report.
+summary: The identity of a threat actor often includes their name, physical address, Facebook or other social media profiles. Alternative names for the actor are also included (such as APT1 vs. Comment Crew)
 ---
 
-Although many smaller threat intelligence programs do not consider threat actor attribution and identification as part of their core mission, multiple threat intelligence providers and other large organizations do practice threat actor attribution and include those characterizations in their threat intelligence. For example, Mandiant released their [report](http://intelreport.mandiant.com/) on the APT1 threat actor which included a characterization of that actor's identity.
+Commercial threat intelligence providers and well-resourced government agencies often attribute malicious activity to a particular threat actor or actor group.Data model
 
 ## Scenario
 
@@ -81,7 +81,9 @@ address.administrative_area.add_name_element("California")
 identity_spec.add_address(address)
 
 identity_spec.add_electronic_address_identifier("disco-team@stealthemail.com")
-
+identity_spec.add_electronic_address_identifier("facebook.com/thediscoteam")
+identity_spec.add_electronic_address_identifier("twitter.com/realdiscoteam")
+    
 ta.identity.specification = identity_spec
 stix_package.add_threat_actor(ta)
 print stix_package.to_xml()
@@ -95,8 +97,9 @@ for actor in pkg.threat_actors:
     print "Language: " + actor.identity.specification.languages[0].value
     print "Country: " + str(actor.identity.specification.addresses[0].country.name_elements[0].value)
     print "Area: " + str(actor.identity.specification.addresses[0].administrative_area.name_elements[0].value)
-    print "Email: " + str(actor.identity.specification.electronic_address_identifiers[0].value)
-
+    for addr in actor.identity.specification.electronic_address_identifiers:
+        print "Internet Address: " + str(addr.value)
+    
 {% endhighlight %}{% include end_tabs.html %}
 
 [Full XML](identifying-a-threat-actor-group.xml) | [Python Producer](identifying-a-threat-actor-group_producer.py) | [Python Consumer](identifying-a-threat-actor-group_consumer.py)
