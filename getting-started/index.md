@@ -9,9 +9,9 @@ title: Getting Started
     <p>The Analysts & Manager tutorial track will walk you through understanding the STIX data model and how content is expressed in it at a high level. You won't have to deal with XML or Python at all.</p>
 
     <div class="well">
-      <h4><a href="http://stix.mitre.org/about/documents/STIX_Whitepaper_v1.1.pdf" target="_blank">STIX Whitepaper</a></h4>
+      <h4><a href="whitepaper">STIX Whitepaper</a></h4>
       <p>The STIX Whitepaper explains why STIX was developed, what problems it solves, and how it solves those problems. It also goes into detail on the individual components of STIX and how they fit together.</p>
-      <a class="btn btn-primary" href="http://stix.mitre.org/about/documents/STIX_Whitepaper_v1.1.pdf" target="_blank">Go »</a>
+      <a class="btn btn-primary" href="whitepaper">Go »</a>
     </div>
 
     <div class="well">
