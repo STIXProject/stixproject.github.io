@@ -14,6 +14,8 @@ from stix.common import Identity
 from stix.data_marking import Marking, MarkingSpecification
 from stix.extensions.marking.simple_marking import SimpleMarkingStructure
 
+
+
 def build_stix( ):
     # setup stix document
     stix_package = STIXPackage()
@@ -39,19 +41,26 @@ def build_stix( ):
     breach.reporter.identity = Identity()
     breach.reporter.identity.name = "Sample Investigations, LLC"
 
-
-    # incident time is a complex object with support for a bunch of different "when stuff happened" items
+    # set incident-specific timestamps
     breach.time = incidentTime()
-    breach.title = "Breach of Canary Corp"
-    breach.time.incident_discovery = datetime.strptime("2013-01-13", "%Y-%m-%d") # when they submitted it
+    breach.title = "Breach of CyberTech Dynamics"
+    breach.time.initial_compromise = datetime.strptime("2012-01-30", "%Y-%m-%d") 
+    breach.time.incident_discovery = datetime.strptime("2012-05-10", "%Y-%m-%d") 
+    breach.time.restoration_achieved = datetime.strptime("2012-08-10", "%Y-%m-%d") 
+    breach.time.incident_reported = datetime.strptime("2012-12-10", "%Y-%m-%d") 
+
+    # add the impact
+    impact = ImpactAssessment()
+    impact.add_effect("Unintended Access")
+    breach.impact_assessment = impact
+
+    # add the victim
+    breach.add_victim ("CyberTech Dynamics")
 
     # add the impact
     impact = ImpactAssessment()
     impact.add_effect("Financial Loss")
     breach.impact_assessment = impact
-
-    # add the victim
-    breach.add_victim ("Canary Corp")
 
     stix_package.add_incident(breach)
 

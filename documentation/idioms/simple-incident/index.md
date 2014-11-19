@@ -1,79 +1,86 @@
 ---
 layout: flat
-title: Barebones Incident Description
+title: Incident Essentials - Who, What, When
 constructs:
   - Incident
-summary: "Just the facts, ma'am"
+summary: Example of an incident containing a minimum amount of information
 ---
-
 
 ## Scenario
 
-In this example we will cover the basic information needed to capture a computer intrusion incident using STIX.
+STIX can represent computer intrusions along with details on the victim, reporter, and timeline.
 
-Imagine that in early 2012 a company named "Canary Corp" had their network compromised and reported that information as a financial loss in SEC filings. The breach was disclosed by "Sample Investigations, LLC" and included substantial details with third-party verification.
+This example outlines an incident report with a minimum level of detail for demonstration purposes - data in the wild may include or omit these fields and others.
+
+Suppose a company named  "CyberTech Dynamics" had their network compromised in early 2012, discovered by security staff in May of the same year, later cleaned up and reported by security company "Sample Investigations, LLC" .  
+
+Their investigation would have produced multiple timestamps, such as "when did the initial breach happen?" and "when did we clean it up?"
+
+An estimate of the cost to the victim wold have been calculated from the damage caused by information theft or outages.
+
+Demographic information about the victim would need to be stored as well.
 
 ## Data model
 
-Historical incidents (breaches) are describing using the [Incident](/data-model/{{site.current_version}}/incident/IncidentType) structure. The bare minimum to describe an Incident is **who** was affected, **what** type of damage was sustained, and **when** it was detected (and later reported).
+The [Incident](/data-model/{{site.current_version}}/incident/IncidentType) structure is used to describe this type of event. 
+The bare minimum to describe an Incident is **who** was affected, **what** type of damage was sustained, and **when** it was detected (and later reported).
 
-**WHO:** The organization affected (Canary Corp) is listed as the `Victim` using [IdentityType](/data-model/{{site.current_version}}/stixCommon/IdentityType/). In this case just the name is used but you could also characterize more detailed information (addresses, organizational hierarchies, etc.) via the [CIQ extension](/data-model/{{site.current_version}}/stix-ciqidentity/CIQIdentity3.0InstanceType/). The person or organization who reported it is captured under `Reporter`. As with Victim, the Reporter field can use either a simple name or the CIQ extension.
+**WHO:** The organization affected is listed as the `Victim` using [IdentityType](/data-model/{{site.current_version}}/stixCommon/IdentityType/). In this case just the name is used but you could also characterize more detailed information (addresses, organizational hierarchies, etc.) via the [CIQ extension](/data-model/{{site.current_version}}/stix-ciqidentity/CIQIdentity3.0InstanceType/). The person or organization who reported it is captured under `Reporter`. As with Victim, the Reporter field can use either a simple name or the CIQ extension.
 
 **WHAT:** The `Impact_Assessment` field is used to convey a list of impacts that the incident caused using the [IncidentEffectVocab](/data-model/{{site.current_version}}/stixVocabs/IncidentEffectVocab-1.0/). In this case, a single effect is added corresponding to financial impact. Additionally, since the investigators were able to thoroughly validate the incident the `Confidence` field is set to "High". If the incident were unsubstantiated or in early stages of investigation, this value would instead be `Low`.
 
 **WHEN:** Timestamps related to the incident itself are all represented in the `Time` field using [TimeType](data-model/{{site.current_version}}/incident/TimeType/). In this case, only the discovery time is known so the `Incident_Discovery` field is populated with that time. One gotcha with incident timestamps is that time fields related to the incident itself all go in `Time` while timestamps related to the STIX data construct go into `Information_Source/Time`.
+STIX uses a [rich model of time for incidents](/data-model/{{site.current_version}}/incident/TimeType) which allows an organization to represent the times that various events occurred during the course of the incident. 
+
+To represent this (notional) breach, we first describe the breach as having been discovered internally, with the organization listed as the `Victim` and the internal team who reported it is captured under `Information Source`.
+
+The time when the machine was infected is represented in the `Initial Compromise Time` field. The time they found the infected computer is the `Incident Discovery Time` and when they cleaned and rebuilt it is `Restoration Achieved Time`. Finally, `Incident Reported Time` is when the company disclosed the breach.
+
+Note that timestamps describing the incident should be represented under `incident:Time`, as these are data directly related to the breach in question. `Information_Source/Time` also allows you to represent timestamps, but rather than data about the incident they represent metadata about the incident report. For example, `Information_Source/Time/Produced_Time` represents the time the incident record was produced. Similarly, the `@timestamp` field is used to version the construct and should not be used to represent any time related to the incident itself.
+
 
 ## Implementation
 
 {% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="simple-incident" %}{% highlight xml linenos  %}
-<stix:STIX_Package 
-    xmlns:cyboxCommon="http://cybox.mitre.org/common-2"
-    xmlns:example="http://example.com"
-    xmlns:incident="http://stix.mitre.org/Incident-1"
-    xmlns:stixCommon="http://stix.mitre.org/common-1"
-    xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1"
-    xmlns:stix="http://stix.mitre.org/stix-1"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="
-    http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd
-    http://stix.mitre.org/Incident-1 http://stix.mitre.org/XMLSchema/incident/1.1.1/incident.xsd
-    http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd
-    http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
-    http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd" id="example:Package-fba447a0-7c5b-4329-98a3-1324080101d4" version="1.1.1" timestamp="2014-08-28T16:42:52.859307+00:00">
+<stix:STIX_Package >
     <stix:STIX_Header>
         <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Incident</stix:Package_Intent>
         <stix:Description>Sample breach report</stix:Description>
     </stix:STIX_Header>
     <stix:Incidents>
-        <stix:Incident id="example:incident-fd56fb34-af59-47b3-95cf-7baaaa53fe93" timestamp="2014-08-28T16:42:52.859547+00:00" xsi:type='incident:IncidentType' version="1.1.1">
-            <incident:Title>Breach of Canary Corp</incident:Title>
+        <stix:Incident id="example:incident-8236b4a2-abe0-4b56-9347-288005c4bb92" timestamp="2014-11-18T23:40:08.061362+00:00" xsi:type='incident:IncidentType' version="1.1.1">
+            <incident:Title>Breach of Cyber Tech Dynamics</incident:Title>
             <incident:Time>
-                <incident:Incident_Discovery precision="second">2013-01-13T00:00:00</incident:Incident_Discovery>
+                <incident:Initial_Compromise precision="second">2012-01-30T00:00:00</incident:Initial_Compromise>
+                <incident:Incident_Discovery precision="second">2012-05-10T00:00:00</incident:Incident_Discovery>
+                <incident:Restoration_Achieved precision="second">2012-08-10T00:00:00</incident:Restoration_Achieved>
+                <incident:Incident_Reported precision="second">2012-12-10T00:00:00</incident:Incident_Reported>
             </incident:Time>
             <incident:Description>Intrusion into enterprise network</incident:Description>
             <incident:Reporter>
                 <stixCommon:Description>The person who reported it</stixCommon:Description>
-                <stixCommon:Identity id="example:Identity-5db269cf-e603-4df9-ae8c-51ff295abfaa">
+                <stixCommon:Identity id="example:Identity-cd64aaa6-b1c0-4026-8ea1-14ff5a19e5fb">
                     <stixCommon:Name>Sample Investigations, LLC</stixCommon:Name>
                 </stixCommon:Identity>
                 <stixCommon:Time>
                     <cyboxCommon:Produced_Time>2014-03-11T00:00:00</cyboxCommon:Produced_Time>
                 </stixCommon:Time>
             </incident:Reporter>
-            <incident:Victim id="example:Identity-c85082f3-bc04-43c8-a000-e0c1d0f2c045">
-                <stixCommon:Name>Canary Corp</stixCommon:Name>
+            <incident:Victim id="example:Identity-dd8637b7-51b4-48f0-9e3c-a2b23b3a2dd7">
+                <stixCommon:Name>Cyber Tech Dynamics</stixCommon:Name>
             </incident:Victim>
             <incident:Impact_Assessment>
                 <incident:Effects>
                     <incident:Effect xsi:type="stixVocabs:IncidentEffectVocab-1.0">Financial Loss</incident:Effect>
                 </incident:Effects>
             </incident:Impact_Assessment>
-            <incident:Confidence timestamp="2014-08-28T16:42:52.859570+00:00">
+            <incident:Confidence timestamp="2014-11-18T23:40:08.061379+00:00">
                 <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">High</stixCommon:Value>
             </incident:Confidence>
         </stix:Incident>
     </stix:Incidents>
 </stix:STIX_Package>
+
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 # setup stix document
 stix_package = STIXPackage()
@@ -82,16 +89,6 @@ stix_header = STIXHeader()
 stix_header.description = "Sample breach report" 
 stix_header.add_package_intent ("Incident")
 
-# stamp with creator
-stix_header.information_source = InformationSource()
-stix_header.information_source.description = "The person who reported it"
-
-stix_header.information_source.time = Time()
-stix_header.information_source.time.produced_time = datetime.strptime("2014-03-11","%Y-%m-%d") # when they submitted it
-
-stix_header.information_source.identity = Identity()
-stix_header.information_source.identity.name = "Sample Investigations, LLC"
-
 stix_package.stix_header = stix_header
 
 # add incident and confidence
@@ -99,18 +96,36 @@ breach = Incident()
 breach.description = "Intrusion into enterprise network"
 breach.confidence = "High"
 
-# incident time is a complex object with support for a bunch of different "when stuff happened" items
+# stamp with reporter
+breach.reporter = InformationSource()
+breach.reporter.description = "The person who reported it"
+
+breach.reporter.time = Time()
+breach.reporter.time.produced_time = datetime.strptime("2014-03-11","%Y-%m-%d") # when they submitted it
+
+breach.reporter.identity = Identity()
+breach.reporter.identity.name = "Sample Investigations, LLC"
+
+# set incident-specific timestamps
 breach.time = incidentTime()
-breach.title = "Breach of Canary Corp"
-breach.time.incident_discovery = datetime.strptime("2013-01-13", "%Y-%m-%d") # when they submitted it
+breach.title = "Breach of CyberTech Dynamics"
+breach.time.initial_compromise = datetime.strptime("2012-01-30", "%Y-%m-%d") 
+breach.time.incident_discovery = datetime.strptime("2012-05-10", "%Y-%m-%d") 
+breach.time.restoration_achieved = datetime.strptime("2012-08-10", "%Y-%m-%d") 
+breach.time.incident_reported = datetime.strptime("2012-12-10", "%Y-%m-%d") 
+
+# add the impact
+impact = ImpactAssessment()
+impact.add_effect("Unintended Access")
+breach.impact_assessment = impact
+
+# add the victim
+breach.add_victim ("CyberTech Dynamics")
 
 # add the impact
 impact = ImpactAssessment()
 impact.add_effect("Financial Loss")
 breach.impact_assessment = impact
-
-# add the victim
-breach.add_victim ("Canary Corp")
 
 stix_package.add_incident(breach)
 
@@ -127,7 +142,11 @@ for inc in pkg.incidents:
     print "Confidence: "+ str(inc.confidence.value)
     for impact in inc.impact_assessment.effects:
         print "Impact: "+ str(impact)
+    
+    print "Initial Compromise: "+ str(inc.time.initial_compromise.value)
     print "Incident Discovery: "+ str(inc.time.incident_discovery.value)
+    print "Restoration Achieved: "+ str(inc.time.restoration_achieved.value)
+    print "Incident Reported: "+ str(inc.time.incident_reported.value)
 
     for victim in inc.victims:
         print "Victim: "+ str(victim.name)

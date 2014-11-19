@@ -16,7 +16,11 @@ def parse_stix( pkg ):
         print "Confidence: "+ str(inc.confidence.value)
         for impact in inc.impact_assessment.effects:
             print "Impact: "+ str(impact)
+        
+        print "Initial Compromise: "+ str(inc.time.initial_compromise.value)
         print "Incident Discovery: "+ str(inc.time.incident_discovery.value)
+        print "Restoration Achieved: "+ str(inc.time.restoration_achieved.value)
+        print "Incident Reported: "+ str(inc.time.incident_reported.value)
 
         for victim in inc.victims:
             print "Victim: "+ str(victim.name)
