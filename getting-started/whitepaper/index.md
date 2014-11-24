@@ -468,7 +468,7 @@ Indicator, Incident, TTP, ExploitTarget, CourseOfAction, Campaign and
 ThreatActor— along with a cross-cutting Data Markings construct are briefly
 characterized below.
 
-<img src="/images/stix-architecture.png" alt="STIX 1.1 Architecture" style="width: 600px" />
+<img src="/images/stix-architecture.png" alt="STIX 1.1 Architecture" />
 
 ## STIX Structure
 
