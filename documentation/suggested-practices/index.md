@@ -114,9 +114,6 @@ Relationships via embedded definition are achieved when a relationship from one 
 
 **NOTE:** Embedding the definition of a component within another component does not imply a hard parent-child relationship limiting its relevancy to only the embedding component. As noted in the suggested practices for [Assigning IDs](), **for situations where the embedded component is really only relevant/valid/important within the context of the embedding component it is suggested practice to not specify an ID for it.** This explicitly denotes its local-only relevance and prevents it from participating in relationships to components other than the embedding one. **For situations where the simplicity, brevity and readability of relationship via embedded definition is desirable but the embedded content may be relevant/valid/important outside the context of only the embedding component, an ID can be specified for it and it can participate in relationships to components other than the embedding one.**
 
-
-foo
-
 **Example with IDs on embedded content (related TTP and COA content is general enough to be relevant outside the context of the Indicator):**
 
 <img src="diagram2.png" alt="Relationship via Embedding w ids"/>
