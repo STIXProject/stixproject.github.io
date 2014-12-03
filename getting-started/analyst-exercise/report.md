@@ -39,8 +39,7 @@ Spear phishing
 During our investigation, we discovered that these attackers sent targeted emails, as well as private 
 messages through social media. For example, the attackers targeted companies in the DIB using a fake 
 conference page as a lure to trick targets into installing malicious software. The attackers registered 
-the domain aeroconf2014[.]org in order to impersonate the IEEE Aerospace conferencethe 
-conferences actual domain is aeroconf.organd sent out an email with the following information: 
+the domain aeroconf2014[.]org in order to impersonate the IEEE Aerospace conference (aeroconf.org) and sent out an email with the following information: 
 
 From: invite@aeroconf2014[.]org 
 Subject: IEEE Aerospace Conference 2014

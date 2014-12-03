@@ -7,7 +7,7 @@ active: getting-started
 ## Setup
 Consult this [FireEye report](report) for a prose description of malicious actors from Iran targeting governments and commercial computers.
 
-Download the [free STIXViz tool](http://dstar.kd.io/documentation/utilities/) and open the [STIX version of the report](output.xml) .
+Download the [free STIXViz tool](/documentation/utilities/) and open the [STIX version of the report](output.xml) .
 
 Distribution is unlimited since the **STIX Header** includes no TLP or sensitivity restrictions. 
 
@@ -26,7 +26,7 @@ Since victims were anonymized, there are no historical **Incident** details, but
 ![indicator image](pics/indicators.png)
 
 
-The **Email Indicator** suggests that invite@aeroconf2014.org should be blocked unconditionally, as the sending domain is owned by the malicious actors.
+The **Email Indicator** suggests that the sender email address `invite@aeroconf2014.org` should be blocked unconditionally, as the sending domain is owned by the malicious actors.
 "IEEE Aerospace Conference 2014" is a suspicious subject line seen in those emails, but may also include legitimate emails.
 
 Under the **File Indicator** a malware sample named 'IntelRS.exe' has been seen with several hashes, which can be directly added to a blacklist.
