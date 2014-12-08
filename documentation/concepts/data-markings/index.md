@@ -137,7 +137,7 @@ A couple examples of some controlled structure statements are below:
 <table class="table">
   <thead>
     <tr>
-      <th>Location</th>
+      <th>Location of Marking</th>
       <th>Controlled Structure Statement</th>
       <th>Meaning</th>
     </tr>
@@ -150,17 +150,17 @@ A couple examples of some controlled structure statements are below:
     </tr>
     <tr>
       <td>Individual Component</td>
-      <td>../../../descendant-or-self()</td>
+      <td>../../../descendant-or-self::node()</td>
       <td>All nodes in the entire enclosing component</td>
     </tr>
     <tr>
       <td>Header</td>
-      <td>//stix:Indicator</td>
+      <td>//stix:Indicator/descendant-or-self::node()</td>
       <td>All instances of indicators in the document</td>
     </tr>
     <tr>
       <td>Individual Component</td>
-      <td>../../../ta:Title</td>
+      <td>../../../ta:Title/descendant-or-self::node()</td>
       <td>The Title field of the enclosing Threat Actor component</td>
     </tr>
   </tbody>
