@@ -9,7 +9,7 @@ before_install:
 
 install:
   - pip install -q stix==1.1.1.2
-  # setup validator
+  - pip install stix-validator
   - pip install -q xlrd lxml
 
 script: ./test_idioms.sh
