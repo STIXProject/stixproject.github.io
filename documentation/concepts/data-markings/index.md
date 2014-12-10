@@ -66,7 +66,7 @@ stix_package.add_indicator(indicator)
 print stix_package.to_xml()
 {% endhighlight %}{% include end_tabs.html %}
 
-Notice that, although the handling field is placed directly in an indicator, the field itself is the same. Markings use a common structure regardless of where they are used. That said, it's important to understand where the marking structure is placed because the controlled structure may use relative document locations in order to mark specific fields (especially when used within components).
+Notice that, although the `Handling` field is placed directly in an `Indicator` rather than a `STIX_Header`, the field name is still `<marking:Marking>`. This is because markings use a common structure regardless of where they are used. That said, it's important to understand where the marking structure is placed because the controlled structure may use relative document locations in order to mark specific fields (especially when used within components).
 
 <div class="well well-sm">
 <h4>Aside: Marking Precedence</h4>
