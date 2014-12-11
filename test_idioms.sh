@@ -44,7 +44,7 @@ for dir in ./documentation/idioms/*; do
         for xmlfile in ./*xml ; do
         if [ -e $xmlfile ]
         then
-            $($validator $xmlfile > /dev/null)
+            $($validator $xmlfile)
             if [ $? -ne 0 ]
             # the file had validation errors
             then
