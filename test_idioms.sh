@@ -44,8 +44,8 @@ for dir in ./documentation/idioms/*; do
         for xmlfile in ./*xml ; do
         if [ -e $xmlfile ]
         then
-            $($validator $xmlfile | grep -q INVALID)
-            if [ $? -eq 0 ]
+            $($validator $xmlfile > /dev/null)
+            if [ $? -ne 0 ]
             # the file had validation errors
             then
                 echo -e "\nERROR: $(realpath $xmlfile) had validation errors"
