@@ -12,11 +12,11 @@ General practices apply across STIX (and sometimes CybOX).
 
 ### Formatting IDs
 
-STIX IDs are [XML QNames](http://en.wikipedia.org/wiki/QName). Each ID includes both a namespace portion (optional) and an ID portion (required) separated by a colon (:). The recommend approach to creating STIX IDs is to define a producer namespace and namespace prefix, then use the form:
+STIX IDs should be unique for all instances of content and are implemented as [XML QNames](http://en.wikipedia.org/wiki/QName). Each ID includes both a namespace portion (optional) and an ID portion (required) separated by a colon (:). The recommend approach to creating STIX IDs is to define a producer namespace and namespace prefix, then use the form:
 
 `[ns prefix]:[construct type]-[GUID]`
 
-The "ns prefix" should be a namespace prefix bound to a namespace owned/controlled by the producer of the content.
+The "ns prefix" should be a namespace prefix bound to a namespace owned/controlled by the producer of the content. It is the responsibility of the producer to ensure that the namespace is unique from namespaces used by any other producers and that the ID portion (after the colon) is unique within the specified namespace (before the colon).
 
 Some examples:
 
