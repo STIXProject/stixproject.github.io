@@ -117,11 +117,6 @@ print stix_package.to_xml()
 
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 
-
-ttp_list = {}
-for tactic in pkg.ttps:
-    ttp_list[tactic.id_] = tactic.title
-
 print "== MALWARE =="    
 for tactic in pkg.ttps:
     print "---"
@@ -139,12 +134,10 @@ for tactic in pkg.ttps:
 print "== ACTOR =="
 for actor in pkg.threat_actors:
     for obs in actor.observed_ttps:
-        print "RelatedTTP: " + str(ttp_list[obs.item.idref])
+        print "RelatedTTP: " + str(pkg.find(obs.item.idref).title)
         print "Relationship: " + str(obs.relationship)
     print "Title: " + str(actor.title)
     print "Name: " + str(actor.identity.name)
-
-
 {% endhighlight %}{% include end_tabs.html %}
 
 [Full XML](threat-actor-leveraging-attack-patterns-and-malware.xml) | [Python Producer](threat-actor-leveraging-attack-patterns-and-malware_producer.py) | [Python Consumer](threat-actor-leveraging-attack-patterns-and-malware_consumer.py)

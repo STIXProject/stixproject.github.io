@@ -7,11 +7,6 @@ from stix.core import STIXPackage, STIXHeader
 
 def parse_stix( pkg ):
 
-    # build dict of ID -> title for ttp
-    ttp_list = {}
-    for thing in pkg.ttps:
-        ttp_list[thing.id_] = thing.title
-    
     print "== EMAIL =="
     for ind in pkg.indicators:
         print "---"
@@ -24,7 +19,7 @@ def parse_stix( pkg ):
         
         # look up ttp from list in package
         for ref_ttp in ind.indicated_ttps:
-            print "TTP: " + ttp_list[ref_ttp.item.idref]
+            print "TTP: " + str(pkg.find(ref_ttp.item.idref).title)
         
         for obs in ind.observables:
             if obs.object_.related_objects:

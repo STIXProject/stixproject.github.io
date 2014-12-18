@@ -6,20 +6,17 @@ import sys
 from stix.core import STIXPackage, STIXHeader
 
 def parse_stix( pkg ):
-    ttp_list = {}
-    for tactic in pkg.ttps:
-        ttp_list[tactic.id_] = tactic
-    
-    
+
     print "== Campaign =="
     for camp in pkg.campaigns:
         print "---"
         print "Campaign: " + str(camp.title)
         
         for tactic in camp.related_ttps:
-            print "RelatedTTP: " + ttp_list[tactic.item.idref].title
+            ttp = pkg.find(tactic.item.idref)
+            print "RelatedTTP: " + str(ttp.title)
             print "Relationship: " + str(tactic.relationship)
-            for target in ttp_list[tactic.item.idref].victim_targeting.targeted_information:
+            for target in ttp.victim_targeting.targeted_information:
                 print "Target: " + str(target)
     return 0
 
