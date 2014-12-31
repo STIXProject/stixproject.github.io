@@ -6,6 +6,7 @@
     {% include nav.html %}
 
     <div class="container">
+      <div class="row">
       {% if page.toc %}
         <div class="col-md-10">
           {% unless page.no_in_page_title %}<h1>{{ page.title }}</h1>{% endunless %}
@@ -17,9 +18,12 @@
           </div>
         </div>
       {% else %}
+        <div class="col-md-12">
         {% unless page.no_in_page_title %}<h1>{{ page.title }}</h1>{% endunless %}
         {{ content }}
+        </div>
       {% endif %}
+      </div>
     </div>
 
     {% include footer.html %}
