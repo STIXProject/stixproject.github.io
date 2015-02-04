@@ -193,9 +193,6 @@ stix_package.indicators = [combined_indicator, email_subject_indicator, indicato
 print stix_package.to_xml()
 
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
-ttp_list = {}
-for thing in pkg.ttps:
-    ttp_list[thing.id_] = thing.title
 
 print "== EMAIL =="
 for ind in pkg.indicators:
@@ -209,7 +206,7 @@ for ind in pkg.indicators:
     
     # look up ttp from list in package
     for ref_ttp in ind.indicated_ttps:
-        print "TTP: " + ttp_list[ref_ttp.item.idref]
+        print "TTP: " + str(pkg.find(ref_ttp.item.idref).title)
     
     for obs in ind.observables:
         if obs.object_.related_objects:
@@ -222,7 +219,7 @@ for ind in pkg.indicators:
             print "Subject : " + str(obs.object_.properties.header.subject)
             if obs.object_.properties.attachments:
                 print "Attachment -> : " + str(obs.object_.properties.attachments[0].object_reference)
-
+        
 
 {% endhighlight %}{% include end_tabs.html %}
 

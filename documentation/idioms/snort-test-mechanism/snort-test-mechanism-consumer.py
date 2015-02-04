@@ -12,23 +12,20 @@ from stix.core import STIXPackage
 def main():
     stix_package = STIXPackage.from_xml('snort-test-mechanism.xml')
 
-    ttps = {}
-    for ttp in stix_package.ttps.ttps:
-        ttps[ttp.id_] = ttp
-
-    ets = {}
-    for et in stix_package.exploit_targets:
-        ets[et.id_] = et
-
     for indicator in stix_package.indicators:
         print "== INDICATOR =="
         print "Title: " + indicator.title
         print "Confidence: " + indicator.confidence.value.value
 
         for indicated_ttp in indicator.indicated_ttps:
-            ttp = ttps[indicated_ttp.item.idref] # Resolve the TTP by idref
-            et = ets[ttp.exploit_targets[0].item.idref] # Resolve the ET by idref
-            print "Indicated TTP: " + ttp.title + " (" + et.vulnerabilities[0].cve_id + ")"
+            # Look up each TTP label
+            ttp = stix_package.find(indicated_ttp.item.idref) 
+            
+            for target in ttp.exploit_targets:
+                et = stix_package.find(target.item.idref) 
+                
+                for vuln in et.vulnerabilities:
+                    print "Indicated TTP: " + ttp.title + ":" + vuln.cve_id
 
         for tm in indicator.test_mechanisms:
             print "Producer: " + tm.producer.identity.name

@@ -69,17 +69,13 @@ indicator.test_mechanisms = [tm]
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 stix_package = STIXPackage.from_xml('openioc-test-mechanism.xml')
 
-ttps = {}
-for ttp in stix_package.ttps.ttps:
-    ttps[ttp.id_] = ttp
-
 for indicator in stix_package.indicators:
     print "== INDICATOR =="
     print "Title: " + indicator.title
     print "Description: " + indicator.description.value
 
     for indicated_ttp in indicator.indicated_ttps:
-        ttp = ttps[indicated_ttp.item.idref] # Resolve the TTP by idref
+        ttp = stix_package.find(indicated_ttp.item.idref) 
         print "Indicated TTP: " + ttp.title
 
     for tm in indicator.test_mechanisms:
