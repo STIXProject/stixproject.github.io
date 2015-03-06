@@ -94,14 +94,14 @@ Let's dive into each piece of STIX data markings in turn.
 
 As explained above, the `Controlled Structure` field indicates which part of the document the markings apply to. Currently, this is implemented using [XPath 1.0](http://www.w3.org/TR/xpath/), a language for selecting portions of XML documents. As you would imagine, this means that the data markings structure is currently tied to XML, though notionally this controlled structure field simply indicates which part of the STIX document is being marked and so could be implemented in other document selection languages.
 
-Note that the controlled structure must EXPLICITLY select ALL nodes that the marking applies to. It's not enough to select the parent and assume it applies to all children. So a selector for just an Indicator element will only select that element itself, it does not select the indicator content. To select that indicator and its children, make sure to use a selector like 'node()' or 'descendant-or-self()' that selects all fields within the given context. Note that in XPath, '*' only selects elements, not attributes, and so is not sufficient.
+Note that the controlled structure must EXPLICITLY select ALL nodes that the marking applies to. It's not enough to select the parent and assume it applies to all children. So a selector for just an Indicator element will only select that element itself, it does not select the indicator content. To select that indicator and its children, make sure to use a selector like `node() | @*` or `descendant-or-self::node() | descendant-or-self::node()/@*` that selects all fields within the given context. Note that in XPath, '*' only selects elements, not attributes, and so is not sufficient.
 
 As an example, here's a small snippet that shows the controlled structure field in a handling construct:
 
 {% include start_tabs.html tabs="XML|Python" name="cs" %}{% highlight xml linenos %}
 <stix:Handling>
   <marking:Marking>
-    <marking:Controlled_Structure>//node()</marking:Controlled_Structure>
+    <marking:Controlled_Structure>//node() | //@*</marking:Controlled_Structure>
     <!-- Marking statement would go here, indicating the marking statement applies to all nodes selected by the Controlled_Structure -->
   </marking:Marking>
 </stix:Handling>
@@ -110,7 +110,7 @@ from stix.core import STIXPackage, STIXHeader
 from stix.data_marking import Marking, MarkingSpecification
 
 marking_specification = MarkingSpecification()
-marking_specification.controlled_structure = "//node()"
+marking_specification.controlled_structure = "//node() | //@*"
 
 handling = Marking()
 handling.add_marking(marking_specification)
@@ -145,26 +145,28 @@ A couple examples of some controlled structure statements are below:
   <tbody>
     <tr>
       <td>Header</td>
-      <td>//node()</td>
+      <td>//node() | //@*</td>
       <td>All nodes in the entire document</td>
     </tr>
     <tr>
       <td>Individual Component</td>
-      <td>../../../descendant-or-self::node()</td>
+      <td>../../../descendant-or-self::node() | ../../../descendant-or-self::node()/@*</td>
       <td>All nodes in the entire enclosing component</td>
     </tr>
     <tr>
       <td>Header</td>
-      <td>//stix:Indicator/descendant-or-self::node()</td>
+      <td>//stix:Indicator/descendant-or-self::node() | //stix:Indicator::descendant-or-self::node()/@*</td>
       <td>All instances of indicators in the document</td>
     </tr>
     <tr>
       <td>Individual Component</td>
-      <td>../../../ta:Title/descendant-or-self::node()</td>
+      <td>../../../ta:Title/descendant-or-self::node() | ../../../ta:Title/descendant-or-self::node()/@*</td>
       <td>The Title field of the enclosing Threat Actor component</td>
     </tr>
   </tbody>
 </table>
+
+<div class="alert alert-warning"><b>Note:</b> Previous example selectors did not select XML attributes. These selectors have been updated on 2015/02/18 to align with their described behavior and meaning.</div>
 
 ### Marking Structures and Default Extensions
 
@@ -179,7 +181,7 @@ The simple marking extension allows users to make a text statement to mark the c
 {% include start_tabs.html tabs="XML|Python" name="simple" %}{% highlight xml linenos %}
 <stix:Handling>
   <marking:Marking>
-    <marking:Controlled_Structure>//node()</marking:Controlled_Structure>
+    <marking:Controlled_Structure>//node() | //@*</marking:Controlled_Structure>
     <marking:Marking_Structure xsi:type="simpleMarking:SimpleMarkingStructureType">
       <simpleMarking:Statement>Copyright 2014, Acme Inc.</simpleMarking:Statement>
     </marking:Marking_Structure>
@@ -191,7 +193,7 @@ from stix.data_marking import Marking, MarkingSpecification
 from stix.extensions.marking.simple_marking import SimpleMarkingStructure
 
 marking_specification = MarkingSpecification()
-marking_specification.controlled_structure = "//node()"
+marking_specification.controlled_structure = "//node() | //@*"
 
 simple = SimpleMarkingStructure()
 simple.statement = "Copyright 2014, Acme Inc."
@@ -217,7 +219,7 @@ As an example:
 {% include start_tabs.html tabs="XML|Python" name="tou" %}{% highlight xml linenos %}
 <stix:Handling>
   <marking:Marking>
-    <marking:Controlled_Structure>//node()</marking:Controlled_Structure>
+    <marking:Controlled_Structure>//node() | //@*</marking:Controlled_Structure>
     <marking:Marking_Structure xsi:type="terms:TermsOfUseMarkingStructureType">
       <terms:Terms_Of_Use>Acme Inc. is not responsible for the content of this file</terms:Terms_Of_Use>
     </marking:Marking_Structure>
@@ -229,7 +231,7 @@ from stix.data_marking import Marking, MarkingSpecification
 from stix.extensions.marking.terms_of_use_marking import TermsOfUseMarkingStructure
 
 marking_specification = MarkingSpecification()
-marking_specification.controlled_structure = "//node()"
+marking_specification.controlled_structure = "//node() | //@*"
 
 tou = TermsOfUseMarkingStructure()
 tou.terms_of_use = "Acme Inc. is not responsible for the content of this file."
@@ -255,7 +257,7 @@ As an example:
 {% include start_tabs.html tabs="XML|Python" name="tlp" %}{% highlight xml linenos %}
 <stix:Handling>
   <marking:Marking>
-    <marking:Controlled_Structure>//node()</marking:Controlled_Structure>
+    <marking:Controlled_Structure>//node() | //@*</marking:Controlled_Structure>
     <marking:Marking_Structure xsi:type="tlp:TLPMarkingStructureType" tlp:color="AMBER" />
   </marking:Marking>
 </stix:Handling>
@@ -265,7 +267,7 @@ from stix.data_marking import Marking, MarkingSpecification
 from stix.extensions.marking.tlp import TLPMarkingStructure
 
 marking_specification = MarkingSpecification()
-marking_specification.controlled_structure = "//node()"
+marking_specification.controlled_structure = "//node() | //@*"
 
 tlp = TLPMarkingStructure()
 tlp.color = "AMBER"
