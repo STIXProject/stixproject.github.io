@@ -129,9 +129,9 @@ h1, h2 {
 }
 
 .occurrence {
-  font-size: 70%;
+  font-size: 90%;
   margin-left: 5px;
-  color: #ccc;
+  color: #857878;
 }
 
 tr > td > p:last-child {
