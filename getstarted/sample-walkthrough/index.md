@@ -7,7 +7,7 @@ This walkthrough will look at a simple STIX document and look through it piece b
 
 ## Prerequisites
 
-Prior to going through this walkthrough, you should understand the general concept of what STIX is, what problems it is designed to solve, and how it is used to solve those problems. The best place to do that is by going to the [Getting Started](/getting-started) page and reading through the whitepaper and other materials linked from there.
+Prior to going through this walkthrough, you should understand the general concept of what STIX is, what problems it is designed to solve, and how it is used to solve those problems. The best place to do that is by going to the [Getting Started](/getstarted) page and reading through the whitepaper and other materials linked from there.
 
 You also should have good XML tools in order to work with STIX. Most of the STIX team uses either Oxygen or XMLSpy, which are both commercial products. Eclipse is an open-source option that is somewhat less fully-featured but should get the job done.
 

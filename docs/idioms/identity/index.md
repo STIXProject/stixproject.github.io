@@ -15,7 +15,7 @@ The STIX [Identity](/data-model/{{site.current_version}}/stixCommon/IdentityType
 
 Across all of these usages you'll notice that there are two primary types of identities: those that describe specific identities (usually names), and those that simply give identifying characteristics (nationality, language, etc.).
 
-STIX identity is an [xsi:type extension point](/documentation/concepts/xsi-type). The base [IdentityType](/data-model/{{site.current_version}}/stixCommon/IdentityType) can be used to express simple names and the default extension [CIQ Identity Type](/data-model/{{site.current_version}}/stix-ciqidentity/CIQIdentity3.0InstanceType) allows you to specify extensive information via the use of [OASIS CIQ](https://www.oasis-open.org/committees/ciq/).
+STIX identity is an [xsi:type extension point](/docs/concepts/xsi-type). The base [IdentityType](/data-model/{{site.current_version}}/stixCommon/IdentityType) can be used to express simple names and the default extension [CIQ Identity Type](/data-model/{{site.current_version}}/stix-ciqidentity/CIQIdentity3.0InstanceType) allows you to specify extensive information via the use of [OASIS CIQ](https://www.oasis-open.org/committees/ciq/).
 
 ## Which should I support?
 

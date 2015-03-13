@@ -1,6 +1,6 @@
 # stixproject.github.io
 
-This repository is used to build http://stixproject.github.io. If you're looking for documentation about STIX, you should head over there now, or go straight to the [Getting Started page](http://stixproject.github.io/getting-started/).
+This repository is used to build http://stixproject.github.io. If you're looking for documentation about STIX, you should head over there now, or go straight to the [Getting Started page](http://stixproject.github.io/getstarted/).
 
 If you're looking for information about editing the content on the site, you're in the right place!
 

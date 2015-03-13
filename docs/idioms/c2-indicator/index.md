@@ -23,7 +23,7 @@ In this case, the "test" portion will be a simple cyber observable for an IP add
 
 ![IP Address Indicator Diagram](diagram.png)
 
-In the diagram above, the Indicator component contains the test: a CybOX [Address Object](/data-model/{{site.current_version}}/AddressObj/AddressObjectType/) with an `Address Value` of the IP to check for (10.0.0.0). The `Indicated TTP` then uses a [STIX Relationship](/documentation/concepts/relationships) to link to a TTP that gives context as to why the test is relevant. In this case, that context is that the indicator indicates "C2 Behavior". Note that, besides the TTP, the indicator `Type` field is also used to give the indicator some context.
+In the diagram above, the Indicator component contains the test: a CybOX [Address Object](/data-model/{{site.current_version}}/AddressObj/AddressObjectType/) with an `Address Value` of the IP to check for (10.0.0.0). The `Indicated TTP` then uses a [STIX Relationship](/docs/concepts/relationships) to link to a TTP that gives context as to why the test is relevant. In this case, that context is that the indicator indicates "C2 Behavior". Note that, besides the TTP, the indicator `Type` field is also used to give the indicator some context.
 
 ## Implementation
 

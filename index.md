@@ -11,7 +11,7 @@ no_in_page_title: true
   <h2><strong>Start here if you're new to STIX!</strong></h2>
   <p>Regardless of whether you're an analyst, developer, or manager, we have tutorials, walkthroughs, and exercises to help you become familiar
   with STIX.</p>
-  <p><a class="btn btn-primary btn-lg" role="button" href="/getting-started">Get Started »</a></p>
+  <p><a class="btn btn-primary btn-lg" role="button" href="/getstarted">Get Started »</a></p>
 </div>
 
 <div class="row">
@@ -20,13 +20,13 @@ no_in_page_title: true
     <p>Now that you have an idea of what STIX is and how it can be used,
     learn about tools that support STIX, suggested practices, and other in-depth
     documentation.</p>
-    <p><a class="btn btn-primary btn-lg" role="button" href="/documentation">Documentation »</a></p>
+    <p><a class="btn btn-primary btn-lg" role="button" href="/docs">Documentation »</a></p>
   </div>
   <div class="col-md-6">
     <h2>Idioms</h2>
     <p>You can also see examples of common design patterns in STIX and
     learn how to create and understand idiomatic STIX content.</p>
-    <p><a class="btn btn-primary btn-lg" role="button" href="/documentation/idioms">Idioms »</a></p>
+    <p><a class="btn btn-primary btn-lg" role="button" href="/docs/idioms">Idioms »</a></p>
   </div>
 </div>
 

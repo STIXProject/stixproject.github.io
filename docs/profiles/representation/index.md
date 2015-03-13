@@ -62,7 +62,7 @@ Profile rules are specified in the Occurrence, Implementation, Value(s), and Not
     </tr>
     <tr>
       <td>Implementation</td>
-      <td>Indicates a required implementation for an extension point via the <a href="/documentation/concepts/xsi-type">xsi:type</a>. For example, the <code>Type</code> field in indicator might set this to <code>stixVocabs:IndicatorTypeVocab-1.1</code>.</td>
+      <td>Indicates a required implementation for an extension point via the <a href="/docs/concepts/xsi-type">xsi:type</a>. For example, the <code>Type</code> field in indicator might set this to <code>stixVocabs:IndicatorTypeVocab-1.1</code>.</td>
       <td>Comma-separated list of possible implementations</td>
     </tr>
     <tr>

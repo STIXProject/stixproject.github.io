@@ -45,4 +45,4 @@ For further reading on this topic, see the [Controlled Vocabularies](../controll
 
 ## Further Reading
 
-Use of `xsi:type` from a consumer's perspective is explained in the [sample walkthrough](/getting-started/sample-walkthrough) and from a producer's perspective in the [authoring tutorial](/getting-started/authoring-tutorial).
+Use of `xsi:type` from a consumer's perspective is explained in the [sample walkthrough](/getstarted/sample-walkthrough) and from a producer's perspective in the [authoring tutorial](/getstarted/authoring-tutorial).

@@ -6,7 +6,7 @@ validator=stix_validator.py
 function realpath { echo $(cd $(dirname $1); pwd)/$(basename $1); }
 
 RETVAL=0
-for dir in ./documentation/idioms/*; do
+for dir in ./docs/idioms/*; do
     if [ -d $dir ] 
     then
         pushd $dir > /dev/null  #change to idiom directory
