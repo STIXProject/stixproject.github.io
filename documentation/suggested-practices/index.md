@@ -328,7 +328,7 @@ If you do this to add values that you think might be useful for other STIX users
 
 ### Creating Timestamps
 
-The values of timestamp fields MUST follow the ISO 8601 format and SHOULD include a time zone whenever possible, in order to eliminate ambiguity. The format MUST match the format used by the XML Schema `dateTime` date type: `YYYY-MM-DDThh:mm:ss+-hh:mm`. Note that `T` is the delimiter between the date and time portions, and the time zone offset is delimited by *either* a `+` or a `-` to indicate the relative offset from UTC.
+The values of timestamp fields MUST follow the ISO 8601 format and SHOULD include a time zone whenever possible in order to eliminate ambiguity. This matches the format used by the XML Schema `dateTime` date type: `YYYY-MM-DDThh:mm:ss+-hh:mm`. Note that `T` is the delimiter between the date and time portions, and the time zone offset is delimited by *either* a `+` or a `-` to indicate the relative offset from UTC.
 
 -----
 
