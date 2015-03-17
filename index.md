@@ -7,11 +7,18 @@ no_in_page_title: true
 
 <h1 class="site-title">STIX Project Documentation</h1>
 
-<div class="jumbotron">
-  <h2><strong>Start here if you're new to STIX!</strong></h2>
-  <p>Regardless of whether you're an analyst, developer, or manager, we have tutorials, walkthroughs, and exercises to help you become familiar
-  with STIX.</p>
+<div class="row">
+  <div class="col-md-6">
+  <h2><strong>Start here</strong></h2>
+  <p>Tutorials, walkthroughs, and exercises for STIX</p>
   <p><a class="btn btn-primary btn-lg" role="button" href="/getting-started">Get Started »</a></p>
+
+  </div>
+<div class="col-md-6">
+  <h2> Follow the STIX Blog </h2>
+  <p> The latest news, straight from the source </p>
+  <p> <a class="btn btn-primary btn-lg" role="button" href="/blog">Follow »</a></p>
+</div>
 </div>
 
 <div class="row">

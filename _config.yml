@@ -1,6 +1,7 @@
 name: STIX Docs
 markdown: redcarpet
 highlighter: pygments
+redirects: yes
 
 copyright: The MITRE Corporation
 generate_documentation: true
@@ -11,5 +12,8 @@ current_version: 1.1.1
 
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data", "tables"]
+
+gems:
+  - jekyll-redirect-from
 
 encoding: utf-8
