@@ -11,55 +11,59 @@ no_in_page_title: true
   <img src="/images/stix.gif" class="img-responsive" alt="stix logo">
   <h2>The language of security.</h2>
   <br />
-  <p><a class="btn btn-primary btn-lg " role="button" href="/getting-started">Get Started</a></p>
-  <p> <a class="btn btn-default btn-lg" role="button" href="http://stix.mitre.org/language/version1.1.1/stix_v1.1.1_offline.zip">Download XML Schemas (.zip)</a> </p>
+  <p class="text-left"><a class="btn btn-primary btn-lg " role="button" href="/getting-started">Get Started</a>
+   <a class="btn btn-default btn-lg" role="button" href="http://stix.mitre.org/language/version1.1.1/#downloads">Download Schemas</a> </p>
   </div>
   
   <div class="col-md-6">
   
-  <h2>Protection for Everyone</h2>
-  <h3>Leading companies share intelligence on current threats with STIX </h3>
-  <h3>The United States Government uses STIX for collective defense efforts</a> </h3>
-  <p class="text-left"><a class="btn btn-default btn-lg" role="button" href="http://stix.mitre.org/community/registration.html"> Join Community</a></p>
+  <hr />
+    <p class="text-left"><a class="btn btn-default " role="button" href="http://stix.mitre.org/community/registration.html">Subscribe to Discussion List</a>
+  <a class="btn btn-success " role="button" href="/blog"> Follow News</a>
+  <a class="btn btn-info " role="button" href="http://gitter.im/stixproject/schemas"> Join Dev Chat</a>
+  <h2>STIX is seamless intelligence sharing in an open and extensible standard</h2>
+  </p>
   </div>
   
 </div>
-
-
 
 
 <hr />
 <div class="row">
 
   <div class="col-md-6">
-  <img src="/images/sample.png" class="img-responsive" style="width:420px;height:280px":>
+  <hr />
+  <h3><strong>Real-world Examples</strong></h3>
+    <a class="btn btn-default btn-lg btn-block" role="button" href="/documentation/idioms">
+      <img src="/images/sample.png" class="img-responsive" style="width:400px;height:260px":>
+    </a>
   </div>
   
   <div class="col-md-6" class="list-group">
-  
+
   <h3><strong>Features</strong></h3>
     <a class="list-group-item active" href="http://stix.readthedocs.org/en/latest/getting_started.html"> Native Python integration</a>
     <a class="list-group-item">Robust handling of malicious activity</a>
     <a class="list-group-item">Reduce impact of sector-wide incidents  </a>
   </ul>
-      </div>
-
-</div>
-
-
+  
 <hr />
 
   
+  <h3> <strong> Who Uses STIX?</strong> </h3>
+    <a class="list-group-item" >Fortune 500 companies </a>
+    <a class="list-group-item">U.S. Law Enforcement and Infrastructure Protection</a>
+    <a class="list-group-item">Trust Communities </a>
+  </h3>
+</div>
+
+<br />
+<hr />
 
 <div class="row">
-  <div class="col-md-6">
-  
-    <h1><a class="btn btn-default btn-lg btn-block" role="button" href="/documentation/idioms">Examples</a></h1>
-  </div>
-  
 
-  <div class="col-md-6">
-    <h1><a class="btn btn-default btn-lg btn-block" role="button" href="/documentation">Documentation</a></h1>
+  <div class="col-md-12">
+    <h1><a class="btn btn-default btn-lg btn-block" role="button" href="/documentation"><strong>Documentation</strong></a></h1>
   </div>  
 </div>  
   
@@ -69,34 +73,36 @@ no_in_page_title: true
 
 <div class="row">
     <div class="col-md-4">
-      <h3 class="text-center"><a href= "mailto:stix-taxii@hq.dhs.gov?subject=STIX-Question">Support</a></h3>
+      <h3 class="text-center">Remote Support</h3>
 	  <div class="contact-icon">
 		  <span class="glyphicon glyphicon-earphone">
 		  </span>
 	  </div>
-      <p class="text-center"> Have a question? <a href= "mailto:stix-taxii@hq.dhs.gov?subject=STIX-Question">Ask the mailing list</a> </p>
+      <p>STIX developers are online to answer your questions - <a href="https://gitter.im/STIXProject/schemas">Join the chat </a>
+       and 
+      <a href= "mailto:stix-taxii@hq.dhs.gov?subject=STIX-Question">Ask the mailing list</a>
+      </p>
     </div>
     <div class="col-md-4">
-      <h3 class="text-center"><a href="http://stix.mitre.org/community/registration.html">Meetups</a></h3>
+      <h3 class="text-center">Meetups</h3>
 	  <div class="contact-icon">
 		  <span class="glyphicon glyphicon-user">
 		  </span>
 	  </div>
-      <p class="text-center"><a href="http://stix.mitre.org/community/registration.html">Register</a> for sessions in Washington D.C. and Boston</p>
-      </div>
+      <p>Community organizers hold STIX-focused public forums in D.C. and Boston - <a href="http://stix.mitre.org/community/registration.html">Register now</a>
+    </div>
     <div class="col-md-4">
-      <h3 class="text-center"><a href="http://stix.mitre.org/training/index.html">Training Materials</a> </h3>
+      <h3 class="text-center">Training</h3>
 	  <div class="contact-icon">
 		  <span class="glyphicon glyphicon-pencil">
 		  </span>
 	  </div>
-	  <p class="text-center"> Learn more about STIX (PDF, Powerpoint)</p>
+	  <p>  In-depth tutorials and hands-on exercises <a href="http://stix.mitre.org/training/index.html"> are available</a></p>
     </div>
 </div>
-
 
 <hr />
 
 <p class="lead text-center">
-	<a class="btn btn-default btn-lg" href="https://github.com/STIXProject/stixproject.github.io/issues/new">Submit bugs and suggestions</a>
+	<a class="btn btn-default btn-lg" href="https://github.com/STIXProject/schemas/issues/new">Report bugs /  Feature Requests</a>
 </p>
