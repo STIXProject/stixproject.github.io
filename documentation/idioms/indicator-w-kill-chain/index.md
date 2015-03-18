@@ -2,8 +2,8 @@
 layout: flat
 title: Linking an Indicator to Kill Chain Phase
 constructs:
-  - TTP
-summary: Learn how to link malicious activity to a phases of its kill chain.
+  - Indicator
+summary: Learn how to link malicious activity to phases of its kill chain.
 ---
 
 ## Scenario
