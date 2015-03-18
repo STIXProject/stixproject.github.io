@@ -1,24 +1,22 @@
-# About
-Source for [the STIX documentation site](http://stixproject.github.io)
+# stixproject.github.io
+Source for the [STIX documentation site](http://stixproject.github.io)
 
 ## Getting Help
 
-[![Join the public chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/STIXProject/schemas)
-
-E-mail the developers at <stix@mitre.org>
-
-[Get started with a STIX tutorial](http://stixproject.github.io/getting-started/)
+* Join us on Gitter [![Join the public chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/STIXProject/schemas)
+* E-mail the developers at stix@mitre.org
+* [Get started with a STIX tutorial](http://stixproject.github.io/getting-started/)
 
 ## Contributing
 Pull requests welcome! 
 
 We suggest you:
+
 1. Fork the repository
 2. Create a feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push your branch to the remote (`git push origin my-new-feature`)
 5. Create a Pull Request for your branch
-
 
 ## Building the site locally
 
@@ -61,4 +59,3 @@ From there, you can run the regeneration via a rake task:
 ```
 rake regenerate
 ```
-
