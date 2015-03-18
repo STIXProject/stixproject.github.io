@@ -1,10 +1,24 @@
 # stixproject.github.io
+Source for the [STIX documentation site](http://stixproject.github.io)
 
-This repository is used to build http://stixproject.github.io. If you're looking for documentation about STIX, you should head over there now, or go straight to the [Getting Started page](http://stixproject.github.io/getting-started/).
+## Getting Help
 
-If you're looking for information about editing the content on the site, you're in the right place!
+* Join us on Gitter [![Join the public chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/STIXProject/schemas)
+* E-mail the developers at stix@mitre.org
+* [Get started with a STIX tutorial](http://stixproject.github.io/getting-started/)
 
-## Installation
+## Contributing
+Pull requests welcome! 
+
+We suggest you:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push your branch to the remote (`git push origin my-new-feature`)
+5. Create a Pull Request for your branch
+
+## Building the site locally
 
 1. Install Ruby 1.9.3 or higher for your platform (if it isn't already installed).
 1. Install the bundler gem: `gem install bundler`
@@ -45,15 +59,3 @@ From there, you can run the regeneration via a rake task:
 ```
 rake regenerate
 ```
-
-## Contributing
-
-The STIX Project welcomes contributions to our documentation repository. If you have a change you want to make:
-
-1. Fork this repository
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
-
-You can also speak to the STIX team by e-mailing stix@mitre.org and we can make the change for you.
