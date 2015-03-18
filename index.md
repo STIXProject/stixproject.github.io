@@ -15,18 +15,23 @@ no_in_page_title: true
 </div>
 
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-4 text-center">
     <h2>Documentation</h2>
     <p>Now that you have an idea of what STIX is and how it can be used,
     learn about tools that support STIX, suggested practices, and other in-depth
     documentation.</p>
     <p><a class="btn btn-primary btn-lg" role="button" href="/documentation">Documentation »</a></p>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-4 text-center">
     <h2>Idioms</h2>
     <p>You can also see examples of common design patterns in STIX and
     learn how to create and understand idiomatic STIX content.</p>
     <p><a class="btn btn-primary btn-lg" role="button" href="/documentation/idioms">Idioms »</a></p>
+  </div>
+  <div class="col-md-4 text-center">
+    <h2>Follow the STIX Blog</h2>
+    <p>The latest news, straight from the source.</p>
+    <p><a class="btn btn-primary btn-lg" role="button" href="/blog">Follow »</a></p>
   </div>
 </div>
 
