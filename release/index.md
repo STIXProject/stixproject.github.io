@@ -22,3 +22,6 @@ You may [view and comment on proposed changes ](https://github.com/STIXProject/s
 Versions prior to {{site.current_version}} are **deprecated** and no longer supported.
 
 Historical packages are [available for download from the archives](https://stix.mitre.org/language/archive/)
+
+## About Version numbers
+Each release follows our [policy](/releases/policy) for version compatibility
