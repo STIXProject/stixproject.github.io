@@ -12,6 +12,7 @@ no_in_page_title: true
   <p>Regardless of whether you're an analyst, developer, or manager, we have tutorials, walkthroughs, and exercises to help you become familiar
   with STIX.</p>
   <p><a class="btn btn-primary btn-lg" role="button" href="/getting-started">Get Started »</a>
+  <a class="btn btn-info btn-lg" role="button" href="/release">Download Schemas »</a>
   <a class="btn btn-default btn-lg" role="button" href="/examples">Sample Reports »</a>
   </p>
 </div>

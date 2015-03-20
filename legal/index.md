@@ -16,3 +16,9 @@ intelreport.mandiant.com. The STIX version was created
 by The MITRE Corporation with Mandiant's
 permission.  Mandiant is not responsible for the content of this file.
 
+- APT1: Exposing One of China's Cyber Espionage Units (the "APT1 Report")
+is copyright 2013 by Mandiant Corporation. It be downloaded at 
+[intelreport.mandiant.com] The STIX version was created by The MITRE Corporation with Mandiant's
+permission.  Mandiant is not responsible for the content of the STIX version.
+
+- Poison Ivy: is copyright FireEye corporation. The STIX version was created by The MITRE Corporation with permission.
