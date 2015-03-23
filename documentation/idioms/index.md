@@ -5,9 +5,8 @@ title: STIX Idioms
 
 <link href="/css/idioms.css" rel="stylesheet"/>
 
-The idioms on this page provide guidance on how to represent common cyber
-threat information in STIX. The list can be filtered based on the use case in
-which they are applicable, as well as by which STIX types that they use.
+
+An `idiom` is a common scenario covered by the STIX standard, including background and example code.
 
 <div class="row">
   <div class="col-md-12">
