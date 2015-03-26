@@ -3,48 +3,68 @@ layout: flat
 title: About STIX
 ---
 
-[Visit the FAQ page](/about/faq)
+## What is STIX?
+Structured Threat Information eXpression (STIX™) is a standard for describing information related to computer security threats. These typically include indicators such as [IP addresses](https://stixproject.github.io/documentation/idioms/c2-indicator/) and [malware hashes](https://stixproject.github.io/documentation/idioms/malware-hash/) or [intelligence on the intruder](http://stixproject.github.io/documentation/idioms/identity-group/). 
 
-Structured Threat Information Expression (STIX™) is a collaborative, community-driven effort to define and develop a structured language to represent cyber threat information. The open-source STIX Language intends to convey the full range of potential cyber threat information and strives to be fully expressive, flexible, extensible, automatable, and as human-readable as possible.
+STIX is developed as an [open-source project](http://github.com/stixproject/schemas) with an [active mailing list](http://stix.mitre.org/community/registration.html) and community-based voting for feature requests.
 
-All interested parties are welcome to participate in evolving STIX as part of its open, collaborative community.
+## How and why was STIX developed?
+STIX evolved from discussion with members of the security community regarding indicator sharing, and was adapted to support additional features.
 
-STIX use cases include:
+## Who uses STIX?
+STIX is for anyone involved in defending networks or systems against cyber threats (including Advanced Persistent Threat (APT) actors), to include cyber defenders, cyber threat analysts, malware analysts, security tool vendors, security researchers and more. STIX provides a common language for describing cyber threat information so it can be shared, stored, and otherwise used in a consistent manner that facilitates automation.
 
-- Analyzing Cyber Threats
-- Specifying Indicator Patterns for Cyber Threats
-- Managing Cyber Threat Prevention and Response Activities 
-- Sharing Cyber Threat Information 
+The full user list is currently private, and in review prior to public release. It will eventually [be available here](/users) 
 
-## Challenge
-Organizations today must maintain a “cyber threat intelligence” capability as a key part of their defense against determined cyber adversaries. Examples of cyber intelligence include understanding and characterizing information such as what sort of attack actions have occurred and are likely to occur; how can these actions be detected and recognized; how can they be mitigated; who are the relevant threat actors; what are they trying to achieve; what are their capabilities, in the form of tactics, techniques, and procedures (TTP) they have leveraged over time and are likely to leverage in the future; what sort of vulnerabilities, misconfigurations, or weaknesses they are likely to target; what actions have they taken in the past; etc.
+Contact us <stix-taxii@hq.dhs.gov> to get on the list!
 
-A key component of success for this capability is information sharing with partners, peers, and others they select to trust. But while cyber threat intelligence and information sharing can help focus and prioritize the use of the immense volumes of complex cyber security information organizations face today, they have a foundational need for common, structured representations of this information to make it tractable. 
+## How do I install STIX?
+Released XML schemas are [available for download](/release).
 
-## Solution
-STIX is a community-driven solution to this, providing structured representations of cyber threat information that is expressive, flexible, extensible, automatable, and readable. STIX enables the sharing of comprehensive, rich, “high-fidelity” cyber threat information across organizational, community, and product/service boundaries. 
+Code and related tools are [open source on github](https://github.com/STIXProject/)
 
-STIX extends simple indicator sharing to enable the management and exchange of significantly more expressive sets of indicators as well as other full-spectrum cyber threat information. 
+[Documentation is available](/documentation) along with [working examples](/documentation/idioms/)
 
-## STIX Language
-The open-source STIX Language is a community effort being developed in collaboration with any and all interested parties for the specification, capture, characterization, and communication of standardized cyber threat information. It does this in a structured fashion to support more effective cyber threat management processes and application of automation. 
+## How do I integrate STIX with existing security efforts? 
+STIX data can be written by hand in any text editor, or programmatically using Python and Java bindings. 
 
-STIX provides a common mechanism for addressing structured cyber threat information across and among a wide range of use cases improving consistency, efficiency, interoperability, and overall situational awareness. In addition, STIX provides a unifying architecture tying together a diverse set of cyber threat information including:
+Several [commercial products integrate STIX](/users) into their offerings.
+ 
+Experimental [development efforts are available here](https://github.com/STIXProject/Tools) 
 
-- Cyber Observables (e.g., a registry key is created, network traffic occurs to specific IP addresses, email from a specific address is observed, etc.)
-- Indicators (potential observables with attached meaning and context)
-- Incidents (instances of specific adversary actions)
-- Adversary Tactics, Techniques, and Procedures (including attack patterns, malware, exploits, kill chains, tools, infrastructure, victim targeting, etc.)
-- Exploit Targets (e.g., vulnerabilities, weaknesses or configurations)
-- Courses of Action (e.g., incident response or vulnerability/weakness remedies)
-- Cyber Attack Campaigns (sets of Incidents and/or TTP with a shared intent)
-- Cyber Threat Actors (identification and/or characterization of the adversary)
+Highlights include a [visualization program](https://github.com/STIXProject/stix-viz) to manage relationships between components, and [conversion utility](https://github.com/STIXProject/stix-to-html) to human-readable HTML.
 
-To enable such an aggregate solution to be practical for any single use case, existing structured languages may be leveraged where appropriate such as Cyber Observable Expression (CybOX™), Malware Attribute Enumeration and Characterization (MAEC™), Common Attack Pattern Enumeration and Classification (CAPEC™), etc., and numerous flexibility mechanisms are designed into the language. In particular, almost everything in this definitively-structured language is optional such that any single use case could leverage only the portions of STIX that are relevant for it — from a single field to the entire language or anything in between — without being overwhelmed by the rest. 
+## What is included in a STIX release?
 
-## STIX Adopters
-Products and services that incorporate STIX are listed on the STIX in Use page. 
+- The Core schema and Common schema provide the overarching STIX framework and common characteristics
+- Individual schemas for each major STIX construct (e.g., Indicator, TTP, ExploitTarget, CourseOfAction, etc.)
+- Data marking schema
+- Extension schemas
 
-Join the STIX Community!
+STIX releases are packaged in two different ways. Two zipped up bundles are available, one local version to support local development, and remote validation.
 
-STIX Community members make open-source contributions to STIX development and manage issue tracking for the STIX schemas, tools, specifications, and supporting information by joining us here and on the STIXProject GitHub Repositories and STIX Email Discussion List.
+## How is STIX licensed?
+STIX is available [under a permissive software license.](/legal)
+
+## Who owns STIX?
+STIX is an open-source, community effort currently led and sponsored by the U.S. Department of Homeland Security. Operating as DHS’s Federally Funded Research and Development Center (FFRDC) funded through HSSEDI, MITRE has copyrighted the STIX Language to ensure it remains a free and open standard, as well as to legally protect the ongoing use of it and any resulting content by government, vendors, and/or users. In addition, MITRE has trademarked ™ the STIX acronym and the STIX logo to protect their sole and ongoing use by the STIX effort within the information security arena. 
+
+## Where can I find STIX data? 
+[Reports associated with APT1 and Poison Ivy](/examples) are available in STIX format, and leading threat intelligence providers are 
+The [STIX community has taken the initiative]( http://hailataxii.com/) to establish a publicly available TAXII server with open-source threat indicators. Various [private companies](intelworks.com) are [implementing STIX services]( http://www.threatconnect.com/product/threatconnect_API) and sharing data.
+
+## Who funds STIX?
+STIX is currently sponsored and led by the office of Cybersecurity and Communications at the U.S. Department of Homeland Security.
+
+## What is MITRE’s role in STIX?
+In partnership with DHS, the MITRE Corporation (MITRE) operates Federally Funded Research and Development Centers (FFRDC) in the public interest. It addresses issues of critical national importance, combining systems engineering and information technology to develop innovative solutions that make a difference. 
+
+MITRE acts as the STIX community facilitator and coordinator. In that role it manages the STIX websites, community engagement, and discussion lists to enable open and public collaboration with all stakeholders.
+
+## How do I join the STIX Community?
+STIX is an open effort that welcomes broad participation. 
+
+The [STIX mailing list](https://stix.mitre.org/community/registration.html) discusses the latest drafts of the STIX schemas, and related specifications.
+
+Code and tools related to STIX are actively [developed in Github](https://github.com/STIXProject/) .
+
