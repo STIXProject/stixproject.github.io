@@ -5,8 +5,11 @@ title: STIX Profiles
 
 Profiles are a mechanism to describe a particular usage of STIX as practiced by a community, organization, or tool. Continue reading to understand the concept behind profiles, or jump ahead to [representation](representation), [creating a profile](authoring), or [validating against profiles](validation).
 
-## Background
+[Download profile template ](https://stix.mitre.org/language/profiles/stix_{{current_version}}_profile_template_r2.xlsx)
 
+[Download a sample profile](https://stix.mitre.org/language/profiles/samples/stix_{{current_version}}_sample_indicator_sharing_profile_r2.xlsx)
+
+## Background
 
 The STIX language was designed to support the full scope of cyber threat intelligence use cases and therefore the data model is fairly broad in scope. It incorporates everything from low-level indicators and observables all the way up to threat actors and campaigns.
 
