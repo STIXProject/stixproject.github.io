@@ -19,10 +19,6 @@ Structured Threat Information Expression (STIX™) is a structured language to r
 
 <br class="clear: both;" />
 
-### STIX and TAXII
-
-[TAXII](http://taxii.mitre.org) (Trusted Automated eXchange of Indicator Information) is the main transport mechanism for cyber threat information represented in STIX. Through the use of TAXII services, organizations can share cyber threat information in a secure and automated manner.
-
 ### The STIX Community
 
 STIX is a collaborative effort that is led by DHS but driven by an open community. Community members make open-source contributions to STIX development and manage issue tracking for the STIX schemas, tools, specifications, and supporting information. Join the community:
@@ -71,19 +67,37 @@ STIX is an open-source, community effort currently led and sponsored by the offi
 #### How is STIX licensed?
 See the [Terms of Use](http://stix.mitre.org/about/termsofuse.html).
 
-## Integration with other standards
+## Relationship to Other Efforts
 
-#### STIX and CAPEC
+#### TAXII
+
+[TAXII](http://taxii.mitre.org) (Trusted Automated eXchange of Indicator Information) is the main transport mechanism for cyber threat information represented in STIX. Through the use of TAXII services, organizations can share cyber threat information in a secure and automated manner.
+
+Like STIX, TAXII is led by DHS and the STIX and TAXII communities work closely together (and in fact consist of many of the same people) to ensure that they continue to provide a full stack for sharing threat intelligence.
+
+#### CybOX
+
+[CybOX](http://cybox.mitre.org) (Cyber Observable eXpression) is a language for describing events of stateful properties ("things") that are observable in the cyber domain. STIX leverages CybOX for this purpose, such as in indicator patterns, infrastructure descriptions, and course of action parameters. CybOX is also led by DHS and managed by The MITRE Corporation.
+
+Like STIX, CybOX is led by DHS and the STIX and CybOX communities work closely together (and in fact consist of many of the same people) to ensure that CybOX is valuable independently as well as supports the use cases required by STIX.
+
+#### MAEC
+
+[MAEC](http://maec.mitre.org) (Malware Attribute Enumeration and Classification) is a language for describing malware behavior and the results of a malware analysis. STIX leverages MAEC via the TTP construct for this purpose, and additionally both STIX and MAEC use CybOX.
+
+Like STIX, MAEC is led by DHS and the STIX, MAEC, and CybOX communities work closely together (and in fact consist of many of the same people) to ensure that the combination of the three specifications can interoperate and support both individual and combined usages.
+
+#### CAPEC
 STIX can utilize [Common Attack Pattern Enumeration and Classification](https://capec.mitre.org/) (CAPEC™) for structured characterization of tactics, techniques, and procedures (TTP) attack patterns through use of the CAPEC schema extension.
 
-#### STIX and IODEF
-The [Incident Object Description Format](https://tools.ietf.org/html/rfc5070) (IODEF) is an Internet Engineering Task Force (IETF) standard developed for exchange of incident information
+#### IODEF
+The [Incident Object Description Format](https://tools.ietf.org/html/rfc5070) (IODEF) is an Internet Engineering Task Force (IETF) standard developed for exchange of incident information. There is no formal relationship between STIX and IODEF, although it is possible to leverage IODEF within STIX in order to represent incident information. Doing so, however, would lose the richness and architectural alignment provided by the STIX Incident structure.
 
-#### STIX and Indicator signatures 
-Mandiant’s [Open Indicators of Compromise](http://www.openioc.org/) is natively supported as a `Test_Mechanism` in STIX.  Open Vulnerability and Assessment Language (OVAL®), SNORT rules, and YARA rules are also supported
+#### OpenIOC
+The STIX Indicator's test mechanism field is an extensible alternative to providing an indicator signature in something other than CybOX. Mandiant’s [Open Indicators of Compromise](http://www.openioc.org/), Open Vulnerability and Assessment Language (OVAL®), SNORT rules, and YARA rules are supported as default extensions to that test mechanism field.
 
-#### STIX and CIQ
-The [OASIS Customer Information Quality](https://www.oasis-open.org/committees/ciq/) (CIQ) is natively supported to identify  malicious actors, victims and intelligence sources.
+#### CIQ
+The [OASIS Customer Information Quality](https://www.oasis-open.org/committees/ciq/) (CIQ) is a language for representing information about individuals and organizations. The STIX Identity structure uses an extension mechanism to represent identify information used to characterize malicious actors, victims and intelligence sources. The STIX-provided extension leverages CIQ.
 
-#### STIX and VERIS
-The [Vocabulary for Event Recording and Incident Sharing](http://veriscommunity.net/) (VERIS) is designed to provide a common language for describing security incidents and their effects in a structured manner.
+#### VERIS
+The [Vocabulary for Event Recording and Incident Sharing](http://veriscommunity.net/) (VERIS) is a metrics framework designed to provide a common language for describing security incidents and their effects in a structured manner. The difference between STIX incidents and VERIS is in purpose and use: VERIS is an after-the-fact characterization of cyber incidents intended for post-incident strategic trend analysis and risk management. STIX provides the capability to capture information about security incidents and their effects but does so in the context of a broader threat intelligence framework. Verizon and members of the VERIS team are active members of the STIX community and have contributed their thoughts and access to the VERIS structures to help improve and refine the content of the STIX Incident schema. A good portion of the STIX Incident schema was derived from this VERIS input.
