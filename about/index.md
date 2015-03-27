@@ -70,3 +70,20 @@ STIX is an open-source, community effort currently led and sponsored by the offi
 
 #### How is STIX licensed?
 See the [Terms of Use](http://stix.mitre.org/about/termsofuse.html).
+
+## Integration with other standards
+
+#### STIX and CAPEC
+STIX can utilize [Common Attack Pattern Enumeration and Classification](https://capec.mitre.org/) (CAPEC™) for structured characterization of tactics, techniques, and procedures (TTP) attack patterns through use of the CAPEC schema extension.
+
+#### STIX and IODEF
+The [Incident Object Description Format](https://tools.ietf.org/html/rfc5070) (IODEF) is an Internet Engineering Task Force (IETF) standard developed for exchange of incident information
+
+#### STIX and Indicator signatures 
+Mandiant’s [Open Indicators of Compromise](http://www.openioc.org/) is natively supported as a `Test_Mechanism` in STIX.  Open Vulnerability and Assessment Language (OVAL®), SNORT rules, and YARA rules are also supported
+
+#### STIX and CIQ
+The [OASIS Customer Information Quality](https://www.oasis-open.org/committees/ciq/) (CIQ) is natively supported to identify  malicious actors, victims and intelligence sources.
+
+#### STIX and VERIS
+The [Vocabulary for Event Recording and Incident Sharing](http://veriscommunity.net/) (VERIS) is designed to provide a common language for describing security incidents and their effects in a structured manner.
