@@ -28,7 +28,7 @@ Structured Threat Information Expression (STIX™) is a structured language to r
 STIX is a collaborative effort that is led by DHS but driven by an open community. Community members make open-source contributions to STIX development and manage issue tracking for the STIX schemas, tools, specifications, and supporting information. Join the community:
 
 - [Mailing List](https://stix.mitre.org/community/registration.html) — where community members discuss the latest drafts of the STIX schemas, specifications, utilities, technical documents, and other items integral to the ongoing development of STIX.
-- [Chat](https://gitter.im/STIXProject/schemas) - information discussions and help
+- [Chat](https://gitter.im/STIXProject/schemas) - informal discussions and help
 - [Code Repositories](https://github.com/STIXProject/) — the central location for STIX Community members to make open-source contributions to STIX development and manage issue tracking for the STIX schemas, tools, specifications, and other supporting information and items.
 
 ## Frequently Asked Questions
