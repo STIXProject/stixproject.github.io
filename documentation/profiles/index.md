@@ -5,9 +5,10 @@ title: STIX Profiles
 
 Profiles are a mechanism to describe a particular usage of STIX as practiced by a community, organization, or tool. Continue reading to understand the concept behind profiles, or jump ahead to [representation](representation), [creating a profile](authoring), or [validating against profiles](validation).
 
-[Download profile template ](https://stix.mitre.org/language/profiles/stix_{{current_version}}_profile_template_r2.xlsx)
+#### Downloads
 
-[Download a sample profile](https://stix.mitre.org/language/profiles/samples/stix_{{current_version}}_sample_indicator_sharing_profile_r2.xlsx)
+[STIX {{site.current_version}} Profile Template](https://stix.mitre.org/language/profiles/stix_{{site.current_version}}_profile_template_r2.xlsx)  
+[STIX {{site.current_version}} Sample Profile](https://stix.mitre.org/language/profiles/samples/stix_{{site.current_version}}_sample_indicator_sharing_profile_r2.xlsx)  
 
 ## Background
 
@@ -71,7 +72,7 @@ Although all types of profiles indicate similar rules, there are a few distincti
 
 Community profiles describe how a particular sharing community (an industry collaboration group, a government sharing program, etc.) will use STIX. In these types of profiles, you have many parties involved in both producing and consuming information. Community profiles can also be created outside the context of any particular sharing program to help standardize practices across the entire industry.
 
-These profiles should be developed with participation from most or all members of the community to ensure that they aren't too focused on any one technical implementation or one organization's biases. 
+These profiles should be developed with participation from most or all members of the community to ensure that they aren't too focused on any one technical implementation or one organization's biases.
 
 Presence rules are created as follows:
 * **MUST**: All STIX documents **MUST** include this element to conform to the profile. This should be used only if all community members agree that they can and should populate this field for all content.
@@ -84,11 +85,11 @@ Presence rules are created as follows:
 
 Producer profiles describe how one particular producer will be creating STIX documents. This is useful for tool developers, commercial threat intelligence feeds, and sharing programs where a single producer is publishing to many consumers. The use of a profile in this case makes it easier for consumers to implement only the portion of STIX that is actually used. It can also help consumers understand the type of information that they producer will be publishing in order to decide whether the feed is worth consuming at all.
 
-Producer profiles can be compared to community profiles to determine whether the producer is compliant with any given community profile. Using the profile layering concept outlined in the profile whitepaper, a producer profile is compatible with a community profile if it is a complete subset (child) of that profile. 
+Producer profiles can be compared to community profiles to determine whether the producer is compliant with any given community profile. Using the profile layering concept outlined in the profile whitepaper, a producer profile is compatible with a community profile if it is a complete subset (child) of that profile.
 
 For producer profiles, the producer itself should develop the profile in order to ensure that it is accurate. They should consider whether fields will always be present, might be present, or will never be present:
 
-* **MUST (Always Present)**: Fields that will always be present in order to line up with the language community profiles use. These fields will **always** be populated in all documents the producer publishes. 
+* **MUST (Always Present)**: Fields that will always be present in order to line up with the language community profiles use. These fields will **always** be populated in all documents the producer publishes.
 
 * **MAY (Sometimes Present)**: Fields that will sometimes be present to line up with the language community profiles use. These fields might be present in documents the producer publishes.
 
@@ -100,10 +101,10 @@ Note that producer profiles don't typically have a "suggested" category. This is
 
 Consumer profiles are essentially compatibility statements: a consumer can create them to demonstrate which portions of STIX they support. They can then be compared to community or producer profiles to determine whether the consumer is compatible.
 
-If a consumer profile is a parent (superset) of either a producer or community profile it can be considered fully compatible. In other cases, it may be a partial superset/subset but have support for ignoring fields it does not handle rather than throwing an error, in which case it can be considered partially compatible. 
+If a consumer profile is a parent (superset) of either a producer or community profile it can be considered fully compatible. In other cases, it may be a partial superset/subset but have support for ignoring fields it does not handle rather than throwing an error, in which case it can be considered partially compatible.
 
-Consumers base compatibility with the ability to parse certain fields from an incoming STIX document. 
-* **MUST** : Fields that **must** be present in a STIX document for this consumer to consume the document without errors. For consumer profiles, this should likely only be ID or other very basic elements. 
+Consumers base compatibility with the ability to parse certain fields from an incoming STIX document.
+* **MUST** : Fields that **must** be present in a STIX document for this consumer to consume the document without errors. For consumer profiles, this should likely only be ID or other very basic elements.
 * **SHOULD** : Fields that may be present in a STIX document and that will be properly handled by any business logic.
 * **MAY** : Fields that may be present in a STIX document but are not as integrated into business logic (may simply be displayed or passed on).
 * **SHOULD NOT**: Fields that may be present in a STIX document and will not throw an error but will be ignored.
