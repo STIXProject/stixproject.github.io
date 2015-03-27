@@ -31,7 +31,7 @@ STIX is a collaborative effort that is led by DHS but driven by an open communit
 
 #### Who is STIX for? What does STIX do for me?
 
-STIX is for anyone involved in defending networks or systems against cyber threats, including cyber defenders, cyber threat analysts, malware analysts, security tool vendors, security researchers and more. STIX provides a common language for describing cyber threat information so it can be shared, stored, and otherwise used in a consistent manner that facilitates automation.
+STIX is for anyone involved in defending networks or systems against cyber threats, including cyber defenders, cyber threat analysts, malware analysts, security tool vendors, security researchers, threat sharing communities, and more. STIX provides a common language for describing cyber threat information so it can be shared, stored, and otherwise used in a consistent manner that facilitates automation.
 
 #### How do I get it?
 
@@ -49,7 +49,7 @@ In addition to the MITRE samples, community members have set up [TAXII](https://
 
 The primary way to use STIX is of course via commercial products. The [blog](http://stixproject.tumblr.com) is a good place to find announcements about new products that support STIX.
 
-If you're developing a product or tool, STIX is simply a set of XML schemas so any XML libraries are suitable for producing and consuming STIX. The project also maintains open-source [Python bindings](https://github.com/STIXProject/python-stix) and other [utilities](https://gibhub.com/STIXProject) to make working with STIX at the code level easier.
+If you're developing a product or tool, the current STIX reference implementation is in XML so any XML libraries are suitable for producing and consuming STIX XML. The project also maintains open-source [Python bindings](https://github.com/STIXProject/python-stix) and other [utilities](https://gibhub.com/STIXProject) to make working with STIX at the code level easier. [Documentation](/documentation) and [suggested practices](/documentation/suggested-practices) as well as [examples](/documentation/idioms) can help you understand how to use STIX language concepts conceptually.
 
 <!-- ## Who is using STIX?
 Organizations that have publically announced that their products, services, or processes are using or supporting STIX, as well as [Trusted Automated eXchange of Indicator Information (TAXII™)](http://taxii.mitre.org/) and [Cyber Observables eXpression (CybOX™)](https://cybox.mitre.org/), are listed on the STIX in Use page on this website.
