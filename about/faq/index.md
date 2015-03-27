@@ -1,6 +1,7 @@
 ---
 layout: flat
 title: Frequently Asked Questions
+toc: faq_toc.html
 ---
 
 ## What is STIX?
@@ -11,13 +12,11 @@ Structured Threat Information eXpression (STIX™) is a language for describing 
 
 STIX is for anyone involved in defending networks or systems against cyber threats, including cyber defenders, cyber threat analysts, malware analysts, security tool vendors, security researchers and more. STIX provides a common language for describing cyber threat information so it can be shared, stored, and otherwise used in a consistent manner that facilitates automation.
 
-## Where can I get STIX?
+## How do I get STIX?
 
 The STIX Language is available on the [STIX website](https://stix.mitre.org/language/).
 
-Bindings and related tools to help process and work with STIX are [open source on GitHub](https://github.com/STIXProject).
-
-[Documentation](/documentation) and [examples](/documentation/idioms) are also available.
+Bindings and related tools to help process and work with STIX are [open source on Github](https://github.com/STIXProject).
 
 ## Where can I find examples of STIX data? Are there any STIX repositories?
 
@@ -31,12 +30,15 @@ The primary way to use STIX is of course via commercial products. <!--The STIX i
 
 If you're developing a product or tool, STIX is simply a set of XML schemas so any XML libraries are suitable for producing and consuming STIX. The project also maintains open-source [Python bindings](https://github.com/STIXProject/python-stix) and other [utilities](https://gibhub.com/STIXProject) to make working with STIX at the code level easier.
 
-## What is the role of the STIX Community and how can I join?
+## How can I join the community?
 
-STIX is an open effort that welcomes broad and diverse community participation. The STIX Community is the set of people and organizations that helps build this growing, open-source industry effort by participating in the development of the STIX Language (currently hosted on the https://stix.mitre.org website) through the following:
+STIX is an open effort that welcomes broad and diverse community participation. The STIX community is the set of people and organizations that helps build this growing, open-source industry effort by participating in the development of the STIX Language (currently hosted on the https://stix.mitre.org website) through the following:
 
 - [Mailing List](https://stix.mitre.org/community/registration.html) — where community members discuss the latest drafts of the STIX schemas, specifications, utilities, technical documents, and other items integral to the ongoing development of STIX.
+- [Chat](https://gitter.im/STIXProject/schemas) - information discussions and help
 - [Code Repositories](https://github.com/STIXProject/) — the central location for STIX Community members to make open-source contributions to STIX development and manage issue tracking for the STIX schemas, tools, specifications, and other supporting information and items.
+
+Join us simply by subscribing and posting to the list or participating on Github!
 
 <!-- ## Who is using STIX?
 Organizations that have publically announced that their products, services, or processes are using or supporting STIX, as well as [Trusted Automated eXchange of Indicator Information (TAXII™)](http://taxii.mitre.org/) and [Cyber Observables eXpression (CybOX™)](https://cybox.mitre.org/), are listed on the STIX in Use page on this website.
