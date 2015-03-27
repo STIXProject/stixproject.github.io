@@ -43,18 +43,6 @@ STIX is simply a set of XML schemas so any XML libraries are suitable for produc
 
 There are also user-level utilities available: [STIXViz](https://github.com/STIXProject/stix-viz) for visualizing the relationships between components in a STIX document and [STIX2HTML](https://github.com/STIXProject/stix-to-html) for taking STIX XML and converting it to human-readable HTML. These tools are experimental prototypes meant to help you learn and understand STIX, not production-quality products.
 
-## Who funds STIX?
-STIX is currently sponsored and led by the office of Cybersecurity and Communications at the U.S. Department of Homeland Security.
-
-## What is HS SEDI
-
-HSSEDI is DHS's primary systems engineering resource, providing agency-wide access to deep technical expertise. It is chartered as a Federally Funded Research and Development Center (FFRDC) and is operated by The MITRE Corporation.
-
-## What is MITRE? What is MITRE’s role in STIX?
-In partnership with government clients, the [MITRE Corporation](http://www.mitre.org/) (MITRE) is a not-for-profit corporation working in the public interest. It addresses issues of critical national importance, combining systems engineering and information technology to develop innovative solutions that make a difference. MITRE’s work is focused within Federally Funded Research and Development Centers (FFRDCs) for the: Department of Defense, Federal Aviation Administration, Internal Revenue Service and Department of Veterans Affairs, Department of Homeland Security, Administrative Office of the U.S. Courts, and the Centers for Medicare and Medicaid Services.
-
-MITRE acts as the STIX community facilitator and coordinator in its role as operator of HS SEDI. In that role it manages the STIX websites, community engagement, and discussion lists to enable open and public collaboration with all stakeholders.
-
 ## What is the role of the STIX Community and how can I join?
 STIX is an open effort that welcomes broad and diverse community participation. The STIX Community helps build this growing, open-source industry effort by participating in the development of the STIX Language (currently hosted on the https://stix.mitre.org website) through the following:
 
@@ -68,3 +56,14 @@ You can contact the STIX team at stix-taxii@hq.dhs.gov or stix@mitre.org.
 Organizations that have publically announced that their products, services, or processes are using or supporting STIX, as well as [Trusted Automated eXchange of Indicator Information (TAXII™)](http://taxii.mitre.org/) and [Cyber Observables eXpression (CybOX™)](https://cybox.mitre.org/), are listed on the STIX in Use page on this website.
 
 Please contact <stix@mitre.org> for details on how your organization’s product(s) and/or service(s) can be added to this list.
+
+## Who funds STIX?
+STIX is currently sponsored and led by the office of Cybersecurity and Communications at the U.S. Department of Homeland Security.
+
+## What is HSSEDI? What is MITRE?
+
+HSSEDI is DHS's primary systems engineering resource, providing agency-wide access to deep technical expertise. HSSEDI is a Federally Funded Research and Development Center (FFRDC) that is operated by The MITRE Corporation.
+
+The [MITRE Corporation](http://www.mitre.org/) (MITRE) is a not-for-profit corporation working in the public interest. It addresses issues of critical national importance, combining systems engineering and information technology to develop innovative solutions that make a difference. MITRE’s work is focused within Federally Funded Research and Development Centers (FFRDCs) for the: Department of Defense, Federal Aviation Administration, Internal Revenue Service and Department of Veterans Affairs, Department of Homeland Security, Administrative Office of the U.S. Courts, and the Centers for Medicare and Medicaid Services.
+
+In its role as operator of HSSEDI, MITRE acts as the STIX community facilitator and coordinator. In that role it manages the STIX websites, community engagement, and discussion lists to enable open and public collaboration with all stakeholders.
