@@ -4,7 +4,7 @@ title: About STIX
 toc: about_toc.html
 ---
 
-Structured Threat Information Expression (STIX™) is a structured language for describing cyber threat information so it can be shared, stored, and otherwise used in a consistent manner that facilitates automation.
+Structured Threat Information Expression (STIX™) is a structured language for describing cyber threat information so it can be shared, stored, and analyzed in a consistent manner.
 
 The [STIX whitepaper](/getting-started/whitepaper) describes the motivation and architecture behind STIX. 
 
@@ -27,11 +27,13 @@ At a high level the STIX language consists of 8 key constructs and the relations
 
 STIX is a collaborative effort that is led by DHS but driven by an open community. 
 
-Join the community to make open-source contributions to STIX development and manage issue tracking for the STIX schemas, tools, and specifications.
+Individuals and organizations are invited to join the STIX community!
+
+Feature requests and bugfixes are managed using [open source repositories on Github](https://github.com/stixproject/schemas)
 
 - [Mailing List](https://stix.mitre.org/community/registration.html) — where community members discuss the latest drafts of the STIX schemas, specifications, utilities, technical documents, and other items integral to the ongoing development of STIX.
 - [Chat](https://gitter.im/STIXProject/schemas) - informal discussions and help
-- [Code Repositories](https://github.com/STIXProject/) — the central location for STIX Community members to make open-source contributions to STIX development and manage issue tracking for the STIX schemas, tools, specifications, and other supporting information and items.
+- [Code Repositories](https://github.com/STIXProject/) — Github organization for development of schemas, tools, specifications, and other supporting information and items.
 
 ## Frequently Asked Questions
 
@@ -48,9 +50,9 @@ Bindings and related tools to help process and work with STIX are [open source o
 
 ## Where can I find examples of STIX data? Are there any STIX repositories?
 
-Certain STIX repositories [are available](/adopters) are available for free, while others are managed by paid services.
+Certain STIX repositories [are available](/adopters) are available for free and for-pay.
 
-[Example threat reports](/examples) are available for including Mandiant's APT1 report and FireEye's Poison Ivy report. 
+[Example threat reports](/examples) include STIX versions of Mandiant's APT1 report and FireEye's Poison Ivy report. 
 
 [Idioms](/documentation/idioms) also provide good constrained examples.
 
