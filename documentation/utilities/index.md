@@ -92,7 +92,7 @@ A community member ([@woot4moo](https://github.com/woot4moo)) has contributed [t
 
 The STIX project does not provide bindings for .NET. Community members, however, have used Microsoft's standard XML tooling to work with STIX documents and create useful utilities.
 
-We would be happy to link to a .NET project providing bindings via the [STIX Discussion List](mailto:stix-discussion-list@lists.mitre.org)
+We would be glad to link to a .NET project providing bindings via the [STIX Discussion List](mailto:stix-discussion-list@lists.mitre.org)
 
 ### Ruby
 
@@ -102,4 +102,4 @@ Using JRuby, it's possible to use generated JAXB or XMLBeans bindings and import
 * Package them as a gem
 * Include the gem in your Gemfile (if using bundler) or install it manually
 
-We would be happy to link to a Ruby project providing bindings via the [STIX Discussion List](mailto:stix-discussion-list@lists.mitre.org).
+We would be glad to link to a Ruby project providing bindings via the [STIX Discussion List](mailto:stix-discussion-list@lists.mitre.org).
