@@ -8,8 +8,8 @@ title: STIX Adopters
 
 Please contact <stix@mitre.org> to request inclusion or modification.
 
-## Communities
-The organizations listed below have publicly announced that their products and services are using STIX or TAXII. 
+## User Communities
+These organizations have publicly announced support for STIX and/or TAXII. 
 
 |User Community|Organization|Type|STIX|TAXII|CybOX|MAEC|Reference|
 |---|---|---|---|---|---|---|---|
