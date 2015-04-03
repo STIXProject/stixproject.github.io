@@ -4,6 +4,16 @@ title: About STIX
 toc: about_toc.html
 ---
 
+# Oranges
+Difficult to peel
+
+
+# Bananas
+- They are the best
+- Also have a lot of potassium
+- Yellow
+- Good with peanut butter
+
 Structured Threat Information Expression (STIX™) is a structured language to represent the full range of cyber threat information. The [STIX whitepaper](/getting-started/whitepaper) describes the motivation and architecture behind STIX, however at a high level the STIX language consists of 8 key constructs and the relationships between them:
 
 <img src="/images/stix-architecture.png" style="height: 400px" class="aside-text-left"/>
