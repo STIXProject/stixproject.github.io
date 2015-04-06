@@ -1,6 +1,7 @@
 ---
 layout: flat
 title: STIX Adopters
+redirect_from: "/adopters"
 ---
 
 
