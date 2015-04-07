@@ -4,7 +4,7 @@ title: Support for STIX
 ---
 
 
-`This list is incomplete and actively updated. Inclusion does not represent an endorsement`
+`This list is incomplete and actively updated. Inclusion does not represent an endorsement.`
 
 Please contact <stix@mitre.org> to request inclusion or modification.
 
