@@ -8,6 +8,8 @@ title: Support for STIX
 
 Please contact <stix@mitre.org> to request inclusion or modification.
 
+For user communities, please include your community name, basic information about how you use STIX and/or TAXII, and a public reference that we can cite. For products and services, please include the product name, organization name, basic information about how you use STIX and/or TAXII, and a public reference that we can cite.
+
 ## User Communities
 These organizations have publicly announced support for STIX and/or TAXII. 
 
