@@ -8,7 +8,7 @@ title: Support for STIX
 
 Please contact <stix@mitre.org> to request inclusion or modification.
 
-For user communities, please include your community name, basic information about how you use STIX and/or TAXII, and a public reference that we can cite. For products and services, please include the product name, organization name, basic information about how you use STIX and/or TAXII, and a public reference that we can cite.
+For User Communities, please include your community name, basic information about how you use STIX and/or TAXII, and a public reference that we can cite. For Products and Services, please include the product name, organization name, basic information about how you use STIX and/or TAXII, and a public reference that we can cite.
 
 ## User Communities
 These organizations have publicly announced support for STIX and/or TAXII. 
@@ -20,7 +20,7 @@ These organizations have publicly announced support for STIX and/or TAXII.
 |NH-ISAC National Health Cybersecurity Intelligence Platform|[National Health Information Sharing & Analysis Center (NH-ISAC)](http://www.nhisac.org/)|Automating cybersecurity "actionable" threat intelligence, with STIX and TAXII interoperability, powered by Soltra-Edge and Vorstack|&#x2713;|&#x2713;|[Press Release](http://www.nhisac.org/blog/the-national-health-isac-and-the-center-for-internet-security-partner-to-strengthen-national-healthcare-public-health-cybersecurity-resilience/)|
 
 ## Products and Services
-Many vendors have implemented STIX in their product offerings and services.
+Many vendors have implemented STIX in their products and services.
 
 |Offering|Vendor|Type|STIX|TAXII|Reference|
 |---|---|---|---|---|---|---|---|
