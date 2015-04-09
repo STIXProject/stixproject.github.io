@@ -7,6 +7,12 @@ no_in_page_title: true
 
 <h1 class="site-title">STIX Project Documentation</h1>
 
+<div class="alert alert-warning" role="alert">
+  Going to RSA? Visit our two-hour Birds of a Feather session starting at noon on Wednesday April 22nd at the Westin St. Francis hotel.
+   
+   <a href="mailto:stix@mitre.org?subject=I <3 RSA and STIX" class="alert-link">Please RSVP via email for the room number</a>
+</div>
+
 <div class="jumbotron">
   <h2><strong>Start here if you're new to STIX!</strong></h2>
   <p>Regardless of whether you're an analyst, developer, or manager, we have tutorials, walkthroughs, and exercises to help you become familiar
