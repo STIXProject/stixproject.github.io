@@ -4,9 +4,9 @@ title: Support for STIX
 ---
 
 
-`This list of is incomplete and actively updated. Inclusion does not represent an endorsement.`
+`This list is incomplete and actively updated. Inclusion does not represent an endorsement.`
 
-Please [fill out this form](http://goo.gl/forms/jKQH7a6TfW) to contact the [STIX Team](mailto:stix@mitre.org) and request inclusion or modification under [User Communities](http://stixproject.github.io/supporters/#user-communities) or [Products and Services](http://stixproject.github.io/supporters/#products-and-services) . 
+Please [fill out this form](http://goo.gl/forms/jKQH7a6TfW) to contact the [STIX Team](mailto:stix@mitre.org) and request inclusion or modification under [User Communities](http://stixproject.github.io/supporters/#user-communities) or [Products and Services](http://stixproject.github.io/supporters/#products-and-services). 
 
 ## User Communities
 These organizations have publicly announced support for STIX and/or TAXII.
