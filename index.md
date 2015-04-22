@@ -8,9 +8,11 @@ no_in_page_title: true
 <h1 class="site-title">STIX Project Documentation</h1>
 
 <div class="alert alert-warning" role="alert">
-  Going to RSA? Visit our two-hour Birds of a Feather session starting at noon on Wednesday April 22nd at the Westin St. Francis hotel.
-   
-   <a href="mailto:stix@mitre.org?subject=I <3 RSA and STIX" class="alert-link">Please RSVP via email for the room number</a>
+  <a href="https://www.oasis-open.org/committees/tc_cat.php?cat=security" class="alert-link">
+  STIX is being transitioned to OASIS </a>
+  - an open standards organization. 
+  <a href="https://stixproject.github.io/oasis-faq.pdf" class="alert-link">
+  Read the FAQ to learn more.</a>
 </div>
 
 <div class="jumbotron">
