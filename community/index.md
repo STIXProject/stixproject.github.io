@@ -13,7 +13,7 @@ title: STIX Community
 * [Key Resources & Contacts](https://stixproject.github.io/oasis-cti-info.html)
 
 ##Discussion List & Archive
-Please join us by signing up for our email discussion list and e-newsletter. [Privacy Policy](https://stix.mitre.org/about/privacy_policy.html)
+Please join us by signing up for our email discussion list and e-newsletter. [Privacy Policy](https://stix.mitre.org/about/privacy_policy.html).
 
 * [STIX Community Email Discussion List sign-up](http://stix.mitre.org/community/registration.html)
 * [STIX Announce e-Newsletter sign-up](http://stix.mitre.org/community/registration.html)
