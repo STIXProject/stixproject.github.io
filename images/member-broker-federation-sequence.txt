@@ -1,0 +1,26 @@
+@startuml
+
+participant Member1a
+participant Member1b
+participant Broker1
+participant Broker2
+participant Member2a
+
+Member1a -> Broker1 : Indicator Submission
+Broker1 -> Member1b : Indicator Receipt
+
+group Federation
+Broker1 -> Broker2 : Indicator Submission
+end
+
+Broker2 -> Member2a : Indicator Receipt
+Member2a -> Broker2 : Indicator Feedback
+
+group Federation
+Broker2 -> Broker1 : Indicator Feedback
+end
+
+Broker1 -> Member1b : Indicator Feedback
+Broker1 -> Member1a : Indicator Feedback
+
+@enduml
