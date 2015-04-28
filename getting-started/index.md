@@ -3,6 +3,8 @@ layout: flat
 title: Getting Started
 ---
 
+## [Training and Presentations](/learn)
+
 <div class="row">
   <div class="col-md-6 getting-started-left">
     <h3>For Analysts & Managers</h3>
