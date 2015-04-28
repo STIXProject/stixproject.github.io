@@ -1,12 +1,12 @@
 ---
 layout: flat
-title: Identifying a Threat Actor Group
+title: Identifying a Threat Actor Profile
 constructs:
   - Threat Actor
-summary: This idiom describes how to use the threat actor construct to represent the identity of a threat actor group. An example of this in threat intelligence is the characterization of the APT1 threat actor group by Mandiant in their 2013 APT1 report.
+summary: The identity of a threat actor often includes their name, physical address, Facebook or other social media profiles. Alternative names for the actor are also included (such as APT1 vs. Comment Crew)
 ---
 
-Although many smaller threat intelligence programs do not consider threat actor attribution and identification as part of their core mission, multiple threat intelligence providers and other large organizations do practice threat actor attribution and include those characterizations in their threat intelligence. For example, Mandiant released their [report](http://intelreport.mandiant.com/) on the APT1 threat actor which included a characterization of that actor's identity.
+Commercial threat intelligence providers and well-resourced government agencies often attribute malicious activity to a particular threat actor or actor group.Data model
 
 ## Scenario
 
@@ -14,7 +14,7 @@ In this scenario, the STIX represents a threat actor group named "Disco Team" th
 
 ## Data model
 
-<img src="diagram.png" alt="Threat Actor Group Identification" />
+<img src="diagram.png" width=660px height=530px alt="Threat Actor Group Identification" class="aside-text"/>
 
 Threat actor identification is, as you would expect, represented using the STIX [Threat Actor](/data-model/{{site.current_version}}/ta/ThreatActorType) component. More specifically, the `Identity` field, which uses the [IdentityType](/data-model/{{site.current_version}}/stixCommon/IdentityType) extension point, is the field that contains information about the identity of the actor. Other fields in threat actor describe what the actor targets, how sophisticated it is, and other information about it.
 
@@ -24,10 +24,10 @@ The STIX default extension for identity is [OASIS CIQ](https://www.oasis-open.or
 
 {% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="identity-group" %}{% highlight xml linenos %}
 <stix:STIX_Package >
- <stix:Threat_Actors>
-        <stix:Threat_Actor id="example:threatactor-e4a839d7-a15f-41c8-b81f-7107f8602437" timestamp="2014-09-12T20:14:27.864337+00:00" xsi:type='ta:ThreatActorType' version="1.1.1">
+     <stix:Threat_Actors>
+        <stix:Threat_Actor id="example:threatactor-dfaa8d77-07e2-4e28-b2c8-92e9f7b04428" timestamp="2014-11-19T23:39:03.893348+00:00" xsi:type='ta:ThreatActorType' version="1.1.1">
             <ta:Title>Disco Team Threat Actor Group</ta:Title>
-            <ta:Identity id="example:Identity-2b99ccab-c627-4a13-bc86-c35aa7032591" xsi:type='stix-ciqidentity:CIQIdentity3.0InstanceType'>
+            <ta:Identity id="example:Identity-733c5838-34d9-4fbf-949c-62aba761184c" xsi:type='stix-ciqidentity:CIQIdentity3.0InstanceType'>
                 <ExtSch:Specification xmlns:ExtSch="http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1">
   <xpil:PartyName xmlns:xpil="urn:oasis:names:tc:ciq:xpil:3">
     <xnl:OrganisationName xmlns:xnl="urn:oasis:names:tc:ciq:xnl:3" xnl:Type="CommonUse">
@@ -49,6 +49,7 @@ The STIX default extension for identity is [OASIS CIQ](https://www.oasis-open.or
   </xpil:Addresses>
   <xpil:ElectronicAddressIdentifiers xmlns:xpil="urn:oasis:names:tc:ciq:xpil:3">
     <xpil:ElectronicAddressIdentifier>disco-team@stealthemail.com</xpil:ElectronicAddressIdentifier>
+    <xpil:ElectronicAddressIdentifier>facebook.com/thediscoteam</xpil:ElectronicAddressIdentifier>
   </xpil:ElectronicAddressIdentifiers>
   <xpil:Languages xmlns:xpil="urn:oasis:names:tc:ciq:xpil:3">
     <xpil:Language>Spanish</xpil:Language>
@@ -58,6 +59,7 @@ The STIX default extension for identity is [OASIS CIQ](https://www.oasis-open.or
         </stix:Threat_Actor>
     </stix:Threat_Actors>
 </stix:STIX_Package>
+
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 
 stix_package = STIXPackage()
@@ -81,7 +83,9 @@ address.administrative_area.add_name_element("California")
 identity_spec.add_address(address)
 
 identity_spec.add_electronic_address_identifier("disco-team@stealthemail.com")
-
+identity_spec.add_electronic_address_identifier("facebook.com/thediscoteam")
+identity_spec.add_electronic_address_identifier("twitter.com/realdiscoteam")
+    
 ta.identity.specification = identity_spec
 stix_package.add_threat_actor(ta)
 print stix_package.to_xml()
@@ -95,8 +99,9 @@ for actor in pkg.threat_actors:
     print "Language: " + actor.identity.specification.languages[0].value
     print "Country: " + str(actor.identity.specification.addresses[0].country.name_elements[0].value)
     print "Area: " + str(actor.identity.specification.addresses[0].administrative_area.name_elements[0].value)
-    print "Email: " + str(actor.identity.specification.electronic_address_identifiers[0].value)
-
+    for addr in actor.identity.specification.electronic_address_identifiers:
+        print "Internet Address: " + str(addr.value)
+    
 {% endhighlight %}{% include end_tabs.html %}
 
 [Full XML](identifying-a-threat-actor-group.xml) | [Python Producer](identifying-a-threat-actor-group_producer.py) | [Python Consumer](identifying-a-threat-actor-group_consumer.py)
