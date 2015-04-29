@@ -3,8 +3,9 @@ layout: flat
 title: Support for STIX
 ---
 
-
 `This list is incomplete and actively updated. Inclusion does not represent an endorsement.`
+
+STIX is being implemented in many products and services and global communities.
 
 Please [fill out this form](http://goo.gl/forms/jKQH7a6TfW) to contact the [STIX Team](mailto:stix@mitre.org) and request inclusion or modification under [User Communities](http://stixproject.github.io/supporters/#user-communities) or [Products and Services](http://stixproject.github.io/supporters/#products-and-services). 
 
@@ -36,6 +37,7 @@ Many vendors have implemented STIX and TAXII in their product and service offeri
 |[Cyberprobe](http://cyberprobe.sourceforge.net/cyberprobe.html#index-STIX)|[Cybermaggedon](http://cyberprobe.sourceforge.net)|Cyberprobe is a distributed software architecture for monitoring of networks against attack that includes support for STIX and TAXII|&#x2713;|&#x2713;|[Cited as product features on website](http://cyberprobe.sourceforge.net/cyberprobe.html#index-STIX)|
 |[CyberSponse Security Operations Platform](http://cybersponse.com/solutions/financial/)|[CyberSponse,Inc.](http://www.cybersponse.com)|CSOP, which provides a central hub for an organization's security operations and enables automated efforts, has a built-in TAXII server or can use Soltra Edge to both ingest and send STIX packages|&#x2713;|&#x2713;|[Cited as product feature on website](http://cybersponse.com/solutions/financial/)|
 |[Damballa Failsafe](http://www.damballa.com/)|[Damballa, Inc.](http://www.damballa.com/)|Damballa Failsafe analyzes network traffic and automatically detects infected devices after other security controls have failed; security teams receive actionable and prioritized intelligence so they can take immediate action to prevent data theft|&#x2713;|-|None available|
+|[Deep-Secure iXGuard]( http://www.deep-secure.com/wp-content/uploads/2015/04/Protecting-CyberThreat-Infomation-Exchange.pdf)|[Deep-Secure](http://www.deep-secure.com/)|Deep-Secure iXGuard enables secure information exchange by carefully controlling the content that is shared such that it does not present a risk to the system that it is protecting, including STIX content|&#x2713;|&#x2713;|[Data Sheet](http://www.deep-secure.com/wp-content/uploads/2015/04/Protecting-CyberThreat-Infomation-Exchange.pdf)|
 |[Endpoint Security](https://www.tanium.com/products/endpoint-security/)|[Tanium, Inc.](https://www.tanium.com/)|Endpoint security detection and remediation|&#x2713;|-|[Cited as product features on website](https://www.tanium.com/products/endpoint-security/), ["Tanium IOC Detect" Data Sheet](http://offers.tanium.com/rs/tanium/images/resources-datasheet-tanium-ioc-detect.pdf)|
 |[FLARE - Near Real Time Messaging System](https://github.com/bcmc/oss)|[Business Computers Management Consulting Group, LLC (BCMC)](https://bcmcgroup.com/)|FLARE is used for exchanging messages in a publish/subscribe model, and includes support for STIX and TAXII|&#x2713;|&#x2713;|[Cited in installation guide](https://github.com/bcmc/oss/blob/master/FLAREclient-2.0.2/FLAREclient%20Installation%20Guide%20Rev%20E.doc?raw=true)|
 |[FreeSTIX](https://github.com/jordan2175/freestix)|[FreeSTIX](https://github.com/jordan2175/freestix)|A set of APIs written in Go for generating JSON based STIX messages|&#x2713;|-|[Cited as product feature on website](https://github.com/jordan2175/freestix)|
