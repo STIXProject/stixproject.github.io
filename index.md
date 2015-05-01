@@ -35,14 +35,6 @@ no_in_page_title: true
   </div>
 </div>
 
-<hr />
-
-<p class="lead text-center">
-	Have questions, comments, or feedback?
-	<br/>
-	<strong>Reach out to us at <a href="mailto:stix@mitre.org">stix@mitre.org</a>!</strong>
-</p>
-
 <div class="row">
   <div class="col-md-4 text-center">
     <h2>OASIS</h2>
@@ -63,4 +55,12 @@ no_in_page_title: true
     learn how to create and understand idiomatic STIX content.</p>
     <p><a class="btn btn-primary btn-lg" role="button" href="/documentation/idioms">Idioms »</a></p>
   </div>
+  
+<hr />
+
+<p class="lead text-center">
+	Have questions, comments, or feedback?
+	<br/>
+	<strong>Reach out to us at <a href="mailto:stix@mitre.org">stix@mitre.org</a>!</strong>
+</p>
 
