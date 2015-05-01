@@ -30,15 +30,42 @@
 	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd
 	http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
 	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd" id="example:Package-e622beb9-3781-4dd7-9787-ac21ba84d898" version="1.1.1" timestamp="2014-07-25T18:16:44.543625+00:00">
-    <stix:STIX_Header>
-        <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Threat Report</stix:Package_Intent>
-        <stix:Description>Indicators for FireEye report on Saffron</stix:Description>
-        <stix:Information_Source>
-            <stixCommon:Time>
-                <cyboxCommon:Produced_Time>2014-05-15T00:00:00</cyboxCommon:Produced_Time>
-            </stixCommon:Time>
-        </stix:Information_Source>
-    </stix:STIX_Header>
+    
+    <stix:Reports>
+        <stix:Report id="fireeye-ajax" xsi:type="report:ReportType">
+            <report:Header>
+                <report:Title> FireEye Ajax/Saffron report</report:Title>
+                <report:Description>Indicators and background on a computer intrusion</report:Description>
+            <report:Information_Source>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2014-05-15T00:00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </report:Information_Source>    
+            
+            <report:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Threat Report</report:Package_Intent>    
+    
+            </report:Header>
+        
+        <report:Indicators>
+            <report:Indicator idref="example:indicator-d0d3c811-7b88-4e1d-88d4-db4de4f43155" />
+            <report:Indicator idref="example:indicator-eb28ff69-edb1-4ab1-af6b-afe2708d4c80" />
+            <report:Indicator idref="example:indicator-32834c23-cfca-484c-9eea-83bc09f84afa" />
+        </report:Indicators>
+        
+        <report:TTPs>
+            <report:TTP idref="example:ttp-ee5930f0-3798-4069-9aa6-f070f24896d5" />
+            <report:TTP idref="example:ttp-024e9919-abeb-4e7a-b517-e2c44eaee706" />
+        </report:TTPs>
+        
+        <report:Threat_Actors>
+            <report:Threat_Actor idref="example:threatactor-75255d39-a507-40dd-82f2-0a2c04aefce9" />
+        </report:Threat_Actors>
+        
+        </stix:Report>
+        
+    </stix:Reports>
+
+    
     <stix:Indicators>
         <stix:Indicator id="example:indicator-d0d3c811-7b88-4e1d-88d4-db4de4f43155" timestamp="2014-07-25T18:16:44.547169+00:00" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
             <indicator:Title>Phishing email</indicator:Title>
