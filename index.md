@@ -43,6 +43,7 @@ no_in_page_title: true
   </div>
 </div>
 
+
 <div class="row">
   <div class="col-md-4 text-center">
     <h2>OASIS</h2>
@@ -64,7 +65,7 @@ no_in_page_title: true
     <p><a class="btn btn-primary btn-lg" role="button" href="/documentation/idioms">Idioms »</a></p>
   </div>
   
-<hr />
+<hr><hr />
 
 <p class="lead text-center">
 	Have questions, comments, or feedback?
