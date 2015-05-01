@@ -35,6 +35,8 @@ def main():
     identity_spec.add_address(address)
     
     identity_spec.add_electronic_address_identifier("disco-team@stealthemail.com")
+    identity_spec.add_electronic_address_identifier("facebook.com/thediscoteam")
+    identity_spec.add_electronic_address_identifier("twitter.com/realdiscoteam")
     
     ta.identity.specification = identity_spec
     stix_package.add_threat_actor(ta)

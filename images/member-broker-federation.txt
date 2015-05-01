@@ -1,0 +1,17 @@
+@startuml
+
+Partition Group1 {
+    Member1a --> Broker1
+    Member1b --> Broker1
+}
+
+Partition Group2 {
+    Member2a --> Broker2
+    Member2b --> Broker2
+}
+
+Broker1 --> [Fedaration] Broker2
+Broker2 --> [Fedaration] Broker1
+
+
+@enduml
