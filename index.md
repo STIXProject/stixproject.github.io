@@ -5,7 +5,8 @@ tagline: A structured language for cyber threat intelligence information
 no_in_page_title: true
 ---
 
-<h1 class="site-title">Structured Threat Information eXpression (STIX™)</h1>
+
+<h2><strong>Structured Threat Information eXpression (STIX™)</strong></h2>
 
 <div class="alert alert-warning" role="alert">
   <a href="https://www.oasis-open.org/committees/tc_cat.php?cat=security" class="alert-link">
@@ -16,9 +17,8 @@ no_in_page_title: true
 </div>
 
 <div class="jumbotron">
-  <h2><strong>Start here if you're new to STIX!</strong></h2>
-  <p>Regardless of whether you're an analyst, developer, or manager, we have tutorials, walkthroughs, and exercises to help you become familiar
-  with STIX.</p>
+  <h2>Start here if you're new to STIX!</h2>
+
   <p><a class="btn btn-primary btn-lg" role="button" href="/getting-started">Get Started »</a>
   <a class="btn btn-info btn-lg" role="button" href="/release">Download Schemas »</a>
   <a class="btn btn-default btn-lg" role="button" href="/examples">Sample Reports »</a>
@@ -43,21 +43,13 @@ no_in_page_title: true
   </div>
 </div>
 
-<hr />
-
-<p class="lead text-center">
-	Have questions, comments, or feedback?
-	<br/>
-	<strong>Reach out to us at <a href="mailto:stix@mitre.org">stix@mitre.org</a>!</strong>
-</p>
-
 <div class="row">
   <div class="col-md-4 text-center">
     <h2>OASIS</h2>
     <p>STIX, TAXII, and CybOX are being transitioned to the Organization for the Advancement of Structured Information Standards (OASIS)</p>
     <p><a class="btn btn-primary btn-lg" role="button" href="https://stixproject.github.io/stix-at-oasis.pdf">Announcement »</a></p>
   </div>
-<div class="row">
+
   <div class="col-md-4 text-center">
     <h2>Documentation</h2>
     <p>Now that you have an idea of what STIX is and how it can be used,
@@ -71,4 +63,12 @@ no_in_page_title: true
     learn how to create and understand idiomatic STIX content.</p>
     <p><a class="btn btn-primary btn-lg" role="button" href="/documentation/idioms">Idioms »</a></p>
   </div>
+  
+<hr />
+
+<p class="lead text-center">
+	Have questions, comments, or feedback?
+	<br/>
+	<strong>Reach out to us at <a href="mailto:stix@mitre.org">stix@mitre.org</a>!</strong>
+</p>
 
