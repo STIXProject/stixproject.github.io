@@ -18,29 +18,21 @@ no_in_page_title: true
 
 <div class="row">
   <div class="col-md-4 text-center">
-    <h2>STIX Version 1.1.1</h2>
-    <p>The current release of the language. Click for downloads and more.</p>
+    <h2>Current Release</h2>
+    <p>Click for downloads and more.</p>
     <p><a class="btn btn-primary btn-lg" role="button" href="https://stix.mitre.org/language/version1.1.1/">STIX Version 1.1.1 »</a></p>
   </div>
   <div class="col-md-4 text-center">
-    <h2>STIX Version 1.2</h2>
-    <p>Upcoming release of the language. Click for status reports and more.</p>
-    <p><a class="btn btn-primary btn-lg" role="button" href="https://stix.mitre.org/language/version1.2/">STIX Version 1.2 »</a></p>
+    <h2>Community</h2>
+    <p>Join us to help build this growing, open-source industry effort.</p>
+    <p><a class="btn btn-primary btn-lg" role="button" href="http://stixproject.github.io/community">Participate »</a></p>
   </div>
   <div class="col-md-4 text-center">
     <h2>Follow the STIX Blog</h2>
-    <p>The latest STIX , TAXII, CybOX, & MAEC news, straight from the source.</p>
+    <p>The latest STIX, TAXII, CybOX, & MAEC news, straight from the source.</p>
     <p><a class="btn btn-primary btn-lg" role="button" href="/blog">Follow »</a></p>
   </div>
 </div>
-
-<hr />
-
-<p class="lead text-center">
-	Have questions, comments, or feedback?
-	<br/>
-	<strong>Reach out to us at <a href="mailto:stix@mitre.org">stix@mitre.org</a>!</strong>
-</p>
 
 <div class="row">
   <div class="col-md-4 text-center">
@@ -62,4 +54,12 @@ no_in_page_title: true
     learn how to create and understand idiomatic STIX content.</p>
     <p><a class="btn btn-primary btn-lg" role="button" href="/documentation/idioms">Idioms »</a></p>
   </div>
+  
+<hr />
+
+<p class="lead text-center">
+	Have questions, comments, or feedback?
+	<br/>
+	<strong>Reach out to us at <a href="mailto:stix@mitre.org">stix@mitre.org</a>!</strong>
+</p>
 
