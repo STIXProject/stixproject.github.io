@@ -6,13 +6,13 @@
 	xmlns:stix="http://stix.mitre.org/stix-1"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="
-	http://stix.mitre.org/Incident-1 http://stix.mitre.org/XMLSchema/incident/1.1.1/incident.xsd
-	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd
-	http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
-	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd" 
+	http://stix.mitre.org/Incident-1 http://stix.mitre.org/XMLSchema/incident/1.2/incident.xsd
+	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.2/stix_common.xsd
+	http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.2.0/stix_default_vocabularies.xsd
+	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.2/stix_core.xsd" 
 	id="example:Package-d1a8110e-b693-11e3-8747-0800271e87d2" 
 	timestamp="2014-05-08T09:00:00.000000Z"
-	version="1.1.1">
+	version="1.2">
     <stix:Incidents>
         <stix:Incident id="example:incident-081d344b-9fae-d182-9cc7-d2d103e7c64f" xsi:type='incident:IncidentType' timestamp="2014-05-08T09:00:00.000000Z">
             <incident:Title>Exfiltration from hr-data1.example.com</incident:Title>

@@ -15,11 +15,11 @@
 	http://cybox.mitre.org/cybox-2 http://cybox.mitre.org/XMLSchema/core/2.1/cybox_core.xsd
 	http://cybox.mitre.org/default_vocabularies-2 http://cybox.mitre.org/XMLSchema/default_vocabularies/2.1/cybox_default_vocabularies.xsd
 	http://cybox.mitre.org/objects#AddressObject-2 http://cybox.mitre.org/XMLSchema/objects/Address/2.1/Address_Object.xsd
-	http://stix.mitre.org/Incident-1 http://stix.mitre.org/XMLSchema/incident/1.1.1/incident.xsd
-	http://stix.mitre.org/TTP-1 http://stix.mitre.org/XMLSchema/ttp/1.1.1/ttp.xsd
-	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd
-	http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
-	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd" id="example:Package-747d7c92-1aaf-418c-b5e9-174ef68c47fc" version="1.1.1" timestamp="2014-08-25T13:49:37.078000+00:00">
+	http://stix.mitre.org/Incident-1 http://stix.mitre.org/XMLSchema/incident/1.2/incident.xsd
+	http://stix.mitre.org/TTP-1 http://stix.mitre.org/XMLSchema/ttp/1.2/ttp.xsd
+	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.2/stix_common.xsd
+	http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.2.0/stix_default_vocabularies.xsd
+	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.2/stix_core.xsd" id="example:Package-747d7c92-1aaf-418c-b5e9-174ef68c47fc" version="1.2" timestamp="2014-08-25T13:49:37.078000+00:00">
     <stix:STIX_Header>
         <stix:Title>IPs of Interest</stix:Title>
         <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Incident</stix:Package_Intent>
@@ -48,15 +48,15 @@
         </cybox:Observable>
     </stix:Observables>
     <stix:TTPs>
-        <stix:TTP id="example:ttp-f0c26887-610b-4724-80c6-5bd4e0354df9" timestamp="2014-08-25T13:49:37.079000+00:00" xsi:type='ttp:TTPType' version="1.1.1">
+        <stix:TTP id="example:ttp-f0c26887-610b-4724-80c6-5bd4e0354df9" timestamp="2014-08-25T13:49:37.079000+00:00" xsi:type='ttp:TTPType' version="1.2">
             <ttp:Title>ZBot</ttp:Title>
         </stix:TTP>
-        <stix:TTP id="example:ttp-a3bca8df-4904-433a-abf0-614a30407f5d" timestamp="2014-08-25T13:49:37.081000+00:00" xsi:type='ttp:TTPType' version="1.1.1">
+        <stix:TTP id="example:ttp-a3bca8df-4904-433a-abf0-614a30407f5d" timestamp="2014-08-25T13:49:37.081000+00:00" xsi:type='ttp:TTPType' version="1.2">
             <ttp:Title>iSpy2</ttp:Title>
         </stix:TTP>
     </stix:TTPs>
     <stix:Incidents>
-        <stix:Incident id="example:incident-da4e5808-0159-497a-be65-a65c8974f027" timestamp="2014-08-25T13:49:37.079000+00:00" xsi:type='incident:IncidentType' version="1.1.1">
+        <stix:Incident id="example:incident-da4e5808-0159-497a-be65-a65c8974f027" timestamp="2014-08-25T13:49:37.079000+00:00" xsi:type='incident:IncidentType' version="1.2">
             <incident:Title>192.168.1.1</incident:Title>
             <incident:Time>
                 <incident:First_Malicious_Action precision="second">2014-01-01T09:23:23+00:00</incident:First_Malicious_Action>
@@ -70,11 +70,11 @@
             <incident:Leveraged_TTPs>
                 <incident:Leveraged_TTP>
                     <stixCommon:Relationship>Used Malware</stixCommon:Relationship>
-                    <stixCommon:TTP idref="example:ttp-f0c26887-610b-4724-80c6-5bd4e0354df9" xsi:type='ttp:TTPType' version="1.1.1"/>
+                    <stixCommon:TTP idref="example:ttp-f0c26887-610b-4724-80c6-5bd4e0354df9" xsi:type='ttp:TTPType' version="1.2"/>
                 </incident:Leveraged_TTP>
             </incident:Leveraged_TTPs>
         </stix:Incident>
-        <stix:Incident id="example:incident-74112763-ca88-48a5-8114-eec2cc903f95" timestamp="2014-08-25T13:49:37.081000+00:00" xsi:type='incident:IncidentType' version="1.1.1">
+        <stix:Incident id="example:incident-74112763-ca88-48a5-8114-eec2cc903f95" timestamp="2014-08-25T13:49:37.081000+00:00" xsi:type='incident:IncidentType' version="1.2">
             <incident:Title>192.168.1.2</incident:Title>
             <incident:Time>
                 <incident:First_Malicious_Action precision="second">2014-01-03T11:21:27+00:00</incident:First_Malicious_Action>
@@ -88,11 +88,11 @@
             <incident:Leveraged_TTPs>
                 <incident:Leveraged_TTP>
                     <stixCommon:Relationship>Used Malware</stixCommon:Relationship>
-                    <stixCommon:TTP idref="example:ttp-a3bca8df-4904-433a-abf0-614a30407f5d" xsi:type='ttp:TTPType' version="1.1.1"/>
+                    <stixCommon:TTP idref="example:ttp-a3bca8df-4904-433a-abf0-614a30407f5d" xsi:type='ttp:TTPType' version="1.2"/>
                 </incident:Leveraged_TTP>
             </incident:Leveraged_TTPs>
         </stix:Incident>
-        <stix:Incident id="example:incident-2fdf0dc6-2124-4c56-ac4c-fbe8dba288c1" timestamp="2014-08-25T13:49:37.082000+00:00" xsi:type='incident:IncidentType' version="1.1.1">
+        <stix:Incident id="example:incident-2fdf0dc6-2124-4c56-ac4c-fbe8dba288c1" timestamp="2014-08-25T13:49:37.082000+00:00" xsi:type='incident:IncidentType' version="1.2">
             <incident:Title>192.168.1.3</incident:Title>
             <incident:Time>
                 <incident:First_Malicious_Action precision="second">2014-01-04T17:45:54+00:00</incident:First_Malicious_Action>
@@ -106,7 +106,7 @@
             <incident:Leveraged_TTPs>
                 <incident:Leveraged_TTP>
                     <stixCommon:Relationship>Used Malware</stixCommon:Relationship>
-                    <stixCommon:TTP idref="example:ttp-f0c26887-610b-4724-80c6-5bd4e0354df9" xsi:type='ttp:TTPType' version="1.1.1"/>
+                    <stixCommon:TTP idref="example:ttp-f0c26887-610b-4724-80c6-5bd4e0354df9" xsi:type='ttp:TTPType' version="1.2"/>
                 </incident:Leveraged_TTP>
             </incident:Leveraged_TTPs>
         </stix:Incident>

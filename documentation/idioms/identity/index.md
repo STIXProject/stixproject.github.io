@@ -101,9 +101,6 @@ When using the full CIQ Identity structure it can often be confusing to figure o
 </table>
 
 ## What does it look like?
-{% capture alert_text %}
-**Warning!** Due to a bug [#187](https://github.com/STIXProject/python-stix/issues/187) in the python-stix API, the code samples below do not generate best-practice compliant content as of v1.1.1.1 for organization and person names.
-{% endcapture %}{% include alert.html type="warning" %}
 
 Given the above guidelines, it's likely that STIX identity information will fall into one of three situations: only the base IdentityType, only the CIQ identity, and both.
 
@@ -215,7 +212,7 @@ print identity.name # John Smith
 
 ## Using a Non-CIQ Identity Structure
 
-Because IdentityType is an extension point in STIX it's possible to use third-party identity structures that are not CIQ. This would allow you to use those third-party structures in any of the places that you can currently use the basic STIX IdentityType or CIQ extension. In order to do this, you would need to implement an extension for that third-party structure. The [CIQ extension](http://stix.mitre.org/XMLSchema/extensions/identity/ciq_3.0/1.1.1/ciq_3.0_identity.xsd) can be used as an example for how to do this.
+Because IdentityType is an extension point in STIX it's possible to use third-party identity structures that are not CIQ. This would allow you to use those third-party structures in any of the places that you can currently use the basic STIX IdentityType or CIQ extension. In order to do this, you would need to implement an extension for that third-party structure. The [CIQ extension](http://stix.mitre.org/XMLSchema/extensions/identity/ciq_3.0/1.2/ciq_3.0_identity.xsd) can be used as an example for how to do this.
 
 There is of course a compatibility cost to using external extensions. Other STIX tools would not necessarily support the extension and so interoperability with those tools in the identity model would not be possible. Any time you go outside the bounds of what's included in a STIX release there's a compatibility cost and using external identity models is no exception.
 

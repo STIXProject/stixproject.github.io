@@ -43,9 +43,9 @@ As a simple general rule specifying IDs on particular instances of constructs en
 This supports several very common STIX use cases such as:
 
 * enabling individual portions of content to be externally referenced unambiguously (e.g. a report talking about a specific Campaign or Threat Actor)
-* enabling the sharing/resharing of portions of STIX content (e.g. PartyB resharing 2 of a set of 100 Indicators received from PartyA) 
-* enabling versioning of content 
-* enabling the specification of potentially complex webs of interconnection and correlation between portions of STIX content (e.g. connecting particular TTPs and Indicators to specific Campaigns over time) 
+* enabling the sharing/resharing of portions of STIX content (e.g. PartyB resharing 2 of a set of 100 Indicators received from PartyA)
+* enabling versioning of content
+* enabling the specification of potentially complex webs of interconnection and correlation between portions of STIX content (e.g. connecting particular TTPs and Indicators to specific Campaigns over time)
 * enabling analysis pivoting on content with multiple contexts (e.g. the same IP Address seen in multiple Incidents and with connections to multiple TTPs and Indicators)
 
 
@@ -197,8 +197,8 @@ Relationships via embedded definition are achieved when a relationship from one 
 
 **What is it?**
 
-Relationships via reference are achieved when a relationship from one component (source) to another (sink) is asserted by including a reference within the source in the form of an 
-idref referencing the defined id for the sink. 
+Relationships via reference are achieved when a relationship from one component (source) to another (sink) is asserted by including a reference within the source in the form of an
+idref referencing the defined id for the sink.
 
 
 **Example:**
@@ -302,7 +302,7 @@ See the [Versioning](/documentation/concepts/versioning) concept discussion for 
 
 #### Versioning and References
 
-There are two primary ways to create references in STIX 1.1.1: you can either create a reference to a specific version of a construct or you can create a reference to the latest version of a construct.
+There are two primary ways to create references in STIX {{site.current_version}}: you can either create a reference to a specific version of a construct or you can create a reference to the latest version of a construct.
 
 To create a reference to a specific version, set the idref attribute to the ID of the construct you want to reference and set the timestamp attribute to the exact timestamp of the version that you want to reference:
 
@@ -352,5 +352,3 @@ The values of timestamp fields MUST follow the ISO 8601 format and SHOULD includ
 <img src="/images/Data Marking.png" class="component-img-right" alt="Data Marking Icon" />
 
 {% include sp_handling.md %}
-
-
