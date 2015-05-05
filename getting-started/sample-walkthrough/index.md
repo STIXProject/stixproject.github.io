@@ -82,44 +82,6 @@ The `@timestamp` is used to indicate the time at which this version of the const
 
 When publishing an updated version of a construct you can use the same ID but update the timestamp to indicate that it's a new version of an existing construct.
 
-## STIX_Header
-
-```
-<stix:STIX_Header>
-  <stix:Title>Example watchlist that contains IP information.</stix:Title>
-  <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Indicators - Watchlist</stix:Package_Intent>
-</stix:STIX_Header>
-```
-
-Within `STIX_Package`, the first element you'll see is `STIX_Header`. The header contains metadata about the package, including:
-
-* Title
-* Description
-* Package intent, or in other words what conceptually the package intends to convey
-* Information source, such as who created the content, when it was created, what tools were used to create it)
-* Data markings, which are metadata applied to specific nodes in the document, generally representing information about how the data may be used or shared
-
-In this case, we can see two elements: a title ("Example watchlist that contains IP information") and a package intent ("Indicators - Watchlist"). You'll note that there's also an attribute called `xsi:type` on the `Package_Intent` element, which in this case is set to `stixVocabs:PackageIntentVocab-1.0`.
-
-As you might guess, that attribute has something to do with controlled vocabularies. More generally, it uses the xsi:type extension mechanism that is also used elsewhere in STIX.
-
-<div class="well well-sm">
-<h4>Concept: xsi:type</h4>
-<p>xsi:type is a standard XML and XML schema mechanism for enabling type hierarchies (inheritance, if you're an object-oriented programmer). Essentially, STIX uses this to create abstract placeholders (in this case, the Package_Intent element) that can be filled in with specific implementations (in this case, <code>PackageIntentVocab-1.0</code>). Whenever you see an <code>xsi:type</code> attribute in an instance document it means that it's implementing an extension point.</p>
-<p>STIX uses extension points for several reasons. The first, and most obvious, is to allow several implementations for a given field. For example, data markings are implemented using an extension point to allow users to choose which type of data markings they want to use (if any). Some users might want TLP, others might want just a simple marking statement, and others might have something specific to their organization or industry. STIX doesn't want to force everyone to use the same implementation, so simply provides an extension point so that users can use whichever they want (assuming all parties in the sharing arrangement agree on this of course).</p>
-<p>In many cases, STIX provides extensions to fill these uses: for data markings, it provides both a TLP implementation and a mechanism to make simple statements. That does not mean users are limited to these extensions, however, they are free to use anything they want (again understanding that all parties must understand this marking extension).</p>
-<p>A second reason STIX uses xsi:type is to conceptually separate components from the core schema. Each of the STIX components (with the exception of CybOX) is implemented as an "extension point". In this case, the assumption is that except for extraordinary circumstances the "extension point" will be implemented using the standard STIX component. The <code>IndicatorBaseType</code> extension point (in STIX_Package/Indicators) should be implemented with <code>IndicatorType</code> from the indicators schema, for example (you will see this when we get farther in the document).</p>
-<p>A third reason (well, really just a variety of the first) is to implement controlled vocabularies.</p>
-<p>While controlled vocabularies in some ways are simply a specific use of <code>xsi:type</code> extension mechanisms, in other ways they have their own goals and purposes so we think about them separately from normal extension points.</p>
-</div>
-
-<div class="well well-sm">
-<h4>Concept: Controlled Vocabulary</h4>
-<p>The goal for STIX controlled vocabularies is to allow for the expression of an item in a vocabulary (in this case <code>Indicators - Watchlist</code>) as well as an identification of which vocabulary this comes from (in this case, <code>PackageIntentVocab-1.0</code>), if any. You can identify a field that uses a controlled vocabulary in the schema by noticing that its type is <code>ControlledVocabularyStringType</code> (or other controlled vocabulary types in CybOX). In many cases, STIX or CybOX also provide a default vocabulary for a field. If this is the case, it will be noted in the schema annotations and that type will be defined in, as you might guess, <code>stix_default_vocabularies.xsd</code> or <code>cybox_default_vocabularies.xsd</code>. In this case, the author used the STIX default vocabulary for the field by setting the xsi:type to the type noted in the annotations.</p>
-<p>In general, if STIX provides a default vocabulary it's best to use that vocabulary unless you have a good reason not to. That way users of STIX can understand what you mean without having to rely on external definitions and the community can standardize on vocabularies.</p>
-<p>One note is that in some cases you might need to represent a value without explicitly defining the vocabulary. If that's the case, you can leave the xsi:type off and just enter your value. Understand, however, that by doing this you're relying on consumers to understand your value without having it defined anywhere.</p>
-</div>
-
 ## Indicators
 
 ```xml
@@ -148,7 +110,17 @@ There's a lot going on up there, so let's take a look at each element one at a t
 
 Though we're looking at an indicator now, the two pieces of data we'll look at apply to all STIX components.
 
-The first thing to note is that, as we discussed above, the xsi:type attribute is used to indicate that we're implementing the `IndicatorBaseType` extension point on the `Indicator` element with a type of `IndicatorType`. For each component you add (except Observable) you will need to do this.
+The first thing to note is that the xsi:type attribute is used to indicate that we're implementing the `IndicatorBaseType` extension point on the `Indicator` element with a type of `IndicatorType` (see concept note below). For each component you add (except Observable) you will need to do this.
+
+<div class="well well-sm">
+<h4>Concept: xsi:type</h4>
+<p>xsi:type is a standard XML and XML schema mechanism for enabling type hierarchies (inheritance, if you're an object-oriented programmer). Essentially, STIX uses this to create abstract placeholders (in this case, the Package_Intent element) that can be filled in with specific implementations (in this case, <code>PackageIntentVocab-1.0</code>). Whenever you see an <code>xsi:type</code> attribute in an instance document it means that it's implementing an extension point.</p>
+<p>STIX uses extension points for several reasons. The first, and most obvious, is to allow several implementations for a given field. For example, data markings are implemented using an extension point to allow users to choose which type of data markings they want to use (if any). Some users might want TLP, others might want just a simple marking statement, and others might have something specific to their organization or industry. STIX doesn't want to force everyone to use the same implementation, so simply provides an extension point so that users can use whichever they want (assuming all parties in the sharing arrangement agree on this of course).</p>
+<p>In many cases, STIX provides extensions to fill these uses: for data markings, it provides both a TLP implementation and a mechanism to make simple statements. That does not mean users are limited to these extensions, however, they are free to use anything they want (again understanding that all parties must understand this marking extension).</p>
+<p>A second reason STIX uses xsi:type is to conceptually separate components from the core schema. Each of the STIX components (with the exception of CybOX) is implemented as an "extension point". In this case, the assumption is that except for extraordinary circumstances the "extension point" will be implemented using the standard STIX component. The <code>IndicatorBaseType</code> extension point (in STIX_Package/Indicators) should be implemented with <code>IndicatorType</code> from the indicators schema, for example (you will see this when we get farther in the document).</p>
+<p>A third reason (well, really just a variety of the first) is to implement controlled vocabularies.</p>
+<p>While controlled vocabularies in some ways are simply a specific use of <code>xsi:type</code> extension mechanisms, in other ways they have their own goals and purposes so we think about them separately from normal extension points.</p>
+</div>
 
 Next, notice the ID and timestamp attributes. We suggest giving all top-level components in STIX an ID compliant with our [Suggested Practices|(https://github.com/STIXProject/schemas/wiki/Suggested-Practices-%281.1%29#formatting-ids) and, as explained above, whenever you give a versioned construct an ID you should give it a timestamp.
 
@@ -158,9 +130,17 @@ Next, notice the ID and timestamp attributes. We suggest giving all top-level co
 <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">IP Watchlist</indicator:Type>
 ```
 
-The indicator type field is used to describe, not surprisingly, what type of indicator is being represented. If you've been paying attention, you might guess that the `indicator:Type` field is an instance of a controlled vocabulary. You would be right: you can tell because it has an `xsi:type` set to something ending in "Vocab".
+The indicator type field is used to describe, not surprisingly, what type of indicator is being represented. The `indicator:Type` field is an instance of a controlled vocabulary (see concept note below), which is a special usage of `xsi:type` to describe vocabularies.
 
 In this case, we're saying that the type of indicator we're representing is an "IP Watchlist", and the definition for what that means is in `stixVocabs:IndicatorTypeVocab-1.1`.
+
+<div class="well well-sm">
+<h4>Concept: Controlled Vocabulary</h4>
+<p>The goal for STIX controlled vocabularies is to allow for the expression of an item in a vocabulary (in this case <code>Indicators - Watchlist</code>) as well as an identification of which vocabulary this comes from (in this case, <code>PackageIntentVocab-1.0</code>), if any. You can identify a field that uses a controlled vocabulary in the schema by noticing that its type is <code>ControlledVocabularyStringType</code> (or other controlled vocabulary types in CybOX). In many cases, STIX or CybOX also provide a default vocabulary for a field. If this is the case, it will be noted in the schema annotations and that type will be defined in, as you might guess, <code>stix_default_vocabularies.xsd</code> or <code>cybox_default_vocabularies.xsd</code>. In this case, the author used the STIX default vocabulary for the field by setting the xsi:type to the type noted in the annotations.</p>
+<p>In general, if STIX provides a default vocabulary it's best to use that vocabulary unless you have a good reason not to. That way users of STIX can understand what you mean without having to rely on external definitions and the community can standardize on vocabularies.</p>
+<p>One note is that in some cases you might need to represent a value without explicitly defining the vocabulary. If that's the case, you can leave the xsi:type off and just enter your value. Understand, however, that by doing this you're relying on consumers to understand your value without having it defined anywhere.</p>
+</div>
+
 
 ### Indicator Description
 
