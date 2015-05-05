@@ -91,77 +91,12 @@ The `@id` attribute is set to a globally-unique identifier for this content, and
 
 Finally, the `@timestamp` attribute is used for [versioning](/documentation/concepts/versioning/) and should be set to the time (with fractional seconds if possible) that this version of the construct was published. To avoid ambiguity, this time should include a timezone if at all possible.
 
-## STIX Header
-
-The `STIX_Header` element ([STIXHeaderType](/data-model/{{site.current_version}}/stix/STIXHeaderType)) is used to represent metadata about the content contained in the containing `STIX_Package`. It is added as a child of the `STIX_Package`:
-
-```xml
-<stix:STIX_Package
-  ... >
-  <stix:STIX_Header>
-  </stix:STIX_Header>
-</stix:STIX_Package>
-```
-
-In this case, we'll set a title, package intent, and information source for this package. More generally, you can check the data model documentation and suggested practices for information on what you can and should populate for the element you're creating.
-
-### Report Title
-
-The `Title` field gives the package (report) a basic title. Because this report talks about a file hash for fake malware, we'll indicate that in the report title.
-
-```xml
-<stix:STIX_Header>
-  <stix:Title>Example File Hash Watchlist for Fake Malware XYZ</stix:Title>
-</stix:STIX_Header>
-```
-
-### Package Intent
-
-The `Package_Intent` field tells consumers what type of threat intelligence you're intending to convey. In this case, we'll be conveying indicators of a malicious piece of software.
-
-If you followed the sample walkthrough or checked the documentation, you'll know that this field is a [controlled vocabulary](/documentation/concepts/controlled-vocabularies/). In this case we'll set the intent to a value in the default vocabulary by setting the `xsi:type` to the type for the default vocabulary for package intent. You can find the default vocabulary listed in the [documentation](/data-model/{{site.current_version}}/stix/STIXHeaderType) for the field.
-
-For this scenario we'll set that field to "Indicators - Malware Artifacts".
-
-```xml
-<stix:STIX_Header>
-  <stix:Title>Example File Hash Watchlist for Fake Malware XYZ</stix:Title>
-  <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Indicators - Malware Artifacts</stix:Package_Intent>
-</stix:STIX_Header>
-```
-
-### Information Source
-
-The information source field contains information about the who/what/when/where/how of report production. In this case we'll fill in the author (ourselves) and the time it was produced:
-
-```xml
-<stix:STIX_Header>
-  <stix:Title>Example File Hash Watchlist for Fake Malware XYZ</stix:Title>
-  <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Indicators - Malware Artifacts</stix:Package_Intent>
-  <stix:Information_Source>
-    <stixCommon:Identity>
-      <stixCommon:Name>John Smith</stixCommon:Name>
-    </stixCommon:Identity>
-    <stixCommon:Time>
-      <cyboxCommon:Produced_Time>2013-12-20T12:48:50Z</cyboxCommon:Produced_Time>
-    </stixCommon:Time>
-  </stix:Information_Source>
-</stix:STIX_Header>
-```
-
-There are a few things we did here:
-
-1. The `Information_Source` element is still in the STIX namespace, but the `Identity` and `Time` children are in the `stixCommon` namespace. You can see what namespace a node is in either through autocomplete (it will automatically add the correct one) or by looking at the schema.
-1. You see we also use `cyboxCommon` for the `Time` element. Some places in STIX use elements from the CybOX common namespace.
-1. Note that in most cases the `Produced_Time` will be identical to the `@timestamp` attribute on the STIX_Package element.
-
 ## Adding Content
 
-Now that we've finished the header, let's move on to adding the indicator itself. First, we create the wrapper element and a stub indicator.
+The first step is to create the indicators list and the indicator itself:
 
 ```xml
 <stix:STIX_Package ...>
-  <stix:STIX_Header><!-- snip --></stix:STIX_Header>
   <stix:Indicators>
     <stix:Indicator></stix:Indicator>
   </stix:Indicators>
@@ -180,14 +115,12 @@ Before we add content though, we should set an ID and timestamp. Following the s
 <stix:Indicator xsi:type="indicator:IndicatorType" id="example:indicator-3c3885fe-a350-4a5c-aae3-6f014df36975" timestamp="2014-05-08T09:00:00.000000Z">
 ```
 
-As with STIX_Header, we'll also check suggested practices to see also look at the suggested practices for STIX indicators to see what elements we should add.
-
 ### Set the Indicator Title and Type
 
-Basic indicator data includes a human-readable `Title` and the indicator's `Type` (similar to `Title` and `Package_Intent` on `STIX_Package`).
+Basic indicator data includes a human-readable `Title` and the indicator's `Type`.
 
 {% capture alert_text %}
-If you're following along, at this point it might be worth seeing if you can add these yourself before looking to see how I did it. Specifically, make sure you can identify the fact that `Type` is a controlled vocabulary field and, from there, figure out which vocabulary to use.
+If you're following along, at this point it might be worth seeing if you can add these yourself before looking to see how I did it. Specifically, make sure you can identify the fact that `Type` is a controlled vocabulary field (see the sample walkthrough) and, from there, figure out which vocabulary to use.
 {% endcapture %}{% include alert.html type="warning" %}
 
 ```xml
@@ -376,7 +309,7 @@ The entire document, by the way, should look something like this:
   xmlns:example="http://example.com"
   xsi:schemaLocation="
     http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.2/stix_core.xsd
-    http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.1.1/indicator.xsd
+    http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.2/indicator.xsd
     http://stix.mitre.org/TTP-1 http://stix.mitre.org/XMLSchema/ttp/1.2/ttp.xsd
     http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.2/stix_common.xsd
     http://cybox.mitre.org/cybox-2 http://cybox.mitre.org/XMLSchema/core/2.1/cybox_core.xsd
@@ -388,18 +321,6 @@ The entire document, by the way, should look something like this:
   version="1.2"
   id="example:package-382ded87-52c9-4644-bab0-ad3168cbad59"
   timestamp="2014-05-08T09:00:00.000000Z">
-  <stix:STIX_Header>
-    <stix:Title>Example File Hash Watchlist for Fake Malware XYZ</stix:Title>
-    <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Indicators - Malware Artifacts</stix:Package_Intent>
-    <stix:Information_Source>
-      <stixCommon:Identity>
-        <stixCommon:Name>John Smith</stixCommon:Name>
-      </stixCommon:Identity>
-      <stixCommon:Time>
-        <cyboxCommon:Produced_Time>2013-12-20T12:48:50Z</cyboxCommon:Produced_Time>
-      </stixCommon:Time>
-    </stix:Information_Source>
-  </stix:STIX_Header>
   <stix:Indicators>
     <stix:Indicator xsi:type="indicator:IndicatorType" id="example:indicator-3c3885fe-a350-4a5c-aae3-6f014df36975" timestamp="2014-05-08T09:00:00.000000Z">
       <indicator:Title>Malware XYZ Hashes</indicator:Title>
