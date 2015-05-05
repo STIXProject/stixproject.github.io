@@ -11,7 +11,7 @@ Some basic guidance is provided below on which forms of observables are appropri
 {% capture expandable %}
 **Outgoing network connection to a particular IP that occurred at a specific time**
 {% highlight xml linenos %}
-<stix:STIX_Package id="example:STIXPackage-f61cd874-494d-4194-a3e6-6b487dbb6d6e" timestamp="2014-05-08T09:00:00.000000Z" version="1.1.1">
+<stix:STIX_Package id="example:STIXPackage-f61cd874-494d-4194-a3e6-6b487dbb6d6e" timestamp="2014-05-08T09:00:00.000000Z" version="{{site.current_version}}">
   <stix:STIX_Header>
     <stix:Title>Malicious network connection observation</stix:Title>
     <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Observations</stix:Package_Intent>
@@ -317,7 +317,7 @@ Some basic guidance is provided below on which forms of observables are appropri
 
 ###Selecting level of detail for observable composition
 
-Whether you are characterizing instances or patterns, the types of observables you may wish to characterize in STIX/CybOX can vary widely from the very simple to the complex depending on what you are trying to 
+Whether you are characterizing instances or patterns, the types of observables you may wish to characterize in STIX/CybOX can vary widely from the very simple to the complex depending on what you are trying to
 [Concepts: Composition of Observables and Indicators](/documentation/concepts/composition) provides more information characterizing the potential levels of detail for observable composition in STIX/CybOX.
 
 The table below gives guidance on the suggested level of detail to use for a range of common use cases.

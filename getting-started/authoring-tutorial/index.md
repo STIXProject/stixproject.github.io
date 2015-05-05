@@ -44,7 +44,7 @@ The `xmlns:*` attributes on `STIX_Package` map namespace prefixes/aliases to ful
 
 `xsi:schemaLocation` is an optional hint (not required for validation) used by some tools to indicate which schemas should be used to validate the content. The format is `[namespace] [schema location] [namespace 2] [schema location 2] etc` and, if you use it, the mapping must be present for every namespace.
 
-In this case, we've looked and figured out which namespaces/schemas we'll be using ahead of time and added the mappings for those. Alternatively, you can either start with the [template](http://stix.mitre.org/language/version1.1.1/stix_v1.1.1_template.xml) and delete the ones you don't need when you're done or just start with none and add them as necessary.
+In this case, we've looked and figured out which namespaces/schemas we'll be using ahead of time and added the mappings for those. Alternatively, you can either start with the [template](http://stix.mitre.org/language/version{{site.current_version}}/stix_v{{site.current_version}}_template.xml) and delete the ones you don't need when you're done or just start with none and add them as necessary.
 
 ```xml
 <stix:STIX_Package
@@ -60,14 +60,14 @@ In this case, we've looked and figured out which namespaces/schemas we'll be usi
   xmlns:FileObj="http://cybox.mitre.org/objects#FileObject-2"
   xmlns:example="http://example.com"
   xsi:schemaLocation="
-    http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd
+    http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.2/stix_core.xsd
     http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.1.1/indicator.xsd
-    http://stix.mitre.org/TTP-1 http://stix.mitre.org/XMLSchema/ttp/1.1.1/ttp.xsd
-    http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd
+    http://stix.mitre.org/TTP-1 http://stix.mitre.org/XMLSchema/ttp/1.2/ttp.xsd
+    http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.2/stix_common.xsd
     http://cybox.mitre.org/cybox-2 http://cybox.mitre.org/XMLSchema/core/2.1/cybox_core.xsd
     http://cybox.mitre.org/common-1 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd
     http://cybox.mitre.org/objects#FileObject-2 http://cybox.mitre.org/XMLSchema/objects/File/2.1/File_Object.xsd
-    http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
+    http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.2.0/stix_default_vocabularies.xsd
     http://cybox.mitre.org/default_vocabularies-2 http://cybox.mitre.org/XMLSchema/default_vocabularies/2.1/cybox_default_vocabularies.xsd
   ">
 </stix:STIX_Package>
@@ -78,7 +78,7 @@ In this case, we've looked and figured out which namespaces/schemas we'll be usi
 ```xml
 <stix:STIX_Package
   ...
-  version="1.1.1"
+  version="1.2"
   id="example:package-382ded87-52c9-4644-bab0-ad3168cbad59"
   timestamp="2014-05-08T09:00:00.000000Z"
   >
@@ -375,17 +375,17 @@ The entire document, by the way, should look something like this:
   xmlns:FileObj="http://cybox.mitre.org/objects#FileObject-2"
   xmlns:example="http://example.com"
   xsi:schemaLocation="
-    http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd
+    http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.2/stix_core.xsd
     http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.1.1/indicator.xsd
-    http://stix.mitre.org/TTP-1 http://stix.mitre.org/XMLSchema/ttp/1.1.1/ttp.xsd
-    http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd
+    http://stix.mitre.org/TTP-1 http://stix.mitre.org/XMLSchema/ttp/1.2/ttp.xsd
+    http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.2/stix_common.xsd
     http://cybox.mitre.org/cybox-2 http://cybox.mitre.org/XMLSchema/core/2.1/cybox_core.xsd
     http://cybox.mitre.org/common-1 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd
     http://cybox.mitre.org/objects#FileObject-2 http://cybox.mitre.org/XMLSchema/objects/File/2.1/File_Object.xsd
-    http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
+    http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.2.0/stix_default_vocabularies.xsd
     http://cybox.mitre.org/default_vocabularies-2 http://cybox.mitre.org/XMLSchema/default_vocabularies/2.1/cybox_default_vocabularies.xsd
   "
-  version="1.1.1"
+  version="1.2"
   id="example:package-382ded87-52c9-4644-bab0-ad3168cbad59"
   timestamp="2014-05-08T09:00:00.000000Z">
   <stix:STIX_Header>

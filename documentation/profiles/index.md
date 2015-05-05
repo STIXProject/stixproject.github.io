@@ -129,7 +129,7 @@ Because of these rules, any STIX document that complies with a child profile als
 
 ## Representing profiles
 
-The current representation for STIX profiles is a specifically-formatted Excel spreadsheet. The [representation](representation) page goes into detail on how the format works and the profile templates available on the [release page](http://stix.mitre.org/language/version1.1.1) are a good starting point.
+The current representation for STIX profiles is a specifically-formatted Excel spreadsheet. The [representation](representation) page goes into detail on how the format works and the profile templates available above are a good start.
 
 ## Validating content against profiles
 

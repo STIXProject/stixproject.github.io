@@ -11,7 +11,7 @@ no_in_page_title: true
 <div class="alert alert-warning" role="alert">
   <a href="https://www.oasis-open.org/committees/tc_cat.php?cat=security" class="alert-link">
   STIX is being transitioned to OASIS </a>
-  - an open standards organization. 
+  - an open standards organization.
   <a href="https://stixproject.github.io/oasis-faq.pdf" class="alert-link">
   Read the FAQ to learn more.</a>
 </div>
@@ -29,7 +29,7 @@ no_in_page_title: true
   <div class="col-md-4 text-center">
     <h2>Current Release</h2>
     <p>Click for downloads and more.</p>
-    <p><a class="btn btn-primary btn-lg" role="button" href="https://stix.mitre.org/language/version1.1.1/">STIX Version 1.1.1 »</a></p>
+    <p><a class="btn btn-primary btn-lg" role="button" href="https://stix.mitre.org/language/version{{site.current_version}}/">STIX Version {{site.current_version}} »</a></p>
   </div>
   <div class="col-md-4 text-center">
     <h2>Community</h2>
@@ -64,7 +64,7 @@ no_in_page_title: true
     learn how to create and understand idiomatic STIX content.</p>
     <p><a class="btn btn-primary btn-lg" role="button" href="/documentation/idioms">Idioms »</a></p>
   </div>
-  
+
 <hr><hr />
 
 <p class="lead text-center">
@@ -72,4 +72,3 @@ no_in_page_title: true
 	<br/>
 	<strong>Reach out to us at <a href="mailto:stix@mitre.org">stix@mitre.org</a>!</strong>
 </p>
-

@@ -34,12 +34,12 @@ The example below shows a VERY simple initial `Campaign` defined to correlate a 
 
 {% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="campaign" %}{% highlight xml linenos %}
 <stix:Campaign id="example:Campaign-e5268b6e-4931-42f1-b379-87f48eb41b1e" timestamp="2014-08-08T15:50:10.983728+00:00" 
-        xsi:type='campaign:CampaignType' version="1.1.1">
+        xsi:type='campaign:CampaignType' version="1.2">
     <campaign:Title>Compromise of ATM Machines</campaign:Title>
     <campaign:Related_TTPs>
         <campaign:Related_TTP>
             <stixCommon:TTP id="example:ttp-2d1c6ab3-5e4e-48ac-a32b-f0c01c2836a8" timestamp="2014-08-08T15:50:10.983464+00:00" 
-                    xsi:type='ttp:TTPType' version="1.1.1">
+                    xsi:type='ttp:TTPType' version="1.2">
                 <ttp:Title>Victim Targeting: Customer PII and Financial Data</ttp:Title>
                 <ttp:Victim_Targeting>
                     <ttp:Targeted_Information xsi:type="stixVocabs:InformationTypeVocab-1.0">Information Assets - Financial Data</ttp:Targeted_Information>
@@ -61,7 +61,7 @@ The example below shows a VERY simple initial `Campaign` defined to correlate a 
     <campaign:Attribution>
         <campaign:Attributed_Threat_Actor>
             <stixCommon:Threat_Actor id="example:threatactor-56f3f0db-b5d5-431c-ae56-c18f02caf500" 
-                    timestamp="2014-08-08T15:50:10.983629+00:00" xsi:type='ta:ThreatActorType' version="1.1.1">
+                    timestamp="2014-08-08T15:50:10.983629+00:00" xsi:type='ta:ThreatActorType' version="1.2">
             <ta:Title>People behind the intrusion</ta:Title>
         </stixCommon:Threat_Actor>
         </campaign:Attributed_Threat_Actor>

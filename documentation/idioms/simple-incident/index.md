@@ -44,7 +44,7 @@ Note that timestamps describing the incident should be represented under `incide
         <stix:Description>Sample breach report</stix:Description>
     </stix:STIX_Header>
     <stix:Incidents>
-        <stix:Incident id="example:incident-8236b4a2-abe0-4b56-9347-288005c4bb92" timestamp="2014-11-18T23:40:08.061362+00:00" xsi:type='incident:IncidentType' version="1.1.1">
+        <stix:Incident id="example:incident-8236b4a2-abe0-4b56-9347-288005c4bb92" timestamp="2014-11-18T23:40:08.061362+00:00" xsi:type='incident:IncidentType' version="1.2">
             <incident:Title>Breach of Cyber Tech Dynamics</incident:Title>
             <incident:Time>
                 <incident:Initial_Compromise precision="second">2012-01-30T00:00:00</incident:Initial_Compromise>
