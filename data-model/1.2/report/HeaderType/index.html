@@ -1,0 +1,135 @@
+---
+layout: data_model
+title: HeaderType
+this_version: 1.2
+---
+
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>HeaderType<span class="subdued">Report Schema</span></h1>
+    <p class="data-model-description">The <a href='/data-model/1.2/report/HeaderType'>HeaderType</a> provides a structure for characterizing the contextual information in a Report of STIX content.</p>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.2" selected="selected">STIX 1.2</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+
+<hr />
+
+
+<h2>Fields</h2>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Title<span class="occurrence">0..1</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>The Title field provides a simple title for this Report.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Intent<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Intent field characterizes the intended purpose(s) or use(s) for this Report.</p>
+        
+          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is <a href='/data-model/1.2/stixVocabs/ReportIntentVocab-1.0'>ReportIntentVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.2.0/stix_default_vocabularies.xsd.</p>
+        
+          <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Description<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/StructuredTextType">StructuredTextType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Description field provides a description of this Report.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Short_Description<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/StructuredTextType">StructuredTextType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Short_Description field provides a short description of this Report.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Handling<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/marking/MarkingType">MarkingType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the relevant handling guidance for this Report. The valid marking scope is the nearest <a href='/data-model/1.2/report/ReportType'>ReportType</a> ancestor of this Handling element and all its descendants.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Information_Source<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/InformationSourceType">InformationSourceType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Information_Source field details the source of this Report, including time information as well as information about the producer, contributors, tools, and references.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

@@ -1,0 +1,83 @@
+---
+layout: data_model
+title: SendControlCodeEffectType
+this_version: 1.2
+---
+
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>SendControlCodeEffectType<span class="subdued">CybOX Core Schema</span></h1>
+    <p class="data-model-description">The <a href='/data-model/1.2/cybox/SendControlCodeEffectType'>SendControlCodeEffectType</a> is intended to characterize the effects of actions upon objects where some control code, or other control-oriented communication signal, is sent to the object. For example, an action may send a control code to change the running state of a process.</p>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.2" selected="selected">STIX 1.2</option>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+
+<hr />
+
+
+<h2>Fields</h2>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@effect_type<span class="occurrence">optional</span></td>
+      <td>
+        
+          EffectTypeEnum
+        
+      </td>
+      <td>
+        
+          <p>The effect_type field specifies the nature of the Defined Effect instantiated in the place of the Defined_Effect element.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Control_Code<span class="occurrence">1..1</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>The Control_Code field specifies the actual control code that was sent to the object.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

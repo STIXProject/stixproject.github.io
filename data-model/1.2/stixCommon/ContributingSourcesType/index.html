@@ -1,0 +1,76 @@
+---
+layout: data_model
+title: ContributingSourcesType
+this_version: 1.2
+---
+
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>ContributingSourcesType<span class="subdued">STIX Common Schema</span></h1>
+    
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.2" selected="selected">STIX 1.2</option>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+    <p>
+      <a href="http://stix.readthedocs.org/en/latest/api/common/information_source.html#stix.common.information_source.ContributingSources">
+        <img src="/images/python-logo.png" alt="Python" /><br />
+        API support
+      </a>
+    </p>
+    
+  </div>
+
+</div>
+
+
+<hr />
+
+
+<h2>Fields</h2>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Source<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/InformationSourceType">InformationSourceType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Source field contains information describing the identity, resources and timing of involvement for a single contributing Source.</p>
+        
+          <p>This field is implemented through the xsi:type extension mechanism. The default type is <a href='/data-model/1.2/stix-ciqidentity/CIQIdentity3.0InstanceType'>CIQIdentity3.0InstanceType</a> in the http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1 namespace. This type is defined in the extensions/identity/ciq_identity.xsd file or at the URL http://stix.mitre.org/XMLSchema/extensions/identity/ciq_identity/1.1.1/ciq_identity.xsd.</p>
+        
+          <p>Those who wish to express a simple name may also do so by not specifying an xsi:type and using the Name field.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

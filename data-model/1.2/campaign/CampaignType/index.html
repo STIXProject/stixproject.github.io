@@ -1,0 +1,356 @@
+---
+layout: data_model
+title: CampaignType
+this_version: 1.2
+---
+
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>CampaignType<span class="subdued">Campaign Schema</span></h1>
+    <p class="data-model-description">Represents a single STIX Campaign.</p><p class="data-model-description">Campaigns are instances of ThreatActors pursuing an intent, as observed through sets of Incidents and/or TTP, potentially across organizations. In a structured sense, Campaigns may consist of the suspected intended effect of the adversary, the related TTP leveraged within the Campaign, the related Incidents believed to be part of the Campaign, attribution to the ThreatActors believed responsible for the Campaign, other Campaigns believed related to the Campaign, confidence in the assertion of aggregated intent and characterization of the Campaign, activity taken in response to the Campaign, source of the Campaign information, handling guidance, etc.</p>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.2" selected="selected">STIX 1.2</option>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+    <p>
+      <a href="http://stix.readthedocs.org/en/latest/api/campaign/campaign.html#stix.campaign.Campaign">
+        <img src="/images/python-logo.png" alt="Python" /><br />
+        API support
+      </a>
+    </p>
+    
+  </div>
+
+</div>
+
+
+<hr />
+
+
+<h2>Fields</h2>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@id<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>Specifies a globally unique identifier for this cyber threat Campaign.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@idref<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>Specifies a globally unique identifier for a cyber threat Campaign specified elsewhere.</p>
+        
+          <p>When idref is specified, the id attribute must not be specified, and any instance of this Campaign should not hold content.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@timestamp<span class="occurrence">optional</span></td>
+      <td>
+        
+          dateTime
+        
+      </td>
+      <td>
+        
+          <p>Specifies a timestamp for the definition of a specific version of a Campaign. When used in conjunction with the id, this field is specifying the definition time for the specific version of the  Campaign. When used in conjunction with the idref, this field is specifying a reference to a specific version of a Campaign defined elsewhere. This field has no defined semantic meaning if used in the absence of either the id or idref fields.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@version<span class="occurrence">optional</span></td>
+      <td>
+        
+          CampaignVersionType
+        
+      </td>
+      <td>
+        
+          <p>Specifies the relevant STIX-Campaign schema version for this content.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Title<span class="occurrence">0..1</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>The Title field provides a simple title for this Campaign.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Description<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/StructuredTextType">StructuredTextType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Description field is optional and provides an unstructured, text description of this Campaign.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Short_Description<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/StructuredTextType">StructuredTextType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Short_Description field is optional and provides a short, unstructured, text description of this Campaign.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Names<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/campaign/NamesType">NamesType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Names field specifies Names used to identify this Campaign. These may be either internal or external names.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Intended_Effect<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/StatementType">StatementType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Intended_Effect field characterizes the intended effect of this cyber threat Campaign.</p>
+        
+          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is <a href='/data-model/1.2/stixVocabs/IntendedEffectVocab-1.0'>IntendedEffectVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.2.0/stix_default_vocabularies.xsd.</p>
+        
+          <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Status<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
+        
+      </td>
+      <td>
+        
+          <p>The status of this Campaign. For example, is the Campaign ongoing, historical, future, etc.</p>
+        
+          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is CampaignStatusType in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.2.0/stix_default_vocabularies.xsd.</p>
+        
+          <p>	Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Related_TTPs<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/campaign/RelatedTTPsType">RelatedTTPsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Related_TTPs field specifies TTPs asserted to be related to this cyber threat Campaign.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Related_Incidents<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/campaign/RelatedIncidentsType">RelatedIncidentsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Related_Incidents field identifies or characterizes one or more Incidents related to this cyber threat Campaign. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Related_Indicators<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/campaign/RelatedIndicatorsType">RelatedIndicatorsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Related_Indicators field identifies or characterizes one or more cyber threat Indicators related to this cyber threat Campaign.</p>
+        
+          <p>NOTE: As of STIX Version 1.1, this field is deprecated and is scheduled to be removed in STIX Version 2.0. Relationships between indicators and campaigns should be represented using the Related_Campaigns field on <a href='/data-model/1.2/indicator/IndicatorType'>IndicatorType</a> unless legacy code or content requires the use of this field.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Attribution<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/campaign/AttributionType">AttributionType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Attribution field specifies assertions of attibuted Threat Actors for this cyber threat Campaign.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Associated_Campaigns<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/campaign/AssociatedCampaignsType">AssociatedCampaignsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Associated_Campaigns field specifies other cyber threat Campaigns asserted to be associated with this cyber threat Campaign.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Confidence<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/ConfidenceType">ConfidenceType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Confidence field characterizes the level of confidence held in the characterization of this Campaign.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Activity<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/ActivityType">ActivityType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Activity field characterizes actions taken in regards to this Campaign. This field is defined as of type <a href='/data-model/1.2/stixCommon/ActivityType'>ActivityType</a> which is an abstract type enabling the extension and inclusion of various formats of Activity characterization.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Information_Source<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/InformationSourceType">InformationSourceType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Information_Source field details the source of this entry.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Handling<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/marking/MarkingType">MarkingType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Handling field specifies the appropriate data handling markings for the elements of this Campaign. The valid marking scope is the nearest <a href='/data-model/1.2/stixCommon/CampaignBaseType'>CampaignBaseType</a> ancestor of this Handling element and all its descendants.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Related_Packages<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/RelatedPackageRefsType">RelatedPackageRefsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Related_Packages field identifies or characterizes relationships to set of related Packages.</p>
+        
+          <p>DEPRECATED: This field is deprecated and will be removed in the next major version of STIX. Its use is strongly discouraged except for legacy applications.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

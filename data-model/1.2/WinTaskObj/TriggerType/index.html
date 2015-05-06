@@ -1,0 +1,167 @@
+---
+layout: data_model
+title: TriggerType
+this_version: 1.2
+---
+
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>TriggerType<span class="subdued">Win Task Object Schema</span></h1>
+    <p class="data-model-description">The <a href='/data-model/1.2/WinTaskObj/TriggerType'>TriggerType</a> type characterizes task triggers. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383868(v=vs.85).aspx.</p>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.2" selected="selected">STIX 1.2</option>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+
+<hr />
+
+
+<h2>Fields</h2>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@enabled<span class="occurrence">optional</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>The enabled field specifies whether the trigger is enabled.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Trigger_Begin<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Trigger_Begin_Element specifies the date/time that the trigger is activated.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Trigger_Delay<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/DurationObjectPropertyType">DurationObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Trigger_Delay field specifies the delay that takes place between when the task is registered and when the task is started.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Trigger_End<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Trigger_End field specifies the date/time that the trigger is deactivated.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Trigger_Frequency<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/WinTaskObj/TaskTriggerFrequencyType">TaskTriggerFrequencyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Trigger_Frequency field specifies the frequency at which the trigger repeats.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Trigger_Max_Run_Time<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/DurationObjectPropertyType">DurationObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The maximum amount of time that the task launched by the trigger is allowed to run. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa383868(v=vs.85).aspx.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Trigger_Session_Change_Type<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Trigger_Session_Change_Type field specifies the type of Terminal Server session change that would trigger a task launch. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381298(v=vs.85).aspx.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Trigger_Type<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/WinTaskObj/TaskTriggerType">TaskTriggerType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Trigger_Type specifies the type of the task trigger.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

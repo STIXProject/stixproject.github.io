@@ -1,0 +1,83 @@
+---
+layout: data_model
+title: ICMPv4TimeExceededType
+this_version: 1.2
+---
+
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>ICMPv4TimeExceededType<span class="subdued">Network Packet Object Schema</span></h1>
+    <p class="data-model-description">Time Exceeded error message; ICMP type=11.</p>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.2" selected="selected">STIX 1.2</option>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+
+<hr />
+
+
+<h2>Fields</h2>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>TTL_Exceeded_In_Transit<span class="occurrence">0..1</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>specifies that the time-to-live was exceeded in transit (code=0).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Frag_Reassembly_Time_Exceeded<span class="occurrence">0..1</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>specifies that the fragment reassembly time was exceeded (code=1).</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

@@ -1,0 +1,128 @@
+---
+layout: data_model
+title: VictimTargetingType
+this_version: 1.2
+---
+
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>VictimTargetingType<span class="subdued">TTP Schema</span></h1>
+    
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.2" selected="selected">STIX 1.2</option>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+    <p>
+      <a href="http://stix.readthedocs.org/en/latest/api/ttp/victim_targeting.html#stix.ttp.victim_targeting.VictimTargeting">
+        <img src="/images/python-logo.png" alt="Python" /><br />
+        API support
+      </a>
+    </p>
+    
+  </div>
+
+</div>
+
+
+<hr />
+
+
+<h2>Fields</h2>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Identity<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/IdentityType">IdentityType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Identity field characterizes information about the identity or characteristics of the targeted people or organizations.</p>
+        
+          <p>This field is implemented through the xsi:type extension mechanism. The default type is <a href='/data-model/1.2/stix-ciqidentity/CIQIdentity3.0InstanceType'>CIQIdentity3.0InstanceType</a> in the http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1 namespace. This type is defined in the extensions/identity/ciq_identity_3.0.xsd file or at the URL http://stix.mitre.org/XMLSchema/extensions/identity/ciq_identity_3.0/1.1/ciq_identity_3.0.xsd.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Targeted_Systems<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Targeted_Systems field characterizes a type of system that is targeted. It may be included multiple times to specify multiple types of targeted systems.</p>
+        
+          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is <a href='/data-model/1.2/stixVocabs/SystemTypeVocab-1.0'>SystemTypeVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.2.0/stix_default_vocabularies.xsd.</p>
+        
+          <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Targeted_Information<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Targeted_Systems field characterizes a type of information that is targeted. It may be included multiple times to specify multiple types of targeted information.</p>
+        
+          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is <a href='/data-model/1.2/stixVocabs/InformationTypeVocab-1.0'>InformationTypeVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.2.0/stix_default_vocabularies.xsd.</p>
+        
+          <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Targeted_Technical_Details<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cybox/ObservablesType">ObservablesType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Targeted_Technical_Details field characterizes the technical information about what is targeted. It is implemented using the CybOX observables type, which allows for the representation of products, platforms, and code that are targeted.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

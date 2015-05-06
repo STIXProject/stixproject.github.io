@@ -1,0 +1,559 @@
+---
+layout: data_model
+title: HTTPRequestHeaderFieldsType
+this_version: 1.2
+---
+
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>HTTPRequestHeaderFieldsType<span class="subdued">HTTP Session Object Schema</span></h1>
+    <p class="data-model-description">The <a href='/data-model/1.2/HTTPSessionObj/HTTPRequestHeaderFieldsType'>HTTPRequestHeaderFieldsType</a> captures parsed HTTP request header fields.</p>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.2" selected="selected">STIX 1.2</option>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+
+<hr />
+
+
+<h2>Fields</h2>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Accept<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Accept field specifies the HTTP Request Accept header field, which defines the Content-Types that are acceptable.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Accept_Charset<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Accept-Charset field specifies the HTTP Request Accept-Charset header field, which defines the character sets that are acceptable.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Accept_Language<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Accept-Language field specifies the HTTP Request Accept-Language header field, which defines the acceptable languages for response.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Accept_Datetime<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Accept-Datetime field specifies the HTTP Request Accept-Datetime header field, which defines the acceptable version time.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Accept_Encoding<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Accept-Encoding field specifies the HTTP Request Accept-Encoding header field, which defines the acceptable encodings.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Authorization<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Authorization field specifies the HTTP Request Authorization header field, which defines the authentication credentials for use in HTTP authentication.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Cache_Control<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Cache-Control field specifies the HTTP Request Cache-Control header field, which defines the directives that MUST be obeyed by all caching mechanisms along the request/response chain.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Connection<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Connection field specifies the HTTP Request Connection header field, which defines the type of connection that the user-agent would prefer.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Cookie<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Cookie field specifies the HTTP Request Cookie header field, which defines the HTTP cookie previously sent by the server.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Content_Length<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Content-Length field specifies the HTTP Request Content-Length header field, which defines the length of the request body in octets.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Content_MD5<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Content-MD5 field specifies the HTTP Request Content-MD5 header field, which defines a Base64 encoded binary MD5 sum of the content of the request body.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Content_Type<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Content-Type field specifies the HTTP Request Content-Type header field, which defines a the MIME type of the body of the request (used with POST and PUT requests).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Date<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Date field specifies the HTTP Request Date header field, which defines the date and time that the message was sent.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Expect<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Expect field specifies the HTTP Request Expect header field, which defines the particular server behaviors that are required by the client.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>From<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/AddressObj/AddressObjectType">AddressObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>The From field specifies the HTTP Request From header field, which defines the email address of the user making the request.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Host<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/HTTPSessionObj/HostFieldType">HostFieldType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Host field specifies the HTTP Request Host header field, which the domain name of the server and the TCP port number on which the server is listening.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>If_Match<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The If-Match field specifies the HTTP Request If-Match header field, which allows the action to be performed if the client supplied entity matches the same entity on the server.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>If_Modified_Since<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The If-Modified-Since field specifies the HTTP Request If-Modified-Since header field, which allows a 304 Not Modified response to be returned if content is unchanged since the input date/time.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>If_None_Match<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The If-Modified-Since field specifies the HTTP Request If-Modified-Since header field, which allows the action to be performed only if the client supplied entity does not match the same entity on the server.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>If_Range<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The If-Range field specifies the HTTP Request If-Range header field, which allows the client to request the part(s) of the entity that they are missing, or otherwise the new entity.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>If_Unmodified_Since<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The If-Unmodified-Since field specifies the HTTP Request If-Unmodified-Since header field, which allows a response to be sent only if the entity has not been modified since a specific date/time.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Max_Forwards<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Max-Forwards field specifies the HTTP Request Max-Forwards header field, which defines the maximum number of times the message can be forwarded through proxies or gateways.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Pragma<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Pragma field specifies the HTTP Request Pragma header field, which defines any implementation-specific values that may have various anywhere along the request-response chain.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Proxy_Authorization<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Proxy-Authorization field specifies the HTTP Request Proxy-Authorization header field, which defines the authorization credentials for connecting to a proxy.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Range<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Range field specifies the HTTP Request Range header field, which defines the range, in bytes, for requesting only part of an entity (bytes are numbered from 0).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Referer<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/URIObj/URIObjectType">URIObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Referer field specifies the HTTP Request Range Referer field, which defines the address of the previous web page from which a link to the currently requested page was followed.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>TE<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The TE field specifies the HTTP Request TE field, which defines the transfer encodings the user agent is willing to accept.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>User_Agent<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The User-Agent field specifies the HTTP Request User-Agent field, which defines the user agent string of the user agent.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Via<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Via field specifies the HTTP Request Via field, which defines any proxies through which the request was sent.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Warning<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Warning field specifies the HTTP Request Warning field, which defines any general warnings about possible problems with the entity body.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>DNT<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The DNT field specifies the non-standard HTTP Request DNT field, which is typically used to request that a web application disable their tracking of a user.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>X_Requested_With<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The X-Requested-With field specifies the non-standard HTTP Request X-Requested-With field, which is typically used to identify Ajax requests.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>X_Forwarded_For<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The X-Forwarded-For field specifies the non-standard HTTP Request X-Forwarded-For field, which is typically used to identify the originating IP address of a client connecting to a web server through an HTTP proxy or load balancer.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>X_Forwarded_Proto<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The X-Forwarded-Proto field specifies the non-standard HTTP Response X-Forwarded-Proto field, which identifies the originating protocol of an HTTP request.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>X_ATT_DeviceId<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The X-ATT-DeviceId field specifies the non-standard HTTP Request X-ATT-DeviceId field, which is typically used to identify the make, model, and firmware of AT&T devices.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>X_Wap_Profile<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/URIObj/URIObjectType">URIObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>The X-Wap-Profile field specifies the non-standard HTTP Request X-Wap-Profile field, which is typically used to link to an XML file on the Internet with a full description and details about the device currently connecting.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

@@ -1,0 +1,182 @@
+---
+layout: data_model
+title: STIXHeaderType
+this_version: 1.2
+---
+
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>STIXHeaderType<span class="subdued">STIX Core Schema</span></h1>
+    <p class="data-model-description">The <a href='/data-model/1.2/stix/STIXHeaderType'>STIXHeaderType</a> provides a structure for characterizing a package of STIX content.</p>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.2" selected="selected">STIX 1.2</option>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+    <p>
+      <a href="http://stix.readthedocs.org/en/latest/api/core/stix_header.html#stix.core.stix_header.STIXHeader">
+        <img src="/images/python-logo.png" alt="Python" /><br />
+        API support
+      </a>
+    </p>
+    
+  </div>
+
+</div>
+
+
+
+<hr />
+<h2>Suggested Practices</h2>
+
+{% capture practices %}{% include sp_package.md %}{% endcapture %}
+{{ practices | markdownify  }}
+
+
+<hr />
+
+
+<h2>Fields</h2>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Title<span class="occurrence">0..1</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>The Title field provides a simple title for this STIX Package.</p>
+        
+          <p>DEPRECATED: This field is deprecated and will be removed in the next major version of STIX. Its use is strongly discouraged except for legacy applications.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Package_Intent<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Package_Intent field characterizes the intended purpose(s) or use(s) for this package of STIX content.</p>
+        
+          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is <a href='/data-model/1.2/stixVocabs/PackageIntentVocab-1.0'>PackageIntentVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.2.0/stix_default_vocabularies.xsd.</p>
+        
+          <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
+        
+          <p>DEPRECATED: This field is deprecated and will be removed in the next major version of STIX. Its use is strongly discouraged except for legacy applications.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Description<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/StructuredTextType">StructuredTextType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Description field provides a description of this package of STIX content.</p>
+        
+          <p>DEPRECATED: This field is deprecated and will be removed in the next major version of STIX. Its use is strongly discouraged except for legacy applications.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Short_Description<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/StructuredTextType">StructuredTextType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Short_Description field provides a short description of this package of STIX content.</p>
+        
+          <p>DEPRECATED: This field is deprecated and will be removed in the next major version of STIX. Its use is strongly discouraged except for legacy applications.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Profiles<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/ProfilesType">ProfilesType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Profiles field provides a list of profiles that the STIX_Package conforms to.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Handling<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/marking/MarkingType">MarkingType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the relevant handling guidance for this STIX_Package. The valid marking scope is the nearest STIXPackageType ancestor of this Handling element and all its descendants.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Information_Source<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/InformationSourceType">InformationSourceType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Information_Source field details the source of this entry, including time information as well as information about the producer, contributors, tools, and references.</p>
+        
+          <p>This Information_Source field applies both to the package metadata in the STIX_Header as well as individually to the contents of the STIX_Package (unless overriden by their own Information_Source field).</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

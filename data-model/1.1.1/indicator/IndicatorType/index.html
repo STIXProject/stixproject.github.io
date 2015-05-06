@@ -5,17 +5,23 @@ this_version: 1.1.1
 ---
 
 
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.1.1, which is not the latest version (1.2). <a href="/data-model/1.2/indicator/IndicatorType">View the latest!</a>
+</div>
+
 
 <div class="row">
   <div class="col-md-10">
     <h1>IndicatorType<span class="subdued">Indicator Schema</span></h1>
-    <p class="data-model-description">Represents a single STIX Indicator.</p><p class="data-model-description">Indicators convey specific Observable patterns combined with contextual information intended to represent artifacts and/or behaviors of interest within a cyber security context. They consist of one or more Observable patterns potentially mapped to a related TTP context and adorned with other relevant metadata on things like confidence in the indicator’s assertion, handling restrictions, valid time windows, likely impact, sightings of the indicator, structured test mechanisms for detection, related campaigns, suggested courses of action, related indicators, the source of the Indicator, etc.</p>
+    <p class="data-model-description">The <a href='/data-model/1.1.1/indicator/IndicatorType'>IndicatorType</a> characterizes a cyber threat indicator made up of a pattern identifying certain observable conditions as well as contextual information about the patterns meaning, how and when it should be acted on, etc.</p>
   </div>
 
   <div id="nav-area" class="col-md-2">
     <p>
       <form id="nav-version">
         <select>
+          
+            <option value="1.2" >STIX 1.2</option>
           
             <option value="1.1.1" selected="selected">STIX 1.1.1</option>
           
@@ -30,24 +36,9 @@ this_version: 1.1.1
     </p>
 
     
-    <p>
-      <a href="http://stix.readthedocs.org/en/latest/api/indicator/indicator.html#stix.indicator.indicator.Indicator">
-        <img src="/images/python-logo.png" alt="Python" /><br />
-        API support
-      </a>
-    </p>
-    
   </div>
 
 </div>
-
-
-
-<hr />
-<h2>Suggested Practices</h2>
-
-{% capture practices %}{% include sp_indicator.md %}{% endcapture %}
-{{ practices | markdownify  }}
 
 
 <hr />

@@ -1,0 +1,370 @@
+---
+layout: data_model
+title: ThreatActorType
+this_version: 1.2
+---
+
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>ThreatActorType<span class="subdued">Threat Actor Schema</span></h1>
+    <p class="data-model-description">Represents a single STIX Threat Actor.</p><p class="data-model-description">ThreatActors are characterizations of malicious actors (or adversaries) representing a cyber attack threat including presumed intent and historically observed behavior. In a structured sense, ThreatActors consist of a characterization of identity, suspected motivation, suspected intended effect, historically observed TTP used by the ThreatActor, historical Campaigns believed associated with the ThreatActor, other ThreatActors believed associated with the ThreatActor, handling guidance, confidence in the asserted characterization of the ThreatActor, source of the ThreatActor information, etc.</p>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.2" selected="selected">STIX 1.2</option>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+    <p>
+      <a href="http://stix.readthedocs.org/en/latest/api/threat_actor/threat_actor.html#stix.threat_actor.ThreatActor">
+        <img src="/images/python-logo.png" alt="Python" /><br />
+        API support
+      </a>
+    </p>
+    
+  </div>
+
+</div>
+
+
+<hr />
+
+
+<h2>Fields</h2>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@id<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>Specifies a globally unique identifier for this ThreatActor. </p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@idref<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>Specifies a globally unique identifier of a ThreatActor specified elsewhere.</p>
+        
+          <p>When idref is specified, the id attribute must not be specified, and any instance of this ThreatActor should not hold content.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@timestamp<span class="occurrence">optional</span></td>
+      <td>
+        
+          dateTime
+        
+      </td>
+      <td>
+        
+          <p>Specifies a timestamp for the definition of a specific version of a ThreatActor. When used in conjunction with the id, this field is specifying the definition time for the specific version of the ThreatActor. When used in conjunction with the idref, this field is specifying a reference to a specific version of a ThreatActor defined elsewhere. This field has no defined semantic meaning if used in the absence of either the id or idref fields.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@version<span class="occurrence">optional</span></td>
+      <td>
+        
+          ThreatActorVersionType
+        
+      </td>
+      <td>
+        
+          <p>Specifies the relevant STIX-ThreatActor schema version for this content.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Title<span class="occurrence">0..1</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>The Title field provides a simple title for this ThreatActor.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Description<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/StructuredTextType">StructuredTextType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Description field is optional and provides an unstructured, text description of this ThreatActor.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Short_Description<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/StructuredTextType">StructuredTextType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Short_Description field is optional and provides a short, unstructured, text description of this ThreatActor.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Identity<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/IdentityType">IdentityType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Identity field characterizes the identity of this Threat Actor.</p>
+        
+          <p>This field is implemented through the xsi:type extension mechanism. The default type is <a href='/data-model/1.2/stix-ciqidentity/CIQIdentity3.0InstanceType'>CIQIdentity3.0InstanceType</a> in the http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1 namespace. This type is defined in the extensions/identity/ciq_identity.xsd file or at the URL http://stix.mitre.org/XMLSchema/extensions/identity/ciq_identity/1.1/ciq_identity.xsd.</p>
+        
+          <p>Those who wish to express a simple name may also do so by not specifying an xsi:type and using the Name field.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Type<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/StatementType">StatementType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Type field characterizes the type(s) of this threat actor. It may be used multiple times to capture multiple types.</p>
+        
+          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is <a href='/data-model/1.2/stixVocabs/ThreatActorTypeVocab-1.0'>ThreatActorTypeVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.2.0/stix_default_vocabularies.xsd.</p>
+        
+          <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Motivation<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/StatementType">StatementType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Type field characterizes the motivations of this threat actor. It may be used multiple times to capture multiple motivations.</p>
+        
+          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is <a href='/data-model/1.2/stixVocabs/MotivationVocab-1.1'>MotivationVocab-1.1</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.2.0/stix_default_vocabularies.xsd.</p>
+        
+          <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Sophistication<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/StatementType">StatementType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Sophistication field specifies the sophistication of this Threat Actor.</p>
+        
+          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is <a href='/data-model/1.2/stixVocabs/ThreatActorSophisticationVocab-1.0'>ThreatActorSophisticationVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.2.0/stix_default_vocabularies.xsd .</p>
+        
+          <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Intended_Effect<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/StatementType">StatementType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Intended_Effect field specifies the suspected intended effect for this Threat Actor.</p>
+        
+          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is <a href='/data-model/1.2/stixVocabs/IntendedEffectVocab-1.0'>IntendedEffectVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.2.0/stix_default_vocabularies.xsd.</p>
+        
+          <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Planning_And_Operational_Support<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/StatementType">StatementType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Planning_And_Operational_Support field specifies the suspected planning and operational support performed by this threat actor.</p>
+        
+          <p>It is implemented through the StatementType, which allows for the expression of a statement in a vocabulary (Value), a description of the statement (Description), a confidence in the statement (Confidence), and the source of the statement (Source). The default vocabulary type for the Value is <a href='/data-model/1.2/stixVocabs/PlanningAndOperationalSupportVocab-1.0.1'>PlanningAndOperationalSupportVocab-1.0.1</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.2.0/stix_default_vocabularies.xsd.</p>
+        
+          <p>Users may also define their own vocabulary using the type extension mechanism, specify a vocabulary name and reference using the attributes, or simply use this as a string field.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Observed_TTPs<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/ta/ObservedTTPsType">ObservedTTPsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Observed_TTPs field specifies the TTPs that this Threat Actor has been observed to leverage.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Associated_Campaigns<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/ta/AssociatedCampaignsType">AssociatedCampaignsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Associated_Campaigns field specifies any known Campaigns attributed to this Threat Actor.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Associated_Actors<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/ta/AssociatedActorsType">AssociatedActorsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Associated_Actors field specifies other Threat Actors asserted to be associated with this Threat Actor.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Handling<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/marking/MarkingType">MarkingType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Handling field specifies the appropriate data handling markings for the elements of this Threat Actor characterization. The valid marking scope is the nearest <a href='/data-model/1.2/stixCommon/ThreatActorBaseType'>ThreatActorBaseType</a> ancestor of this Handling element and all its descendants.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Confidence<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/ConfidenceType">ConfidenceType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Confidence field characterizes the level of confidence held in the characterization of this Threat Actor.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Information_Source<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/InformationSourceType">InformationSourceType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Information_Source field details the source of this entry.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Related_Packages<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/RelatedPackageRefsType">RelatedPackageRefsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Related_Packages field identifies or characterizes relationships to set of related Packages.</p>
+        
+          <p>DEPRECATED: This field is deprecated and will be removed in the next major version of STIX. Its use is strongly discouraged except for legacy applications.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

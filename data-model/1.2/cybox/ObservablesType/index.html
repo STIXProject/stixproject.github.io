@@ -1,0 +1,137 @@
+---
+layout: data_model
+title: ObservablesType
+this_version: 1.2
+---
+
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>ObservablesType<span class="subdued">CybOX Core Schema</span></h1>
+    <p class="data-model-description">The <a href='/data-model/1.2/cybox/ObservablesType'>ObservablesType</a> is a type representing a collection of cyber observables.</p>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.2" selected="selected">STIX 1.2</option>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+
+<hr />
+
+
+<h2>Fields</h2>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@cybox_major_version<span class="occurrence">required</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>The cybox_major_version field specifies the major version of the CybOX language utilized for this set of Observables.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@cybox_minor_version<span class="occurrence">required</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>The cybox_minor_version field specifies the minor version of the CybOX language utilized for this set of Observables.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@cybox_update_version<span class="occurrence">optional</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>The cybox_update_version field specifies the update version of the CybOX language utilized for this set of Observables. This field MUST be used when using an update version of CybOX.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Observable_Package_Source<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/MeasureSourceType">MeasureSourceType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Observable_Package_Source field is optional and enables descriptive specification of how this package of Observables was identified and specified.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Observable<span class="occurrence">1..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cybox/ObservableType">ObservableType</a>
+        
+      </td>
+      <td>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Pools<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cybox/PoolsType">PoolsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Pools construct enables the description of Events, Actions, Objects and Properties in a space-efficient pooled manner with the actual Observable structures defined in the CybOX schema containing references to the pooled elements. This reduces redundancy caused when identical observable elements occur multiple times within a set of defined Observables.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

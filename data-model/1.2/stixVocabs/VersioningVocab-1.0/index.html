@@ -1,0 +1,106 @@
+---
+layout: data_model
+title: VersioningVocab-1.0
+this_version: 1.2
+---
+
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>VersioningVocab-1.0<span class="subdued">STIX Vocabularies Schema</span></h1>
+    <p class="data-model-description">The VersioningVocab is the default STIX vocabulary for representing versioning of STIX content.</p>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.2" selected="selected">STIX 1.2</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+
+<hr />
+
+
+<h2>Vocabulary Items</h2>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  
+    <tr>
+      <td>Updates - Revises</td>
+      <td>The new content represents a modified or expanded form of the previous content with existing information refined for improved quality or confidence.</td>
+    </tr>
+  
+    <tr>
+      <td>Updates - Corrects</td>
+      <td>The new content represents a modified form of the previous content with corrections to errors in the existing information. The previous content should be considered invalid and the new content should be used in its place.</td>
+    </tr>
+  
+    <tr>
+      <td>Revokes</td>
+      <td>The previous content is asserted to be invalid and should not be considered for operational purposes.</td>
+    </tr>
+  
+  </tbody>
+</table>
+
+
+<h2>Fields</h2>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@vocab_name<span class="occurrence">optional</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>The vocab_name field specifies the name of the controlled vocabulary.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@vocab_reference<span class="occurrence">optional</span></td>
+      <td>
+        
+          anyURI
+        
+      </td>
+      <td>
+        
+          <p>The vocab_reference field specifies the URI to the location of where the controlled vocabulary is defined, e.g., in an externally located XML schema file.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

@@ -1,0 +1,63 @@
+---
+layout: data_model
+title: IndicatorsType
+this_version: 1.2
+---
+
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>IndicatorsType<span class="subdued">Report Schema</span></h1>
+    
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.2" selected="selected">STIX 1.2</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+
+<hr />
+
+
+<h2>Fields</h2>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Indicator<span class="occurrence">1..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/IndicatorBaseType">IndicatorBaseType</a>
+        
+      </td>
+      <td>
+        
+          <p>Characterizes a single cyber threat Indicator.</p>
+        
+          <p>	This field is implemented through the xsi:type extension mechanism. The default and strongly recommended type is <a href='/data-model/1.2/indicator/IndicatorType'>IndicatorType</a> in the http://stix.mitre.org/Indicator-2 namespace. This type is defined in the indicator.xsd file or at the URL http://stix.mitre.org/XMLSchema/indicator/2.1/indicator.xsd.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

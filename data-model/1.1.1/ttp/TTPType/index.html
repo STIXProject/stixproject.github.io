@@ -5,17 +5,23 @@ this_version: 1.1.1
 ---
 
 
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.1.1, which is not the latest version (1.2). <a href="/data-model/1.2/ttp/TTPType">View the latest!</a>
+</div>
+
 
 <div class="row">
   <div class="col-md-10">
     <h1>TTPType<span class="subdued">TTP Schema</span></h1>
-    <p class="data-model-description">Represents a single STIX TTP.</p><p class="data-model-description">TTPs are representations of the behavior or modus operandi of cyber adversaries. It is a term taken from the traditional military sphere and is used to characterize what an adversary does and how they do it in increasing levels of detail. For instance, to give a simple example, a tactic may be to use malware to steal credit card credentials. A related technique (at a lower level of detail) may be to send targeted emails to potential victims, which have documents attached containing malicious code which executes upon opening, captures credit card information from keystrokes, and uses http to communicate with a command and control server to transfer information. A related procedure (at a lower level of detail) may be to perform open source research to identify potentially gullible individuals, craft a convincing socially engineered email and document, create malware/exploit that will bypass current antivirus detection, establish a command and control server by registering a domain called mychasebank.org, and send mail to victims from a Gmail account called accounts-mychasebank@gmail.com.</p><p class="data-model-description">TTPs consist of the specific adversary behavior (attack patterns, malware, exploits) exhibited, resources leveraged (tools, infrastructure, personas), information on the victims targeted (who, what or where), relevant ExploitTargets being targeted, intended effects, relevant kill chain phases, handling guidance, source of the TTP information, etc.</p><p class="data-model-description">TTPs play a central role in cyber threat information and cyber threat intelligence. They are relevant for Indicators, Incidents, Campaigns, and ThreatActors. In addition, they hold a close relationship with ExploitTargets that characterize the specific targets that the TTPs seek to exploit.</p>
+    <p class="data-model-description">TTPType characterizes an individual adversary TTP.</p>
   </div>
 
   <div id="nav-area" class="col-md-2">
     <p>
       <form id="nav-version">
         <select>
+          
+            <option value="1.2" >STIX 1.2</option>
           
             <option value="1.1.1" selected="selected">STIX 1.1.1</option>
           
@@ -29,13 +35,6 @@ this_version: 1.1.1
       </form>
     </p>
 
-    
-    <p>
-      <a href="http://stix.readthedocs.org/en/latest/api/ttp/ttp.html#stix.ttp.TTP">
-        <img src="/images/python-logo.png" alt="Python" /><br />
-        API support
-      </a>
-    </p>
     
   </div>
 

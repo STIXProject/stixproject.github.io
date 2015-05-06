@@ -5,17 +5,23 @@ this_version: 1.1.1
 ---
 
 
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX 1.1.1, which is not the latest version (1.2). <a href="/data-model/1.2/coa/CourseOfActionType">View the latest!</a>
+</div>
+
 
 <div class="row">
   <div class="col-md-10">
     <h1>CourseOfActionType<span class="subdued">Course of Action Schema</span></h1>
-    <p class="data-model-description">Represents a single STIX Course of Action.</p><p class="data-model-description">CoursesOfAction are specific measures to be taken to address threat whether they are corrective or preventative to address ExploitTargets, or responsive to counter or mitigate the potential impacts of Incidents. In a structured sense, COA consist of their relevant stage in cyber threat management (e.g., remedy of an ExploitTarget or response to an Incident), type of COA, description of COA, objective of the COA, structured representation of the COA (e.g., IPS rule or automated patch/remediation), the likely impact of the COA, the likely cost of the COA, the estimated efficacy of the COA, observable parameters for the COA, handling guidance, etc.</p>
+    <p class="data-model-description">The <a href='/data-model/1.1.1/coa/CourseOfActionType'>CourseOfActionType</a> characterizes a Course of Action to be taken in regards to one of more cyber threats. NOTE: This construct is still in its early stages of maturity and will require a good deal of review and refinement.</p>
   </div>
 
   <div id="nav-area" class="col-md-2">
     <p>
       <form id="nav-version">
         <select>
+          
+            <option value="1.2" >STIX 1.2</option>
           
             <option value="1.1.1" selected="selected">STIX 1.1.1</option>
           
@@ -29,13 +35,6 @@ this_version: 1.1.1
       </form>
     </p>
 
-    
-    <p>
-      <a href="http://stix.readthedocs.org/en/latest/api/coa/coa.html#stix.coa.CourseOfAction">
-        <img src="/images/python-logo.png" alt="Python" /><br />
-        API support
-      </a>
-    </p>
     
   </div>
 

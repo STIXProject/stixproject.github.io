@@ -1,3 +1,5 @@
+# Note: to run this you'll need to init/update the submodules for stix and then for cybox within stix. Sorry :(
+
 require 'bundler'
 require 'fileutils'
 require 'liquid'
@@ -10,7 +12,7 @@ $stix_prefixes = ['campaign', 'coa', 'et', 'genericStructuredCOA', 'genericTM',
                   'snortTM', 'stix', 'stix-capec', 'stix-ciqaddress',
                   'stix-ciqidentity', 'stixCommon', 'stix-cvrf', 'stix-maec',
                   'stix-openioc', 'stix-oval', 'stixVocabs', 'ta',
-                  'tlpMarking', 'TOUMarking', 'ttp', 'yaraTM']
+                  'tlpMarking', 'TOUMarking', 'ttp', 'yaraTM', 'report']
 
 $stix_uri = "http://stix.readthedocs.org/en/latest/api/"
 $cybox_uri = "http://cybox.readthedocs.org/en/latest/"

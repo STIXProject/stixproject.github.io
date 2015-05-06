@@ -1,0 +1,139 @@
+---
+layout: data_model
+title: TaskActionType
+this_version: 1.2
+---
+
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>TaskActionType<span class="subdued">Win Task Object Schema</span></h1>
+    <p class="data-model-description">The <a href='/data-model/1.2/WinTaskObj/TaskActionType'>TaskActionType</a> type characterizes scheduled task actions.</p>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.2" selected="selected">STIX 1.2</option>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+
+<hr />
+
+
+<h2>Fields</h2>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Action_Type<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/WinTaskObj/TaskActionTypeType">TaskActionTypeType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Action_Type field specifies the type of the action. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380596(v=vs.85).aspx.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Action_ID<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Action_ID field specifies the user-defined identifier for the action. This identifier is used by the Task Scheduler for logging purposes. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380590(v=vs.85).aspx.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>IEmailAction<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/EmailMessageObj/EmailMessageObjectType">EmailMessageObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>The IEmail_Action field specifies an action that sends an e-mail, which in this context refers to actual email message sent. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380693(v=vs.85).aspx.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>IComHandlerAction<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/WinTaskObj/IComHandlerActionType">IComHandlerActionType</a>
+        
+      </td>
+      <td>
+        
+          <p>The IComHandlerAction field specifies an action that fires a handler.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>IExecAction<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/WinTaskObj/IExecActionType">IExecActionType</a>
+        
+      </td>
+      <td>
+        
+          <p>The IExecAction field specifies an action that executes a command-line operation. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa380715(v=vs.85).aspx.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>IShowMessageAction<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/WinTaskObj/IShowMessageActionType">IShowMessageActionType</a>
+        
+      </td>
+      <td>
+        
+          <p>The IShowMessageAction field specifies an action that shows a message box when a task is activated. See also: http://msdn.microsoft.com/en-us/library/windows/desktop/aa381302(v=vs.85).aspx.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

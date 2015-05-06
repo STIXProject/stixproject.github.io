@@ -1,0 +1,120 @@
+---
+layout: data_model
+title: MarkingStructureType
+this_version: 1.2
+---
+
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>MarkingStructureType<span class="subdued">Data Markings Schema</span></h1>
+    <p class="data-model-description">The <a href='/data-model/1.2/marking/MarkingStructureType'>MarkingStructureType</a> contains the marking information to be applied to a portion of XML content.</p><p class="data-model-description">This type is defined as abstract and is intended to be extended to enable the expression of any structured or unstructured data marking mechanism. The data marking structure is simply a mechanism for applying existing marking systems to nodes. The data marking systems themselves define the semantics of what the markings mean, how multiple markings to the same node should be applied, and what to do if a node is unmarked.</p><p class="data-model-description">It is valid per this specification to mark a node with multiple markings from the same system or mark a node across multiple marking systems. If a node is marked multiple times using the same marking system, that system specifies the semantic meaning of multiple markings and (if necessary) how conflicts should be resolved. If a node is marked across multiple marking systems, each system is considered individually applicable. If there are conflicting markings across marking systems the behavior is undefined, therefore producers should make every effort to ensure documents are marked consistently and correctly among all marking systems.</p><p class="data-model-description">STIX provides two marking system extensions: Simple, and TLP. Those who wish to use another format may do so by defining a new extension to this type. The STIX-provided extensions are:</p><p class="data-model-description">1. Simple: The Simple marking structure allows for the specification of unstructured statements through the use of a string field. The type is named <a href='/data-model/1.2/simpleMarking/SimpleMarkingStructureType'>SimpleMarkingStructureType</a> and is in the http://data-marking.mitre.org/extensions/MarkingStructure#Simple-1 namespace. The extension is defined in the file extensions/marking/simple_marking.xsd or at the URL http://stix.mitre.org/XMLSchema/extensions/marking/simple_marking/1.1.1/simple_marking.xsd.</p><p class="data-model-description">2. TLP: The TLP marking structure allows for the expression of Traffic Light Protocol statements through the use of a simple enumeration. The type is named <a href='/data-model/1.2/tlpMarking/TLPMarkingStructureType'>TLPMarkingStructureType</a> and is in the http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1 namespace. The extension is defined in the file extensions/marking/tlp_marking.xsd or at the URL http://stix.mitre.org/XMLSchema/extensions/marking/tlp/1.1.1/tlp_marking.xsd.</p><p class="data-model-description">3. Terms of Use: The Terms of Use marking structure allows for the specification of unstructured terms of use statements through the use of a string field. The type is named <a href='/data-model/1.2/TOUMarking/TermsOfUseMarkingStructureType'>TermsOfUseMarkingStructureType</a> and is in the http://data-marking.mitre.org/extensions/MarkingStructure#Terms_Of_Use-1 namespace. The extension is defined in the file extensions/marking/terms_of_use_marking.xsd or at the URL http://stix.mitre.org/XMLSchema/extensions/marking/terms_of_use/1.0.1/terms_of_use_marking.xsd.</p>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.2" selected="selected">STIX 1.2</option>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+    <p>
+      <a href="http://stix.readthedocs.org/en/latest/api/data_marking.html#stix.data_marking.MarkingStructure">
+        <img src="/images/python-logo.png" alt="Python" /><br />
+        API support
+      </a>
+    </p>
+    
+  </div>
+
+</div>
+
+
+<hr />
+
+
+<h2>Fields</h2>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@marking_model_name<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>This field specifies the name of the marking model to be applied within this Marking_Structure.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@marking_model_ref<span class="occurrence">optional</span></td>
+      <td>
+        
+          anyURI
+        
+      </td>
+      <td>
+        
+          <p>This field contains a reference to an authoritative source on the marking model to be applied within this Marking_Structure.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@id<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>Specifies a unique ID for this Marking_Structure.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@idref<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>Specifies a reference to the ID of a Marking_Structure defined elsewhere.</p>
+        
+          <p>When idref is specified, the id attribute must not be specified, and any instance of this Marking_Structure should not hold content.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
