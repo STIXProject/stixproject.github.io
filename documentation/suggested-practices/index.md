@@ -335,6 +335,9 @@ The values of timestamp fields MUST follow the ISO 8601 format and SHOULD includ
 ## STIX Package
 {% include sp_package.md %}
 
+## Report
+{% include sp_report.md %}
+
 ## Indicator
 
 <img src="/images/Indicator.png" class="component-img-right" alt="Indicator Icon" />

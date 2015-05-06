@@ -212,7 +212,8 @@ $practices = {
     "marking:MarkingSpecificationType" => "sp_handling.md",
     "stix:STIXHeaderType" => "sp_package.md",
     "stix:STIXType" => "sp_package.md",
-    "cybox:ObservableType" => "sp_observable.md"
+    "cybox:ObservableType" => "sp_observable.md",
+    "report:ReportType" => "sp_report.md"
 }
 
 desc "Regenerate the data model documentation"
