@@ -88,6 +88,19 @@ In the first example the STIX TTP is representing the general concept of SpyEye 
 
 In the second example a specific analysis of SpyEye and therefore the TTP Title is more specific than just SpyEye. In cases like this where the STIX construct conveys a more particular analysis, viewpoint, or characterization of the general concept then it's appropriate to give it a more specific title indicating that.
 
+#### Using Multiple Descriptions
+
+With the release of STIX 1.2, the `Description` field now supports multiple entries. The primary use case for this is the ability to mark each description with a different set of markings: for example, on could be TLP:RED while another could be TLP:GREEN.
+
+Use of multiple descriptions is recommended only to support this use case: separating descriptions by paragraph or into sections is more appropriately accomplished via structuring the description in something like markdown or HTML and setting the `structuring_format` correctly.
+
+To support this capability, several fields were added to the `Description element`:
+
+* The `id` field is strongly recommended in order to appropriately target the description elements that you wish to mark. `idref` is not available and descriptions cannot be referenced in the same way that other idable fields can.
+* The `ordinality` field is used to order the description elements so they can be re-assembled in a way that makes sense. XML order is not determinitive in some XML processors and therefore it's not enough to simply order the XML elements: setting `ordinality` manually is required.
+
+[python-stix](https://github.com/STIXProject/python-stix) will handle both of these items for you.
+
 ### Information Source
 
 [InformationSourceType](/data-model/{{site.current_version}}/stixCommon/InformationSourceType) is used to describe the who, what, and when of the production of the information in the containing construct. Among other things it's used to describe who produced the information, when it was produced, what tools were used to produce it and what it was derived from.
