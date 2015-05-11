@@ -7,7 +7,7 @@ from stix.core import STIXPackage, STIXHeader
 
 def parse_stix( pkg ):
     print "== INCIDENT =="
-    print "Package: " + str(pkg.stix_header.description)
+    
     for inc in pkg.incidents:
         print "---"
         print "Reporter: " + inc.reporter.identity.name

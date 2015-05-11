@@ -17,7 +17,7 @@
 	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd
 	http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
 	http://stix.mitre.org/extensions/TestMechanism#YARA-1 http://stix.mitre.org/XMLSchema/extensions/test_mechanism/yara/1.1.1/yara_test_mechanism.xsd
-	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd" id="example:Package-ea99d4d4-1ae7-4120-9ebe-67ed4783fb36" version="1.1.1" timestamp="2014-06-20T15:16:56.986347+00:00">
+	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd" id="example:Package-ea99d4d4-1ae7-4120-9ebe-67ed4783fb36" version="1.1.1" >
     <stix:Indicators>
         <stix:Indicator id="example:indicator-567b201c-4fd5-4bde-a5db-42abc340807a" timestamp="2014-06-20T15:16:56.987616+00:00" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
             <indicator:Title>silent_banker</indicator:Title>

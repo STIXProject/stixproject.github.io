@@ -23,7 +23,7 @@
 	http://stix.mitre.org/TTP-1 http://stix.mitre.org/XMLSchema/ttp/1.1.1/ttp.xsd
 	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd
 	http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
-	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd" id="example:Package-8b8ed1c1-f01d-4393-ac65-97017ed15876" version="1.1.1" timestamp="2014-10-31T15:52:13.126609+00:00">
+	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd" id="example:Package-8b8ed1c1-f01d-4393-ac65-97017ed15876" version="1.1.1" >
     <stix:Indicators>
         <stix:Indicator id="example:indicator-8cf9236f-1b96-493d-98be-0c1c1e8b62d7" timestamp="2014-10-31T15:52:13.127931+00:00" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
             <indicator:Title>Malicious E-mail</indicator:Title>

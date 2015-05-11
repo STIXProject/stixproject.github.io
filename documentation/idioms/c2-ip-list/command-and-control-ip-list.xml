@@ -17,12 +17,8 @@
     http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
     http://cybox.mitre.org/objects#AddressObject-2 http://cybox.mitre.org/XMLSchema/objects/Address/2.1/Address_Object.xsd"
     id="example:STIXPackage-cc0ca596-70e6-4dac-9bef-603166d17db8"
-    timestamp="2014-05-08T09:00:00.000000Z"
     version="1.1.1"
     >
-    <stix:STIX_Header>
-        <stix:Title>Example Command and Control IP List</stix:Title>
-    </stix:STIX_Header>
     <stix:Observables cybox_major_version="1" cybox_minor_version="1">
         <cybox:Observable id="example:observable-c8c32b6e-2ea8-51c4-6446-7f5218072f27">
             <cybox:Object id="example:object-d7fcce87-0e98-4537-81bf-1e7ca9ad3734">

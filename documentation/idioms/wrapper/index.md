@@ -43,7 +43,6 @@ One other note about this example is the XPath used in the data markings. Becaus
 
 {% highlight xml linenos %}
 <stix:STIX_Header>
-    <stix:Title>Example Plain Wrapper Around Multiple Reports</stix:Title>
     <stix:Information_Source>
         <stixCommon:Identity>
             <stixCommon:Name>Government Sharing Program - GSP</stixCommon:Name>
@@ -52,10 +51,8 @@ One other note about this example is the XPath used in the data markings. Becaus
 </stix:STIX_Header>
 <stix:Related_Packages>
     <stix:Related_Package>
-        <stix:Package id="example:package-ca6e215c-fbb7-4b7a-b678-632562f85e93" timestamp="2014-02-20T09:00:00.000000Z" version="1.1">
+        <stix:Package id="example:package-ca6e215c-fbb7-4b7a-b678-632562f85e93"  version="1.1">
             <stix:STIX_Header>
-                <stix:Title>Report on Adversary Alpha's Campaign against the Industrial Control Sector</stix:Title>
-                <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Campaign Characterization</stix:Package_Intent>
                 <stix:Handling>
                     <markings:Marking>
                         <markings:Controlled_Structure>../../../../descendant-or-self::node()</markings:Controlled_Structure>
@@ -66,10 +63,9 @@ One other note about this example is the XPath used in the data markings. Becaus
         </stix:Package>
     </stix:Related_Package>
     <stix:Related_Package>
-        <stix:Package id="example:package-162faaf6-4fa8-47d8-b128-115b392bbb19" timestamp="2014-03-26T02:01:00.000000Z" version="1.1">
+        <stix:Package id="example:package-162faaf6-4fa8-47d8-b128-115b392bbb19" version="1.1">
             <stix:STIX_Header>
-                <stix:Title>Indicators for Malware DrownedRat</stix:Title>
-                <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Indicators - Malware Artifacts</stix:Package_Intent>
+           
                 <stix:Handling>
                     <markings:Marking>
                         <markings:Controlled_Structure>../../../../descendant-or-self::node()</markings:Controlled_Structure>
@@ -94,8 +90,6 @@ from stix.extensions.marking.tlp import TLPMarkingStructure
 
 alpha_package = STIXPackage()
 alpha_package.stix_header = STIXHeader()
-alpha_package.stix_header.title = "Report on Adversary Alpha's Campaign against the Industrial Control Sector"
-rat_package.stix_header.package_intents = "Campaign Characterization"
 alpha_package.stix_header.handling = Marking()
 
 alpha_marking = MarkingSpecification()
@@ -107,16 +101,14 @@ alpha_package.stix_header.handling.add_marking(alpha_marking)
 
 rat_package = STIXPackage()
 rat_package.stix_header = STIXHeader()
-rat_package.stix_header.title = "Indicators for Malware DrownedRat"
-rat_package.stix_header.package_intents = "Indicators - Malware Artifacts"
 rat_package.stix_header.handling = Marking()
 
-bravo_marking = MarkingSpecification()
-bravo_marking.controlled_structure = "../../../../descendant-or-self::node()"
-bravo_tlp_marking = TLPMarkingStructure()
-bravo_tlp_marking.color = "RED"
-alpha_marking.marking_structures.append(bravo_tlp_marking)
-rat_package.stix_header.handling.add_marking(bravo_marking)
+rat_marking = MarkingSpecification()
+rat_marking.controlled_structure = "../../../../descendant-or-self::node()"
+rat_tlp_marking = TLPMarkingStructure()
+rat_tlp_marking.color = "RED"
+alpha_marking.marking_structures.append(rat_tlp_marking)
+rat_package.stix_header.handling.add_marking(rat_marking)
     
 stix_package = STIXPackage()
 info_src = InformationSource()
@@ -124,6 +116,7 @@ info_src.identity = Identity(name="Government Sharing Program - GSP")
 stix_package.stix_header = STIXHeader(information_source=info_src)
 stix_package.related_packages.append(alpha_package)
 stix_package.related_packages.append(rat_package)
+
 
 print stix_package.to_xml()
 {% endhighlight %}

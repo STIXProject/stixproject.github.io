@@ -19,11 +19,8 @@
 	http://stix.mitre.org/TTP-1 http://stix.mitre.org/XMLSchema/ttp/1.1.1/ttp.xsd
 	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd
 	http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
-	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd" id="example:Package-747d7c92-1aaf-418c-b5e9-174ef68c47fc" version="1.1.1" timestamp="2014-08-25T13:49:37.078000+00:00">
-    <stix:STIX_Header>
-        <stix:Title>IPs of Interest</stix:Title>
-        <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Incident</stix:Package_Intent>
-    </stix:STIX_Header>
+	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd" id="example:Package-747d7c92-1aaf-418c-b5e9-174ef68c47fc" version="1.1.1" >
+
     <stix:Observables cybox_major_version="2" cybox_minor_version="1" cybox_update_version="0">
         <cybox:Observable id="example:Observable-57501ad9-3b55-44aa-a084-eb55b1a84301">
             <cybox:Object id="example:Address-cbff060f-0010-4f36-9e45-48df756871e1">

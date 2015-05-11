@@ -18,12 +18,8 @@
     http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
     http://cybox.mitre.org/objects#AddressObject-2 http://cybox.mitre.org/XMLSchema/objects/Address/2.1/Address_Object.xsd"
     id="example:STIXPackage-bf35a4b5-e102-463d-9105-4d7a6e2d78bc"
-    timestamp="2014-05-08T09:00:00.000000Z"
     version="1.1.1"
     >
-    <stix:STIX_Header>
-        <stix:Title>Example Victim Targeting for a Campaign</stix:Title>
-    </stix:STIX_Header>
     <stix:TTPs>
         <stix:TTP xsi:type="ttp:TTPType" id="example:ttp-4fde045a-b25f-f035-e8d0-29c9d5130cd9" timestamp="2014-05-08T09:00:00.000000Z">
             <ttp:Title>Victim Targeting: Customer PII and Financial Data</ttp:Title>

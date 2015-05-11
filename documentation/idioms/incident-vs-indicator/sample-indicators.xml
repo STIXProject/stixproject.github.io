@@ -21,11 +21,8 @@
 	http://stix.mitre.org/TTP-1 http://stix.mitre.org/XMLSchema/ttp/1.1.1/ttp.xsd
 	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd
 	http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
-	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd" id="example:Package-58d4989b-33f3-411a-b524-02e40f1a115d" version="1.1.1" timestamp="2014-08-22T20:17:38.959000+00:00">
-    <stix:STIX_Header>
-        <stix:Title>IP Indicators</stix:Title>
-        <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Indicators - Watchlist</stix:Package_Intent>
-    </stix:STIX_Header>
+	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd" id="example:Package-58d4989b-33f3-411a-b524-02e40f1a115d" version="1.1.1" >
+ 
     <stix:Indicators>
         <stix:Indicator id="example:indicator-0756a255-6623-4226-8356-015396918b38" timestamp="2014-08-22T20:17:38.959000+00:00" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
             <indicator:Title>192.168.1.1</indicator:Title>

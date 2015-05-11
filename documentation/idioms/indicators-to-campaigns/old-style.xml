@@ -22,7 +22,7 @@
         http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.1.1/indicator.xsd
         http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd
         http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
-        http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd" id="example:Package-ea965ac1-4380-4d66-bddc-bad9912ee592" version="1.1.1" timestamp="2014-09-09T19:58:39.607000+00:00">
+        http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd" id="example:Package-ea965ac1-4380-4d66-bddc-bad9912ee592" version="1.1.1" >
     <stix:Indicators>
         <stix:Indicator id="example:indicator-c43a0a05-e8d2-4f64-ae37-3f3fb153f8d9" timestamp="2014-09-09T19:58:39.608000+00:00" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
             <indicator:Title>IP Address for known C2 Channel</indicator:Title>

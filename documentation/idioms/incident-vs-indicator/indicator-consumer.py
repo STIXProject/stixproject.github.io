@@ -13,7 +13,6 @@ def main():
   stix_package = STIXPackage.from_xml('sample-indicators.xml')
 
   data = {
-    'title': stix_package.stix_header.title,
     'indicators': {
     }
   }
