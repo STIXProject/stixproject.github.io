@@ -44,7 +44,7 @@
                 <report:Intent xsi:type="stixVocabs:ReportIntentVocab-1.0">Indicators - Malware Artifacts</report:Intent>
             </report:Header>
             <report:TTPs>
-                <stix:TTP idref="example:ttp-66647c79-5766-4ca7-ab8a-a579056e3c83" xsi:type='ttp:TTPType'/>
+                <report:TTP idref="example:ttp-66647c79-5766-4ca7-ab8a-a579056e3c83" xsi:type='ttp:TTPType'/>
             </report:TTPs>
         </stix:Report>
     </stix:Reports>
