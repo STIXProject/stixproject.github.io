@@ -1,43 +1,36 @@
 <stix:STIX_Package 
-	xmlns:cyboxCommon="http://cybox.mitre.org/common-2"
-	xmlns:cybox="http://cybox.mitre.org/cybox-2"
-	xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2"
 	xmlns:AddressObj="http://cybox.mitre.org/objects#AddressObject-2"
+	xmlns:cybox="http://cybox.mitre.org/cybox-2"
+	xmlns:cyboxCommon="http://cybox.mitre.org/common-2"
+	xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2"
 	xmlns:example="http://example.com"
 	xmlns:incident="http://stix.mitre.org/Incident-1"
-	xmlns:ttp="http://stix.mitre.org/TTP-1"
+	xmlns:stix="http://stix.mitre.org/stix-1"
 	xmlns:stixCommon="http://stix.mitre.org/common-1"
 	xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1"
-	xmlns:stix="http://stix.mitre.org/stix-1"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="
-	http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd
-	http://cybox.mitre.org/cybox-2 http://cybox.mitre.org/XMLSchema/core/2.1/cybox_core.xsd
-	http://cybox.mitre.org/default_vocabularies-2 http://cybox.mitre.org/XMLSchema/default_vocabularies/2.1/cybox_default_vocabularies.xsd
-	http://cybox.mitre.org/objects#AddressObject-2 http://cybox.mitre.org/XMLSchema/objects/Address/2.1/Address_Object.xsd
-	http://stix.mitre.org/Incident-1 http://stix.mitre.org/XMLSchema/incident/1.1.1/incident.xsd
-	http://stix.mitre.org/TTP-1 http://stix.mitre.org/XMLSchema/ttp/1.1.1/ttp.xsd
-	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd
-	http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
-	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd" id="example:Package-747d7c92-1aaf-418c-b5e9-174ef68c47fc" version="1.1.1" >
-
+	xmlns:ttp="http://stix.mitre.org/TTP-1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="example:Package-42005e70-bc53-4261-adf4-cb344ad3a343" version="1.1.1" >
+    <stix:STIX_Header>
+        <stix:Title>IPs of Interest</stix:Title>
+        <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Incident</stix:Package_Intent>
+    </stix:STIX_Header>
     <stix:Observables cybox_major_version="2" cybox_minor_version="1" cybox_update_version="0">
-        <cybox:Observable id="example:Observable-57501ad9-3b55-44aa-a084-eb55b1a84301">
-            <cybox:Object id="example:Address-cbff060f-0010-4f36-9e45-48df756871e1">
+        <cybox:Observable id="example:Observable-3b219731-e33f-4da3-9800-6e2c63965778">
+            <cybox:Object id="example:Address-16729f62-f242-4750-8192-2d26133369bd">
                 <cybox:Properties xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
                     <AddressObj:Address_Value>192.168.1.1</AddressObj:Address_Value>
                 </cybox:Properties>
             </cybox:Object>
         </cybox:Observable>
-        <cybox:Observable id="example:Observable-1dd5787b-b571-43ec-a06e-bbf8496ee5b1">
-            <cybox:Object id="example:Address-15a515f4-a79c-466f-8ddc-cb1710a8b97b">
+        <cybox:Observable id="example:Observable-58a3a289-b24b-4f6a-bc76-cc50a3b95af1">
+            <cybox:Object id="example:Address-2e8a69cb-3a2d-48fd-b2af-71ad104806af">
                 <cybox:Properties xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
                     <AddressObj:Address_Value>192.168.1.2</AddressObj:Address_Value>
                 </cybox:Properties>
             </cybox:Object>
         </cybox:Observable>
-        <cybox:Observable id="example:Observable-7793f79e-09a8-41ce-bcea-d7753c5c5edb">
-            <cybox:Object id="example:Address-c3c9dbb5-d0cf-43f3-9f41-c6b860aa6efb">
+        <cybox:Observable id="example:Observable-c04d617b-69f0-461a-9f77-4213a05b0c84">
+            <cybox:Object id="example:Address-cbe46012-74d7-4f21-b295-22e7ec12439d">
                 <cybox:Properties xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
                     <AddressObj:Address_Value>192.168.1.3</AddressObj:Address_Value>
                 </cybox:Properties>
@@ -45,65 +38,65 @@
         </cybox:Observable>
     </stix:Observables>
     <stix:TTPs>
-        <stix:TTP id="example:ttp-f0c26887-610b-4724-80c6-5bd4e0354df9" timestamp="2014-08-25T13:49:37.079000+00:00" xsi:type='ttp:TTPType' version="1.1.1">
+        <stix:TTP id="example:ttp-c37ffe2f-7de8-4853-8670-abd2272658c4" timestamp="2015-05-12T18:57:34.417350+00:00" xsi:type='ttp:TTPType'>
             <ttp:Title>ZBot</ttp:Title>
         </stix:TTP>
-        <stix:TTP id="example:ttp-a3bca8df-4904-433a-abf0-614a30407f5d" timestamp="2014-08-25T13:49:37.081000+00:00" xsi:type='ttp:TTPType' version="1.1.1">
+        <stix:TTP id="example:ttp-06cc41f6-2ebf-4ec0-b385-afea21974e70" timestamp="2015-05-12T18:57:34.418836+00:00" xsi:type='ttp:TTPType'>
             <ttp:Title>iSpy2</ttp:Title>
         </stix:TTP>
     </stix:TTPs>
     <stix:Incidents>
-        <stix:Incident id="example:incident-da4e5808-0159-497a-be65-a65c8974f027" timestamp="2014-08-25T13:49:37.079000+00:00" xsi:type='incident:IncidentType' version="1.1.1">
+        <stix:Incident id="example:incident-91776ba4-e425-4b02-823f-9387c5a062f6" timestamp="2015-05-12T18:57:34.417525+00:00" xsi:type='incident:IncidentType'>
             <incident:Title>192.168.1.1</incident:Title>
             <incident:Time>
                 <incident:First_Malicious_Action precision="second">2014-01-01T09:23:23+00:00</incident:First_Malicious_Action>
             </incident:Time>
             <incident:Related_Observables>
                 <incident:Related_Observable>
-                    <stixCommon:Observable idref="example:Observable-57501ad9-3b55-44aa-a084-eb55b1a84301">
+                    <stixCommon:Observable idref="example:Observable-3b219731-e33f-4da3-9800-6e2c63965778">
                     </stixCommon:Observable>
                 </incident:Related_Observable>
             </incident:Related_Observables>
             <incident:Leveraged_TTPs>
                 <incident:Leveraged_TTP>
                     <stixCommon:Relationship>Used Malware</stixCommon:Relationship>
-                    <stixCommon:TTP idref="example:ttp-f0c26887-610b-4724-80c6-5bd4e0354df9" xsi:type='ttp:TTPType' version="1.1.1"/>
+                    <stixCommon:TTP idref="example:ttp-c37ffe2f-7de8-4853-8670-abd2272658c4" xsi:type='ttp:TTPType'/>
                 </incident:Leveraged_TTP>
             </incident:Leveraged_TTPs>
         </stix:Incident>
-        <stix:Incident id="example:incident-74112763-ca88-48a5-8114-eec2cc903f95" timestamp="2014-08-25T13:49:37.081000+00:00" xsi:type='incident:IncidentType' version="1.1.1">
+        <stix:Incident id="example:incident-46c7753f-7892-450e-9082-2f937ea220bd" timestamp="2015-05-12T18:57:34.419015+00:00" xsi:type='incident:IncidentType'>
             <incident:Title>192.168.1.2</incident:Title>
             <incident:Time>
                 <incident:First_Malicious_Action precision="second">2014-01-03T11:21:27+00:00</incident:First_Malicious_Action>
             </incident:Time>
             <incident:Related_Observables>
                 <incident:Related_Observable>
-                    <stixCommon:Observable idref="example:Observable-1dd5787b-b571-43ec-a06e-bbf8496ee5b1">
+                    <stixCommon:Observable idref="example:Observable-58a3a289-b24b-4f6a-bc76-cc50a3b95af1">
                     </stixCommon:Observable>
                 </incident:Related_Observable>
             </incident:Related_Observables>
             <incident:Leveraged_TTPs>
                 <incident:Leveraged_TTP>
                     <stixCommon:Relationship>Used Malware</stixCommon:Relationship>
-                    <stixCommon:TTP idref="example:ttp-a3bca8df-4904-433a-abf0-614a30407f5d" xsi:type='ttp:TTPType' version="1.1.1"/>
+                    <stixCommon:TTP idref="example:ttp-06cc41f6-2ebf-4ec0-b385-afea21974e70" xsi:type='ttp:TTPType'/>
                 </incident:Leveraged_TTP>
             </incident:Leveraged_TTPs>
         </stix:Incident>
-        <stix:Incident id="example:incident-2fdf0dc6-2124-4c56-ac4c-fbe8dba288c1" timestamp="2014-08-25T13:49:37.082000+00:00" xsi:type='incident:IncidentType' version="1.1.1">
+        <stix:Incident id="example:incident-f8dc272b-7391-47c2-a07e-4c5d1e0bbab7" timestamp="2015-05-12T18:57:34.420003+00:00" xsi:type='incident:IncidentType'>
             <incident:Title>192.168.1.3</incident:Title>
             <incident:Time>
                 <incident:First_Malicious_Action precision="second">2014-01-04T17:45:54+00:00</incident:First_Malicious_Action>
             </incident:Time>
             <incident:Related_Observables>
                 <incident:Related_Observable>
-                    <stixCommon:Observable idref="example:Observable-7793f79e-09a8-41ce-bcea-d7753c5c5edb">
+                    <stixCommon:Observable idref="example:Observable-c04d617b-69f0-461a-9f77-4213a05b0c84">
                     </stixCommon:Observable>
                 </incident:Related_Observable>
             </incident:Related_Observables>
             <incident:Leveraged_TTPs>
                 <incident:Leveraged_TTP>
                     <stixCommon:Relationship>Used Malware</stixCommon:Relationship>
-                    <stixCommon:TTP idref="example:ttp-f0c26887-610b-4724-80c6-5bd4e0354df9" xsi:type='ttp:TTPType' version="1.1.1"/>
+                    <stixCommon:TTP idref="example:ttp-c37ffe2f-7de8-4853-8670-abd2272658c4" xsi:type='ttp:TTPType'/>
                 </incident:Leveraged_TTP>
             </incident:Leveraged_TTPs>
         </stix:Incident>
