@@ -5,11 +5,11 @@
 	xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2"
 	xmlns:example="http://example.com"
 	xmlns:incident="http://stix.mitre.org/Incident-1"
-	xmlns:stix="http://stix.mitre.org/stix-1"
 	xmlns:stixCommon="http://stix.mitre.org/common-1"
 	xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1"
 	xmlns:stix="http://stix.mitre.org/stix-1"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:ttp="http://stix.mitre.org/TTP-1"
 	xsi:schemaLocation="
 	http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd
 	http://cybox.mitre.org/cybox-2 http://cybox.mitre.org/XMLSchema/core/2.1/cybox_core.xsd
