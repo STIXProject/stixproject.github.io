@@ -1,12 +1,12 @@
 <stix:STIX_Package 
-	xmlns:cyboxCommon="http://cybox.mitre.org/common-2"
-	xmlns:cybox="http://cybox.mitre.org/cybox-2"
-	xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2"
 	xmlns:AddressObj="http://cybox.mitre.org/objects#AddressObject-2"
+	xmlns:cybox="http://cybox.mitre.org/cybox-2"
+	xmlns:cyboxCommon="http://cybox.mitre.org/common-2"
+	xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2"
 	xmlns:example="http://example.com"
 	xmlns:incident="http://stix.mitre.org/Incident-1"
 	xmlns:indicator="http://stix.mitre.org/Indicator-2"
-	xmlns:ttp="http://stix.mitre.org/TTP-1"
+	xmlns:stix="http://stix.mitre.org/stix-1"
 	xmlns:stixCommon="http://stix.mitre.org/common-1"
 	xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1"
 	xmlns:stix="http://stix.mitre.org/stix-1"
@@ -21,28 +21,24 @@
 	http://stix.mitre.org/TTP-1 http://stix.mitre.org/XMLSchema/ttp/1.2/ttp.xsd
 	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.2/stix_common.xsd
 	http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.2.0/stix_default_vocabularies.xsd
-	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.2/stix_core.xsd" id="example:Package-253035a6-257a-4bd7-8b95-309400428ec3" version="1.2" timestamp="2014-08-25T15:55:45.337000+00:00">
-    <stix:STIX_Header>
-        <stix:Title>IPs of Interest</stix:Title>
-        <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Incident</stix:Package_Intent>
-    </stix:STIX_Header>
+	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.2/stix_core.xsd" id="example:Package-253035a6-257a-4bd7-8b95-309400428ec3" version="1.2" >
     <stix:Observables cybox_major_version="2" cybox_minor_version="1" cybox_update_version="0">
-        <cybox:Observable id="example:Observable-6a93879e-58b9-47b0-a44a-77fdb0cf1bb7">
-            <cybox:Object id="example:Address-7e4f44b8-a0f9-4940-9de4-da313b6a2827">
+        <cybox:Observable id="example:Observable-f34cd03b-f924-4b0b-8447-353cb024d4f8">
+            <cybox:Object id="example:Address-9a8fbc6f-d402-46a7-9032-53d0214a86f7">
                 <cybox:Properties xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
                     <AddressObj:Address_Value>192.168.1.1</AddressObj:Address_Value>
                 </cybox:Properties>
             </cybox:Object>
         </cybox:Observable>
-        <cybox:Observable id="example:Observable-f5677a60-16cf-4ff3-b42f-18d569febd64">
-            <cybox:Object id="example:Address-49332cbe-99d0-422d-a6f6-5dd7b8d0618b">
+        <cybox:Observable id="example:Observable-18568256-083a-44ee-ac85-669ac96dee2a">
+            <cybox:Object id="example:Address-37bd095b-1d95-4411-84db-b7a580b9d956">
                 <cybox:Properties xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
                     <AddressObj:Address_Value>192.168.1.2</AddressObj:Address_Value>
                 </cybox:Properties>
             </cybox:Object>
         </cybox:Observable>
-        <cybox:Observable id="example:Observable-c4d3a92f-96fe-4a9a-97bd-9f7a8abf20fc">
-            <cybox:Object id="example:Address-27e6857d-e39f-4b45-9122-e6a4fa99f6f9">
+        <cybox:Observable id="example:Observable-81e7bcb2-d71f-4b88-96e9-2c1b2a3e8f53">
+            <cybox:Object id="example:Address-c2ccdde3-48ef-46ea-9531-f273ad918b2d">
                 <cybox:Properties xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
                     <AddressObj:Address_Value>192.168.1.3</AddressObj:Address_Value>
                 </cybox:Properties>
@@ -50,36 +46,40 @@
         </cybox:Observable>
     </stix:Observables>
     <stix:Indicators>
-        <stix:Indicator id="example:indicator-de988b8f-538b-40d8-b4f3-36378ba18d48" timestamp="2014-08-25T15:55:45.338000+00:00" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
+        <stix:Indicator id="example:indicator-239fdc6b-bee7-4cc6-8987-938e517b2eda" timestamp="2015-05-12T18:55:02.443600+00:00" xsi:type='indicator:IndicatorType'>
             <indicator:Title>192.168.1.1</indicator:Title>
-            <indicator:Observable id="example:Observable-c80170c3-64f0-49a7-b16c-be9dc290583f">
-                <cybox:Object id="example:Address-85953adb-21ba-447c-8d8b-df8fe4d7e894">
+            <indicator:Observable id="example:Observable-f699a22f-7a02-4b4a-bd41-0ba139956d10">
+                <cybox:Object id="example:Address-e21d904d-ac02-471c-825c-0b5cae4fb4d8">
                     <cybox:Properties xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
                         <AddressObj:Address_Value condition="Equals">192.168.1.1</AddressObj:Address_Value>
                     </cybox:Properties>
                 </cybox:Object>
             </indicator:Observable>
             <indicator:Indicated_TTP>
+
                 <stixCommon:TTP idref="example:ttp-e16098ed-8135-43b0-96d1-1d93e52fdab2" xsi:type='ttp:TTPType' version="1.2"/>
+
             </indicator:Indicated_TTP>
         </stix:Indicator>
-        <stix:Indicator id="example:indicator-132f994f-627e-453b-97e4-d2fc0d9b6143" timestamp="2014-08-25T15:55:45.341000+00:00" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
+        <stix:Indicator id="example:indicator-899796d3-4e59-4ebf-a25d-c01be6caefbc" timestamp="2015-05-12T18:55:02.447308+00:00" xsi:type='indicator:IndicatorType'>
             <indicator:Title>192.168.1.2</indicator:Title>
-            <indicator:Observable id="example:Observable-19be41b3-b51c-4f73-b388-4978ad5f4985">
-                <cybox:Object id="example:Address-1059630d-b0bb-483b-990f-553880b704f1">
+            <indicator:Observable id="example:Observable-77a00f4e-f239-40b1-91cc-67a71ccb9831">
+                <cybox:Object id="example:Address-1d6d3d7a-fe00-42f2-958c-4cffa6b46014">
                     <cybox:Properties xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
                         <AddressObj:Address_Value condition="Equals">192.168.1.2</AddressObj:Address_Value>
                     </cybox:Properties>
                 </cybox:Object>
             </indicator:Observable>
             <indicator:Indicated_TTP>
+
                 <stixCommon:TTP idref="example:ttp-6811a8b7-cbc7-4747-86ab-1f26ee7b84ba" xsi:type='ttp:TTPType' version="1.2"/>
+
             </indicator:Indicated_TTP>
         </stix:Indicator>
-        <stix:Indicator id="example:indicator-e84adf12-d390-4ad8-b830-72c48617717d" timestamp="2014-08-25T15:55:45.343000+00:00" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
+        <stix:Indicator id="example:indicator-8dee4c95-33f1-4bc0-b254-dfca8647578c" timestamp="2015-05-12T18:55:02.450375+00:00" xsi:type='indicator:IndicatorType'>
             <indicator:Title>192.168.1.3</indicator:Title>
-            <indicator:Observable id="example:Observable-e3394c5f-fce1-4ad3-8bb5-52ce5b7c44e9">
-                <cybox:Object id="example:Address-9449960e-1606-4d04-91b2-d8331bfe548b">
+            <indicator:Observable id="example:Observable-b978fc39-4c3b-495c-a6de-6904e16bdcc0">
+                <cybox:Object id="example:Address-7c407a38-75cf-46d6-93fa-a9f598bcf3a5">
                     <cybox:Properties xsi:type="AddressObj:AddressObjectType" category="ipv4-addr">
                         <AddressObj:Address_Value condition="Equals">192.168.1.3</AddressObj:Address_Value>
                     </cybox:Properties>
@@ -87,6 +87,7 @@
             </indicator:Observable>
             <indicator:Indicated_TTP>
                 <stixCommon:TTP idref="example:ttp-e16098ed-8135-43b0-96d1-1d93e52fdab2" xsi:type='ttp:TTPType' version="1.2"/>
+
             </indicator:Indicated_TTP>
         </stix:Indicator>
     </stix:Indicators>
@@ -106,12 +107,12 @@
             </incident:Time>
             <incident:Related_Indicators>
                 <incident:Related_Indicator>
-                    <stixCommon:Indicator idref="example:indicator-de988b8f-538b-40d8-b4f3-36378ba18d48" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1"/>
+                    <stixCommon:Indicator idref="example:indicator-239fdc6b-bee7-4cc6-8987-938e517b2eda" xsi:type='indicator:IndicatorType'/>
                 </incident:Related_Indicator>
             </incident:Related_Indicators>
             <incident:Related_Observables>
                 <incident:Related_Observable>
-                    <stixCommon:Observable idref="example:Observable-6a93879e-58b9-47b0-a44a-77fdb0cf1bb7">
+                    <stixCommon:Observable idref="example:Observable-f34cd03b-f924-4b0b-8447-353cb024d4f8">
                     </stixCommon:Observable>
                 </incident:Related_Observable>
             </incident:Related_Observables>
@@ -123,48 +124,53 @@
             </incident:Leveraged_TTPs>
         </stix:Incident>
         <stix:Incident id="example:incident-50ee7517-d1b0-4dfc-ba9d-f62089f3ddee" timestamp="2014-08-25T15:55:45.341000+00:00" xsi:type='incident:IncidentType' version="1.2">
+
             <incident:Title>192.168.1.2</incident:Title>
             <incident:Time>
                 <incident:First_Malicious_Action precision="second">2014-01-03T11:21:27+00:00</incident:First_Malicious_Action>
             </incident:Time>
             <incident:Related_Indicators>
                 <incident:Related_Indicator>
-                    <stixCommon:Indicator idref="example:indicator-132f994f-627e-453b-97e4-d2fc0d9b6143" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1"/>
+                    <stixCommon:Indicator idref="example:indicator-899796d3-4e59-4ebf-a25d-c01be6caefbc" xsi:type='indicator:IndicatorType'/>
                 </incident:Related_Indicator>
             </incident:Related_Indicators>
             <incident:Related_Observables>
                 <incident:Related_Observable>
-                    <stixCommon:Observable idref="example:Observable-f5677a60-16cf-4ff3-b42f-18d569febd64">
+                    <stixCommon:Observable idref="example:Observable-18568256-083a-44ee-ac85-669ac96dee2a">
                     </stixCommon:Observable>
                 </incident:Related_Observable>
             </incident:Related_Observables>
             <incident:Leveraged_TTPs>
                 <incident:Leveraged_TTP>
                     <stixCommon:Relationship>Used Malware</stixCommon:Relationship>
+
                     <stixCommon:TTP idref="example:ttp-6811a8b7-cbc7-4747-86ab-1f26ee7b84ba" xsi:type='ttp:TTPType' version="1.2"/>
                 </incident:Leveraged_TTP>
             </incident:Leveraged_TTPs>
         </stix:Incident>
         <stix:Incident id="example:incident-2bedee92-c2d8-4b21-bb97-a9ec40641923" timestamp="2014-08-25T15:55:45.344000+00:00" xsi:type='incident:IncidentType' version="1.2">
+
             <incident:Title>192.168.1.3</incident:Title>
             <incident:Time>
                 <incident:First_Malicious_Action precision="second">2014-01-04T17:45:54+00:00</incident:First_Malicious_Action>
             </incident:Time>
             <incident:Related_Indicators>
                 <incident:Related_Indicator>
-                    <stixCommon:Indicator idref="example:indicator-e84adf12-d390-4ad8-b830-72c48617717d" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1"/>
+                    <stixCommon:Indicator idref="example:indicator-8dee4c95-33f1-4bc0-b254-dfca8647578c" xsi:type='indicator:IndicatorType'/>
                 </incident:Related_Indicator>
             </incident:Related_Indicators>
             <incident:Related_Observables>
                 <incident:Related_Observable>
-                    <stixCommon:Observable idref="example:Observable-c4d3a92f-96fe-4a9a-97bd-9f7a8abf20fc">
+                    <stixCommon:Observable idref="example:Observable-81e7bcb2-d71f-4b88-96e9-2c1b2a3e8f53">
                     </stixCommon:Observable>
                 </incident:Related_Observable>
             </incident:Related_Observables>
             <incident:Leveraged_TTPs>
                 <incident:Leveraged_TTP>
                     <stixCommon:Relationship>Used Malware</stixCommon:Relationship>
+
                     <stixCommon:TTP idref="example:ttp-e16098ed-8135-43b0-96d1-1d93e52fdab2" xsi:type='ttp:TTPType' version="1.2"/>
+
                 </incident:Leveraged_TTP>
             </incident:Leveraged_TTPs>
         </stix:Incident>

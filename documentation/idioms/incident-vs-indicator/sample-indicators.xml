@@ -16,16 +16,13 @@
 	http://cybox.mitre.org/cybox-2 http://cybox.mitre.org/XMLSchema/core/2.1/cybox_core.xsd
 	http://cybox.mitre.org/default_vocabularies-2 http://cybox.mitre.org/XMLSchema/default_vocabularies/2.1/cybox_default_vocabularies.xsd
 	http://cybox.mitre.org/objects#AddressObject-2 http://cybox.mitre.org/XMLSchema/objects/Address/2.1/Address_Object.xsd
+
 	http://stix.mitre.org/Incident-1 http://stix.mitre.org/XMLSchema/incident/1.2/incident.xsd
 	http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.2/indicator.xsd
 	http://stix.mitre.org/TTP-1 http://stix.mitre.org/XMLSchema/ttp/1.2/ttp.xsd
 	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.2/stix_common.xsd
 	http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.2.0/stix_default_vocabularies.xsd
-	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.2/stix_core.xsd" id="example:Package-58d4989b-33f3-411a-b524-02e40f1a115d" version="1.2" timestamp="2014-08-22T20:17:38.959000+00:00">
-    <stix:STIX_Header>
-        <stix:Title>IP Indicators</stix:Title>
-        <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Indicators - Watchlist</stix:Package_Intent>
-    </stix:STIX_Header>
+	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.2/stix_core.xsd" id="example:Package-58d4989b-33f3-411a-b524-02e40f1a115d" version="1.2" >
     <stix:Indicators>
         <stix:Indicator id="example:indicator-0756a255-6623-4226-8356-015396918b38" timestamp="2014-08-22T20:17:38.959000+00:00" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
             <indicator:Title>192.168.1.1</indicator:Title>

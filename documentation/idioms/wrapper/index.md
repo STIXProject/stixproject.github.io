@@ -110,11 +110,13 @@ In this case, we'll follow the suggested practice and reference content included
         </stix:Report>
     </stix:Reports>
 </stix:STIX_Package>
+
 {% endhighlight %}
 
 [Full XML](multiple-reports-in-package.xml)
 
 ## Python
+
 
 {% highlight python %}
 campaign = Campaign(title="Campaign against ICS")
@@ -134,6 +136,7 @@ rat_report.header.intents = "Indicators - Malware Artifacts"
 rat_report.add_ttp(TTP(idref=ttp._id))
 
 wrapper = STIXPackage()
+
 info_src = InformationSource()
 info_src.identity = Identity(name="Government Sharing Program - GSP")
 wrapper.stix_header = STIXHeader(information_source=info_src)
@@ -143,7 +146,9 @@ wrapper.add_campaign(campaign)
 wrapper.add_ttp(ttp)
 
 
+
 print wrapper.to_xml()
+
 {% endhighlight %}
 
 [Full Python](multiple-reports-in-package.py)

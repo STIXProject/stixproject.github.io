@@ -75,7 +75,7 @@ One option in converting this data to STIX is to convert it to indicators: the *
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 data = json.load(open("data.json"))
 
-stix_package = STIXPackage(stix_header=STIXHeader(title=data['title'], package_intents='Indicators - Watchlist'))
+stix_package = STIXPackage()
 
 ttps = {}
 
@@ -97,7 +97,6 @@ for info in data['ips']:
 stix_package = STIXPackage.from_xml('sample-indicators.xml')
 
 data = {
-  'title': stix_package.stix_header.title,
   'indicators': {
   }
 }
@@ -157,7 +156,7 @@ The other approach would be to convert it to incidents: the **IP Address** is a 
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 data = json.load(open("data.json"))
 
-stix_package = STIXPackage(stix_header=STIXHeader(title=data['title'], package_intents='Incident'))
+stix_package = STIXPackage()
 
 ttps = {}
 
@@ -185,7 +184,7 @@ for info in data['ips']:
 stix_package = STIXPackage.from_xml('sample-incidents.xml')
 
 data = {
-  'title': stix_package.stix_header.title,
+  
   'incidents': {
   }
 }
@@ -274,7 +273,7 @@ Finally, both an indicator and an incident could be created for each row, and li
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 data = json.load(open("data.json"))
 
-stix_package = STIXPackage(stix_header=STIXHeader(title=data['title'], package_intents='Incident'))
+stix_package = STIXPackage()
 
 ttps = {}
 
@@ -316,7 +315,7 @@ for info in data['ips']:
 stix_package = STIXPackage.from_xml('sample-combined.xml')
 
 data = {
-  'title': stix_package.stix_header.title,
+  
   'incidents': {
   }
 }

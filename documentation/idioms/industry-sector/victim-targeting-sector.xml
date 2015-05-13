@@ -13,7 +13,7 @@
 	http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.2.0/stix_default_vocabularies.xsd
 	http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1 http://stix.mitre.org/XMLSchema/extensions/identity/ciq_3.0/1.2/ciq_3.0_identity.xsd
 	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.2/stix_core.xsd
-	urn:oasis:names:tc:ciq:xpil:3 http://stix.mitre.org/XMLSchema/external/oasis_ciq_3.0/xPIL.xsd" id="example:Package-e5114ee8-303f-4428-98ff-9499f099c961" version="1.2" timestamp="2014-09-09T14:38:08.678427+00:00">
+	urn:oasis:names:tc:ciq:xpil:3 http://stix.mitre.org/XMLSchema/external/oasis_ciq_3.0/xPIL.xsd" id="example:Package-e5114ee8-303f-4428-98ff-9499f099c961" version="1.2" >
     <stix:TTPs>
         <stix:TTP id="example:ttp-651e69a6-1ee4-4a9c-b9a1-3e9919fc695f" timestamp="2014-09-09T14:38:08.678310+00:00" xsi:type='ttp:TTPType' version="1.2">
             <ttp:Title>Victim Targeting: Electricity Sector and Industrial Control System Sector</ttp:Title>

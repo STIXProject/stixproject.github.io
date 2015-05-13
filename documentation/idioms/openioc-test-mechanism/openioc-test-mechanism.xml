@@ -17,7 +17,7 @@
 	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.2/stix_common.xsd
 	http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.2.0/stix_default_vocabularies.xsd
 	http://stix.mitre.org/extensions/TestMechanism#OpenIOC2010-1 http://stix.mitre.org/XMLSchema/extensions/test_mechanism/open_ioc_2010/1.2/open_ioc_2010_test_mechanism.xsd
-	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.2/stix_core.xsd" id="example:Package-6ed0af26-fcb9-49be-9014-f119770f267a" version="1.2" timestamp="2014-06-20T20:53:08.437984+00:00">
+	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.2/stix_core.xsd" id="example:Package-6ed0af26-fcb9-49be-9014-f119770f267a" version="1.2" >
     <stix:Indicators>
         <stix:Indicator id="example:indicator-b92194e0-da61-4a32-9034-1148123b0f7a" timestamp="2014-06-20T20:53:08.440812+00:00" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
             <indicator:Title>Zeus</indicator:Title>

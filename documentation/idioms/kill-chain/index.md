@@ -55,10 +55,6 @@ The example below demonstrates how to reference the kill chains (defined as expl
 </stix:TTPs>
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 stix_pkg = STIXPackage()
-stix_header = STIXHeader()
-stix_header.title = "Kill Chain Definition"
-stix_pkg.stix_header = stix_header
-
 
 # create LM-style kill chain
 # REF: http://stix.mitre.org/language/version{{site.current_version}}/stix_v{{site.current_version}}_lmco_killchain.xml

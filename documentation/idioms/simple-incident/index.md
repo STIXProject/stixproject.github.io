@@ -39,10 +39,6 @@ Note that timestamps describing the incident should be represented under `incide
 
 {% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="simple-incident" %}{% highlight xml linenos  %}
 <stix:STIX_Package >
-    <stix:STIX_Header>
-        <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Incident</stix:Package_Intent>
-        <stix:Description>Sample breach report</stix:Description>
-    </stix:STIX_Header>
     <stix:Incidents>
         <stix:Incident id="example:incident-8236b4a2-abe0-4b56-9347-288005c4bb92" timestamp="2014-11-18T23:40:08.061362+00:00" xsi:type='incident:IncidentType' version="1.2">
             <incident:Title>Breach of Cyber Tech Dynamics</incident:Title>
@@ -80,12 +76,6 @@ Note that timestamps describing the incident should be represented under `incide
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 # setup stix document
 stix_package = STIXPackage()
-stix_header = STIXHeader()
-
-stix_header.description = "Sample breach report" 
-stix_header.add_package_intent ("Incident")
-
-stix_package.stix_header = stix_header
 
 # add incident and confidence
 breach = Incident()
@@ -129,7 +119,7 @@ print stix_package
 
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 print "== INCIDENT =="
-print "Package: " + str(pkg.stix_header.description)
+
 for inc in pkg.incidents:
     print "---"
     print "Reporter: " + inc.reporter.identity.name
