@@ -14,8 +14,17 @@ $stix_prefixes = ['campaign', 'coa', 'et', 'genericStructuredCOA', 'genericTM',
                   'stix-openioc', 'stix-oval', 'stixVocabs', 'ta',
                   'tlpMarking', 'TOUMarking', 'ttp', 'yaraTM', 'report']
 
-$stix_uri = "http://stix.readthedocs.org/en/latest/api/"
-$cybox_uri = "http://cybox.readthedocs.org/en/latest/"
+$stix_uri_fmt = "http://stix.readthedocs.org/en/%s/api/"
+$cybox_uri = "http://cybox.readthedocs.org/en/stable/"
+
+# Map STIX versions to branches in the python-stix documentation
+$python_versions = {
+    "1.0" => nil,
+    "1.0.1" => nil,
+    "1.1" => nil,
+    "1.1.1" => "v1.1.1.5",
+    "1.2" => "stable",
+}
 
 $stix_links = {
     "campaign:AssociatedCampaignsType" => "campaign/campaign.html#stix.campaign.AssociatedCampaigns",
@@ -287,9 +296,12 @@ def type_path(type, version)
 end
 
 def python_link(type, version)
+  $stix_uri = $stix_uri_fmt % $python_versions[version]
   prefix = ($stix_prefixes.include? type.prefix) ? $stix_uri : $cybox_uri
   link = $stix_links["#{type.schema.prefix}:#{type.name}"]
-  if link then
+  # Only build links if we have a supported version (currently 1.1.1 or 1.2)
+  # and there is a corresponding mapping page
+  if $python_versions[version] && link then
     prefix + link
   else
     nil
