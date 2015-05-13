@@ -30,7 +30,7 @@
 	http://stix.mitre.org/ThreatActor-1 http://stix.mitre.org/XMLSchema/threat_actor/1.2/threat_actor.xsd
 	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.2/stix_common.xsd
 	http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.2/stix_default_vocabularies.xsd
-	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.2/stix_core.xsd" id="example:Package-e622beb9-3781-4dd7-9787-ac21ba84d898" version="1.2" timestamp="2014-07-25T18:16:44.543625+00:00">
+	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.2/stix_core.xsd" id="example:Package-e622beb9-3781-4dd7-9787-ac21ba84d898" version="1.2">
     <stix:Indicators>
         <stix:Indicator id="example:indicator-d0d3c811-7b88-4e1d-88d4-db4de4f43155" timestamp="2014-07-25T18:16:44.547169+00:00" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
             <indicator:Title>Phishing email</indicator:Title>

@@ -80,7 +80,6 @@ In this case, we've looked and figured out which namespaces/schemas we'll be usi
   ...
   version="1.2"
   id="example:package-382ded87-52c9-4644-bab0-ad3168cbad59"
-  timestamp="2014-05-08T09:00:00.000000Z"
   >
 </stix:STIX_Package>
 ```
@@ -88,8 +87,6 @@ In this case, we've looked and figured out which namespaces/schemas we'll be usi
 The `@version` attribute is set to the version of STIX that you're targeting, which in almost all cases will be the same as the version of the schemas that you're using.
 
 The `@id` attribute is set to a globally-unique identifier for this content, and in general the best way to achieve that goal is to follow our [suggested practice](/documentation/suggested-practices/#toc_1) for creating IDs: a producer namespace prefix, followed by a ":" (required by the field to separate the namespace from the ID), followed by the type of construct the ID is for ("package"), followed by a GUID. You can use an [online GUID generator](https://www.google.com/search?q=guid+generator) to generate the GUID. In this case the producer namespace prefix is "example" (note that this prefix must also be declared in the head of the document), the construct type is "package", and the GUID itself is "382ded87-52c9-4644-bab0-ad3168cbad59".
-
-Finally, the `@timestamp` attribute is used for [versioning](/documentation/concepts/versioning/) and should be set to the time (with fractional seconds if possible) that this version of the construct was published. To avoid ambiguity, this time should include a timezone if at all possible.
 
 ## Adding Content
 
@@ -319,8 +316,7 @@ The entire document, by the way, should look something like this:
     http://cybox.mitre.org/default_vocabularies-2 http://cybox.mitre.org/XMLSchema/default_vocabularies/2.1/cybox_default_vocabularies.xsd
   "
   version="1.2"
-  id="example:package-382ded87-52c9-4644-bab0-ad3168cbad59"
-  timestamp="2014-05-08T09:00:00.000000Z">
+  id="example:package-382ded87-52c9-4644-bab0-ad3168cbad59">
   <stix:Indicators>
     <stix:Indicator xsi:type="indicator:IndicatorType" id="example:indicator-3c3885fe-a350-4a5c-aae3-6f014df36975" timestamp="2014-05-08T09:00:00.000000Z">
       <indicator:Title>Malware XYZ Hashes</indicator:Title>

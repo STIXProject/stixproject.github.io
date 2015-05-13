@@ -62,7 +62,6 @@ You'll also notice a `schemaLocation` attribute with these schema namespaces map
 <stix:STIX_Package
   ...
   id="example:STIXPackage-33fe3b22-0201-47cf-85d0-97c02164528d"
-  timestamp="2014-02-20T09:00:00.000000Z"
   version="1.2">
 ```
 
@@ -70,17 +69,13 @@ At the top level of almost every STIX document will be the `STIX_Package` elemen
 
 One attribute you'll see on STIX_Package is `version`. This version attribute is strongly suggested when creating content and indicates which version of STIX the package conforms to. In this case, the package conforms to STIX 1.2.
 
-The other important attributes are `@id` and `@timestamp`. As you might expect, the `@id` is a globally unique ID given to an instance of a construct in STIX. STIX suggests several practices for creating and using IDs that you can see on our [Suggested Practices(https://github.com/STIXProject/schemas/wiki/Suggested-Practices-%281.1%29#formatting-ids) page. (I'll take a timeout to let you read that section). As you can see, in this case we've set the namespace portion of the ID to "example" and the ID portion to "Indicator-33fe3b22-0201-47cf-85d0-97c02164528d" in keeping with STIX suggested practices. You'll also remember that we had defined the example namespace in the head of the document:
+The other important attribute is `@id`. As you might expect, the `@id` is a globally unique ID given to an instance of a construct in STIX. STIX suggests several practices for creating and using IDs that you can see on our [Suggested Practices(https://github.com/STIXProject/schemas/wiki/Suggested-Practices-%281.1%29#formatting-ids) page. (I'll take a timeout to let you read that section). As you can see, in this case we've set the namespace portion of the ID to "example" and the ID portion to "Indicator-33fe3b22-0201-47cf-85d0-97c02164528d" in keeping with STIX suggested practices. You'll also remember that we had defined the example namespace in the head of the document:
 
 ```xml
 xmlns:example="http://example.com/"
 ```
 
 It's required to define all prefixes used in the IDs in your document.
-
-The `@timestamp` is used to indicate the time at which this version of the construct was identified. As a general rule (in keeping with our suggested practices) you should always include a `@timestamp` attribute to all constructs that support it whenever you give those components an `@id`. The `@timestamp` can then be used later by yourself or others to refer to the specific version of that construct identified by that `@timestamp`.
-
-When publishing an updated version of a construct you can use the same ID but update the timestamp to indicate that it's a new version of an existing construct.
 
 ## Indicators
 

@@ -11,7 +11,7 @@ Some basic guidance is provided below on which forms of observables are appropri
 {% capture expandable %}
 **Outgoing network connection to a particular IP that occurred at a specific time**
 {% highlight xml linenos %}
-<stix:STIX_Package id="example:STIXPackage-f61cd874-494d-4194-a3e6-6b487dbb6d6e" timestamp="2014-05-08T09:00:00.000000Z" version="{{site.current_version}}">
+<stix:STIX_Package id="example:STIXPackage-f61cd874-494d-4194-a3e6-6b487dbb6d6e" version="{{site.current_version}}">
   <stix:Observables cybox_major_version="2" cybox_minor_version="1">
   <cybox:Observable id="example:Observable-1d44cf4b-2cf9-4749-b93f-c8608cf21928">
     <cybox:Observable_Source>
