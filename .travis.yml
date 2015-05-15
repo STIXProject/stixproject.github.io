@@ -3,7 +3,7 @@ language: python
 install:
   - sudo apt-get update
   - sudo apt-get install libxml2-dev libxslt-dev zlib1g-dev
-  - pip install -q stix==1.1.1.2
+  - pip install -q stix==1.2.0.0
   - pip install -q stix-validator
 
 script: ./test_idioms.sh
