@@ -1,0 +1,69 @@
+---
+layout: data_model
+title: ActionPoolType
+this_version: 1.2
+---
+
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>ActionPoolType<span class="subdued">CybOX Core Schema</span></h1>
+    <p class="data-model-description">The <a href='/data-model/1.2/cybox/ActionPoolType'>ActionPoolType</a> enables the description of CybOX Actions in a space-efficient pooled manner with the actual Observable structures defined in the CybOX schema containing references to the pooled Action elements. This reduces redundancy caused when identical Actions occur multiple times within a set of defined Observables.</p>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.2" selected="selected">STIX 1.2</option>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+
+<hr />
+
+
+<h2>Fields</h2>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Action<span class="occurrence">1..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cybox/ActionType">ActionType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Action construct enables description/specification of a single cyber observable action.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

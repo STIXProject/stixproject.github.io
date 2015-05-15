@@ -1,5 +1,1 @@
-You should always include a STIX_Header whenever possible to communicate the source, intent, and other metadata about the package. In particular, it's recommended to fill out:
-
-* Title
-* Package_Intent
-* Information_Source
+As of STIX 1.2, the contextual fields in `STIX_Header` have been deprecated. If you want to give context to set of STIX content you should use a [Report](/data-model/{{site.current_version}}/report/ReportType). The `Information_Source` field is still available and should be used to indicate the source of content that's included in the report (in other words, it's equivalent to setting the `Information_Source` in each individual construct).

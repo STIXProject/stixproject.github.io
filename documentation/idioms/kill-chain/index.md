@@ -55,13 +55,9 @@ The example below demonstrates how to reference the kill chains (defined as expl
 </stix:TTPs>
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 stix_pkg = STIXPackage()
-stix_header = STIXHeader()
-stix_header.title = "Kill Chain Definition"
-stix_pkg.stix_header = stix_header
 
-
-# create LM-style kill chain 
-# REF: http://stix.mitre.org/language/version1.1.1/stix_v1.1.1_lmco_killchain.xml
+# create LM-style kill chain
+# REF: http://stix.mitre.org/language/version{{site.current_version}}/stix_v{{site.current_version}}_lmco_killchain.xml
 
 recon = KillChainPhase(phase_id="stix:TTP-af1016d6-a744-4ed7-ac91-00fe2272185a", name="Reconnaissance", ordinality="1")
 weapon = KillChainPhase(phase_id="stix:TTP-445b4827-3cca-42bd-8421-f2e947133c16", name="Weaponization", ordinality="2")
@@ -93,7 +89,7 @@ indicator.kill_chain_phases = KillChainPhasesReference([
 ])
 stix_pkg.add_indicator(indicator)
 
-print stix_pkg.to_xml() 
+print stix_pkg.to_xml()
 
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 kill_chains = {}
@@ -104,8 +100,8 @@ for chain in pkg.ttps.kill_chains:
     print "--"
     print "Name: " + chain.name
     print "Definer: " + chain.definer
-    
-    for phase in chain.kill_chain_phases: 
+
+    for phase in chain.kill_chain_phases:
         kill_chain_phases[phase.phase_id] = str(phase.name)
         print "Phase: " + str(phase.name)
 
@@ -115,7 +111,7 @@ for indicator in pkg.indicators:
     for phase in indicator.kill_chain_phases:
         print "  == Kill Chain Reference =="
         print "  Name: " + kill_chains[phase.kill_chain_id]
-        print "  Phase: " + kill_chain_phases[phase.phase_id]    
+        print "  Phase: " + kill_chain_phases[phase.phase_id]
 {% endhighlight %}{% include end_tabs.html %}
 
 [Full XML](kill-chain.xml) | [Python Producer](kill-chain_producer.py) | [Python Consumer](kill-chain_consumer.py)

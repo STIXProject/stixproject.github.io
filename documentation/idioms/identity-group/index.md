@@ -25,7 +25,7 @@ The STIX default extension for identity is [OASIS CIQ](https://www.oasis-open.or
 {% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="identity-group" %}{% highlight xml linenos %}
 <stix:STIX_Package >
      <stix:Threat_Actors>
-        <stix:Threat_Actor id="example:threatactor-dfaa8d77-07e2-4e28-b2c8-92e9f7b04428" timestamp="2014-11-19T23:39:03.893348+00:00" xsi:type='ta:ThreatActorType' version="1.1.1">
+        <stix:Threat_Actor id="example:threatactor-dfaa8d77-07e2-4e28-b2c8-92e9f7b04428" timestamp="2014-11-19T23:39:03.893348+00:00" xsi:type='ta:ThreatActorType' version="1.2">
             <ta:Title>Disco Team Threat Actor Group</ta:Title>
             <ta:Identity id="example:Identity-733c5838-34d9-4fbf-949c-62aba761184c" xsi:type='stix-ciqidentity:CIQIdentity3.0InstanceType'>
                 <ExtSch:Specification xmlns:ExtSch="http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1">

@@ -38,7 +38,7 @@ Given the constrained scenario, the incident construct is fairly limited: it con
 {% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="related-observables" %}{% highlight xml linenos %}
 <stix:STIX_Package >
     <stix:Incidents>
-        <stix:Incident id="example:incident-84d86106-d801-489b-87b6-d56bac58e6c1" timestamp="2014-09-15T14:37:54.297669+00:00" xsi:type='incident:IncidentType' version="1.1.1">
+        <stix:Incident id="example:incident-84d86106-d801-489b-87b6-d56bac58e6c1" timestamp="2014-09-15T14:37:54.297669+00:00" xsi:type='incident:IncidentType' version="1.2">
             <incident:Title>Malicious files detected</incident:Title>
             <incident:Related_Observables>
                 <incident:Related_Observable>

@@ -4,7 +4,7 @@ title: About STIX
 toc: about_toc.html
 ---
 
-Structured Threat Information Expression (STIX™) is a structured language to represent the full range of cyber threat information. The [STIX whitepaper](/getting-started/whitepaper) describes the motivation and architecture behind STIX, however at a high level the STIX language consists of 8 key constructs and the relationships between them:
+Structured Threat Information Expression (STIX™) is a structured language to represent the full range of cyber threat information. The [STIX whitepaper](/getting-started/whitepaper) describes the motivation and architecture behind STIX, however at a high level the STIX language consists of 9 key constructs and the relationships between them:
 
 <img src="/images/stix-architecture.png" style="height: 400px" class="aside-text-left"/>
 
@@ -16,6 +16,7 @@ Structured Threat Information Expression (STIX™) is a structured language to r
 - [Courses of Action](/data-model/{{site.current_version}}/coa/CourseOfActionType) describe response actions that may be taken in response to an attack or as a preventative measure
 - [Campaigns](/data-model/{{site.current_version}}/campaign/CampaignType) describe sets of incidents and/or TTPs with a shared intent
 - [Threat Actors](/data-model/{{site.current_version}}/ta/ThreatActorType) describe identification and/or characterization of the adversary
+- [Reports](/data-model/{{site.current_version}}/report/ReportType) collect related STIX content and give them shared context
 
 <br class="clear: both;" />
 

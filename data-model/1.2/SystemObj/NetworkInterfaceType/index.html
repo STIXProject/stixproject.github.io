@@ -1,0 +1,167 @@
+---
+layout: data_model
+title: NetworkInterfaceType
+this_version: 1.2
+---
+
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>NetworkInterfaceType<span class="subdued">System Object Schema</span></h1>
+    <p class="data-model-description">The <a href='/data-model/1.2/SystemObj/NetworkInterfaceType'>NetworkInterfaceType</a> type specifies information about a network interface, such as its MAC address.</p>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.2" selected="selected">STIX 1.2</option>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+
+<hr />
+
+
+<h2>Fields</h2>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Adapter<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Adapter field specifies the name of the network adapter used by the network interface.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Description<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Description field specifies the description of the network interface.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>DHCP_Lease_Expires<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The DHCP_Lease_Expires field specifies the date/time that the DHCP lease obtained on the network interface expires.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>DHCP_Lease_Obtained<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/DateTimeObjectPropertyType">DateTimeObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The DHCP_Lease_Obtained field specifies the date/time that the DHCP lease was obtained on the network interface.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>DHCP_Server_List<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/SystemObj/DHCPServerListType">DHCPServerListType</a>
+        
+      </td>
+      <td>
+        
+          <p>The DHCP_Server_List field specifies the list of DHCP servers used by the network interface.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>IP_Gateway_List<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/SystemObj/IPGatewayListType">IPGatewayListType</a>
+        
+      </td>
+      <td>
+        
+          <p>The IP_Gateway_List field specifies the list of IP Gateways used by the network interface.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>IP_List<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/SystemObj/IPInfoListType">IPInfoListType</a>
+        
+      </td>
+      <td>
+        
+          <p>The IP_List field specifies the list of IP addresses used by the network interface.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>MAC<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The MAC field specifies the MAC or hardware address of the physical network card. Either a colon (':') or a dash ('-') may be used a separator between the octets.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

@@ -63,19 +63,19 @@ One option in converting this data to STIX is to convert it to indicators: the *
             </cybox:Object>
         </indicator:Observable>
         <indicator:Indicated_TTP>
-            <stixCommon:TTP idref="example:ttp-d6b60324-a1b8-4d51-8c26-3aef6351371d" xsi:type='ttp:TTPType' version="1.1.1"/>
+            <stixCommon:TTP idref="example:ttp-d6b60324-a1b8-4d51-8c26-3aef6351371d" xsi:type='ttp:TTPType' version="1.2"/>
         </indicator:Indicated_TTP>
     </stix:Indicator>
 </stix:Indicators>
 <stix:TTPs>
-    <stix:TTP id="example:ttp-d6b60324-a1b8-4d51-8c26-3aef6351371d" timestamp="2014-08-22T20:17:38.959000+00:00" xsi:type='ttp:TTPType' version="1.1.1">
+    <stix:TTP id="example:ttp-d6b60324-a1b8-4d51-8c26-3aef6351371d" timestamp="2014-08-22T20:17:38.959000+00:00" xsi:type='ttp:TTPType' version="1.2">
         <ttp:Title>zbot</ttp:Title>
     </stix:TTP>
 </stix:TTPs>
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 data = json.load(open("data.json"))
 
-stix_package = STIXPackage(stix_header=STIXHeader(title=data['title'], package_intents='Indicators - Watchlist'))
+stix_package = STIXPackage()
 
 ttps = {}
 
@@ -97,7 +97,6 @@ for info in data['ips']:
 stix_package = STIXPackage.from_xml('sample-indicators.xml')
 
 data = {
-  'title': stix_package.stix_header.title,
   'indicators': {
   }
 }
@@ -130,12 +129,12 @@ The other approach would be to convert it to incidents: the **IP Address** is a 
     </cybox:Observable>
 </stix:Observables>
 <stix:TTPs>
-    <stix:TTP id="example:ttp-f0c26887-610b-4724-80c6-5bd4e0354df9" timestamp="2014-08-25T13:49:37.079000+00:00" xsi:type='ttp:TTPType' version="1.1.1">
+    <stix:TTP id="example:ttp-f0c26887-610b-4724-80c6-5bd4e0354df9" timestamp="2014-08-25T13:49:37.079000+00:00" xsi:type='ttp:TTPType' version="1.2">
         <ttp:Title>ZBot</ttp:Title>
     </stix:TTP>
 </stix:TTPs>
 <stix:Incidents>
-    <stix:Incident id="example:incident-da4e5808-0159-497a-be65-a65c8974f027" timestamp="2014-08-25T13:49:37.079000+00:00" xsi:type='incident:IncidentType' version="1.1.1">
+    <stix:Incident id="example:incident-da4e5808-0159-497a-be65-a65c8974f027" timestamp="2014-08-25T13:49:37.079000+00:00" xsi:type='incident:IncidentType' version="1.2">
         <incident:Title>192.168.1.1</incident:Title>
         <incident:Time>
             <incident:First_Malicious_Action precision="second">2014-01-01T09:23:23+00:00</incident:First_Malicious_Action>
@@ -149,7 +148,7 @@ The other approach would be to convert it to incidents: the **IP Address** is a 
         <incident:Leveraged_TTPs>
             <incident:Leveraged_TTP>
                 <stixCommon:Relationship>Used Malware</stixCommon:Relationship>
-                <stixCommon:TTP idref="example:ttp-f0c26887-610b-4724-80c6-5bd4e0354df9" xsi:type='ttp:TTPType' version="1.1.1"/>
+                <stixCommon:TTP idref="example:ttp-f0c26887-610b-4724-80c6-5bd4e0354df9" xsi:type='ttp:TTPType' version="1.2"/>
             </incident:Leveraged_TTP>
         </incident:Leveraged_TTPs>
     </stix:Incident>
@@ -157,7 +156,7 @@ The other approach would be to convert it to incidents: the **IP Address** is a 
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 data = json.load(open("data.json"))
 
-stix_package = STIXPackage(stix_header=STIXHeader(title=data['title'], package_intents='Incident'))
+stix_package = STIXPackage()
 
 ttps = {}
 
@@ -185,7 +184,7 @@ for info in data['ips']:
 stix_package = STIXPackage.from_xml('sample-incidents.xml')
 
 data = {
-  'title': stix_package.stix_header.title,
+  
   'incidents': {
   }
 }
@@ -237,17 +236,17 @@ Finally, both an indicator and an incident could be created for each row, and li
             </cybox:Object>
         </indicator:Observable>
         <indicator:Indicated_TTP>
-            <stixCommon:TTP idref="example:ttp-e16098ed-8135-43b0-96d1-1d93e52fdab2" xsi:type='ttp:TTPType' version="1.1.1"/>
+            <stixCommon:TTP idref="example:ttp-e16098ed-8135-43b0-96d1-1d93e52fdab2" xsi:type='ttp:TTPType' version="1.2"/>
         </indicator:Indicated_TTP>
     </stix:Indicator>
 </stix:Indicators>
 <stix:TTPs>
-    <stix:TTP id="example:ttp-e16098ed-8135-43b0-96d1-1d93e52fdab2" timestamp="2014-08-25T15:55:45.338000+00:00" xsi:type='ttp:TTPType' version="1.1.1">
+    <stix:TTP id="example:ttp-e16098ed-8135-43b0-96d1-1d93e52fdab2" timestamp="2014-08-25T15:55:45.338000+00:00" xsi:type='ttp:TTPType' version="1.2">
         <ttp:Title>ZBot</ttp:Title>
     </stix:TTP>
 </stix:TTPs>
 <stix:Incidents>
-    <stix:Incident id="example:incident-d6f8f6d6-e9ea-4d8f-b066-20a492ac9561" timestamp="2014-08-25T15:55:45.339000+00:00" xsi:type='incident:IncidentType' version="1.1.1">
+    <stix:Incident id="example:incident-d6f8f6d6-e9ea-4d8f-b066-20a492ac9561" timestamp="2014-08-25T15:55:45.339000+00:00" xsi:type='incident:IncidentType' version="1.2">
         <incident:Title>192.168.1.1</incident:Title>
         <incident:Time>
             <incident:First_Malicious_Action precision="second">2014-01-01T09:23:23+00:00</incident:First_Malicious_Action>
@@ -266,7 +265,7 @@ Finally, both an indicator and an incident could be created for each row, and li
         <incident:Leveraged_TTPs>
             <incident:Leveraged_TTP>
                 <stixCommon:Relationship>Used Malware</stixCommon:Relationship>
-                <stixCommon:TTP idref="example:ttp-e16098ed-8135-43b0-96d1-1d93e52fdab2" xsi:type='ttp:TTPType' version="1.1.1"/>
+                <stixCommon:TTP idref="example:ttp-e16098ed-8135-43b0-96d1-1d93e52fdab2" xsi:type='ttp:TTPType' version="1.2"/>
             </incident:Leveraged_TTP>
         </incident:Leveraged_TTPs>
     </stix:Incident>
@@ -274,7 +273,7 @@ Finally, both an indicator and an incident could be created for each row, and li
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 data = json.load(open("data.json"))
 
-stix_package = STIXPackage(stix_header=STIXHeader(title=data['title'], package_intents='Incident'))
+stix_package = STIXPackage()
 
 ttps = {}
 
@@ -316,7 +315,7 @@ for info in data['ips']:
 stix_package = STIXPackage.from_xml('sample-combined.xml')
 
 data = {
-  'title': stix_package.stix_header.title,
+  
   'incidents': {
   }
 }

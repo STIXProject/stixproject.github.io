@@ -1,0 +1,139 @@
+---
+layout: data_model
+title: PEHeadersType
+this_version: 1.2
+---
+
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>PEHeadersType<span class="subdued">Win Executable File Object Schema</span></h1>
+    <p class="data-model-description">The <a href='/data-model/1.2/WinExecutableFileObj/PEHeadersType'>PEHeadersType</a> specifies the headers found in PE and COFF files.</p>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.2" selected="selected">STIX 1.2</option>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+
+<hr />
+
+
+<h2>Fields</h2>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>DOS_Header<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/WinExecutableFileObj/DOSHeaderType">DOSHeaderType</a>
+        
+      </td>
+      <td>
+        
+          <p>The DOS_Header field refers to the MS-DOS PE header and its associated characteristics.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Signature<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Signature field specifies the 4-bytes sugnature that identifies the file as a PE file.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>File_Header<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/WinExecutableFileObj/PEFileHeaderType">PEFileHeaderType</a>
+        
+      </td>
+      <td>
+        
+          <p>The File_Header field refers to the PE file header (sometimes referred to as the COFF header) and its associated characteristics.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Optional_Header<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/WinExecutableFileObj/PEOptionalHeaderType">PEOptionalHeaderType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Optional_Header field refers to the PE optional header and its associated characteristics. The Optional Header is required for executable (PE) files, but optional for object (COFF) files.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Entropy<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/WinExecutableFileObj/EntropyType">EntropyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Entropy field specifies the calculated entropy of the PE file header.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Hashes<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/HashListType">HashListType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Hashes field is used to include any hash values computed using the specified PE binary file header as input.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

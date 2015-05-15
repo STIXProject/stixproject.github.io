@@ -41,7 +41,7 @@ Because this was done as a minor release, however, the previous capability remai
     </stix:Indicator>
 </stix:Indicators>
 <stix:Campaigns>
-    <stix:Campaign id="example:Campaign-b549a58c-afd9-4847-85c3-5be13d56d3cc" timestamp="2014-09-09T19:58:39.609000+00:00" xsi:type='campaign:CampaignType' version="1.1.1">
+    <stix:Campaign id="example:Campaign-b549a58c-afd9-4847-85c3-5be13d56d3cc" timestamp="2014-09-09T19:58:39.609000+00:00" xsi:type='campaign:CampaignType' version="1.2">
       <campaign:Title>Operation Omega</campaign:Title>
         <campaign:Related_Indicators>
             <campaign:Related_Indicator>
@@ -94,10 +94,6 @@ for campaign in pkg.campaigns:
 
 <p>This new approach is encouraged for all versions of STIX in which it is valid (1.1 and beyond).</p>
 
-{% capture alert_text %}
-**Warning!** The current version of python-stix (v1.1.1.1) does not support this structure. This is tracked via issue [#192](https://github.com/STIXProject/python-stix/issues/192)
-{% endcapture %}{% include alert.html type="danger" %}
-
 {% include start_tabs.html tabs="Diagram|XML|Production Python|Consumption Python" name="new" %}
   <img src="new-style.png" alt="New Style" />
 {% include tab_separator.html %}
@@ -121,7 +117,7 @@ for campaign in pkg.campaigns:
     </stix:Indicator>
 </stix:Indicators>
 <stix:Campaigns>
-    <stix:Campaign id="example:Campaign-b549a58c-afd9-4847-85c3-5be13d56d3cc" timestamp="2014-09-09T19:58:39.609000+00:00" xsi:type='campaign:CampaignType' version="1.1.1">
+    <stix:Campaign id="example:Campaign-b549a58c-afd9-4847-85c3-5be13d56d3cc" timestamp="2014-09-09T19:58:39.609000+00:00" xsi:type='campaign:CampaignType' version="1.2">
         <campaign:Title>Operation Omega</campaign:Title>
     </stix:Campaign>
 </stix:Campaigns>

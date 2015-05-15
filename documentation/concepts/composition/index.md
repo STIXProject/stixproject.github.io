@@ -378,7 +378,7 @@ A mechanism for Indicator composition is provided in STIX to support three prima
 {% include start_tabs.html tabs="XML|Python" name="comp6" %}{% highlight xml %}
 <stix:STIX_Package  
     id="example:STIXPackage-ac823873-4c51-4dd1-936e-a39d40151cc3"
-    timestamp="2014-05-08T09:00:00.000000Z" version="1.1.1">
+    timestamp="2014-05-08T09:00:00.000000Z" version="1.2">
   <stix:Indicators>
     <stix:Indicator xsi:type="indicator:IndicatorType" id="example:Indicator-e35c5023-0a11-434c-a812-963793b45cec">
       <indicator:Type>Campaign Characteristics</indicator:Type>

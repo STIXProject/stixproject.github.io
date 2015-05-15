@@ -1,0 +1,111 @@
+---
+layout: data_model
+title: TimeType
+this_version: 1.2
+---
+
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>TimeType<span class="subdued">CybOX Common Schema</span></h1>
+    <p class="data-model-description">The TimeType specifies various time properties for this construct.</p>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.2" selected="selected">STIX 1.2</option>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+
+<hr />
+
+
+<h2>Fields</h2>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Start_Time<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/DateTimeWithPrecisionType">DateTimeWithPrecisionType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Start_Time field is optional and describes the starting time for this construct. In order to avoid ambiguity, it is strongly suggest that all timestamps in this field include a specification of the timezone if it is known.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>End_Time<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/DateTimeWithPrecisionType">DateTimeWithPrecisionType</a>
+        
+      </td>
+      <td>
+        
+          <p>The End_Time field is optional and describes the ending time for this construct. In order to avoid ambiguity, it is strongly suggest that all timestamps in this field include a specification of the timezone if it is known.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Produced_Time<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/DateTimeWithPrecisionType">DateTimeWithPrecisionType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Produced_Time field is optional and describes the time that this construct was produced. In order to avoid ambiguity, it is strongly suggest that all timestamps in this field include a specification of the timezone if it is known.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Received_Time<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/DateTimeWithPrecisionType">DateTimeWithPrecisionType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Received_Time field is optional and describes the time that this construct was received. In order to avoid ambiguity, it is strongly suggest that all timestamps in this field include a specification of the timezone if it is known.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

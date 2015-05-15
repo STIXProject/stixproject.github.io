@@ -1,0 +1,97 @@
+---
+layout: data_model
+title: IPv4OptionType
+this_version: 1.2
+---
+
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>IPv4OptionType<span class="subdued">Network Packet Object Schema</span></h1>
+    <p class="data-model-description">The IPv4 option field is variable in length with zero or more options.</p>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.2" selected="selected">STIX 1.2</option>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+
+<hr />
+
+
+<h2>Fields</h2>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Copy_Flag<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/PacketObj/IPv4CopyFlagType">IPv4CopyFlagType</a>
+        
+      </td>
+      <td>
+        
+          <p>The copied flag indicates that this option is copied into all fragments on fragmentation. 1 bit. They are represented in this field by a string which specifies their value.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Class<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/PacketObj/IPv4ClassType">IPv4ClassType</a>
+        
+      </td>
+      <td>
+        
+          <p>The option class is represented by 2 bits where 0 = control; 1 = reserved for future use; 2 = debugging and measurement; 3 = reserved for future use. These enumerated values are defined for this field.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Option<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/PacketObj/IPv4OptionsType">IPv4OptionsType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Internet Protocol has provision for optional header fields identified by an option type. These types are enumerated in the IPv4OptionsType.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

@@ -1,0 +1,104 @@
+---
+layout: data_model
+title: StructuredTextType
+this_version: 1.2
+---
+
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>StructuredTextType<span class="subdued">STIX Common Schema</span></h1>
+    <p class="data-model-description">The StructuredTextType is a type representing a generalized structure for capturing structured or unstructured textual information such as descriptions of things.</p>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.2" selected="selected">STIX 1.2</option>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+    <p>
+      <a href="http://stix.readthedocs.org/en/stable/api/common/structured_text.html#stix.common.structured_text.StructuredText">
+        <img src="/images/python-logo.png" alt="Python" /><br />
+        API support
+      </a>
+    </p>
+    
+  </div>
+
+</div>
+
+
+<hr />
+
+
+<h2>Fields</h2>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@id<span class="occurrence">optional</span></td>
+      <td>
+        
+          QName
+        
+      </td>
+      <td>
+        
+          <p>Specifies a globally unique identifier for this Description.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@ordinality<span class="occurrence">optional</span></td>
+      <td>
+        
+          positiveInteger
+        
+      </td>
+      <td>
+        
+          <p>Specifies the intended order position of this construct instance (e.g. Description) within a set of potentially multiple peer construct instances. If only a single construct instance is present its ordinality can be assumed to be 1. If multiple construct instances are present, the ordinality field should be specified with unique values for each instance.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@structuring_format<span class="occurrence">optional</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>Used to indicate a particular structuring format (e.g., HTML5) used within an instance of StructuredTextType. Note that if the markup tags used by this format would be interpreted as XML information (such as the bracket-based tags of HTML) the text area should be enclosed in a CDATA section to prevent the markup from interferring with XML validation of the STIX document. If this attribute is absent, the implication is that no markup is being used.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

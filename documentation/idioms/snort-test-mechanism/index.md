@@ -41,7 +41,7 @@ There are a few other details to note as well:
 <stix:Indicator id="example:indicator-567b201c-4fd5-4bde-a5db-42abc340807a" timestamp="2014-06-20T15:16:56.987616+00:00" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
     <indicator:Title>Snort Signature for Heartbleed</indicator:Title>
     <indicator:Indicated_TTP>
-        <stixCommon:TTP idref="example:ttp-8c12783d-3ebd-42bd-8dcd-e81dab56a47a" xsi:type='ttp:TTPType' version="1.1.1"/>
+        <stixCommon:TTP idref="example:ttp-8c12783d-3ebd-42bd-8dcd-e81dab56a47a" xsi:type='ttp:TTPType' version="1.2"/>
     </indicator:Indicated_TTP>
     <indicator:Test_Mechanisms>
         <indicator:Test_Mechanism id="example:testmechanism-a1475567-50f7-4dae-b0d0-47c7ea8e79e1" xmlns:snortTM='http://stix.mitre.org/extensions/TestMechanism#Snort-1' xsi:type='snortTM:SnortTestMechanismType'>

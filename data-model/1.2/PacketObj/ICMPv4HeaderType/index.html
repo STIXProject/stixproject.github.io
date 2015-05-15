@@ -1,0 +1,97 @@
+---
+layout: data_model
+title: ICMPv4HeaderType
+this_version: 1.2
+---
+
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>ICMPv4HeaderType<span class="subdued">Network Packet Object Schema</span></h1>
+    <p class="data-model-description">Actual ICMP header bytes are defined, corresponding to the ICMP type, ICMP code, and to the checksum.</p>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.2" selected="selected">STIX 1.2</option>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+
+<hr />
+
+
+<h2>Fields</h2>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Type<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>ICMP Type byte specifies the format of the ICMP message.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Code<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>ICMP Code byte further qualifies the ICMP message.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Checksum<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>ICMP Checksum (16 bits) covers the ICMP message.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

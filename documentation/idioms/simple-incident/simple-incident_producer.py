@@ -19,12 +19,7 @@ from stix.extensions.marking.simple_marking import SimpleMarkingStructure
 def build_stix( ):
     # setup stix document
     stix_package = STIXPackage()
-    stix_header = STIXHeader()
 
-    stix_header.description = "Sample breach report" 
-    stix_header.add_package_intent ("Incident")
-
-    stix_package.stix_header = stix_header
 
     # add incident and confidence
     breach = Incident()

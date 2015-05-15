@@ -1,0 +1,153 @@
+---
+layout: data_model
+title: NetflowV9OptionsTemplateRecordType
+this_version: 1.2
+---
+
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>NetflowV9OptionsTemplateRecordType<span class="subdued">Network Flow Object Schema</span></h1>
+    <p class="data-model-description">Specifies the Options Template Record region, which includes the Option Scope Length, Option Length, and fields specifying the Scope field type and Scope field length.</p>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.2" selected="selected">STIX 1.2</option>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+
+<hr />
+
+
+<h2>Fields</h2>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Template_ID<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/IntegerObjectPropertyType">IntegerObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the template ID of this Options Template, which must be greater than 255.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Option_Scope_Length<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the length of bytes of any Scope field definition contained in the Options Template Record.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Option_Length<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the length of bytes of any options field definitions contained in this Options Template Record.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Scope_Field_Type<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/NetFlowObj/NetflowV9ScopeFieldType">NetflowV9ScopeFieldType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the relevant portion of the Exporter/NetFlow process to which the Options Template Record refers. Currently defined values include 1 for System, 2 for Interface, 3 for Line Card, 4 for Cache, and 5 for Template. More information can be found in RFC 3954.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Scope_Field_Length<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the length (in bytes) of the Scope field as it would appear in an Options Data Record.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Option_Field_Type<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/NetFlowObj/NetflowV9FieldType">NetflowV9FieldType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the type of field that would appear in the Options Template Record. More information can be found in RFC 3954.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Option_Field_Length<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Specifies the length (in bytes) of the Option field.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

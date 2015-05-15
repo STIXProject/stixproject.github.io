@@ -1,0 +1,83 @@
+---
+layout: data_model
+title: ICMPv6EchoRequestType
+this_version: 1.2
+---
+
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>ICMPv6EchoRequestType<span class="subdued">Network Packet Object Schema</span></h1>
+    <p class="data-model-description">Echo request informational ICMP v6 message; type=128.</p>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.2" selected="selected">STIX 1.2</option>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+
+<hr />
+
+
+<h2>Fields</h2>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Echo_Request<span class="occurrence">0..1</span></td>
+      <td>
+        
+          boolean
+        
+      </td>
+      <td>
+        
+          <p>Every node must implement an ICMP v6 Echo responder function that receives Echo Requests (ICMP v6 code=0).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Data<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/HexBinaryObjectPropertyType">HexBinaryObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>Zero or more octets of arbitrary data.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

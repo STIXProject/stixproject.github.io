@@ -21,7 +21,7 @@ A visualization tool that renders STIX documents in three unique ways which capt
 
 `STIXViz` also includes the `STIX to HTML` as a component, allowing users to view the details and contents of the rendered nodes.
 
-If you're just starting out in STIX and want to see what it's capable of, we suggest downloading `STIXViz` and opening up the more complex reports available on the STIX [Samples Page](http://stix.mitre.org/language/version1.1.1/samples.html) (e.g., FireEye Poison Ivy Report and Mandiant APT1 Report) in the tool.
+If you're just starting out in STIX and want to see what it's capable of, we suggest downloading `STIXViz` and opening up the more complex reports available on the STIX [Samples Page](http://stix.mitre.org/language/version{{site.current_version}}/samples.html) (e.g., FireEye Poison Ivy Report and Mandiant APT1 Report) in the tool.
 
 * [Download](https://github.com/STIXProject/stix-viz/releases)
 * [Usage Guide](https://github.com/STIXProject/stix-viz/wiki/STIXViz-Usage)
@@ -29,7 +29,7 @@ If you're just starting out in STIX and want to see what it's capable of, we sug
 
 ### STIX to HTML
 
-`STIX to HTML` is an XSLT stylesheet that can transform a STIX XML document into a human-readable HTML view. It was designed to be leveraged by developers, either as a mechanism for batch rendering STIX document or to be embedded as a visualization component within a STIX-capable application. 
+`STIX to HTML` is an XSLT stylesheet that can transform a STIX XML document into a human-readable HTML view. It was designed to be leveraged by developers, either as a mechanism for batch rendering STIX document or to be embedded as a visualization component within a STIX-capable application.
 
 The `STIX to HTML` transform is leveraged by `STIXViz` to display the contents and details of individual components.
 
@@ -45,7 +45,7 @@ The STIX project develops and maintains utilities for the STIX community which g
 
 ### OpenIOC to STIX
 
-`OpenIOC to STIX` is a Python utility to convert Mandiant's OpenIOC format into STIX Indicators (with CybOX Observables). This tool was used to generate the Indicators file in the APT1 report mapping on the [STIX samples page](http://stix.mitre.org/language/version1.1.1/samples.html).
+`OpenIOC to STIX` is a Python utility to convert Mandiant's OpenIOC format into STIX Indicators (with CybOX Observables). This tool was used to generate the Indicators file in the APT1 report mapping on the [STIX samples page](http://stix.mitre.org/language/version{{site.current_version}}/samples.html).
 
 While useful for it's stated purpose, the other way to use this tool is as an example of how to generate STIX content programmatically using the [machine-generated bindings](http://stix.readthedocs.org/en/latest/api_vs_bindings/index.html) included in the `python-stix` APIs. Looking through the source code is a great way to see how they work and how to import/use them, in particular for generating indicators with CybOX content.
 
@@ -64,7 +64,7 @@ The `STIX Validator` can also translate Excel STIX Profiles into either [ISO Sch
 * [Source Code](https://github.com/STIXProject/stix-validator)
 * [Releases](https://github.com/STIXProject/stix-validator/releases)
 
-### Java STIX Validator 
+### Java STIX Validator
 
 The `Java STIX Validator` is a Java FX application, which can perform STIX XML Schema validation via a graphical user interface.
 
