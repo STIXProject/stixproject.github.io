@@ -18,7 +18,7 @@ def main():
 
   data = json.load(open("data.json"))
 
-  stix_package = STIXPackage(stix_header=STIXHeader(title=data['title'], package_intents='Indicators - Watchlist'))
+  stix_package = STIXPackage()
 
   ttps = {}
 

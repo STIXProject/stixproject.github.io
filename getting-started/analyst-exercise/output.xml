@@ -1,4 +1,4 @@
-<stix:STIX_Package 
+<stix:STIX_Package
 	xmlns:cyboxCommon="http://cybox.mitre.org/common-2"
 	xmlns:cybox="http://cybox.mitre.org/cybox-2"
 	xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2"
@@ -6,6 +6,7 @@
 	xmlns:DomainNameObj="http://cybox.mitre.org/objects#DomainNameObject-1"
 	xmlns:EmailMessageObj="http://cybox.mitre.org/objects#EmailMessageObject-2"
 	xmlns:FileObj="http://cybox.mitre.org/objects#FileObject-2"
+	xmlns:report="http://stix.mitre.org/Report-1"
 	xmlns:example="http://example.com"
 	xmlns:incident="http://stix.mitre.org/Incident-1"
 	xmlns:indicator="http://stix.mitre.org/Indicator-2"
@@ -23,22 +24,13 @@
 	http://cybox.mitre.org/objects#DomainNameObject-1 http://cybox.mitre.org/XMLSchema/objects/Domain_Name/1.0/Domain_Name_Object.xsd
 	http://cybox.mitre.org/objects#EmailMessageObject-2 http://cybox.mitre.org/XMLSchema/objects/Email_Message/2.1/Email_Message_Object.xsd
 	http://cybox.mitre.org/objects#FileObject-2 http://cybox.mitre.org/XMLSchema/objects/File/2.1/File_Object.xsd
-	http://stix.mitre.org/Incident-1 http://stix.mitre.org/XMLSchema/incident/1.1.1/incident.xsd
-	http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.1.1/indicator.xsd
-	http://stix.mitre.org/TTP-1 http://stix.mitre.org/XMLSchema/ttp/1.1.1/ttp.xsd
-	http://stix.mitre.org/ThreatActor-1 http://stix.mitre.org/XMLSchema/threat_actor/1.1.1/threat_actor.xsd
-	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd
-	http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
-	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd" id="example:Package-e622beb9-3781-4dd7-9787-ac21ba84d898" version="1.1.1" timestamp="2014-07-25T18:16:44.543625+00:00">
-    <stix:STIX_Header>
-        <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Threat Report</stix:Package_Intent>
-        <stix:Description>Indicators for FireEye report on Saffron</stix:Description>
-        <stix:Information_Source>
-            <stixCommon:Time>
-                <cyboxCommon:Produced_Time>2014-05-15T00:00:00</cyboxCommon:Produced_Time>
-            </stixCommon:Time>
-        </stix:Information_Source>
-    </stix:STIX_Header>
+	http://stix.mitre.org/Incident-1 http://stix.mitre.org/XMLSchema/incident/1.2/incident.xsd
+	http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.2/indicator.xsd
+	http://stix.mitre.org/TTP-1 http://stix.mitre.org/XMLSchema/ttp/1.2/ttp.xsd
+	http://stix.mitre.org/ThreatActor-1 http://stix.mitre.org/XMLSchema/threat_actor/1.2/threat_actor.xsd
+	http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.2/stix_common.xsd
+	http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.2/stix_default_vocabularies.xsd
+	http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.2/stix_core.xsd" id="example:Package-e622beb9-3781-4dd7-9787-ac21ba84d898" version="1.2">
     <stix:Indicators>
         <stix:Indicator id="example:indicator-d0d3c811-7b88-4e1d-88d4-db4de4f43155" timestamp="2014-07-25T18:16:44.547169+00:00" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
             <indicator:Title>Phishing email</indicator:Title>
@@ -56,7 +48,7 @@
                 </cybox:Object>
             </indicator:Observable>
             <indicator:Indicated_TTP>
-                <stixCommon:TTP idref="example:ttp-ee5930f0-3798-4069-9aa6-f070f24896d5" xsi:type='ttp:TTPType' version="1.1.1"/>
+                <stixCommon:TTP idref="example:ttp-ee5930f0-3798-4069-9aa6-f070f24896d5" xsi:type='ttp:TTPType' version="1.2"/>
             </indicator:Indicated_TTP>
             <indicator:Producer>
                 <stixCommon:Identity id="example:Identity-15997768-142d-4043-b175-13b8fe1dba0f">
@@ -89,7 +81,7 @@
                 </cybox:Observable_Composition>
             </indicator:Observable>
             <indicator:Indicated_TTP>
-                <stixCommon:TTP idref="example:ttp-024e9919-abeb-4e7a-b517-e2c44eaee706" xsi:type='ttp:TTPType' version="1.1.1"/>
+                <stixCommon:TTP idref="example:ttp-024e9919-abeb-4e7a-b517-e2c44eaee706" xsi:type='ttp:TTPType' version="1.2"/>
             </indicator:Indicated_TTP>
             <indicator:Producer>
                 <stixCommon:Identity id="example:Identity-8981bfb9-d37e-4b20-a40f-2b670df93e46">
@@ -137,14 +129,14 @@
         </stix:Indicator>
     </stix:Indicators>
     <stix:TTPs>
-        <stix:TTP id="example:ttp-ee5930f0-3798-4069-9aa6-f070f24896d5" timestamp="2014-07-25T18:16:44.546321+00:00" xsi:type='ttp:TTPType' version="1.1.1">
+        <stix:TTP id="example:ttp-ee5930f0-3798-4069-9aa6-f070f24896d5" timestamp="2014-07-25T18:16:44.546321+00:00" xsi:type='ttp:TTPType' version="1.2">
             <ttp:Title>Phishing Attempt</ttp:Title>
             <ttp:Description>Emails sent to targets</ttp:Description>
             <ttp:Intended_Effect timestamp="2014-07-25T18:16:44.546353+00:00">
                 <stixCommon:Value xsi:type="stixVocabs:IntendedEffectVocab-1.0">Theft - Credential Theft</stixCommon:Value>
             </ttp:Intended_Effect>
         </stix:TTP>
-        <stix:TTP id="example:ttp-024e9919-abeb-4e7a-b517-e2c44eaee706" timestamp="2014-07-25T18:16:44.546494+00:00" xsi:type='ttp:TTPType' version="1.1.1">
+        <stix:TTP id="example:ttp-024e9919-abeb-4e7a-b517-e2c44eaee706" timestamp="2014-07-25T18:16:44.546494+00:00" xsi:type='ttp:TTPType' version="1.2">
             <ttp:Title>Malware Implant</ttp:Title>
             <ttp:Description>Customized trojan written in .NET</ttp:Description>
             <ttp:Intended_Effect timestamp="2014-07-25T18:16:44.546519+00:00">
@@ -153,7 +145,7 @@
         </stix:TTP>
     </stix:TTPs>
     <stix:Threat_Actors>
-        <stix:Threat_Actor id="example:threatactor-75255d39-a507-40dd-82f2-0a2c04aefce9" timestamp="2014-07-25T18:16:44.546660+00:00" xsi:type='ta:ThreatActorType' version="1.1.1">
+        <stix:Threat_Actor id="example:threatactor-75255d39-a507-40dd-82f2-0a2c04aefce9" timestamp="2014-07-25T18:16:44.546660+00:00" xsi:type='ta:ThreatActorType' version="1.2">
             <ta:Title>Ajax Team</ta:Title>
             <ta:Description>Iranian intrusion team</ta:Description>
             <ta:Motivation timestamp="2014-07-25T18:16:44.546692+00:00">
@@ -170,10 +162,10 @@
             </ta:Intended_Effect>
             <ta:Observed_TTPs>
                 <ta:Observed_TTP>
-                    <stixCommon:TTP idref="example:ttp-ee5930f0-3798-4069-9aa6-f070f24896d5" xsi:type='ttp:TTPType' version="1.1.1"/>
+                    <stixCommon:TTP idref="example:ttp-ee5930f0-3798-4069-9aa6-f070f24896d5" xsi:type='ttp:TTPType'/>
                 </ta:Observed_TTP>
                 <ta:Observed_TTP>
-                    <stixCommon:TTP idref="example:ttp-024e9919-abeb-4e7a-b517-e2c44eaee706" xsi:type='ttp:TTPType' version="1.1.1"/>
+                    <stixCommon:TTP idref="example:ttp-024e9919-abeb-4e7a-b517-e2c44eaee706" xsi:type='ttp:TTPType'/>
                 </ta:Observed_TTP>
             </ta:Observed_TTPs>
             <ta:Confidence timestamp="2014-07-25T18:16:44.547007+00:00">
@@ -181,5 +173,30 @@
             </ta:Confidence>
         </stix:Threat_Actor>
     </stix:Threat_Actors>
+		<stix:Reports>
+				<stix:Report id="example:report-a23a316d-5cb1-4642-bd3e-fa0b250a8572" xsi:type="report:ReportType">
+						<report:Header>
+								<report:Title> FireEye Ajax/Saffron report</report:Title>
+								<report:Intent xsi:type="stixVocabs:ReportIntentVocab-1.0">Threat Report</report:Intent>
+								<report:Description>Indicators and background on a computer intrusion</report:Description>
+								<report:Information_Source>
+										<stixCommon:Time>
+												<cyboxCommon:Produced_Time>2014-05-15T00:00:00</cyboxCommon:Produced_Time>
+										</stixCommon:Time>
+								</report:Information_Source>
+						</report:Header>
+				<report:Indicators>
+						<report:Indicator idref="example:indicator-d0d3c811-7b88-4e1d-88d4-db4de4f43155" />
+						<report:Indicator idref="example:indicator-eb28ff69-edb1-4ab1-af6b-afe2708d4c80" />
+						<report:Indicator idref="example:indicator-32834c23-cfca-484c-9eea-83bc09f84afa" />
+				</report:Indicators>
+				<report:TTPs>
+						<report:TTP idref="example:ttp-ee5930f0-3798-4069-9aa6-f070f24896d5" />
+						<report:TTP idref="example:ttp-024e9919-abeb-4e7a-b517-e2c44eaee706" />
+				</report:TTPs>
+				<report:Threat_Actors>
+						<report:Threat_Actor idref="example:threatactor-75255d39-a507-40dd-82f2-0a2c04aefce9" />
+				</report:Threat_Actors>
+				</stix:Report>
+		</stix:Reports>
 </stix:STIX_Package>
-

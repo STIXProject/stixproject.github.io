@@ -1,0 +1,97 @@
+---
+layout: data_model
+title: HTTPRequestLineType
+this_version: 1.2
+---
+
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>HTTPRequestLineType<span class="subdued">HTTP Session Object Schema</span></h1>
+    <p class="data-model-description">The <a href='/data-model/1.2/HTTPSessionObj/HTTPRequestLineType'>HTTPRequestLineType</a> captures a single HTTP request line.</p>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.2" selected="selected">STIX 1.2</option>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+
+<hr />
+
+
+<h2>Fields</h2>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>HTTP_Method<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/HTTPSessionObj/HTTPMethodType">HTTPMethodType</a>
+        
+      </td>
+      <td>
+        
+          <p>The HTTP_Method field captures the HTTP method portion of the HTTP request line.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Value<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Value field captures the value (typically a resource path) portion of the HTTP request line.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Version<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Version field captures the HTTP version portion of the HTTP request line.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

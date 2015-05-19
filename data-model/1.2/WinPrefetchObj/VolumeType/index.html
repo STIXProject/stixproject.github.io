@@ -1,0 +1,83 @@
+---
+layout: data_model
+title: VolumeType
+this_version: 1.2
+---
+
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>VolumeType<span class="subdued">Win Prefetch Object Schema</span></h1>
+    <p class="data-model-description">VolumeType characterizes the volume information in the Windows prefetch file.</p>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.2" selected="selected">STIX 1.2</option>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+
+<hr />
+
+
+<h2>Fields</h2>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>VolumeItem<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/WinVolumeObj/WindowsVolumeObjectType">WindowsVolumeObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>The volume that the prefetch application was run from. The only item in the prefecth file is the volume name.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>DeviceItem<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/DeviceObj/DeviceObjectType">DeviceObjectType</a>
+        
+      </td>
+      <td>
+        
+          <p>The device that the prefetch application was run from. The only item in the prefetch file is the device serial number.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

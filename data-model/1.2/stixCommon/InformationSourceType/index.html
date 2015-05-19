@@ -1,0 +1,166 @@
+---
+layout: data_model
+title: InformationSourceType
+this_version: 1.2
+---
+
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>InformationSourceType<span class="subdued">STIX Common Schema</span></h1>
+    <p class="data-model-description">The <a href='/data-model/1.2/stixCommon/InformationSourceType'>InformationSourceType</a> details the source of a given data entry.</p>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.2" selected="selected">STIX 1.2</option>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+    <p>
+      <a href="http://stix.readthedocs.org/en/stable/api/common/information_source.html#stix.common.information_source.InformationSource">
+        <img src="/images/python-logo.png" alt="Python" /><br />
+        API support
+      </a>
+    </p>
+    
+  </div>
+
+</div>
+
+
+<hr />
+
+
+<h2>Fields</h2>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Description<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/StructuredTextType">StructuredTextType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Description field provides a description of this information source.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Identity<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/IdentityType">IdentityType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Identity field is optional and specifies the identity of the information source.</p>
+        
+          <p>This field is implemented through the xsi:type extension mechanism. The default type is <a href='/data-model/1.2/stix-ciqidentity/CIQIdentity3.0InstanceType'>CIQIdentity3.0InstanceType</a> in the http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1 namespace. This type is defined in the extensions/identity/ciq_identity.xsd file or at the URL http://stix.mitre.org/XMLSchema/extensions/identity/ciq_identity/1.2/ciq_identity.xsd.</p>
+        
+          <p>Those who wish to express a simple name may also do so by not specifying an xsi:type and using the Name field.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Role<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/ControlledVocabularyStringType">ControlledVocabularyStringType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Role field is optional and enables characterization of the sourcing Role played by this Information Source.</p>
+        
+          <p>This field is implemented through the xsi:type controlled vocabulary extension mechanism. The default vocabulary type is <a href='/data-model/1.2/stixVocabs/InformationSourceRoleVocab-1.0'>InformationSourceRoleVocab-1.0</a> in the http://stix.mitre.org/default_vocabularies-1 namespace. This type is defined in the stix_default_vocabularies.xsd file or at the URL http://stix.mitre.org/XMLSchema/default_vocabularies/1.2.0/stix_default_vocabularies.xsd.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Contributing_Sources<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/ContributingSourcesType">ContributingSourcesType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Contributing_Sources field is optional and enables description of the individual contributing sources involved in this instance.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Time<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/TimeType">TimeType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Time element is optional and enables description of various time-related attributes for this instance.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Tools<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/ToolsInformationType">ToolsInformationType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Tools element is optional and enables description of the tools utilized for this instance.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>References<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/stixCommon/ReferencesType">ReferencesType</a>
+        
+      </td>
+      <td>
+        
+          <p>The References field is optional and enables specification of references to information source material for this instance.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

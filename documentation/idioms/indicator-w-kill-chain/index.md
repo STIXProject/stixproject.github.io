@@ -19,34 +19,29 @@ In the example below, we define a kill chain and include a reference to one of i
 ## Implementation
 
 {% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="indicator-w-kill-chain" %}{% highlight xml linenos %}
-<stix:STIX_Package>
-    <stix:STIX_Header>
-        <stix:Title>Kill Chain Definition</stix:Title>
-    </stix:STIX_Header>
-    <stix:Indicators>
-        <stix:Indicator id="example:indicator-efe1dec4-2f86-44ce-9977-543d15507892" timestamp="2014-10-09T21:38:50.631509+00:00" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
-            <indicator:Title>Malicious executable</indicator:Title>
-            <indicator:Description>Resident binary which implements infostealing and credit card grabber</indicator:Description>
-            <indicator:Kill_Chain_Phases>
-                <stixCommon:Kill_Chain_Phase phase_id="example:killchainphase-32628418-b677-4bb3-8543-3e7e6c0c7500" kill_chain_id="example:killchain-13c00902-fc04-4d63-9362-29afedd50805"/>
-            </indicator:Kill_Chain_Phases>
-        </stix:Indicator>
-    </stix:Indicators>
-    <stix:TTPs>
-        <stix:Kill_Chains>
-            <stixCommon:Kill_Chain id="example:killchain-13c00902-fc04-4d63-9362-29afedd50805" name="Organization-specific Kill Chain">
-                <stixCommon:Kill_Chain_Phase name="Infect Machine" phase_id="example:killchainphase-32628418-b677-4bb3-8543-3e7e6c0c7500"/>
-                <stixCommon:Kill_Chain_Phase name="Exfiltrate Data" phase_id="example:killchainphase-3ffb6f6d-042f-49a4-8eea-0e0b6686090b"/>
-            </stixCommon:Kill_Chain>
-        </stix:Kill_Chains>
-    </stix:TTPs>
-</stix:STIX_Package>
+
+<stix:Indicators>
+    <stix:Indicator id="example:indicator-efe1dec4-2f86-44ce-9977-543d15507892" timestamp="2014-10-09T21:38:50.631509+00:00" xsi:type='indicator:IndicatorType' negate="false" version="2.1.1">
+        <indicator:Title>Malicious executable</indicator:Title>
+        <indicator:Description>Resident binary which implements infostealing and credit card grabber</indicator:Description>
+        <indicator:Kill_Chain_Phases>
+            <stixCommon:Kill_Chain_Phase phase_id="example:killchainphase-32628418-b677-4bb3-8543-3e7e6c0c7500" kill_chain_id="example:killchain-13c00902-fc04-4d63-9362-29afedd50805"/>
+        </indicator:Kill_Chain_Phases>
+    </stix:Indicator>
+</stix:Indicators>
+<stix:TTPs>
+    <stix:Kill_Chains>
+        <stixCommon:Kill_Chain id="example:killchain-13c00902-fc04-4d63-9362-29afedd50805" name="Organization-specific Kill Chain">
+            <stixCommon:Kill_Chain_Phase name="Infect Machine" phase_id="example:killchainphase-32628418-b677-4bb3-8543-3e7e6c0c7500"/>
+            <stixCommon:Kill_Chain_Phase name="Exfiltrate Data" phase_id="example:killchainphase-3ffb6f6d-042f-49a4-8eea-0e0b6686090b"/>
+        </stixCommon:Kill_Chain>
+    </stix:Kill_Chains>
+</stix:TTPs>
+
 
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 stix_pkg = STIXPackage()
-stix_header = STIXHeader()
-stix_header.title = "Kill Chain Definition"
-stix_pkg.stix_header = stix_header
+
 
 # make indicator 
 ind = Indicator()

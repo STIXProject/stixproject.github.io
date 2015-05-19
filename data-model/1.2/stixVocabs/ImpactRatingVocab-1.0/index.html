@@ -1,0 +1,131 @@
+---
+layout: data_model
+title: ImpactRatingVocab-1.0
+this_version: 1.2
+---
+
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>ImpactRatingVocab-1.0<span class="subdued">STIX Vocabularies Schema</span></h1>
+    <p class="data-model-description">The ImpactRatingVocab is the default STIX vocabulary for expressing the level of impact due to an incident.</p>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.2" selected="selected">STIX 1.2</option>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+    <p>
+      <a href="http://stix.readthedocs.org/en/stable/api/common/vocabs.html#stix.common.vocabs.ImpactRating">
+        <img src="/images/python-logo.png" alt="Python" /><br />
+        API support
+      </a>
+    </p>
+    
+  </div>
+
+</div>
+
+
+<hr />
+
+
+<h2>Vocabulary Items</h2>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  
+    <tr>
+      <td>None</td>
+      <td>There was no impact.</td>
+    </tr>
+  
+    <tr>
+      <td>Minor</td>
+      <td>There was a minor impact.</td>
+    </tr>
+  
+    <tr>
+      <td>Moderate</td>
+      <td>There was a moderate impact.</td>
+    </tr>
+  
+    <tr>
+      <td>Major</td>
+      <td>There was a major impact.</td>
+    </tr>
+  
+    <tr>
+      <td>Unknown</td>
+      <td>The impact is not known.</td>
+    </tr>
+  
+  </tbody>
+</table>
+
+
+<h2>Fields</h2>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>@vocab_name<span class="occurrence">optional</span></td>
+      <td>
+        
+          string
+        
+      </td>
+      <td>
+        
+          <p>The vocab_name field specifies the name of the controlled vocabulary.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>@vocab_reference<span class="occurrence">optional</span></td>
+      <td>
+        
+          anyURI
+        
+      </td>
+      <td>
+        
+          <p>The vocab_reference field specifies the URI to the location of where the controlled vocabulary is defined, e.g., in an externally located XML schema file.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

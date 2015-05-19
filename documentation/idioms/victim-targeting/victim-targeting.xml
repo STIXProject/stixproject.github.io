@@ -11,19 +11,15 @@
     xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1"
     xmlns:example="http://example.com/"
     xsi:schemaLocation="
-    http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd
-    http://stix.mitre.org/Campaign-1 http://stix.mitre.org/XMLSchema/campaign/1.1.1/campaign.xsd
-    http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.1.1/indicator.xsd
-    http://stix.mitre.org/TTP-2 http://stix.mitre.org/XMLSchema/ttp/1.1.1/ttp.xsd
-    http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd
+    http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.2/stix_core.xsd
+    http://stix.mitre.org/Campaign-1 http://stix.mitre.org/XMLSchema/campaign/1.2/campaign.xsd
+    http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.2/indicator.xsd
+    http://stix.mitre.org/TTP-2 http://stix.mitre.org/XMLSchema/ttp/1.2/ttp.xsd
+    http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.2.0/stix_default_vocabularies.xsd
     http://cybox.mitre.org/objects#AddressObject-2 http://cybox.mitre.org/XMLSchema/objects/Address/2.1/Address_Object.xsd"
     id="example:STIXPackage-bf35a4b5-e102-463d-9105-4d7a6e2d78bc"
-    timestamp="2014-05-08T09:00:00.000000Z"
-    version="1.1.1"
+    version="1.2"
     >
-    <stix:STIX_Header>
-        <stix:Title>Example Victim Targeting for a Campaign</stix:Title>
-    </stix:STIX_Header>
     <stix:TTPs>
         <stix:TTP xsi:type="ttp:TTPType" id="example:ttp-4fde045a-b25f-f035-e8d0-29c9d5130cd9" timestamp="2014-05-08T09:00:00.000000Z">
             <ttp:Title>Victim Targeting: Customer PII and Financial Data</ttp:Title>

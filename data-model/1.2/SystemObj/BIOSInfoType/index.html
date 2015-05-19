@@ -1,0 +1,125 @@
+---
+layout: data_model
+title: BIOSInfoType
+this_version: 1.2
+---
+
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>BIOSInfoType<span class="subdued">System Object Schema</span></h1>
+    <p class="data-model-description">The <a href='/data-model/1.2/SystemObj/BIOSInfoType'>BIOSInfoType</a> type specifies information about a system's BIOS.</p>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.2" selected="selected">STIX 1.2</option>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+
+<hr />
+
+
+<h2>Fields</h2>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>BIOS_Date<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/DateObjectPropertyType">DateObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The BIOS_Date field specifies the date of the bios (e.g. the datestamp of the BIOS revision).</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>BIOS_Version<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The BIOS_Version field specifies the version of the BIOS.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>BIOS_Manufacturer<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The BIOS_Manufacturer field specifies the manufacturer of the BIOS.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>BIOS_Release_Date<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/DateObjectPropertyType">DateObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The BIOS_Release_Date field specifies the date the BIOS was released.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>BIOS_Serial_Number<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The BIOS_Serial_Number field specifies the serial number of the BIOS.</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

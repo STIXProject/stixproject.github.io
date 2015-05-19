@@ -10,9 +10,7 @@ from stix.common.kill_chains import KillChain,KillChainPhase, KillChainPhaseRefe
 
 def main():
     stix_pkg = STIXPackage()
-    stix_header = STIXHeader()
-    stix_header.title = "Kill Chain Definition"
-    stix_pkg.stix_header = stix_header
+
 
     # make indicator 
     ind = Indicator()

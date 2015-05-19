@@ -1,0 +1,169 @@
+---
+layout: data_model
+title: OSType
+this_version: 1.2
+---
+
+
+
+<div class="row">
+  <div class="col-md-10">
+    <h1>OSType<span class="subdued">System Object Schema</span></h1>
+    <p class="data-model-description">The <a href='/data-model/1.2/SystemObj/OSType'>OSType</a> type specifies information about an operating system. It imports and extends the <a href='/data-model/1.2/cyboxCommon/PlatformSpecificationType'>PlatformSpecificationType</a> from the CybOX Common Types.</p>
+  </div>
+
+  <div id="nav-area" class="col-md-2">
+    <p>
+      <form id="nav-version">
+        <select>
+          
+            <option value="1.2" selected="selected">STIX 1.2</option>
+          
+            <option value="1.1.1" >STIX 1.1.1</option>
+          
+            <option value="1.1" >STIX 1.1</option>
+          
+            <option value="1.0.1" >STIX 1.0.1</option>
+          
+            <option value="1.0" >STIX 1.0</option>
+          
+        </select>
+      </form>
+    </p>
+
+    
+  </div>
+
+</div>
+
+
+<hr />
+
+
+<h2>Fields</h2>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td>Description<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StructuredTextType">StructuredTextType</a>
+        
+      </td>
+      <td>
+        
+          <p>A prose description of the indicated platform.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Identifier<span class="occurrence">0..n</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/PlatformIdentifierType">PlatformIdentifierType</a>
+        
+      </td>
+      <td>
+        
+          <p>Indicates a pre-defined name for the given platform using some naming scheme. For example, one could provide a CPE (Common Platform Enumeration) name using the CPE naming format.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Bitness<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/SystemObj/BitnessType">BitnessType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Bitness field specifies the bitness of the operating system (i.e. 32 or 64).</p>
+        
+          <p>Note that this is potentially different from the word size of the underlying hardware or CPU. A 32-bit operating system can be installed on a machine running a 64-bit processor.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Build_Number<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Build_Number field specifies the build number of the operating system.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Environment_Variable_List<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/EnvironmentVariableListType">EnvironmentVariableListType</a>
+        
+      </td>
+      <td>
+        
+          <p>The EnvironmentVariableList field specifies a list of environment variables present on the operating system.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Install_Date<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/DateObjectPropertyType">DateObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Install_Date field specifies the date the operating system was installed.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Patch_Level<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/StringObjectPropertyType">StringObjectPropertyType</a>
+        
+      </td>
+      <td>
+        
+          <p>The Patch_Level field specifies the patch level of the operating system.</p>
+        
+      </td>
+    </tr>
+  
+    <tr>
+      <td>Platform<span class="occurrence">0..1</span></td>
+      <td>
+        
+          <a href="/data-model/1.2/cyboxCommon/PlatformSpecificationType">PlatformSpecificationType</a>
+        
+      </td>
+      <td>
+        
+          <p>This field contains general identifiers for this OS instance..</p>
+        
+      </td>
+    </tr>
+  
+  </tbody>
+</table>

@@ -32,7 +32,7 @@ Notice in both the production code and the consumption code that the OpenIOC its
     <indicator:Title>Zeus</indicator:Title>
     <indicator:Description>Finds Zeus variants, twexts, sdra64, ntos</indicator:Description>
     <indicator:Indicated_TTP>
-        <stixCommon:TTP idref="example:ttp-27884a06-e75c-4f35-b58d-f8cf2722f7d3" xsi:type='ttp:TTPType' version="1.1.1"/>
+        <stixCommon:TTP idref="example:ttp-27884a06-e75c-4f35-b58d-f8cf2722f7d3" xsi:type='ttp:TTPType' version="1.2"/>
     </indicator:Indicated_TTP>
     <indicator:Test_Mechanisms>
         <indicator:Test_Mechanism id="example:testmechanism-c7f7dad4-4835-4105-8a53-72149f721ec0" xmlns:stix-openioc='http://stix.mitre.org/extensions/TestMechanism#OpenIOC2010-1' xsi:type='stix-openioc:OpenIOC2010TestMechanismType'>

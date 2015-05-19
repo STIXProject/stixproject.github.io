@@ -7,8 +7,8 @@ Profiles are a mechanism to describe a particular usage of STIX as practiced by 
 
 #### Downloads
 
-[STIX {{site.current_version}} Profile Template](https://stix.mitre.org/language/profiles/stix_{{site.current_version}}_profile_template_r2.xlsx)  
-[STIX {{site.current_version}} Sample Profile](https://stix.mitre.org/language/profiles/samples/stix_{{site.current_version}}_sample_indicator_sharing_profile_r2.xlsx)  
+[STIX {{site.current_version}} Profile Template](https://stix.mitre.org/language/profiles/stix_{{site.current_version}}_profile_template_r1.xlsx)  
+[STIX {{site.current_version}} Sample Profile](https://stix.mitre.org/language/profiles/samples/stix_{{site.current_version}}_sample_indicator_sharing_profile_r1.xlsx)  
 
 ## Background
 
@@ -75,6 +75,7 @@ Community profiles describe how a particular sharing community (an industry coll
 These profiles should be developed with participation from most or all members of the community to ensure that they aren't too focused on any one technical implementation or one organization's biases.
 
 Presence rules are created as follows:
+
 * **MUST**: All STIX documents **MUST** include this element to conform to the profile. This should be used only if all community members agree that they can and should populate this field for all content.
 * **SHOULD**: STIX documents **SHOULD** include this element to conform to the profile. This can be used for fields that the community thinks are very useful but may not be available all of the time.
 * **MAY**: STIX documents **MAY** include this element and conform to the profile. This can be used for fields that are useful in some, but not all, situations or for some, but not all, community members.
@@ -90,9 +91,7 @@ Producer profiles can be compared to community profiles to determine whether the
 For producer profiles, the producer itself should develop the profile in order to ensure that it is accurate. They should consider whether fields will always be present, might be present, or will never be present:
 
 * **MUST (Always Present)**: Fields that will always be present in order to line up with the language community profiles use. These fields will **always** be populated in all documents the producer publishes.
-
 * **MAY (Sometimes Present)**: Fields that will sometimes be present to line up with the language community profiles use. These fields might be present in documents the producer publishes.
-
 * **MUST NOT (Never Present)**: Fields that will never be present to line up with the language community profiles use. These fields will not be present in documents the producer publishes.
 
 Note that producer profiles don't typically have a "suggested" category. This is because the producer will populate optional fields as defined by the data their product produces and therefore the distinction is less relevant.
@@ -104,11 +103,12 @@ Consumer profiles are essentially compatibility statements: a consumer can creat
 If a consumer profile is a parent (superset) of either a producer or community profile it can be considered fully compatible. In other cases, it may be a partial superset/subset but have support for ignoring fields it does not handle rather than throwing an error, in which case it can be considered partially compatible.
 
 Consumers base compatibility with the ability to parse certain fields from an incoming STIX document.
+
 * **MUST** : Fields that **must** be present in a STIX document for this consumer to consume the document without errors. For consumer profiles, this should likely only be ID or other very basic elements.
 * **SHOULD** : Fields that may be present in a STIX document and that will be properly handled by any business logic.
 * **MAY** : Fields that may be present in a STIX document but are not as integrated into business logic (may simply be displayed or passed on).
 * **SHOULD NOT**: Fields that may be present in a STIX document and will not throw an error but will be ignored.
-* **MUST NOT **: Fields that will cause an error in the consuming tool if present. These should be kept to an absolute minimum.
+* **MUST NOT**: Fields that will cause an error in the consuming tool if present. These should be kept to an absolute minimum.
 
 ## Layering profiles
 
@@ -129,7 +129,7 @@ Because of these rules, any STIX document that complies with a child profile als
 
 ## Representing profiles
 
-The current representation for STIX profiles is a specifically-formatted Excel spreadsheet. The [representation](representation) page goes into detail on how the format works and the profile templates available on the [release page](http://stix.mitre.org/language/version1.1.1) are a good starting point.
+The current representation for STIX profiles is a specifically-formatted Excel spreadsheet. The [representation](representation) page goes into detail on how the format works and the profile templates available above are a good start.
 
 ## Validating content against profiles
 

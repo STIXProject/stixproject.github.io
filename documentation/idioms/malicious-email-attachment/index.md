@@ -67,7 +67,7 @@ The indicated TTP is the same as the previous indicators, while confidence is re
         </cybox:Object>
       </indicator:Observable>
       <indicator:Indicated_TTP>
-        <stixCommon:TTP idref="example:ttp-d7b066aa-4091-4276-a142-29d5d81c3484" xsi:type='ttp:TTPType' version="1.1.1"/>
+        <stixCommon:TTP idref="example:ttp-d7b066aa-4091-4276-a142-29d5d81c3484" xsi:type='ttp:TTPType' version="1.2"/>
       </indicator:Indicated_TTP>
       <indicator:Confidence timestamp="2014-10-31T15:52:13.127950+00:00">
         <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">High</stixCommon:Value>
@@ -87,7 +87,7 @@ The indicated TTP is the same as the previous indicators, while confidence is re
         </cybox:Object>
       </indicator:Observable>
       <indicator:Indicated_TTP>
-        <stixCommon:TTP idref="example:ttp-d7b066aa-4091-4276-a142-29d5d81c3484" xsi:type='ttp:TTPType' version="1.1.1"/>
+        <stixCommon:TTP idref="example:ttp-d7b066aa-4091-4276-a142-29d5d81c3484" xsi:type='ttp:TTPType' version="1.2"/>
       </indicator:Indicated_TTP>
       <indicator:Confidence timestamp="2014-10-31T15:52:13.127225+00:00">
         <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">Low</stixCommon:Value>
@@ -116,7 +116,7 @@ The indicated TTP is the same as the previous indicators, while confidence is re
         </cybox:Object>
       </indicator:Observable>
       <indicator:Indicated_TTP>
-        <stixCommon:TTP idref="example:ttp-d7b066aa-4091-4276-a142-29d5d81c3484" xsi:type='ttp:TTPType' version="1.1.1"/>
+        <stixCommon:TTP idref="example:ttp-d7b066aa-4091-4276-a142-29d5d81c3484" xsi:type='ttp:TTPType' version="1.2"/>
       </indicator:Indicated_TTP>
       <indicator:Confidence timestamp="2014-10-31T15:52:13.127775+00:00">
         <stixCommon:Value xsi:type="stixVocabs:HighMediumLowVocab-1.0">Low</stixCommon:Value>
@@ -125,7 +125,7 @@ The indicated TTP is the same as the previous indicators, while confidence is re
   </stix:Indicators>
   <stix:TTPs>
     <stix:TTP id="example:ttp-d7b066aa-4091-4276-a142-29d5d81c3484" timestamp="2014-10-31T15:52:13.126765+00:00"
-        xsi:type='ttp:TTPType' version="1.1.1">
+        xsi:type='ttp:TTPType' version="1.2">
       <ttp:Title>Phishing</ttp:Title>
     </stix:TTP>
   </stix:TTPs>
