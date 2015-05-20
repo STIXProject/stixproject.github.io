@@ -91,6 +91,15 @@ $stix_links = {
     "marking:MarkingSpecificationType" => "data_marking.html#stix.data_marking.MarkingSpecification",
     "marking:MarkingStructureType" => "data_marking.html#stix.data_marking.MarkingStructure",
     "marking:MarkingType" => "data_marking.html#stix.data_marking.Marking",
+    "report:CampaignsType" => nil,
+    "report:CoursesOfActionType" => nil,
+    "report:HeaderType" => "report/header.html#stix.report.header.Header",
+    "report:IncidentsType" => nil,
+    "report:IndicatorsType" => nil,
+    "report:RelatedReportsType" => nil,
+    "report:ReportType" => "report/report.html#stix.report.Report",
+    "report:ThreatActorsType" => nil,
+    "report:TTPsType" => nil,
     "simpleMarking:SimpleMarkingStructureType" => "extensions/marking/simple_marking.html#stix.extensions.marking.simple_marking.SimpleMarkingStructure",
     "snortTM:SnortTestMechanismType" => "extensions/test_mechanism/snort_test_mechanism.html#stix.extensions.test_mechanism.snort_test_mechanism.SnortTestMechanism",
     "stix-capec:CAPEC2.7InstanceType" => nil,
@@ -107,6 +116,7 @@ $stix_links = {
     "stix:IndicatorsType" => nil,
     "stix:RelatedPackagesType" => "core/stix_package.html#stix.core.stix_package.RelatedPackages",
     "stix:RelatedPackageType" => nil,
+    "stix:ReportsType" => nil,
     "stix:STIXHeaderType" => "core/stix_header.html#stix.core.stix_header.STIXHeader",
     "stix:STIXType" => "core/stix_package.html#stix.core.stix_package.STIXPackage",
     "stix:ThreatActorsType" => nil,
@@ -149,8 +159,10 @@ $stix_links = {
     "stixCommon:RelatedObservableType" => "common/related.html#stix.common.related.RelatedObservable",
     "stixCommon:RelatedPackageRefsType" => "common/related.html#stix.common.related.RelatedPackageRefs",
     "stixCommon:RelatedPackageRefType" => "common/related.html#stix.common.related.RelatedPackageRef",
+    "stixCommon:RelatedReportType" => "common/related.html#stix.common.related.RelatedReport",
     "stixCommon:RelatedThreatActorType" => "common/related.html#stix.common.related.RelatedThreatActor",
     "stixCommon:RelatedTTPType" => "common/related.html#stix.common.related.RelatedTTP",
+    "stixCommon:ReportBaseType" => nil,
     "stixCommon:StatementType" => "common/statement.html#stix.common.statement.Statement",
     "stixCommon:StructuredTextType" => "common/structured_text.html#stix.common.structured_text.StructuredText",
     "stixCommon:ThreatActorBaseType" => nil,
@@ -165,6 +177,7 @@ $stix_links = {
     "stixVocabs:COAStageVocab-1.0" => "common/vocabs.html#stix.common.vocabs.COAStage",
     "stixVocabs:CourseOfActionTypeVocab-1.0" => "common/vocabs.html#stix.common.vocabs.CourseOfActionType",
     "stixVocabs:DiscoveryMethodVocab-1.0" => "common/vocabs.html#stix.common.vocabs.DiscoveryMethod",
+    "stixVocabs:DiscoveryMethodVocab-2.0" => "common/vocabs.html#stix.common.vocabs.DiscoveryMethod",
     "stixVocabs:HighMediumLowVocab-1.0" => "common/vocabs.html#stix.common.vocabs.HighMediumLow",
     "stixVocabs:ImpactQualificationVocab-1.0" => "common/vocabs.html#stix.common.vocabs.ImpactQualification",
     "stixVocabs:ImpactRatingVocab-1.0" => "common/vocabs.html#stix.common.vocabs.ImpactRating",
@@ -188,10 +201,12 @@ $stix_links = {
     "stixVocabs:PackageIntentVocab-1.0" => "common/vocabs.html#stix.common.vocabs.PackageIntent",
     "stixVocabs:PlanningAndOperationalSupportVocab-1.0" => nil,
     "stixVocabs:PlanningAndOperationalSupportVocab-1.0.1" => "common/vocabs.html#stix.common.vocabs.PlanningAndOperationalSupport",
+    "stixVocabs:ReportIntentVocab-1.0" => "common/vocabs.html#stix.common.vocabs.ReportIntent_1_0",
     "stixVocabs:SecurityCompromiseVocab-1.0" => "common/vocabs.html#stix.common.vocabs.SecurityCompromise",
     "stixVocabs:SystemTypeVocab-1.0" => "common/vocabs.html#stix.common.vocabs.SystemType",
     "stixVocabs:ThreatActorSophisticationVocab-1.0" => "common/vocabs.html#stix.common.vocabs.ThreatActorSophistication",
     "stixVocabs:ThreatActorTypeVocab-1.0" => "common/vocabs.html#stix.common.vocabs.ThreatActorType",
+    "stixVocabs:VersioningVocab-1.0" => "common/vocabs.html#stix.common.vocabs.Versioning_1_0",
     "ta:AssociatedActorsType" => "threat_actor/threat_actor.html#stix.threat_actor.AssociatedActors",
     "ta:AssociatedCampaignsType" => "threat_actor/threat_actor.html#stix.threat_actor.AssociatedCampaigns",
     "ta:ObservedTTPsType" => "threat_actor/threat_actor.html#stix.threat_actor.ObservedTTPs",
@@ -299,6 +314,21 @@ def python_link(type, version)
   $stix_uri = $stix_uri_fmt % $python_versions[version]
   prefix = ($stix_prefixes.include? type.prefix) ? $stix_uri : $cybox_uri
   link = $stix_links["#{type.schema.prefix}:#{type.name}"]
+
+  # # This block of code helps detect types that were added in a new version of
+  # # STIX. Uncomment it when running 'rake regenerate', and add the output into
+  # # $stix_links. This was used to fix
+  # # https://github.com/STIXProject/stixproject.github.io/issues/244.
+  # if (version == StixSchemaSpy::Schema.latest_version and
+  #     prefix != $cybox_uri and
+  #     # Include exactly one of the following two lines:
+  #     # This line finds types not included in $stix_links at all.
+  #     not $stix_links.include? "#{type.schema.prefix}:#{type.name}")
+  #     # This line finds types either missing or set to nil in $stix_links.
+  #     #not link)
+  #   puts "    \"#{type.prefix}:#{type.name}\" => nil,"
+  # end
+
   # Only build links if we have a supported version (currently 1.1.1 or 1.2)
   # and there is a corresponding mapping page
   if $python_versions[version] && link then
