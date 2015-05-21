@@ -1,7 +1,12 @@
 ---
 layout: flat
-title: Getting Started
+title: Getting Started with STIX
 ---
+
+<div class="alert alert-warning" role="alert">
+  See STIX in action with <a href="/examples" class="alert-link"> 
+  real-world threat reports</a>
+</div>
 
 ## [Training and Presentations](/learn)
 
