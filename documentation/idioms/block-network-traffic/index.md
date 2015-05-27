@@ -1,6 +1,6 @@
 ---
 layout: flat
-title: COA to Block Network Traffic
+title: Course of Action to Block Network Traffic
 constructs:
   - Course of Action
 summary: One response to malware activity on a network is to block command and control server traffic at an external firewall. This idiom describes a course of action to implement such a block.
