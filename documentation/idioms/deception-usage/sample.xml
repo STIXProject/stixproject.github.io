@@ -1,0 +1,28 @@
+<stix:STIX_Package 
+	xmlns:coa="http://stix.mitre.org/CourseOfAction-1"
+	xmlns:cybox="http://cybox.mitre.org/cybox-2"
+	xmlns:cyboxCommon="http://cybox.mitre.org/common-2"
+	xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2"
+	xmlns:example="http://example.com"
+	xmlns:incident="http://stix.mitre.org/Incident-1"
+	xmlns:stix="http://stix.mitre.org/stix-1"
+	xmlns:stixCommon="http://stix.mitre.org/common-1"
+	xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="example:Package-73ce966d-52d2-4092-af41-114e45721814" version="1.1.1" timestamp="2015-06-02T20:21:54.139127+00:00">
+    <stix:Incidents>
+        <stix:Incident id="example:incident-b44bc002-4f4c-4dea-ab8b-2dbef815d016" timestamp="2015-06-02T20:21:54.139254+00:00" xsi:type='incident:IncidentType'>
+            <incident:Title>Breach of Cyber Tech Dynamics</incident:Title>
+            <incident:COA_Requested>
+                <incident:Course_Of_Action id="example:coa-9b5c8e6f-c7e4-45dc-812e-098d455bf023" timestamp="2015-06-02T20:21:54.139444+00:00" xsi:type='coa:CourseOfActionType'>
+                    <coa:Title>Monitor activity related to known compromised accounts</coa:Title>
+                    <coa:Stage xsi:type="stixVocabs:DeceptionVocab-1.0">Monitor</coa:Stage>
+                    <coa:Type xsi:type="stixVocabs:CourseOfActionTypeVocab-1.0">Redirection (Honey Pot)</coa:Type>
+                    <coa:Objective>
+                        <coa:Description>Further investigation into intruders re-using compromised accounts</coa:Description>
+                    </coa:Objective>
+                </incident:Course_Of_Action>
+            </incident:COA_Requested>
+        </stix:Incident>
+    </stix:Incidents>
+</stix:STIX_Package>
+
