@@ -49,7 +49,7 @@ for dir in ./documentation/idioms/*; do
             # the file had validation errors
             then
                 echo -e "\nERROR: $(realpath $xmlfile) had validation errors"
-                cat 'out.txt'
+                
                 RETVAL=1
                 continue
             else
