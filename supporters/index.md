@@ -1,11 +1,11 @@
 ---
 layout: flat
-title: Support for STIX
+title: Support for STIX/TAXII
 ---
 
 `This list is incomplete and actively updated. Inclusion does not represent an endorsement.`
 
-STIX is being implemented in many products, services, and global communities.
+STIX and TAXII are being implemented in many products, services, and global communities.
 
 Please [fill out this form](http://goo.gl/forms/jKQH7a6TfW) to contact the [STIX Team](mailto:stix@mitre.org) and request inclusion or modification under [User Communities](http://stixproject.github.io/supporters/#user-communities) or [Products and Services](http://stixproject.github.io/supporters/#products-and-services). 
 
