@@ -9,6 +9,8 @@ summary: Describes an indicator for a phishing e-mail that contains a malicious 
 
 Given that phishing is such a common attack vector, the ability to represent indicators for malicious e-mail is critical. In particular, indicators must be able to represent information about the e-mail itself (subject, sender, header information, etc.) as well as any attachments or links. This idiom describes representing a set of indicators for a malicious e-mail that has one attachment.
 
+{% include awesome-indicator.html %}
+
 ## Scenario
 
 This scenario consists of several related indicators used to represent a malicious e-mail. The e-mail has a somewhat unique subject pattern (it always starts with "[IMPORTANT] Please Review Before" and is followed by a date in the near future) asking for a document to be reviewed but has a random sender. It includes an attachment to a file with the extension ".doc.exe", but the actual file is somewhat variable so no consistent hash could be identified. It is desired to enable detection of this complete multi-part pattern or either of its partial patterns.

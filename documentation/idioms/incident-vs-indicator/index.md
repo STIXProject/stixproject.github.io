@@ -12,6 +12,10 @@ summary: You have a list of IP addresses (or hashes, or URLs, etc) and want to c
 
 Many threat intel feeds that are available today and not already formatted as STIX are flat lists of "bad things": IPs that are known to be malware C2, malicious URLs, malware file hashes. When considering how to convert these to STIX (either as the original producer or as an intermediary) a common question that comes up is whether they should be converted to a list of **indicators**, a list of **incidents**, or maybe **both**. This idiom looks at several different examples and explains when to use one approach vs. another.
 
+{% include awesome-indicator.html %}
+
+
+
 ## Background
 
 In STIX, an [Indicator](/data-model/{{site.current_version}}/indicator/IndicatorType) is used to represent detection guidance: it captures how to detect something (i.e. a pattern of what to look for) and what it means if you find it. For example, "If you see 192.168.1.1 in your network traffic it means you might have detected C2 traffic from a ZeuS trojan."

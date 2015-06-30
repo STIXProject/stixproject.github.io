@@ -24,6 +24,14 @@ This page describes several central STIX concepts that cut across all of the cor
 
       <a class="btn btn-primary" href="data-markings">Go »</a>
     </div>
+    
+      <div class="well">
+      <h4><a href="creating-quality-indicators">Creating Great Indicators </a></h4>
+
+      <p>Hot tips for making your indicators (IOCs) the best they can possibly be</p>
+
+      <a class="btn btn-primary" href="creating-quality-indicators">Go »</a>
+    </div>
 
     <div class="well">
       <h4><a href="relationships">Relationships</a></h4>

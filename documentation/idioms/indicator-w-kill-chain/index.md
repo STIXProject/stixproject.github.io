@@ -6,6 +6,8 @@ constructs:
 summary: Learn how to link malicious activity to phases of its kill chain.
 ---
 
+{% include awesome-indicator.html %}
+
 ## Scenario
 An Indicator may be linked to one or more malicious actions as part of a larger set of behavior called the [kill chain](/documentation/idioms/kill-chain)
 STIX supports an optional list of `Related Kill Chain Phases` for each Indicator to represent its relationship to this overall sequence of actions.

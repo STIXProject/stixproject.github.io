@@ -11,6 +11,10 @@ summary: This idiom walks through the very common use case where you have an ind
 
 One of the most common forms of [indicator](../#Indicator) seen describes a pattern for TCP traffic beaconing to a specific command and control (C2, C&C) server. This idiom describes creating such an indicator in STIX.
 
+{% include awesome-indicator.html %}
+
+
+
 ## Scenario
 
 This scenario consists of the description of a simple indicator that represents a test for a single IP address and the context that if that IP address is seen it means that there might be C2 traffic. Unlike many real-world use cases, it does not state that the C2 channel is for any particular piece of malware and does not give much context beyond simply that it's C2 Behavior.
