@@ -75,7 +75,7 @@ This page describes several central STIX concepts that cut across all of the cor
         <div class="well">
       <img src="/images/Indicator.png" class="component-img-right" alt="Indicator Icon" />
       <img src="/images/TTP.png" class="component-img-right" alt="TTP Icon" />
-      <h4><a href="xsi-type">TTP vs Indicator: A simple usage overview</a></h4>
+      <h4><a href="ttp-vs-indicator">TTP vs Indicator: A simple usage overview</a></h4>
 
       <p>Describes the basic intent of the TTP and Indicator components and when to use which one.</p>
 
