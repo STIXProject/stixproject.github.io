@@ -8,6 +8,8 @@ summary: This idiom is an example of a malicious URL indicator that represents a
 
 A very common method for delivering malware to potential targets is to host it at a particular URL. Targets are then directed to that URL via a phishing e-mail or a link from another site and, when they reach it, are exploited. Sharing lists of malicious URLs can be an effective and cheap way to limit exposure to malicious code.
 
+{% include awesome-indicator.html %}
+
 ## Scenario
 
 This scenario consists of an indicator for the URL `http://x4z9arb.cn/4712/`, which is known to be malicious. Unlike the [C2 beaconing](../c2-indicator) and [Malware hash](../malware-hash) idioms, in this scenario the organization creating the indicator does not have any specific context and so chooses to just represent the indicator without additional context. Though it's suggested that some context always be given with an indicator if possible, in this case the organization does not have enough additional context to add anything.
