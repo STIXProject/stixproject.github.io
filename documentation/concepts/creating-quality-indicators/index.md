@@ -3,7 +3,7 @@ layout: flat
 title: 5 Tips to Create Quality Indicators
 ---
 
-Over time, the STIX team has seen indicators from many different sources: the good, the bad, and the ugly. Here's some ideas on how to make sure you're creating the best indicators possible.
+The STIX team has seen indicators from many different sources and have learned a lot about what makes a good STIX indicator. Here's some ideas on how to make sure you're creating the best indicators possible.
 
 ## 1. Don't just translate observables to indicators
 
@@ -11,9 +11,13 @@ The best way to create low-value indicators is to take a bunch of things that yo
 
 See the problem? By including all of that data in the indicator what you're saying is that the indicator is only a hit if all of it matches, greatly limiting how usable it is for others. Instead of that naive approach, identify which fields are actually indicative of the malicious activity and include those in the indicator. If you have other data that you feel adds context or might be useful you can include it as a [Sighting](/data-model/{site.current_version}/indicator/SightingType).
 
+Also, some fields in CybOX objects should probably NOT be used in indicators at all because they're either ephemeral, specific to a certain environment, or might be interpreted or calculated differently by consumers of the indicator. For example, the process ID (PID) field on the Process Object changes from execution to execution and the Peak_Entropy field on the File Object may be calculated differently by different tools. For some suggestions on which fields are often useful, take a look at the [list the MAEC project maintains](http://maec-to-stix.readthedocs.org/en/latest/indicator_extraction/granular_config_defaults.html) to create indicators from malware samples.
+
 ## 2. Don't be afraid to put benign data in indicators (if you know what you're doing)
 
 Note that following that first tip doesn't mean that you should never put "benign" data in your indicators: sometimes specific combinations of data points that are individually benign can indicate malicious activity. For example, a DNS query to Google is not unusual. A DNS query to Google for a random-looking domain is less common but still benign (many content distribution networks use randomized subdomain names). Combined with the presence of a particular registry key, running process, or other network traffic however it can be the calling card of some sort of malware.
+
+If you go down this route you should make sure to use composition (either indicator or observable) to ensure that the indicator doesn't trigger solely on benign data. You shouldn't have a standalone indicator that looks for a DNS query to Google, but having it as part of an AND with other targeted observables can be useful.
 
 ## 3. Think about false positives and false negatives
 
@@ -39,8 +43,10 @@ To sometimes contradicts #4, but as a producer you should understand the capabil
 
 When creating indicators for mass consumption this can be tricky, but as a general rule think about what 80% of consumers can handle and target that. Currently, our estimation is that producers creating content for mass consumption should limit themselves to the more basic objects and conditions as represented in the [simple indicator sharing profile](/language/profiles/samples/stix_{site.current_version}_sample_indicator_sharing_profile_r1.xlsx) represented in our sample profile.
 
+One thing you can do to support all levels of consumers is create multiple indicators and use indicator composition to create an OR condition. For example, if you have an SSDEEP hash and a SHA1 hash, rather than including them in the same indicator instead split them into separate indicators and OR them together. That way consumers that understand SSDEEP can match the fuzzy hash and potentially detect more while consumers that only understand SHA1 are still able to get value from that portion (and can ignore the SSDEEP hash).
+
 ## Bonus tip: not everything is about indicators
 
-Not everything you share needs to be an indicator! Have a malware analysis that you want to share? Encode it in MAEC and share it via a STIX TTP. Have a new attack pattern that you've seen but not any indicators for how to find it? Share it as a STIX TTP w/ CAPEC reference. New attribution for an attack? STIX Threat Actor or Campaign.
+Not everything you share needs to be an indicator! Have a malware analysis that you want to share? Encode it in [MAEC](https://maec.mitre.org) and share it via a STIX [TTP](/data-model/{site.current_version}/ttp/TTPType). Have a new attack pattern that you've seen but not any indicators for how to find it? Share it as a STIX TTP w/ CAPEC reference. New attribution for an attack? STIX [Threat Actor](/data-model/{site.current_version}/ta/ThreatActorType) or [Campaign](/data-model/{site.current_version}/campaign/CampaignType).
 
 Those can all be later related to indicators if you want to do that but if you don't have the indicator right away there's no reason to force it.
