@@ -64,8 +64,9 @@ no_in_page_title: true
     learn how to create and understand idiomatic STIX content.</p>
     <p><a class="btn btn-primary btn-lg" role="button" href="/documentation/idioms">Idioms »</a></p>
   </div>
+</div>
 
-<hr><hr />
+<hr />
 
 <p class="lead text-center">
 	Have questions, comments, or feedback?
