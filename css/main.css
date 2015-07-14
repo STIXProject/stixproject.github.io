@@ -3,6 +3,11 @@ html {
   position: relative;
   min-height: 100%;
 }
+
+.jumbotron h1 {
+  font-size: 42px;
+}
+
 body {
   /* Margin bottom by footer height */
   margin-bottom: 102px;
