@@ -5,7 +5,7 @@ active: getting-started
 ---
 
 ## Setup
-Consult this [FireEye report](report) for a prose description of malicious actors from Iran targeting governments and commercial computers.
+Consult this [FireEye report](report.html) for a prose description of malicious actors from Iran targeting governments and commercial computers.
 
 Download the [free STIXViz tool](/documentation/utilities/) and open the [STIX version of the report](output.xml).
 

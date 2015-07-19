@@ -6,12 +6,13 @@ title: Documentation
 <div class="row">
   <div class="col-md-9">
     <div class="well">
-      <h4><a href="usecases">Use Cases</a></h4>
+      <h4><a href="/usecases">Use Cases</a></h4>
 
       <p>Learn how to use STIX in real-world scenarios!</p>
 
       <a class="btn btn-primary" href="/usecases">Go »</a>
     </div>
+  </div>
 </div>
 
 <div class="row">

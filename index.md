@@ -30,7 +30,7 @@ no_in_page_title: true
 <div class="row">
   <div class="col-md-4 text-center">
     <h2>Get Involved</h2>
-    <p><a href="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=cti">Join the OASIS TC</a> to help build this growing, open-source industry effort. <a href="/supports">See who's already</a> using STIX.</p>
+    <p><a href="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=cti">Join the OASIS TC</a> to help build this growing, open-source industry effort. <a href="/supporters">See who's already</a> using STIX.</p>
   </div>
   <div class="col-md-4 text-center">
     <h2>Learn More</h2>
