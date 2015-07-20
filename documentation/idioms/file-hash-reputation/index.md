@@ -22,17 +22,23 @@ Keep in mind that many reputation services are request/response: the consumer as
 
 ## Data model
 
+<img src="diagram.png" alt="File hash reputation" class="aside-text" />
+
 The basic data model is the same as for most indicators:
 
 - A top-level indicator to bring together:
   - A CybOX object to represent the data point
-  - If possible, an indicated TTP on the indicator to describe how the object is malicious
+  - An indicated TTP on the indicator to describe how the object is malicious
   - A confidence to indicate the reputation score (the likelihood that the object is malicious)
 
-{% include start_tabs.html tabs="Diagram|XML|Python Producer|Python Consumer" name="indicator" %}
-<img src="diagram.png" alt="File hash reputation" />
-{% include tab_separator.html %}{% highlight xml %}
-<stix:Indicator id="example:indicator-340493c6-5bef-41a7-95da-04dde6dc132c" timestamp="2015-07-20T18:30:25.438755+00:00" xsi:type='indicator:IndicatorType'>
+<div style="clear: both; width:100%"></div>
+
+### Indicator Framework
+
+The `Indicator` forms the framework for the reputation result. All of the other data will be added under that.
+
+{% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="indicator" %}{% highlight xml %}
+<stix:Indicator id="example:indicator-14975dea-86cd-4211-a5f8-9c2e4daab69a" timestamp="2015-07-20T19:52:13.853585+00:00" xsi:type='indicator:IndicatorType'>
     <indicator:Title>File Reputation for SHA256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</indicator:Title>
     <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">File Hash Watchlist</indicator:Type>
 </stix:Indicator>
@@ -52,12 +58,12 @@ In particular, because this is an indicator keep in mind that all of the fields 
 In this example, the SHA256 hash for the file is given along with the notation that the match should (of course, because it's a hash) be an equality match:
 
 {% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="observable" %}{% highlight xml %}
-<indicator:Observable id="example:Observable-4101d261-e4d5-4d56-b293-4354b9826a13">
-    <cybox:Object id="example:File-eaec587e-3b47-41fd-aad6-ed71fa85526b">
+<indicator:Observable id="example:Observable-7b97c8a2-2d0b-4af7-bcf0-cad28f2fea5a">
+    <cybox:Object id="example:File-b04bfc7c-04ae-4dfe-ba8e-a297f0717552">
         <cybox:Properties xsi:type="FileObj:FileObjectType">
             <FileObj:Hashes>
                 <cyboxCommon:Hash>
-                    <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0" condition="Equals">SHA256</cyboxCommon:Type>
+                    <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</cyboxCommon:Type>
                     <cyboxCommon:Simple_Hash_Value condition="Equals">e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</cyboxCommon:Simple_Hash_Value>
                 </cyboxCommon:Hash>
             </FileObj:Hashes>
@@ -77,9 +83,19 @@ print "Hash: " + indicator.observable.object_.properties.hashes[0].simple_hash_v
 
 ### Indicated TTP
 
-To make indicators more useful it's a good idea to include an `Indicated_TTP` on the indicator. This is a relationship that points to the [TTP](/data-model/{{site.current_version}}/ttp/TTPType) construct to describe what about the object is bad: maybe it's a piece of malware, maybe it's an IP used for C2, maybe it's an e-mail address used for spear phishing. In many cases, reputation services don't include this data at all and can completely omit it while in other cases they may use a basic TTP with a human-readable title and nothing else.
+To make indicators more useful it's strongly suggested that an `Indicated_TTP` be included on the indicator. This is a relationship that points to the [TTP](/data-model/{{site.current_version}}/ttp/TTPType) construct to describe what about the object is bad: maybe it's a piece of malware, maybe it's an IP used for C2, maybe it's an e-mail address used for spear phishing. In rare cases it might be impossible for a producer to create this information and, in those cases, it may be omitted.
 
-In this example we'll skip the indicated TTP, but you can look at the idiom for [C2 IP address](/documentation/idioms/c2-indicator/) to see what it looks like.
+{% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="observable" %}{% highlight xml %}
+<indicator:Indicated_TTP>
+    <stixCommon:TTP id="example:ttp-23e715a9-24c8-4b21-ba5b-f564d2edc660" timestamp="2015-07-20T19:52:13.854415+00:00" xsi:type='ttp:TTPType'>
+        <ttp:Title>Malicious file</ttp:Title>
+    </stixCommon:TTP>
+</indicator:Indicated_TTP>
+{% endhighlight %}{% include tab_separator.html %}{% highlight python %}
+indicator.add_indicated_ttp(TTP(title="Malicious file"))
+{% endhighlight %}{% include tab_separator.html %}{% highlight python %}
+print "TTP: " + indicator.indicated_ttps[0].item.title
+{% endhighlight %}{% include end_tabs.html %}
 
 ### Reputation score
 
@@ -104,22 +120,27 @@ print "Reputation: " + indicator.confidence.value.value
 Here's the whole thing in one big chunk:
 
 {% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="everything" %}{% highlight xml %}
-<stix:Indicator id="example:indicator-340493c6-5bef-41a7-95da-04dde6dc132c" timestamp="2015-07-20T18:30:25.438755+00:00" xsi:type='indicator:IndicatorType'>
+<stix:Indicator id="example:indicator-14975dea-86cd-4211-a5f8-9c2e4daab69a" timestamp="2015-07-20T19:52:13.853585+00:00" xsi:type='indicator:IndicatorType'>
     <indicator:Title>File Reputation for SHA256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</indicator:Title>
     <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">File Hash Watchlist</indicator:Type>
-    <indicator:Observable id="example:Observable-4101d261-e4d5-4d56-b293-4354b9826a13">
-        <cybox:Object id="example:File-eaec587e-3b47-41fd-aad6-ed71fa85526b">
+    <indicator:Observable id="example:Observable-7b97c8a2-2d0b-4af7-bcf0-cad28f2fea5a">
+        <cybox:Object id="example:File-b04bfc7c-04ae-4dfe-ba8e-a297f0717552">
             <cybox:Properties xsi:type="FileObj:FileObjectType">
                 <FileObj:Hashes>
                     <cyboxCommon:Hash>
-                        <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</cyboxCommon:Type>
+                        <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</cyboxCommon:Type>
                         <cyboxCommon:Simple_Hash_Value condition="Equals">e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</cyboxCommon:Simple_Hash_Value>
                     </cyboxCommon:Hash>
                 </FileObj:Hashes>
             </cybox:Properties>
         </cybox:Object>
     </indicator:Observable>
-    <indicator:Confidence timestamp="2015-07-20T18:30:25.439498+00:00">
+    <indicator:Indicated_TTP>
+        <stixCommon:TTP id="example:ttp-23e715a9-24c8-4b21-ba5b-f564d2edc660" timestamp="2015-07-20T19:52:13.854415+00:00" xsi:type='ttp:TTPType'>
+            <ttp:Title>Malicious file</ttp:Title>
+        </stixCommon:TTP>
+    </indicator:Indicated_TTP>
+    <indicator:Confidence timestamp="2015-07-20T19:52:13.854506+00:00">
         <stixCommon:Value vocab_reference="https://en.wikipedia.org/wiki/Percentage" vocab_name="Percentage">75</stixCommon:Value>
     </indicator:Confidence>
 </stix:Indicator>

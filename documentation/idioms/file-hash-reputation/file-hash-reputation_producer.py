@@ -26,6 +26,8 @@ def main():
     file_object.hashes[0].type_.condition = "Equals"
     indicator.add_observable(file_object)
 
+    indicator.add_indicated_ttp(TTP(title="Malicious file"))
+
     indicator.confidence = Confidence(value=VocabString('75'))
     indicator.confidence.value.vocab_name = "Percentage"
     indicator.confidence.value.vocab_reference = "https://en.wikipedia.org/wiki/Percentage"
