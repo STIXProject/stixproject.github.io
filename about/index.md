@@ -53,7 +53,7 @@ The primary way to use STIX is of course via commercial products. The [blog](htt
 If you're developing a product or tool, the current STIX reference implementation is in XML so any XML libraries are suitable for producing and consuming STIX XML. The project also maintains open-source [Python bindings](https://github.com/STIXProject/python-stix) and other [utilities](https://gibhub.com/STIXProject) to make working with STIX at the code level easier. [Documentation](/documentation) and [suggested practices](/documentation/suggested-practices) as well as [examples](/documentation/idioms) can help you understand how to use the STIX language conceptually (beyond just producing the XML).
 
 #### Who is using STIX?
-[Many organizations](/supporters) have announced support for STIX, TAXII, and related specifications and are listed on our [adopters page](/supporters). Please contact <stix@mitre.org> for details on how your organization’s products and services can be added to this list.
+[Many organizations](/supporters) have announced support for STIX, TAXII, and related specifications and are listed on our [adopters page](/supporters). Please contact <{{ site.contact_email }}> for details on how your organization’s products and services can be added to this list.
 
 The [blog](http://stixproject.tumblr.com) also lists press releases and other vendor announcements.
 

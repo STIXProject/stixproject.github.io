@@ -80,6 +80,6 @@ If the document is not valid against the profile the validator will go you an ex
 
 ## Questions?
 
-Profiles are a complicated topic and profile validation is a complicated part of that topic. Please [get in touch](mailto:stix@mitre.org) with the team if you have any questions or think this documentation could be improved.
+Profiles are a complicated topic and profile validation is a complicated part of that topic. Please [get in touch](mailto:{{ site.contact_email }}) with the team if you have any questions or think this documentation could be improved.
 
 If you encounter any errors with the validator, please open an issue in the [issue tracker](https://github.com/STIXProject/stix-validator/issues).
