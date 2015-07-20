@@ -88,4 +88,4 @@ Types that are not referenced from anywhere else (i.e. types whose only instanti
 
 ## Questions?
 
-Profiles are a complicated topic. Please [get in touch](mailto:stix-taxii@hq.dhs.gov) with the team if you have any questions or think this documentation could be improved.
+Profiles are a complicated topic. Please [get in touch](mailto:{{ site.contact_email }}) with the team if you have any questions or think this documentation could be improved.

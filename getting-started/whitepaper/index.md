@@ -50,7 +50,7 @@ Items clause at DFARS 252.227-7013 (NOV 1995)
 
 ## Feedback
 Community input is necessary for the success of STIX. Feedback on this or any
-of the other STIX work product is welcome and can be sent to stix@mitre.org.
+of the other STIX work product is welcome and can be sent to {{ site.contact_email }}.
 Comments, questions, suggestions, and concerns are all appreciated.
 
 ## Table of Contents
@@ -773,7 +773,7 @@ All parties interested in becoming part of the collaborative community
 discussing, developing, refining, using and supporting STIX are welcome and
 invited to join the effort. More information is available on the STIX website
 (http://stix.mitre.org/). Questions or comments may be sent to the STIX team at
-stix@mitre.org or to the STIX community on the STIX discussion list
+{{ site.contact_email }} or to the STIX community on the STIX discussion list
 (http://stix.mitre.org/community/registration.html). Access to full schema
 implementations, utilities and issue trackers is available from the STIX
 Project GitHub site (https://github.com/STIXProject).

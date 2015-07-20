@@ -28,4 +28,4 @@ A growing [list](http://stixproject.github.io/supporters/) of products, services
 * [By Product/Service](http://stixproject.github.io/supporters/#products-and-services)
 
 ##Contact Us
-* [stix@mitre.org](mailto:stix@mitre.org)
+* [{{ site.contact_email }}](mailto:{{ site.contact_email }})

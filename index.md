@@ -47,5 +47,5 @@ no_in_page_title: true
 <p class="lead text-center">
 	Have questions, comments, or feedback?
 	<br/>
-	<strong>Reach out to us at <a href="mailto:stix@mitre.org">stix@mitre.org</a>!</strong>
+	<strong>Reach out to us at <a href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a>!</strong>
 </p>

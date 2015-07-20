@@ -4,6 +4,7 @@ highlighter: pygments
 redirects: yes
 
 copyright: The MITRE Corporation
+contact_email: stix@mitre.org
 generate_documentation: true
 
 exclude: ['README.md', 'Gemfile', 'Gemfile.lock', "Rakefile", "LICENSE"]

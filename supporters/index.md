@@ -7,7 +7,7 @@ title: Support for STIX/TAXII
 
 STIX and TAXII are being implemented in many products, services, and global communities.
 
-Please [fill out this form](http://goo.gl/forms/jKQH7a6TfW) to contact the [STIX Team](mailto:stix@mitre.org) and request inclusion or modification under [User Communities](http://stixproject.github.io/supporters/#user-communities) or [Products and Services](http://stixproject.github.io/supporters/#products-and-services).
+Please [fill out this form](http://goo.gl/forms/jKQH7a6TfW) to contact the [STIX Team](mailto:{{ site.contact_email }}) and request inclusion or modification under [User Communities](http://stixproject.github.io/supporters/#user-communities) or [Products and Services](http://stixproject.github.io/supporters/#products-and-services).
 
 ## User Communities
 These organizations have publicly announced support for STIX and/or TAXII.

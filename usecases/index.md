@@ -43,4 +43,4 @@ Cyber decision makers establish policy for what sorts of cyber threat informatio
 
 *Example:* In the case of a confirmed phishing attack with defined indicators, the policies predefined by cyber decision makers could enable the relevant indicators to be automatically or manually shared with trusted partners or communities such that they could take advantage of the knowledge gained by the sharing organization.
 
-Send feedback about this page to stix@mitre.org.
+Send feedback about this page to {{ site.contact_email }}
