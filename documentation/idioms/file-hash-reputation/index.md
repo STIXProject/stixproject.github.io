@@ -9,7 +9,7 @@ constructs:
 summary: This idiom describes how reputation services (using file hash as an example) can be represented in STIX
 ---
 
-Although there are variations, reputation services generally present information about a single data point (IP address, file by hash, e-mail, or URL) and how likely it is that that data point is "malicious". As you might expect, that's the perfect use case for a STIX [Indicator](/data-model/{{site.current_version}}/indicator/IndicatorType) and so that will be the focus of this idiom. If you're not already familiar with basic STIX indicators, read the [Indicator for C2 IP Address](/documentation/idioms/c2-indicator) for some background on creating indicators in general.
+Although there are variations, reputation services generally present information about a single data point (IP address, file by hash, e-mail, URLs, and domains) and how likely it is that that data point is "malicious". As you might expect, that's the perfect use case for a STIX [Indicator](/data-model/{{site.current_version}}/indicator/IndicatorType) and so that will be the focus of this idiom. If you're not already familiar with basic STIX indicators, read the [Indicator for C2 IP Address](/documentation/idioms/c2-indicator) for some background on creating indicators in general.
 
 This idiom will cover some specific cases that many reputation services have to deal with:
 
@@ -167,6 +167,7 @@ for indicator in stix_package.indicators:
   print "Reputation: " + indicator.confidence.value.value
 {% endhighlight %}{% include end_tabs.html %}
 
+[Full XML](file-hash-reputation.xml) | [Python Producer](file-hash-reputation_producer.py) | [Python Consumer](file-hash-reputation_consumer.py)
 
 ## Further Reading
 
