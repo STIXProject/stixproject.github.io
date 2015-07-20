@@ -1,0 +1,37 @@
+<stix:STIX_Package
+	xmlns:FileObj="http://cybox.mitre.org/objects#FileObject-2"
+	xmlns:cybox="http://cybox.mitre.org/cybox-2"
+	xmlns:cyboxCommon="http://cybox.mitre.org/common-2"
+	xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2"
+	xmlns:example="http://example.com"
+	xmlns:indicator="http://stix.mitre.org/Indicator-2"
+	xmlns:stix="http://stix.mitre.org/stix-1"
+	xmlns:stixCommon="http://stix.mitre.org/common-1"
+	xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="example:Package-4f28f5fa-aacd-4d0e-a20e-47821312761a" version="1.2">
+    <stix:STIX_Header>
+        <stix:Title>File Hash Reputation for e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</stix:Title>
+        <stix:Package_Intent xsi:type="stixVocabs:PackageIntentVocab-1.0">Indicators - Malware Artifacts</stix:Package_Intent>
+    </stix:STIX_Header>
+    <stix:Indicators>
+        <stix:Indicator id="example:indicator-340493c6-5bef-41a7-95da-04dde6dc132c" timestamp="2015-07-20T18:30:25.438755+00:00" xsi:type='indicator:IndicatorType'>
+            <indicator:Title>File Reputation for SHA256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</indicator:Title>
+            <indicator:Type xsi:type="stixVocabs:IndicatorTypeVocab-1.1">File Hash Watchlist</indicator:Type>
+            <indicator:Observable id="example:Observable-4101d261-e4d5-4d56-b293-4354b9826a13">
+                <cybox:Object id="example:File-eaec587e-3b47-41fd-aad6-ed71fa85526b">
+                    <cybox:Properties xsi:type="FileObj:FileObjectType">
+                        <FileObj:Hashes>
+                            <cyboxCommon:Hash>
+                                <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</cyboxCommon:Type>
+                                <cyboxCommon:Simple_Hash_Value condition="Equals">e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</cyboxCommon:Simple_Hash_Value>
+                            </cyboxCommon:Hash>
+                        </FileObj:Hashes>
+                    </cybox:Properties>
+                </cybox:Object>
+            </indicator:Observable>
+            <indicator:Confidence timestamp="2015-07-20T18:30:25.439498+00:00">
+                <stixCommon:Value vocab_reference="https://en.wikipedia.org/wiki/Percentage" vocab_name="Percentage">75</stixCommon:Value>
+            </indicator:Confidence>
+        </stix:Indicator>
+    </stix:Indicators>
+</stix:STIX_Package>
