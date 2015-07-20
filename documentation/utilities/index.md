@@ -56,7 +56,7 @@ While useful for it's stated purpose, the other way to use this tool is as an ex
 `STIX Validator` is a command-line Python utility which validates STIX XML documents in three different ways:  
 
 * __XML Schema:__ STIX documents can be validated against the bundled STIX schemas.
-* __Suggested Practices:__ STIX documents are validated against [Suggested Practices](http://stixproject.github.io/suggested-practices/).
+* __Suggested Practices:__ STIX documents are validated against [Suggested Practices](/documentation/suggested-practices).
 * __STIX Profiles:__ The validator can parse Excel [STIX Profiles](http://stix.mitre.org/language/profiles.html), convert them into [ISO Schematron](http://www.schematron.com/spec.html) documents and perform validation against the translated Schematron rules.
 
 The `STIX Validator` can also translate Excel STIX Profiles into either [ISO Schematron](http://www.schematron.com/spec.html) or XSLT documents to be used within other applications or validation environments.

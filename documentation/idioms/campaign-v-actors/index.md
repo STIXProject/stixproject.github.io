@@ -24,7 +24,7 @@ Overall, a Campaign is some time-bounded set of activity that uses particular te
 
 ## Data model
 
-We use the [CampaignType](/data-model/{{site.current_version}}/campaign/CampaignType) to render the campaign and [ThreatActorType](/data-model/{{site.current_version}}/campaign/ThreatActorType) for the actor.
+We use the [CampaignType](/data-model/{{site.current_version}}/campaign/CampaignType) to render the campaign and [ThreatActorType](/data-model/{{site.current_version}}/ta/ThreatActorType) for the actor.
 
 In this case, a `Campaign` has an identified `ThreatActor` and constrained victim targeting. Since the actor was likely involved in other incidents, it may be related to other campaigns as well.
 
