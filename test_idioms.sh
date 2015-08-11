@@ -1,7 +1,7 @@
 #!/bin/bash
 #iterate directories to find ones with .py files
 
-validator=stix_validator.py
+validator=stix-validator.py
 
 function realpath { echo $(cd $(dirname $1); pwd)/$(basename $1); }
 
