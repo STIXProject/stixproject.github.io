@@ -4,7 +4,7 @@ title: STIX Community
 ---
 
 ## OASIS Transition
-[DHS](http://www.dhs.gov/office-cybersecurity-and-communications/) has transitioned STIX, [TAXII](https://taxiiproject.github.io/), and [CybOX](https://cyboxproject.github.io/) to [Organization for the Advancement of Structured Information Standards (OASIS)](https://www.oasis-open.org/), a non-profit consortium that drives the development, convergence, and adoption of open standards for the global information society, in May 2015. Learn more:
+[DHS](http://www.dhs.gov/office-cybersecurity-and-communications/) transitioned STIX, [TAXII](https://github.com/TAXIIProject/), and [CybOX] (https://github.com/CybOXProject/) to [Organization for the Advancement of Structured Information Standards (OASIS)](https://www.oasis-open.org/), a non-profit consortium that drives the development, convergence, and adoption of open standards for the global information society. The [Cyber Threat Intelligence (CTI) Technical Committee (TC)] (https://www.oasis-open.org/committees/cti) now leads the ongoing development of these standards. Organizations and individuals that wish to play a regular and active role in the shaping of these standards should consider joining OASIS and the CTI TC. Leran more about the transition:
 
 * [Cyber Threat Intelligence (CTI) Technical Committee (TC)](https://www.oasis-open.org/committees/cti)
 * [Announcement](http://stixproject.tumblr.com/post/117006597637/dhs-leads-effort-to-transition-automated)
@@ -12,24 +12,18 @@ title: STIX Community
 * [OASIS Overview](https://stixproject.github.io/stix-at-oasis.pdf)
 * [Key Resources & Contacts](https://stixproject.github.io/oasis-cti-info.html)
 
-## Discussion List & Archive
-
-### OASIS Members
-
-Members of OASIS who join the CTI TC and any of the subcommittees will be automatically added to the appropriate lists: the CTI TC list that you are added to when you join the TC, the public comment list mentioned below, and the subcommittee lists that you are added to when you join the STIX, TAXII, and CybOX subcommittees.
-
-### Non-OASIS Members
-
-Those who are not OASIS members or who don't want to join the TC can see the archived discussions on the OASIS website:
+##Discussion Lists & Archives
+Everything that the CTI TC does is public and the discussions around the evolution of the specifications are no exception. Therefore, the CTI TC and STIX subcommittee member-only lists are publicly archived for access by anyone at the following links:
 
 * [CTI TC Discussion List Archive](https://lists.oasis-open.org/archives/cti/)
 * [CTI-STIX Subcommittee List Archive](https://lists.oasis-open.org/archives/cti-stix/)
 
-You can also provide comments to the TC via the CTI TC Public Comment List:
+###Public Comment List
+Organizations and individuals who are not OASIS CTI TC members may provide comments to the CTI TC via the CTI TC Public Comment List:
 
-* [Subscribe](http://www.oasis-open.org/committees/comments/form.php?wg_abbrev=cti) to submit a comment
-* [Archives](https://lists.oasis-open.org/archives/cti-comment/)
+* [Subscribe to submit a comment](http://www.oasis-open.org/committees/comments/form.php?wg_abbrev=cti)
+* [Archive](https://lists.oasis-open.org/archives/cti-comment/)
 
-### Pre-Transition Archives
+###Pre-transition Archive
 
-Prior to the transition to OASIS there was a STIX discussion list operated by MITRE. The archives for this list can be found [here](http://making-security-measurable.1364806.n2.nabble.com/STIX-Discussion-List-f7579090.html).
+The pre-transition STIX Discussion List Archives can be found [here](http://making-security-measurable.1364806.n2.nabble.com/STIX-Discussion-List-f7579090.html).
