@@ -25,6 +25,12 @@ Those who are not OASIS members or who don't want to join the TC can see the arc
 * [CTI TC Discussion List Archive](https://lists.oasis-open.org/archives/cti/)
 * [CTI-STIX Subcommittee List Archive](https://lists.oasis-open.org/archives/cti-stix/)
 
+#### CTI Users List
+A new mailing list, cti-users@lists.oasis-open.org, has been created that is intended for discussing topics related to the effective use of STIX/TAXII/CybOX and the development of solutions that use these standards.  Unlike the other CTI TC lists, this list will be open to anyone to join and post to.
+ 
+If you are interested in joining the cti-users list you will need to explicitly subscribe.  You may do that by sending a blank email message to [cti-users-subscribe@lists.oasis-open.org](mailto:cti-users-subscribe@lists.oasis-open.org) and then replying to the list server's email response requesting confirmation.
+
+#### CTI TC Public Comment List
 You can also provide comments to the TC via the CTI TC Public Comment List:
 
 * [Subscribe](http://www.oasis-open.org/committees/comments/form.php?wg_abbrev=cti) to submit a comment
