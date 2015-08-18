@@ -15,3 +15,5 @@ title: STIX Release Archive
 |[STIX 1.0](http://stix.mitre.org/language/version1.0/)|April 8, 2013|
 |[STIX 0.5](http://stix.mitre.org/language/version0.5/)|August 7, 2012|
 |[STIX 0.3](http://stix.mitre.org/language/version0.3/)|June 4, 2012|
+
+STIX versions from 0.3 to 1.2 follow the [legacy versioning policy](/releases/versioning).
