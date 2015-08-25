@@ -19,7 +19,7 @@ Everything that the CTI TC does is public and the discussions around the evoluti
 * [CTI-STIX Subcommittee List Archive](https://lists.oasis-open.org/archives/cti-stix/)
 * [STIX Discussion List Archive](http://making-security-measurable.1364806.n2.nabble.com/STIX-Discussion-List-f7579090.html) (List is no longer used)
 
-Non-OASIS members can sign up for the public cti-users mailing list
+Non-OASIS members can sign up for the public cti-users mailing list:
 
 * [CTI Users Info](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=cti#feedback)
 
