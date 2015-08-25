@@ -17,6 +17,11 @@ Everything that the CTI TC does is public and the discussions around the evoluti
 
 * [CTI TC Discussion List Archive](https://lists.oasis-open.org/archives/cti/)
 * [CTI-STIX Subcommittee List Archive](https://lists.oasis-open.org/archives/cti-stix/)
+* [STIX Discussion List Archive](http://making-security-measurable.1364806.n2.nabble.com/STIX-Discussion-List-f7579090.html)
+
+Non-OASIS members can sign up for the public cti-users mailing list
+
+* [CTI Users Info](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=cti#feedback)
 
 ###Public Comment List
 Organizations and individuals who are not OASIS CTI TC members may provide comments to the CTI TC via the CTI TC Public Comment List:
@@ -24,6 +29,8 @@ Organizations and individuals who are not OASIS CTI TC members may provide comme
 * [Subscribe to submit a comment](http://www.oasis-open.org/committees/comments/form.php?wg_abbrev=cti)
 * [Archive](https://lists.oasis-open.org/archives/cti-comment/)
 
-###Pre-transition Archive
+##STIX Supporters
+A growing [list](http://stixproject.github.io/supporters/) of products, services, and sharing communities using STIX and TAXII.
 
-The pre-transition STIX Discussion List Archives can be found [here](http://making-security-measurable.1364806.n2.nabble.com/STIX-Discussion-List-f7579090.html).
+* [By User Community](http://stixproject.github.io/supporters/#user-communities)
+* [By Product/Service](http://stixproject.github.io/supporters/#products-and-services)
