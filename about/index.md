@@ -4,7 +4,9 @@ title: About STIX
 toc: about_toc.html
 ---
 
-Structured Threat Information Expression (STIX™) is a structured language to represent the full range of cyber threat information. The [STIX whitepaper](/getting-started/whitepaper) describes the motivation and architecture behind STIX, however at a high level the STIX language consists of 9 key constructs and the relationships between them:
+Structured Threat Information Expression (STIX™) is a structured language for describing cyber threat information so it can be shared, stored, and analyzed in a consistent manner.
+
+The [STIX whitepaper](/getting-started/whitepaper) describes the motivation and architecture behind STIX. At a high level the STIX language consists of 9 key constructs and the relationships between them:
 
 <img src="/images/stix-architecture.png" style="height: 400px" class="aside-text-left"/>
 
@@ -22,11 +24,11 @@ Structured Threat Information Expression (STIX™) is a structured language to r
 
 ### The STIX Community
 
-STIX is a collaborative effort that is led by DHS but driven by an open community. Community members make open-source contributions to STIX development and manage issue tracking for the STIX schemas, tools, specifications, and supporting information. Join the community:
+STIX has been transitioned to OASIS! See the [community](/community) page for more information. A couple shortcuts:
 
-- [Mailing List](https://stix.mitre.org/community/registration.html) — where community members discuss the latest drafts of the STIX schemas, specifications, utilities, technical documents, and other items integral to the ongoing development of STIX.
-- [Chat](https://gitter.im/STIXProject/schemas) - informal discussions and help
-- [Code Repositories](https://github.com/STIXProject/) — the central location for STIX Community members to make open-source contributions to STIX development and manage issue tracking for the STIX schemas, tools, specifications, and other supporting information and items.
+- [OASIS Technical Committee]((https://www.oasis-open.org/committees/cti)) - where STIX development happens
+- [Mailing Lists](/community/#discussion-list-amp-archives) - stay up to date on development and usage
+- [Code Repositories](https://github.com/STIXProject/) — the central location for development of the schemas, specifications, tools, and documentation (including this site)
 
 ## Frequently Asked Questions
 
@@ -36,13 +38,13 @@ STIX is for anyone involved in defending networks or systems against cyber threa
 
 #### How do I get it?
 
-The STIX Language is available on the [STIX website](https://stix.mitre.org/language/).
+[Download the current version](/releases/1.2/).
 
 Bindings and related tools to help process and work with STIX are [open source on Github](https://github.com/STIXProject).
 
 #### Where can I find examples of STIX data? Are there any STIX repositories?
 
-The STIX Samples page on this website hosts full threat reports expressed via STIX, including Mandiant's APT1 report and FireEye's Poison Ivy report. [Idioms](/documentation/idioms) also provide good constrained examples.
+The [samples](/examples) page on this website hosts full threat reports expressed via STIX, including Mandiant's APT1 report and FireEye's Poison Ivy report. [Idioms](/documentation/idioms) also provide good constrained examples.
 
 In addition to the MITRE samples, community members have set up [TAXII](https://taxii.mitre.org) repositories containing STIX content and even directories pointing to those repositories. One example repository is http://hailataxii.com.
 
