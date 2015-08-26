@@ -59,14 +59,6 @@ If you're developing a product or tool, the current STIX reference implementatio
 
 The [blog](http://stixproject.tumblr.com) also lists press releases and other vendor announcements.
 
-#### Who funds STIX?
-
-STIX is currently led by the [Office of Cybersecurity and Communications](http://www.dhs.gov/office-cybersecurity-and-communications/) at the U.S. Department of Homeland Security. DHS sponsors the Homeland Security Systems Engineering and Development Institute (HSSEDI), operated by The MITRE Corporation, to manage the STIX project.
-
-#### Who owns STIX?
-
-STIX is an open-source, community effort currently led and sponsored by the office of [Cybersecurity and Communications](http://www.dhs.gov/office-cybersecurity-and-communications/) at the U.S. Department of Homeland Security. MITRE has copyrighted the STIX Language (currently hosted on the https://stix.mitre.org website) for the benefit of the community in order to ensure it remains a free and open standard, as well as to legally protect the ongoing use of it and any resulting content by government, vendors, and/or users. In addition, MITRE has trademarked ™ the STIX acronym and the STIX logo to protect their sole and ongoing use by the STIX effort within the information security arena.
-
 #### How is STIX licensed?
 See the [Terms of Use](http://stix.mitre.org/about/termsofuse.html).
 
