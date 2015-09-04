@@ -80,7 +80,7 @@ Like STIX, CybOX is led by DHS and the STIX and CybOX communities work closely t
 
 [MAEC](http://maec.mitre.org) (Malware Attribute Enumeration and Classification) is a language for describing malware behavior and the results of a malware analysis. STIX leverages MAEC via the TTP construct for this purpose, and additionally both STIX and MAEC use CybOX.
 
-Like STIX, MAEC is led by DHS and the STIX, MAEC, and CybOX communities work closely together (and in fact consist of many of the same people) to ensure that the combination of the three specifications can interoperate and support both individual and combined usages.
+Like STIX, MAEC is led by DHS and the STIX, MAEC, and CybOX communities work closely together (and in fact consist of many of the same people) to ensure that the combination of the three specifications can interoperate and support both individual and combined usages. The STIX and MAEC teams have together produced a whitepaper describing how to [characterize malware across MAEC and STIX](/about/Characterizing_Malware_MAEC_and_STIX_v1.0.pdf)
 
 #### CAPEC
 STIX can utilize [Common Attack Pattern Enumeration and Classification](https://capec.mitre.org/) (CAPEC™) for structured characterization of tactics, techniques, and procedures (TTP) attack patterns through use of the CAPEC schema extension.
