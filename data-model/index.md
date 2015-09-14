@@ -7,11 +7,11 @@ title: Data Model Documentation
 
 
 ## Package
-{% include start_data_model_section.html %}
+<section class="data-model-section">
 The [STIX Package](/data-model/{{ site.current_version }}/stix/STIXType) construct serves as a wrapper for conveying a set of STIX content that may or may not be related in the same document. It can also be used to mark the content it includes, give it the same information source, or indicate that it complies to a set of profiles.
 
 Note that in previous versions of STIX the functions of the Report construct and the Package construct were combined: packages were used both as a mechanism to convey content and as a way to group related content. The primary change in STIX 1.2 was the addition of the Report object and thus the deprecation of the usage of packages as a way to convey context.
-{% include end_data_model_section.html %}
+</section>
 
 ## Report
 {% include start_data_model_section.html %}
