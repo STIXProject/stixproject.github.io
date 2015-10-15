@@ -26,7 +26,7 @@ The [STIX whitepaper](/getting-started/whitepaper) describes the motivation and 
 
 STIX has been transitioned to OASIS! See the [community](/community) page for more information. A couple shortcuts:
 
-- [OASIS Technical Committee]((https://www.oasis-open.org/committees/cti)) - where STIX development happens
+- [OASIS Technical Committee](https://www.oasis-open.org/committees/cti) - where STIX development happens
 - [Mailing Lists](/community/#discussion-list-amp-archives) - stay up to date on development and usage
 - [Code Repositories](https://github.com/STIXProject/) — the central location for development of the schemas, specifications, tools, and documentation (including this site)
 
