@@ -5,9 +5,9 @@ tagline: A structured language for cyber threat intelligence information
 no_in_page_title: true
 ---
 
-<div class="alert alert-warning text-center" role="alert">
+<div class="alert alert-warning" role="alert">
   <a href="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=cti" class="alert-link">
-  STIX is being transitioned to OASIS </a>
+  STIX transitioned to OASIS </a>
   - an open standards organization.
   <a href="https://stixproject.github.io/oasis-faq.pdf" class="alert-link">
   Read the FAQ to learn more.</a>
