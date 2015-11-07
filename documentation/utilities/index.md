@@ -21,7 +21,7 @@ A visualization tool that renders STIX documents in three unique ways which capt
 
 `STIXViz` also includes the `STIX to HTML` as a component, allowing users to view the details and contents of the rendered nodes.
 
-If you're just starting out in STIX and want to see what it's capable of, we suggest downloading `STIXViz` and opening up the more complex reports available on the STIX [Samples Page](http://stix.mitre.org/language/version{{site.current_version}}/samples.html) (e.g., FireEye Poison Ivy Report and Mandiant APT1 Report) in the tool.
+If you're just starting out in STIX and want to see what it's capable of, we suggest downloading `STIXViz` and opening up the more complex reports available on the [STIX Sample Reports](http://stixproject.github.io/examples/) page (e.g., FireEye Poison Ivy Report and Mandiant APT1 Report) in the tool.
 
 * [Download](https://github.com/STIXProject/stix-viz/releases)
 * [Usage Guide](https://github.com/STIXProject/stix-viz/wiki/STIXViz-Usage)
@@ -41,11 +41,11 @@ Because `STIX to HTML` was created by and for developers, allowing for customiza
 * [Source Code](https://github.com/STIXProject/stix-to-html)
 
 ## Developer Tools and Utilities
-The STIX project develops and maintains utilities for the STIX community which generate, translate or otherwise leverage STIX content in useful ways. Many of our projects utilize our own developer tools and APIs, so other developers can use these utilities as examples of how to navigate the STIX API landscape!
+The STIX project develops and maintains utilities for the STIX community which generate, translate, or otherwise leverage STIX content in useful ways. Many of our projects utilize our own developer tools and APIs, so other developers can use these utilities as examples of how to navigate the STIX API landscape!
 
 ### OpenIOC to STIX
 
-`OpenIOC to STIX` is a Python utility to convert Mandiant's OpenIOC format into STIX Indicators (with CybOX Observables). This tool was used to generate the Indicators file in the APT1 report mapping on the [STIX samples page](http://stix.mitre.org/language/version{{site.current_version}}/samples.html).
+`OpenIOC to STIX` is a Python utility to convert Mandiant's OpenIOC format into STIX Indicators (with CybOX Observables). This tool was used to generate the Indicators file in the APT1 report mapping on the [STIX Sample Reports](http://stixproject.github.io/examples/) page.
 
 While useful for it's stated purpose, the other way to use this tool is as an example of how to generate STIX content programmatically using the [machine-generated bindings](http://stix.readthedocs.org/en/latest/api_vs_bindings/index.html) included in the `python-stix` APIs. Looking through the source code is a great way to see how they work and how to import/use them, in particular for generating indicators with CybOX content.
 
@@ -57,7 +57,7 @@ While useful for it's stated purpose, the other way to use this tool is as an ex
 
 * __XML Schema:__ STIX documents can be validated against the bundled STIX schemas.
 * __Suggested Practices:__ STIX documents are validated against [Suggested Practices](/documentation/suggested-practices).
-* __STIX Profiles:__ The validator can parse Excel [STIX Profiles](http://stix.mitre.org/language/profiles.html), convert them into [ISO Schematron](http://www.schematron.com/spec.html) documents and perform validation against the translated Schematron rules.
+* __STIX Profiles:__ The validator can parse Excel [STIX Profiles](http://stixproject.github.io/documentation/profiles/), convert them into [ISO Schematron](http://www.schematron.com/spec.html) documents and perform validation against the translated Schematron rules.
 
 The `STIX Validator` can also translate Excel STIX Profiles into either [ISO Schematron](http://www.schematron.com/spec.html) or XSLT documents to be used within other applications or validation environments.
 
@@ -76,7 +76,7 @@ The STIX project develops and maintains APIs which aid developers in parsing, cr
 
 ### Python APIs (python-stix)
 
-The `python-stix` APIs provide [machine-generated bindings and higher-level APIs](http://stix.readthedocs.org/en/latest/api_vs_bindings/index.html) which aid in the creation, consumption, and manipulation of STIX content. STIX documents can be serialized to and from Python dictionaries, JSON, and schema-valid XML documents.
+The `python-stix` APIs provide [machine-generated bindings and higher-level APIs](http://stix.readthedocs.org/en/latest/api_vs_bindings/index.html) that aid in the creation, consumption, and manipulation of STIX content. STIX documents can be serialized to and from Python dictionaries, JSON, and schema-valid XML documents.
 
 Our hope is to lift developers above the XML and allow them to focus on creating and parsing cyber threat intelligence as STIX without having to worry about things like XML namespaces, document ordering of elements, or schema locations.
 
@@ -86,13 +86,15 @@ Our hope is to lift developers above the XML and allow them to focus on creating
 
 ### Java
 
-A community member ([@woot4moo](https://github.com/woot4moo)) has contributed [their JAXB Bindings](https://github.com/STIXProject/contrib/tree/master/java-stix) to the [STIX Project contrib repository](https://github.com/STIXProject/contrib). There has been discussion in the community about maintaining a set of APIs on top of that, those interested should e-mail the [STIX Discussion List](mailto:stix-discussion-list@lists.mitre.org).
+The STIX project provides a [java-stix](https://github.com/STIXProject/java-stix) library for both Java and JAXB XML developers. It provides convenience methods to the XJC generated JAXB model. java-stix is not intended to be a one-for-one replacement for the python-stix(https://github.com/STIXProject/python-stix) API.
+
+Please send any feedback about java-stix to [stix@mitre.org](mailto:stix@mitre.org).
 
 ### .NET
 
 The STIX project does not provide bindings for .NET. Community members, however, have used Microsoft's standard XML tooling to work with STIX documents and create useful utilities.
 
-We would be glad to link to a .NET project providing bindings via the [STIX Discussion List](mailto:stix-discussion-list@lists.mitre.org)
+We would be glad to link to a .NET project providing bindings. Please contact us [stix@mitre.org](mailto:stix@mitre.org).
 
 ### Ruby
 
@@ -102,4 +104,4 @@ Using JRuby, it's possible to use generated JAXB or XMLBeans bindings and import
 * Package them as a gem
 * Include the gem in your Gemfile (if using bundler) or install it manually
 
-We would be glad to link to a Ruby project providing bindings via the [STIX Discussion List](mailto:stix-discussion-list@lists.mitre.org).
+We would be glad to link to a Ruby project providing bindings. Please contact us [stix@mitre.org](mailto:stix@mitre.org).
