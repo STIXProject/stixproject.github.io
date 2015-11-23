@@ -88,13 +88,13 @@ Our hope is to lift developers above the XML and allow them to focus on creating
 
 The STIX project provides a [java-stix](https://github.com/STIXProject/java-stix) library for both Java and JAXB XML developers. It provides convenience methods to the XJC generated JAXB model. java-stix is not intended to be a one-for-one replacement for the [python-stix](https://github.com/STIXProject/python-stix) API.
 
-Please send any feedback about java-stix to <{{ site.contact_email }}.
+Please send any feedback about java-stix to <{{ site.contact_email }}>.
 
 ### .NET
 
 The STIX project does not provide bindings for .NET. Community members, however, have used Microsoft's standard XML tooling to work with STIX documents and create useful utilities.
 
-We would be glad to link to a .NET project providing bindings. Please contact us at <{{ site.contact_email }}.
+We would be glad to link to a .NET project providing bindings. Please contact us at <{{ site.contact_email }}>.
 
 ### Ruby
 
@@ -104,4 +104,4 @@ Using JRuby, it's possible to use generated JAXB or XMLBeans bindings and import
 * Package them as a gem
 * Include the gem in your Gemfile (if using bundler) or install it manually
 
-We would be glad to link to a Ruby project providing bindings. Please contact us at <{{ site.contact_email }}.
+We would be glad to link to a Ruby project providing bindings. Please contact us at <{{ site.contact_email }}>.
