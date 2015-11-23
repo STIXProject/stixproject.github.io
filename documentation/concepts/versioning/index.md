@@ -13,7 +13,7 @@ STIX versioning takes two parallel approaches: [relationships](../relationships)
 
 In order to support the versioning of a construct, the following baseline requirements must be met:
 
-* The construct must be a versionable type, which includes the 7 core STIX components and STIX Package. Note that Observable is not included, as it is defined in CybOX and does not have the required versioning fields.
+* The construct must be a versionable type, which includes the 7 core STIX components and STIX Package. Note that Observable is not included, as it is defined in [CybOX](https://cyboxproject.github.io/) and does not have the required versioning fields.
 * The construct must be given an `id` when it is created
 * The construct must be given a `timestamp` when it is created, which is set to the current time. It's strongly suggested that the timestamp go to six decimal places in the seconds: "2014-01-01T01:01:01.000000Z". As with all STIX timestamps, you should also indicate the timezone if at all possible.
 
@@ -50,7 +50,7 @@ To perform a major update, the component should be given a new `id`, a new `time
 
 Further updates should include the previous relationships, such that the third major update will have two Related TTPs to previous versions, etc. This ensures that even consumers who don't see all content updates understand the history of the element.
 
-Though there has been some discussion about what a versioning vocabulary would look like, nothing has been formalized within the STIX community. Any input on this topic is appreciated, please send it to the <a href="mailto:stix-discussion-list@lists.mitre.org">STIX discussion list</a> and the community can talk it over. Note that you will have to [register](http://stix.mitre.org/community/registration.html) for the mailing list before posting, if you haven't already.
+Though there has been some discussion about what a versioning vocabulary would look like, nothing has been formalized within the STIX community. Any input on this topic is appreciated at <{{ site.contact_email }}>.
 
 ## When to use each?
 
