@@ -11,7 +11,7 @@ This guide covers authoring content by hand or with languages/tools other than t
 
 ## Prerequisites
 
-1. Understand the general concept of what STIX is and what problems it's designed to solve. Get this by reading the [whitepaper](http://stix.mitre.org/about/documents/STIX_Whitepaper_v1.1.pdf).
+1. Understand the general concept of what STIX is and what problems it's designed to solve. Get this by reading the [STIX whitepaper](http://stixproject.github.io/getting-started/whitepaper/).
 
 1. Understand how STIX is structured and interpreted. Get this by going through the [sample walkthrough](../sample-walkthrough)
 
@@ -40,7 +40,7 @@ The root element for all STIX content is `STIX_Package` ([STIXType](/data-model/
 
 STIX takes advantage of XML namespaces to separate types and fields by purpose as well as XML Schema to allow for validation.
 
-The `xmlns:*` attributes on `STIX_Package` map namespace prefixes/aliases to full namespaces. These mappings are required for any namespaces you use (STIX and CybOX Core/Common/Vocabs, STIX Components, CybOX Objects, Extensions).
+The `xmlns:*` attributes on `STIX_Package` map namespace prefixes/aliases to full namespaces. These mappings are required for any namespaces you use (STIX and [CybOX](https://cyboxproject.github.io/) Core/Common/Vocabs, STIX Components, CybOX Objects, Extensions).
 
 `xsi:schemaLocation` is an optional hint (not required for validation) used by some tools to indicate which schemas should be used to validate the content. The format is `[namespace] [schema location] [namespace 2] [schema location 2] etc` and, if you use it, the mapping must be present for every namespace.
 
@@ -129,7 +129,7 @@ If you're following along, at this point it might be worth seeing if you can add
 
 ### Set the Observable Pattern using CybOX
 
-Indicators consist of two key pieces of information: a pattern for what to look for, and a description of what it means if that pattern is seen. The pattern portion is captured either via CybOX in the `Observable` field or via a native signature in the `Test_Mechanism` field. The indicator [idioms](/documentation/idioms/) give several examples of both approaches.
+Indicators consist of two key pieces of information: a pattern for what to look for, and a description of what it means if that pattern is seen. The pattern portion is captured either via [CybOX](https://cyboxproject.github.io/) in the `Observable` field or via a native signature in the `Test_Mechanism` field. The indicator [idioms](/documentation/idioms/) give several examples of both approaches.
 
 In this case, we'll use CybOX.
 
@@ -154,7 +154,7 @@ Notice that we've assigned IDs for the Observable and Object. CybOX IDs are reco
 
 #### Object Properties
 
-Next, we need to identify the correct CybOX object type to use to represent file hashes. Looking through the list on the [CybOX release page](http://cybox.mitre.org/language/version2.1/), the best choice seems to be the [FileObject](/data-model/{{site.current_version}}/FileObj/FileObjectType/). Opening the documentation for that object, we can see that it does include a `Hashes` element that we can use to represent file hashes.
+Next, we need to identify the correct CybOX object type to use to represent file hashes. Looking through the list on the [CybOX release page](http://cyboxproject.github.io/releases/2.1/), the best choice seems to be the [FileObject](/data-model/{{site.current_version}}/FileObj/FileObjectType/). Opening the documentation for that object, we can see that it does include a `Hashes` element that we can use to represent file hashes.
 
 So, we'll create the `Properties` element and fill in the `xsi:type` to indicate that we're using the file object:
 
@@ -232,7 +232,7 @@ Once again, an indicator consists of a pattern for something to look for and the
 * Behavior (attack patterns, malware, exploits)
 * Victim Targeting
 
-In this case, we want to represent a piece of malware. For this example we'll just give it a name, but you could also represent more complicated information about it using something like MAEC.
+In this case, we want to represent a piece of malware. For this example we'll just give it a name, but you could also represent more complicated information about it using something like [MAEC](https://maecproject.github.io/).
 
 So, we'll first add the TTPs element with a single TTP that has the correct xsi:type and an id and timestamp:
 
@@ -362,6 +362,6 @@ The entire document, by the way, should look something like this:
 
 # Where to go from here
 
-1. Read up on the [idioms](/documentation/idioms) to learn more about how STIX can help with specific use cases and to see many more examples
-1. Take a look at the data model documentation for the types you're interested in
+1. Read up on the [idioms](/documentation/idioms) to learn more about how STIX can help with specific use cases and to see many more examples.
+1. Take a look at the data model documentation for the types in which you're interested.
 1. Try your own! Make sure to validate your documents when you're finished.
