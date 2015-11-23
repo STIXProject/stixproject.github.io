@@ -39,7 +39,7 @@ PS: One manifestation of this capability leads to the most common mistake that w
 
 ## 5. Understand your consumers
 
-To sometimes contradicts #4, but as a producer you should understand the capabilities that your consumers have to ingest your indicators. Can they support patterning? Can they support the richer network connection object or simply the IP address object? Can they support CybOX at all or is it better to use Snort or YARA?
+To sometimes contradicts #4, but as a producer you should understand the capabilities that your consumers have to ingest your indicators. Can they support patterning? Can they support the richer network connection object or simply the IP address object? Can they support [CybOX](https://cyboxproject.github.io/) at all or is it better to use Snort or YARA?
 
 When creating indicators for mass consumption this can be tricky, but as a general rule think about what 80% of consumers can handle and target that. Currently, our estimation is that producers creating content for mass consumption should limit themselves to the more basic objects and conditions as represented in the [simple indicator sharing profile](/language/profiles/samples/stix_{{site.current_version}}_sample_indicator_sharing_profile_r1.xlsx).
 
@@ -47,6 +47,6 @@ One thing you can do to support _all_ levels of consumers is create multiple ind
 
 ## Bonus tip: not everything is about indicators
 
-Not everything you share needs to be an indicator! Have a malware analysis that you want to share? Encode it in [MAEC](https://maec.mitre.org) and share it via a STIX [TTP](/data-model/{{site.current_version}}/ttp/TTPType). Have a new attack pattern that you've seen but not any indicators for how to find it? Share it as a STIX TTP w/ CAPEC reference. New attribution for an attack? STIX [Threat Actor](/data-model/{{site.current_version}}/ta/ThreatActorType) or [Campaign](/data-model/{{site.current_version}}/campaign/CampaignType).
+Not everything you share needs to be an indicator! Have a malware analysis that you want to share? Encode it in [MAEC](https://maecproject.github.io/) and share it via a STIX [TTP](/data-model/{{site.current_version}}/ttp/TTPType). Have a new attack pattern that you've seen but not any indicators for how to find it? Share it as a STIX TTP w/[CAPEC](https://capec.mitre.org/) reference. New attribution for an attack? STIX [Threat Actor](/data-model/{{site.current_version}}/ta/ThreatActorType) or [Campaign](/data-model/{{site.current_version}}/campaign/CampaignType).
 
 Those can all be later related to indicators but if you don't have the indicator right away there's no reason to force it.
