@@ -24,11 +24,11 @@ The [STIX whitepaper](/getting-started/whitepaper) describes the motivation and 
 
 ### The STIX Community
 
-STIX has been transitioned to OASIS! See the [community](/community) page for more information. A couple shortcuts:
+STIX has been transitioned to OASIS! See the [Community](/community) page for more information. A couple shortcuts:
 
 - [OASIS Technical Committee](https://www.oasis-open.org/committees/cti) - where STIX development happens
 - [Mailing Lists](/community/#discussion-list-amp-archives) - stay up to date on development and usage
-- [Code Repositories](https://github.com/STIXProject/) — the central location for development of the schemas, specifications, tools, and documentation (including this site)
+- [Code Repositories](https://github.com/STIXProject/) - the central location for development of the schemas, specifications, tools, and documentation (including this site)
 
 ## Frequently Asked Questions
 
@@ -46,7 +46,7 @@ Bindings and related tools to help process and work with STIX are [open source o
 
 The [samples](/examples) page on this website hosts full threat reports expressed via STIX, including Mandiant's APT1 report and FireEye's Poison Ivy report. [Idioms](/documentation/idioms) also provide good constrained examples.
 
-In addition to the MITRE samples, community members have set up [TAXII](https://taxii.mitre.org) repositories containing STIX content and even directories pointing to those repositories. One example repository is http://hailataxii.com.
+In addition to the MITRE samples, community members have set up [TAXII](http://taxiiproject.github.io/) repositories containing STIX content and even directories pointing to those repositories. One example repository is http://hailataxii.com.
 
 #### How do I use STIX? What tools/utilities are available for this effort?
 
@@ -60,25 +60,25 @@ If you're developing a product or tool, the current STIX reference implementatio
 The [blog](http://stixproject.tumblr.com) also lists press releases and other vendor announcements.
 
 #### How is STIX licensed?
-See the [Terms of Use](http://stix.mitre.org/about/termsofuse.html).
+See the [Terms of Use](/legal).
 
 ## Relationship to Other Efforts
 
 #### TAXII
 
-[TAXII](http://taxii.mitre.org) (Trusted Automated eXchange of Indicator Information) is the main transport mechanism for cyber threat information represented in STIX. Through the use of TAXII services, organizations can share cyber threat information in a secure and automated manner.
+[TAXII](http://taxiiproject.github.io/) (Trusted Automated eXchange of Indicator Information) is the main transport mechanism for cyber threat information represented in STIX. Through the use of TAXII services, organizations can share cyber threat information in a secure and automated manner.
 
 Like STIX, TAXII is led by DHS and the STIX and TAXII communities work closely together (and in fact consist of many of the same people) to ensure that they continue to provide a full stack for sharing threat intelligence.
 
 #### CybOX
 
-[CybOX](http://cybox.mitre.org) (Cyber Observable eXpression) is a language for describing events of stateful properties ("things") that are observable in the cyber domain. STIX leverages CybOX for this purpose, such as in indicator patterns, infrastructure descriptions, and course of action parameters. CybOX is also led by DHS and managed by The MITRE Corporation.
+[CybOX](https://cyboxproject.github.io/) (Cyber Observable eXpression) is a language for describing events of stateful properties ("things") that are observable in the cyber domain. STIX leverages CybOX for this purpose, such as in indicator patterns, infrastructure descriptions, and course of action parameters. CybOX is also led by DHS and managed by The MITRE Corporation.
 
 Like STIX, CybOX is led by DHS and the STIX and CybOX communities work closely together (and in fact consist of many of the same people) to ensure that CybOX is valuable independently as well as supports the use cases required by STIX.
 
 #### MAEC
 
-[MAEC](http://maec.mitre.org) (Malware Attribute Enumeration and Classification) is a language for describing malware behavior and the results of a malware analysis. STIX leverages MAEC via the TTP construct for this purpose, and additionally both STIX and MAEC use CybOX.
+[MAEC](https://maecproject.github.io/) (Malware Attribute Enumeration and Classification) is a language for describing malware behavior and the results of a malware analysis. STIX leverages MAEC via the TTP construct for this purpose, and additionally both STIX and MAEC use CybOX.
 
 Like STIX, MAEC is led by DHS and the STIX, MAEC, and CybOX communities work closely together (and in fact consist of many of the same people) to ensure that the combination of the three specifications can interoperate and support both individual and combined usages. The STIX and MAEC teams have together produced a whitepaper describing how to [characterize malware across MAEC and STIX](/about/Characterizing_Malware_MAEC_and_STIX_v1.0.pdf)
 
@@ -89,7 +89,7 @@ STIX can utilize [Common Attack Pattern Enumeration and Classification](https://
 The [Incident Object Description Format](https://tools.ietf.org/html/rfc5070) (IODEF) is an Internet Engineering Task Force (IETF) standard developed for exchange of incident information. There is no formal relationship between STIX and IODEF, although it is possible to leverage IODEF within STIX in order to represent incident information. Doing so, however, would lose the richness and architectural alignment provided by the STIX Incident structure.
 
 #### OpenIOC
-The STIX Indicator's test mechanism field is an extensible alternative to providing an indicator signature in something other than CybOX. Mandiant’s [Open Indicators of Compromise](http://www.openioc.org/), Open Vulnerability and Assessment Language (OVAL®), SNORT rules, and YARA rules are supported as default extensions to that test mechanism field.
+The STIX Indicator's test mechanism field is an extensible alternative to providing an indicator signature in something other than CybOX. [Open Indicators of Compromise](http://www.openioc.org/), Open Vulnerability and Assessment Language (OVAL®), SNORT rules, and YARA rules are supported as default extensions to that test mechanism field.
 
 #### CIQ
 The [OASIS Customer Information Quality](https://www.oasis-open.org/committees/ciq/) (CIQ) is a language for representing information about individuals and organizations. The STIX Identity structure uses an extension mechanism to represent identify information used to characterize malicious actors, victims and intelligence sources. The STIX-provided extension leverages CIQ.
