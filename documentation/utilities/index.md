@@ -35,7 +35,7 @@ The `STIX to HTML` transform is leveraged by `STIXViz` to display the contents a
 
 Because `STIX to HTML` is an XSLT stylesheet, users must be familiar with XSLT or XSLT processing libraries/engines (e.g., `Saxon` or `libxslt`) in order to use it. If you're not familiar with XSLT or how to run it against XML, we suggest downloading `STIXViz` and looking at the `STIX to HTML` output that it includes instead.
 
-Because `STIX to HTML` was created by and for developers, allowing for customization and extension were a priority. Documentation on how to customize `STIX to HTML` to fit your application/operational needs can be found here: https://github.com/STIXProject/stix-to-html/wiki/Customizing-stix-to-html-transform.
+Because `STIX to HTML` was created by and for developers, allowing for customization and extension were a priority. [Documentation] (https://github.com/STIXProject/stix-to-html/wiki/Customizing-stix-to-html-transform) on how to customize `STIX to HTML` to fit your application/operational needs is also available. 
 
 * [Usage Guide](https://github.com/STIXProject/stix-to-html/wiki)
 * [Source Code](https://github.com/STIXProject/stix-to-html)
@@ -86,15 +86,15 @@ Our hope is to lift developers above the XML and allow them to focus on creating
 
 ### Java
 
-The STIX project provides a [java-stix](https://github.com/STIXProject/java-stix) library for both Java and JAXB XML developers. It provides convenience methods to the XJC generated JAXB model. java-stix is not intended to be a one-for-one replacement for the python-stix(https://github.com/STIXProject/python-stix) API.
+The STIX project provides a [java-stix](https://github.com/STIXProject/java-stix) library for both Java and JAXB XML developers. It provides convenience methods to the XJC generated JAXB model. java-stix is not intended to be a one-for-one replacement for the [python-stix](https://github.com/STIXProject/python-stix) API.
 
-Please send any feedback about java-stix to [stix@mitre.org](mailto:stix@mitre.org).
+Please send any feedback about java-stix to <{{ site.contact_email }}.
 
 ### .NET
 
 The STIX project does not provide bindings for .NET. Community members, however, have used Microsoft's standard XML tooling to work with STIX documents and create useful utilities.
 
-We would be glad to link to a .NET project providing bindings. Please contact us [stix@mitre.org](mailto:stix@mitre.org).
+We would be glad to link to a .NET project providing bindings. Please contact us at <{{ site.contact_email }}.
 
 ### Ruby
 
@@ -104,4 +104,4 @@ Using JRuby, it's possible to use generated JAXB or XMLBeans bindings and import
 * Package them as a gem
 * Include the gem in your Gemfile (if using bundler) or install it manually
 
-We would be glad to link to a Ruby project providing bindings. Please contact us [stix@mitre.org](mailto:stix@mitre.org).
+We would be glad to link to a Ruby project providing bindings. Please contact us at <{{ site.contact_email }}.
