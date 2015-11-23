@@ -363,5 +363,5 @@ The entire document, by the way, should look something like this:
 # Where to go from here
 
 1. Read up on the [idioms](/documentation/idioms) to learn more about how STIX can help with specific use cases and to see many more examples.
-1. Take a look at the data model documentation for the types you're interested in.
+1. Take a look at the data model documentation for the types in which you're interested.
 1. Try your own! Make sure to validate your documents when you're finished.
