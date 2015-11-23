@@ -7,9 +7,9 @@ constructs:
 summary: Represent how to detect an indicator using OpenIOC.
 ---
 
-While one option when sharing indicator signatures is to use the `Observable` field in the indicator using CybOX, another option is to share indicators with signatures in a non-CybOX language via the `Test_Mechanisms` field. The advantage of this is that you can share signatures that work natively in existing tools but can still integrate with the rest of the STIX architecture.
+While one option when sharing indicator signatures is to use the `Observable` field in the indicator using [CybOX](https://cyboxproject.github.io/), another option is to share indicators with signatures in a non-CybOX language via the `Test_Mechanisms` field. The advantage of this is that you can share signatures that work natively in existing tools but can still integrate with the rest of the STIX architecture.
 
-This idiom describes using the OpenIOC test mechanism to share IOCs for the Zeus malware as used in the OpenIOC [example](http://openioc.org/iocs/6d2a1b03-b216-4cd8-9a9e-8827af6ebf93.ioc).
+This idiom describes using the [OpenIOC](http://openioc.org/) test mechanism to share IOCs for the Zeus malware as used in the OpenIOC [example](http://openioc.org/iocs/6d2a1b03-b216-4cd8-9a9e-8827af6ebf93.ioc).
 
 ## Scenario
 
@@ -92,4 +92,4 @@ for indicator in stix_package.indicators:
 * The [TTP idioms](../#ttp) describe other usage of [TTP](/data-model/{{site.current_version}}/ttp/TTPType), which may be helpful when giving OpenIOC indicators context.
 * The [OpenIOC2010TestMechanism](/data-model/{{site.current_version}}/stix-openioc/OpenIOC2010TestMechanismType/) data model documentation has more information on other fields that are available.
 * Other test mechanisms are [Snort](../snort-test-mechanism), [Yara](../yara-test-mechanism), and OVAL.
-* The [OpenIOC homepage](http://openioc.org/) has more information and examples on OpenIOC
+* The [OpenIOC homepage](http://openioc.org/) has more information and examples on OpenIOC.
