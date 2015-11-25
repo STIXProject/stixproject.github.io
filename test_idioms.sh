@@ -28,7 +28,7 @@ function run_producer_consumer
     fi
 
     if [ -f "$consumer" ] ; then
-	log "  Consumer: $consumer"
+        log "  Consumer: $consumer"
         python "$consumer" "$outfile" > "$parsedfile" 2>/dev/null
         if [[ $? -ne 0 || ! -e "$parsedfile" ]] ; then
             return 1
@@ -67,31 +67,31 @@ for dir in $IDIOM_DIRS; do
     # Dangling consumer scripts are ignored.
 
     for scriptfile in *.py ; do
-	case "$scriptfile" in
-	    *producer.py)
-		run_producer_consumer "$scriptfile"
-		;;
-	    *consumer.py)
-		true
-		;;
-	    *)
-		log "  Run: $scriptfile"
-		python "$scriptfile" > /dev/null 2>&1
-		;;
+        case "$scriptfile" in
+            *producer.py)
+                run_producer_consumer "$scriptfile"
+                ;;
+            *consumer.py)
+                true
+                ;;
+            *)
+                log "  Run: $scriptfile"
+                python "$scriptfile" > /dev/null 2>&1
+                ;;
         esac
 
-	if [ $? -eq 0 ] ; then
-	    # maybe in verbose mode, the "."s would be drowned out
-	    # by log messages and be kinda pointless...
+        if [ $? -eq 0 ] ; then
+            # maybe in verbose mode, the "."s would be drowned out
+            # by log messages and be kinda pointless...
             [ "$VERBOSE" -eq 0 ] && echo -n "."
-	else
+        else
             echo -e "\nERROR running $(realpath $scriptfile)"
-	    RETVAL=1
-	fi
+            RETVAL=1
+        fi
     done
 
     for xmlfile in ./*.xml ; do
-	log "  Validate: $xmlfile"
+        log "  Validate: $xmlfile"
         python "$validator" "$xmlfile" > /dev/null 2>&1
         if [ $? -ne 0 ]
         # the file had validation errors
