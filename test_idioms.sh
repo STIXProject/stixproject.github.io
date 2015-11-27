@@ -11,6 +11,17 @@ function log
     [ "$VERBOSE" -ne 0 ] && echo -e "$1"
 }
 
+# Run with redirection of stderr according to the
+# verbosity setting.
+function run_redir
+{
+    if [ "$VERBOSE" -ne 0 ] ; then
+        "$@"
+    else
+        "$@" 2> /dev/null
+    fi
+}
+
 function run_producer_consumer
 {
     local producer=$1
@@ -19,19 +30,19 @@ function run_producer_consumer
     local outfile="${stem}out.xml"
     local parsedfile="${stem}parsed.txt"
 
-    rm -f "$outfile" "$parsedfile"
+    /bin/rm -f "$outfile" "$parsedfile"
     
     log "  Producer: $producer"
-    python "$producer" > "$outfile" 2>/dev/null
+    run_redir python "$producer" > "$outfile"
     if [[ $? -ne 0 || ! -e "$outfile" ]] ; then
         return 1
     fi
 
     if [ -f "$consumer" ] ; then
         log "  Consumer: $consumer"
-        python "$consumer" "$outfile" > "$parsedfile" 2>/dev/null
+        run_redir python "$consumer" "$outfile" > "$parsedfile"
         if [[ $? -ne 0 || ! -e "$parsedfile" ]] ; then
-            return 1
+            return 2 # special status meaning consumer error
         fi
     fi
 
@@ -70,29 +81,36 @@ for dir in $IDIOM_DIRS; do
         case "$scriptfile" in
             *producer.py)
                 run_producer_consumer "$scriptfile"
+                status=$?
+                if [ $status -ne 0 ] ; then
+                    # disambiguate whether producer or consumer failed
+                    [ $status -eq 1 ] && ERR_FILE="$scriptfile" ||
+                        ERR_FILE="${scriptfile%producer.py}consumer.py"
+                    echo -e "\nERROR running $(realpath $ERR_FILE)"
+                    RETVAL=1
+                fi
                 ;;
             *consumer.py)
-                true
+                continue
                 ;;
             *)
                 log "  Run: $scriptfile"
-                python "$scriptfile" > /dev/null 2>&1
+                run_redir python "$scriptfile" > /dev/null
+                if [ $? -ne 0 ] ; then
+                    echo -e "\nERROR running $(realpath $scriptfile)"
+                    RETVAL=1
+                fi
                 ;;
         esac
 
-        if [ $? -eq 0 ] ; then
-            # maybe in verbose mode, the "."s would be drowned out
-            # by log messages and be kinda pointless...
-            [ "$VERBOSE" -eq 0 ] && echo -n "."
-        else
-            echo -e "\nERROR running $(realpath $scriptfile)"
-            RETVAL=1
-        fi
+        # in verbose mode, the "."s would be drowned out
+        # by log messages and be kinda pointless...
+        [ "$VERBOSE" -eq 0 ] && echo -n "."
     done
 
     for xmlfile in ./*.xml ; do
         log "  Validate: $xmlfile"
-        python "$validator" "$xmlfile" > /dev/null 2>&1
+        run_redir "$validator" "$xmlfile" > /dev/null
         if [ $? -ne 0 ]
         # the file had validation errors
         then
