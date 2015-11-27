@@ -8,14 +8,14 @@ function realpath { echo $(cd $(dirname $1); pwd)/$(basename $1); }
 
 function log
 {
-    [ "$VERBOSE" -ne 0 ] && echo -e "$1"
+    (( "$VERBOSE" != 0 )) && echo -e "$1"
 }
 
 # Run with redirection of stderr according to the
 # verbosity setting.
 function run_redir
 {
-    if [ "$VERBOSE" -ne 0 ] ; then
+    if (( "$VERBOSE" != 0 )) ; then
         "$@"
     else
         "$@" 2> /dev/null
@@ -24,7 +24,7 @@ function run_redir
 
 function run_producer_consumer
 {
-    local producer=$1
+    local producer="$1"
     local stem="${producer%producer.py}"
     local consumer="${stem}consumer.py"
     local outfile="${stem}out.xml"
@@ -34,14 +34,14 @@ function run_producer_consumer
     
     log "  Producer: $producer"
     run_redir python "$producer" > "$outfile"
-    if [[ $? -ne 0 || ! -e "$outfile" ]] ; then
+    if (( $? != 0 )) || [[ ! -e "$outfile" ]] ; then
         return 1
     fi
 
-    if [ -f "$consumer" ] ; then
+    if [[ -f "$consumer" ]] ; then
         log "  Consumer: $consumer"
         run_redir python "$consumer" "$outfile" > "$parsedfile"
-        if [[ $? -ne 0 || ! -e "$parsedfile" ]] ; then
+        if (( $? != 0 )) || [[ ! -e "$parsedfile" ]] ; then
             return 2 # special status meaning consumer error
         fi
     fi
@@ -50,7 +50,7 @@ function run_producer_consumer
 }
 
 # User can specify their own idiom dirs if they want.
-if [ $# -gt 0 ] ; then
+if (( $# > 0 )) ; then
     IDIOM_DIRS="$@"
 else
     IDIOM_DIRS=./documentation/idioms/*
@@ -62,7 +62,7 @@ shopt -s nullglob
 
 RETVAL=0
 for dir in $IDIOM_DIRS; do
-    [ -d $dir ] || continue
+    [[ -d $dir ]] || continue
 
     log "Idiom: $dir"
     pushd $dir > /dev/null  #change to idiom directory
@@ -82,9 +82,9 @@ for dir in $IDIOM_DIRS; do
             *producer.py)
                 run_producer_consumer "$scriptfile"
                 status=$?
-                if [ $status -ne 0 ] ; then
+                if (( $status != 0 )) ; then
                     # disambiguate whether producer or consumer failed
-                    [ $status -eq 1 ] && ERR_FILE="$scriptfile" ||
+                    (( $status == 1 )) && ERR_FILE="$scriptfile" ||
                         ERR_FILE="${scriptfile%producer.py}consumer.py"
                     echo -e "\nERROR running $(realpath $ERR_FILE)"
                     RETVAL=1
@@ -96,7 +96,7 @@ for dir in $IDIOM_DIRS; do
             *)
                 log "  Run: $scriptfile"
                 run_redir python "$scriptfile" > /dev/null
-                if [ $? -ne 0 ] ; then
+                if (( $? != 0 )) ; then
                     echo -e "\nERROR running $(realpath $scriptfile)"
                     RETVAL=1
                 fi
@@ -111,13 +111,13 @@ for dir in $IDIOM_DIRS; do
     for xmlfile in ./*.xml ; do
         log "  Validate: $xmlfile"
         run_redir "$validator" "$xmlfile" > /dev/null
-        if [ $? -ne 0 ]
+        if (( $? != 0 ))
         # the file had validation errors
         then
             echo -e "\nERROR: $(realpath $xmlfile) had validation errors"
             RETVAL=1
         else
-            [ "$VERBOSE" -eq 0 ] && echo -n "."
+            (( "$VERBOSE" == 0 )) && echo -n "."
         fi
     done
 
