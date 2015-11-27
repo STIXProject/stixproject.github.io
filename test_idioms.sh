@@ -4,16 +4,16 @@
 
 validator=stix-validator.py
 
-function realpath { echo $(cd $(dirname $1); pwd)/$(basename $1); }
+realpath() { echo $(cd $(dirname $1); pwd)/$(basename $1); }
 
-function log
+log()
 {
     (( "$VERBOSE" != 0 )) && echo -e "$1"
 }
 
 # Run with redirection of stderr according to the
 # verbosity setting.
-function run_redir
+run_redir()
 {
     if (( "$VERBOSE" != 0 )) ; then
         "$@"
@@ -22,7 +22,7 @@ function run_redir
     fi
 }
 
-function run_producer_consumer
+run_producer_consumer()
 {
     local producer="$1"
     local stem="${producer%producer.py}"
@@ -62,10 +62,10 @@ shopt -s nullglob
 
 RETVAL=0
 for dir in $IDIOM_DIRS; do
-    [[ -d $dir ]] || continue
+    [[ -d "$dir" ]] || continue
 
     log "Idiom: $dir"
-    pushd $dir > /dev/null  #change to idiom directory
+    pushd "$dir" > /dev/null  #change to idiom directory
 
     # Assume sets of paired scripts, named *producer.py and
     # *consumer.py.  The output of *producer.py is checked
