@@ -8,14 +8,14 @@ realpath() { echo $(cd $(dirname $1); pwd)/$(basename $1); }
 
 log()
 {
-    (( "$VERBOSE" != 0 )) && echo -e "$1"
+    (( VERBOSE != 0 )) && echo -e "$1"
 }
 
 # Run with redirection of stderr according to the
 # verbosity setting.
 run_redir()
 {
-    if (( "$VERBOSE" != 0 )) ; then
+    if (( VERBOSE != 0 )) ; then
         "$@"
     else
         "$@" 2> /dev/null
@@ -82,9 +82,9 @@ for dir in $IDIOM_DIRS; do
             *producer.py)
                 run_producer_consumer "$scriptfile"
                 status=$?
-                if (( $status != 0 )) ; then
+                if (( status != 0 )) ; then
                     # disambiguate whether producer or consumer failed
-                    (( $status == 1 )) && ERR_FILE="$scriptfile" ||
+                    (( status == 1 )) && ERR_FILE="$scriptfile" ||
                         ERR_FILE="${scriptfile%producer.py}consumer.py"
                     echo -e "\nERROR running $(realpath $ERR_FILE)"
                     RETVAL=1
@@ -117,7 +117,7 @@ for dir in $IDIOM_DIRS; do
             echo -e "\nERROR: $(realpath $xmlfile) had validation errors"
             RETVAL=1
         else
-            (( "$VERBOSE" == 0 )) && echo -n "."
+            (( VERBOSE == 0 )) && echo -n "."
         fi
     done
 
