@@ -2,6 +2,14 @@
 
 : ${VERBOSE:=0}
 
+# Validate that VERBOSE is an integer to prevent
+# code injection exploits.
+# Prolly overkill for this little dumb script...
+if [[ "$VERBOSE" == *[!0-9]* ]] ; then
+    echo "VERBOSE is expected to be numeric!"
+    exit 1
+fi
+
 validator=stix-validator.py
 
 realpath() { echo $(cd $(dirname $1); pwd)/$(basename $1); }
@@ -105,7 +113,7 @@ for dir in $IDIOM_DIRS; do
 
         # in verbose mode, the "."s would be drowned out
         # by log messages and be kinda pointless...
-        [ "$VERBOSE" -eq 0 ] && echo -n "."
+        [[ VERBOSE == 0 ]] && echo -n "."
     done
 
     for xmlfile in ./*.xml ; do
