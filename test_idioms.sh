@@ -113,7 +113,7 @@ for dir in $IDIOM_DIRS; do
 
         # in verbose mode, the "."s would be drowned out
         # by log messages and be kinda pointless...
-        [[ VERBOSE == 0 ]] && echo -n "."
+        (( VERBOSE == 0 )) && echo -n "."
     done
 
     for xmlfile in ./*.xml ; do
