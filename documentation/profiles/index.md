@@ -21,7 +21,7 @@ STIX profiles are the formalization of this concept: a particular subset of STIX
 <div class="well">
   <h3>Example Indicator Profile</h3>
   <img src="profile-example.png" alt="profile example" />
-  <p class="caption">Indicator, observable, and TTP are in-scope but campaign, course of action, exploit target, incident, and threat actor are out-of-scope. The full example of that profile can be downloaded from the STIX <a href="http://stix.mitre.org/language/profiles.html">profile page</a>.</p>
+  <p class="caption">Indicator, observable, and TTP are in-scope but campaign, course of action, exploit target, incident, and threat actor are out-of-scope. The full example of that profile can be downloaded above.</p>
 </div>
 
 Profiles can be thought of a second compatibility level for STIX content: STIX content can be valid STIX but if it doesn't conform to the rules outlined in the profile it is not compliant with a profile or tools that only support that profile. In fact, the [spreadsheet profile representation](representation) even allows for automated validation of STIX instance content against it.
