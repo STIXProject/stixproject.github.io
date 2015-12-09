@@ -7,8 +7,8 @@ Profiles are a mechanism to describe a particular usage of STIX as practiced by 
 
 #### Downloads
 
-[STIX {{site.current_version}} Profile Template](https://stix.mitre.org/language/profiles/stix_{{site.current_version}}_profile_template_r1.xlsx)  
-[STIX {{site.current_version}} Sample Profile](https://stix.mitre.org/language/profiles/samples/stix_{{site.current_version}}_sample_indicator_sharing_profile_r1.xlsx)  
+[STIX {{site.current_version}} Profile Template]({{site.current_version}}_profile_template_r1.xlsx)  
+[STIX {{site.current_version}} Sample Profile](stix_{{site.current_version}}_sample_indicator_sharing_profile_r1.xlsx)  
 
 ## Background
 
