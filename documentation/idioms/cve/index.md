@@ -6,11 +6,11 @@ constructs:
 summary: This idiom describes how to represent a disclosed vulnerability identified by a CVE using the Exploit Target construct.
 ---
 
-Threat intelligence often contains references to the vulnerabilities that threat actors are targeting. When those vulnerabilities have been formally disclosed and identified (i.e. are not 0-day or unknown vulnerabilites) they are almost always identified via a [CVE](http://cve.mitre.org) identifier. This idiom describes how to use the STIX Exploit Target element to represent a disclosed vulnerability via its CVE ID.
+Threat intelligence often contains references to the vulnerabilities that threat actors are targeting. When those vulnerabilities have been formally disclosed and identified (i.e., are not 0-day or unknown vulnerabilites) they are almost always identified via a [Common Vulnerabilities and Exposures (CVE®)](http://cve.mitre.org) identifier. This idiom describes how to use the STIX Exploit Target element to represent a disclosed vulnerability via its CVE ID.
 
 ## Scenario
 
-In this scenario, we'll describe [CVE 2013-3893](http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-3893) using the STIX exploit target element.
+In this scenario, we'll describe [CVE-2013-3893](http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-3893) using the STIX exploit target element.
 
 ## Data model
 
@@ -20,7 +20,7 @@ The relevant STIX component, [Exploit Target](/data-model/{{site.current_version
 
 As you can see, this is a very simple idiom to represent. The `Title` field simply gives the exploit target a human-readable title. Similarly, `Description` and `Short Description` could be used to give it longer human-readable descriptions if desired.
 
-The `Vulnerability` field is used to represent the vulnerability itself. This field is implemented via [VulnerabilityType](/data-model/{{site.current_version}}/et/VulnerabilityType), which can be used to identify vulnerabilities via a CVE ID (as here), OSVDB ID, or even use [CVRF](http://www.icasi.org/cvrf-1.1) to characterize an undisclosed vulnerability.
+The `Vulnerability` field is used to represent the vulnerability itself. This field is implemented via [VulnerabilityType](/data-model/{{site.current_version}}/et/VulnerabilityType), which can be used to identify vulnerabilities via a CVE ID (as here), OSVDB ID, or even use [Common Vulnerability Reporting Framework (CVRF)](http://www.icasi.org/cvrf-1.1) to characterize an undisclosed vulnerability.
 
 Representing the CVE ID is as easy as filling out the `CVE ID` field with a property-formatted CVE identifier.
 

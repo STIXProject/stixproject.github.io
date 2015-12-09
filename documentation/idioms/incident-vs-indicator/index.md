@@ -10,11 +10,9 @@ constructs:
 summary: You have a list of IP addresses (or hashes, or URLs, etc) and want to convert it to STIX. Should you use incidents, indicators, or both?
 ---
 
-Many threat intel feeds that are available today and not already formatted as STIX are flat lists of "bad things": IPs that are known to be malware C2, malicious URLs, malware file hashes. When considering how to convert these to STIX (either as the original producer or as an intermediary) a common question that comes up is whether they should be converted to a list of **indicators**, a list of **incidents**, or maybe **both**. This idiom looks at several different examples and explains when to use one approach vs. another.
-
 {% include awesome-indicator.html %}
 
-
+Many threat intel feeds that are available today and not already formatted as STIX are flat lists of "bad things": IPs that are known to be malware C2, malicious URLs, malware file hashes. When considering how to convert these to STIX (either as the original producer or as an intermediary) a common question that comes up is whether they should be converted to a list of **indicators**, a list of **incidents**, or maybe **both**. This idiom looks at several different examples and explains when to use one approach vs. another.
 
 ## Background
 
