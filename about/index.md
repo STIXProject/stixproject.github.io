@@ -4,11 +4,11 @@ title: About STIX
 toc: about_toc.html
 ---
 
-Structured Threat Information Expression (STIX™) is a structured language for describing cyber threat information so it can be shared, stored, and analyzed in a consistent manner.
+[Structured Threat Information Expression (STIX™)](http://stixproject.github.io/releases/1.2/) is a structured language for describing cyber threat information so it can be shared, stored, and analyzed in a consistent manner.
 
 The [STIX whitepaper](/getting-started/whitepaper) describes the motivation and architecture behind STIX. At a high level the STIX language consists of 9 key constructs and the relationships between them:
 
-<img src="/images/stix-architecture.png" style="height: 400px" class="aside-text-left"/>
+<img src="/images/stix-architecture.png" style="height: 410px" class="aside-text-left"/>
 
 - [Observables](http://cyboxproject.github.io) describe what has been or might be seen in cyber
 - [Indicators](/data-model/{{site.current_version}}/indicator/IndicatorType) describe patterns for what might be seen and what they mean if they are
@@ -24,7 +24,7 @@ The [STIX whitepaper](/getting-started/whitepaper) describes the motivation and 
 
 ### The STIX Community
 
-STIX has been transitioned to OASIS! See the [Community](/community) page for more information. A couple shortcuts:
+STIX has been transitioned to OASIS! See the [Community](/community) page for more information. A few shortcuts:
 
 - [OASIS Technical Committee](https://www.oasis-open.org/committees/cti) - where STIX development happens
 - [Mailing Lists](/community/#discussion-list-amp-archives) - stay up to date on development and usage
@@ -44,20 +44,20 @@ Bindings and related tools to help process and work with STIX are [open source o
 
 #### Where can I find examples of STIX data? Are there any STIX repositories?
 
-The [samples](/examples) page on this website hosts full threat reports expressed via STIX, including Mandiant's APT1 report and FireEye's Poison Ivy report. [Idioms](/documentation/idioms) also provide good constrained examples.
+The [Samples](/examples) page on this website hosts full threat reports expressed via STIX, including Mandiant's APT1 report and FireEye's Poison Ivy report. [Idioms](/documentation/idioms) also provide good constrained examples.
 
 In addition to the MITRE samples, community members have set up [TAXII](http://taxiiproject.github.io/) repositories containing STIX content and even directories pointing to those repositories. One example repository is http://hailataxii.com.
 
 #### How do I use STIX? What tools/utilities are available for this effort?
 
-The primary way to use STIX is of course via commercial products. The [blog](http://stixproject.tumblr.com) is a good place to find announcements about new products that support STIX.
+The primary way to use STIX is of course via commercial products. The [STIX Blog](http://stixproject.tumblr.com) is a good place to find announcements about new products that support STIX.
 
-If you're developing a product or tool, the current STIX reference implementation is in XML so any XML libraries are suitable for producing and consuming STIX XML. The project also maintains open-source [Python bindings](https://github.com/STIXProject/python-stix) and other [utilities](https://gibhub.com/STIXProject) to make working with STIX at the code level easier. [Documentation](/documentation) and [suggested practices](/documentation/suggested-practices) as well as [examples](/documentation/idioms) can help you understand how to use the STIX language conceptually (beyond just producing the XML).
+If you're developing a product or tool, the current STIX reference implementation is in XML so any XML libraries are suitable for producing and consuming STIX XML. The project also maintains open-source [Python bindings](https://github.com/STIXProject/python-stix) and other [Utilities](https://gibhub.com/STIXProject) to make working with STIX at the code level easier. [Documentation](/documentation) and [Suggested Practices](/documentation/suggested-practices) as well as [Examples](/documentation/idioms) can help you understand how to use the STIX Language conceptually (beyond just producing the XML).
 
 #### Who is using STIX?
-[Many organizations](/supporters) have announced support for STIX, TAXII, and related specifications and are listed on our [adopters page](/supporters). Please contact <{{ site.contact_email }}> for details on how your organization’s products and services can be added to this list.
+[Many organizations](/supporters) have announced support for STIX and TAXII, and are listed on our [Supporters](/supporters) page. Please use our Google [submission form](https://docs.google.com/spreadsheets/d/120xgjHoN4jXkhpHZ093p0he5hg0TQqEOXct9mhQnD3E/edit?pli=1#gid=1086646142) to request that your organization’s products and services be added to the list.
 
-The [blog](http://stixproject.tumblr.com) also lists press releases and other vendor announcements.
+The [STIX Blog](http://stixproject.tumblr.com) also lists press releases and other vendor announcements.
 
 #### How is STIX licensed?
 See the [Terms of Use](/legal).
@@ -68,19 +68,19 @@ See the [Terms of Use](/legal).
 
 [TAXII](http://taxiiproject.github.io/) (Trusted Automated eXchange of Indicator Information) is the main transport mechanism for cyber threat information represented in STIX. Through the use of TAXII services, organizations can share cyber threat information in a secure and automated manner.
 
-Like STIX, TAXII is led by DHS and the STIX and TAXII communities work closely together (and in fact consist of many of the same people) to ensure that they continue to provide a full stack for sharing threat intelligence.
+The STIX and TAXII communities work closely together (and in fact consist of many of the same people) to ensure that they continue to provide a full stack for sharing threat intelligence.
 
 #### CybOX
 
-[CybOX](https://cyboxproject.github.io/) (Cyber Observable eXpression) is a language for describing events of stateful properties ("things") that are observable in the cyber domain. STIX leverages CybOX for this purpose, such as in indicator patterns, infrastructure descriptions, and course of action parameters. CybOX is also led by DHS and managed by The MITRE Corporation.
+[CybOX](https://cyboxproject.github.io/) (Cyber Observable eXpression) is a language for describing events of stateful properties ("things") that are observable in the cyber domain. STIX leverages CybOX for this purpose, such as in indicator patterns, infrastructure descriptions, and course of action parameters.
 
-Like STIX, CybOX is led by DHS and the STIX and CybOX communities work closely together (and in fact consist of many of the same people) to ensure that CybOX is valuable independently as well as supports the use cases required by STIX.
+The STIX and CybOX communities work closely together (and in fact consist of many of the same people) to ensure that CybOX is valuable independently, as well as supports the use cases required by STIX.
 
 #### MAEC
 
 [MAEC](https://maecproject.github.io/) (Malware Attribute Enumeration and Classification) is a language for describing malware behavior and the results of a malware analysis. STIX leverages MAEC via the TTP construct for this purpose, and additionally both STIX and MAEC use CybOX.
 
-Like STIX, MAEC is led by DHS and the STIX, MAEC, and CybOX communities work closely together (and in fact consist of many of the same people) to ensure that the combination of the three specifications can interoperate and support both individual and combined usages. The STIX and MAEC teams have together produced a whitepaper describing how to [characterize malware across MAEC and STIX](/about/Characterizing_Malware_MAEC_and_STIX_v1.0.pdf)
+While MAEC is led by DHS, the STIX, CybOX, and MAEC communities work closely together (and in fact consist of many of the same people) to ensure that the combination of the three specifications can interoperate and support both individual and combined usages. The STIX and MAEC teams have together produced a whitepaper describing how to [characterize malware across MAEC and STIX](/about/Characterizing_Malware_MAEC_and_STIX_v1.0.pdf).
 
 #### CAPEC
 STIX can utilize [Common Attack Pattern Enumeration and Classification](https://capec.mitre.org/) (CAPEC™) for structured characterization of tactics, techniques, and procedures (TTP) attack patterns through use of the CAPEC schema extension.
@@ -89,7 +89,7 @@ STIX can utilize [Common Attack Pattern Enumeration and Classification](https://
 The [Incident Object Description Format](https://tools.ietf.org/html/rfc5070) (IODEF) is an Internet Engineering Task Force (IETF) standard developed for exchange of incident information. There is no formal relationship between STIX and IODEF, although it is possible to leverage IODEF within STIX in order to represent incident information. Doing so, however, would lose the richness and architectural alignment provided by the STIX Incident structure.
 
 #### OpenIOC
-The STIX Indicator's test mechanism field is an extensible alternative to providing an indicator signature in something other than CybOX. [Open Indicators of Compromise](http://www.openioc.org/), Open Vulnerability and Assessment Language (OVAL®), SNORT rules, and YARA rules are supported as default extensions to that test mechanism field.
+The STIX Indicator's test mechanism field is an extensible alternative to providing an indicator signature in something other than CybOX. [Open Indicators of Compromise](http://www.openioc.org/), [Open Vulnerability and Assessment Language](https://oval.cisecurity.org/) (OVAL®), SNORT rules, and YARA rules are supported as default extensions to that test mechanism field.
 
 #### CIQ
 The [OASIS Customer Information Quality](https://www.oasis-open.org/committees/ciq/) (CIQ) is a language for representing information about individuals and organizations. The STIX Identity structure uses an extension mechanism to represent identify information used to characterize malicious actors, victims and intelligence sources. The STIX-provided extension leverages CIQ.
