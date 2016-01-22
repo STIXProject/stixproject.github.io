@@ -8,7 +8,7 @@ toc: about_toc.html
 
 The [STIX whitepaper](/getting-started/whitepaper) describes the motivation and architecture behind STIX. At a high level the STIX language consists of 9 key constructs and the relationships between them:
 
-<img src="/images/stix-architecture.png" style="height: 410px" class="aside-text-left"/>
+<img src="/images/stix-architecture.png" style="height: 400px" class="aside-text-left"/>
 
 - [Observables](http://cyboxproject.github.io) describe what has been or might be seen in cyber
 - [Indicators](/data-model/{{site.current_version}}/indicator/IndicatorType) describe patterns for what might be seen and what they mean if they are
@@ -52,10 +52,10 @@ In addition to the MITRE samples, community members have set up [TAXII](http://t
 
 The primary way to use STIX is of course via commercial products. The [STIX Blog](http://stixproject.tumblr.com) is a good place to find announcements about new products that support STIX.
 
-If you're developing a product or tool, the current STIX reference implementation is in XML so any XML libraries are suitable for producing and consuming STIX XML. The project also maintains open-source [Python bindings](https://github.com/STIXProject/python-stix) and other [Utilities](https://gibhub.com/STIXProject) to make working with STIX at the code level easier. [Documentation](/documentation) and [Suggested Practices](/documentation/suggested-practices) as well as [Examples](/documentation/idioms) can help you understand how to use the STIX Language conceptually (beyond just producing the XML).
+If you're developing a product or tool, the current STIX reference implementation is in XML so any XML libraries are suitable for producing and consuming STIX XML. The project also maintains open-source [Python bindings](https://github.com/STIXProject/python-stix) and other [Utilities](https://gibhub.com/STIXProject) to make working with STIX at the code level easier. [Documentation](/documentation) and [Suggested Practices](/documentation/suggested-practices), as well as [Examples](/documentation/idioms), can help you understand how to use the STIX Language conceptually (beyond just producing the XML).
 
 #### Who is using STIX?
-[Many organizations](/supporters) have announced support for STIX and TAXII, and are listed on our [Supporters](/supporters) page. Please use our Google [submission form](https://docs.google.com/spreadsheets/d/120xgjHoN4jXkhpHZ093p0he5hg0TQqEOXct9mhQnD3E/edit?pli=1#gid=1086646142) to request that your organization’s products and services be added to the list.
+[Many organizations](/supporters) have announced support for STIX and TAXII, and are listed on our [Supporters](/supporters) page. Please use our Google [submission form](http://goo.gl/forms/jKQH7a6TfW) to request that your organization’s products and services be added to the list.
 
 The [STIX Blog](http://stixproject.tumblr.com) also lists press releases and other vendor announcements.
 
