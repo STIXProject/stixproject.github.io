@@ -1,6 +1,6 @@
 ---
 layout: flat
-title: How to contribute
+title: STIX 2.0 Development
 ---
 
 <div class="row row-fluid">
