@@ -141,10 +141,13 @@ title: CTI TC Development
       <div class="panel-body">
         <div class="row row-fluid">
           <div class="col-md-4">
+            <h4>Co-Chairs</h4>
+            <p>Mark Davidson and Bret Jordan</p>
             <h4>What is it?</h4>
             <p>Communicate cyber threat information</p>
             <h4>Where is it?</h4>
             <ul>
+              <li><a href="http://taxiiproject.github.io/taxii2/">Development Homepage</a></li>
               <li><a href="https://docs.google.com/document/d/1eyhS3-fOlRkDB6N39Md6KZbvbCe3CjQlampiZPg-5u4/edit" target="_blank">Pre-Draft Specification</a></li>
               <li><a href="mailto:cti-taxii@oasis-open.org" target="_blank">Mailing List</a></li>
               <li><a href="https://cti-tc.slack.com/messages/taxii/" target="_blank">Slack</a></li>
