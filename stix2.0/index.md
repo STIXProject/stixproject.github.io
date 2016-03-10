@@ -17,8 +17,8 @@ title: CTI TC Development
             <h4>Where is it?</h4>
             <ul>
               <li><a href="https://docs.google.com/document/d/1FM-ojdKeaC-3mhf2v1FfXY0Q-s0uCiSDG80tDh23k3E/edit" target="_blank">Pre-Draft Specification</a></li>
-              <li><a href="https://docs.google.com/document/d/1wiG6RoNEFaE2lrblfgjpu3RTAJZOK2q0b5OxXCaCV14/edit" target="_blank">Playground</a></li>
-              <li><a href="mailto:cti-stix@oasis-open.org" target="_blank">Mailing List</a></li>
+              <li><a href="https://docs.google.com/document/d/1TOQQWOy5E7i9GPderTmSzzZG0RdynbRpYHWjPTtiEcs/edit" target="_blank">Playground</a></li>
+              <li><a href="mailto:cti@oasis-open.org" target="_blank">Mailing List</a></li>
               <li><a href="https://cti-tc.slack.com/messages/cti-common/" target="_blank">Slack</a></li>
             </ul>
           </div>
