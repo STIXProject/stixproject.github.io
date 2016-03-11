@@ -1,5 +1,4 @@
 name: STIX Docs
-markdown: redcarpet
 highlighter: pygments
 redirects: yes
 

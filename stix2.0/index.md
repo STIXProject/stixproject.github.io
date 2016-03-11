@@ -187,10 +187,10 @@ title: CTI TC Development
     <p><b>Least Effort:</b> Read through the pre-draft specifications and provide feedback via the mailing lists. Review the areas marked "REVIEW".</p>
     <p><b>Medium Effort:</b> Dial in to the Tuesday calls, join the slack and e-mail lists, review the areas marked "REVIEW".</p>
     <p><b>Highest Effort:</b> Find an area tagged "IN PROGRESS" or "VOLUNTEERS NEEDED", join the Slack, and dive in.</p>
-    <p><em>Due to OASIS IPR rules, we're required to verify your membership in the TC before granting access to Slack or the Google Docs. Please ensure you're listed as a member, then contact Bret Jordan or Mark Davidson to be added to any of the Google Docs and the Slack channel.</em></p>
+    <p><em>Due to OASIS IPR rules, we're required to verify your membership in the TC before granting access to Slack or comment access to the Google Docs. Please ensure you're listed as a member, then contact Bret Jordan or Mark Davidson to be added to any of the Google Docs and the Slack channel.</em></p>
     <hr />
     <h4>How to contribute as a non-member</h4>
     <p>Only TC members can fully participate in the development of the specifications. <a href="https://www.oasis-open.org/committees/cti/">Join the TC.</a></p>
-    <p>Non-members can comment on specifications that are in development ONLY via the official <a href="mailto:cti-comments@oasis-open.org">cti-comments@oasis-open.org</a> TC feedback e-mail address</a>. All comments are welcome.</p>
+    <p>Non-members can comment on specifications that are in development via the <a href="https://www.oasis-open.org/committees/comments/index.php?wg_abbrev=cti">OASIS-approved process</a> conformant with the <a href="https://d9db56472fd41226d193-1e5e0d4b7948acaf6080b0dce0b35ed5.ssl.cf1.rackcdn.com/who/ipr/feedback_license.pdf">Feedback License</a>. All comments are welcome.</p>
   </div>
 </div>
