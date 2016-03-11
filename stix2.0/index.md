@@ -33,7 +33,7 @@ title: CTI TC Development
               </li>
               <li class="list-group-item">
                 <span class="label label-info" style="float: right;">IN PROGRESS</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1TOQQWOy5E7i9GPderTmSzzZG0RdynbRpYHWjPTtiEcs/edit#heading=h.hvyj7p5zknbg" target="_blank">Patterning</a></h4>
+                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1suvd7z7YjNKWOwgko-vJ84jfGuxSYZjOQlw5leCswPY/edit" target="_blank">Patterning</a></h4>
                 <p>Developing an approach for how CybOX objects can be used for patterns in STIX indicators as well as other places.</p>
                 <p>Slack: <a href="https://cti-tc.slack.com/messages/patterning/">#patterning</a></p>
               </li>
