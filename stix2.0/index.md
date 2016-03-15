@@ -44,7 +44,7 @@ title: CTI TC Development
                 <p>Slack: <a href="https://cti-tc.slack.com/messages/versioning/">#versioning</a></p>
               </li>
               <li class="list-group-item">
-                <span class="label label-info" style="float: right;">IN PROGRESS</span>
+                <span class="label label-danger" style="float: right;">VOTE REQUIRED</span>
                 <h4 class="list-group-item-heading"><a href="https://www.oasis-open.org/apps/org/workgroup/cti/ballot.php?id=2919">CTI Common Document Organization</a></h4>
                 <p>How should STIX, CybOX, and CTI Common relate to each other?</p>
                 <p>Discussion threat on cti@lists.oasis-open.org mailing list. Slack: <a href="https://cti-tc.slack.com/messages/general/">#general</a></p>
