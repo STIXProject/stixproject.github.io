@@ -125,7 +125,7 @@ title: CTI TC Development
                 <p>Slack: <a href="https://cti-tc.slack.com/messages/cybox/">#cybox</a></p>
               </li>
               <li class="list-group-item">
-                <span class="label" style="float: right;">COMPLETED</span>
+                <span class="label label-default" style="float: right;">COMPLETED</span>
                 <h4 class="list-group-item-heading"><a href="https://lists.oasis-open.org/archives/cti/201603/msg00019.html" target="_blank">Defanging</a></h4>
                 <p>The ballot to determine whether STIX/CybOX will include defanging is closed. The vote was 0/31/2 in favor of not including defanging, with 9 comments.</p>
                 <p>Slack: <a href="https://cti-tc.slack.com/messages/cybox/">#cybox</a></p>
