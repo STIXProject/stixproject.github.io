@@ -44,9 +44,9 @@ title: CTI TC Development
                 <p>Slack: <a href="https://cti-tc.slack.com/messages/versioning/">#versioning</a></p>
               </li>
               <li class="list-group-item">
-                <span class="label label-danger" style="float: right;">VOTE REQUIRED</span>
+                <span class="label label-info" style="float: right;">IN PROGRESS</span>
                 <h4 class="list-group-item-heading"><a href="https://www.oasis-open.org/apps/org/workgroup/cti/ballot.php?id=2919">CTI Common Document Organization</a></h4>
-                <p>How should STIX, CybOX, and CTI Common relate to each other?</p>
+                <p>How should STIX, CybOX, and CTI Common relate to each other? The vote to create CTI common as a separate work product failed, 9/19/2.</p>
                 <p>Discussion threat on cti@lists.oasis-open.org mailing list. Slack: <a href="https://cti-tc.slack.com/messages/general/">#general</a></p>
               </li>
             </ul>
@@ -66,7 +66,7 @@ title: CTI TC Development
             <p>Language for describing cyber threats</p>
             <h4>Where is it?</h4>
             <ul>
-              <li><a href="https://docs.google.com/document/d/1U48DOJzh2qELOEhhVWz_G6hL0Bazx1Y52wpOeR8jaVk/edit" target="_blank">Pre-Draft Specification</a></li>
+              <li><a href="https://docs.google.com/document/d/1yvqWaPPnPW-2NiVCLqzRszcx91ffMowfT5MmE9Nsy_w/edit" target="_blank">Pre-Draft Specification</a></li>
               <li><a href="https://docs.google.com/document/d/1wiG6RoNEFaE2lrblfgjpu3RTAJZOK2q0b5OxXCaCV14/edit" target="_blank">Playground</a></li>
               <li><a href="mailto:cti-stix@oasis-open.org" target="_blank">Mailing List</a></li>
               <li><a href="https://cti-tc.slack.com/messages/stix/" target="_blank">Slack</a></li>
@@ -119,15 +119,15 @@ title: CTI TC Development
                 <p>Slack: <a href="https://cti-tc.slack.com/messages/cybox/">#cybox</a></p>
               </li>
               <li class="list-group-item">
-                <span class="label" style="float: right;">VOTE COMPLETED</span>
-                <h4 class="list-group-item-heading"><a href="https://lists.oasis-open.org/archives/cti/201603/msg00019.html" target="_blank">Defanging</a></h4>
-                <p>The ballot to determine whether STIX/CybOX will include defanging is closed. The vote was 0/31/2 in favor of not including defanging, with 9 comments.</p>
-                <p>Slack: <a href="https://cti-tc.slack.com/messages/cybox/">#cybox</a></p>
-              </li>
-              <li class="list-group-item">
                 <span class="label label-info" style="float: right;">IN PROGRESS</span>
                 <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1k5cZiiOgo4WjXN2GLRZ0-1vO8wstKnPZLbjwlb23Hkg/edit" target="_blank">Network Object Refactoring</a></h4>
                 <p>How network connections and related objects are captured by CybOX.</p>
+                <p>Slack: <a href="https://cti-tc.slack.com/messages/cybox/">#cybox</a></p>
+              </li>
+              <li class="list-group-item">
+                <span class="label" style="float: right;">COMPLETED</span>
+                <h4 class="list-group-item-heading"><a href="https://lists.oasis-open.org/archives/cti/201603/msg00019.html" target="_blank">Defanging</a></h4>
+                <p>The ballot to determine whether STIX/CybOX will include defanging is closed. The vote was 0/31/2 in favor of not including defanging, with 9 comments.</p>
                 <p>Slack: <a href="https://cti-tc.slack.com/messages/cybox/">#cybox</a></p>
               </li>
             </ul>
