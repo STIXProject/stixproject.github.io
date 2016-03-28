@@ -82,8 +82,8 @@ title: CTI TC Development
                 <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#stix</a></p>
               </li>
               <li class="list-group-item">
-                <span class="label label-info" style="float: right;">IN PROGRESS</span>
-                <h4 class="list-group-item-heading">Sightings</h4>
+                <span class="label label-success" style="float: right;">REVIEW</span>
+                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1F1c05GgYaJFV1Z04B8c_T3vEE-LRQTPExF24LvOQAsk/edit#heading=h.k017w16zutw">Sightings</a></h4>
                 <p>Discussing how sightings of indicators should be represented.</p>
                 <p>Slack: <a href="https://cti-tc.slack.com/messages/sightings/">#sightings</a></p>
               </li>
