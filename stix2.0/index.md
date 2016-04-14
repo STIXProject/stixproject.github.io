@@ -33,7 +33,7 @@ title: CTI TC Development
               </li>
               <li class="list-group-item">
                 <span class="label label-success" style="float: right;">REVIEW</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1TOQQWOy5E7i9GPderTmSzzZG0RdynbRpYHWjPTtiEcs/edit#heading=h.rscfu858na83" target="_blank">Versioning</a></h4>
+                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1HJqhvzO35h62gQGPvghVRIAtQrZn3_J__0UcDAj-NXY/edit#heading=h.ki2g7ubo1fua" target="_blank">Versioning</a></h4>
                 <p>Determining how top-level objects in STIX and CybOX are versioned.</p>
                 <p>Slack: <a href="https://cti-tc.slack.com/messages/versioning/">#versioning</a></p>
               </li>
