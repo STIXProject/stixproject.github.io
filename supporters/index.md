@@ -3,11 +3,11 @@ layout: flat
 title: STIX/TAXII Supporters List (Archive)
 ---
 
-`IMPORTANT: The Supporters List has been transitioned to the OASIS [Cyber Threat Intelligence (CTI) Technical Committee (TC)](https://www.oasis-open.org/committees/cti). This page has been moved to "Archive" status and will no longer be updated.`
+`IMPORTANT: The Supporters List has been transitioned to the OASIS Cyber Threat Intelligence (CTI) Technical Committee (TC). This page has been moved to "Archive" status and will no longer be updated.`
 
 STIX, CybOX, and TAXII are being implemented in many products, services, open source projects, and global communities.
 
-A [*new form* to fill out](http://goo.gl/forms/jKQH7a6TfW) is now available from the CTI TC to request inclusion on the *new* "STIX/TAXII/CybOX Supporters" list to be hosted by the CTI TC.
+A [*new form* to fill out](http://goo.gl/forms/jKQH7a6TfW) is now available from the [OASIS CTI TC](https://www.oasis-open.org/committees/cti) to request inclusion on the *new* "STIX/TAXII/CybOX Supporters" list to be hosted by the CTI TC.
 
 Contact information for the new Supporters list is available [here](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=cti-interoperability).
 
