@@ -1,16 +1,18 @@
 ---
 layout: flat
-title: Support for STIX/TAXII
+title: STIX/TAXII Supporters List (Archive)
 ---
 
-`This list is incomplete and actively updated. Inclusion does not represent an endorsement.`
+`IMPORTANT: The Supporters List has been transitioned to the OASIS [Cyber Threat Intelligence (CTI) Technical Committee (TC)](https://www.oasis-open.org/committees/cti). This page has been moved to "Archive" status and will no longer be updated.`
 
-STIX and TAXII are being implemented in many products, services, and global communities.
+STIX, CybOX, and TAXII are being implemented in many products, services, open source projects, and global communities.
 
-Please [fill out this form](http://goo.gl/forms/jKQH7a6TfW) to contact the [STIX Team](mailto:{{ site.contact_email }}) and request inclusion or modification under [User Communities](http://stixproject.github.io/supporters/#user-communities) or [Products and Services](http://stixproject.github.io/supporters/#products-and-services).
+A [*new form* to fill out](http://goo.gl/forms/jKQH7a6TfW) is now available from the CTI TC to request inclusion on the *new* "STIX/TAXII/CybOX Supporters" list to be hosted by the CTI TC.
 
-## User Communities
-These organizations have publicly announced support for STIX and/or TAXII.
+Contact information for the new Supporters list is available [here](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=cti-interoperability).
+
+## User Communities (Archive)
+These organizations have publicly announced support for STIX and/or TAXII. (Archive)
 
 |User Community|Organization|Description|STIX|TAXII|Reference|
 |---|---|---|---|---|---|
@@ -27,13 +29,14 @@ These organizations have publicly announced support for STIX and/or TAXII.
 |[Open Threat Exchange (OTX) 2.0](https://www.alienvault.com/open-threat-exchange)|[AlienVault, Inc.](https://www.alienvault.com/)|OTX is an open threat information sharing and analysis network, upon which the latest threat intelligence will automatically update local security products into open formats such as STIX, JSON, OpenloC, MAEC, and CSV|&#x2713;|-|[Press release](https://www.alienvault.com/who-we-are/press-releases/alienvault-announces-beta-version-of-open-threat-exchange-20)|
 |Retail Cyber Intelligence Sharing Center (R-CISC) Intelligence Sharing Portal|[Retail Information Sharing and Analysis Center (Retail-ISAC)](http://www.rila.org/)|Intelligence Sharing Portal managed by the Financial Services Information Sharing and Analysis Center (FS-ISAC)|&#x2713;|&#x2713;|[Press Release](http://www.rila.org/news/topnews/Pages/Retail-ISAC-Launches-Cyber-Sharing-Portal-Supported-by-FS-ISAC.aspx),  [News Article](http://blogs.bromium.com/2015/03/27/retailers-check-out-intelligence-sharing-platform/)|
 
-## Products and Services
-Many vendors have implemented STIX and TAXII in their product and service offerings.
+## Products and Services (Archive)
+Many vendors have implemented STIX and TAXII in their product and service offerings. (Archive)
 
 |Offering|Vendor|Description|STIX|TAXII|Reference|
 |---|---|---|---|---|---|
 |Adaptive Threat Protection Solution|[Tripwire, Inc.](http://www.tripwire.com/)|Integrates peer and community threat feeds, leveraging STIX and TAXII standards, and other commercial threat intelligence services|&#x2713;|&#x2713;|[Press Release](http://www.tripwire.com/company/news/press-release/tripwire-expands-adaptive-threat-protection-ecosystem/)|
 |[Advanced Threat Prevention](http://www.checkpoint.com/products-solutions/threat-prevention/advanced-threat-prevention/index.html)|[Check Point Software Technology Ltd.](http://www.checkpoint.com)|ATP allows users to import indicators into threat prevention technologies, anti-bot, anti-virus, with an interface to upload STIX-formatted messages containing indicators into threat indicator database|&#x2713;|-|[Cited as product feature in "Threat Prevention R77 Versions Administration Guide"](https://dl3.checkpoint.com/paid/3d/3d62cf0c986c24b64f9e7ec79ce386b1/CP_R77_ThreatPrevention_AdminGuide.pdf?HashKey=1428964311_7641271c918302c960d1d86f3af08817&xtn=.pdf)|
+|[Alice CTI Sharing & APT Identifying Platform](https://alice.sec-un.com/)|[TianJi Partners Info Tech Co., LTD.](https://www.sec-un.com/)|Chinese-developed CTI sharing platform, integrating the feeds from over 10 security companies and two individual CTI communities locally, to provide CTI exchanging and ATP identifying services; STIX format and TAXII protocol are the basic instruments for Alice platform users interconnecting|&#x2713;|&#x2713;|[Product web page](https://alice.sec-un.com/)|
 [Autopsy](http://www.sleuthkit.org/autopsy/)|[sleuthkit.org](http://www.sleuthkit.org/index.php)|Digital forensics platform and graphical interface to The Sleuth Kit that includes an “Indicators of Compromise - Scan a computer using STIX” module|&#x2713;|-|[Cited as product feature on website](http://www.sleuthkit.org/autopsy/), [Dedicated "STIX" page in user documentation](http://sleuthkit.org/autopsy/docs/user-docs/3.1/stix_page.html)|
 |[BOTsink](https://attivonetworks.com/product/attivo-botsink/)|[Attivo Networks, Inc.](https://attivonetworks.com/)|BOTsink deception server is designed to detect APTs, HTTPS, zero-day, and stolen credential attacks. Attivo AMR engine captures and analyzes attacker IPs, methods, and actions that can then be viewed in the Attivo Threat Intelligence Dashboard, can be exported in IOC, PCAP, STIX, CSV formats|&#x2713;|-|[Cited as product feature on website](https://attivonetworks.com/scada_cybersecurity_detection_blog/), [Cited as product feature in magazine product review article](http://www.scmagazine.com/attivo-botsink-deception-platform/review/4502/)|
 |[BrightPoint Sentinel](https://www.brightpointsecurity.com/products/products-overview/)|[BrightPoint Security](https://www.brightpointsecurity.com/)|Automated threat intelligence analysis and collaboration platform that "supports many intelligence feeds and other standards, including STIX, TAXII, CybOX, and the Lockheed Martin Kill Chain framework."|&#x2713;|&#x2713;|[Cited as product features on website](https://www.brightpointsecurity.com/products/products-overview/), [Press Release](http://www.brightpointsecurity.com/brightpoint-security-broadens-availability/), [Included in white paper](https://www.brightpointsecurity.com/wp-content/uploads/whitepaper-8-elements-effective-threat-intelligence-management.pdf), [Mentioned in numerous blog articles](https://www.brightpointsecurity.com/category/brightpoint-security-blog/)|
@@ -93,3 +96,5 @@ Many vendors have implemented STIX and TAXII in their product and service offeri
 |[threatTRANSFORM](https://www.threattransform.com/)|[threatTRANSFORM](https://www.threattransform.com/)|Open source application designed to streamline the creation, compiling, and publishing of STIX datasets|&#x2713;|-|[Cited as product features on website](https://www.threattransform.com/documentation.html), [Press Release](http://www.marketwired.com/press-release/threattransform-open-source-app-jumpstarts-stix-based-threat-data-classification-1903846.htm)|
 |[TitaniumCore Version 2.6](http://www.reversinglabs.com/products/malware-analysis-solution.html)|[ReversingLabs](http://www.reversinglabs.com)|Threat detection and automated static analysis platform|&#x2713;|-|[Data Sheet](http://www.reversinglabs.com/sites/default/files/datasheets/DS%20-%20TitaniumCore-2014-05-30.pdf)|
 |[Tripwire Enterprise 8.4](http://www.tripwire.com/it-security-software/scm/tripwire-enterprise/)|[Tripwire, Inc.](http://www.tripwire.com/)|Incorporates automated feed of Indicators of Compromise (IoC) from TAXII servers, which receive IoC from industry-specific Information Sharing and Analysis Centers and other providers of open source threat intelligence; Also integrates feeds from tailored commercial threat intelligence services|-|&#x2713;|[Press Release](http://www.tripwire.com/company/news/press-release/tripwire-introduces-search-by-hash-functionality-for-endpoint-threat-intelligence-automation/), [Blog article](http://www.tripwire.com/state-of-security/security-data-protection/cyber-security/look-how-easy-taxii-is/)|
+
+IMPORTANT: This page has been moved to "Archive" status and will no longer be updated. See above for details.
