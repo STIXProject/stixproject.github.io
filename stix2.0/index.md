@@ -11,7 +11,7 @@ title: CTI TC Development
         <div class="row row-fluid">
           <div class="col-md-4">
             <h4>Co-Chairs</h4>
-            <p>Aharon Chernin</p>
+            <p>Aharon Chernin, John Wunder</p>
             <h4>What is it?</h4>
             <p>Language for describing cyber threats</p>
             <h4>Where is it?</h4>
@@ -27,13 +27,13 @@ title: CTI TC Development
             <ul class="list-group">
               <li class="list-group-item">
                 <span class="label label-success" style="float: right;">REVIEW</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1F1c05GgYaJFV1Z04B8c_T3vEE-LRQTPExF24LvOQAsk/edit#heading=h.k017w16zutw">Sightings</a></h4>
+                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1F1c05GgYaJFV1Z04B8c_T3vEE-LRQTPExF24LvOQAsk/edit#heading=h.k017w16zutw">Sightings/Observation/Indicator</a></h4>
                 <p>Discussing how sightings of indicators should be represented.</p>
                 <p>Slack: <a href="https://cti-tc.slack.com/messages/sightings/">#sightings</a></p>
               </li>
               <li class="list-group-item">
                 <span class="label label-success" style="float: right;">REVIEW</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1HJqhvzO35h62gQGPvghVRIAtQrZn3_J__0UcDAj-NXY/edit#heading=h.ki2g7ubo1fua" target="_blank">Versioning</a></h4>
+                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1YcEtyUGdFkJIPdDZ7K-mHbvjFt-5pOL2EIw_ZJuqNpM/edit#heading=h.rye5q2hkacu" target="_blank">Versioning</a></h4>
                 <p>Determining how top-level objects in STIX and CybOX are versioned.</p>
                 <p>Slack: <a href="https://cti-tc.slack.com/messages/versioning/">#versioning</a></p>
               </li>
@@ -44,10 +44,28 @@ title: CTI TC Development
                 <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#stix</a></p>
               </li>
               <li class="list-group-item">
-                <span class="label label-default" style="float: right;">COMPLETED</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1FM-ojdKeaC-3mhf2v1FfXY0Q-s0uCiSDG80tDh23k3E/edit#heading=h.3bec5xfq4vn1" target="_blank">Core Object Properties</a></h4>
+                <span class="label label-success" style="float: right;">REVIEW</span>
+                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1YcEtyUGdFkJIPdDZ7K-mHbvjFt-5pOL2EIw_ZJuqNpM/edit#heading=h.xzbicbtscatx" target="_blank">Common Object Properties</a></h4>
                 <p>The fields that apply to all top-level objects across STIX and CybOX.</p>
-                <p>Slack: <a href="https://cti-tc.slack.com/messages/cti-common/">#cti-common</a></p>
+                <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#stix</a></p>
+              </li>
+              <li class="list-group-item">
+                <span class="label label-info" style="float: right;">DEVELOPMENT</span>
+                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1YcEtyUGdFkJIPdDZ7K-mHbvjFt-5pOL2EIw_ZJuqNpM/edit#heading=h.c9oxowopqs2" target="_blank">Packaging</a></h4>
+                <p>The fields that apply to all top-level objects across STIX and CybOX.</p>
+                <p>Slack: <a href="https://cti-tc.slack.com/messages/stixpackage/">#stixpackage</a></p>
+              </li>
+              <li class="list-group-item">
+                <span class="label label-info" style="float: right;">DEVELOPMENT</span>
+                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1aeJLFx9mg9iv-yyLVeFZb-SS2BzclS4-Njgv2l1TQYs/edit" target="_blank">Campaign</a></h4>
+                <p>The fields that apply to all top-level objects across STIX and CybOX.</p>
+                <p>Slack: <a href="https://cti-tc.slack.com/messages/campaign/">#campaign</a></p>
+              </li>
+              <li class="list-group-item">
+                <span class="label label-info" style="float: right;">DEVELOPMENT</span>
+                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1ei7poJMigVasVkoKeEhe0sBa-BS59WU0xJwtBDwpmv0/edit" target="_blank">TTPs</a></h4>
+                <p>The fields that apply to all top-level objects across STIX and CybOX.</p>
+                <p>Slack: <a href="https://cti-tc.slack.com/messages/ttps/">#ttps</a></p>
               </li>
             </ul>
           </div>
