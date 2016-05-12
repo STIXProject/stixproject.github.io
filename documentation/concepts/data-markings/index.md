@@ -86,15 +86,15 @@ One common use case, at least in TLP, is that most of the document is marked at 
 
 ## Defining Markings
 
-STIX data markings are implemented via [MarkingType](/data-model/{{site.current_version}}/marking/MarkingType), which has two primary fields: the `Controlled Structure` field indicates which part of the STIX document is being marked, while the `Marking Structure` field contains the marking itself. Besides these two primary fields are an `id` and `idref` pair to enable re-using markings, a `version` to indicate which version the data markings schema is being used, and an `Information Source` to indicate who is marking the data and when it was marked.
+STIX data markings are implemented via the [MarkingSpecificationType](/data-model/{{site.current_version}}/marking/MarkingSpecificationType), which has two primary fields: the `Controlled_Structure` field indicates which part of the STIX document is being marked, while the `Marking_Structure` field contains the marking itself. Besides these two primary fields are an `id` and `idref` pair to enable re-using markings, a `version` to indicate which version the data markings schema is being used, and an `Information_Source` to indicate who is marking the data and when it was marked.
 
 Let's dive into each piece of STIX data markings in turn.
 
 ### Controlled Structure
 
-As explained above, the `Controlled Structure` field indicates which part of the document the markings apply to. Currently, this is implemented using [XPath 1.0](http://www.w3.org/TR/xpath/), a language for selecting portions of XML documents. As you would imagine, this means that the data markings structure is currently tied to XML, though notionally this controlled structure field simply indicates which part of the STIX document is being marked and so could be implemented in other document selection languages.
+As explained above, the `Controlled_Structure` field indicates which part of the document the markings apply to. Currently, this is implemented using [XPath 1.0](http://www.w3.org/TR/xpath/), a language for selecting portions of XML documents. As you would imagine, this means that the data markings structure is currently tied to XML, though notionally this controlled structure field simply indicates which part of the STIX document is being marked and so could be implemented in other document selection languages.
 
-Note that the controlled structure must EXPLICITLY select ALL nodes that the marking applies to. It's not enough to select the parent and assume it applies to all children. So a selector for just an Indicator element will only select that element itself, it does not select the indicator content. To select that indicator and its children, make sure to use a selector like `node() | @*` or `descendant-or-self::node() | descendant-or-self::node()/@*` that selects all fields within the given context. Note that in XPath, '*' only selects elements, not attributes, and so is not sufficient.
+XPath treats elements (which it refers to as *nodes*) separately from the attributes on those elements. To select both XML elements and attributes, use both an XPath selector for nodes (such as `node()`, `//node()`, or `descendant-or-self::node()`) as well as an XPath selector for attributes (such as `@*`, `//@*`, or `descendant-or-self::node()/@*`). Join these with a `|` to indicate the union of the node selector and the attribute selector. Example selectors for common STIX scenarios are shown below.
 
 As an example, here's a small snippet that shows the controlled structure field in a handling construct:
 
@@ -124,11 +124,11 @@ print stix_package.to_xml()
 
 #### Relative Paths
 
-Because XPath allows relative paths, the location of the `Controlled Structure` field in the document may be important. All relative paths should be applied from the location of the `Controlled Structure` field. That means that an XPath '..' would select the `Marking` parent of the `Controlled Structure`.
+Because XPath allows relative paths, the location of the `Controlled_Structure` field in the document may be important. All relative paths should be applied from the location of the `Controlled_Structure` field. That means that an XPath '..' would select the `<Marking>` parent of the `Controlled Structure`.
 
 #### Namespace Prefixes
 
-XPath selectors can make use of namespace prefixes. For example, "stix:Indicator" uses the `stix` prefix which, in most STIX documents, is defined to the STIX Core namespace. For the purpose of data marking XPaths, prefixes defined at the point of the `Controlled Structure` are considered valid for the XPath statement. In most cases, this means that the prefixes you define at the top of the document (in STIX_Package) can be used in the controlled structure. To make your documents easier to use it's probably best to stick with the common namespace prefixes used in the STIX schemas and examples.
+XPath selectors can make use of namespace prefixes. For example, "stix:Indicator" uses the `stix` prefix which, in most STIX documents, is defined to the STIX Core namespace. For the purpose of data marking XPaths, prefixes defined at the point of the `Controlled_Structure` are considered valid for the XPath statement. In most cases, this means that the prefixes you define at the top of the document (in STIX_Package) can be used in the controlled structure. To make your documents easier to use it's probably best to stick with the common namespace prefixes used in the STIX schemas and examples.
 
 #### Examples
 
@@ -166,7 +166,7 @@ A couple examples of some controlled structure statements are below:
   </tbody>
 </table>
 
-<div class="alert alert-warning"><b>Note:</b> Previous example selectors did not select XML attributes. These selectors have been updated on 2015/02/18 to align with their described behavior and meaning.</div>
+<div class="alert alert-warning"><b>Note:</b> This table was updated on 2015-02-18 to (correctly) select XML attributes in adddition to elements, to match the intended meanings.</div>
 
 ### Marking Structures and Default Extensions
 
