@@ -83,7 +83,12 @@ title: CTI TC Development
             <p>Descriptions of objects and events in cyberspace</p>
             <h4>Where is it?</h4>
             <ul>
-              <li><a href="https://docs.google.com/document/d/1DdS-NrVTjGJ3wvCJ7dbSlhYeiaWS6G6dOXu2F3POpUs/edit" target="_blank">Pre-Draft Specification</a></li>
+              <li>Pre-Draft Specification
+                <ul>
+                  <li><a href="https://docs.google.com/document/d/1PSGv6Uvo3YyrK354cH0cvdn7gGedbhYJkgNVzwW9E6A" target="_blank">Core</a></li>
+                  <li><a href="https://docs.google.com/document/d/1DdS-NrVTjGJ3wvCJ7dbSlhYeiaWS6G6dOXu2F3POpUs" target="_blank">Objects</a></li>
+                </ul>
+              </li>
               <li><a href="https://docs.google.com/document/d/1P6k0uqbAYDRpYG5jjgYAKBDEc_iSG0-SGFaXgaPkqyg/edit" target="_blank">Playground</a></li>
               <li><a href="mailto:cti-cybox@oasis-open.org" target="_blank">Mailing List</a></li>
               <li><a href="https://cti-tc.slack.com/messages/cybox/" target="_blank">Slack</a></li>
