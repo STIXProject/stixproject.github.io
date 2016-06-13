@@ -25,36 +25,24 @@ title: CTI TC Development
           <div class="col-md-8">
             <h4>Current Topics</h4>
             <ul class="list-group">
-              <li class="list-group-item">
-                <span class="label label-info" style="float: right;">DEVELOPMENT</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1F1c05GgYaJFV1Z04B8c_T3vEE-LRQTPExF24LvOQAsk/edit#heading=h.k017w16zutw">Sightings/Observation/Indicator</a></h4>
-                <p>Discussing how sightings of indicators should be represented.</p>
-                <p>Slack: <a href="https://cti-tc.slack.com/messages/sightings/">#sightings</a></p>
-              </li>              
+			  <li class="list-group-item">
+                <span class="label label-primary" style="float: right;">CURRENT MOTIONS</span>
+                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1HJqhvzO35h62gQGPvghVRIAtQrZn3_J__0UcDAj-NXY/edit#heading=h.c9oxowopqs2" target="_blank">Bundle/Object Level Markings/Indicator Type Vocab/Versioning</a></h4>
+                <p>Determining how to group TLO's for transportation.</p>
+                <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#stix</a></p>
+              </li>                            
               <li class="list-group-item">
                 <span class="label label-success" style="float: right;">REVIEW</span>
                 <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1HJqhvzO35h62gQGPvghVRIAtQrZn3_J__0UcDAj-NXY/edit#heading=h.xzbicbtscatx" target="_blank">Common Object Properties</a></h4>
                 <p>The fields that apply to all top-level objects across STIX and CybOX.</p>
                 <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#stix</a></p>
-              </li>
-              <li class="list-group-item">
-                <span class="label label-primary" style="float: right;">CURRENT MOTIONS</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1HJqhvzO35h62gQGPvghVRIAtQrZn3_J__0UcDAj-NXY/edit#heading=h.c9oxowopqs2" target="_blank">Bundle/Object Level Markings/Indicator Type Vocab/Versioning</a></h4>
-                <p>Determining how to group TLO's for transportation.</p>
-                <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#stix</a></p>
-              </li>
+              </li>              
               <li class="list-group-item">
                 <span class="label label-success" style="float: right;">REVIEW</span>
                 <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1F1c05GgYaJFV1Z04B8c_T3vEE-LRQTPExF24LvOQAsk/edit?pref=2&pli=1#heading=h.pcpvfz4ik6d6" target="_blank">Campaign</a></h4>
                 <p>Determining how Campaign fields should be represented.</p>
                 <p>Slack: <a href="https://cti-tc.slack.com/messages/campaign/">#campaign</a></p>
-              </li>
-              <li class="list-group-item">
-                <span class="label label-info" style="float: right;">DEVELOPMENT</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1F1c05GgYaJFV1Z04B8c_T3vEE-LRQTPExF24LvOQAsk/edit?pref=2&pli=1#heading=h.s5l7katgbp09" target="_blank">Malware</a></h4>
-                <p>Discussing how the Malware TLO should be represented.</p>
-                <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#malware</a></p>
-              </li>
+              </li>              
 			  <li class="list-group-item">
                 <span class="label label-success" style="float: right;">REVIEW</span>
                 <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1HJqhvzO35h62gQGPvghVRIAtQrZn3_J__0UcDAj-NXY/edit?pref=2&pli=1#heading=h.karbmftow040" target="_blank">Open Vocabulary/Controlled Vocabulary/Vocab Ext</a></h4>
@@ -76,7 +64,43 @@ title: CTI TC Development
 			  <li class="list-group-item">
                 <span class="label label-success" style="float: right;">REVIEW</span>
                 <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1HJqhvzO35h62gQGPvghVRIAtQrZn3_J__0UcDAj-NXY/edit?pref=2&pli=1#heading=h.cez46v5quobo" target="_blank">External Reference</a></h4>
-                <p>Used to represent information outside of STIX</p>
+                <p>Used to represent information outside of STIX.</p>
+                <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#stix</a></p>
+              </li>
+			  <li class="list-group-item">
+                <span class="label label-info" style="float: right;">DEVELOPMENT</span>
+                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1F1c05GgYaJFV1Z04B8c_T3vEE-LRQTPExF24LvOQAsk/edit?pref=2&pli=1#heading=h.s5l7katgbp09" target="_blank">Malware</a></h4>
+                <p>Discussing how the Malware TLO should be represented.</p>
+                <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#malware</a></p>
+              </li>
+			  <li class="list-group-item">
+                <span class="label label-info" style="float: right;">DEVELOPMENT</span>
+                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1F1c05GgYaJFV1Z04B8c_T3vEE-LRQTPExF24LvOQAsk/edit#heading=h.k017w16zutw">Sightings/Observation/Indicator</a></h4>
+                <p>Determining how sightings of indicators should be represented.</p>
+                <p>Slack: <a href="https://cti-tc.slack.com/messages/sightings/">#sightings</a></p>
+              </li>
+			  <li class="list-group-item">
+                <span class="label label-info" style="float: right;">DEVELOPMENT</span>
+                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/15qD9KBQcVcY4FlG9n_VGhqacaeiLlNcQ7zVEjc8I3b4/edit?pref=2&pli=1#heading=h.bjbu0dy8lyl6" target="_blank">Intrusion Set</a></h4>
+                <p>Used to relate a grouped set of incidents or indicators back to an entity.</p>
+                <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#stix</a></p>
+              </li>
+			  <li class="list-group-item">
+                <span class="label label-info" style="float: right;">DEVELOPMENT</span>
+                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1F1c05GgYaJFV1Z04B8c_T3vEE-LRQTPExF24LvOQAsk/edit?pref=2&pli=1#heading=h.axjijf603msy" target="_blank">Attack Pattern</a></h4>
+                <p>A TLO that represents techniques attackers use to perform attacks.</p>
+                <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#stix</a></p>
+              </li>
+			  <li class="list-group-item">
+                <span class="label label-info" style="float: right;">DEVELOPMENT</span>
+                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/15qD9KBQcVcY4FlG9n_VGhqacaeiLlNcQ7zVEjc8I3b4/edit?pref=2&pli=1#heading=h.n12u61j26plk" target="_blank">Infrastructure</a></h4>
+                <p>Discusses malicious infrastructure used by cyber threat actors.</p>
+                <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#stix</a></p>
+              </li>
+			  <li class="list-group-item">
+                <span class="label label-info" style="float: right;">DEVELOPMENT</span>
+                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1HJqhvzO35h62gQGPvghVRIAtQrZn3_J__0UcDAj-NXY/edit?pref=2&pli=1#heading=h.robezi5egfdr" target="_blank">Granular Markings</a></h4>
+                <p>Determining how granular markings should be represented and used.</p>
                 <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#stix</a></p>
               </li>
             </ul>
