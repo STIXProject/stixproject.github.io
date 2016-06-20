@@ -24,13 +24,13 @@ title: CTI TC Development
           </div>
           <div class="col-md-8">
             <h4>Current Topics</h4>
-            <ul class="list-group">
+            <ul class="list-group">			   
 			  <li class="list-group-item">
-                <span class="label label-primary" style="float: right;">CURRENT MOTIONS</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1HJqhvzO35h62gQGPvghVRIAtQrZn3_J__0UcDAj-NXY/edit#heading=h.c9oxowopqs2" target="_blank">Bundle/Object Level Markings/Indicator Type Vocab/Versioning</a></h4>
-                <p>Determining how to group TLO's for transportation.</p>
+                <span class="label label-success" style="float: right;">REVIEW</span>
+                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1HJqhvzO35h62gQGPvghVRIAtQrZn3_J__0UcDAj-NXY/edit?pref=2&pli=1#heading=h.f3dx2rhc3vl" target="_blank">Object Level Markings</a></h4>
+                <p>Determining how data markings can be applied to TLO's.</p>
                 <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#stix</a></p>
-              </li>                            
+              </li>  			  
               <li class="list-group-item">
                 <span class="label label-success" style="float: right;">REVIEW</span>
                 <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1HJqhvzO35h62gQGPvghVRIAtQrZn3_J__0UcDAj-NXY/edit#heading=h.xzbicbtscatx" target="_blank">Common Object Properties</a></h4>
@@ -46,7 +46,7 @@ title: CTI TC Development
 			  <li class="list-group-item">
                 <span class="label label-success" style="float: right;">REVIEW</span>
                 <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1HJqhvzO35h62gQGPvghVRIAtQrZn3_J__0UcDAj-NXY/edit?pref=2&pli=1#heading=h.karbmftow040" target="_blank">Open Vocabulary/Controlled Vocabulary/Vocab Ext</a></h4>
-                <p>Determining vocabulary fields.</p>
+                <p>Looking at open and controlled vocabulary fields and extensions.</p>
                 <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#stix</a></p>
               </li>
 			  <li class="list-group-item">
