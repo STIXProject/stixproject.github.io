@@ -69,7 +69,7 @@ At the top level of almost every STIX document will be the `STIX_Package` elemen
 
 One attribute you'll see on STIX_Package is `version`. This version attribute is strongly suggested when creating content and indicates which version of STIX the package conforms to. In this case, the package conforms to STIX 1.2.
 
-The other important attribute is `@id`. As you might expect, the `@id` is a globally unique ID given to an instance of a construct in STIX. STIX suggests several practices for creating and using IDs that you can see on our [Suggested Practices(https://github.com/STIXProject/schemas/wiki/Suggested-Practices-%281.1%29#formatting-ids) page. (I'll take a timeout to let you read that section). As you can see, in this case we've set the namespace portion of the ID to "example" and the ID portion to "Indicator-33fe3b22-0201-47cf-85d0-97c02164528d" in keeping with STIX suggested practices. You'll also remember that we had defined the example namespace in the head of the document:
+The other important attribute is `@id`. As you might expect, the `@id` is a globally unique ID given to an instance of a construct in STIX. STIX suggests several practices for creating and using IDs that you can see on our [Suggested Practices](/documentation/suggested-practices#formatting-ids) page. (I'll take a timeout to let you read that section). As you can see, in this case we've set the namespace portion of the ID to "example" and the ID portion to "Indicator-33fe3b22-0201-47cf-85d0-97c02164528d" in keeping with STIX suggested practices. You'll also remember that we had defined the example namespace in the head of the document:
 
 ```xml
 xmlns:example="http://example.com/"
@@ -117,7 +117,7 @@ The first thing to note is that the xsi:type attribute is used to indicate that 
 <p>While controlled vocabularies in some ways are simply a specific use of <code>xsi:type</code> extension mechanisms, in other ways they have their own goals and purposes so we think about them separately from normal extension points.</p>
 </div>
 
-Next, notice the ID and timestamp attributes. We suggest giving all top-level components in STIX an ID compliant with our [Suggested Practices|(https://github.com/STIXProject/schemas/wiki/Suggested-Practices-%281.1%29#formatting-ids) and, as explained above, whenever you give a versioned construct an ID you should give it a timestamp.
+Next, notice the ID and timestamp attributes. We suggest giving all top-level components in STIX an ID compliant with our [Suggested Practices](/documentation/suggested-practices#formatting-ids) and, as explained above, whenever you give a versioned construct an ID you should give it a timestamp.
 
 ### Indicator Type
 
@@ -182,7 +182,7 @@ The object is a representation of a stateful measure in CybOX. It can contain ma
 
 There's a lot going on in this section so we'll take it one level at a time. At the top level (Properties element) you can see our familiar friend `xsi:type`. Yes, CybOX uses the `xsi:type` extension mechanism too, in this case to allow for representation of any one of the 80+ object types that CybOX defines.
 
-Essentially, each of those objects inherits from a type called `cyboxCommon:ObjectPropertiesType`. The AddressObject, FileObject, WinRegistryKeyObject, and all other object types inherit from this same type. Then, the CybOX Object structure has a field call `Properties` that is that same type, meaning that it can be filled with any type that inherits from `cyboxCommon:ObjectPropertiesType`, or in other words any CybOX object. This means that we can use any object here without having to limit it to a defined set of objects.
+Essentially, each of those objects inherits from a type called `cyboxCommon:ObjectPropertiesType`. The AddressObject, FileObject, WinRegistryKeyObject, and all other object types inherit from this same type. Then, the CybOX Object structure has a field called `Properties` that is that same type, meaning that it can be filled with any type that inherits from `cyboxCommon:ObjectPropertiesType`, or in other words any CybOX object. This means that we can use any object here without having to limit it to a defined set of objects.
 
 When creating a `Properties` element, the author fills in the `xsi:type` attribute with the type of the object that they want to use. They also need to define the prefix in the head of the document and, if using schemaLocation, add that schema to the list. When looking at a document, you can tell what object type is being used just by looking in that same attribute. In this case, we know we're looking at an AddressObject. It's AddressObject, in fact, that adds the `@category` field to the `Properties` element. It's also what defines the list of object property fields that are available. That way the FileObject can have a list of fields applicable to describing files, the AddressObject can have a list of fields applicable to describing addresses, etc.
 
@@ -209,7 +209,7 @@ The next attribute is called `@apply_condition`, is used only when providing mul
 
 The delimiter `##comma##` is used to represent a list of values. The reason this is used instead of a literal ',' is that a literal ',' is often found in actual data and we didn't want to worry about having to escape it all the time. So when you see `##comma##` just think of it as a token-separated list of values where the token is `##comma##`. In this case, we have three values: 10.0.0.0, 10.0.0.1, and 10.0.0.2. Taking the list of values in combination with apply_condition and condition, this field essentially states that the observable pattern matches when the target IP address "Equals" "ANY" of 10.0.0.0, 10.0.0.1, or 10.0.0.2. If we had different condition or apply_condition attributes, the indicator would match differently. If necessary you can override the delimiter by specifying the `@delimiter` attribute, but in most cases the default should work fine.
 
-If the observable pattern inside an Indicator matches the data that is being tested against, we say that the Indicator has "triggered". This means that whatever the indicator is indicating (ha) might be present: if there's a title and description, you could look inside that to see what it means. If there's an Indicated_TTP, the indicator triggering indicates (yes there's a lot of indicating going on) that the TTP might be being practices in your infrastructure.
+If the observable pattern inside an Indicator matches the data that is being tested against, we say that the Indicator has "triggered". This means that whatever the indicator is indicating (ha) might be present: if there's a title and description, you could look inside that to see what it means. If there's an Indicated_TTP, the indicator triggering indicates (yes there's a lot of indicating going on) that the TTP might be being practiced in your infrastructure.
 
 ## Summary
 
@@ -222,7 +222,7 @@ To summarize, there are several main fields in this instance document:
 
 ## Where to go from here
 
-This tutorial tool a look at a very basic indicator. You might be thinking "why should I use STIX when it takes 54 lines of complicated XML just to describe 3 IP addresses?" That's a good point, but it's important to keep in mind that STIX offers a lot of capabilities and when it's used for simple examples (like this one) much of those capabilities are reflected in things that seem redundant. For example, the "Observable" and "Object" layer of CybOX provide many capabilities that were not used, so they look superfluous. As you start to use more advanced capabilities, you'll begin to see that the things that might seem bulky in simple use cases become important.
+This tutorial took a look at a very basic indicator. You might be thinking "why should I use STIX when it takes 54 lines of complicated XML just to describe 3 IP addresses?" That's a good point, but it's important to keep in mind that STIX offers a lot of capabilities and when it's used for simple examples (like this one) much of those capabilities are reflected in things that seem redundant. For example, the "Observable" and "Object" layer of CybOX provide many capabilities that were not used, so they look superfluous. As you start to use more advanced capabilities, you'll begin to see that the things that might seem bulky in simple use cases become important.
 
 To start to work towards more advanced indicator matching, some concepts to research are:
 

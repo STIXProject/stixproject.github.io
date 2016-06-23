@@ -28,7 +28,7 @@ As explained above, in this walkthrough we'll create a STIX report that describe
 
 ## Creating the Document
 
-The root element for all STIX content is `STIX_Package` ([STIXType](/data-model/{{site.current_version}}/stix/STIXType)). This type contains all STIX content (indicators, campaigns, incidents, etc.) as well as metadata that applies to the content it bundles such as who produced it and how it can be shared. `STIX_Package` is defined in the STIX Core namespace and therefore is represent as `stix:STIX_Package`.
+The root element for all STIX content is `STIX_Package` ([STIXType](/data-model/{{site.current_version}}/stix/STIXType)). This type contains all STIX content (indicators, campaigns, incidents, etc.) as well as metadata that applies to the content it bundles such as who produced it and how it can be shared. `STIX_Package` is defined in the STIX Core namespace and therefore is represented as `stix:STIX_Package`.
 
 ```xml
 <stix:STIX_Package>
@@ -117,7 +117,7 @@ Before we add content though, we should set an ID and timestamp. Following the s
 Basic indicator data includes a human-readable `Title` and the indicator's `Type`.
 
 {% capture alert_text %}
-If you're following along, at this point it might be worth seeing if you can add these yourself before looking to see how I did it. Specifically, make sure you can identify the fact that `Type` is a controlled vocabulary field (see the sample walkthrough) and, from there, figure out which vocabulary to use.
+If you're following along, at this point it might be worth seeing if you can add these yourself before looking to see how I did it. Specifically, make sure you can identify the fact that `Type` is a controlled vocabulary field (see the [sample walkthrough](../sample-walkthrough)): and, from there, figure out which vocabulary to use.
 {% endcapture %}{% include alert.html type="warning" %}
 
 ```xml
