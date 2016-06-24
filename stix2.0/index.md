@@ -34,7 +34,7 @@ title: CTI TC Development
 			  <li class="list-group-item">
                 <span class="label label-primary" style="float: right;">CURRENT MOTIONS</span>
                 <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1HJqhvzO35h62gQGPvghVRIAtQrZn3_J__0UcDAj-NXY/edit?pref=2&pli=1#heading=h.karbmftow040" target="_blank">Open Vocabulary/Controlled Vocabulary/Vocab Ext</a></h4>
-                <p>Looking at open and controlled vocabulary fields and extensions.</p>
+                <p>Looking at open/controlled vocabulary fields and extensions.</p>
                 <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#stix</a></p>
               </li>
 			  <li class="list-group-item">
