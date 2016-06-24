@@ -99,7 +99,7 @@ Today’s evolving threat environment also brings with it far more complex attac
 scenarios. Alongside commoditized threats, more advanced capabilities that were
 rare in the past are now commonplace. Adversary behavior is not solely focused
 on widespread, disruptive activity, such as the Storm worm outbreak of years
-gone i## by, but rather it often involves more targeted, lower-profile
+gone by, but rather it often involves more targeted, lower-profile
 multi-stage attacks that aim to achieve specific tactical objectives and
 establish a persistent foothold into our enterprises.
 
@@ -135,7 +135,7 @@ these actions be detected and recognized; how can they be mitigated; who are
 the relevant threat actors; what are they trying to achieve; what are their
 capabilities, in the form of tactics, techniques, and procedures (TTP) they
 have leveraged over time and are likely to leverage in the future; what sort of
-vulnerabilities, misconfigurations, or weaknesses they are likely to target;
+vulnerabilities, misconfigurations, or weaknesses are they likely to target;
 what actions have they taken in the past; etc. 
 
 A holistic understanding of the threat posed by the adversary enables more
