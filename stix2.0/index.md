@@ -24,47 +24,29 @@ title: CTI TC Development
           </div>
           <div class="col-md-8">
             <h4>Current Topics</h4>
-            <ul class="list-group">			   
+            <ul class="list-group">				  
 			  <li class="list-group-item">
-                <span class="label label-success" style="float: right;">REVIEW</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1HJqhvzO35h62gQGPvghVRIAtQrZn3_J__0UcDAj-NXY/edit?pref=2&pli=1#heading=h.f3dx2rhc3vl" target="_blank">Object Level Markings</a></h4>
-                <p>Determining how data markings can be applied to TLO's.</p>
+                <span class="label label-primary" style="float: right;">CURRENT MOTIONS</span>
+                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1F1c05GgYaJFV1Z04B8c_T3vEE-LRQTPExF24LvOQAsk/edit?pref=2&pli=1#heading=h.n8bjzg1ysgdq" target="_blank">Report/Kill Chain/External Reference/Attack Pattern/Campaign/String</a></h4>
+                <p>The set of related TLO's from a report.</p>
                 <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#stix</a></p>
-              </li>                         
-              <li class="list-group-item">
-                <span class="label label-success" style="float: right;">REVIEW</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1F1c05GgYaJFV1Z04B8c_T3vEE-LRQTPExF24LvOQAsk/edit?pref=2&pli=1#heading=h.pcpvfz4ik6d6" target="_blank">Campaign</a></h4>
-                <p>Determining how Campaign fields should be represented.</p>
-                <p>Slack: <a href="https://cti-tc.slack.com/messages/campaign/">#campaign</a></p>
-              </li>              
+              </li>
 			  <li class="list-group-item">
-                <span class="label label-success" style="float: right;">REVIEW</span>
+                <span class="label label-primary" style="float: right;">CURRENT MOTIONS</span>
                 <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1HJqhvzO35h62gQGPvghVRIAtQrZn3_J__0UcDAj-NXY/edit?pref=2&pli=1#heading=h.karbmftow040" target="_blank">Open Vocabulary/Controlled Vocabulary/Vocab Ext</a></h4>
                 <p>Looking at open and controlled vocabulary fields and extensions.</p>
                 <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#stix</a></p>
               </li>
 			  <li class="list-group-item">
-                <span class="label label-success" style="float: right;">REVIEW</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1F1c05GgYaJFV1Z04B8c_T3vEE-LRQTPExF24LvOQAsk/edit?pref=2&pli=1#heading=h.n8bjzg1ysgdq" target="_blank">Report</a></h4>
-                <p>The set of related TLO's from a report.</p>
+                <span class="label label-primary" style="float: right;">BALLOT PENDING</span>
+                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1HJqhvzO35h62gQGPvghVRIAtQrZn3_J__0UcDAj-NXY/edit?pref=2&pli=1#heading=h.f3dx2rhc3vl" target="_blank">Object Level Markings</a></h4>
+                <p>Determining how data markings can be applied to TLO's.</p>
                 <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#stix</a></p>
-              </li>
-			  <li class="list-group-item">
-                <span class="label label-success" style="float: right;">REVIEW</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1HJqhvzO35h62gQGPvghVRIAtQrZn3_J__0UcDAj-NXY/edit?pref=2&pli=1#heading=h.i4tjv75ce50h" target="_blank">Kill Chain</a></h4>
-                <p>Discusses kill chain phases.</p>
-                <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#stix</a></p>
-              </li>
-			  <li class="list-group-item">
-                <span class="label label-success" style="float: right;">REVIEW</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1HJqhvzO35h62gQGPvghVRIAtQrZn3_J__0UcDAj-NXY/edit?pref=2&pli=1#heading=h.cez46v5quobo" target="_blank">External Reference</a></h4>
-                <p>Used to represent information outside of STIX.</p>
-                <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#stix</a></p>
-              </li>
+              </li>             			  
 			  <li class="list-group-item">
                 <span class="label label-info" style="float: right;">DEVELOPMENT</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1F1c05GgYaJFV1Z04B8c_T3vEE-LRQTPExF24LvOQAsk/edit?pref=2&pli=1#heading=h.s5l7katgbp09" target="_blank">Malware</a></h4>
-                <p>Discussing how the Malware TLO should be represented.</p>
+                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1F1c05GgYaJFV1Z04B8c_T3vEE-LRQTPExF24LvOQAsk/edit?pref=2&pli=1#heading=h.s5l7katgbp09" target="_blank">Malware/Tool</a></h4>
+                <p>Discussing how the Malware and Tool TLO's should be represented.</p>
                 <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#malware</a></p>
               </li>
 			  <li class="list-group-item">
@@ -78,13 +60,7 @@ title: CTI TC Development
                 <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/15qD9KBQcVcY4FlG9n_VGhqacaeiLlNcQ7zVEjc8I3b4/edit?pref=2&pli=1#heading=h.bjbu0dy8lyl6" target="_blank">Intrusion Set</a></h4>
                 <p>Used to relate a grouped set of incidents or indicators back to an entity.</p>
                 <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#stix</a></p>
-              </li>
-			  <li class="list-group-item">
-                <span class="label label-info" style="float: right;">DEVELOPMENT</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1F1c05GgYaJFV1Z04B8c_T3vEE-LRQTPExF24LvOQAsk/edit?pref=2&pli=1#heading=h.axjijf603msy" target="_blank">Attack Pattern</a></h4>
-                <p>A TLO that represents techniques attackers use to perform attacks.</p>
-                <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#stix</a></p>
-              </li>
+              </li>			  
 			  <li class="list-group-item">
                 <span class="label label-info" style="float: right;">DEVELOPMENT</span>
                 <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/15qD9KBQcVcY4FlG9n_VGhqacaeiLlNcQ7zVEjc8I3b4/edit?pref=2&pli=1#heading=h.n12u61j26plk" target="_blank">Infrastructure</a></h4>
@@ -107,12 +83,7 @@ title: CTI TC Development
             <p>Descriptions of objects and events in cyberspace</p>
             <h4>Where is it?</h4>
             <ul>
-              <li>Pre-Draft Specification
-                <ul>
-                  <li><a href="https://docs.google.com/document/d/1PSGv6Uvo3YyrK354cH0cvdn7gGedbhYJkgNVzwW9E6A" target="_blank">Core</a></li>
-                  <li><a href="https://docs.google.com/document/d/1DdS-NrVTjGJ3wvCJ7dbSlhYeiaWS6G6dOXu2F3POpUs" target="_blank">Objects</a></li>
-                </ul>
-              </li>
+              <li><a href="https://docs.google.com/document/d/1eIl5iBR7vQd_8kgxFWt3bCaxG8WjtqutdjuW9n1iXaI/edit" target="_blank">Pre-Draft Specification</a></li>            
               <li><a href="https://docs.google.com/document/d/1P6k0uqbAYDRpYG5jjgYAKBDEc_iSG0-SGFaXgaPkqyg/edit" target="_blank">Playground</a></li>
               <li><a href="mailto:cti-cybox@oasis-open.org" target="_blank">Mailing List</a></li>
               <li><a href="https://cti-tc.slack.com/messages/cybox/" target="_blank">Slack</a></li>
