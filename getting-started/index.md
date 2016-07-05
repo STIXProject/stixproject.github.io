@@ -18,7 +18,7 @@ title: Getting Started
 
     <div class="well">
       <h4>Analyst Walkthrough (Coming Soon)</h4>
-      <p>The analyst walkthrough will take you through a sample STIX document using the STIXViz tool. It will explain what the different pieces are and how they fit together.<p>
+      <p>The analyst walkthrough will take you through a sample STIX document using the STIXViz tool. It will explain what the different pieces are and how they fit together.</p>
       <a class="btn btn-default disabled" href="#">Go »</a>
     </div>
 
@@ -43,7 +43,7 @@ title: Getting Started
 
     <div class="well">
       <h4><a href="sample-walkthrough">Sample Walkthrough</a></h4>
-      <p>The sample walkthrough will walk through a sample STIX document at the XML level. It's meant for those working without the python-stix libraries either in other XML tooling or reading raw STIX XML.<p>
+      <p>The sample walkthrough will walk through a sample STIX document at the XML level. It's meant for those working without the python-stix libraries either in other XML tooling or reading raw STIX XML.</p>
       <a class="btn btn-primary" href="sample-walkthrough">Go »</a>
     </div>
 

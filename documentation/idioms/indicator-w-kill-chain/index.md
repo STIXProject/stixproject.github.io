@@ -86,6 +86,7 @@ for ind in pkg.indicators:
 {% endhighlight %}{% include end_tabs.html %}
 
 [Full XML](indicator-w-kill-chain.xml) | [Python Producer](indicator-w-kill-chain_producer.py) | [Python Consumer](indicator-w-kill-chain_consumer.py)
+
 ## Further Reading
 
 * [Kill Chain Definition](/data-model/{{site.current_version}}/stixCommon/KillChainType/)

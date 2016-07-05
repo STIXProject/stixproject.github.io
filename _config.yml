@@ -1,6 +1,6 @@
 name: STIX Docs
-markdown: redcarpet
-highlighter: pygments
+markdown: kramdown
+highlighter: rouge
 redirects: yes
 
 copyright: The MITRE Corporation
@@ -11,8 +11,10 @@ exclude: ['README.md', 'Gemfile', 'Gemfile.lock', "Rakefile", "LICENSE"]
 
 current_version: 1.2
 
-redcarpet:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data", "tables"]
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
 
 gems:
   - jekyll-redirect-from

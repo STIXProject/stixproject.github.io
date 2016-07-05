@@ -6,7 +6,7 @@ title: "TTP vs Indicator: A simple usage overview"
 
 The STIX `TTP` and `Indicator` components have a close and interactive relationship but each component serves its own distinct function within that relationship and within the broader STIX language.
 
-##TTPs
+## TTPs
 
 TTPs are **“descriptive”** in nature and are for characterizing the how and what of adversary behavior (what they are doing and how they are doing it). They are abstracted from specific observed instances within individual specific Incidents so that they may be more generally applicable in developing contextual understanding across Incidents, Campaign and Threat Actors.
 
@@ -20,7 +20,7 @@ Some simple examples of TTPs:
    * characterization of infrastructure used by attackers (e.g. IPs used for malware C2)
    * characterization of victim targeting (e.g. HR information of law firms)
 
-##Indicators
+## Indicators
 
 Indicators are **“detective”** in nature and are for specifying particular conditions that may exist to indicate the presence of a particular TTP along with relevant contextual information.
 Indicators are not used to characterize the particulars of any given adversary behavior, only how to detect it.
@@ -32,7 +32,7 @@ Some simple examples of Indicators:
 
    * specification of a pattern for a particular set IP addresses used as malware C2 infrastructure
 
-##Usage guidance
+## Usage guidance
 
 Some simple examples of information you may have and guidance around which component (TTP or Indicator) you would use based on what you are looking to convey:
 
@@ -44,7 +44,7 @@ Some simple examples of information you may have and guidance around which compo
       * [Create a TTP entry to characterize the particular malware type and/or variant instance. This allows the particular malware to be associated with where it is observed being used (i.e. Incidents, Campaigns, Threat Actors) and what sort of vulnerabilities or weaknesses it leverages (Exploit_Target)](../../idioms/incident-malware/)
       * [Create an Indicator to specify detection for a file with the given hash and associate it as indicative of the appropriate malware TTP entry or entries.](../../idioms/malware-hash/)
 
-##Bottom line
+## Bottom line
 
 **TTPs describe what and how an adversary acts and Indicators describe how to recognize what those actions might look like.**
 
