@@ -24,33 +24,33 @@ title: CTI TC Development
           </div>
           <div class="col-md-8">
             <h4>Current Topics</h4>
-            <ul class="list-group">				  
+            <ul class="list-group">		  
 			  <li class="list-group-item">
-                <span class="label label-primary" style="float: right;">CURRENT MOTIONS</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1F1c05GgYaJFV1Z04B8c_T3vEE-LRQTPExF24LvOQAsk/edit?pref=2&pli=1#heading=h.n8bjzg1ysgdq" target="_blank">Report/Kill Chain/External Reference/Attack Pattern/Campaign/String</a></h4>
-                <p>The set of related TLO's from a report.</p>
-                <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#stix</a></p>
-              </li>
-			  <li class="list-group-item">
-                <span class="label label-primary" style="float: right;">CURRENT MOTIONS</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1HJqhvzO35h62gQGPvghVRIAtQrZn3_J__0UcDAj-NXY/edit?pref=2&pli=1#heading=h.karbmftow040" target="_blank">Open Vocabulary/Controlled Vocabulary/Vocab Ext</a></h4>
-                <p>Looking at open/controlled vocabulary fields and extensions.</p>
-                <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#stix</a></p>
-              </li>
-			  <li class="list-group-item">
-                <span class="label label-primary" style="float: right;">BALLOT PENDING</span>
+                <span class="label label-default" style="float: right;">BALLOT FAILED</span>
                 <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1HJqhvzO35h62gQGPvghVRIAtQrZn3_J__0UcDAj-NXY/edit?pref=2&pli=1#heading=h.f3dx2rhc3vl" target="_blank">Object Level Markings</a></h4>
                 <p>Determining how data markings can be applied to TLO's.</p>
                 <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#stix</a></p>
-              </li>             			  
+              </li>
 			  <li class="list-group-item">
                 <span class="label label-info" style="float: right;">DEVELOPMENT</span>
+                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1F1c05GgYaJFV1Z04B8c_T3vEE-LRQTPExF24LvOQAsk/edit#heading=h.ja9ea729i9rh" target="_blank">Identity</a></h4>
+                <p>This object represents basic identifying information for either specific individuals and organizations or classes of individuals and organizations.</p>
+                <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#stix</a></p>
+              </li>
+			  <li class="list-group-item">
+                <span class="label label-info" style="float: right;">DEVELOPMENT</span>
+                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1F1c05GgYaJFV1Z04B8c_T3vEE-LRQTPExF24LvOQAsk/edit#heading=h.m7vja8o49dq0" target="_blank">Threat Actor</a></h4>
+                <p>Looking at individuals or organizations believed to be operating with malicious intent.</p>
+                <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#stix</a></p>
+              </li>
+			  <li class="list-group-item">
+                <span class="label label-success" style="float: right;">REVIEW</span>
                 <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1F1c05GgYaJFV1Z04B8c_T3vEE-LRQTPExF24LvOQAsk/edit?pref=2&pli=1#heading=h.s5l7katgbp09" target="_blank">Malware/Tool</a></h4>
                 <p>Discussing how the Malware and Tool TLO's should be represented.</p>
                 <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#malware</a></p>
               </li>
 			  <li class="list-group-item">
-                <span class="label label-info" style="float: right;">DEVELOPMENT</span>
+                <span class="label label-success" style="float: right;">REVIEW</span>
                 <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1F1c05GgYaJFV1Z04B8c_T3vEE-LRQTPExF24LvOQAsk/edit#heading=h.k017w16zutw">Sightings/Observation/Indicator</a></h4>
                 <p>Determining how sightings of indicators should be represented.</p>
                 <p>Slack: <a href="https://cti-tc.slack.com/messages/sightings/">#sightings</a></p>
@@ -91,13 +91,7 @@ title: CTI TC Development
           </div>
           <div class="col-md-8">
             <h4>Current Topics</h4>
-            <ul class="list-group">
-              <li class="list-group-item">
-                <span class="label label-success" style="float: right;">REVIEW</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1DdS-NrVTjGJ3wvCJ7dbSlhYeiaWS6G6dOXu2F3POpUs/edit#heading=h.xayo0esu36t1" target="_blank">Hashes</a></h4>
-                <p>The way hashes (MD5, SHA1, others) are represented by CybOX.</p>
-                <p>Slack: <a href="https://cti-tc.slack.com/messages/cybox/">#cybox</a></p>
-              </li>
+            <ul class="list-group">              
               <li class="list-group-item">
                 <span class="label label-info" style="float: right;">DEVELOPMENT</span>
                 <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1k5cZiiOgo4WjXN2GLRZ0-1vO8wstKnPZLbjwlb23Hkg/edit" target="_blank">Network Object Refactoring</a></h4>
@@ -110,18 +104,12 @@ title: CTI TC Development
                 <p>Developing an approach for how the CybOX object model can be used for patterns in STIX indicators as well as other places.</p>
                 <p>Slack: <a href="https://cti-tc.slack.com/messages/patterning/">#patterning</a></p>
               </li>
-              <li class="list-group-item">
-                <span class="label label-info" style="float: right;">DEVELOPMENT</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1AQoxQ0YasnJ875EgDDyjDXX7cAQS10-b0WJRciOjACA/edit" target="_blank">CybOX Object Relationships and Usage</a></h4>
-                <p>Developing an approach for how the CybOX object model can be used for instance content (STIX Observations and elsewhere).</p>
+		      <li class="list-group-item">
+                <span class="label label-default" style="float: right;">CONCEPT</span>
+                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1oPAHN6nitdVF60RuDlajq0VuN6S_p_RP3ZE48yOBBfQ/edit#heading=h.irq8v1ffyaxy" target="_blank">Email</a></h4>
+                <p>How email is captured by CybOX.</p>
                 <p>Slack: <a href="https://cti-tc.slack.com/messages/cybox/">#cybox</a></p>
-              </li>
-              <li class="list-group-item">
-                <span class="label label-default" style="float: right;">COMPLETED</span>
-                <h4 class="list-group-item-heading"><a href="https://lists.oasis-open.org/archives/cti/201603/msg00019.html" target="_blank">Defanging</a></h4>
-                <p>The ballot to determine whether STIX/CybOX will include defanging is closed. The vote was 0/31/2 in favor of not including defanging, with 9 comments.</p>
-                <p>Slack: <a href="https://cti-tc.slack.com/messages/cybox/">#cybox</a></p>
-              </li>
+              </li>			  
             </ul>
           </div>
         </div>
