@@ -332,3 +332,20 @@ h6:hover .header-link {
   position: relative;
   top: -2px;
 }
+
+/* Fix for code block line numbers */
+.highlight .lineno {
+  white-space: pre;
+}
+
+.highlight .code pre {
+  white-space: pre; overflow-x: auto;
+}
+
+.highlight code {
+  display: block; white-space: pre; overflow-x: auto;
+}
+
+.highlight code table {
+  margin-bottom: 0px;
+}
