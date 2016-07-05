@@ -80,7 +80,7 @@ An `idiom` is an example of using STIX for a typical use case, and includes samp
               </td>
               <td>
                 <button class="btn btn-info" data-toggle="popover" data-placement="left" data-trigger="hover" title="{{page.title}}" data-content="{{page.summary | escape}}">
-                  <span class="glyphicon glyphicon-question-sign"><span>
+                  <span class="glyphicon glyphicon-question-sign"></span>
                 </button>
               </td>
             </tr>

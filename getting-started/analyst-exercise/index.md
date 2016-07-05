@@ -48,6 +48,6 @@ In order to re-use the **TTP** in other contexts, it acts as a stand-alone objec
 All of this information is wrapped up into a `Report` structure to parallel the paper report that FireEye released. It contains information like the report title, description, intent, etc.
 
 ## Sharing this data with others
-Say you find an instance of the malware in the course of investigations, a **Sighting** of the **Indicator** can be created with a reference to the observed data. An instance of this might [appear similar to this](sighting.xml)
+Say you find an instance of the malware in the course of investigations, a **Sighting** of the **Indicator** can be created with a reference to the observed data. An instance of this might [appear similar to this](sighting.xml).
 
 Methods to detect this **Threat Actor** activity can be added under a **Indicator** entry, for instance A YARA signature as a `Rule` attached to a `Test Mechanism`.

@@ -9,14 +9,14 @@ STIX relationships enable all of this by defining these connection points and ho
 
 <img src="/images/stix-architecture.png" alt="STIX relationship diagram" />
 
-##Types of Relationships
+## Types of Relationships
 
 It should be noted that not all relationships in STIX are about simply conveying that two completely independent things are associated to each other. In real world CTI, relationships between the concepts represented by the STIX major components actually take on one of two flavors: association or composition.
 
 * **Association** ("related to") relationships relate two independent components of CTI content (e.g. ThreatActor_A and TTP_B) that are associated with each other due to some contextual detail or shared affinity. Association relationships should be considered as bidirectional and there is no hard dependency on either of the components associated (i.e. conveying either one would not require inclusion of the association relationship).
 * **Composition** ("includes as part of") relationships relate two components of CTI content (e.g. Indicator_X and Observable_Y) that are related to each other by the fact that one can be considered an inherent property of the other. This does not mean that the "property" component is owned and controlled by the enclosing component or that it cannot be relevant on its own or as part of other content (through referencing). It simply means that the enclosing component would be contextually incomplete without consideration of the “property” component as part of it. Composition relationships should be considered bidirectional but imply an inclusion dependency for the enclosing component (i.e. for contextual completeness if you convey Indicator_X you would also need to include its related Observable_Y).
 
-##Specifying Relationships
+## Specifying Relationships
 
 In STIX, relationships of both flavors are specified from within the primary component of the relationship (for composition relationships this is the enclosing component). This is in order to lend clarity to composition relationships, to encourage specification of particular relationships that are semantically important for the context of a component, and to localize information to where it is most relevant. In other words, if you convey a component, you have conveyed its full context and don't need to chase down and convey a bunch of related content it is dependent on.
 

@@ -21,9 +21,9 @@ Observable patterns in STIX are specified by default using the CybOX language an
 In addition to the default use of CybOX, STIX offers an extension mechanism (`Test_Mechanism`) for alternative ways of defining the detection pattern within STIX Indicators.
 
 
-##Examples
+## Examples
 
-###Observable Instance
+### Observable Instance
 
 The below example specifies an observable instance characterizing specific properties observed for a specific laptop.
 
@@ -51,7 +51,7 @@ The below example specifies an observable instance characterizing specific prope
 </cybox:Observable>
 {% endhighlight %}
 
-###Observable Pattern
+### Observable Pattern
 
 The below example specifies an observable pattern for any of a set of three fully qualified domain names. If any of the three domain names are observed in an observable instance, this pattern would match.
 
@@ -65,4 +65,4 @@ The below example specifies an observable pattern for any of a set of three full
 </indicator:Observable>
 {% endhighlight %}
 
-For guidance on where each form is more appropriate to use see [Suggested Practices: Observable Instances vs Observable Patterns](../../suggested-practices/#observable-instances-vs-observable-patterns)
+For guidance on where each form is more appropriate to use see [Suggested Practices: Observable Instances vs Observable Patterns](../../suggested-practices/#observable-instance-or-observable-pattern)

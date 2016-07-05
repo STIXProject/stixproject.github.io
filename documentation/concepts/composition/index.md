@@ -19,11 +19,11 @@ The content below characterizes the different levels of observable/indicator com
  * [Observable with single object and single property with multiple values (list)](#composition-of-observable-patterns)
  * [Composition of indicators (logical composition)](#composition-of-indicators)
 
-</br>
+<br/>
 <button class="btn btn-primary" id="expand-all" data-all-state="collapsed">Show all Examples</button>
 
 
-###Single Objects
+### Single Objects
 Lets begin with the simplest form of observable, a single property such as a filename. 
 
 Whether you want to convey an instance or a pattern on the property, the mechanism CybOX utilizes to convey this information is the Object. The CybOX Object construct enables the characterization of a given type of object (e.g. File, Email_Message, Network_Connection, Address, etc.). The structure allows the object characterizations to be associated with dynamic actions (which we will ignore for now for simplicity sake) or with other objects but at their core they are focused on characterizing the various properties of any given type of object (CybOX 2.1 provides property schemas for 90+ different cyber objects).
@@ -32,7 +32,7 @@ Given this, something simple like a filename can easily be expressed using the F
 {% include expand_link.html text="More detail on mechanism and use >>" section="single-property" %}
 {% capture expandable %}
 
-####Observable with single Object and single Property
+#### Observable with single Object and single Property
 
    * Use for: characterize a single property
    * As an observable instance this very simply characterizes a single property value of a single instance object that was observed (e.g. a file with the name “foo.exe”) {% include expand_link.html section="composition1" disabledText="Hide Example" %}
@@ -86,7 +86,7 @@ Unlike some other approaches that treat all object properties as flat fields ind
 {% include expand_link.html text="More detail on mechanism and use >>" section="multiple-property-single-object" %}
 {% capture expandable %}
 
-####Observable with single Object and multiple Properties
+#### Observable with single Object and multiple Properties
 
    * Use for: characterize multiple properties of a single instance object (e.g. a file with the name “foo.exe” and a size of 1896Kb)
    * As an observable instance this simply characterizes multiple property values of a single instance object that was observed {% include expand_link.html section="composition3" disabledText="Hide Example" %}
@@ -142,14 +142,14 @@ pkg.add_observable(obs)
 {% endcapture %}{% include expander.html section="multiple-property-single-object" %}
 
 
-###Multiple objects
+### Multiple objects
 You may also wish to convey observable information that is not limited to the properties of a single instance object (e.g. an email message with a file attachment). STIX/CybOX enables this through the use of a Related_Objects structure available on any given Object that allows you to assert a relationship to another Object and to characterize the nature of the relationship with a label (e.g. “Contained_Within”). You can specify property patterns on any property fields of any of the related Objects. Similar to the semantics of multiple property patterns on a single Object (described above), property patterns on multiple Objects would evaluate as
 equivalent to a logical AND of those patterns but specifically as applied to a single instance of each Object and considering the specified inter-object relationships. In other words, for the pattern to be true all of the individual property patterns and specified relationships must be true.
 This approach to composing more complex observables through related objects is often referred to as “**relational composition**”.
 {% include expand_link.html text="More detail on mechanism and use >>" section="multiple-objects" %}
 {% capture expandable %}
 
-####Observable with multiple related Objects
+#### Observable with multiple related Objects
 
    * Use for: characterize a more complex situation involving multiple related objects (e.g. an email with a Subject of “Syria strategic plans leaked” and an attached file with File_Name of “bombISIS.pdf”)
    * As an observable instance this characterizes a more complex observation involving a set of related objects each with specific properties {% include expand_link.html section="composition5" disabledText="Hide Example" %}
@@ -231,13 +231,13 @@ pkg.add_observable(obs)
 
 
 
-###Composition of observable patterns
+### Composition of observable patterns
 
 There are also use cases requiring more complex matching logic that may call for the ability to specify patterns that are logical combinations of other observable patterns. STIX/CybOX support this capability through the [Observable_Composition](/data-model/{{site.current_version}}/cybox/ObservableCompositionType/) structure. Utilizing this structure, you can specify observable patterns that use a logical operator (AND | OR) to compose other observable patterns whether the the component patterns are simple single objects, multiple objects or even other Observable_Compositions themselves (supporting whatever level of composition needed). The evaluation of such patterns follows the explicit operator logic specified and the rules outlined above for object property and relationship patterns. This approach to composing more complex observables through logical combination is often referred to as “**logical composition**”.
    {% include expand_link.html text="More detail on mechanism and use >>" section="observable-composition" %}
 {% capture expandable %}
 
-####Observable Composition through explicit use of the Observable_Composition structure
+#### Observable Composition through explicit use of the Observable_Composition structure
 **(often referred to as “logical composition”)**
 
 **NOTE: Observables of this form are only valid as patterns and never as instances.**
@@ -321,7 +321,7 @@ There is also a “shorthand” form of composition of observable patterns for t
  {% include expand_link.html text="More detail on mechanism and use >>" section="observable-composition-list" %}
 {% capture expandable %}
 
-####Observable with single Object and single Property with multiple values (list)
+#### Observable with single Object and single Property with multiple values (list)
 **NOTE: Observables of this form are only valid as patterns and never as instances.**
 
    * Use for: specifying compound observable conditions made up of logical combinations (AND/OR) of patterns on a single object property
@@ -354,9 +354,9 @@ pkg.add_observable(obs)
 
 
 
-###Composition of Indicators
+### Composition of Indicators
 
-While the above capabilities exist to specify observable patterns of varying complexity and detail, as “observables” they are all only specifying “factual” patterns without any context for interpretation. This additional context for the observable pattern that gives it meaning (what does it mean if the pattern evaluates “true”?) is provided by the STIX Indicator component. Similar to cases that require the more complex matching logic of composite observable patterns there are also cases that require logical composition of not only observable pattern matching logic but also of the contexts that go with individual observable patterns. To support the need for this sort of composition STIX provides the [Composite_Indicator_Expression](/data-model/{{site.current_version}}/indicator/CompositeIndicatorExpressionType/) structure. It mirrors the same structural approach as the Observable_Composition structure with a logical (AND | OR) operator but enables the specification of composite Indicators such that: 
+While the above capabilities exist to specify observable patterns of varying complexity and detail, as “observables” they are all only specifying “factual” patterns without any context for interpretation. This additional context for the observable pattern that gives it meaning (what does it mean if the pattern evaluates “true”?) is provided by the STIX Indicator component. Similar to cases that require the more complex matching logic of composite observable patterns there are also cases that require logical composition of not only observable pattern matching logic but also of the contexts that go with individual observable patterns. To support the need for this sort of composition STIX provides the [Composite_Indicator_Expression](/data-model/{{site.current_version}}/indicator/CompositeIndicatorExpressionType/) structure. It mirrors the same structural approach as the Observable_Composition structure with a logical (AND \| OR) operator but enables the specification of composite Indicators such that: 
 
 * each component Indicator has its own defined context
 * partial matching is possible on portions of the overall indicator pattern
@@ -735,7 +735,7 @@ pkg3.add_indicator(watchlistind2)
 **NOTE: At the STIX language level, the complexity of Indicator composition is independent of the complexity of the underlying observable pattern. Each Indicator specifying an observable pattern treats that pattern as a simple boolean condition regardless of complexity.**
 
 
-##Summary
+## Summary
 
 Composition of Observables directly in CybOX is necessary to enable characterization of complex observations or specification of complex patterns for observation. This function cannot be accomplished at the Indicator composition level as Indicators not only lack the effective structures for complex observable pattern characterization but they are intentionally focused on providing context for the pattern.
 

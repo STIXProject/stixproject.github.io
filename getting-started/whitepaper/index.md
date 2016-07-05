@@ -2,6 +2,7 @@
 layout: flat
 title: STIX Whitepaper
 no_in_page_title: true
+toc: wp_toc.html
 ---
 
 <div class="alert alert-info">

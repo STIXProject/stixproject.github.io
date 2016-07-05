@@ -206,7 +206,7 @@ Relationships via embedded definition are achieved when a relationship from one 
 **Relationship via embedded definition is desirable when simplicity, brevity and readability of the content is of concern or the content is very localized in context and less likely that portions will be interrelated with other content.**
 
 
-###Approach #2: Relationship via reference
+### Approach #2: Relationship via reference
 
 **What is it?**
 

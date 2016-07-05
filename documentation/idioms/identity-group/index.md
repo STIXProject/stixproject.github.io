@@ -14,7 +14,7 @@ In this scenario, the STIX represents a threat actor group named "Disco Team" th
 
 ## Data model
 
-<img src="diagram.png" width=660px height=530px alt="Threat Actor Group Identification" class="aside-text"/>
+<img src="diagram.png" width="660px" height="530px" alt="Threat Actor Group Identification" class="aside-text" />
 
 Threat actor identification is, as you would expect, represented using the STIX [Threat Actor](/data-model/{{site.current_version}}/ta/ThreatActorType) component. More specifically, the `Identity` field, which uses the [IdentityType](/data-model/{{site.current_version}}/stixCommon/IdentityType) extension point, is the field that contains information about the identity of the actor. Other fields in threat actor describe what the actor targets, how sophisticated it is, and other information about it.
 
@@ -105,6 +105,7 @@ for actor in pkg.threat_actors:
 {% endhighlight %}{% include end_tabs.html %}
 
 [Full XML](identifying-a-threat-actor-group.xml) | [Python Producer](identifying-a-threat-actor-group_producer.py) | [Python Consumer](identifying-a-threat-actor-group_consumer.py)
+
 ## Further Reading
 
 * [Threat Actor Component](/data-model/{{site.current_version}}/ta/ThreatActorType)
