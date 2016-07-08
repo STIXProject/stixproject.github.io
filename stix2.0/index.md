@@ -50,12 +50,6 @@ title: CTI TC Development
                 <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#stix</a></p>
               </li>			  
 			  <li class="list-group-item">
-                <span class="label label-success" style="float: right;">REVIEW</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1F1c05GgYaJFV1Z04B8c_T3vEE-LRQTPExF24LvOQAsk/edit#heading=h.k017w16zutw">Sightings/Observation/Indicator</a></h4>
-                <p>Determining how sightings of indicators should be represented.</p>
-                <p>Slack: <a href="https://cti-tc.slack.com/messages/sightings/">#sightings</a></p>
-              </li>
-			  <li class="list-group-item">
                 <span class="label label-info" style="float: right;">DEVELOPMENT</span>
                 <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/15qD9KBQcVcY4FlG9n_VGhqacaeiLlNcQ7zVEjc8I3b4/edit?pref=2&pli=1#heading=h.bjbu0dy8lyl6" target="_blank">Intrusion Set</a></h4>
                 <p>Used to relate a grouped set of incidents or indicators back to an entity.</p>
@@ -66,7 +60,13 @@ title: CTI TC Development
                 <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/15qD9KBQcVcY4FlG9n_VGhqacaeiLlNcQ7zVEjc8I3b4/edit?pref=2&pli=1#heading=h.n12u61j26plk" target="_blank">Infrastructure</a></h4>
                 <p>Discusses malicious infrastructure used by cyber threat actors.</p>
                 <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#stix</a></p>
-              </li>		  
+              </li>
+			  <li class="list-group-item">
+                <span class="label label-success" style="float: right;">REVIEW</span>
+                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1F1c05GgYaJFV1Z04B8c_T3vEE-LRQTPExF24LvOQAsk/edit#heading=h.k017w16zutw">Sightings/Observation/Indicator</a></h4>
+                <p>Determining how sightings of indicators should be represented.</p>
+                <p>Slack: <a href="https://cti-tc.slack.com/messages/sightings/">#sightings</a></p>
+              </li>			  
             </ul>
           </div>
         </div>
