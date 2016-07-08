@@ -24,7 +24,13 @@ title: CTI TC Development
           </div>
           <div class="col-md-8">
             <h4>Current Topics</h4>
-            <ul class="list-group">		  
+            <ul class="list-group">	
+              <li class="list-group-item">
+                <span class="label label-primary" style="float: right;">CURRENT MOTIONS</span>
+                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1F1c05GgYaJFV1Z04B8c_T3vEE-LRQTPExF24LvOQAsk/edit?pref=2&pli=1#heading=h.s5l7katgbp09" target="_blank">Malware/Tool</a></h4>
+                <p>Discussing how the Malware and Tool TLO's should be represented.</p>
+                <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#malware</a></p>
+              </li>			
 			  <li class="list-group-item">
                 <span class="label label-default" style="float: right;">BALLOT FAILED</span>
                 <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1HJqhvzO35h62gQGPvghVRIAtQrZn3_J__0UcDAj-NXY/edit?pref=2&pli=1#heading=h.f3dx2rhc3vl" target="_blank">Object Level Markings</a></h4>
@@ -42,13 +48,7 @@ title: CTI TC Development
                 <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1F1c05GgYaJFV1Z04B8c_T3vEE-LRQTPExF24LvOQAsk/edit#heading=h.m7vja8o49dq0" target="_blank">Threat Actor</a></h4>
                 <p>Looking at individuals or organizations believed to be operating with malicious intent.</p>
                 <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#stix</a></p>
-              </li>
-			  <li class="list-group-item">
-                <span class="label label-success" style="float: right;">REVIEW</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1F1c05GgYaJFV1Z04B8c_T3vEE-LRQTPExF24LvOQAsk/edit?pref=2&pli=1#heading=h.s5l7katgbp09" target="_blank">Malware/Tool</a></h4>
-                <p>Discussing how the Malware and Tool TLO's should be represented.</p>
-                <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#malware</a></p>
-              </li>
+              </li>			  
 			  <li class="list-group-item">
                 <span class="label label-success" style="float: right;">REVIEW</span>
                 <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1F1c05GgYaJFV1Z04B8c_T3vEE-LRQTPExF24LvOQAsk/edit#heading=h.k017w16zutw">Sightings/Observation/Indicator</a></h4>
