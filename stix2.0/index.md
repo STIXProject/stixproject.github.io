@@ -6,7 +6,7 @@ title: CTI TC Development
 <div class="row row-fluid">
   <div class="col-md-9">
     <div class="panel panel-default">
-      <div class="panel-heading"><img src="/images/logov3.png" alt="STIX" style="max-height: 75px;"></img></div>
+      <div class="panel-heading"><img src="/images/logov3.png" alt="STIX" style="max-height: 75px;"></div>
       <div class="panel-body">
         <div class="row row-fluid">
           <div class="col-md-4">
