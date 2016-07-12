@@ -3,13 +3,15 @@ layout: flat
 title: STIX/TAXII Supporters List (Archive)
 ---
 
-`IMPORTANT: The Supporters List has been transitioned to the OASIS CTI TC. This page has been moved to "Archive" status and will no longer be updated.`
+`IMPORTANT: The Supporters List has been transitioned to new lists hosted by the OASIS CTI TC. This page has been moved to "Archive" status and will no longer be updated.`
+
+The most up-to-date "STIX, CybOX, and TAXII Supporters" lists are now available on the OASIS website for both  [Products](https://wiki.oasis-open.org/cti/Products) and [Open Source Projects](https://wiki.oasis-open.org/cti/Open%20Source%20Projects).
+
+A [registration form](https://www.surveymonkey.com/r/oasis-cti-tc-supporter-registration) is available from the [OASIS CTI TC](https://www.oasis-open.org/committees/cti) to request inclusion on the "STIX/TAXII/CybOX Supporters" lists hosted by the CTI TC.
+
+## (Archive)
 
 STIX, CybOX, and TAXII are being implemented in many products, services, open source projects, and global communities.
-
-A [*new form* to fill out](https://www.surveymonkey.com/r/oasis-cti-tc-supporter-registration) is now available from the [OASIS CTI TC](https://www.oasis-open.org/committees/cti) to request inclusion on the *new* "STIX/TAXII/CybOX Supporters" list to be hosted by the CTI TC.
-
-Contact information for the new Supporters list is available [here](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=cti-interoperability).
 
 ## User Communities (Archive)
 These organizations have publicly announced support for STIX and/or TAXII. (Archive)
