@@ -3,7 +3,9 @@ layout: flat
 title: STIX/TAXII Supporters List (Archive)
 ---
 
-`IMPORTANT: The Supporters List has been transitioned to new lists hosted by the OASIS CTI TC. This page has been moved to "Archive" status and will no longer be updated.`
+<div class="alert alert-danger bs-alert-old-docs">
+  IMPORTANT: The Supporters List has been transitioned to new lists hosted by the OASIS CTI TC. This page has been moved to "Archive" status and will no longer be updated.
+</div>
 
 The most up-to-date "STIX, CybOX, and TAXII Supporters" lists are now available on the OASIS website for both  [Products](https://wiki.oasis-open.org/cti/Products) and [Open Source Projects](https://wiki.oasis-open.org/cti/Open%20Source%20Projects).
 
