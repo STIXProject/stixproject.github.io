@@ -30,7 +30,7 @@ Organizations and individuals who are not OASIS CTI TC members may provide comme
 * [Archive](https://lists.oasis-open.org/archives/cti-comment/)
 
 ## STIX Supporters
-Growing lists of products and open source projects using using STIX, [TAXII](http://taxiiproject.github.io/), and [CybOX](http://cyboxproject.github.io/). 
+A growing list of products and open source projects using [STIX](http://cyboxproject.github.io/), [TAXII](http://taxiiproject.github.io/), and [CybOX](http://cyboxproject.github.io/). 
 
 * [By Product](https://wiki.oasis-open.org/cti/Products)
 * [By Open Source Project](https://wiki.oasis-open.org/cti/Open%20Source%20Projects)
