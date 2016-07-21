@@ -27,7 +27,7 @@ no_in_page_title: true
     </div>
   </div>
   <div class="row announcement">
-    <p><span class="label label-success">New!</span> Help <a href="/stix2.0">build STIX 2.0</a>!</p>
+    <p><span class="label label-success">New!</span> Help <a href="/stix2.0">review STIX 2.0</a> drafts!</p>
   </div>
 </div>
 

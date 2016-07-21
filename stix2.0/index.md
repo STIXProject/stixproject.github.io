@@ -23,49 +23,29 @@ title: CTI TC Development
             </ul>
           </div>
           <div class="col-md-8">
-            <h4>Current Topics</h4>
+            <h3>STIX 2.0 Drafts</h3>
             <ul class="list-group">	
-              <li class="list-group-item">
-                <span class="label label-primary" style="float: right;">CURRENT MOTIONS</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1F1c05GgYaJFV1Z04B8c_T3vEE-LRQTPExF24LvOQAsk/edit?pref=2&pli=1#heading=h.s5l7katgbp09" target="_blank">Malware/Tool</a></h4>
-                <p>Discussing how the Malware and Tool TLO's should be represented.</p>
-                <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#malware</a></p>
-              </li>			
-			  <li class="list-group-item">
-                <span class="label label-default" style="float: right;">BALLOT FAILED</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1HJqhvzO35h62gQGPvghVRIAtQrZn3_J__0UcDAj-NXY/edit?pref=2&pli=1#heading=h.f3dx2rhc3vl" target="_blank">Object Level Markings</a></h4>
-                <p>Determining how data markings can be applied to TLO's.</p>
-                <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#stix</a></p>
+              <li class="list-group-item">                
+                <h4 class="list-group-item-heading">STIX 2.0 Core Concepts</h4>
+                <p>STIX 2.0 Draft 1 is currently under the review phase. STIX core concepts can be found here:</p>
+					<ul>
+						<li><a href="https://docs.google.com/document/d/1HJqhvzO35h62gQGPvghVRIAtQrZn3_J__0UcDAj-NXY/edit#heading=h.t32x0azc539r" target="_blank">Google Docs</a></li>
+						<li><a href="stixdocs/STIX2.0-Draft1-Core.docx" target="_blank">Word Version</a></li>
+						<li><a href="stixdocs/STIX2.0-Draft1-Core.pdf" target="_blank">PDF Version</a></li>
+					</ul>
               </li>
-			  <li class="list-group-item">
-                <span class="label label-info" style="float: right;">DEVELOPMENT</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1F1c05GgYaJFV1Z04B8c_T3vEE-LRQTPExF24LvOQAsk/edit#heading=h.ja9ea729i9rh" target="_blank">Identity</a></h4>
-                <p>This object represents basic identifying information for either specific individuals and organizations or classes of individuals and organizations.</p>
-                <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#stix</a></p>
-              </li>
-			  <li class="list-group-item">
-                <span class="label label-info" style="float: right;">DEVELOPMENT</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1F1c05GgYaJFV1Z04B8c_T3vEE-LRQTPExF24LvOQAsk/edit#heading=h.m7vja8o49dq0" target="_blank">Threat Actor</a></h4>
-                <p>Looking at individuals or organizations believed to be operating with malicious intent.</p>
-                <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#stix</a></p>
-              </li>			  
-			  <li class="list-group-item">
-                <span class="label label-info" style="float: right;">DEVELOPMENT</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/15qD9KBQcVcY4FlG9n_VGhqacaeiLlNcQ7zVEjc8I3b4/edit?pref=2&pli=1#heading=h.bjbu0dy8lyl6" target="_blank">Intrusion Set</a></h4>
-                <p>Used to relate a grouped set of incidents or indicators back to an entity.</p>
-                <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#stix</a></p>
-              </li>			  
-			  <li class="list-group-item">
-                <span class="label label-info" style="float: right;">DEVELOPMENT</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/15qD9KBQcVcY4FlG9n_VGhqacaeiLlNcQ7zVEjc8I3b4/edit?pref=2&pli=1#heading=h.n12u61j26plk" target="_blank">Infrastructure</a></h4>
-                <p>Discusses malicious infrastructure used by cyber threat actors.</p>
-                <p>Slack: <a href="https://cti-tc.slack.com/messages/stix/">#stix</a></p>
-              </li>
-			  <li class="list-group-item">
-                <span class="label label-success" style="float: right;">REVIEW</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1F1c05GgYaJFV1Z04B8c_T3vEE-LRQTPExF24LvOQAsk/edit#heading=h.k017w16zutw">Sightings/Observation/Indicator</a></h4>
-                <p>Determining how sightings of indicators should be represented.</p>
-                <p>Slack: <a href="https://cti-tc.slack.com/messages/sightings/">#sightings</a></p>
+			  <li class="list-group-item">                
+                <h4 class="list-group-item-heading">STIX 2.0 Objects and Vocabularies</h4>
+                <p>STIX 2.0 Draft 1 is currently under the review phase. STIX objects and vocabularies can be found here:</p>
+					<ul>
+						<li><a href="https://docs.google.com/document/d/1F1c05GgYaJFV1Z04B8c_T3vEE-LRQTPExF24LvOQAsk/edit" target="_blank">Google Docs</a></li>
+						<li><a href="stixdocs/STIX2.0-Draft1-Objects.docx" target="_blank">Word Version</a></li>
+						<li><a href="stixdocs/STIX2.0-Draft1-Objects.pdf" target="_blank">PDF Version</a></li>
+					</ul>
+              </li>	 			  
+			  <li class="list-group-item">                
+                <h4 class="list-group-item-heading"><a href="https://www.oasis-open.org/committees/comments/index.php?wg_abbrev=cti">How to Provide Feedback</a></h4>
+                <p>Information on how to provide feedback/comment to members of the OASIS Cyber Threat Intelligence (CTI) TC (for non members). NOTE: If you are a member of the OASIS Cyber Threat Intelligence (CTI) TC, please post to the TC mailing list directly.</p>                
               </li>			  
             </ul>
           </div>
