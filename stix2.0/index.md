@@ -44,8 +44,8 @@ title: CTI TC Development
 					</ul>
               </li>	 			  
 			  <li class="list-group-item">                
-                <h4 class="list-group-item-heading"><a href="https://www.oasis-open.org/committees/comments/index.php?wg_abbrev=cti">How to Provide Feedback</a></h4>
-                <p>Information on how to provide feedback/comment to members of the OASIS Cyber Threat Intelligence (CTI) TC (for non members). NOTE: If you are a member of the OASIS Cyber Threat Intelligence (CTI) TC, please post to the TC mailing list directly.</p>                
+                <h4 class="list-group-item-heading"><a href="https://www.oasis-open.org/committees/comments/index.php?wg_abbrev=cti">Non Members: How to Provide Feedback</a></h4>
+                <p>Information on how to provide feedback/comment to members of the OASIS Cyber Threat Intelligence (CTI) TC. NOTE: If you are a member of the OASIS CTI TC, please post to the TC mailing list directly.</p>                
               </li>			  
             </ul>
           </div>
