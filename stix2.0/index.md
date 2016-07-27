@@ -27,20 +27,18 @@ title: CTI TC Development
             <ul class="list-group">	
               <li class="list-group-item">                
                 <h4 class="list-group-item-heading">STIX 2.0 Core Concepts</h4>
-                <p>STIX 2.0 Draft 1 is currently under the review phase. STIX core concepts can be found here:</p>
+                <p>STIX 2.0 Draft 2 is currently under the review phase. STIX core concepts can be found here:</p>
 					<ul>
-						<li><a href="https://docs.google.com/document/d/1HJqhvzO35h62gQGPvghVRIAtQrZn3_J__0UcDAj-NXY/edit#heading=h.t32x0azc539r" target="_blank">Google Docs</a></li>
-						<li><a href="stixdocs/STIX2.0-Draft1-Core.docx" target="_blank">Word Version</a></li>
-						<li><a href="stixdocs/STIX2.0-Draft1-Core.pdf" target="_blank">PDF Version</a></li>
+						<li><a href="https://docs.google.com/document/d/1HJqhvzO35h62gQGPvghVRIAtQrZn3_J__0UcDAj-NXY/edit#" target="_blank">Google Docs</a></li>
+						<li><a href="stixdocs/STIX2.0-Draft2-Core.docx" target="_blank">Word Version</a></li>						
 					</ul>
               </li>
 			  <li class="list-group-item">                
                 <h4 class="list-group-item-heading">STIX 2.0 Objects and Vocabularies</h4>
-                <p>STIX 2.0 Draft 1 is currently under the review phase. STIX objects and vocabularies can be found here:</p>
+                <p>STIX 2.0 Draft 2 is currently under the review phase. STIX objects and vocabularies can be found here:</p>
 					<ul>
-						<li><a href="https://docs.google.com/document/d/1F1c05GgYaJFV1Z04B8c_T3vEE-LRQTPExF24LvOQAsk/edit" target="_blank">Google Docs</a></li>
-						<li><a href="stixdocs/STIX2.0-Draft1-Objects.docx" target="_blank">Word Version</a></li>
-						<li><a href="stixdocs/STIX2.0-Draft1-Objects.pdf" target="_blank">PDF Version</a></li>
+						<li><a href="https://docs.google.com/document/d/1F1c05GgYaJFV1Z04B8c_T3vEE-LRQTPExF24LvOQAsk/edit#" target="_blank">Google Docs</a></li>
+						<li><a href="stixdocs/STIX2.0-Draft2-Objects.docx" target="_blank">Word Version</a></li>						
 					</ul>
               </li>	 			  
 			  <li class="list-group-item">                
