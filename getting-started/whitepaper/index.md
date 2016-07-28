@@ -51,7 +51,7 @@ Items clause at DFARS 252.227-7013 (NOV 1995)
 
 ## Feedback
 Community input is necessary for the success of STIX. Feedback on this or any
-of the other STIX work product is welcome and can be sent to {{ site.contact_email }}.
+of the other STIX work product is welcome and can be sent to [{{ site.contact_email }}](mailto:{{ site.contact_email }}).
 Comments, questions, suggestions, and concerns are all appreciated.
 
 ## Table of Contents
@@ -674,7 +674,7 @@ utilizing XML Schema (XSD) and has the potential to be leveraged not only
 throughout an XML implementation of STIX but also for any other XML-based
 structured representation.
 
-<a name="note-3"></a>[3] http://www.us-cert.gov/tlp/
+<a name="note-3"></a>[3] [http://www.us-cert.gov/tlp/](http://www.us-cert.gov/tlp/)
 
 ## Implementations
 The initial implementation for STIX is utilizing XML Schema as a ubiquitous,
@@ -737,7 +737,7 @@ different U.S. and international public-public, public-private and
 private-private cyber threat information sharing communities and by several
 vendors supporting the domain.
 
-<a name="note-4"></a>[4] http://taxii.mitre.org
+<a name="note-4"></a>[4] [http://taxii.mitre.org](http://taxii.mitre.org)
 
 ## Conclusion and Future Work
 There is an urgent need for new and more outward-looking collaborative
@@ -772,12 +772,9 @@ information sharing.
 
 All parties interested in becoming part of the collaborative community
 discussing, developing, refining, using and supporting STIX are welcome and
-invited to join the effort. More information is available on the STIX website
-(http://stix.mitre.org/). Questions or comments may be sent to the STIX team at
-{{ site.contact_email }} or to the STIX community on the STIX discussion list
-(http://stix.mitre.org/community/registration.html). Access to full schema
-implementations, utilities and issue trackers is available from the STIX
-Project GitHub site (https://github.com/STIXProject).
+invited to join the effort. More information is available on the [STIX website](http://stixproject.github.io/). Questions or comments may be sent to the STIX team at
+[{{ site.contact_email }}](mailto:{{ site.contact_email }}) or to the STIX community on the [STIX discussion list](http://stix.mitre.org/community/registration.html). Access to full schema
+implementations, utilities and issue trackers is available from the [STIX Project GitHub site](https://github.com/STIXProject).
 
 ## Acknowledgments
 HS SEDI’s services as community coordinator of the STIX effort and editor of
@@ -859,30 +856,30 @@ includes:
 ## References
 
 <a name="ref-1"></a>[1] Cyber Observable eXpression (CybOX). URL
-https://cybox.mitre.org
+[https://cybox.mitre.org](https://cybox.mitre.org)
 
 <a name="ref-2"></a>[2] Common Attack Pattern Enumeration and Classification
-(CAPEC). URL https://capec.mitre.org
+(CAPEC). URL [https://capec.mitre.org](https://capec.mitre.org)
 
 <a name="ref-3"></a>[3] Malware Attribute Enumeration and Characterization
-(MAEC). URL https://maec.mitre.org
+(MAEC). URL [https://maec.mitre.org](https://maec.mitre.org)
 
-[4] Common Vulnerabilities and Exposures (CVE). URL https://cve.mitre.org
+[4] Common Vulnerabilities and Exposures (CVE). URL [https://cve.mitre.org](https://cve.mitre.org)
 
-[5] Common Weakness Enumeration (CWE). URL https://cwe.mitre.org
+[5] Common Weakness Enumeration (CWE). URL [https://cwe.mitre.org](https://cwe.mitre.org)
 
-[6] Common Configuration Enumeration (CCE). URL https://cce.mitre.org
+[6] Common Configuration Enumeration (CCE). URL [https://cce.mitre.org](https://cce.mitre.org)
 
-[7] Open Source Vulnerability Database (OSVDB). URL http://www.osvdb.org
+[7] Open Source Vulnerability Database (OSVDB). URL [http://www.osvdb.org](http://www.osvdb.org)
 
 <a name="ref-8"></a>[8] Common Vulnerability Reporting Framework (CVRF). URL
-http://www.icasi.org/cvrf/
+[http://www.icasi.org/cvrf/](http://www.icasi.org/cvrf/)
 
 <a name="ref-9"></a>[9] E.M. Hutchins, M.J. Cloppert and R.M Amin PH.D.,
 "Intelligence-Driven Computer Network Defense Informed by Analysis of Adversary
 Campaigns and Intrusion Kill Chains," Proc. 6th Int'l Conf. Information Warfare
 and Security (ICIW 11), Academic Conferences Ltd., 2010, pp. 113–125; URL
-http://www.lockheedmartin.com/content/dam/lockheed/data/corporate/documents/LM-White-Paper-Intel-Driven-Defense.pdf 
+[http://www.lockheedmartin.com/content/dam/lockheed/data/corporate/documents/LM-White-Paper-Intel-Driven-Defense.pdf](http://www.lockheedmartin.com/content/dam/lockheed/data/corporate/documents/LM-White-Paper-Intel-Driven-Defense.pdf)
 
 [10] Luc Dandurand, Emmanuel Bouillon and Philippe Lagadec, “High-level
 Requirements for a Cyber Defence Data Collaboration and Exchange
@@ -901,11 +898,11 @@ Department of Homeland Security
 
 [15] IDXWG@NICWG.ORG, Oct 2011 - May 2013
 
-[16] Traffic Light Protocol (TLP). URL http://www.us-cert.gov/tlp/
+[16] Traffic Light Protocol (TLP). URL [http://www.us-cert.gov/tlp/](http://www.us-cert.gov/tlp/)
 
 [17] Julie Connolly, Mark Davidson, Matt Richard, Clem Skorupka, “The Trusted
 Automated eXchange of Indicator Information (TAXIITM),” November 2012.
-http://taxii.mitre.org/about/documents/Introduction_to_TAXII_White_Paper_November_2012.pdf
+[http://taxii.mitre.org/about/documents/Introduction_to_TAXII_White_Paper_November_2012.pdf](http://taxii.mitre.org/about/documents/Introduction_to_TAXII_White_Paper_November_2012.pdf)
 
 <a name="ref-18"></a>[18] OASIS Customer Information Quality (CIQ) xPRL. URL
-https://www.oasis-open.org/committees/ciq/
+[https://www.oasis-open.org/committees/ciq/](https://www.oasis-open.org/committees/ciq/)

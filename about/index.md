@@ -46,7 +46,7 @@ Bindings and related tools to help process and work with STIX are [open source o
 
 The [Samples](/examples) page on this website hosts full threat reports expressed via STIX, including Mandiant's APT1 report and FireEye's Poison Ivy report. [Idioms](/documentation/idioms) also provide good constrained examples.
 
-In addition to the MITRE samples, community members have set up [TAXII](http://taxiiproject.github.io/) repositories containing STIX content and even directories pointing to those repositories. One example repository is http://hailataxii.com.
+In addition to the MITRE samples, community members have set up [TAXII](http://taxiiproject.github.io/) repositories containing STIX content and even directories pointing to those repositories. One example repository is [http://hailataxii.com](http://hailataxii.com).
 
 #### How do I use STIX? What tools/utilities are available for this effort?
 

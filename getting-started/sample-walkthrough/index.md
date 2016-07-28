@@ -93,7 +93,7 @@ After the STIX header, the rest of the content consists of lists of components. 
 
 Finally, the meat of the document: a STIX indicator. Once again, STIX indicators are used to give context to what it means when a particular CybOX pattern matches data that was observed in an environment. In many cases the Indicator will contain an Indicated_TTP field that describes the TTP that the pattern indicates, but in this case we just have a simple description.
 
-<div class="well well-sm">The reason this walkthrough focuses on indicators, and the reason we'll go in depth now, is that indicators are one of the most common components used in STIX content today. If you want to see an in-depth walkthrough of another component, e-mail {{ site.contact_email }} and let us know.</div>
+<div class="well well-sm">The reason this walkthrough focuses on indicators, and the reason we'll go in depth now, is that indicators are one of the most common components used in STIX content today. If you want to see an in-depth walkthrough of another component, e-mail <a href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a> and let us know.</div>
 
 There's a lot going on up there, so let's take a look at each element one at a time.
 

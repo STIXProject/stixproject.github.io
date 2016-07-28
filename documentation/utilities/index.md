@@ -35,7 +35,7 @@ The `STIX to HTML` transform is leveraged by `STIXViz` to display the contents a
 
 Because `STIX to HTML` is an XSLT stylesheet, users must be familiar with XSLT or XSLT processing libraries/engines (e.g., `Saxon` or `libxslt`) in order to use it. If you're not familiar with XSLT or how to run it against XML, we suggest downloading `STIXViz` and looking at the `STIX to HTML` output that it includes instead.
 
-Because `STIX to HTML` was created by and for developers, allowing for customization and extension were a priority. [Documentation] (https://github.com/STIXProject/stix-to-html/wiki/Customizing-stix-to-html-transform) on how to customize `STIX to HTML` to fit your application/operational needs is also available. 
+Because `STIX to HTML` was created by and for developers, allowing for customization and extension were a priority. [Documentation](https://github.com/STIXProject/stix-to-html/wiki/Customizing-stix-to-html-transform) on how to customize `STIX to HTML` to fit your application/operational needs is also available. 
 
 * [Usage Guide](https://github.com/STIXProject/stix-to-html/wiki)
 * [Source Code](https://github.com/STIXProject/stix-to-html)

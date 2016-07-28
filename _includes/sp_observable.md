@@ -311,7 +311,7 @@ Some basic guidance is provided below on which forms of observables are appropri
 </stix:TTP>
 {% endhighlight %}{% endcapture %}{% include expander.html section="ttp-technical-targeting" %}
 
-###Selecting level of detail for observable composition
+### Selecting level of detail for observable composition
 
 Whether you are characterizing instances or patterns, the types of observables you may wish to characterize in STIX/CybOX can vary widely from the very simple to the complex depending on what you are trying to
 [Concepts: Composition of Observables and Indicators](/documentation/concepts/composition) provides more information characterizing the potential levels of detail for observable composition in STIX/CybOX.
