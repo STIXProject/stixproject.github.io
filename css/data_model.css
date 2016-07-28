@@ -39,3 +39,7 @@ section.data-model-section:nth-of-type(even) {
     padding-top: 5px;
     padding-bottom: 25px;
 }
+
+ul {
+    list-style-position: inside;
+}

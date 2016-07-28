@@ -5,6 +5,8 @@ title: Data Model Documentation
 
 <link href="/css/data_model.css" rel="stylesheet"/>
 
+{::options parse_block_html="true" /}
+
 ## Package
 <section class="data-model-section">
 <img src="/images/Package.png" class="component-img" alt="Package Icon" />
