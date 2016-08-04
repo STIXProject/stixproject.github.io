@@ -243,7 +243,7 @@ There are also use cases requiring more complex matching logic that may call for
 **NOTE: Observables of this form are only valid as patterns and never as instances.**
 
    * Use for:  specifying compound observable conditions made up of logical combinations (AND/OR) of other observable conditions (patterns). The components of these compound conditions can be observable patterns of any level of detail including other observable compositions.
-   * For example, a condition ((A OR B) AND C) where a system ((contains a mutex=“foo” | contains a file named “barfoobar”) & an outgoing network connection to 46.123.99.25). {% include expand_link.html section="composition7" disabledText="Hide Example" %}
+   * For example, a condition ((A OR B) AND C) where a system ((contains a mutex=“foo” \| contains a file named “barfoobar”) & an outgoing network connection to 46.123.99.25). {% include expand_link.html section="composition7" disabledText="Hide Example" %}
 {% capture expandable %}
 {% include start_tabs.html tabs="XML|Python" name="comp4" %}{% highlight xml %}
 <indicator:Observable id="example:Observable-5e7f46ab-5934-4327-aa8c-3a9635b41544">
