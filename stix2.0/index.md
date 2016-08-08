@@ -52,7 +52,7 @@ title: CTI TC Development
     </div>
 
     <div class="panel panel-default">
-      <div class="panel-heading"><a href="/stix2.0/#cybox3.0"><img src="http://cyboxproject.github.io/images/logo.png" alt="CybOX"  style="max-height: 75px;"></a></div>
+      <div class="panel-heading"><a href="/stix2.0/#cybox3.0"><img src="http://cyboxproject.github.io/images/logo.png" alt="Cyber Observable eXpression (CybOX™)"  style="max-height: 75px;"></a></div>
       <div class="panel-body">
         <div class="row row-fluid">
           <div class="col-md-4">
