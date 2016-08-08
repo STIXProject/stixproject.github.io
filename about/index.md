@@ -24,7 +24,7 @@ The [STIX whitepaper](/getting-started/whitepaper) describes the motivation and 
 
 ### The STIX Community
 
-STIX has been transitioned to OASIS! See the [Community](/community) page for more information. A few shortcuts:
+The [OASIS Cyber Threat Intelligence (CTI) Technical Committee (TC)](https://www.oasis-open.org/committees/cti) leads the ongoing development STIX. See the [Community](/community) page for more information. A few shortcuts:
 
 - [OASIS Technical Committee](https://www.oasis-open.org/committees/cti) - where STIX development happens
 - [Mailing Lists](/community/#discussion-list-amp-archives) - stay up to date on development and usage
@@ -50,14 +50,14 @@ In addition to the MITRE samples, community members have set up [TAXII](http://t
 
 #### How do I use STIX? What tools/utilities are available for this effort?
 
-The primary way to use STIX is of course via commercial products. The [STIX Blog](http://stixproject.tumblr.com) is a good place to find announcements about new products that support STIX.
+The primary way to use STIX is of course via commercial products. See ["Who is using STIX?"](/about/#who-is-using-stix?) for more information.
 
 If you're developing a product or tool, the current STIX reference implementation is in XML so any XML libraries are suitable for producing and consuming STIX XML. The project also maintains open-source [Python bindings](https://github.com/STIXProject/python-stix) and other [Utilities](https://gibhub.com/STIXProject) to make working with STIX at the code level easier. [Documentation](/documentation) and [Suggested Practices](/documentation/suggested-practices), as well as [Examples](/documentation/idioms), can help you understand how to use the STIX Language conceptually (beyond just producing the XML).
 
 #### Who is using STIX?
-A "STIX/TAXII/CybOX Supporters" list will soon be hosted by the OASIS [Cyber Threat Intelligence (CTI) Technical Committee (TC)](https://www.oasis-open.org/committees/cti) on their website. The old [Supporters](/supporters) page on this website has been archived and will no longer be updated. A [*new form* to fill out](https://www.surveymonkey.com/r/oasis-cti-tc-supporter-registration) is currently available from the [CTI TC Interoperability Committee](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=cti-interoperability) to request inclusion on the *new* supporters list. You can find the new form [here](https://www.surveymonkey.com/r/oasis-cti-tc-supporter-registration).
+The OASIS Cyber Threat Intelligence (CTI) Technical Committee (TC) hosts "STIX/CybOX/TAXII Supporters" lists for both [products](https://wiki.oasis-open.org/cti/Products) and [open source projects](https://wiki.oasis-open.org/cti/Open%20Source%20Projects). You can add your product/project via their [registration form](https://www.surveymonkey.com/r/oasis-cti-tc-supporter-registration).
 
-The [STIX Blog](http://stixproject.tumblr.com) also lists press releases and other vendor announcements.
+In additon, the [STIX Blog](http://stixproject.tumblr.com) also notes vendor press releases and announcements.
 
 #### How is STIX licensed?
 See the [Terms of Use](/legal).
