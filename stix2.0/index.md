@@ -52,7 +52,7 @@ title: CTI TC Development
     </div>
 
     <div class="panel panel-default">
-      <div class="panel-heading"><img src="http://cyboxproject.github.io/images/logo.png" alt="CybOX"  style="max-height: 75px;"></div>
+      <div class="panel-heading"><a href="/stix2.0/#cybox3.0"><img src="http://cyboxproject.github.io/images/logo.png" alt="CybOX"  style="max-height: 75px;"></a></div>
       <div class="panel-body">
         <div class="row row-fluid">
           <div class="col-md-4">
@@ -68,7 +68,7 @@ title: CTI TC Development
             </ul>
           </div>
           <div class="col-md-8">
-            <h4>Current Topics</h4>
+            <h4>CybOX 3.0 Current Topics</h4>
             <ul class="list-group">              
               <li class="list-group-item">
                 <span class="label label-info" style="float: right;">DEVELOPMENT</span>
@@ -95,7 +95,7 @@ title: CTI TC Development
     </div>
 
     <div class="panel panel-default">
-      <div class="panel-heading"><img src="http://taxiiproject.github.io/images/logo.png" alt="TAXII" style="max-height: 75px;"></div>
+      <div class="panel-heading"><a href="/stix2.0/#taxii2.0"><img src="http://taxiiproject.github.io/images/logo.png" alt="Trusted Automated eXchange of Indicator Information (TAXII™)" style="max-height: 75px;"></a></div>
       <div class="panel-body">
         <div class="row row-fluid">
           <div class="col-md-4">
@@ -112,7 +112,7 @@ title: CTI TC Development
             </ul>
           </div>
           <div class="col-md-8">
-            <h4>Current Topics</h4>
+            <h4>TAXII 2.0 Current Topics</h4>
             <ul class="list-group">
               <li class="list-group-item">
                 <span class="label label-success" style="float: right;">REVIEW</span>
