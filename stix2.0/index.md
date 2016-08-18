@@ -26,24 +26,17 @@ title: CTI TC Development
             <h3>STIX 2.0 Drafts</h3>
             <ul class="list-group">	
               <li class="list-group-item">                
-                <h4 class="list-group-item-heading">STIX 2.0 Core Concepts</h4>
-                <p>STIX 2.0 Draft 3 is currently under the review phase. STIX core concepts can be found here:</p>
+                <h4 class="list-group-item-heading">STIX 2.0 RC1</h4>
+                <p>STIX 2.0 RC1 is currently under the review phase:</p>
 					<ul>
-						<li><a href="https://docs.google.com/document/d/1HJqhvzO35h62gQGPvghVRIAtQrZn3_J__0UcDAj-NXY/edit#heading=h.t32x0azc539r" target="_blank">Google Docs</a></li>
-						<li><a href="stixdocs/STIX2.0-draft3-core.docx" target="_blank">Word Version</a></li>						
+						<li><a href="https://docs.google.com/document/d/1HJqhvzO35h62gQGPvghVRIAtQrZn3_J__0UcDAj-NXY/edit#" target="_blank">Google Docs</a></li>
+						<li><a href="https://www.oasis-open.org/apps/org/workgroup/cti/document.php?document_id=58743" target="_blank">Online on Kavi</a></li>
+						<li><a href="stixdocs/STIX2.0Specification.docx" target="_blank">Word Version</a></li>						
 					</ul>
-              </li>
+              </li>			  			  
 			  <li class="list-group-item">                
-                <h4 class="list-group-item-heading">STIX 2.0 Objects and Vocabularies</h4>
-                <p>STIX 2.0 Draft 3 is currently under the review phase. STIX objects and vocabularies can be found here:</p>
-					<ul>
-						<li><a href="https://docs.google.com/document/d/1F1c05GgYaJFV1Z04B8c_T3vEE-LRQTPExF24LvOQAsk/edit#heading=h.t32x0azc539r" target="_blank">Google Docs</a></li>
-						<li><a href="stixdocs/STIX2.0-draft3-objects.docx" target="_blank">Word Version</a></li>						
-					</ul>
-              </li>	 			  
-			  <li class="list-group-item">                
-                <h4 class="list-group-item-heading"><a href="https://www.oasis-open.org/committees/comments/index.php?wg_abbrev=cti">Non Members: How to Provide Feedback</a></h4>
-                <p>Information on how to provide feedback/comment to members of the OASIS Cyber Threat Intelligence (CTI) TC. NOTE: If you are a member of the OASIS CTI TC, please post to the TC mailing list directly.</p>                
+                <h4 class="list-group-item-heading">How to Provide Feedback</h4>
+                <p>Please make any further comments on the specification on the mailing list.</p>                
               </li>			  
             </ul>
           </div>
