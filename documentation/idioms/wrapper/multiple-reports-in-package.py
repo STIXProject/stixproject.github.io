@@ -22,13 +22,13 @@ def main():
     alpha_report.header.title = "Report on Adversary Alpha's Campaign against the Industrial Control Sector"
     alpha_report.header.descriptions = "Adversary Alpha has a campaign against the ICS sector!"
     alpha_report.header.intents = "Campaign Characterization"
-    alpha_report.add_campaign(Campaign(idref=campaign._id))
+    alpha_report.add_campaign(Campaign(idref=campaign.id_))
 
     rat_report = Report()
     rat_report.header = Header()
     rat_report.header.title = "Indicators for Malware DrownedRat"
     rat_report.header.intents = "Indicators - Malware Artifacts"
-    rat_report.add_ttp(TTP(idref=ttp._id))
+    rat_report.add_ttp(TTP(idref=ttp.id_))
 
     wrapper = STIXPackage()
     info_src = InformationSource()

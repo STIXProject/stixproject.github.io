@@ -9,6 +9,7 @@ For installation instructions, please refer to https://github.com/STIXProject/py
 
 from stix.core import STIXPackage
 from stix.indicator import Indicator
+from stix.indicator.test_mechanism import TestMechanisms
 from stix.ttp import TTP
 from stix.ttp import ExploitTargets
 from stix.exploit_target import ExploitTarget, Vulnerability
@@ -45,7 +46,7 @@ def main():
     tm.efficacy = "Low"
     tm.producer = InformationSource(identity=Identity(name="FOX IT"))
     tm.producer.references = ["http://blog.fox-it.com/2014/04/08/openssl-heartbleed-bug-live-blog/"]
-    indicator.test_mechanisms = [tm]
+    indicator.test_mechanisms = TestMechanisms([tm])
     indicator.add_indicated_ttp(TTP(idref=ttp.id_))
 
     stix_package.add_indicator(indicator)

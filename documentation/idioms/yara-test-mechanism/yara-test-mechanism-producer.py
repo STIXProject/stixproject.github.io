@@ -9,6 +9,7 @@ For installation instructions, please refer to https://github.com/STIXProject/py
 
 from stix.core import STIXPackage
 from stix.indicator import Indicator
+from stix.indicator.test_mechanism import TestMechanisms
 from stix.extensions.test_mechanism.yara_test_mechanism import YaraTestMechanism
 from stix.common import Confidence, InformationSource, Identity
 
@@ -40,7 +41,7 @@ rule silent_banker : banker
     tm.rule = rule
     tm.producer = InformationSource(identity=Identity(name="Yara"))
     tm.producer.references = ["http://plusvic.github.io/yara/"]
-    indicator.test_mechanisms = [tm]
+    indicator.test_mechanisms = TestMechanisms([tm])
 
     stix_package.add_indicator(indicator)
     
