@@ -60,7 +60,7 @@ Comments, questions, suggestions, and concerns are all appreciated.
 2. [Background](#background)
 3. [Current Approaches](#current-approaches)
 4. [History](#history)
-5. [What is STIX?](#what-is-stix?)
+5. [What is STIX?](#what-is-stix)
 6. [Use Cases](#use-cases)
 7. [Guiding Principles](#guiding-principles)
 8. [Architecture](#architecture)
