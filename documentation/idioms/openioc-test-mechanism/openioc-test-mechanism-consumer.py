@@ -10,6 +10,7 @@ For installation instructions, please refer to https://github.com/STIXProject/py
 from stix.core import STIXPackage
 from lxml import etree
 
+
 def main():
     stix_package = STIXPackage.from_xml('openioc-test-mechanism.xml')
 
@@ -19,7 +20,7 @@ def main():
         print "Description: " + indicator.description.value
 
         for indicated_ttp in indicator.indicated_ttps:
-            ttp = stix_package.find(indicated_ttp.item.idref) 
+            ttp = stix_package.find(indicated_ttp.item.idref)
             print "Indicated TTP: " + ttp.title
 
         for tm in indicator.test_mechanisms:
@@ -27,6 +28,6 @@ def main():
             print "== IOC =="
             print etree.tostring(tm.ioc)
             print "== ENDIOC =="
-    
+
 if __name__ == '__main__':
     main()

@@ -16,6 +16,7 @@ from stix.common import InformationSource, Identity
 from cybox.common import Time
 from lxml import etree
 
+
 def main():
     ioc = etree.parse('6d2a1b03-b216-4cd8-9a9e-8827af6ebf93.ioc')
 
@@ -24,7 +25,7 @@ def main():
     ttp = TTP()
     malware_instance = MalwareInstance()
     malware_instance.names = ['Zeus', 'twexts', 'sdra64', 'ntos']
-    
+
     ttp = TTP(title="Zeus")
     ttp.behavior = Behavior()
     ttp.behavior.add_malware_instance(malware_instance)
@@ -44,8 +45,8 @@ def main():
 
     stix_package.add_indicator(indicator)
     stix_package.add_ttp(ttp)
-    
+
     print stix_package.to_xml()
-    
+
 if __name__ == '__main__':
     main()
