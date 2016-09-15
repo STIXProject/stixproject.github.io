@@ -7,7 +7,7 @@ toc: wp_toc.html
 
 <div class="alert alert-info">
   <p>
-    Download a <a href="http://stix.mitre.org/about/documents/STIX_Whitepaper_v1.1.pdf">PDF Version</a> of the white paper.
+    Download a <a href="/about/STIX_Whitepaper_v1.1.pdf">PDF Version</a> of the white paper.
   </p>
 </div>
 
