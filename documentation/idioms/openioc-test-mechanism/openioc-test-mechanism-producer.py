@@ -33,7 +33,7 @@ def main():
 
     tm = OpenIOCTestMechanism()
     tm.ioc = ioc
-    tm.producer = InformationSource(identity=Identity(name="Yara"))
+    tm.producer = InformationSource(identity=Identity(name="Mandiant"))
     time = Time()
     time.produced_time = "0001-01-01T00:00:00"
     tm.producer.time = time

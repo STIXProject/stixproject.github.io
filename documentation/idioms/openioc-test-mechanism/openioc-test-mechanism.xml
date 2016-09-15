@@ -29,7 +29,7 @@
                 <indicator:Test_Mechanism id="example:testmechanism-c7f7dad4-4835-4105-8a53-72149f721ec0" xmlns:stix-openioc='http://stix.mitre.org/extensions/TestMechanism#OpenIOC2010-1' xsi:type='stix-openioc:OpenIOC2010TestMechanismType'>
                   <indicator:Producer>
                         <stixCommon:Identity id="example:Identity-1c06cffc-4c80-4005-8d82-075afea0ed41">
-                            <stixCommon:Name>Yara</stixCommon:Name>
+                            <stixCommon:Name>Mandiant</stixCommon:Name>
                         </stixCommon:Identity>
                         <stixCommon:Time>
                             <cyboxCommon:Produced_Time>2001-01-01T00:00:00</cyboxCommon:Produced_Time>
