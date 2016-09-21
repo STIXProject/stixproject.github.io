@@ -45,7 +45,7 @@ rule silent_banker : banker
 
     stix_package.add_indicator(indicator)
     
-    print stix_package.to_xml()
+    print (stix_package.to_xml())
     
 if __name__ == '__main__':
     main()

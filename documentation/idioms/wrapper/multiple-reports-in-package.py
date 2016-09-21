@@ -40,7 +40,7 @@ def main():
     wrapper.add_ttp(ttp)
 
 
-    print wrapper.to_xml()
+    print (wrapper.to_xml())
 
 if __name__ == '__main__':
     main()

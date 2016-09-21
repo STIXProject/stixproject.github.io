@@ -11,6 +11,7 @@ from stix.core import STIXPackage
 from stix.indicator import Indicator
 from stix.ttp import TTP, Behavior
 from stix.ttp.behavior import MalwareInstance
+from stix.indicator.test_mechanism import TestMechanisms
 from stix.extensions.test_mechanism.open_ioc_2010_test_mechanism import OpenIOCTestMechanism
 from stix.common import InformationSource, Identity
 from cybox.common import Time
@@ -38,7 +39,7 @@ def main():
     time.produced_time = "0001-01-01T00:00:00"
     tm.producer.time = time
     tm.producer.references = ["http://openioc.org/iocs/6d2a1b03-b216-4cd8-9a9e-8827af6ebf93.ioc"]
-    indicator.test_mechanisms = [tm]
+	indicator.test_mechanisms = TestMechanisms([tm])    
 
     indicator.add_indicated_ttp(TTP(idref=ttp.id_))
 
