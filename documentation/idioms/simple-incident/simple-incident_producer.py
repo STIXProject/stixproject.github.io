@@ -4,7 +4,7 @@ from stix.core import STIXPackage, STIXHeader
 from datetime import datetime
 from cybox.common import Time
 
-from stix.incident import Incident,ImpactAssessment, AffectedAsset
+from stix.incident import Incident, ImpactAssessment, AffectedAsset
 from stix.incident import Time as incidentTime # different type than common:Time
 
 from stix.common import InformationSource
@@ -64,4 +64,4 @@ def build_stix( ):
 if __name__ == '__main__':
     # emit STIX
     pkg = build_stix()
-    print pkg.to_xml() 
+    print (pkg.to_xml())

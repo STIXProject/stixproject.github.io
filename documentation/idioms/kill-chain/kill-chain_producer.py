@@ -47,7 +47,7 @@ def main():
     ])
     stix_pkg.add_indicator(indicator)
 
-    print stix_pkg.to_xml()
+    print (stix_pkg.to_xml())
 
 if __name__ == "__main__":
     main()

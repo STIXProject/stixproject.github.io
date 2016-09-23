@@ -30,7 +30,7 @@ def main():
     # add referenced phase to indicator
     ind.kill_chain_phases.append(KillChainPhaseReference(phase_id=infect.phase_id,kill_chain_id = mychain.id_))
     
-    print stix_pkg.to_xml() 
+    print (stix_pkg.to_xml())
 
 if __name__ == "__main__":
     main()

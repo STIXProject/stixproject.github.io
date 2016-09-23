@@ -37,7 +37,7 @@ def main():
 
     pkg.add_incident(incident)
 
-    print pkg.to_xml()
+    print (pkg.to_xml())
 
 if __name__ == '__main__':
     main()

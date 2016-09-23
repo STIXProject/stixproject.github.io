@@ -9,7 +9,7 @@ def parse_stix(pkg):
 
   # Walk all campaigns
   for indicator in pkg.indicators:
-    print "Indicator: " + indicator.title
+    print("Indicator: " + indicator.title)
     # And list relationships to campaigns
     # Broken, see #192
     # for campaign in indicator.related_campaigns:

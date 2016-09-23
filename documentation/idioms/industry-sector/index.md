@@ -54,14 +54,14 @@ ttp = TTP(title="Victim Targeting: Electricity Sector and Industrial Control Sys
 ttp.victim_targeting = VictimTargeting()
 ttp.victim_targeting.identity = ciq_identity
 
-print ttp.to_xml()
+print (ttp.to_xml())
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 
-print "== TTP =="
-for thing in pkg.ttps:
-    print "---"
-    print "TTP: " + thing.title
-    print "Victim: "+ str(thing.victim_targeting.identity.specification.organisation_info.industry_type)
+print("== TTP ==")
+    for thing in pkg.ttps:
+        print("---")
+        print("TTP: " + thing.title)
+        print("Victim: "+ str(thing.victim_targeting.identity.specification.organisation_info.industry_type))
 {% endhighlight %}{% include end_tabs.html %}
 
 [Full XML](victim-targeting-sector.xml) | [Python Producer](victim-targeting-sector_producer.py) | [Python Consumer](victim-targeting-sector_consumer.py)

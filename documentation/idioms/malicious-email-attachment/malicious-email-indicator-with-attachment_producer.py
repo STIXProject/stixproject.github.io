@@ -74,7 +74,7 @@ def main():
     combined_indicator.add_indicated_ttp(TTP(idref=ttp.id_))
     
     stix_package.indicators = [combined_indicator, email_subject_indicator, indicator_attachment]
-    print stix_package.to_xml()
+    print (stix_package.to_xml())
     
 if __name__ == '__main__':
     main()

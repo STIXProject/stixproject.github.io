@@ -14,13 +14,13 @@ def main():
     stix_package = STIXPackage.from_xml('yara-test-mechanism.xml')
 
     for indicator in stix_package.indicators:
-        print "== INDICATOR =="
-        print "Title: " + indicator.title
-        print "Description: " + indicator.description.value
+        print("== INDICATOR ==")
+        print("Title: " + indicator.title)
+        print("Description: " + indicator.description.value)
 
         for tm in indicator.test_mechanisms:
-            print "Producer: " + tm.producer.identity.name
-            print "Rule: %s" % tm.rule
+            print("Producer: " + tm.producer.identity.name)
+            print("Rule: %s" % tm.rule)
     
 if __name__ == '__main__':
     main()

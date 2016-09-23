@@ -22,7 +22,7 @@ def main():
 
     pkg.add_indicator(indicator)
     
-    print pkg.to_xml()
+    print (pkg.to_xml())
     
 if __name__ == '__main__':
     main()

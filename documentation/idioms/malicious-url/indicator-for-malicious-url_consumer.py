@@ -6,16 +6,16 @@ import sys
 from stix.core import STIXPackage, STIXHeader
 
 def parse_stix( pkg ):
-    print "== MALWARE =="
+    print("== MALWARE ==")
     for ind in pkg.indicators:
-        print "---"
-        print "Title : " + ind.title
-        print "ID : " + ind.id_
+        print("---")
+        print("Title : " + ind.title)
+        print("ID : " + ind.id_)
         for ind_type in ind.indicator_types:
-            print "Type: " + str(ind_type)
+            print("Type: " + str(ind_type))
 
         for obs in ind.observables:
-            print "URL : " + str(obs.object_.properties.value)
+            print("URL : " + str(obs.object_.properties.value))
 
     return 0
 

@@ -63,7 +63,7 @@ stix_pkg.add_indicator(ind)
 # add referenced phase to indicator
 ind.kill_chain_phases.append(KillChainPhaseReference(phase_id=infect.phase_id,kill_chain_id = mychain.id_))
 
-print stix_pkg.to_xml() 
+print (stix_pkg.to_xml())
 
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 
@@ -74,14 +74,14 @@ for chain in pkg.ttps.kill_chains:
         phases [phase.phase_id] = phase.name
 
 
-print "== INDICATOR =="
-for ind in pkg.indicators:
-    print "--"
-    print "Title: " + ind.title
-    print "Description: " + str(ind.description)
-    for phase in ind.kill_chain_phases:
-        # lookup phase by ID
-        print "Kill Chain Phase: " + str(phases[phase.phase_id])
+print("== INDICATOR ==")
+    for ind in pkg.indicators:
+        print("--")
+        print("Title: " + ind.title)
+        print("Description: " + str(ind.description))
+        for phase in ind.kill_chain_phases:
+            # lookup phase by ID
+            print("Kill Chain Phase: " + str(phases[phase.phase_id]))
         
 {% endhighlight %}{% include end_tabs.html %}
 

@@ -115,27 +115,27 @@ breach.impact_assessment = impact
 
 stix_package.add_incident(breach)
 
-print stix_package
+print (stix_package)
 
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
-print "== INCIDENT =="
-
-for inc in pkg.incidents:
-    print "---"
-    print "Reporter: " + inc.reporter.identity.name
-    print "Title: "+ inc.title
-    print "Description: "+ str(inc.description)
-    print "Confidence: "+ str(inc.confidence.value)
-    for impact in inc.impact_assessment.effects:
-        print "Impact: "+ str(impact)
+print("== INCIDENT ==")
     
-    print "Initial Compromise: "+ str(inc.time.initial_compromise.value)
-    print "Incident Discovery: "+ str(inc.time.incident_discovery.value)
-    print "Restoration Achieved: "+ str(inc.time.restoration_achieved.value)
-    print "Incident Reported: "+ str(inc.time.incident_reported.value)
+    for inc in pkg.incidents:
+        print("---")
+        print("Reporter: " + inc.reporter.identity.name)
+        print("Title: "+ inc.title)
+        print("Description: "+ str(inc.description))
+        print("Confidence: "+ str(inc.confidence.value))
+        for impact in inc.impact_assessment.effects:
+            print("Impact: "+ str(impact))
+        
+        print("Initial Compromise: "+ str(inc.time.initial_compromise.value))
+        print("Incident Discovery: "+ str(inc.time.incident_discovery.value))
+        print("Restoration Achieved: "+ str(inc.time.restoration_achieved.value))
+        print("Incident Reported: "+ str(inc.time.incident_reported.value))
 
-    for victim in inc.victims:
-        print "Victim: "+ str(victim.name)
+        for victim in inc.victims:
+            print("Victim: "+ str(victim.name))
 {% endhighlight %}{% include end_tabs.html %}
 
 [Full XML](sample.xml) | [Python Producer](simple-incident_producer.py) | [Python Consumer](simple-incident_consumer.py) 

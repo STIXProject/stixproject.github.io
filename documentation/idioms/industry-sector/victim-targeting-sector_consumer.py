@@ -6,11 +6,11 @@ import sys
 from stix.core import STIXPackage, STIXHeader
 
 def parse_stix( pkg ):
-    print "== TTP =="
+    print("== TTP ==")
     for thing in pkg.ttps:
-        print "---"
-        print "TTP: " + thing.title
-        print "Victim: "+ str(thing.victim_targeting.identity.specification.organisation_info.industry_type)
+        print("---")
+        print("TTP: " + thing.title)
+        print("Victim: "+ str(thing.victim_targeting.identity.specification.organisation_info.industry_type))
 
     return 0
 

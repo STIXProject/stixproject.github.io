@@ -6,14 +6,14 @@ import sys
 from stix.core import STIXPackage, STIXHeader
 
 def parse_stix( pkg ):
-    print "== INCIDENT =="
+    print("== INCIDENT ==")
     for inc in pkg.incidents:
-        print "Title: " + inc.title
+        print("Title: " + inc.title)
         for obs in inc.related_observables:
-            print "Relation: " + str(obs.relationship)
-            print "File Name: " + str(obs.item.object_.properties.file_name)
-            print "Filesize: " + str(obs.item.object_.properties.size_in_bytes)
-            print "SHA256 Digest: " + str(obs.item.object_.properties.hashes[0].simple_hash_value)
+            print("Relation: " + str(obs.relationship))
+            print("File Name: " + str(obs.item.object_.properties.file_name))
+            print("Filesize: " + str(obs.item.object_.properties.size_in_bytes))
+            print("SHA256 Digest: " + str(obs.item.object_.properties.hashes[0].simple_hash_value))
           
     return 0
 

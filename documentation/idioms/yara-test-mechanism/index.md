@@ -92,14 +92,13 @@ indicator.test_mechanisms = [tm]
 stix_package = STIXPackage.from_xml('yara-test-mechanism.xml')
 
 for indicator in stix_package.indicators:
-    print "== INDICATOR =="
-    print "Title: " + indicator.title
-    print "Description: " + indicator.description
+        print("== INDICATOR ==")
+        print("Title: " + indicator.title)
+        print("Description: " + indicator.description.value)
 
-    for tm in indicator.test_mechanisms:
-        print "Producer: " + tm.producer.identity.name
-        print "Efficacy: " + tm.efficacy.value.value
-        print "Rule: %s" % tm.rule
+        for tm in indicator.test_mechanisms:
+            print("Producer: " + tm.producer.identity.name)
+            print("Rule: %s" % tm.rule)
 {% endhighlight %}{% include end_tabs.html %}
 
 [Full XML](yara-test-mechanism.xml) | [Python Producer](yara-test-mechanism-producer.py) | [Python Consumer](yara-test-mechanism-consumer.py)

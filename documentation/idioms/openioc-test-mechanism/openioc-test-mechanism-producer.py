@@ -39,14 +39,13 @@ def main():
     time.produced_time = "0001-01-01T00:00:00"
     tm.producer.time = time
     tm.producer.references = ["http://openioc.org/iocs/6d2a1b03-b216-4cd8-9a9e-8827af6ebf93.ioc"]
-	indicator.test_mechanisms = TestMechanisms([tm])    
-
+    indicator.test_mechanisms = TestMechanisms([tm])
     indicator.add_indicated_ttp(TTP(idref=ttp.id_))
 
     stix_package.add_indicator(indicator)
     stix_package.add_ttp(ttp)
     
-    print stix_package.to_xml()
+    print (stix_package.to_xml())
     
 if __name__ == '__main__':
     main()

@@ -9,10 +9,10 @@ def parse_stix(pkg):
 
   # Walk all campaigns
   for campaign in pkg.campaigns:
-    print "Campaign: " + campaign.title
+    print("Campaign: " + campaign.title)
     # And list relationships to indicators
     for indicator in campaign.related_indicators:
-      print "  - Related To: " + indicators[indicator.item.idref].title
+      print("  - Related To: " + indicators[indicator.item.idref].title)
 
 if __name__ == '__main__':
     try: fname = sys.argv[1]

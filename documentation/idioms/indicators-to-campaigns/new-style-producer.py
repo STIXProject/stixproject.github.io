@@ -23,7 +23,7 @@ def main():
   # TODO: Broken, see #192
   # indicator.related_campaigns.append(RelatedCampaign(item=Campaign(idref=campaign.id_)))
 
-  print package.to_xml()
+  print (package.to_xml())
 
 if __name__ == '__main__':
   main()

@@ -14,14 +14,14 @@ def parse_stix( pkg ):
             phases [phase.phase_id] = phase.name
     
     
-    print "== INDICATOR =="
+    print("== INDICATOR ==")
     for ind in pkg.indicators:
-        print "--"
-        print "Title: " + ind.title
-        print "Description: " + str(ind.description)
+        print("--")
+        print("Title: " + ind.title)
+        print("Description: " + str(ind.description))
         for phase in ind.kill_chain_phases:
             # lookup phase by ID
-            print "Kill Chain Phase: " + str(phases[phase.phase_id])
+            print("Kill Chain Phase: " + str(phases[phase.phase_id]))
         
     return 0
 
