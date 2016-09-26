@@ -73,11 +73,11 @@ print stix_package.to_xml()
 stix_package = STIXPackage.from_xml('indicator-for-c2-ip-address.xml')
 
 for indicator in stix_package.indicators:
-  print "--INDICATOR--"
-  ip = indicator.observable.object_.properties.address_value.value
-  print "IP: " + ip
-  for ttp in stix_package.ttps:
-    print "TTP: " + ttp.title
+  print("--INDICATOR--")
+    ip = indicator.observable.object_.properties.address_value.value
+    print("IP: " + ip)
+    for ttp in stix_package.ttps:
+      print("TTP: " + ttp.title)
 
 {% endhighlight %}{% include end_tabs.html %}
 

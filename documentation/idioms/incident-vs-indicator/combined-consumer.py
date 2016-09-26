@@ -42,7 +42,7 @@ def main():
       'pattern': "IP %(condition)s(%(ip)s)" % {'condition': address_value.condition, 'ip': address_value.value}
     })
 
-  print data
+  print(data)
 
 if __name__ == '__main__':
   main()

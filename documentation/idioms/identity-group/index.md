@@ -88,19 +88,22 @@ identity_spec.add_electronic_address_identifier("twitter.com/realdiscoteam")
     
 ta.identity.specification = identity_spec
 stix_package.add_threat_actor(ta)
-print stix_package.to_xml()
+print (stix_package.to_xml())
 
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 print "== ACTOR =="
 for actor in pkg.threat_actors:
-    print "Actor: " + actor.title
-    for name in actor.identity.specification.party_name.organisation_names:
-        print "AKA: "+ str(name.name_elements[0].value)
-    print "Language: " + actor.identity.specification.languages[0].value
-    print "Country: " + str(actor.identity.specification.addresses[0].country.name_elements[0].value)
-    print "Area: " + str(actor.identity.specification.addresses[0].administrative_area.name_elements[0].value)
-    for addr in actor.identity.specification.electronic_address_identifiers:
-        print "Internet Address: " + str(addr.value)
+    print("== ACTOR ==")
+    for actor in pkg.threat_actors:
+        print("Actor: " + actor.title)
+        for name in actor.identity.specification.party_name.organisation_names:
+            print("AKA: "+ str(name.name_elements[0].value))
+        print("Language: " + actor.identity.specification.languages[0].value)
+        print("Country: " + str(actor.identity.specification.addresses[0].country.name_elements[0].value))
+        print("Area: " + str(actor.identity.specification.addresses[0].administrative_area.name_elements[0].value))
+        
+        for addr in actor.identity.specification.electronic_address_identifiers:
+            print("Internet Address: " + str(addr.value))
     
 {% endhighlight %}{% include end_tabs.html %}
 

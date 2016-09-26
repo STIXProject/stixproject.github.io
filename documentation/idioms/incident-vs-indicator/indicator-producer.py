@@ -37,7 +37,7 @@ def main():
 
     stix_package.add_indicator(indicator)
 
-  print stix_package.to_xml()
+  print (stix_package.to_xml())
 
 
 if __name__ == '__main__':

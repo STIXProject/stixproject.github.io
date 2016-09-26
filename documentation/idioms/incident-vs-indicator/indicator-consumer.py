@@ -27,7 +27,7 @@ def main():
     ttp = ttps[indicator.indicated_ttps[0].item.idref]
     data['indicators'][ttp.title].append(ip)
 
-  print data
+  print(data)
 
 if __name__ == '__main__':
   main()

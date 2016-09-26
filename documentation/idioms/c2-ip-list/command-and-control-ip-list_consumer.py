@@ -6,12 +6,12 @@ import sys
 from stix.core import STIXPackage, STIXHeader
 
 def parse_stix( pkg ):
-    print "== TTP =="
+    print("== TTP ==")
     for thing in pkg.ttps:
-        print "Title: "+ str(thing.title)
-        print "Resource: " + str(thing.resources.infrastructure.types[0])
+        print("Title: "+ str(thing.title))
+        print("Resource: " + str(thing.resources.infrastructure.types[0]))
         for obs in pkg.observables.observables:
-            print "Observable: " + str(obs.object_.properties)
+            print("Observable: " + str(obs.object_.properties))
         
     return 0
 

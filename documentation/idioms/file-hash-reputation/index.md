@@ -78,7 +78,7 @@ file_object.hashes[0].simple_hash_value.condition = "Equals"
 file_object.hashes[0].type_.condition = "Equals"
 indicator.add_observable(file_object)
 {% endhighlight %}{% include tab_separator.html %}{% highlight python %}
-print "Hash: " + indicator.observable.object_.properties.hashes[0].simple_hash_value.value
+print ("Hash: " + indicator.observable.object_.properties.hashes[0].simple_hash_value.value)
 {% endhighlight %}{% include end_tabs.html %}
 
 ### Indicated TTP
@@ -94,7 +94,7 @@ To make indicators more useful it's strongly suggested that an `Indicated_TTP` b
 {% endhighlight %}{% include tab_separator.html %}{% highlight python %}
 indicator.add_indicated_ttp(TTP(title="Malicious file"))
 {% endhighlight %}{% include tab_separator.html %}{% highlight python %}
-print "TTP: " + indicator.indicated_ttps[0].item.title
+print ("TTP: " + indicator.indicated_ttps[0].item.title)
 {% endhighlight %}{% include end_tabs.html %}
 
 ### Reputation score
@@ -112,7 +112,7 @@ indicator.confidence = Confidence(value=VocabString('75'))
 indicator.confidence.value.vocab_name = "Percentage"
 indicator.confidence.value.vocab_reference = "https://en.wikipedia.org/wiki/Percentage"
 {% endhighlight %}{% include tab_separator.html %}{% highlight python %}
-print "Reputation: " + indicator.confidence.value.value
+print ("Reputation: " + indicator.confidence.value.value)
 {% endhighlight %}{% include end_tabs.html %}
 
 ## Putting it all together
@@ -163,8 +163,8 @@ indicator.confidence.value.vocab_reference = "https://en.wikipedia.org/wiki/Perc
 {% endhighlight %}{% include tab_separator.html %}{% highlight python %}
 stix_package = STIXPackage.from_xml('file-hash-reputation.xml')
 for indicator in stix_package.indicators:
-  print "Hash: " + indicator.observable.object_.properties.hashes[0].simple_hash_value.value
-  print "Reputation: " + indicator.confidence.value.value
+  print ("Hash: " + indicator.observable.object_.properties.hashes[0].simple_hash_value.value)
+  print ("Reputation: " + indicator.confidence.value.value)
 {% endhighlight %}{% include end_tabs.html %}
 
 [Full XML](file-hash-reputation.xml) | [Python Producer](file-hash-reputation_producer.py) | [Python Consumer](file-hash-reputation_consumer.py)

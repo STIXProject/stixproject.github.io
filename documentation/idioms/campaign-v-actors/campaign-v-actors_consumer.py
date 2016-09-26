@@ -8,17 +8,17 @@ from stix.core import STIXPackage, STIXHeader
 def parse_stix( pkg ):
     
     for camp in pkg.campaigns:
-        print "== CAMPAIGN =="
-        print "Campaign Name: " + str(camp.title)
+        print("== CAMPAIGN ==")
+        print("Campaign Name: " + str(camp.title))
         
         for tactic in camp.related_ttps:
-            print "TTP: " + tactic.item.title
+            print("TTP: " + tactic.item.title)
             
         for attrib in camp.attribution:
-            print "Actor: " + attrib[0].item.title
+            print("Actor: " + attrib[0].item.title)
         
         for rel in camp.related_incidents:
-            print "Related Incident ID: " + str(rel.item.idref)
+            print("Related Incident ID: " + str(rel.item.idref))
     
     
     return 0
