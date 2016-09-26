@@ -11,7 +11,7 @@ from stix.core import STIXPackage
 from stix.indicator import Indicator
 from stix.indicator.test_mechanism import TestMechanisms
 from stix.extensions.test_mechanism.yara_test_mechanism import YaraTestMechanism
-from stix.common import Confidence, InformationSource, Identity
+from stix.common import InformationSource, Identity
 
 def main():
 
@@ -44,8 +44,8 @@ rule silent_banker : banker
     indicator.test_mechanisms = TestMechanisms([tm])
 
     stix_package.add_indicator(indicator)
-    
-    print (stix_package.to_xml())
-    
+
+    print(stix_package.to_xml())
+
 if __name__ == '__main__':
     main()

@@ -1,18 +1,12 @@
 #!/usr/bin/env python
 
-from stix.ttp import TTP
-
-from stix.core import STIXPackage, STIXHeader
-from stix.common import (InformationSource, Identity, RelatedObservable,
-                         VocabString)
+from stix.core import STIXPackage
 from stix.indicator import Indicator
-from stix.ttp import TTP
 
 from stix.common.kill_chains import KillChainPhase, KillChain, KillChainPhaseReference, KillChainPhasesReference
 
 def main():
     stix_pkg = STIXPackage()
-
 
     # create LM-style kill chain
     # REF: http://stix.mitre.org/language/version{{site.current_version}}/stix_v{{site.current_version}}_lmco_killchain.xml
@@ -47,7 +41,7 @@ def main():
     ])
     stix_pkg.add_indicator(indicator)
 
-    print (stix_pkg.to_xml())
+    print(stix_pkg.to_xml())
 
 if __name__ == "__main__":
     main()

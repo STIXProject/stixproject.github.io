@@ -19,7 +19,7 @@ def main():
         print("Description: " + indicator.description.value)
 
         for indicated_ttp in indicator.indicated_ttps:
-            ttp = stix_package.find(indicated_ttp.item.idref) 
+            ttp = stix_package.find(indicated_ttp.item.idref)
             print("Indicated TTP: " + ttp.title)
 
         for tm in indicator.test_mechanisms:

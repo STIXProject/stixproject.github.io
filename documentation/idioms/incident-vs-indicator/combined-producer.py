@@ -18,48 +18,48 @@ from cybox.objects.address_object import Address
 
 def main():
 
-  data = json.load(open("data.json"))
+    data = json.load(open("data.json"))
 
-  stix_package = STIXPackage(stix_header=STIXHeader(title=data['title'], package_intents='Incident'))
+    stix_package = STIXPackage(stix_header=STIXHeader(title=data['title'], package_intents='Incident'))
 
-  ttps = {}
+    ttps = {}
 
-  for info in data['ips']:
-    # Add TTP, unless it's already been added
-    if info['bot'] not in ttps:
-      ttps[info['bot']] = TTP(title=info['bot'])
-      stix_package.add_ttp(ttps[info['bot']])
+    for info in data['ips']:
+        # Add TTP, unless it's already been added
+        if info['bot'] not in ttps:
+            ttps[info['bot']] = TTP(title=info['bot'])
+            stix_package.add_ttp(ttps[info['bot']])
 
-    # Add indicator
-    indicator = Indicator(title=info['ip'])
-    addr = Address(address_value=info['ip'], category=Address.CAT_IPV4)
-    addr.condition = "Equals"
-    indicator.add_observable(addr)
-    indicator.add_indicated_ttp(TTP(idref=ttps[info['bot']].id_))
+        # Add indicator
+        indicator = Indicator(title=info['ip'])
+        addr = Address(address_value=info['ip'], category=Address.CAT_IPV4)
+        addr.condition = "Equals"
+        indicator.add_observable(addr)
+        indicator.add_indicated_ttp(TTP(idref=ttps[info['bot']].id_))
 
-    stix_package.add_indicator(indicator)
+        stix_package.add_indicator(indicator)
 
-    # Add incident
-    incident = Incident(title=info['ip'])
-    incident.time = Time()
-    incident.time.first_malicious_action = info['first_seen']
+        # Add incident
+        incident = Incident(title=info['ip'])
+        incident.time = Time()
+        incident.time.first_malicious_action = info['first_seen']
 
-    addr = Address(address_value=info['ip'], category=Address.CAT_IPV4)
-    observable = Observable(item=addr)
-    stix_package.add_observable(observable)
+        addr = Address(address_value=info['ip'], category=Address.CAT_IPV4)
+        observable = Observable(item=addr)
+        stix_package.add_observable(observable)
 
-    related_ttp = RelatedTTP(TTP(idref=ttps[info['bot']].id_), relationship="Used Malware")
-    incident.leveraged_ttps.append(related_ttp)
+        related_ttp = RelatedTTP(TTP(idref=ttps[info['bot']].id_), relationship="Used Malware")
+        incident.leveraged_ttps.append(related_ttp)
 
-    related_observable = RelatedObservable(Observable(idref=observable.id_))
-    incident.related_observables.append(related_observable)
+        related_observable = RelatedObservable(Observable(idref=observable.id_))
+        incident.related_observables.append(related_observable)
 
-    related_indicator = RelatedIndicator(Indicator(idref=indicator.id_))
-    incident.related_indicators.append(related_indicator)
+        related_indicator = RelatedIndicator(Indicator(idref=indicator.id_))
+        incident.related_indicators.append(related_indicator)
 
-    stix_package.add_incident(incident)
+        stix_package.add_incident(incident)
 
-  print (stix_package.to_xml())
+    print(stix_package.to_xml())
 
 
 if __name__ == '__main__':

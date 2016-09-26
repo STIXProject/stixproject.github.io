@@ -9,35 +9,35 @@ For installation instructions, please refer to https://github.com/STIXProject/py
 
 import json
 
-from stix.core import STIXPackage, STIXHeader
+from stix.core import STIXPackage
 from stix.indicator import Indicator
 from stix.ttp import TTP
 from cybox.objects.address_object import Address
 
 def main():
 
-  data = json.load(open("data.json"))
+    data = json.load(open("data.json"))
 
-  stix_package = STIXPackage()
+    stix_package = STIXPackage()
 
-  ttps = {}
+    ttps = {}
 
-  for info in data['ips']:
-    if info['bot'] not in ttps:
-      ttps[info['bot']] = TTP(title=info['bot'])
-      stix_package.add_ttp(ttps[info['bot']])
+    for info in data['ips']:
+        if info['bot'] not in ttps:
+            ttps[info['bot']] = TTP(title=info['bot'])
+            stix_package.add_ttp(ttps[info['bot']])
 
-    indicator = Indicator(title=info['ip'])
-    indicator.add_indicator_type("IP Watchlist")
+        indicator = Indicator(title=info['ip'])
+        indicator.add_indicator_type("IP Watchlist")
 
-    addr = Address(address_value=info['ip'], category=Address.CAT_IPV4)
-    addr.condition = "Equals"
-    indicator.add_observable(addr)
-    indicator.add_indicated_ttp(TTP(idref=ttps[info['bot']].id_))
+        addr = Address(address_value=info['ip'], category=Address.CAT_IPV4)
+        addr.condition = "Equals"
+        indicator.add_observable(addr)
+        indicator.add_indicated_ttp(TTP(idref=ttps[info['bot']].id_))
 
-    stix_package.add_indicator(indicator)
+        stix_package.add_indicator(indicator)
 
-  print (stix_package.to_xml())
+    print(stix_package.to_xml())
 
 
 if __name__ == '__main__':

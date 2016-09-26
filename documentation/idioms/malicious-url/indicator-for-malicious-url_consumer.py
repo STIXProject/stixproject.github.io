@@ -3,7 +3,7 @@
 # See LICENSE.txt for complete terms.
 
 import sys
-from stix.core import STIXPackage, STIXHeader
+from stix.core import STIXPackage
 
 def parse_stix( pkg ):
     print("== MALWARE ==")

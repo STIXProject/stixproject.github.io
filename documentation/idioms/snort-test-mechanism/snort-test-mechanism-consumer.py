@@ -19,11 +19,11 @@ def main():
 
         for indicated_ttp in indicator.indicated_ttps:
             # Look up each TTP label
-            ttp = stix_package.find(indicated_ttp.item.idref) 
-            
+            ttp = stix_package.find(indicated_ttp.item.idref)
+
             for target in ttp.exploit_targets:
-                et = stix_package.find(target.item.idref) 
-                
+                et = stix_package.find(target.item.idref)
+
                 for vuln in et.vulnerabilities:
                     print("Indicated TTP: " + ttp.title + ":" + vuln.cve_id)
 
@@ -32,6 +32,6 @@ def main():
             print("Efficacy: " + tm.efficacy.value.value)
             for rule in tm.rules:
                 print("Rule: " + rule.value)
-    
+
 if __name__ == '__main__':
     main()

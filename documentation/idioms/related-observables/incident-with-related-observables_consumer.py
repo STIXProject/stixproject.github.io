@@ -3,7 +3,7 @@
 # See LICENSE.txt for complete terms.
 
 import sys
-from stix.core import STIXPackage, STIXHeader
+from stix.core import STIXPackage
 
 def parse_stix( pkg ):
     print("== INCIDENT ==")
@@ -14,7 +14,7 @@ def parse_stix( pkg ):
             print("File Name: " + str(obs.item.object_.properties.file_name))
             print("Filesize: " + str(obs.item.object_.properties.size_in_bytes))
             print("SHA256 Digest: " + str(obs.item.object_.properties.hashes[0].simple_hash_value))
-          
+
     return 0
 
 if __name__ == '__main__':
@@ -24,4 +24,3 @@ if __name__ == '__main__':
     stix_pkg = STIXPackage.from_xml(fd)
 
     parse_stix(stix_pkg)
-

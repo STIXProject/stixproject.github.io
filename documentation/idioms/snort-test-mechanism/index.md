@@ -80,25 +80,25 @@ indicator.test_mechanisms = [tm]
 stix_package = STIXPackage.from_xml('snort-test-mechanism.xml')
 
 for indicator in stix_package.indicators:
-        print("== INDICATOR ==")
-        print("Title: " + indicator.title)
-        print("Confidence: " + indicator.confidence.value.value)
+    print("== INDICATOR ==")
+    print("Title: " + indicator.title)
+    print("Confidence: " + indicator.confidence.value.value)
 
-        for indicated_ttp in indicator.indicated_ttps:
-            # Look up each TTP label
-            ttp = stix_package.find(indicated_ttp.item.idref) 
+    for indicated_ttp in indicator.indicated_ttps:
+        # Look up each TTP label
+        ttp = stix_package.find(indicated_ttp.item.idref) 
+        
+        for target in ttp.exploit_targets:
+            et = stix_package.find(target.item.idref) 
             
-            for target in ttp.exploit_targets:
-                et = stix_package.find(target.item.idref) 
-                
-                for vuln in et.vulnerabilities:
-                    print("Indicated TTP: " + ttp.title + ":" + vuln.cve_id)
+            for vuln in et.vulnerabilities:
+                print("Indicated TTP: " + ttp.title + ":" + vuln.cve_id)
 
-        for tm in indicator.test_mechanisms:
-            print("Producer: " + tm.producer.identity.name)
-            print("Efficacy: " + tm.efficacy.value.value)
-            for rule in tm.rules:
-                print("Rule: " + rule.value)
+    for tm in indicator.test_mechanisms:
+        print("Producer: " + tm.producer.identity.name)
+        print("Efficacy: " + tm.efficacy.value.value)
+        for rule in tm.rules:
+            print("Rule: " + rule.value)
 {% endhighlight %}{% include end_tabs.html %}
 
 [Full XML](snort-test-mechanism.xml) | [Python Producer](snort-test-mechanism-producer.py) | [Python Consumer](snort-test-mechanism-consumer.py)

@@ -105,15 +105,15 @@ ttp = TTP(title="Malware C2 Channel")
 ttp.resources = resource
 
 stix_package.add_ttp(ttp)
-print (stix_package.to_xml())
+print(stix_package.to_xml())
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 
 print("== TTP ==")
-    for thing in pkg.ttps:
-        print("Title: "+ str(thing.title))
-        print("Resource: " + str(thing.resources.infrastructure.types[0]))
-        for obs in pkg.observables.observables:
-            print("Observable: " + str(obs.object_.properties))
+for thing in pkg.ttps:
+    print("Title: "+ str(thing.title))
+    print("Resource: " + str(thing.resources.infrastructure.types[0]))
+    for obs in pkg.observables.observables:
+        print("Observable: " + str(obs.object_.properties))
 {% endhighlight %}{% include end_tabs.html %}  
 
 [Full XML](command-and-control-ip-list.xml) | [Python Producer](command-and-control-ip-list_producer.py) | [Python Consumer](command-and-control-ip-list_consumer.py)

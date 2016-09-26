@@ -11,7 +11,6 @@ from stix.core import STIXPackage
 from stix.indicator import Indicator
 from stix.indicator.test_mechanism import TestMechanisms
 from stix.ttp import TTP
-from stix.ttp import ExploitTargets
 from stix.exploit_target import ExploitTarget, Vulnerability
 from stix.extensions.test_mechanism.snort_test_mechanism import SnortTestMechanism
 from stix.common import Confidence, InformationSource, Identity
@@ -35,7 +34,7 @@ def main():
     stix_package.add_ttp(ttp)
 
     # Build the indicator
-    indicator = Indicator(title = "Snort Signature for Heartbleed")
+    indicator = Indicator(title="Snort Signature for Heartbleed")
     indicator.confidence = Confidence("High")
 
     tm = SnortTestMechanism()
@@ -50,8 +49,8 @@ def main():
     indicator.add_indicated_ttp(TTP(idref=ttp.id_))
 
     stix_package.add_indicator(indicator)
-    
-    print (stix_package.to_xml())
-    
+
+    print(stix_package.to_xml())
+
 if __name__ == '__main__':
     main()

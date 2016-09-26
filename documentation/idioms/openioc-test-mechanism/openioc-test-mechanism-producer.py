@@ -25,7 +25,7 @@ def main():
     ttp = TTP()
     malware_instance = MalwareInstance()
     malware_instance.names = ['Zeus', 'twexts', 'sdra64', 'ntos']
-    
+
     ttp = TTP(title="Zeus")
     ttp.behavior = Behavior()
     ttp.behavior.add_malware_instance(malware_instance)
@@ -44,8 +44,8 @@ def main():
 
     stix_package.add_indicator(indicator)
     stix_package.add_ttp(ttp)
-    
-    print (stix_package.to_xml())
-    
+
+    print(stix_package.to_xml())
+
 if __name__ == '__main__':
     main()

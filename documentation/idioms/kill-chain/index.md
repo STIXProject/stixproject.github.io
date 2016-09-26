@@ -89,29 +89,29 @@ indicator.kill_chain_phases = KillChainPhasesReference([
 ])
 stix_pkg.add_indicator(indicator)
 
-print (stix_pkg.to_xml())
+print(stix_pkg.to_xml())
 
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 kill_chains = {}
 kill_chain_phases = {}
 print("== TTP ==")
-    for chain in pkg.ttps.kill_chains:
-        kill_chains[chain.id_] = chain.name
-        print("--")
-        print("Name: " + chain.name)
-        print("Definer: " + chain.definer)
-        
-        for phase in chain.kill_chain_phases: 
-            kill_chain_phases[phase.phase_id] = str(phase.name)
-            print("Phase: " + str(phase.name))
+for chain in pkg.ttps.kill_chains:
+    kill_chains[chain.id_] = chain.name
+    print("--")
+    print("Name: " + chain.name)
+    print("Definer: " + chain.definer)
+    
+    for phase in chain.kill_chain_phases: 
+        kill_chain_phases[phase.phase_id] = str(phase.name)
+        print("Phase: " + str(phase.name))
 
-    print("== Indicator ==")
-    for indicator in pkg.indicators:
-        print("ID: " + indicator.id_)
-        for phase in indicator.kill_chain_phases:
-            print("  == Kill Chain Reference ==")
-            print("  Name: " + kill_chains[phase.kill_chain_id])
-            print("  Phase: " + kill_chain_phases[phase.phase_id])
+print("== Indicator ==")
+for indicator in pkg.indicators:
+    print("ID: " + indicator.id_)
+    for phase in indicator.kill_chain_phases:
+        print("  == Kill Chain Reference ==")
+        print("  Name: " + kill_chains[phase.kill_chain_id])
+        print("  Phase: " + kill_chain_phases[phase.phase_id])
 {% endhighlight %}{% include end_tabs.html %}
 
 [Full XML](kill-chain.xml) | [Python Producer](kill-chain_producer.py) | [Python Consumer](kill-chain_consumer.py)

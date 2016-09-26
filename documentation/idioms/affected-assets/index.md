@@ -77,32 +77,37 @@ property_affected.description_of_effect = "Data was exfiltrated, has not been de
 property_affected.non_public_data_compromised = "Yes"
 property_affected.non_public_data_compromised.data_encrypted = False
 
-affected_asset.nature_of_security_effect = property_affected
+security_effect_nature = NatureOfSecurityEffect()
+security_effect_nature.append(property_affected)
+
+affected_asset.nature_of_security_effect = security_effect_nature
+affected_assets = AffectedAssets()
+affected_assets.append(affected_asset)
 incident = Incident(title="Exfiltration from hr-data1.example.com")
-incident.affected_assets = affected_asset
+incident.affected_assets = affected_assets
 
 print incident.to_xml()
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
-print ("== INCIDENT Assets Impacted ==")
-    for inc in pkg.incidents:
-        print ("---")
-        print(("Title: "+ inc.title))
-        for asset in inc.affected_assets:
-            print ("---")
-            print(("Description: "+ str(asset.description)))
-            print(("Type: "+ str(asset.type_)))
-            print(("How many: "+ str(asset.type_.count_affected)))
-            print(("Role: " + str(asset.business_function_or_role )))
-            print(("Owner: " +str(asset.ownership_class )))
-            print(("Manager: " +str(asset.management_class )))
-            print(("Location: " +str(asset.location_class )))
+print("== INCIDENT Assets Impacted ==")
+for inc in pkg.incidents:
+    print("---")
+    print("Title: " + inc.title)
+    for asset in inc.affected_assets:
+        print("---")
+        print("Description: " + str(asset.description))
+        print("Type: " + str(asset.type_))
+        print("How many: " + str(asset.type_.count_affected))
+        print("Role: " + str(asset.business_function_or_role))
+        print("Owner: " + str(asset.ownership_class))
+        print("Manager: " + str(asset.management_class))
+        print("Location: " + str(asset.location_class))
 
-            for effect in asset.nature_of_security_effect:
-                print ("---")
-                print(("Lost:" + str(effect.property_ )))
-                print(("Effect:" + str(effect.description_of_effect )))
-                print(("Was private data stolen?: " + str(effect.non_public_data_compromised )))
-                print(("Was it encrypted?: " + str(effect.non_public_data_compromised.data_encrypted )))
+        for effect in asset.nature_of_security_effect:
+            print("---")
+            print("Lost:" + str(effect.property_))
+            print("Effect:" + str(effect.description_of_effect))
+            print("Was private data stolen?: " + str(effect.non_public_data_compromised))
+            print("Was it encrypted?: " + str(effect.non_public_data_compromised.data_encrypted))
 
 {% endhighlight %}{% include end_tabs.html %}
 

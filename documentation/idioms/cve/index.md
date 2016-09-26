@@ -47,11 +47,11 @@ et.add_vulnerability(vuln)
 print et.to_xml()
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 print("== VULNERABILITY ==")
-    for target in pkg.exploit_targets:
-        print("---")
-        print("Title : " + target.title)
-        for vuln in target.vulnerabilities:
-            print("CVE: " + vuln.cve_id)
+for target in pkg.exploit_targets:
+    print("---")
+    print("Title : " + target.title)
+    for vuln in target.vulnerabilities:
+        print("CVE: " + vuln.cve_id)
 
 {% endhighlight %}{% include end_tabs.html %}
 [Full XML](cve-in-exploit-target.xml) | [Python Producer](cve-in-exploit-target_producer.py) | [Python Consumer](cve-in-exploit-target_consumer.py)

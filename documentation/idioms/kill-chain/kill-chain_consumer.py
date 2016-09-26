@@ -3,7 +3,7 @@
 # See LICENSE.txt for complete terms.
 
 import sys
-from stix.core import STIXPackage, STIXHeader
+from stix.core import STIXPackage
 
 def parse_stix( pkg ):
     kill_chains = {}
@@ -14,8 +14,8 @@ def parse_stix( pkg ):
         print("--")
         print("Name: " + chain.name)
         print("Definer: " + chain.definer)
-        
-        for phase in chain.kill_chain_phases: 
+
+        for phase in chain.kill_chain_phases:
             kill_chain_phases[phase.phase_id] = str(phase.name)
             print("Phase: " + str(phase.name))
 
@@ -26,7 +26,7 @@ def parse_stix( pkg ):
             print("  == Kill Chain Reference ==")
             print("  Name: " + kill_chains[phase.kill_chain_id])
             print("  Phase: " + kill_chain_phases[phase.phase_id])
-        
+
     return 0
 
 if __name__ == '__main__':

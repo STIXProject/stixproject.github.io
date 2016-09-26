@@ -95,47 +95,46 @@ breach.reporter.identity.name = "Sample Investigations, LLC"
 # set incident-specific timestamps
 breach.time = incidentTime()
 breach.title = "Breach of CyberTech Dynamics"
-breach.time.initial_compromise = datetime.strptime("2012-01-30", "%Y-%m-%d") 
-breach.time.incident_discovery = datetime.strptime("2012-05-10", "%Y-%m-%d") 
-breach.time.restoration_achieved = datetime.strptime("2012-08-10", "%Y-%m-%d") 
-breach.time.incident_reported = datetime.strptime("2012-12-10", "%Y-%m-%d") 
+breach.time.initial_compromise = datetime.strptime("2012-01-30", "%Y-%m-%d")
+breach.time.incident_discovery = datetime.strptime("2012-05-10", "%Y-%m-%d")
+breach.time.restoration_achieved = datetime.strptime("2012-08-10", "%Y-%m-%d")
+breach.time.incident_reported = datetime.strptime("2012-12-10", "%Y-%m-%d")
 
 # add the impact
 impact = ImpactAssessment()
-impact.add_effect("Unintended Access")
+impact.effects = Effects("Unintended Access")
 breach.impact_assessment = impact
 
 # add the victim
-breach.add_victim ("CyberTech Dynamics")
+breach.add_victim("CyberTech Dynamics")
 
 # add the impact
 impact = ImpactAssessment()
-impact.add_effect("Financial Loss")
+impact.effects = Effects("Financial Loss")
 breach.impact_assessment = impact
 
 stix_package.add_incident(breach)
 
-print (stix_package)
+print(stix_package)
 
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 print("== INCIDENT ==")
+for inc in pkg.incidents:
+    print("---")
+    print("Reporter: " + inc.reporter.identity.name)
+    print("Title: "+ inc.title)
+    print("Description: "+ str(inc.description))
+    print("Confidence: "+ str(inc.confidence.value))
+    for impact in inc.impact_assessment.effects:
+        print("Impact: "+ str(impact))
     
-    for inc in pkg.incidents:
-        print("---")
-        print("Reporter: " + inc.reporter.identity.name)
-        print("Title: "+ inc.title)
-        print("Description: "+ str(inc.description))
-        print("Confidence: "+ str(inc.confidence.value))
-        for impact in inc.impact_assessment.effects:
-            print("Impact: "+ str(impact))
-        
-        print("Initial Compromise: "+ str(inc.time.initial_compromise.value))
-        print("Incident Discovery: "+ str(inc.time.incident_discovery.value))
-        print("Restoration Achieved: "+ str(inc.time.restoration_achieved.value))
-        print("Incident Reported: "+ str(inc.time.incident_reported.value))
+    print("Initial Compromise: "+ str(inc.time.initial_compromise.value))
+    print("Incident Discovery: "+ str(inc.time.incident_discovery.value))
+    print("Restoration Achieved: "+ str(inc.time.restoration_achieved.value))
+    print("Incident Reported: "+ str(inc.time.incident_reported.value))
 
-        for victim in inc.victims:
-            print("Victim: "+ str(victim.name))
+    for victim in inc.victims:
+        print("Victim: "+ str(victim.name))
 {% endhighlight %}{% include end_tabs.html %}
 
 [Full XML](sample.xml) | [Python Producer](simple-incident_producer.py) | [Python Consumer](simple-incident_consumer.py) 

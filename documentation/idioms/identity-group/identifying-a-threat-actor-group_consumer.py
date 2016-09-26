@@ -3,7 +3,7 @@
 # See LICENSE.txt for complete terms.
 
 import sys
-from stix.core import STIXPackage, STIXHeader
+from stix.core import STIXPackage
 
 def parse_stix( pkg ):
     print("== ACTOR ==")
@@ -14,11 +14,11 @@ def parse_stix( pkg ):
         print("Language: " + actor.identity.specification.languages[0].value)
         print("Country: " + str(actor.identity.specification.addresses[0].country.name_elements[0].value))
         print("Area: " + str(actor.identity.specification.addresses[0].administrative_area.name_elements[0].value))
-        
+
         for addr in actor.identity.specification.electronic_address_identifiers:
             print("Internet Address: " + str(addr.value))
-    
-    
+
+
     return 0
 
 if __name__ == '__main__':

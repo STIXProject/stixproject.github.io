@@ -35,7 +35,7 @@ def main():
 
     pkg.add_course_of_action(coa)
 
-    print (pkg.to_xml())
-    
+    print(pkg.to_xml())
+
 if __name__ == '__main__':
     main()

@@ -101,17 +101,17 @@ related_observable2 = RelatedObservable(observable2, relationship="Malicious Art
 incident.related_observables.append(related_observable1)
 incident.related_observables.append(related_observable2)
 
-print (incident.to_xml())
+print(incident.to_xml())
 
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 print("== INCIDENT ==")
-    for inc in pkg.incidents:
-        print("Title: " + inc.title)
-        for obs in inc.related_observables:
-            print("Relation: " + str(obs.relationship))
-            print("File Name: " + str(obs.item.object_.properties.file_name))
-            print("Filesize: " + str(obs.item.object_.properties.size_in_bytes))
-            print("SHA256 Digest: " + str(obs.item.object_.properties.hashes[0].simple_hash_value))
+for inc in pkg.incidents:
+    print("Title: " + inc.title)
+    for obs in inc.related_observables:
+        print("Relation: " + str(obs.relationship))
+        print("File Name: " + str(obs.item.object_.properties.file_name))
+        print("Filesize: " + str(obs.item.object_.properties.size_in_bytes))
+        print("SHA256 Digest: " + str(obs.item.object_.properties.hashes[0].simple_hash_value))
 
 {% endhighlight %}{% include end_tabs.html %}
 

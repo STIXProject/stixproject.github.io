@@ -78,10 +78,10 @@ for indicator in pkg.indicators:
 
 # Walk all campaigns
 for campaign in pkg.campaigns:
-  print ("Campaign: " + campaign.title)
+  print("Campaign: " + campaign.title)
   # And list relationships to indicators
   for indicator in campaign.related_indicators:
-    print ("  - Related To: " + indicators[indicator.item.idref].title)
+    print("  - Related To: " + indicators[indicator.item.idref].title)
 {% endhighlight %}{% include end_tabs.html %}
 
 <h2>New Style (Indicator => Campaign)</h2>
@@ -152,11 +152,11 @@ for campaign in pkg.campaigns:
 
 # Walk all campaigns
 for indicator in pkg.indicators:
-  print ("Indicator: " + indicator.title)
+  print("Indicator: " + indicator.title)
   # And list relationships to campaigns
   # Broken, see #192
   # for campaign in indicator.related_campaigns:
-  #   print ("  - Related To: " + campaigns[campaign.item.idref].title)
+  #   print("  - Related To: " + campaigns[campaign.item.idref].title)
 {% endhighlight %}
 {% include end_tabs.html %}
 
