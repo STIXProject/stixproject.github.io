@@ -121,15 +121,16 @@ print("== MALWARE ==")
 for tactic in pkg.ttps:
     print("---")
     print("Title : " + tactic.title)
-    for behave in tactic.behavior.attack_patterns:
 
-        print("CAPEC: " + str(behave.capec_id))
-        print("Description: " + str(behave.description))
-        
-    for sample in tactic.behavior.malware_instances:
+    if tactic.behavior.attack_patterns:
+        for behave in tactic.behavior.attack_patterns:
+            print("CAPEC: " + str(behave.capec_id))
+            print("Description: " + str(behave.description))
 
-        print("Sample: " + str(sample.names[0])) 
-        print("Type: " + str(sample.types[0]))
+    if tactic.behavior.malware_instances:
+        for sample in tactic.behavior.malware_instances:
+            print("Sample: " + str(sample.names[0]))
+            print("Type: " + str(sample.types[0]))
         
 print("== ACTOR ==")
 for actor in pkg.threat_actors:

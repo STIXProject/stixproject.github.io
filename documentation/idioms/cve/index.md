@@ -31,6 +31,9 @@ Representing the CVE ID is as easy as filling out the `CVE ID` field with a prop
     <et:Title>Javascript vulnerability in MSIE 6-11</et:Title>
     <et:Vulnerability>
         <et:CVE_ID>CVE-2013-3893</et:CVE_ID>
+        <et:References>
+            <stixCommon:Reference>https://technet.microsoft.com/library/security/2887505</stixCommon:Reference>
+        </et:References>
     </et:Vulnerability>
 </stixCommon:Exploit_Target>
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
@@ -40,6 +43,7 @@ from stix.exploit_target import ExploitTarget, Vulnerability
 
 vuln = Vulnerability()
 vuln.cve_id = "CVE-2013-3893"
+vuln.add_reference("https://technet.microsoft.com/library/security/2887505")
     
 et = ExploitTarget(title="Javascript vulnerability in MSIE 6-11")
 et.add_vulnerability(vuln)

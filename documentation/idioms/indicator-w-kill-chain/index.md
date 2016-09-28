@@ -56,6 +56,7 @@ exfil = KillChainPhase(name="Exfiltrate Data")
 mychain = KillChain(name="Organization-specific Kill Chain")
 
 mychain.kill_chain_phases = [infect, exfil]
+stix_pkg.ttps.add_ttp(TTP())
 stix_pkg.ttps.kill_chains.append(mychain)    
 stix_pkg.add_indicator(ind)
 

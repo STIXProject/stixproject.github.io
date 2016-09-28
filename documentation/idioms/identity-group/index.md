@@ -31,7 +31,7 @@ The STIX default extension for identity is [OASIS CIQ](https://www.oasis-open.or
                 <ExtSch:Specification xmlns:ExtSch="http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1">
   <xpil:PartyName xmlns:xpil="urn:oasis:names:tc:ciq:xpil:3">
     <xnl:OrganisationName xmlns:xnl="urn:oasis:names:tc:ciq:xnl:3" xnl:Type="CommonUse">
-      <xnl:NameElement>Disco Tean</xnl:NameElement>
+      <xnl:NameElement>Disco Team</xnl:NameElement>
     </xnl:OrganisationName>
     <xnl:OrganisationName xmlns:xnl="urn:oasis:names:tc:ciq:xnl:3" xnl:Type="UnofficialName">
       <xnl:NameElement>Equipo del Discoteca</xnl:NameElement>
@@ -70,7 +70,7 @@ ta.identity = CIQIdentity3_0Instance()
 identity_spec = STIXCIQIdentity3_0()
 
 identity_spec.party_name = PartyName()
-identity_spec.party_name.add_organisation_name(OrganisationName("Disco Tean", type_="CommonUse"))
+identity_spec.party_name.add_organisation_name(OrganisationName("Disco Team", type_="CommonUse"))
 identity_spec.party_name.add_organisation_name(OrganisationName("Equipo del Discoteca", type_="UnofficialName"))
 
 identity_spec.add_language("Spanish")

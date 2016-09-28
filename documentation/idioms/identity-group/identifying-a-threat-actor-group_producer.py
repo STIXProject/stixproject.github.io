@@ -21,7 +21,7 @@ def main():
     identity_spec = STIXCIQIdentity3_0()
 
     identity_spec.party_name = PartyName()
-    identity_spec.party_name.add_organisation_name(OrganisationName("Disco Tean", type_="CommonUse"))
+    identity_spec.party_name.add_organisation_name(OrganisationName("Disco Team", type_="CommonUse"))
     identity_spec.party_name.add_organisation_name(OrganisationName("Equipo del Discoteca", type_="UnofficialName"))
 
     identity_spec.add_language("Spanish")

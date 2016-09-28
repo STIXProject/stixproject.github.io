@@ -4,6 +4,7 @@ from stix.core import STIXPackage
 from stix.indicator import Indicator
 
 from stix.common.kill_chains import KillChainPhase, KillChain, KillChainPhaseReference, KillChainPhasesReference
+from stix.core.ttps import TTP
 
 def main():
     stix_pkg = STIXPackage()
@@ -32,6 +33,7 @@ def main():
     mychain.definer = "Myself"
 
     mychain.kill_chain_phases = [infect, exfil]
+    stix_pkg.ttps.add_ttp(TTP())
     stix_pkg.ttps.kill_chains.append(mychain)
 
     indicator = Indicator()
