@@ -20,7 +20,8 @@ def main():
 
     # Build the Exploit Target
     vuln = Vulnerability()
-    vuln.cve_id = "CVE-2013-3893"
+    vuln.cve_id = "CVE-2014-0160"
+    vuln.add_reference("http://heartbleed.com/")
 
     et = ExploitTarget(title="Heartbleed")
     et.add_vulnerability(vuln)
