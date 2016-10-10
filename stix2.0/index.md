@@ -29,7 +29,10 @@ title: CTI TC Development
                 <h4 class="list-group-item-heading">STIX 2.0 RC3</h4>
                 <p>STIX 2.0 RC3 is currently under the review phase:</p>
 					<ul>
-						<li><a href="https://docs.google.com/document/d/1IcA5KhglNdyX3tO17bBluC5nqSf70M5qgK9nuAoYJgw/edit#heading=h.t32x0azc539r" target="_blank">Google Docs</a></li>						
+						<li><a href="https://docs.google.com/document/d/1IcA5KhglNdyX3tO17bBluC5nqSf70M5qgK9nuAoYJgw/edit#heading=h.swto78n8l9sp" target="_blank">Part 1 (STIX Core) Conformance</a></li>						
+					</ul>
+					<ul>
+						<li><a href="https://docs.google.com/document/d/1S5XhY6F5OT599b0OuHtUf8IBzFvNY8RysFHIj93DgsY/edit#heading=h.dnm4ez5y24uh" target="_blank">Part 2 (STIX Object) Conformance</a></li>						
 					</ul>
               </li>			  			  
 			  <li class="list-group-item">                
