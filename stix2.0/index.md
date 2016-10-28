@@ -10,10 +10,14 @@ title: CTI TC Development
       <div class="panel-body">
         <div class="row row-fluid">
           <div class="col-md-4">
-            <h4>Co-Chairs</h4>
+            <h4>STIX Co-Chairs</h4>
             <p>Aharon Chernin, John Wunder</p>
             <h4>What is it?</h4>
             <p>Language for describing cyber threats</p>
+            <h4>STIX Observable Co-Chairs (Previously CybOX)</h4>
+            <p>Trey Darley, Ivan Kirillov</p>
+            <h4>What is it?</h4>
+            <p>Descriptions for cyber observable objects</p>
             <h4>Where is it?</h4>
             <ul>
               <li><a href="https://docs.google.com/document/d/1yvqWaPPnPW-2NiVCLqzRszcx91ffMowfT5MmE9Nsy_w/edit" target="_blank">Pre-Draft Specification</a></li>
@@ -24,64 +28,18 @@ title: CTI TC Development
           </div>
           <div class="col-md-8">
             <h3>STIX 2.0 Drafts</h3>
-            <ul class="list-group">	
-              <li class="list-group-item">                
-                <h4 class="list-group-item-heading">STIX 2.0 RC3</h4>
-                <p>STIX 2.0 RC3 is currently under the review phase:</p>
-					<ul>
-						<li><a href="https://docs.google.com/document/d/1IcA5KhglNdyX3tO17bBluC5nqSf70M5qgK9nuAoYJgw/edit#heading=h.swto78n8l9sp" target="_blank">Part 1 (STIX Core) Conformance</a></li>						
-					</ul>
-					<ul>
-						<li><a href="https://docs.google.com/document/d/1S5XhY6F5OT599b0OuHtUf8IBzFvNY8RysFHIj93DgsY/edit#heading=h.dnm4ez5y24uh" target="_blank">Part 2 (STIX Object) Conformance</a></li>						
-					</ul>
-              </li>			  			  
-			  <li class="list-group-item">                
-                <h4 class="list-group-item-heading">How to Provide Feedback</h4>
-                <p>Please make any further comments on the specification on the mailing list.</p>                
-              </li>			  
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="panel panel-default">
-      <div class="panel-heading"><a href="/stix2.0/#cybox3.0"><img src="http://cyboxproject.github.io/images/logo.png" alt="Cyber Observable eXpression (CybOX™)"  style="max-height: 75px;"></a></div>
-      <div class="panel-body">
-        <div class="row row-fluid">
-          <div class="col-md-4">
-            <h4>Co-Chairs</h4>
-            <p>Trey Darley and Ivan Kirillov</p>
-            <p>Descriptions of objects and events in cyberspace</p>
-            <h4>Where is it?</h4>
-            <ul>
-              <li><a href="https://docs.google.com/document/d/1eIl5iBR7vQd_8kgxFWt3bCaxG8WjtqutdjuW9n1iXaI/edit" target="_blank">Pre-Draft Specification</a></li>            
-              <li><a href="https://docs.google.com/document/d/1P6k0uqbAYDRpYG5jjgYAKBDEc_iSG0-SGFaXgaPkqyg/edit" target="_blank">Playground</a></li>
-              <li><a href="mailto:cti-cybox@oasis-open.org" target="_blank">Mailing List</a></li>
-              <li><a href="https://cti-tc.slack.com/messages/cybox/" target="_blank">Slack</a></li>
-            </ul>
-          </div>
-          <div class="col-md-8">
-            <h4>CybOX 3.0 Current Topics</h4>
-            <ul class="list-group">              
+            <ul class="list-group">
               <li class="list-group-item">
-                <span class="label label-info" style="float: right;">DEVELOPMENT</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1k5cZiiOgo4WjXN2GLRZ0-1vO8wstKnPZLbjwlb23Hkg/edit" target="_blank">Network Object Refactoring</a></h4>
-                <p>How network connections and related objects are captured by CybOX.</p>
+                <span class="label label-success" style="float: right;">REVIEW</span>
+                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1suvd7z7YjNKWOwgko-vJ84jfGuxSYZjOQlw5leCswPY" target="_blank">Patterning</a></h4>
+                <p>Specification for patterning against STIX Cyber Observables, used mostly in Indicators.</p>
                 <p>Slack: <a href="https://cti-tc.slack.com/messages/cybox/">#cybox</a></p>
               </li>
               <li class="list-group-item">
-                <span class="label label-info" style="float: right;">DEVELOPMENT</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1suvd7z7YjNKWOwgko-vJ84jfGuxSYZjOQlw5leCswPY/edit" target="_blank">Patterning</a></h4>
-                <p>Developing an approach for how the CybOX object model can be used for patterns in STIX indicators as well as other places.</p>
-                <p>Slack: <a href="https://cti-tc.slack.com/messages/patterning/">#patterning</a></p>
+                <span class="label label-success" style="float: right;">REVIEW</span>
+                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1yvqWaPPnPW-2NiVCLqzRszcx91ffMowfT5MmE9Nsy_w">STIX 2.0 RC3 Review</a></h4>
+                <p>STIX 2.0 RC3 is currently under the review phase. Please provide further comments on the specification on the mailing list. Note that the CybOX documents have been merged into STIX per community ballot and are available as part of the STIX work product (Parts 3a and 3b).</p>
               </li>
-		      <li class="list-group-item">
-                <span class="label label-default" style="float: right;">CONCEPT</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1oPAHN6nitdVF60RuDlajq0VuN6S_p_RP3ZE48yOBBfQ/edit#heading=h.irq8v1ffyaxy" target="_blank">Email</a></h4>
-                <p>How email is captured by CybOX.</p>
-                <p>Slack: <a href="https://cti-tc.slack.com/messages/cybox/">#cybox</a></p>
-              </li>			  
             </ul>
           </div>
         </div>
