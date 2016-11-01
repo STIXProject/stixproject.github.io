@@ -10,6 +10,7 @@ For installation instructions, please refer to https://github.com/STIXProject/py
 from stix.core import STIXPackage
 from lxml import etree
 
+
 def main():
     stix_package = STIXPackage.from_xml('openioc-test-mechanism.xml')
 
@@ -27,6 +28,6 @@ def main():
             print("== IOC ==")
             print(etree.tostring(tm.ioc))
             print("== ENDIOC ==")
-    
+
 if __name__ == '__main__':
     main()

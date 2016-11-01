@@ -17,6 +17,7 @@ from stix.common import InformationSource, Identity
 from cybox.common import Time
 from lxml import etree
 
+
 def main():
     ioc = etree.parse('6d2a1b03-b216-4cd8-9a9e-8827af6ebf93.ioc')
 
@@ -34,7 +35,7 @@ def main():
 
     tm = OpenIOCTestMechanism()
     tm.ioc = ioc
-    tm.producer = InformationSource(identity=Identity(name="Yara"))
+    tm.producer = InformationSource(identity=Identity(name="Mandiant"))
     time = Time()
     time.produced_time = "0001-01-01T00:00:00"
     tm.producer.time = time

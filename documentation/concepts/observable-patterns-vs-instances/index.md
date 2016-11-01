@@ -65,4 +65,4 @@ The below example specifies an observable pattern for any of a set of three full
 </indicator:Observable>
 {% endhighlight %}
 
-For guidance on where each form is more appropriate to use see [Suggested Practices: Observable Instances vs Observable Patterns](../../suggested-practices/#observable-instance-or-observable-pattern)
+For guidance on where each form is more appropriate to use see [Suggested Practices: Observable Instances vs Observable Patterns](../../suggested-practices/#observable-instance-or-observable-pattern).

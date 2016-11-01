@@ -26,12 +26,10 @@ title: CTI TC Development
             <h3>STIX 2.0 Drafts</h3>
             <ul class="list-group">	
               <li class="list-group-item">                
-                <h4 class="list-group-item-heading">STIX 2.0 RC1</h4>
-                <p>STIX 2.0 RC1 is currently under the review phase:</p>
+                <h4 class="list-group-item-heading">STIX 2.0 RC3</h4>
+                <p>STIX 2.0 RC3 is currently under the review phase:</p>
 					<ul>
-						<li><a href="https://docs.google.com/document/d/1HJqhvzO35h62gQGPvghVRIAtQrZn3_J__0UcDAj-NXY/edit#" target="_blank">Google Docs</a></li>
-						<li><a href="https://www.oasis-open.org/apps/org/workgroup/cti/document.php?document_id=58743" target="_blank">Online on Kavi</a></li>
-						<li><a href="stixdocs/STIX2.0Specification.docx" target="_blank">Word Version</a></li>						
+						<li><a href="https://docs.google.com/document/d/1IcA5KhglNdyX3tO17bBluC5nqSf70M5qgK9nuAoYJgw/edit#heading=h.t32x0azc539r" target="_blank">Google Docs</a></li>						
 					</ul>
               </li>			  			  
 			  <li class="list-group-item">                

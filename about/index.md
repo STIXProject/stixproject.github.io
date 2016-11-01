@@ -50,7 +50,7 @@ In addition to the MITRE samples, community members have set up [TAXII](http://t
 
 #### How do I use STIX? What tools/utilities are available for this effort?
 
-The primary way to use STIX is of course via commercial products. See ["Who is using STIX?"](/about/#who-is-using-stix?) for more information.
+The primary way to use STIX is of course via commercial products. See ["Who is using STIX?"](#who-is-using-stix) for more information.
 
 If you're developing a product or tool, the current STIX reference implementation is in XML so any XML libraries are suitable for producing and consuming STIX XML. The project also maintains open-source [Python bindings](https://github.com/STIXProject/python-stix) and other [Utilities](https://gibhub.com/STIXProject) to make working with STIX at the code level easier. [Documentation](/documentation) and [Suggested Practices](/documentation/suggested-practices), as well as [Examples](/documentation/idioms), can help you understand how to use the STIX Language conceptually (beyond just producing the XML).
 
