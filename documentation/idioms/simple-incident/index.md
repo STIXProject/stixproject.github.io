@@ -106,7 +106,9 @@ impact.effects = Effects("Unintended Access")
 breach.impact_assessment = impact
 
 # add the victim
-breach.add_victim("CyberTech Dynamics")
+victim = Identity()
+victim.name = "CyberTech Dynamics"
+breach.add_victim(victim)
 
 # add the impact
 impact = ImpactAssessment()
