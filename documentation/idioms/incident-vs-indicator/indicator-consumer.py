@@ -10,24 +10,24 @@ For installation instructions, please refer to https://github.com/STIXProject/py
 from stix.core import STIXPackage
 
 def main():
-  stix_package = STIXPackage.from_xml('sample-indicators.xml')
+    stix_package = STIXPackage.from_xml('sample-indicators.xml')
 
-  data = {
-    'indicators': {
+    data = {
+        'indicators': {
+        }
     }
-  }
 
-  ttps = {}
-  for ttp in stix_package.ttps:
-    ttps[ttp.id_] = ttp
-    data['indicators'][ttp.title] = []
+    ttps = {}
+    for ttp in stix_package.ttps:
+        ttps[ttp.id_] = ttp
+        data['indicators'][ttp.title] = []
 
-  for indicator in stix_package.indicators:
-    ip = indicator.observable.object_.properties.address_value.value
-    ttp = ttps[indicator.indicated_ttps[0].item.idref]
-    data['indicators'][ttp.title].append(ip)
+    for indicator in stix_package.indicators:
+        ip = indicator.observable.object_.properties.address_value.value
+        ttp = ttps[indicator.indicated_ttps[0].item.idref]
+        data['indicators'][ttp.title].append(ip)
 
-  print data
+    print(data)
 
 if __name__ == '__main__':
   main()

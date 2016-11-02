@@ -191,36 +191,38 @@ email_subject_indicator.add_indicated_ttp(TTP(idref=ttp.id_))
 indicator_attachment.add_indicated_ttp(TTP(idref=ttp.id_))
 combined_indicator.add_indicated_ttp(TTP(idref=ttp.id_))
 
-stix_package.indicators = [combined_indicator, email_subject_indicator, indicator_attachment]
-print stix_package.to_xml()
+stix_package.add_indicator(combined_indicator)
+stix_package.add_indicator(email_subject_indicator)
+stix_package.add_indicator(indicator_attachment)
+print(stix_package.to_xml())
 
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 
-print "== EMAIL =="
+print("== EMAIL ==")
 for ind in pkg.indicators:
-    print "---"
-    print "Title : " + ind.title
-    print "ID : " + ind.id_
+    print("---")
+    print("Title : " + ind.title)
+    print("ID : " + ind.id_)
     for ind_type in ind.indicator_types:
-        print "Type: " + str(ind_type)
+        print("Type: " + str(ind_type))
         
-    print "Confidence: " + str(ind.confidence.value)
+    print("Confidence: " + str(ind.confidence.value))
     
     # look up ttp from list in package
     for ref_ttp in ind.indicated_ttps:
-        print "TTP: " + str(pkg.find(ref_ttp.item.idref).title)
+        print("TTP: " + str(pkg.find(ref_ttp.item.idref).title))
     
     for obs in ind.observables:
         if obs.object_.related_objects:
             #  attachment is inline
-            print "Attachment ID: " + str(obs.object_.id_)
-            print "Attachment Filename: " + str(obs.object_.related_objects[0].properties.file_name)
-            print "Attachment File extension: " + str(obs.object_.related_objects[0].properties.file_extension)
-            print "Relationship: " + str(obs.object_.related_objects[0].relationship)
+            print("Attachment ID: " + str(obs.object_.id_))
+            print("Attachment Filename: " + str(obs.object_.related_objects[0].properties.file_name))
+            print("Attachment File extension: " + str(obs.object_.related_objects[0].properties.file_extension))
+            print("Relationship: " + str(obs.object_.related_objects[0].relationship))
         elif obs.object_.properties.header:
-            print "Subject : " + str(obs.object_.properties.header.subject)
+            print("Subject : " + str(obs.object_.properties.header.subject))
             if obs.object_.properties.attachments:
-                print "Attachment -> : " + str(obs.object_.properties.attachments[0].object_reference)
+                print("Attachment -> : " + str(obs.object_.properties.attachments[0].object_reference))
         
 
 {% endhighlight %}{% include end_tabs.html %}

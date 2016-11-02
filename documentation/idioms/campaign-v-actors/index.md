@@ -93,23 +93,23 @@ c.related_incidents.append(Incident(idref="example:incident-7d8cf96f-91cb-42d0-a
 pkg = STIXPackage()
 pkg.add_campaign(c)
 
-print pkg.to_xml()
+print(pkg.to_xml())
 
 
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 
 for camp in pkg.campaigns:
-    print "== CAMPAIGN =="
-    print "Campaign Name: " + str(camp.title)
+    print("== CAMPAIGN ==")
+    print("Campaign Name: " + str(camp.title))
     
     for tactic in camp.related_ttps:
-        print "TTP: " + tactic.item.title
+        print("TTP: " + tactic.item.title)
         
     for attrib in camp.attribution:
-        print "Actor: " + attrib[0].item.title
+        print("Actor: " + attrib[0].item.title)
     
     for rel in camp.related_incidents:
-        print "Related Incident ID: " + str(rel.item.idref)
+        print("Related Incident ID: " + str(rel.item.idref))
 
 {% endhighlight %}{% include end_tabs.html %}
 [Full XML](campaign-v-actors.xml) | [Python Producer](campaign-v-actors_producer.py) | [Python Consumer](campaign-v-actors_consumer.py)

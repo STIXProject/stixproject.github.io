@@ -113,7 +113,7 @@ for indicator in stix_package.indicators:
   ttp = ttps[indicator.indicated_ttps[0].item.idref]
   data['indicators'][ttp.title].append(ip)
 
-print data
+print(data)
 {% endhighlight %}{% include end_tabs.html %}
 
 ### As Incidents
@@ -210,7 +210,7 @@ for incident in stix_package.incidents:
     'time': time
   })
 
-print data
+print(data)
 {% endhighlight %}{% include end_tabs.html %}
 
 ### Both Indicators and Incidents
@@ -347,7 +347,7 @@ for incident in stix_package.incidents:
     'pattern': "IP %(condition)s(%(ip)s)" % {'condition': address_value.condition, 'ip': address_value.value}
   })
 
-print data
+print(data)
 {% endhighlight %}{% include end_tabs.html %}
 
 ## Summary

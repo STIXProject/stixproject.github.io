@@ -112,32 +112,33 @@ stix_package.add_ttp(ttp_phishing)
 stix_package.add_ttp(ttp_pivy)
 stix_package.add_threat_actor(ta_bravo)
 
-print stix_package.to_xml()
+print(stix_package.to_xml())
 
 
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 
-print "== MALWARE =="    
+print("== MALWARE ==")    
 for tactic in pkg.ttps:
-    print "---"
-    print "Title : " + tactic.title
-    for behave in tactic.behavior.attack_patterns:
+    print("---")
+    print("Title : " + tactic.title)
 
-        print "CAPEC: " + str(behave.capec_id)
-        print "Description: " + str(behave.description)
-        
-    for sample in tactic.behavior.malware_instances:
+    if tactic.behavior.attack_patterns:
+        for behave in tactic.behavior.attack_patterns:
+            print("CAPEC: " + str(behave.capec_id))
+            print("Description: " + str(behave.description))
 
-        print "Sample: " + str(sample.names[0]) 
-        print "Type: " + str(sample.types[0])
+    if tactic.behavior.malware_instances:
+        for sample in tactic.behavior.malware_instances:
+            print("Sample: " + str(sample.names[0]))
+            print("Type: " + str(sample.types[0]))
         
-print "== ACTOR =="
+print("== ACTOR ==")
 for actor in pkg.threat_actors:
     for obs in actor.observed_ttps:
-        print "RelatedTTP: " + str(pkg.find(obs.item.idref).title)
-        print "Relationship: " + str(obs.relationship)
-    print "Title: " + str(actor.title)
-    print "Name: " + str(actor.identity.name)
+        print("RelatedTTP: " + str(pkg.find(obs.item.idref).title))
+        print("Relationship: " + str(obs.relationship))
+    print("Title: " + str(actor.title))
+    print("Name: " + str(actor.identity.name))
 {% endhighlight %}{% include end_tabs.html %}
 
 [Full XML](threat-actor-leveraging-attack-patterns-and-malware.xml) | [Python Producer](threat-actor-leveraging-attack-patterns-and-malware_producer.py) | [Python Consumer](threat-actor-leveraging-attack-patterns-and-malware_consumer.py)

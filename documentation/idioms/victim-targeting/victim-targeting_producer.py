@@ -32,7 +32,7 @@ def main():
     pkg.add_campaign(c)
     pkg.add_ttp(ttp)
 
-    print pkg.to_xml()
+    print(pkg.to_xml())
 
 if __name__ == '__main__':
     main()

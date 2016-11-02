@@ -70,19 +70,19 @@ indicator.test_mechanisms = [tm]
 stix_package = STIXPackage.from_xml('openioc-test-mechanism.xml')
 
 for indicator in stix_package.indicators:
-    print "== INDICATOR =="
-    print "Title: " + indicator.title
-    print "Description: " + indicator.description.value
+    print("== INDICATOR ==")
+        print("Title: " + indicator.title)
+        print("Description: " + indicator.description.value)
 
-    for indicated_ttp in indicator.indicated_ttps:
-        ttp = stix_package.find(indicated_ttp.item.idref) 
-        print "Indicated TTP: " + ttp.title
+        for indicated_ttp in indicator.indicated_ttps:
+            ttp = stix_package.find(indicated_ttp.item.idref) 
+            print("Indicated TTP: " + ttp.title)
 
-    for tm in indicator.test_mechanisms:
-        print "Producer: " + tm.producer.identity.name
-        print "== IOC =="
-        print etree.tostring(tm.ioc)
-        print "== ENDIOC =="
+        for tm in indicator.test_mechanisms:
+            print("Producer: " + tm.producer.identity.name)
+            print("== IOC ==")
+            print(etree.tostring(tm.ioc))
+            print("== ENDIOC ==")
 {% endhighlight %}{% include end_tabs.html %}
 
 [Full XML](openioc-test-mechanism.xml) | [Python Producer](openioc-test-mechanism-producer.py) | [Python Consumer](openioc-test-mechanism-consumer.py)

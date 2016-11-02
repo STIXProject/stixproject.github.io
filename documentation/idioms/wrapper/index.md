@@ -146,8 +146,7 @@ wrapper.add_campaign(campaign)
 wrapper.add_ttp(ttp)
 
 
-
-print wrapper.to_xml()
+print(wrapper.to_xml())
 
 {% endhighlight %}
 

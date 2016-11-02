@@ -17,34 +17,34 @@ from cybox.objects.address_object import Address
 
 def main():
 
-  data = json.load(open("data.json"))
+    data = json.load(open("data.json"))
 
-  stix_package = STIXPackage(stix_header=STIXHeader(title=data['title'], package_intents='Incident'))
+    stix_package = STIXPackage(stix_header=STIXHeader(title=data['title'], package_intents='Incident'))
 
-  ttps = {}
+    ttps = {}
 
-  for info in data['ips']:
-    if info['bot'] not in ttps:
-      ttps[info['bot']] = TTP(title=info['bot'])
-      stix_package.add_ttp(ttps[info['bot']])
+    for info in data['ips']:
+        if info['bot'] not in ttps:
+            ttps[info['bot']] = TTP(title=info['bot'])
+            stix_package.add_ttp(ttps[info['bot']])
 
-    incident = Incident(title=info['ip'])
-    incident.time = Time()
-    incident.time.first_malicious_action = info['first_seen']
+        incident = Incident(title=info['ip'])
+        incident.time = Time()
+        incident.time.first_malicious_action = info['first_seen']
 
-    addr = Address(address_value=info['ip'], category=Address.CAT_IPV4)
-    observable = Observable(item=addr)
-    stix_package.add_observable(observable)
+        addr = Address(address_value=info['ip'], category=Address.CAT_IPV4)
+        observable = Observable(item=addr)
+        stix_package.add_observable(observable)
 
-    related_ttp = RelatedTTP(TTP(idref=ttps[info['bot']].id_), relationship="Used Malware")
-    incident.leveraged_ttps.append(related_ttp)
+        related_ttp = RelatedTTP(TTP(idref=ttps[info['bot']].id_), relationship="Used Malware")
+        incident.leveraged_ttps.append(related_ttp)
 
-    related_observable = RelatedObservable(Observable(idref=observable.id_))
-    incident.related_observables.append(related_observable)
+        related_observable = RelatedObservable(Observable(idref=observable.id_))
+        incident.related_observables.append(related_observable)
 
-    stix_package.add_incident(incident)
+        stix_package.add_incident(incident)
 
-  print stix_package.to_xml()
+    print(stix_package.to_xml())
 
 
 if __name__ == '__main__':

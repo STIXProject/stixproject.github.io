@@ -123,7 +123,7 @@ identity.name = "John Smith"
 {% endhighlight %}
 {% include tab_separator.html %}
 {% highlight python linenos %}
-print identity.name # "John Smith"
+print(identity.name) # "John Smith"
 {% endhighlight %}
 {% include end_tabs.html %}
 
@@ -150,7 +150,7 @@ ciq_identity.specification = identity_spec
 {% endhighlight %}
 {% include tab_separator.html %}
 {% highlight python linenos %}
-print identity.specification.organisation_info.industry_type # Defense Industrial Base
+print(identity.specification.organisation_info.industry_type) # Defense Industrial Base
 {% endhighlight %}
 {% include end_tabs.html %}
 
@@ -202,11 +202,11 @@ identity.specification = identity_spec
 {% include tab_separator.html %}
   {% highlight python linenos %}
 for name_line in identity.specification.party_name.name_lines:
-  print name_line.type # LastName or FirstName
-  print name_line.value # John or Smith
+  print(name_line.type) # LastName or FirstName
+  print(name_line.value) # John or Smith
 
 # Or, simpler consumers may do
-print identity.name # John Smith
+print(identity.name) # John Smith
   {% endhighlight %}
 {% include end_tabs.html %}
 

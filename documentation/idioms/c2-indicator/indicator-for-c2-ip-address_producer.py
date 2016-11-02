@@ -5,7 +5,6 @@
 from stix.core import STIXPackage
 from stix.indicator import Indicator
 from stix.ttp import TTP
-from cybox.core import Observable
 from cybox.objects.address_object import Address
 
 
@@ -24,7 +23,7 @@ def main():
     stix_package.add_indicator(indicator)
     stix_package.add_ttp(ttp)
 
-    print stix_package.to_xml()
+    print(stix_package.to_xml())
 
 if __name__ == '__main__':
     main()

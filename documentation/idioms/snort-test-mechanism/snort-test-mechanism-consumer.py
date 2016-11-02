@@ -13,25 +13,25 @@ def main():
     stix_package = STIXPackage.from_xml('snort-test-mechanism.xml')
 
     for indicator in stix_package.indicators:
-        print "== INDICATOR =="
-        print "Title: " + indicator.title
-        print "Confidence: " + indicator.confidence.value.value
+        print("== INDICATOR ==")
+        print("Title: " + indicator.title)
+        print("Confidence: " + indicator.confidence.value.value)
 
         for indicated_ttp in indicator.indicated_ttps:
             # Look up each TTP label
-            ttp = stix_package.find(indicated_ttp.item.idref) 
-            
+            ttp = stix_package.find(indicated_ttp.item.idref)
+
             for target in ttp.exploit_targets:
-                et = stix_package.find(target.item.idref) 
-                
+                et = stix_package.find(target.item.idref)
+
                 for vuln in et.vulnerabilities:
-                    print "Indicated TTP: " + ttp.title + ":" + vuln.cve_id
+                    print("Indicated TTP: " + ttp.title + ":" + vuln.cve_id)
 
         for tm in indicator.test_mechanisms:
-            print "Producer: " + tm.producer.identity.name
-            print "Efficacy: " + tm.efficacy.value.value
+            print("Producer: " + tm.producer.identity.name)
+            print("Efficacy: " + tm.efficacy.value.value)
             for rule in tm.rules:
-                print "Rule: " + rule.value
-    
+                print("Rule: " + rule.value)
+
 if __name__ == '__main__':
     main()

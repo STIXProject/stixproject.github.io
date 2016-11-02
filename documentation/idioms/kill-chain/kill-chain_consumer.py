@@ -3,30 +3,30 @@
 # See LICENSE.txt for complete terms.
 
 import sys
-from stix.core import STIXPackage, STIXHeader
+from stix.core import STIXPackage
 
 def parse_stix( pkg ):
     kill_chains = {}
     kill_chain_phases = {}
-    print "== TTP =="
+    print("== TTP ==")
     for chain in pkg.ttps.kill_chains:
         kill_chains[chain.id_] = chain.name
-        print "--"
-        print "Name: " + chain.name
-        print "Definer: " + chain.definer
-        
-        for phase in chain.kill_chain_phases: 
-            kill_chain_phases[phase.phase_id] = str(phase.name)
-            print "Phase: " + str(phase.name)
+        print("--")
+        print("Name: " + chain.name)
+        print("Definer: " + chain.definer)
 
-    print "== Indicator =="
+        for phase in chain.kill_chain_phases:
+            kill_chain_phases[phase.phase_id] = str(phase.name)
+            print("Phase: " + str(phase.name))
+
+    print("== Indicator ==")
     for indicator in pkg.indicators:
-        print "ID: " + indicator.id_
+        print("ID: " + indicator.id_)
         for phase in indicator.kill_chain_phases:
-            print "  == Kill Chain Reference =="
-            print "  Name: " + kill_chains[phase.kill_chain_id]
-            print "  Phase: " + kill_chain_phases[phase.phase_id]
-        
+            print("  == Kill Chain Reference ==")
+            print("  Name: " + kill_chains[phase.kill_chain_id])
+            print("  Phase: " + kill_chain_phases[phase.phase_id])
+
     return 0
 
 if __name__ == '__main__':

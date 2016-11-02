@@ -8,11 +8,8 @@ For installation instructions, please refer to https://github.com/STIXProject/py
 '''
 
 from stix.core import STIXPackage
-from stix.incident import (Incident, RelatedObservables, AffectedAsset, PropertyAffected)
-from stix.common.related import (RelatedObservable)
-from cybox.core import Observable
-from cybox.common import Hash
-from cybox.objects.file_object import File
+from stix.incident import (Incident, AffectedAssets, AffectedAsset, PropertyAffected)
+from stix.incident.affected_asset import NatureOfSecurityEffect
 
 def main():
     pkg = STIXPackage()
@@ -31,13 +28,18 @@ def main():
     property_affected.non_public_data_compromised = "Yes"
     property_affected.non_public_data_compromised.data_encrypted = False
 
-    affected_asset.nature_of_security_effect = property_affected
+    security_effect_nature = NatureOfSecurityEffect()
+    security_effect_nature.append(property_affected)
+
+    affected_asset.nature_of_security_effect = security_effect_nature
+    affected_assets = AffectedAssets()
+    affected_assets.append(affected_asset)
     incident = Incident(title="Exfiltration from hr-data1.example.com")
-    incident.affected_assets = affected_asset
+    incident.affected_assets = affected_assets
 
     pkg.add_incident(incident)
 
-    print pkg.to_xml()
+    print(pkg.to_xml())
 
 if __name__ == '__main__':
     main()

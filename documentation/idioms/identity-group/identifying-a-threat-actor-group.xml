@@ -24,32 +24,32 @@
             <ta:Title>Disco Team Threat Actor Group</ta:Title>
             <ta:Identity id="example:Identity-733c5838-34d9-4fbf-949c-62aba761184c" xsi:type='stix-ciqidentity:CIQIdentity3.0InstanceType'>
                 <ExtSch:Specification xmlns:ExtSch="http://stix.mitre.org/extensions/Identity#CIQIdentity3.0-1">
-  <xpil:PartyName xmlns:xpil="urn:oasis:names:tc:ciq:xpil:3">
-    <xnl:OrganisationName xmlns:xnl="urn:oasis:names:tc:ciq:xnl:3" xnl:Type="CommonUse">
-      <xnl:NameElement>Disco Tean</xnl:NameElement>
-    </xnl:OrganisationName>
-    <xnl:OrganisationName xmlns:xnl="urn:oasis:names:tc:ciq:xnl:3" xnl:Type="UnofficialName">
-      <xnl:NameElement>Equipo del Discoteca</xnl:NameElement>
-    </xnl:OrganisationName>
-  </xpil:PartyName>
-  <xpil:Addresses xmlns:xpil="urn:oasis:names:tc:ciq:xpil:3">
-    <xpil:Address>
-      <xal:Country xmlns:xal="urn:oasis:names:tc:ciq:xal:3">
-        <xal:NameElement>United States</xal:NameElement>
-      </xal:Country>
-      <xal:AdministrativeArea xmlns:xal="urn:oasis:names:tc:ciq:xal:3">
-        <xal:NameElement>California</xal:NameElement>
-      </xal:AdministrativeArea>
-    </xpil:Address>
-  </xpil:Addresses>
-  <xpil:ElectronicAddressIdentifiers xmlns:xpil="urn:oasis:names:tc:ciq:xpil:3">
-    <xpil:ElectronicAddressIdentifier>disco-team@stealthemail.com</xpil:ElectronicAddressIdentifier>
-    <xpil:ElectronicAddressIdentifier>facebook.com/thediscoteam</xpil:ElectronicAddressIdentifier>
-  </xpil:ElectronicAddressIdentifiers>
-  <xpil:Languages xmlns:xpil="urn:oasis:names:tc:ciq:xpil:3">
-    <xpil:Language>Spanish</xpil:Language>
-  </xpil:Languages>
-</ExtSch:Specification>
+                  <xpil:PartyName xmlns:xpil="urn:oasis:names:tc:ciq:xpil:3">
+                    <xnl:OrganisationName xmlns:xnl="urn:oasis:names:tc:ciq:xnl:3" xnl:Type="CommonUse">
+                      <xnl:NameElement>Disco Tean</xnl:NameElement>
+                    </xnl:OrganisationName>
+                    <xnl:OrganisationName xmlns:xnl="urn:oasis:names:tc:ciq:xnl:3" xnl:Type="UnofficialName">
+                      <xnl:NameElement>Equipo del Discoteca</xnl:NameElement>
+                    </xnl:OrganisationName>
+                  </xpil:PartyName>
+                  <xpil:Addresses xmlns:xpil="urn:oasis:names:tc:ciq:xpil:3">
+                    <xpil:Address>
+                      <xal:Country xmlns:xal="urn:oasis:names:tc:ciq:xal:3">
+                        <xal:NameElement>United States</xal:NameElement>
+                      </xal:Country>
+                      <xal:AdministrativeArea xmlns:xal="urn:oasis:names:tc:ciq:xal:3">
+                        <xal:NameElement>California</xal:NameElement>
+                      </xal:AdministrativeArea>
+                    </xpil:Address>
+                  </xpil:Addresses>
+                  <xpil:ElectronicAddressIdentifiers xmlns:xpil="urn:oasis:names:tc:ciq:xpil:3">
+                    <xpil:ElectronicAddressIdentifier>disco-team@stealthemail.com</xpil:ElectronicAddressIdentifier>
+                    <xpil:ElectronicAddressIdentifier>facebook.com/thediscoteam</xpil:ElectronicAddressIdentifier>
+                  </xpil:ElectronicAddressIdentifiers>
+                  <xpil:Languages xmlns:xpil="urn:oasis:names:tc:ciq:xpil:3">
+                    <xpil:Language>Spanish</xpil:Language>
+                  </xpil:Languages>
+                </ExtSch:Specification>
             </ta:Identity>
         </stix:Threat_Actor>
     </stix:Threat_Actors>

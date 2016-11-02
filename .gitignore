@@ -1,6 +1,7 @@
 _site
 Gemfile.lock
 
-documentation/idioms/*/out.*
+documentation/idioms/*/*out.*
+documentation/idioms/*/*parsed.*
 # Ignore a locally-installed version of stix-validator
 stix-validator

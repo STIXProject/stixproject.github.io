@@ -10,14 +10,14 @@ For installation instructions, please refer to https://github.com/STIXProject/py
 from stix.core import STIXPackage
 
 def main():
-  stix_package = STIXPackage.from_xml('indicator-for-c2-ip-address.xml')
+    stix_package = STIXPackage.from_xml('indicator-for-c2-ip-address.xml')
 
-  for indicator in stix_package.indicators:
-    print "--INDICATOR--"
-    ip = indicator.observable.object_.properties.address_value.value
-    print "IP: " + ip
-    for ttp in stix_package.ttps:
-      print "TTP: " + ttp.title
+    for indicator in stix_package.indicators:
+        print("--INDICATOR--")
+        ip = indicator.observable.object_.properties.address_value.value
+        print("IP: " + ip)
+        for ttp in stix_package.ttps:
+            print("TTP: " + ttp.title)
 
 
 if __name__ == '__main__':

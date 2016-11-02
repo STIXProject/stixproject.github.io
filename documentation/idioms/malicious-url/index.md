@@ -43,27 +43,27 @@ indicator = Indicator()
 indicator.id_ = "example:package-382ded87-52c9-4644-bab0-ad3168cbad50"
 indicator.title = "Malicious site hosting downloader"
 indicator.add_indicator_type("URL Watchlist")
-    
+
 url = URI()
 url.value = "http://x4z9arb.cn/4712"
 url.type_ =  URI.TYPE_URL
 url.condition = "Equals"
-    
+
 indicator.add_observable(url)
-print indicator.to_xml()
+print(indicator.to_xml())
 
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 
-print "== MALWARE =="
+print("== MALWARE ==")
 for ind in pkg.indicators:
-    print "---"
-    print "Title : " + ind.title
-    print "ID : " + ind.id_
+    print("---")
+    print("Title : " + ind.title)
+    print("ID : " + ind.id_)
     for ind_type in ind.indicator_types:
-        print "Type: " + str(ind_type)
+        print("Type: " + str(ind_type))
 
     for obs in ind.observables:
-        print "URL : " + str(obs.object_.properties.value)
+        print("URL : " + str(obs.object_.properties.value))
 
 {% endhighlight %}{% include end_tabs.html %}
 

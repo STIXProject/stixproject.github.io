@@ -7,15 +7,14 @@ from stix.indicator import Indicator
 from stix.ttp import TTP
 from stix.common import Confidence
 from stix.common.vocabs import VocabString
-from cybox.core import Observable
 from cybox.objects.file_object import File
 from cybox.common import Hash
 
 def main():
     file_hash = 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
 
-    stix_header = STIXHeader(title = "File Hash Reputation Service Results", package_intents=["Indicators - Malware Artifacts"])
-    stix_package = STIXPackage(stix_header = stix_header)
+    stix_header = STIXHeader(title="File Hash Reputation Service Results", package_intents=["Indicators - Malware Artifacts"])
+    stix_package = STIXPackage(stix_header=stix_header)
 
     indicator = Indicator(title="File Reputation for SHA256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855")
     indicator.add_indicator_type("File Hash Watchlist")
@@ -34,7 +33,7 @@ def main():
 
     stix_package.add_indicator(indicator)
 
-    print stix_package.to_xml()
+    print(stix_package.to_xml())
 
 if __name__ == '__main__':
     main()

@@ -15,19 +15,19 @@ def main():
     stix_package = STIXPackage.from_xml('openioc-test-mechanism.xml')
 
     for indicator in stix_package.indicators:
-        print "== INDICATOR =="
-        print "Title: " + indicator.title
-        print "Description: " + indicator.description.value
+        print("== INDICATOR ==")
+        print("Title: " + indicator.title)
+        print("Description: " + indicator.description.value)
 
         for indicated_ttp in indicator.indicated_ttps:
             ttp = stix_package.find(indicated_ttp.item.idref)
-            print "Indicated TTP: " + ttp.title
+            print("Indicated TTP: " + ttp.title)
 
         for tm in indicator.test_mechanisms:
-            print "Producer: " + tm.producer.identity.name
-            print "== IOC =="
-            print etree.tostring(tm.ioc)
-            print "== ENDIOC =="
+            print("Producer: " + tm.producer.identity.name)
+            print("== IOC ==")
+            print(etree.tostring(tm.ioc))
+            print("== ENDIOC ==")
 
 if __name__ == '__main__':
     main()
