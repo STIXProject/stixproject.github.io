@@ -9,6 +9,7 @@ For installation instructions, please refer to https://github.com/STIXProject/py
 
 from stix.core import STIXPackage
 
+
 def main():
     stix_package = STIXPackage.from_xml('yara-test-mechanism.xml')
 

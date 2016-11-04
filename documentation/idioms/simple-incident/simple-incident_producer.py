@@ -6,7 +6,7 @@ from cybox.common import Time
 
 from stix.incident import Incident, ImpactAssessment
 from stix.incident.impact_assessment import Effects
-from stix.incident import Time as incidentTime # different type than common:Time
+from stix.incident import Time as incidentTime  # different type than common:Time
 
 from stix.common import InformationSource
 from stix.common import Identity
@@ -15,7 +15,6 @@ from stix.common import Identity
 def build_stix():
     # setup stix document
     stix_package = STIXPackage()
-
 
     # add incident and confidence
     breach = Incident()
@@ -27,7 +26,7 @@ def build_stix():
     breach.reporter.description = "The person who reported it"
 
     breach.reporter.time = Time()
-    breach.reporter.time.produced_time = datetime.strptime("2014-03-11","%Y-%m-%d") # when they submitted it
+    breach.reporter.time.produced_time = datetime.strptime("2014-03-11", "%Y-%m-%d")  # when they submitted it
 
     breach.reporter.identity = Identity()
     breach.reporter.identity.name = "Sample Investigations, LLC"

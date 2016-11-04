@@ -7,6 +7,7 @@ The following code requires python-stix v1.1.0.4 or greater installed.
 For installation instructions, please refer to https://github.com/STIXProject/python-stix.
 '''
 
+
 def main():
     from stix.coa import CourseOfAction, Objective
     from stix.common import Confidence
@@ -31,11 +32,12 @@ def main():
     coa.efficacy = "High"
 
     addr = Address(address_value="10.10.10.10", category=Address.CAT_IPV4)
-    coa.parameter_observables=Observables(addr)
+    coa.parameter_observables = Observables(addr)
 
     pkg.add_course_of_action(coa)
 
     print(pkg.to_xml())
+
 
 if __name__ == '__main__':
     main()

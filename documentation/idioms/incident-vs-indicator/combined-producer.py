@@ -16,6 +16,7 @@ from cybox.core import Observable
 from stix.ttp import TTP
 from cybox.objects.address_object import Address
 
+
 def main():
 
     data = json.load(open("data.json"))
@@ -63,4 +64,4 @@ def main():
 
 
 if __name__ == '__main__':
-  main()
+    main()

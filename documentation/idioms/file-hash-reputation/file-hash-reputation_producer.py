@@ -10,6 +10,7 @@ from stix.common.vocabs import VocabString
 from cybox.objects.file_object import File
 from cybox.common import Hash
 
+
 def main():
     file_hash = 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
 

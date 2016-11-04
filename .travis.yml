@@ -6,7 +6,9 @@ install:
   - pip install stix
   - pip install stix-validator
 
-script: ./test_idioms.sh
+script: 
+  - find . -name \*.py -exec pep8 --ignore=E501 {} +
+  - ./test_idioms.sh
 
 branches:
   only:

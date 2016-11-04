@@ -11,6 +11,7 @@ from stix.core import STIXPackage
 from stix.incident import (Incident, AffectedAssets, AffectedAsset, PropertyAffected)
 from stix.incident.affected_asset import NatureOfSecurityEffect
 
+
 def main():
     pkg = STIXPackage()
     affected_asset = AffectedAsset()

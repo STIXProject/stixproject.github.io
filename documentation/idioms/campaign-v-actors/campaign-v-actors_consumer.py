@@ -5,7 +5,8 @@
 import sys
 from stix.core import STIXPackage
 
-def parse_stix( pkg ):
+
+def parse_stix(pkg):
 
     for camp in pkg.campaigns:
         print("== CAMPAIGN ==")
@@ -20,12 +21,13 @@ def parse_stix( pkg ):
         for rel in camp.related_incidents:
             print("Related Incident ID: " + str(rel.item.idref))
 
-
     return 0
 
 if __name__ == '__main__':
-    try: fname = sys.argv[1]
-    except: exit(1)
+    try:
+        fname = sys.argv[1]
+    except:
+        exit(1)
     fd = open(fname)
     stix_pkg = STIXPackage.from_xml(fd)
 

@@ -7,6 +7,7 @@ The following code requires python-stix v1.1.1.1 or greater installed.
 For installation instructions, please refer to https://stix.readthedocs.org.
 '''
 
+
 def main():
     from stix.campaign import Campaign, Attribution
     from stix.threat_actor import ThreatActor

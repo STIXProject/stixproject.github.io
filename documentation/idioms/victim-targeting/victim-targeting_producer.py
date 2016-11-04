@@ -7,6 +7,7 @@ The following code requires python-stix v1.1.0.4 or greater installed.
 For installation instructions, please refer to https://github.com/STIXProject/python-stix.
 '''
 
+
 def main():
     from stix.campaign import Campaign
     from stix.common.related import RelatedTTP

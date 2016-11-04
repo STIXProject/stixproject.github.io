@@ -3,6 +3,7 @@ from stix.campaign import Campaign, RelatedIndicator
 from cybox.objects.address_object import Address
 from stix.core import STIXPackage
 
+
 def main():
     package = STIXPackage()
 
@@ -23,6 +24,7 @@ def main():
     campaign.related_indicators.append(RelatedIndicator(item=Indicator(idref=indicator.id_)))
 
     print(package.to_xml())
+
 
 if __name__ == '__main__':
     main()

@@ -6,6 +6,7 @@ from stix.indicator import Indicator
 from stix.common.kill_chains import KillChainPhase, KillChain, KillChainPhaseReference, KillChainPhasesReference
 from stix.core.ttps import TTP
 
+
 def main():
     stix_pkg = STIXPackage()
 
@@ -23,7 +24,7 @@ def main():
     lmchain = KillChain(id_="stix:TTP-af3e707f-2fb9-49e5-8c37-14026ca0a5ff", name="LM Cyber Kill Chain")
     lmchain.definer = "LMCO"
 
-    lmchain.kill_chain_phases = [recon,weapon,deliver,exploit,install,control,action]
+    lmchain.kill_chain_phases = [recon, weapon, deliver, exploit, install, control, action]
     stix_pkg.ttps.kill_chains.append(lmchain)
 
     infect = KillChainPhase(name="Infect Machine")
@@ -38,8 +39,8 @@ def main():
 
     indicator = Indicator()
     indicator.kill_chain_phases = KillChainPhasesReference([
-        KillChainPhaseReference(phase_id=exfil.phase_id,kill_chain_id=mychain.id_),
-        KillChainPhaseReference(phase_id=action.phase_id,kill_chain_id=lmchain.id_)
+        KillChainPhaseReference(phase_id=exfil.phase_id, kill_chain_id=mychain.id_),
+        KillChainPhaseReference(phase_id=action.phase_id, kill_chain_id=lmchain.id_)
     ])
     stix_pkg.add_indicator(indicator)
 

@@ -6,6 +6,7 @@ from stix.core import STIXPackage
 from stix.indicator import Indicator
 from cybox.objects.uri_object import URI
 
+
 def main():
     pkg = STIXPackage()
     indicator = Indicator()
@@ -15,7 +16,7 @@ def main():
 
     url = URI()
     url.value = "http://x4z9arb.cn/4712"
-    url.type_ =  URI.TYPE_URL
+    url.type_ = URI.TYPE_URL
     url.value.condition = "Equals"
 
     indicator.add_observable(url)

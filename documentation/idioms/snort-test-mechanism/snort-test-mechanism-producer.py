@@ -15,6 +15,7 @@ from stix.exploit_target import ExploitTarget, Vulnerability
 from stix.extensions.test_mechanism.snort_test_mechanism import SnortTestMechanism
 from stix.common import Confidence, InformationSource, Identity
 
+
 def main():
     stix_package = STIXPackage()
 

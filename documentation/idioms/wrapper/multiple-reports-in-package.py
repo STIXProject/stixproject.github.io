@@ -12,6 +12,7 @@ from stix.common import InformationSource, Identity
 from stix.ttp import TTP
 from stix.campaign import Campaign
 
+
 def main():
 
     campaign = Campaign(title="Campaign against ICS")

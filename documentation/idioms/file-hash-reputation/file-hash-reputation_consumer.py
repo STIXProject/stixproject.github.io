@@ -9,6 +9,7 @@ For installation instructions, please refer to https://github.com/STIXProject/py
 
 from stix.core import STIXPackage
 
+
 def main():
     stix_package = STIXPackage.from_xml('file-hash-reputation.xml')
 
@@ -19,4 +20,4 @@ def main():
 
 
 if __name__ == '__main__':
-  main()
+    main()

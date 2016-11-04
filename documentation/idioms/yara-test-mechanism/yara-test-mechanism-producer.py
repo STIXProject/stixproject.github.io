@@ -13,6 +13,7 @@ from stix.indicator.test_mechanism import TestMechanisms
 from stix.extensions.test_mechanism.yara_test_mechanism import YaraTestMechanism
 from stix.common import InformationSource, Identity
 
+
 def main():
 
     rule = """

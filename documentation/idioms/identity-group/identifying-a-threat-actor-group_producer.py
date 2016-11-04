@@ -8,8 +8,8 @@ For installation instructions, please refer to https://github.com/STIXProject/py
 
 from stix.core import STIXPackage
 from stix.threat_actor import ThreatActor
-from stix.extensions.identity.ciq_identity_3_0 import (CIQIdentity3_0Instance, PartyName, STIXCIQIdentity3_0, 
-                                      Address, Country, Language, AdministrativeArea, OrganisationName)
+from stix.extensions.identity.ciq_identity_3_0 import (CIQIdentity3_0Instance, PartyName, STIXCIQIdentity3_0,
+                                                       Address, Country, Language, AdministrativeArea, OrganisationName)
 
 
 def main():

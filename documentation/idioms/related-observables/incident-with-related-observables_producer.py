@@ -14,6 +14,7 @@ from cybox.core import Observable
 from cybox.common import Hash
 from cybox.objects.file_object import File
 
+
 def main():
     pkg = STIXPackage()
     file_object1 = File()

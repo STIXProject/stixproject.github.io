@@ -9,6 +9,7 @@ For installation instructions, please refer to https://github.com/STIXProject/py
 
 from stix.core import STIXPackage
 
+
 def main():
     stix_package = STIXPackage.from_xml('sample-indicators.xml')
 
@@ -30,4 +31,4 @@ def main():
     print(data)
 
 if __name__ == '__main__':
-  main()
+    main()

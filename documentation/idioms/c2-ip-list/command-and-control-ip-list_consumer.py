@@ -5,7 +5,8 @@
 import sys
 from stix.core import STIXPackage
 
-def parse_stix( pkg ):
+
+def parse_stix(pkg):
     print("== TTP ==")
     for thing in pkg.ttps:
         print("Title: " + str(thing.title))
@@ -16,8 +17,10 @@ def parse_stix( pkg ):
     return 0
 
 if __name__ == '__main__':
-    try: fname = sys.argv[1]
-    except: exit(1)
+    try:
+        fname = sys.argv[1]
+    except:
+        exit(1)
     fd = open(fname)
     stix_pkg = STIXPackage.from_xml(fd)
 

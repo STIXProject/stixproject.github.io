@@ -6,10 +6,11 @@ from stix.core.ttps import TTP
 
 from stix.common.kill_chains import KillChain, KillChainPhase, KillChainPhaseReference
 
+
 def main():
     stix_pkg = STIXPackage()
 
-    # make indicator 
+    # make indicator
     ind = Indicator()
     ind.title = "Malicious executable"
     ind.description = "Resident binary which implements infostealing and credit card grabber"
@@ -25,7 +26,7 @@ def main():
     stix_pkg.add_indicator(ind)
 
     # add referenced phase to indicator
-    ind.kill_chain_phases.append(KillChainPhaseReference(phase_id=infect.phase_id,kill_chain_id = mychain.id_))
+    ind.kill_chain_phases.append(KillChainPhaseReference(phase_id=infect.phase_id, kill_chain_id=mychain.id_))
 
     print(stix_pkg.to_xml())
 

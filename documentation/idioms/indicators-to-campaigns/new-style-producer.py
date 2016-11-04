@@ -1,7 +1,8 @@
-from stix.indicator import Indicator#, RelatedCampaign - broken, see #192
+from stix.indicator import Indicator  # , RelatedCampaign - broken, see #192
 from stix.campaign import Campaign
 from cybox.objects.address_object import Address
 from stix.core import STIXPackage
+
 
 def main():
     package = STIXPackage()
@@ -26,4 +27,4 @@ def main():
     print(package.to_xml())
 
 if __name__ == '__main__':
-  main()
+    main()

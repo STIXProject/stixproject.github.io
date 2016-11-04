@@ -16,6 +16,7 @@ from stix.ttp.resource import Resource
 from cybox.core import Observables, Observable, Object
 from cybox.objects.address_object import Address
 
+
 def main():
     stix_package = STIXPackage()
 
@@ -53,6 +54,7 @@ def main():
 
     stix_package.add_ttp(ttp)
     print(stix_package.to_xml())
+
 
 if __name__ == '__main__':
     main()
