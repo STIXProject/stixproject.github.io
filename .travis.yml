@@ -5,6 +5,7 @@ install:
   - sudo apt-get install libxml2-dev libxslt-dev zlib1g-dev
   - pip install stix
   - pip install stix-validator
+  - pip install pep8
 
 script: 
   - find . -name \*.py -exec pep8 --ignore=E501 {} +
