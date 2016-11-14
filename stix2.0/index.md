@@ -28,13 +28,7 @@ title: CTI TC Development
           </div>
           <div class="col-md-8">
             <h3>STIX 2.0 Drafts</h3>
-            <ul class="list-group">
-              <li class="list-group-item">
-                <span class="label label-success" style="float: right;">REVIEW</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1suvd7z7YjNKWOwgko-vJ84jfGuxSYZjOQlw5leCswPY" target="_blank">Patterning</a></h4>
-                <p>Specification for patterning against STIX Cyber Observables, used mostly in Indicators.</p>
-                <p>Slack: <a href="https://cti-tc.slack.com/messages/cybox/">#cybox</a></p>
-              </li>
+            <ul class="list-group">              
               <li class="list-group-item">
                 <span class="label label-success" style="float: right;">REVIEW</span>
                 <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1yvqWaPPnPW-2NiVCLqzRszcx91ffMowfT5MmE9Nsy_w">STIX 2.0 RC3 Review</a></h4>
@@ -66,6 +60,12 @@ title: CTI TC Development
           <div class="col-md-8">
             <h4>TAXII 2.0 Current Topics</h4>
             <ul class="list-group">
+			  <li class="list-group-item">
+                <span class="label label-success" style="float: right;">REVIEW</span>
+                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1eyhS3-fOlRkDB6N39Md6KZbvbCe3CjQlampiZPg-5u4/edit#" target="_blank">TAXII 2.0 Draft 3</a></h4>
+                <p>Help review draft 3 of the TAXII 2.0 specification.</p>
+                <p>Slack: <a href="https://cti-tc.slack.com/messages/taxii/">#taxii</a></p>
+              </li>
               <li class="list-group-item">
                 <span class="label label-success" style="float: right;">REVIEW</span>
                 <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1eyhS3-fOlRkDB6N39Md6KZbvbCe3CjQlampiZPg-5u4/edit#heading=h.e89fg88iaqlz" target="_blank">Channels</a></h4>
