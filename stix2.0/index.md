@@ -65,25 +65,7 @@ title: CTI TC Development
                 <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1eyhS3-fOlRkDB6N39Md6KZbvbCe3CjQlampiZPg-5u4/edit#" target="_blank">TAXII 2.0 Draft 3</a></h4>
                 <p>Help review draft 3 of the TAXII 2.0 specification.</p>
                 <p>Slack: <a href="https://cti-tc.slack.com/messages/taxii/">#taxii</a></p>
-              </li>
-              <li class="list-group-item">
-                <span class="label label-success" style="float: right;">REVIEW</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1eyhS3-fOlRkDB6N39Md6KZbvbCe3CjQlampiZPg-5u4/edit#heading=h.e89fg88iaqlz" target="_blank">Channels</a></h4>
-                <p>TAXII Channel specification for moving message-based content.</p>
-                <p>Slack: <a href="https://cti-tc.slack.com/messages/taxii/">#taxii</a></p>
-              </li>
-              <li class="list-group-item">
-                <span class="label label-success" style="float: right;">REVIEW</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1eyhS3-fOlRkDB6N39Md6KZbvbCe3CjQlampiZPg-5u4/edit#heading=h.50t5367vjo15" target="_blank">Collections</a></h4>
-                <p>TAXII Collection specification for providing a repository of threat intel.</p>
-                <p>Slack: <a href="https://cti-tc.slack.com/messages/taxii/">#taxii</a></p>
-              </li>
-              <li class="list-group-item">
-                <span class="label label-info" style="float: right;">In Progress</span>
-                <h4 class="list-group-item-heading">Query</h4>
-                <p>Specification for querying a collection.</p>
-                <p>Slack: <a href="https://cti-tc.slack.com/messages/taxii/">#taxii</a></p>
-              </li>
+              </li>              
             </ul>
           </div>
         </div>
