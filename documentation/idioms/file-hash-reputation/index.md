@@ -85,7 +85,7 @@ print("Hash: " + indicator.observable.object_.properties.hashes[0].simple_hash_v
 
 To make indicators more useful it's strongly suggested that an `Indicated_TTP` be included on the indicator. This is a relationship that points to the [TTP](/data-model/{{site.current_version}}/ttp/TTPType) construct to describe what about the object is bad: maybe it's a piece of malware, maybe it's an IP used for C2, maybe it's an e-mail address used for spear phishing. In rare cases it might be impossible for a producer to create this information and, in those cases, it may be omitted.
 
-{% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="observable" %}{% highlight xml %}
+{% include start_tabs.html tabs="XML|Python Producer|Python Consumer" name="indicated_ttp" %}{% highlight xml %}
 <indicator:Indicated_TTP>
     <stixCommon:TTP id="example:ttp-23e715a9-24c8-4b21-ba5b-f564d2edc660" timestamp="2015-07-20T19:52:13.854415+00:00" xsi:type='ttp:TTPType'>
         <ttp:Title>Malicious file</ttp:Title>
