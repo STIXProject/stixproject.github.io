@@ -31,8 +31,8 @@ title: CTI TC Development
             <ul class="list-group">              
               <li class="list-group-item">
                 <span class="label label-success" style="float: right;">REVIEW</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1yvqWaPPnPW-2NiVCLqzRszcx91ffMowfT5MmE9Nsy_w">STIX 2.0 RC3 Review</a></h4>
-                <p>STIX 2.0 RC3 is currently under the review phase. Please provide further comments on the specification on the mailing list. Note that the CybOX documents have been merged into STIX per community ballot and are available as part of the STIX work product (Parts 3a and 3b).</p>
+                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1yvqWaPPnPW-2NiVCLqzRszcx91ffMowfT5MmE9Nsy_w">STIX 2.0 RC4 Review</a></h4>
+                <p>STIX 2.0 RC4 is currently under the review phase. Please provide further comments on the specification on the mailing list. Note that the CybOX documents have been merged into STIX per community ballot and are available as part of the STIX work product (Parts 3a and 3b).</p>
               </li>
               <li class="list-group-item">
                 <span class="label label-info" style="float: right;">DEVELOPMENT</span>
