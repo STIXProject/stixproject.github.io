@@ -1,6 +1,6 @@
 #!/bin/bash
 
-: ${VERBOSE:=1}
+: ${VERBOSE:=0}
 
 # Validate that VERBOSE is an integer to prevent
 # code injection exploits.
