@@ -3,6 +3,7 @@
 # See LICENSE.txt for complete terms.
 
 import sys
+import io
 from stix.core import STIXPackage
 
 
@@ -35,7 +36,7 @@ if __name__ == '__main__':
         fname = sys.argv[1]
     except:
         exit(1)
-    fd = open(fname)
+    fd = io.open(fname)
     stix_pkg = STIXPackage.from_xml(fd)
 
     parse_stix(stix_pkg)
