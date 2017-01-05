@@ -28,17 +28,16 @@ title: CTI TC Development
           </div>
           <div class="col-md-8">
             <h3>STIX 2.0 Drafts</h3>
-            <ul class="list-group">
+            <ul class="list-group">              
               <li class="list-group-item">
                 <span class="label label-success" style="float: right;">REVIEW</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1suvd7z7YjNKWOwgko-vJ84jfGuxSYZjOQlw5leCswPY" target="_blank">Patterning</a></h4>
-                <p>Specification for patterning against STIX Cyber Observables, used mostly in Indicators.</p>
-                <p>Slack: <a href="https://cti-tc.slack.com/messages/cybox/">#cybox</a></p>
+                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1yvqWaPPnPW-2NiVCLqzRszcx91ffMowfT5MmE9Nsy_w">STIX 2.0 RC4 Review</a></h4>
+                <p>STIX 2.0 RC4 is currently under the review phase. Please provide further comments on the specification on the mailing list. Note that the CybOX documents have been merged into STIX per community ballot and are available as part of the STIX work product (Parts 3a and 3b).</p>
               </li>
               <li class="list-group-item">
-                <span class="label label-success" style="float: right;">REVIEW</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1yvqWaPPnPW-2NiVCLqzRszcx91ffMowfT5MmE9Nsy_w">STIX 2.0 RC3 Review</a></h4>
-                <p>STIX 2.0 RC3 is currently under the review phase. Please provide further comments on the specification on the mailing list. Note that the CybOX documents have been merged into STIX per community ballot and are available as part of the STIX work product (Parts 3a and 3b).</p>
+                <span class="label label-info" style="float: right;">DEVELOPMENT</span>
+                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/15qD9KBQcVcY4FlG9n_VGhqacaeiLlNcQ7zVEjc8I3b4/edit?usp=drive_web&usp=docs_home&ths=true">Brainstorming for 2.1</a></h4>
+                <p>STIX 2.1 Working Concepts page</p>
               </li>
             </ul>
           </div>
@@ -66,24 +65,12 @@ title: CTI TC Development
           <div class="col-md-8">
             <h4>TAXII 2.0 Current Topics</h4>
             <ul class="list-group">
-              <li class="list-group-item">
+			  <li class="list-group-item">
                 <span class="label label-success" style="float: right;">REVIEW</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1eyhS3-fOlRkDB6N39Md6KZbvbCe3CjQlampiZPg-5u4/edit#heading=h.e89fg88iaqlz" target="_blank">Channels</a></h4>
-                <p>TAXII Channel specification for moving message-based content.</p>
+                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1eyhS3-fOlRkDB6N39Md6KZbvbCe3CjQlampiZPg-5u4/edit#" target="_blank">TAXII 2.0 Draft 3</a></h4>
+                <p>Help review draft 3 of the TAXII 2.0 specification.</p>
                 <p>Slack: <a href="https://cti-tc.slack.com/messages/taxii/">#taxii</a></p>
-              </li>
-              <li class="list-group-item">
-                <span class="label label-success" style="float: right;">REVIEW</span>
-                <h4 class="list-group-item-heading"><a href="https://docs.google.com/document/d/1eyhS3-fOlRkDB6N39Md6KZbvbCe3CjQlampiZPg-5u4/edit#heading=h.50t5367vjo15" target="_blank">Collections</a></h4>
-                <p>TAXII Collection specification for providing a repository of threat intel.</p>
-                <p>Slack: <a href="https://cti-tc.slack.com/messages/taxii/">#taxii</a></p>
-              </li>
-              <li class="list-group-item">
-                <span class="label label-info" style="float: right;">In Progress</span>
-                <h4 class="list-group-item-heading">Query</h4>
-                <p>Specification for querying a collection.</p>
-                <p>Slack: <a href="https://cti-tc.slack.com/messages/taxii/">#taxii</a></p>
-              </li>
+              </li>              
             </ul>
           </div>
         </div>
