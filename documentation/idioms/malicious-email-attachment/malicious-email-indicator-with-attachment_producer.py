@@ -75,7 +75,7 @@ def main():
     stix_package.add_indicator(combined_indicator)
     stix_package.add_indicator(email_subject_indicator)
     stix_package.add_indicator(indicator_attachment)
-    print(stix_package.to_xml())
+    print(stix_package.to_xml(encoding=None))
 
 if __name__ == '__main__':
     main()

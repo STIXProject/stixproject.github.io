@@ -23,7 +23,7 @@ def main():
     # Link the campaign to the indicator
     campaign.related_indicators.append(RelatedIndicator(item=Indicator(idref=indicator.id_)))
 
-    print(package.to_xml())
+    print(package.to_xml(encoding=None))
 
 
 if __name__ == '__main__':

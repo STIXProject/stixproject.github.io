@@ -39,7 +39,7 @@ def main():
 
     ta.identity.specification = identity_spec
     stix_package.add_threat_actor(ta)
-    print(stix_package.to_xml())
+    print(stix_package.to_xml(encoding=None))
 
 if __name__ == '__main__':
     main()

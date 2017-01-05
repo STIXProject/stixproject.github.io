@@ -36,7 +36,7 @@ if __name__ == '__main__':
         fname = sys.argv[1]
     except:
         exit(1)
-    fd = io.open(fname)
+    fd = open(fname)
     stix_pkg = STIXPackage.from_xml(fd)
 
     parse_stix(stix_pkg)
