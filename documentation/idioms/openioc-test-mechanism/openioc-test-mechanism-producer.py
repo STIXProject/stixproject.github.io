@@ -46,7 +46,7 @@ def main():
     stix_package.add_indicator(indicator)
     stix_package.add_ttp(ttp)
 
-    print(stix_package.to_xml())
+    print(stix_package.to_xml(encoding=None))
 
 if __name__ == '__main__':
     main()

@@ -38,7 +38,7 @@ def main():
     pkg = STIXPackage()
     pkg.add_campaign(c)
 
-    print(pkg.to_xml())
+    print(pkg.to_xml(encoding=None))
 
 if __name__ == '__main__':
     main()

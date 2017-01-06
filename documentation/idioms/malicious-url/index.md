@@ -50,7 +50,7 @@ url.type_ =  URI.TYPE_URL
 url.condition = "Equals"
 
 indicator.add_observable(url)
-print(indicator.to_xml())
+print(indicator.to_xml(encoding=None))
 
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 

@@ -3,6 +3,7 @@
 # See LICENSE.txt for complete terms.
 
 import sys
+import io
 from stix.core import STIXPackage
 
 

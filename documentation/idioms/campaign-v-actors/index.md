@@ -93,7 +93,7 @@ c.related_incidents.append(Incident(idref="example:incident-7d8cf96f-91cb-42d0-a
 pkg = STIXPackage()
 pkg.add_campaign(c)
 
-print(pkg.to_xml())
+print(pkg.to_xml(encoding=None))
 
 
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}

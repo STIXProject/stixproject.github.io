@@ -88,7 +88,7 @@ identity_spec.add_electronic_address_identifier("twitter.com/realdiscoteam")
     
 ta.identity.specification = identity_spec
 stix_package.add_threat_actor(ta)
-print(stix_package.to_xml())
+print(stix_package.to_xml(encoding=None))
 
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 print "== ACTOR =="

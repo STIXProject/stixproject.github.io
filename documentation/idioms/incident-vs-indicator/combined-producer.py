@@ -60,7 +60,7 @@ def main():
 
         stix_package.add_incident(incident)
 
-    print(stix_package.to_xml())
+    print(stix_package.to_xml(encoding=None))
 
 
 if __name__ == '__main__':

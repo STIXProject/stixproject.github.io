@@ -54,7 +54,7 @@ ttp = TTP(title="Victim Targeting: Electricity Sector and Industrial Control Sys
 ttp.victim_targeting = VictimTargeting()
 ttp.victim_targeting.identity = ciq_identity
 
-print(ttp.to_xml())
+print(ttp.to_xml(encoding=None))
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 
 print("== TTP ==")

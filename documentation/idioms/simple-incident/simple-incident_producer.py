@@ -61,4 +61,4 @@ def build_stix():
 if __name__ == '__main__':
     # emit STIX
     pkg = build_stix()
-    print(pkg.to_xml())
+    print(pkg.to_xml(encoding=None))

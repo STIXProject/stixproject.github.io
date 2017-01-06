@@ -86,7 +86,7 @@ affected_assets.append(affected_asset)
 incident = Incident(title="Exfiltration from hr-data1.example.com")
 incident.affected_assets = affected_assets
 
-print incident.to_xml()
+print incident.to_xml(encoding=None)
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 print("== INCIDENT Assets Impacted ==")
 for inc in pkg.incidents:

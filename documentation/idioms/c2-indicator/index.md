@@ -67,7 +67,7 @@ indicator.add_indicated_ttp(TTP(idref=ttp.id_))
 stix_package.add_indicator(indicator)
 stix_package.add_ttp(ttp)
 
-print stix_package.to_xml()
+print stix_package.to_xml(encoding=None)
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 
 stix_package = STIXPackage.from_xml('indicator-for-c2-ip-address.xml')

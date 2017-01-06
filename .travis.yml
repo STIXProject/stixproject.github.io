@@ -1,10 +1,14 @@
 language: python
+python:
+  - "2.7"
+  - "3.5"
 
 install:
   - sudo apt-get update
   - sudo apt-get install libxml2-dev libxslt-dev zlib1g-dev
   - pip install stix
-  - pip install stix-validator
+  - pip install stix-validator --pre
+  - pip install lxml
   - pip install pep8
 
 script: 
