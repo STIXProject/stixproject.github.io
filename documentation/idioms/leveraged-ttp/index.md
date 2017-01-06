@@ -112,7 +112,7 @@ stix_package.add_ttp(ttp_phishing)
 stix_package.add_ttp(ttp_pivy)
 stix_package.add_threat_actor(ta_bravo)
 
-print(stix_package.to_xml())
+print(stix_package.to_xml(encoding=None))
 
 
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}

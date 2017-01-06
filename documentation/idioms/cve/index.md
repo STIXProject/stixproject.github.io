@@ -48,7 +48,7 @@ vuln.add_reference("https://technet.microsoft.com/library/security/2887505")
 et = ExploitTarget(title="Javascript vulnerability in MSIE 6-11")
 et.add_vulnerability(vuln)
     
-print et.to_xml()
+print et.to_xml(encoding=None)
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 print("== VULNERABILITY ==")
 for target in pkg.exploit_targets:

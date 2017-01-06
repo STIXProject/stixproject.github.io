@@ -64,7 +64,7 @@ stix_pkg.add_indicator(ind)
 # add referenced phase to indicator
 ind.kill_chain_phases.append(KillChainPhaseReference(phase_id=infect.phase_id,kill_chain_id = mychain.id_))
 
-print(stix_pkg.to_xml())
+print(stix_pkg.to_xml(encoding=None))
 
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 

@@ -194,7 +194,7 @@ combined_indicator.add_indicated_ttp(TTP(idref=ttp.id_))
 stix_package.add_indicator(combined_indicator)
 stix_package.add_indicator(email_subject_indicator)
 stix_package.add_indicator(indicator_attachment)
-print(stix_package.to_xml())
+print(stix_package.to_xml(encoding=None))
 
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 

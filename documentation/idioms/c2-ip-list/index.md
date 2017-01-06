@@ -105,7 +105,7 @@ ttp = TTP(title="Malware C2 Channel")
 ttp.resources = resource
 
 stix_package.add_ttp(ttp)
-print(stix_package.to_xml())
+print(stix_package.to_xml(encoding=None))
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 
 print("== TTP ==")

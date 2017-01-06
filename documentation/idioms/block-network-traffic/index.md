@@ -88,7 +88,7 @@ coa.parameter_observables=Observables(addr)
 
 pkg.add_course_of_action(coa)
 
-print pkg.to_xml()
+print pkg.to_xml(encoding=None)
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 print("== COA ==")
 for coa in pkg.courses_of_action:

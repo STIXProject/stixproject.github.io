@@ -90,7 +90,7 @@ indicator.kill_chain_phases = KillChainPhasesReference([
 ])
 stix_pkg.add_indicator(indicator)
 
-print(stix_pkg.to_xml())
+print(stix_pkg.to_xml(encoding=None))
 
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 kill_chains = {}

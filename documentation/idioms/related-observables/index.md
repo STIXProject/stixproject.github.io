@@ -101,7 +101,7 @@ related_observable2 = RelatedObservable(observable2, relationship="Malicious Art
 incident.related_observables.append(related_observable1)
 incident.related_observables.append(related_observable2)
 
-print(incident.to_xml())
+print(incident.to_xml(encoding=None))
 
 {% endhighlight %}{% include tab_separator.html %}{% highlight python linenos %}
 print("== INCIDENT ==")
