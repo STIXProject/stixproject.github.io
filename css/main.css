@@ -242,6 +242,26 @@ a.disabled {
     background-color: #01D3B1;
 }
 
+.label-reputation {
+    background-color: #FF7E47;
+}
+
+.label-watchlist {
+    background-color: #F0BC1A;
+}
+
+.label-mapping {
+    background-color: #3EAB45;
+}
+
+.label-deprecation {
+    background-color: #d98f4f;
+}
+
+.label-identity {
+    background-color: #EB59AC;
+}
+
 div#nav-area {
   text-align: center
 }
