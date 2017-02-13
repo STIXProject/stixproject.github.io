@@ -5,12 +5,8 @@ tagline: A structured language for cyber threat intelligence information
 no_in_page_title: true
 ---
 
-<div class="alert alert-warning" role="alert">
-  <a href="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=cti" class="alert-link">
-  STIX transitioned to OASIS </a>
-  - an open standards organization.
-  <a href="https://stixproject.github.io/oasis-faq.pdf" class="alert-link">
-  Read the FAQ to learn more.</a>
+<div class="alert alert-warning" role="alert">  
+  STIX 2.0 documentation is available <a href="https://oasis-open.github.io/cti-documentation/" class="alert-link">here</a>. This site contains archived STIX 1.x documentation. STIX is maintained by the <a href="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=cti" class="alert-link"> OASIS CTI TC</a>.
 </div>
 
 <div class="jumbotron">
