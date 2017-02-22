@@ -5,10 +5,6 @@ tagline: A structured language for cyber threat intelligence information
 no_in_page_title: true
 ---
 
-<div class="alert alert-warning" role="alert">  
-  STIX 2.0 documentation is available <a href="https://oasis-open.github.io/cti-documentation/" class="alert-link">here</a>. This site contains archived STIX 1.x documentation. STIX is maintained by the <a href="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=cti" class="alert-link"> OASIS CTI TC</a>.
-</div>
-
 <div class="jumbotron">
   <h1>Structured Threat Information eXpression (STIX™)</h1>
   <p>A structured language for cyber threat intelligence.</p>
