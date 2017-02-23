@@ -11,7 +11,7 @@ no_in_page_title: true
   <br />
   <div class="row">
     <div class="col-md-6 text-center">
-      <a class="btn btn-primary btn-lg" role="button" href="http://stix.mitre.org/language/version{{site.current_version}}/stix_v{{site.current_version}}_offline.zip">Download Current Release <span class="glyphicon glyphicon-download-alt"></span></a>
+      <a class="btn btn-primary btn-lg" role="button" href="http://stix.mitre.org/language/version{{site.current_version}}/stix_v{{site.current_version}}_offline.zip">Download STIX 2.1 <span class="glyphicon glyphicon-download-alt"></span></a>
       <p class="small"><a href="/releases/1.2">Other Downloads</a></p>
     </div>
     <div class="col-md-6 text-center">
@@ -19,7 +19,7 @@ no_in_page_title: true
     </div>
   </div>
   <div class="row announcement">
-    <p><span class="label label-success">New!</span><a href="/stix2.0">STIX 2.0 CSD01.</a></p>
+    <p><a href="https://docs.google.com/document/d/1yvqWaPPnPW-2NiVCLqzRszcx91ffMowfT5MmE9Nsy_w">STIX 2.0 CSD01</a></p>
   </div>
 </div>
 
@@ -36,7 +36,7 @@ no_in_page_title: true
     <h2>Tooling</h2>
     <div class="row-fluid">
       <div class="col-lg-6">
-        <p style="font-weight: light; color: #aaa;">Bindings & APIs</p>
+        <p style="font-weight: light; color: #aaa;">Bindings &amp; APIs</p>
         <a href="http://stix.readthedocs.org/en/stable/"><img src="/images/python-logo.png" alt="python" /></a><br />
         <a href="https://github.com/STIXProject/java-stix" style="font-size: 24px">Java</a>
       </div>
