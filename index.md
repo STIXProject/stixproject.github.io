@@ -15,7 +15,7 @@ no_in_page_title: true
   <br />
   <div class="row">
     <div class="col-md-6 text-center">
-      <a class="btn btn-primary btn-lg" role="button" href="http://stix.mitre.org/language/version{{site.current_version}}/stix_v{{site.current_version}}_offline.zip">Download Current Release <span class="glyphicon glyphicon-download-alt"></span></a>
+      <a class="btn btn-primary btn-lg" role="button" href="http://stix.mitre.org/language/version{{site.current_version}}/stix_v{{site.current_version}}_offline.zip">Download STIX 1.2 <span class="glyphicon glyphicon-download-alt"></span></a>
       <p class="small"><a href="/releases/1.2">Other Downloads</a></p>
     </div>
     <div class="col-md-6 text-center">
