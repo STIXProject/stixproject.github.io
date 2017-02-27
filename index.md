@@ -5,9 +5,7 @@ tagline: A structured language for cyber threat intelligence information
 no_in_page_title: true
 ---
 
-<div class="alert alert-warning" role="alert">  
-  STIX 2.0 documentation is available <a href="https://oasis-open.github.io/cti-documentation/" class="alert-link">here</a>. This site contains archived STIX 1.x documentation. STIX is maintained by the <a href="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=cti" class="alert-link"> OASIS CTI TC</a>.
-</div>
+
 
 <div class="jumbotron">
   <h1>Structured Threat Information eXpression (STIX™)</h1>
@@ -23,7 +21,7 @@ no_in_page_title: true
     </div>
   </div>
   <div class="row announcement">
-    <p><span class="label label-success">New!</span><a href="/stix2.0">STIX 2.0 CSD01.</a></p>
+    <p><a href="https://docs.google.com/document/d/1yvqWaPPnPW-2NiVCLqzRszcx91ffMowfT5MmE9Nsy_w">STIX 2.0 CSD01</a></p>
   </div>
 </div>
 
@@ -40,7 +38,7 @@ no_in_page_title: true
     <h2>Tooling</h2>
     <div class="row-fluid">
       <div class="col-lg-6">
-        <p style="font-weight: light; color: #aaa;">Bindings & APIs</p>
+        <p style="font-weight: light; color: #aaa;">Bindings &amp; APIs</p>
         <a href="http://stix.readthedocs.org/en/stable/"><img src="/images/python-logo.png" alt="python" /></a><br />
         <a href="https://github.com/STIXProject/java-stix" style="font-size: 24px">Java</a>
       </div>
