@@ -1,6 +1,6 @@
 ---
 layout: flat
-title: STIX 1.2 (Current)
+title: STIX 1.2
 ---
 
 <div class="jumbotron">
@@ -11,7 +11,7 @@ title: STIX 1.2 (Current)
         <li>Addition of the <a href="/data-model/{{site.current_version}}/report/ReportType">report object</a></li>
         <li>Allow for multiple descriptions</li>
         <li>Addition of a <a href="/data-model/{{site.current_version}}/stixVocabs/VersioningVocab-1.0/">vocabulary</a> for versioning STIX content</li>
-        <li>Many small fixes to documentation and vocabularies. <a href="https://github.com/STIXProject/schemas/issues?utf8=&q=milestone%3A%22Version+1.2%22+">Full Release Notes.</a></li>
+        <li>Many small fixes to documentation and vocabularies. <br/><a href="https://github.com/STIXProject/schemas/issues?utf8=&q=milestone%3A%22Version+1.2%22+">Full Release Notes.</a></li>
       </ul>
     </div>
     <div class="col-md-6 text-center">

@@ -52,7 +52,7 @@ An `idiom` is an example of using STIX for a typical use case, and includes samp
       </thead>
       <tbody>
         {% for page in site.pages %}
-          {% if page.use_cases | size != 0  or page.constructs | size != 0 %}
+          {% if page.use_cases or page.constructs %}
             <tr>
               <td>
                 <h4>
@@ -72,8 +72,7 @@ An `idiom` is an example of using STIX for a typical use case, and includes samp
               <td>
                 {% for construct in page.constructs %}
                 {% assign tag = construct | replace:' ','-' | downcase %}
-                <span class="idiom-construct" data-tag="{{construct}}" data-toggle="tooltip"
-                    data-placement="top" title="{{construct}}">
+                <span class="idiom-construct" data-tag="{{construct}}" data-toggle="tooltip" data-placement="top" title="{{construct}}">
                   <img src="/images/{{construct}}.png" width="40px" alt="{{construct}} Icon" />
                 </span>
                 {% endfor %}

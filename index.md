@@ -13,15 +13,11 @@ no_in_page_title: true
   <br />
   <div class="row">
     <div class="col-md-6 text-center">
-      <a class="btn btn-primary btn-lg" role="button" href="http://stix.mitre.org/language/version{{site.current_version}}/stix_v{{site.current_version}}_offline.zip">Download STIX 1.2 <span class="glyphicon glyphicon-download-alt"></span></a>
-      <p class="small"><a href="/releases/1.2">Other Downloads</a></p>
+      <a class="btn btn-primary btn-lg" role="button" href="/releases/archive/">Archived Specification Downloads <span class="glyphicon glyphicon-download-alt"></span></a>
     </div>
     <div class="col-md-6 text-center">
       <a class="btn btn-primary btn-lg" role="button" href="/documentation/idioms">See Examples &amp; Idioms »</a>
     </div>
-  </div>
-  <div class="row announcement">
-    <p><a href="https://docs.google.com/document/d/1yvqWaPPnPW-2NiVCLqzRszcx91ffMowfT5MmE9Nsy_w">STIX 2.0 CSD01</a></p>
   </div>
 </div>
 

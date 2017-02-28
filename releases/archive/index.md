@@ -4,11 +4,12 @@ title: STIX Release Archive
 ---
 
 <div class="alert alert-danger bs-alert-old-docs">
-  <strong>Heads up!</strong> These downloads are for previous versions of STIX. <a href="/releases/{{site.current_version}}">Get the latest!</a>
+  <strong>Heads up!</strong> These downloads are for previous versions of STIX. <a href="https://oasis-open.github.io/cti-documentation/">Get the latest!</a>
 </div>
 
 |Release|Release Date|
 |-------|------------|
+|[STIX 1.2](/releases/1.2/)|May 15, 2015|
 |[STIX 1.1.1](http://stix.mitre.org/language/version1.1.1/)|May 8, 2014|
 |[STIX 1.1](http://stix.mitre.org/language/version1.1/)|February 20, 2014|
 |[STIX 1.0.1](http://stix.mitre.org/language/version1.0.1/)|October 4, 2013|

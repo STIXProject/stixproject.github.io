@@ -1,11 +1,16 @@
 ---
 layout: flat
 title: Data Model Documentation
+this_version: 1.2
 ---
 
 <link href="/css/data_model.css" rel="stylesheet"/>
 
 {::options parse_block_html="true" /}
+
+<div class="alert alert-danger bs-alert-old-docs">
+  <strong>Heads up!</strong> These docs are for STIX {{ page.this_version }}, which is not the latest version (2.0). <a href="https://oasis-open.github.io/cti-documentation/">View the latest!</a>
+</div>
 
 ## Package
 <section class="data-model-section">

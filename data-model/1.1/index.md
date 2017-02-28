@@ -8,11 +8,9 @@ this_version: 1.1
 
 {::options parse_block_html="true" /}
 
-{% if page.this_version != site.current_version %}
 <div class="alert alert-danger bs-alert-old-docs">
-  <strong>Heads up!</strong> These docs are for STIX {{ page.this_version }}, which is not the latest version ({{ site.current_version }}). <a href="/data-model/{{ site.current_version }}">View the latest!</a>
+  <strong>Heads up!</strong> These docs are for STIX {{ page.this_version }}, which is not the latest version (2.0). <a href="https://oasis-open.github.io/cti-documentation/">View the latest!</a>
 </div>
-{% endif %}
 
 ## Package
 <section class="data-model-section">
