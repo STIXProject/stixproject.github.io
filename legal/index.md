@@ -3,11 +3,11 @@ layout: flat
 title: Legal
 ---
 
-## License
-STIX is released under a permissive license for any commercial or non-commercial purpose (see STIX License below) while [helper scripts and related tools](https://github.com/STIXProject) have individual licenses that typically follow [Berkeley Software Distribution](http://opensource.org/licenses/BSD-3-Clause). 
+## License Information
+STIX is released under a permissive license for any commercial or non-commercial purpose (see LICENSE below) while [helper scripts and related tools](https://github.com/STIXProject) have individual licenses that typically follow [Berkeley Software Distribution](http://opensource.org/licenses/BSD-3-Clause). 
 
 
-### License
+## LICENSE
 The MITRE Corporation (MITRE) hereby grants you a non-exclusive, royalty-free license to use Structured Threat Information eXpression (STIX™) for research, development, and commercial purposes. Any copy you make for such purposes is authorized provided that you reproduce MITRE’s copyright designation and this license in any such copy.
 
 ### DISCLAIMERS
