@@ -38,7 +38,9 @@ STIX is for anyone involved in defending networks or systems against cyber threa
 
 #### How do I get it?
 
-[Download the current version](/releases/1.2/).
+The current release is [STIX Version 2.0](https://oasis-open.github.io/cti-documentation/), which is available on the [STIX 2.0 website](https://oasis-open.github.io/cti-documentation/). 
+
+An archive of [previous releases](/releases/archive/) is hosted on this website. 
 
 Bindings and related tools to help process and work with STIX are [open source on Github](https://github.com/STIXProject).
 
