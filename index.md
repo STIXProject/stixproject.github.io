@@ -1,6 +1,6 @@
 ---
 layout: flat
-title: STIX - Structured Threat Information Expression
+title: STIX - Structured Threat Information Expression (Archive)
 tagline: A structured language for cyber threat intelligence information
 no_in_page_title: true
 ---
@@ -8,8 +8,10 @@ no_in_page_title: true
 
 
 <div class="jumbotron">
-  <h1>Structured Threat Information eXpression (STIX™)</h1>
+  <h3>Structured Threat Information eXpression (STIX™) 1.x Archive Website</h3>
   <p>A structured language for cyber threat intelligence.</p>
+  <p></p>
+  <h4>Go to the <a href="https://oasis-open.github.io/cti-documentation/">STIX 2.0 website</a>.</h4>
   <br />
   <div class="row">
     <div class="col-md-6 text-center">
