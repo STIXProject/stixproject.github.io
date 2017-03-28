@@ -8,10 +8,10 @@ no_in_page_title: true
 
 
 <div class="jumbotron">
-  <h3>Structured Threat Information eXpression (STIX™) 1.x Archive Website</h3>
-  <p>A structured language for cyber threat intelligence.</p>
+  <h2>Structured Threat Information eXpression (STIX™) 1.x Archive Website</h2>
+  <p>A structured language for cyber threat intelligence</p>
   <p></p>
-  <h4>Go to the <a href="https://oasis-open.github.io/cti-documentation/">STIX 2.0 website</a>.</h4>
+  <h3>Go to the <a href="https://oasis-open.github.io/cti-documentation/">STIX 2.0 documentation website</a>.</h3>
   <br />
   <div class="row">
     <div class="col-md-6 text-center">
