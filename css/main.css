@@ -369,3 +369,9 @@ h6:hover .header-link {
 .highlight code table {
   margin-bottom: 0px;
 }
+
+@media all and (min-width: 1200px) {
+  p + ul {
+    overflow: hidden;
+  }
+}
